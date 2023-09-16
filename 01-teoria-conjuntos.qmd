@@ -1,0 +1,728 @@
+---
+title: "Teoría de conjuntos"
+subtitle: "Análisis Matemático"
+author: "Alfredo Sánchez Alberca &nbsp; [{{< fa envelope >}}](mailto:asalber@ceu.es) [{{< fa brands twitter >}}](https://twitter.com/aprendeconalf) [{{< fa home >}}](https://aprendeconalf.es)"
+institute: Universidad CEU San Pablo
+logo: img/logos/sticker.png
+# title-slide-attributes:
+#     #data-background-color: black
+#     data-background-image: img/prompt-julia.png
+#     data-background-size: contain
+lang: es
+fig-align: center
+navigation-mode: vertical
+slide-level: 3
+---
+
+## Conjuntos
+
+:::{#def-conjunto}
+## Conjunto
+Un _conjunto_ es a una colección o agrupación bien definida de objetos que puede considerarse en sí misma otro objeto. Para representar un conjunto se indican sus elementos entre llaves y normalmente se utilizarán letras mayúsculas para referirse a ellos.
+:::
+
+----
+
+:::{#exm-conjuntos}
+Algunos ejemplos de conjuntos son:
+
+- El conjunto de los días de la semana es $A = \{\mbox{L, M, X, J, V, S, D}\}$.
+- El conjunto de los colores básicos es $B = \{\mbox{rojo, verde, azul}\}$.
+- El conjunto de los puntos de un dado $C = \{ 1, 2, 3, 4, 5, 6 \}$.
+- El conjunto de los números naturales pares: $D = \{2, 4, 6, \ldots \}$.
+:::
+
+## Elementos 
+
+:::{#def-elemento-conjunto}
+## Elementos
+Los objetos que componen un conjunto se llaman _elementos_ o miembros del conjunto.
+:::
+
+En este curso nos centraremos en los conjuntos numéricos.
+
+### Formas de definir un conjunto
+
+- **Por extenxión**: $A=\{1, 3, 5, 7, 9\}$.
+
+- **Por comprensión**: $A = \{x : x \mbox{ es un número natural impar menor que 10}\}$.  
+
+:::{.callout-caution}
+No todas las definiciones por comprensión son válidas ([paradoja del barbero](https://es.wikipedia.org/wiki/Paradoja_de_Russell)).
+:::
+
+## 
+
+:::{#def-pertenencia}
+## Pertenencia
+Si $a$ es un elemento de un conjunto $A$, se dice que $a$ _pertenence_ a $A$ y se denota $a\in A$. Por el contrario, si $a$ no es un elemento del conjunto $A$, se dice que _no pertenece_ a $A$ y se denota $a\not \in A$.
+:::
+
+:::{#exm-pertencia-conjuntos}
+Si $A$ es el conjunto de los números naturales pares, $2\in A$, pero $1\not \in A$.
+:::
+
+##
+
+:::{#def-igualdad}
+## Igualdad
+Se dice que dos conjuntos $A$ y $B$ son iguales, y se denota $A=B$, si tienen exactamente los mismos elementos. En caso contrario se escribe $A\neq B$.
+:::
+
+:::{#exm-igualdad-conjuntos}
+$\{1, 2, 3\} = \{3, 1, 2\}$.
+:::
+
+--- 
+
+:::{#prp-igualdad-relacion-equivalencia}
+La igualdad de conjuntos es una _relación de equivalencia_, es decir, satisface las propiedades:
+
+1. _Reflexiva:_ $A = A$.
+2. _Simétrica:_ Si $A = B$ entonces $B = A$.
+3. _Transitiva:_ $A = B$ y $B = C$, entonces $A = C$. 
+:::
+
+## Subconjuntos
+
+:::{#def-subconjunto}
+## Subconjunto
+Se dice que un conjunto $A$ es un _subconjunto_ o está _incluído_ en otro conjunto $B$, y se denota $A \subseteq B$, si todos los elementos de $A$ pertenecen a $B$, es decir, 
+$$
+\forall x \in A, x\in B
+$$
+
+Cuando $A\subseteq B$ pero $A\neq B$ se dice que $A$ está _estríctamente incluido_ en $B$ o que $A$ es un _subconjunto propio_ de $B$ y se escribe $A\subsetneq B$.
+:::
+
+:::{#exm-inclusion}
+$\{1, 2, 3\} \subseteq \{3, 1, 2\}$ y $\{1, 3\} \subsetneq \{3, 1, 2\}$.
+:::
+
+###
+
+:::{#prp-inclusion-relacion-orden-parcial}
+La inclusión de conjuntos es una _relación de orden parcial_, es decir, satisface las propiedades:
+
+1. _Reflexiva:_ $A \subseteq A$.
+2. _Antisimétrica:_ Si $A \subseteq B$ y $B \subseteq A$, entonces $A = B$.
+3. _Transitiva:_ $A \subseteq B$ y $B \subseteq C$, entonces $A \subseteq C$. 
+:::
+
+:::{#def-conjunto-vacio}
+## Conjunto vacío
+El conjunto que no tiene ningún elemento se llama conjunto vacío y se denota $\emptyset$.
+:::
+
+
+## Álgebra de conjuntos
+
+
+:::{#def-union-conjuntos}
+## Unión
+Dados dos conjuntos $A$ y $B$, se llama _unión_ de $A$ y $B$, y se denota $A\cup B$, al conjunto de todos los elementos que pertenecen al menos a uno de los conjuntos $A$ y $B$.
+
+$$A\cup B = \{x\,:\, x\in A\mbox{ o }x\in B\}.$$
+:::
+
+![Unión de conjuntos](img/teoria-conjuntos/union.png)
+
+##
+
+:::{#def-interseccion-conjuntos}
+## Intersección
+Dados dos conjuntos $A$ y $B$, se llama _intersección_ de $A$ y $B$, y se denota $A\cap B$, al conjunto de todos los elementos comunes a $A$ y $B$.
+
+$$A\cap B = \{x\,:\, x\in A\mbox{ y }x\in B\}.$$
+:::
+
+![Intersección de conjuntos](img/teoria-conjuntos/interseccion.png)
+
+##
+
+:::{#def-complemento-conjuntos}
+## Complemento
+Dado un conjunto $A\subset \Omega$, se llama _complemento_ de $A$ con respecto a $\Omega$, y se denota $\overline A$, al conjunto de todos los elementos de $\Omega$ que no pertenecen a $A$.
+
+$$\overline A = \{x\in \Omega\,:\, x\not\in A\}.$$
+:::
+
+![Complemento de un conjunto](img/teoria-conjuntos/complemento.png){width=7cm}
+
+##
+
+:::{#def-diferencia-conjuntos}
+## Diferencia
+Dados dos conjuntos $A$ y $B$, se llama _diferencia_ de $A$ y $B$, y se denota $A-B$, al conjunto formado por los elementos de $A$ que no pertenecen a $B$, es decir,
+
+$$A-B = \{x\,:\, x\in A\mbox{ y }x\not\in B\}.$$
+:::
+
+![Diferencia de conjuntos](img/teoria-conjuntos/diferencia.png){width=6cm}
+
+##
+
+:::{#def-diferencia-simetrica-conjuntos}
+## Diferencia simétrica
+Dados dos conjuntos $A$ y $B$, se llama _diferencia simétrica_ de $A$ y $B$, y se denota $A\triangle B$, al conjunto formado por los elementos que pertenecen a $A$ o $B$, pero no a ambos a la vez, es decir,
+
+\begin{align*}
+A\triangle B &= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\ 
+&= (A-B) \cup (B-A) = (A\cup B)-(A\cap B)
+\end{align*}
+:::
+
+![Diferencia simétrica de conjuntos](img/teoria-conjuntos/diferencia-simetrica.png){width=6cm}
+
+###
+
+:::{#exm-operaciones-conjuntos} 
+Dado el conjunto de los números que contiene un dado,
+$\Omega=\{1,2,3,4,5,6\}$ y sus subconjuntos $A=\{2,4,6\}$ y $B=\{1,2,3,4\}$,
+
+- La unión de $A$ y $B$ es $A\cup B=\{1,2,3,4,6\}$.
+- La intersección de $A$ y $B$ es $A\cap B=\{2,4\}$.
+- El contrario de $A$ con respecto a $\Omega$ es $\overline A=\{1,3,5\}$.
+- La diferencia de $A$ y $B$ es $A-B=\{6\}$, y la diferencia de $B$ y $A$ es $B-A=\{1,3\}$.
+- La diferencia simétrica de $A$ y $B$ es $A\triangle B = \{1, 3, 6\}$.
+:::
+
+## {.smaller}
+
+:::{#prp-propiedades-conjuntos} 
+Dado un conjunto universo $\Omega$ y los conjuntos $A,B,C\subseteq \Omega$, se cumplen las siguientes propiedades:
+
+1. Idempotencia: $A\cup A=A$ y $A\cap A=A$.
+2. Conmutativa: $A\cup B=B\cup A$ y $A\cap B = B\cap A$.
+3. Asociativa: $(A\cup B)\cup C = A\cup (B\cup C)$ y $(A\cap B)\cap C = A\cap (B\cap C)$.
+4. Distributiva: $(A\cup B)\cap C = (A\cap C)\cup (B\cap C)$ y $(A\cap B)\cup C = (A\cup C)\cap (B\cup C)$.
+5. Elemento neutro: $A\cup \emptyset=A$ y $A\cap \Omega=A$.
+6. Elemento absorvente: $A\cup \Omega=\Omega$ y $A\cap \emptyset=\emptyset$.
+7. Elemento simétrico complementario: $A\cup \overline A = E$ y $A\cap \overline A= \emptyset$.
+8. Doble complemento: $\overline{\overline A} = A$.
+9. Leyes de Morgan: $\overline{A\cup B} = \overline A\cap \overline B$ y $\overline{A\cap B} = \overline A\cup \overline B$.
+10. $A\cap B\subseteq A\cup B$.
+11. $A-B = A \cap \overline B$.
+11. $A-B\subseteq A$ y $B-A\subseteq B$.
+12. $A\triangle B = (A\cup B) - (A\cap B)$.
+13. $\overline \Omega = \emptyset$ y $\overline \emptyset = \Omega$.
+:::
+
+##
+
+:::{#def-conjuntos-disjuntos}
+## Conjuntos disjuntos
+Dados dos conjuntos $A$ y $B$, se dice que son _disjuntos_ si no tienen ningún elemento en común, es decir, $A\cap B=\emptyset$.
+:::
+
+##
+
+:::{#def-conjunto-potencia}
+## Conjunto potencia
+Dado un conjunto $A$, se llama _conjunto potencia_ o _conjunto de  las partes_ de $A$, y se denota $\mathcal{P}(A)$, al conjunto de todos los subconjuntos de $A$, es decir,
+
+$$\mathcal{P}(A) = \{ X \, : \,  X \subseteq A \}$$
+:::
+
+:::{#exm-conjunto-potencia}
+El conjunto potencia del conjunto $A=\{1, 2, 3\}$ es
+$$\mathcal{P}(A)=\{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}$$
+:::
+
+## Relaciones entre conjuntos
+
+:::{#def-par-ordenado}
+## Par ordenado
+Dados dos elementos $a$ y $b$ se define el _par ordenado_ $(a,b)$ como
+$$ (a,b) = \{\{a\}, \{a,b\}\} $$
+
+De manera más general, se define una _$n$-tupla ordenada_ como
+$$(a_1, a_2, \ldots, a_n) = ((a_1, a_2, \ldots, a_{n-1}), a_n)$$
+:::
+
+##
+
+:::{#def-producto-cartesiano}
+## Producto cartesiano
+Dados dos conjuntos $A$ y $B$, se llama _producto cartesiano_ de $A$ y $B$, y se denota $A\times B$, al conjunto de los pares ordenados
+
+$$A \times B = \{ (a,b) \, : \,  a \in A \mbox{ y } b \in B \}$$
+
+De manera más general, si se tienen $n$ conjuntos $A_1, A_2, \ldots, A_n$, el _producto cartesiano generalizado_ es
+
+$$A_1 \times A_2 \times \ldots \times A_n = \{ (a_1, \ldots, a_n) \, :\, a_i \in A_i\ \forall i=1, \ldots n\}$$
+:::
+
+##
+
+:::{#def-relacion-binaria}
+## Relación binaria
+Dados dos conjuntos $A$ y $B$, se dice que $R$ es una _relación binaria_ sobre $A$ y $B$ si es un subconjunto del producto cartesiano de $A$ y $B$, es decir,
+$$ R \subseteq A \times B $$
+
+Si $A$ y $B$ son el mismo conjunto, se dice que $R$ es una _relación binaria homogénea_.
+:::
+
+### 
+
+Dependiendo de las propiedades que cumpla una relación tenemos los siguientes tipos de relaciones:
+
+- **Reflexiva**: $\forall a \in A, (a,a) \in R$
+- **Irreflexiva**: $\forall a \in A, (a,a) \not\in R$.
+- **Simétrica**: $\forall a, b \in A$, si $(a,b) \in R$, entonces $(b,a) \in R$.
+- **Asimétrica**: $\forall a, b \in A$, si $(a,b) \in R$, entonces $(b,a) \not\in R$.
+- **Antisimétrica**: $\forall a, b \in A$, si $(a,b) \in R$ y $(b,a) \in R$, entonces $a = b$.
+- **Transitiva**: $\forall a, b, c \in A$, si $(a,b) \in R$ y $(b,c) \in R$, entonces $(a,c) \in R$.
+- **Total**: $\forall a, b \in A$, $(a,b) \in R$ o $(b,a) \in R$.
+
+##
+
+:::{#def-relacion-equivalencia}
+## Relación de equivalencia
+Dado un conjunto $A$ y una relación homogénea $R \subseteq A \times A$, se dice que $R$ es una _relación de equivalencia_, y se denota $(A, \sim)$, si es que cumple que $R$ es reflexiva, simétrica y transitiva, es decir, si cumple las propiedades
+
+- _Reflexiva:_ $\forall a \in A, a \sim a$.
+- _Simétrica:_ $\forall a, b \in A$, si $a\sim b$ entonces $b\sim a$.
+- _Transitiva:_ $\forall a, b, c \in A$, si $a\sim b$ y $b\sim c$, entonces $a\sim c$.
+:::
+
+:::{#exm-relacion-equivalencia} 
+Ya hemos visto que la relación de igualdad matemática entre los elementos de un conjunto es una relación de equivalencia.
+:::
+
+##
+
+:::{#def-relacion-orden}
+## Relación de orden
+Dado un conjunto $A$ y una relación homogénea $\preceq \subseteq A \times A$, se dice que $\preceq$ es una _relación de orden_, si es una relación reflexiva, antisimétrica y transitiva, es decir, si cumple las propiedades
+
+- _Reflexiva:_ $\forall a \in A, a \preceq a$.
+- _Antisimétrica:_ $\forall a, b \in A$, si $a\preceq b$ y $b\preceq a$, entonces $a = b$.
+- _Transitiva:_ $\forall a, b, c \in A$, si $a\preceq b$ y $b\preceq c$, entonces $a\preceq c$.
+:::
+
+##
+
+:::{#def-relacion-orden-parcial}
+## Relación de orden parcial
+Dado un conjunto $A$ y una relación homogénea $\preceq \subseteq A \times A$, se dice que $\preceq$ es una _relación de orden parcial_, si es una relación de orden y al menos dos elementos de $A$ están relacionados mediante $\preceq$, es decir,
+
+$$\exists x, y\in A,\ x\preceq y \mbox{ o } y\preceq x.$$
+
+Al conjunto $A$ con la relación de orden parcial $\preceq$ se le llama _conjunto parcialmente ordenado_, y se denota $(A,\preceq)$.
+:::
+
+:::{#exm-relacion-orden-parcial}
+El conjunto potencia de un conjunto $A$ con la relación de inclusión es un conjunto parcialmente ordenado $(\mathcal{P}(A),\subseteq)$.
+:::
+
+##
+
+:::{#def-relacion-orden-total}
+## Relación de orden total
+Dado un conjunto $A$ y una relación homogénea $\preceq \subseteq A \times A$, se dice que $\preceq$ es una _relación de orden total_, si es una relación de orden y todos los elementos de $A$ se relacionan entre sí mediante $\preceq$, es decir,
+
+$$\forall x, y\in A,\ x\preceq y \mbox{ o } y \preceq x.$$
+
+Al conjunto $A$ con la relación de orden total $\preceq$ se le llama _conjunto totalmente ordenado_, y se denota $(A,\preceq)$.
+:::
+
+:::{#exm-relacion-orden-total} 
+La relación de orden de los números naturales $(\mathbb{N},\leq)$ es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto $A$ ($\mathcal{P}(A),\subseteq$) no es un orden parcialmente ordenado, ya que dados dos elementos $a\neq b$ de $A$, se cumple que $\{a\}\subsetneq \{b\}$ y $\{b\}\subsetneq \{a\}$.
+:::
+
+## Cotas y extremos
+
+:::{#def-cota-superior-conjunto}
+## Cota superior
+Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se dice que un elemento $c\in A$ es una _cota superior_ de $B$, si todos los elementos de $B$ son menores o iguales a $c$ según la relación de orden, es decir, 
+
+$$\forall x \in B, x\preceq c.$$
+
+El conjunto de todas las cotas superiores de $B$ se denota $\operatorname{CS}(B)$.
+:::
+
+:::{#exm-cota-superior}
+Para el conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, $5$ es una cota superior. El conjunto de todas sus cotas superiores es $\operatorname{CS}(B)=\{x:x\geq 5\}$.
+
+Para el intervalo $(0,1)\subseteq \mathbb{R}$, cualquier número real $x\geq 1$ es una cota superior, por lo que $\operatorname{CS}([0,1)) = \{x:x\geq 1\}$.
+:::
+
+##
+
+:::{#def-cota-inferior-conjunto}
+## Cota inferior
+Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se dice que un elemento $c\in A$ es una _cota inferior_ de $B$, si todos los elementos de $B$ son mayores o iguales a $c$ según la relación de orden, es decir, 
+
+$$\forall x \in B, c\preceq x.$$
+
+El conjunto de todas las cotas inferiores de $B$ se denota $\operatorname{CI}(B)$.
+:::
+
+:::{#exm-cota-inferior}
+El conjunto de las cotas inferiores de $B=\{3, 4, 5\}\subseteq \mathbb{N}$ es $\operatorname{CI}(B)=\{1, 2, 3\}$.
+
+El conjunto de las cotas inferiores de $[0,1)\subseteq \mathbb{R}$ es $\operatorname{CI}([0,1)) = \{x:x\leq 0\}$. 
+:::
+
+##
+
+:::{#def-maximo-conjunto}
+## Máximo
+Dado un conjunto con una relación de orden parcial $(A,\preceq)$, se dice que un elemento $m\in A$ es un _máximo_ de $A$, y se denota $\max(A)$, si cualquier otro elemento de $A$ es mayor o igual que él según la relación de orden, es decir, 
+
+$$\forall x \in A, x\preceq m.$$
+:::
+
+:::{#exm-maximo}
+El máximo de $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $5$.
+
+El intervalo $[0,1)\subseteq \mathbb{R}$ no tiene máximo. 
+:::
+
+##
+
+:::{#def-minimo-conjunto}
+## Mínimo
+Dado un conjunto con una relación de orden parcial $(A,\preceq)$, se dice que un elemento $m\in A$ es un _mínimo_ de $A$, y se denota $\min(A)$, si y cualquier otro elemento de $A$ es menor o igual que él según la relación de orden, es decir, 
+
+$$\forall x \in A, m\preceq x.$$
+:::
+
+:::{#exm-maximo}
+El mínimo de $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $3$.
+
+El mínimo del intervalo $[0,1)\subseteq \mathbb{R}$ es $0$.
+:::
+
+## 
+
+:::{#thm-unicidad-extremos}
+## Unicidad de los extremos
+Dado un conjunto con una relación de orden parcial $(A,\preceq)$, si existe el máximo de $A$ entonces es único. Lo mismo es cierto para el mínimo.
+:::
+
+##
+
+:::{#def-supremo-conjunto}
+## Supremo
+Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se llama _supremo_ de $B$, y se denota $\sup(B)$, a la menor de las cotas superiores de $B$.
+:::
+
+:::{#exm-supremo}
+El supremo del conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $5$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}(B)=\{x:x\geq 5\}$.
+
+El supremo del intervalo $[0,1)\subseteq \mathbb{R}$ es $1$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}([0,1) = \{x:x\geq 1\}$.
+:::
+
+##
+
+:::{#def-infimo-conjunto}
+## Ínfimo
+Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subconjunto $B\subseteq A$, se llama _ínfimo_ de $B$, y se denota $\inf(B)$, a la mayor de las cotas inferiores de $B$.
+:::
+
+:::{#exm-infimo}
+El ínfimo del conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $3$ ya que es el máximo del conjunto de sus cotas inferiores $\operatorname{CI}(B)=\{1, 2, 3\}$.
+
+El ínfimo del intervalo $[0,1)\subseteq \mathbb{R}$ es $0$ ya que es el máximo del conjunto de sus cotas inferiores $\operatorname{CI}([0,1)) = \{x:x\leq 0\}$.
+:::
+
+###
+
+:::{.callout-warning}
+Un conjunto puede no tener cotas superiores o inferiores y, por tanto, no tener supremo o ínfimo. 
+:::
+
+:::{#exm-no-supremo-infimio}
+El conjunto $B=\{x\in\mathbb{Z}: x \mbox{ es par}\}$, no tiene cotas superiores, ni inferiores, y por tanto tampoco tiene máximo, mínimo, supremo e ínfimo.
+:::
+
+## Funciones
+
+:::{#def-funcion}
+## Función
+Se dice que una relación binaria $f \subseteq A \times B$, con $A$ y $B$ conjuntos no vacíos, es una _función_ o _aplicación_, y se denota $f:A\rightarrow B$, si $f$ no contiene dos pares ordenados distintos con la misma primera componente, es decir,
+
+$$\forall a \in A, \forall b_1, b_2 \in B, \mbox{ si } (a,b_1) \in f \mbox{ y } (a,b_2) \in f, \mbox{ entonces } b_1 = b_2.$$
+:::
+
+Es habitual representar los pares de una función con la notación $y=f(x)$ donde $x$ es la primera componente del par e $y$ la segunda.
+
+---
+
+:::{#exm-funcion} 
+La relación binaria $f=\{(1,a), (2,c), (3,c), (4,b)\}$ es una función, pero la relación $g=\{(1,a), (2,c), (3,c), (2,b)\}$ no lo es porque existen dos pares cuya primera componente es $2$. 
+
+Del mismo modo la función raíz cuadrada $y=f(x)=\sqrt{x}$ no es una función en el conjunto de los números reales, ya que, por ejemplo $\sqrt{1}=\pm 1$.
+:::
+
+---
+
+::: {.content-visible when-format="html"}
+:::{layout-ncol="2"}
+![Ejemplo de función](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.png)
+
+![Ejemplo de no función](./img/teoria-conjuntos/no-funcion.png)
+:::
+:::
+
+::: {.content-visible unless-format="html"}
+:::{layout-ncol="2"}
+![Ejemplo de función](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex)
+
+![Ejemplo de no función](./img/teoria-conjuntos/no-funcion.tex)
+:::
+:::
+
+##
+
+:::{#def-dominio-funcion}
+## Dominio
+Dada una función $f:A\rightarrow B$, se llama _dominio_ de $f$, y se denota $\operatorname{Dom}(f)$ al conjunto de las primeras componentes de los pares de $f$, es decir,
+
+$$\operatorname{Dom}(f) = \{a\in A: \exists b\in B, (a,b)\in f\}$$
+:::
+
+:::{#def-imagen-funcion}
+## Imagen
+Dada una función $f:A\rightarrow B$, se llama _imagen_ de $f$, y se denota $\operatorname{Im}(f)$ al conjunto de las segundas componentes de los pares de $f$, es decir,
+
+$$\operatorname{Im}(f) = \{b\in B: \exists a\in A, (a,b)\in f\}$$
+:::
+
+##
+
+:::{#def-funcion-inyectiva}
+## Función inyectiva
+Dada una función $f:A\rightarrow B$, se dice que $f$ es _inyectiva_ si no existen dos elementos de $A$ con la misma imagen, es decir,
+
+$$\forall a_1, a_2 \in A, \mbox{ si } f(a_1) = f(a_2), \mbox{ entonces } a_1 = a_2.$$
+:::
+
+![Función inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-inyectiva.png)
+
+##
+
+:::{#def-funcion-sobreyectiva}
+## Función sobreyectiva
+Dada una función $f:A\rightarrow B$, se dice que $f$ es _sobreyectiva_ si todo elemento de $B$ tiene una preimagen (está relacionado con algún elemento de $A$ mediante $f$), es decir,
+
+$$\forall b \in B, \exists a\in A, f(a) = b.$$
+:::
+
+![Función sobreyectiva y no inyectiva](./img/teoria-conjuntos/funcion-sobreyectiva.png)
+
+## 
+
+:::{#def-funcion-biyectiva}
+## Función biyectiva
+Dada una función $f:A\rightarrow B$, se dice que $f$ es _biyectiva_, si $f$ es, a la vez, inyectiva y sobreyectiva.
+:::
+
+![Función biyectiva](./img/teoria-conjuntos/funcion-biyectiva.png)
+
+---
+
+![Función no inyectiva y no sobreyectiva](img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.png)
+
+
+::: {.content-visible unless-format="html"}
+:::{layout-ncol="2"}
+![Función inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-inyectiva.tex)
+
+![Función sobreyectiva y no inyectiva](./img/teoria-conjuntos/funcion-sobreyectiva.tex)
+
+![Función biyectiva](./img/teoria-conjuntos/funcion-biyectiva.tex) 
+
+![Función no inyectiva y no sobreyectiva](./img/teoria-conjuntos/funcion-no-inyectiva-no-sobreyectiva.tex)
+:::
+:::
+
+##
+
+:::{#def-funcion-identidad}
+## Función identidad
+Dado un conjunto $A$, se llama _función identidad_ de $A$, y se denota $\operatorname{id}_A:A\rightarrow A$, a la función que empareja cada elemento de $A$ consigo mismo, es decir,
+
+$$\operatorname{id}_A (a) = a, \forall a\in A.$$
+:::
+
+##
+
+:::{#def-funcion-inversa}
+## Función inversa
+Dada una función $f:A\rightarrow B$, se llama _función inversa_ de $f$, y se denota $f^{-1}:B\rightarrow A$, a la función que resulta de revertir el orden de los pares de $f$, es decir,
+
+$$f^{-1} = \{ (b,a) : (a,b) \in f \}.$$
+:::
+
+:::{.callout-warning}
+Para que exista la función inversa de $f$, $f$ debe ser inyectiva.
+:::
+
+##
+
+:::{#def-composicion-funciones}
+## Composición de funciones
+Dadas dos funciones $f:A\rightarrow B$ y $g:C\rightarrow D$, tales que $\operatorname{Im}(f)\subseteq \operatorname{Dom}(g)$, se llama _composición_ de $f$ con $g$, y se denota $g\circ f:A\rightarrow D$, a la funcion que a cada elemento del dominio de $A$ le asocia el elemento que resulta de aplicar $g$ a la imagen de $a$ mediante $f$, es decir,
+
+$$g\circ f(a) = g(f(a)), \forall a\in A.$$
+:::
+
+:::{#prp-composicion-inversa}
+Dada una función $f:A\rightarrow B$, si existe $f^{-1}$, entonces $f\circ f^{-1} = \operatorname{id}_A$ y $f^{-1}\circ f = \operatorname{id}_B$.
+:::
+
+## Cardinalidad de un conjunto 
+
+:::{#def-cardinal-conjunto}
+## Cardinal
+Dado un conjunto $A$, se llama _cardinal_ de $A$, y se denota $|A|$, al número de elementos de $A$.
+:::
+
+:::{#exm-cardinal}
+El cardinal del conjunto $A=\{a, b, c\}$ es $|A|=3$.
+:::
+
+##
+
+:::{#prp-cardinal-conjunto-potencia}
+El cardinal del conjunto potencia de un conjunto $A$ es $|\mathcal{P}(A)| = 2^{|A|}$.
+:::
+
+##
+
+:::{#def-conjuntos-equipotentes}
+## Conjuntos equipotentes
+Se dice que dos conjuntos $A$ y $B$ son _equipotentes_, y se denota $A\approx B$, si tienen la misma cantidad de elementos, es decir, si $|A| = |B|$.
+:::
+
+##
+
+:::{#prp-biyeccion-conjuntos-equipotentes}
+Dos conjuntos $A$ y $B$ son equipotentes si y solo si cada elemento de $A$ puede emparejarse con uno de $B$, de manera que todos los elementos de $B$ sean pareja de uno de $A$ y solo de uno, es decir, existe una aplicación biyectiva $f:A\rightarrow B$.
+:::
+
+---
+
+:::{#prp-equipotencia-relacion-equivalencia}
+La relación de equipotencia es una relación de equivalencia, es decir, satisface las siguientes propiedades:
+
+- _Reflexiva:_ $A\approx A$ para todo conjunto $A$.
+- _Simétrica:_ Si $A\approx B$, entonces $B\approx A$, para cualesquiera conjuntos $A$ y $B$.
+- _Transitiva:_ Si $A\approx B$ y $B\approx C$, entonces $A\approx C$ para cualesquiera conjuntos $A$, $B$ y $C$.
+:::
+
+##
+
+:::{#def-conjuntos-minuspotentes}
+## Conjunto minuspotente
+Dados dos conjuntos $A$ y $B$, se dice que $A$ es _minuspotente_ a $B$, y se denota $A\preceq B$, si el cardinal de $A$ es menor o igual que el de $B$, es decir, si $|A| \leq |B|$.
+:::
+
+##
+
+:::{#prp-inyeccion-conjuntos-minuspotentes}
+El conjunto $A$ es minuspotente al conjunto $B$ si y solo si existe una aplicación inyectiva $f:A\rightarrow B$.
+:::
+
+--- 
+
+:::{#prp-minuspotencia-relacion-orden}
+La relación de minuspotencia es una relación de orden, es decir, satisface las siguientes propiedades:
+
+- Reflexiva: $A\preceq A$ para todo conjunto $A$.
+- Simétrica: Si $A\preceq B$ y $B\preceq A$, entonces $A\approx B$, para cualesquiera conjuntos $A$ y $B$.
+- Transitiva: Si $A\preceq B$ y $B\preceq C$, entonces $A\preceq C$ para cualesquiera conjuntos $A$, $B$ y $C$.
+:::
+
+##
+
+:::{#def-conjunto-finito}
+## Conjunto finito
+Se dice que un conjunto $A$ es _finito_ si es que existe un $n\in\mathbb{N}$ tal que $|A| = |\{1,2,3,\ldots,n \}|$. Cuando esto ocurre, el cardinal de $A$ es $|A|=n$.
+:::
+
+:::{#exm-conjunto-finito}
+El conjunto $A=\{a, b, c\}$ es finito ya que puede definirse una aplicación biyectiva $f:A\rightarrow \{1, 2, 3\}$ con los pares $\{(1,a),(2,b), (3,c)\}$, y por tanto, $|A| = 3$. 
+:::
+
+##
+
+:::{#def-conjunto-infinito}
+## Conjunto infinito
+Se dice que un conjunto $A$ es _infinito_ si no es finito. En tal caso su cardinal se denota $|A|=\infty$.
+:::
+
+Hay que dejar claro que el símbolo $\infty$ es una notación de conveniencia y no representa a ningún número.
+
+:::{#exm-conjunto-infinito}
+El conjunto de los números naturales $\mathbb{N}$ es infinito, ya que no puede ponerse en correspondencia biyectiva con ningún conjunto $\{1,2,\ldots,n\}$ para ningún $n\in\mathbb{N}$, y por tanto, $|\mathbb{N}|=\infty$.
+:::
+
+##
+
+> _¿Dos conjuntos infinitos son siempre del mismo tamaño?_
+
+---
+
+:::{#exm-conjunto-pares-equipotente-naturales} 
+El conjunto de los números naturales pares $P$ es infinito y también lo es el conjunto de los números naturales $\mathbb{N}$. Además ambos son equipotentes pues se puede definir una aplicación biyectiva $f(n) = 2n$ $\forall n\in\mathbb{N}$, de manera que $\mathbb{N}\approx P$. 
+
+
+Sin embargo, el conjunto de los números naturales $\mathbb{N}$ no es equipotente al conjunto de los números reales $\mathbb{R}$, sino minuspotente. 
+:::
+
+:::{.callout-important}
+Existen conjuntos infinitos de distintos tamaños. 
+:::
+
+##
+
+:::{#def-conjuntos-numerables}
+## Conjunto numerable
+Se dice que un conjunto $A$ es _numerable_ si tiene el mismo cardinal que el conjunto de los números naturales $\mathbb{N}$.
+:::
+
+:::{#cor-biyeccion-conjunto-numerable}
+Un conjunto $A$ es numerable si existe una aplicación biyectiva $f:\mathbb{N}\rightarrow A$. 
+:::
+
+---
+
+:::{#exm-enteros-equipotentes-naturales} 
+El conjunto de los números pares es equipotente al conjunto de los números naturales, y  por consiguiente, es numerable.
+
+El conjunto de los números enteros $\mathbb{Z}$ también es numerable, pues se puede definir una aplicación biyectiva $f:\mathbb{N}\rightarrow \mathbb{Z}$ de la siguiente manera
+
+$f(n)=
+\begin{cases}
+(n-1)/2 &\mbox{si } n\in \mathbb{N} \mbox{ es impar},\\
+-n/2 &\mbox{si } n\in \mathbb{N} \mbox{ es par}.
+\end{cases}$
+:::
+
+---
+
+Sin embargo, existen conjuntos infinitos que no son numerables, como por ejemplo el conjunto de los números reales $\mathbb{R}$.
+
+[David Hilbert](https://es.wikipedia.org/wiki/David_Hilbert), propuso una interesante paradoja para probar este hecho, conocida como [la paradoja del hotel infinito](https://www.youtube.com/watch?v=4c8vG-mxuao)
+
+##
+
+:::{#thm-cantor}
+## Cantor
+El conjunto potencia de cualquier conjunto $A$ tiene un cardinal estrictamente mayor que el cardinal de $A$, es decir, $|A| < |\mathcal{P}(A)|$.
+:::
+
+##
+
+:::{#thm-cardinal-reales}
+## Cardinalidad del continuo
+El conjunto de los números reales $\mathbb{R}$ tiene un cardinal igual al del conjunto potencia del conjunto de los números naturales $\mathcal{P}(\mathbb{N})$, es decir, $|\mathbb{R}|=2^{|\mathbb{N}|}$.
+:::
+
+{{< video https://www.youtube.com/embed/EBuOXkSD9sU aspect-ratio="16x9" >}}
+
+

@@ -1,0 +1,28 @@
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[x=5cm,y=5cm]
+\pgfplotsset{grid style={dashed,mygray, line width=0.1pt}}
+\begin{axis}[
+grid=major,
+domain=0.5:2,
+%restrict y to domain=-5:5,
+xmin=-1, xmax=3,
+ymin=-1, ymax=3,
+samples=100,
+x=1.1cm, y=1.1cm,
+axis y line=center,
+axis x line=middle,
+no markers,
+color=myblack,
+xtick = {1, 1.7},
+xticklabels = {$x_1$, $x_2$},
+ytick = {1,2.22},
+yticklabels = {$f(x_1)$, $f(x_2)$},
+%legend style={fill=none, color=myblack, at={(0.5,1.04)},anchor=south, legend cell align=left}
+]
+\addplot+[mark=none, color=myblue, line width=1pt] {x^(3/2)};
+\addplot [myblack, mark = *, nodes near coords=$<$,every node near coord] coordinates {(1.35, -0.07)};
+\addplot [myblack, mark = *, nodes near coords=\rotatebox{90}{$\leq$}, every node near coord] coordinates {(-0.5, 1.35)};
+
+%\legend{$f(x)=x^2-2$};
+\end{axis}
+\end{tikzpicture}

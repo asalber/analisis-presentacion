@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+    \begin{polaraxis}[
+        myblack,
+        xtick={0,90,180,270},
+        xticklabels = {$0$, $\pi/2$, $\pi$, $3\pi/2$},
+        ymax=3.8,
+        ytick={0,1,2,3},
+    ]
+        \addplot+ [mark=none, domain=0:360, samples=600, color=myblue, fill=myblue, opacity=0.4] {3*sin(2*x)};
+        \addplot+ [mark=none, domain=0:360, samples=600, color=myblue] {3*sin(2*x)};
+        \node[myblue] at (axis cs:90,3) {$r = 3\operatorname{sen}(2\theta)$};
+        \node[myblue] at (axis cs:270,2.8) {$\displaystyle\frac{1}{2} \int_0^{2\pi} (3\operatorname{sen}(2\theta))^2\,d\theta=\frac{9}{2}\pi$};
+    \end{polaraxis}
+\end{tikzpicture}

@@ -1,0 +1,44 @@
+\usetikzlibrary{arrows.meta}
+\begin{tikzpicture}[x=5cm,y=5cm]
+\pgfplotsset{grid style={dashed,mygray, line width=0.1pt}}
+\begin{axis}[
+grid=none,
+domain=0.2:2.8,
+%restrict y to domain=-5:5,
+xmin=-1, xmax=3,
+ymin=-1, ymax=3,
+samples=100,
+x=1.1cm, y=1.1cm,
+axis y line=center,
+axis x line=middle,
+color=myblack,
+xtick = {0.3,0.8,2.7},
+xticklabels = {$x-\delta$, $x$, $x+\delta$},
+ytick = {1.49},
+yticklabels = {$f(x)$},
+extra x ticks = {1.5},
+extra x tick label = {$a$},
+extra x tick style = {myred},
+extra y ticks = {1},
+extra y tick label = {$f(a)$},
+extra y tick style = {myred},
+%legend style={fill=none, color=myblack, at={(0.5,1.04)},anchor=south, legend cell align=left}
+]
+\addplot+[mark=none, color=myblue, line width=1pt] {(x-1.5)^2+1};
+\coordinate (A) at (axis cs: {0}, {1});
+\coordinate (B) at (axis cs: {1.5}, {1});
+\coordinate (C) at (axis cs: {1.5},{0});
+\coordinate (D) at (axis cs: {0}, {1.49});
+\coordinate (E) at (axis cs: {0.8}, {1.49});
+\coordinate (F) at (axis cs: {0.8},{0});
+\coordinate (G) at (axis cs: {0.31},{0});
+\coordinate (H) at (axis cs: {2.69},{0});
+\draw[color=mygray,dashed] (A) -- (B) -- (C);
+\draw[color=mygray,dashed] (D) -- (E) -- (F);
+\addplot [myblack, mark = none, nodes near coords=\rotatebox{90}{$\leq$}, every node near coord] coordinates {(-0.5, 1)};
+\addplot [myred, mark=*]  coordinates {(1.5, 1)};
+\draw (G) node {$($};
+\draw (H) node {$)$};
+%\legend{$f(x)=x^2-2$};
+\end{axis}
+\end{tikzpicture}

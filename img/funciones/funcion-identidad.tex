@@ -1,0 +1,18 @@
+\begin{tikzpicture}[x=5cm,y=5cm]
+\pgfplotsset{grid style={dashed,mygray, line width=0.1pt}}
+\begin{axis}[
+grid=major,
+domain=-3:3,
+xmin=-3, xmax=3,
+ymin=-3, ymax=3,
+samples=2,
+x=1.1cm, y=1.1cm,
+axis y line=center,
+axis x line=middle,
+color=myblack,
+legend style={fill=none, color=myblack, legend pos=north west}
+]
+\addplot+[mark=none, color=myblue, line width=1pt] {x};
+\legend{$f(x)=x$}
+\end{axis}
+\end{tikzpicture}

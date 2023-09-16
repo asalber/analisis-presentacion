@@ -1,0 +1,23 @@
+﻿\begin{tikzpicture}[scale=1,every node/.style={transform shape}]
+\filldraw[fill=blue!20, draw=blue!60] (-1.5,0) ellipse (1cm and 1.5cm);
+\filldraw[fill=red!20, draw=red!60] (1.5,0) ellipse (1cm and 1.5cm);
+
+    \node at (-1.5,1.8) {$A$};
+    \node at (1.5,1.8) {$B$};
+
+    \node (x1) at (-1.5,0.9) {$1$};
+    \node (x2) at (-1.5,0.3) {$2$};
+    \node (x3) at (-1.5,-0.3) {$3$};
+    \node (x4) at (-1.5,-0.9) {$4$};
+    \node (y1) at (1.5,0.9) {$a$};
+    \node (y2) at (1.5,0.3) {$b$};
+    \node (y3) at (1.5,-0.3) {$c$};
+    \node (y4) at (1.5,-0.9) {$d$};
+
+    % draw the arrows
+    \draw[-stealth] (x1) -- (y4);
+    \draw[-stealth] (x2) -- (y3);
+    \draw[-stealth] (x3) -- (y1);
+    \draw[-stealth] (x4) -- (y3);
+
+\end{tikzpicture}

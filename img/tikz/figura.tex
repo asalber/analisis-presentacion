@@ -1,0 +1,62 @@
+% Thanks to http://tex.stackexchange.com/a/30782/5645 for this
+% example!
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{ amssymb}
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+%\usepgfplotslibrary{polar}
+\usepackage{tkz-fct}
+\usetikzlibrary{angles, quotes}
+\usetikzlibrary{arrows.meta, arrows}
+\usetikzlibrary{external}
+\tikzexternalize[prefix={external/}]
+
+\tikzset{
+    export as png/.style={
+        external/system call/.add={}{
+            && convert -density #1 -transparent white "\image.pdf" "\image.png"
+        },
+    },
+    export as png/.default={200},
+    % Arrow tips
+    >=stealth,
+}
+
+% pgfplots settings
+\input{colors}
+\input{pgfplots}
+
+\DeclareSymbolFont{symbolsb}{OMS}{cmsy}{m}{n}
+\SetSymbolFont{symbolsb}{bold}{OMS}{cmsy}{b}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{symbolsb}
+
+\def\req{\protect\rotatebox{90}{$\scriptstyle=$}}
+
+\begin{document}
+
+\tikzset{export as png}
+
+\tikzsetnextfilename{parametrizacion-longitud-arco}
+\begin{tikzpicture}
+    \begin{axis}[
+        2dfun, 
+        height=5cm,
+        xmin=-0.5, xmax=7.5,
+        ymin=-2, ymax=6.5,
+        axis equal=true,  
+        clip=false,
+        %xtick = {-1, 1},
+        %ytick = {-1, 1},
+        color = myblack,
+        ]
+        \addplot+[domain=0:2, myblue, samples=2, smooth](3*x+1,4*x-2);
+        \node [myblue] at (2.5,4) {$\mathbf{f}(t) = (3t+1,4t-2)$};
+        \fill (1,-2) circle (1.2pt) node [anchor=west] {$\mathbf{f}(0)$};
+        \fill (4,2) circle (1.2pt) node [anchor=west] {$\mathbf{f}(1)$};
+        \fill (7,6) circle (1.2pt) node [anchor=west] {$\mathbf{f}(2)$};
+    \end{axis};
+    \end{tikzpicture}
+
+\end{document}

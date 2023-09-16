@@ -1,0 +1,21 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[
+    height=4cm,
+    gen2dfun, 
+    xmin=0, xmax=2.5,
+    ymin=0, ymax=4, 
+    %axis equal=true,  
+    xtick={2},
+    xticklabels={$v_1$},
+    ytick={3},
+    yticklabels={$v_2$}, 
+    clip=false,
+    color = myblack,
+    ]
+    \draw[->, myblue, thick] (0,0) -- (2,3) node[midway, above, anchor=east] {$\mathbf{v}=(v_1,v_2)$} ;
+    \draw[mygray, dashed] (2,0) -- (2,3);
+    \draw[decorate, decoration={brace, amplitude=5pt, mirror}] (2,0) -- (2,3) node [midway, right, xshift=4pt] {$v_2$};
+    \draw[decorate, decoration={brace, amplitude=5pt, mirror}] (0,0) -- (2,0) node [midway, below, yshift=-4pt] {$v_1$};
+  \end{axis}
+\end{tikzpicture}

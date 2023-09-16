@@ -1,0 +1,27 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}[x=5cm, y=5cm, trim axis left, trim axis right]
+  \begin{axis}[
+    2dfun, 
+    xmin=0, xmax=4,
+    ymin=0, ymax=4, 
+    %axis equal=true,
+    clip=false,
+    height=4cm,
+    color = myblack,
+    ]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (1,1);
+    \coordinate (Q) at (3,4);
+    \fill (P) circle (1.2pt) node[anchor=north east] {$P$};
+    \fill (Q) circle (1.2pt) node[anchor=south west] {$Q$};
+    \draw[->, myblue, thick] (P) -- (Q) node[midway, above, anchor=east] {$\vec{PQ}=(2,3)$} ;
+    \draw[mygray, dotted] (P) -- (P|-O);
+    \draw[mygray, dotted] (P) -- (P-|O);
+    \draw[mygray, dotted] (Q) -- (Q|-O);
+    \draw[mygray, dotted] (Q) -- (Q-|O);
+    \draw[mygray, dashed] (Q) -- (Q|-P);
+    \draw[mygray, dashed] (P) -- (P-|Q);
+    \draw[decorate, decoration={brace, amplitude=5pt}] (Q) -- (Q|-P) node [midway, right, xshift=4pt] {3};
+    \draw[decorate, decoration={brace, amplitude=5pt, mirror}] (P) -- (P-|Q) node [midway, below, yshift=-4pt] {2};
+  \end{axis}
+\end{tikzpicture} 

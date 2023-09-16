@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+    \newcommand{\radiusx}{2}
+    \newcommand{\radiusy}{.5}
+    \newcommand{\height}{5}
+    \coordinate (a) at (-{\radiusx*sqrt(1-(\radiusy/\height)*(\radiusy/\height))},{\radiusy*(\radiusy/\height)});
+    \coordinate (b) at ({\radiusx*sqrt(1-(\radiusy/\height)*(\radiusy/\height))},{\radiusy*(\radiusy/\height)});
+    \draw[myblue, fill=myblue!40] (a)--(0,\height)--(b)--cycle;
+    \fill[myblue!40] circle (\radiusx{} and \radiusy);
+    \begin{scope}
+    \clip ([xshift=-2mm]a) rectangle ($(b)+(1mm,-2*\radiusy)$);
+    \draw[myblue] circle (\radiusx{} and \radiusy);
+    \end{scope}
+    \begin{scope}
+    \clip ([xshift=-2mm]a) rectangle ($(b)+(1mm,2*\radiusy)$);
+    \draw[dashed, myblack] circle (\radiusx{} and \radiusy);
+    \end{scope}
+    \draw[dashed, myblack] (0,\height)|-(\radiusx,0) node[right, pos=.25, myblack]{$h$} node[above,pos=.75, myblack]{$r$};
+    \node[right, myblack] at ({\radiusx/2}, {\height/2}) {$l$};
+    \draw[myblack] (0,.15)-|(.15,0);
+\end{tikzpicture}

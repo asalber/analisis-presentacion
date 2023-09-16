@@ -1,0 +1,21 @@
+\begin{tikzpicture}[x=5cm,y=5cm]
+\pgfplotsset{grid style={dashed,mygray, line width=0.1pt}}
+\begin{axis}[
+grid=major,
+%domain=-4:8,
+%restrict y to domain=-5:6,
+xmin=-2, xmax=4,
+ymin=-1, ymax=5,
+samples=1000,
+x=1.1cm, y=1.1cm,
+axis y line=center,
+axis x line=middle,
+no markers,
+color=myblack,
+legend style={fill=none, color=myblack, at={(0.5,1.04)},anchor=south, legend columns=3, legend cell align=left}
+]
+\addplot+[domain=-2:0.97, mark=none, color=myblue, line width=1pt] {(x^2-1)/(x-1))};
+\addplot+[domain=1.03:4, mark=none, color=myblue, line width=1pt] {(x^2-1)/(x-1))};
+\legend{$f(x)=\frac{x^2-1}{x-1}$};
+\end{axis}
+\end{tikzpicture}

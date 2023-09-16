@@ -1,0 +1,47 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[
+  height=6cm,
+  3dfun,
+  xmin=-2, xmax=2,
+  ymin=-2, ymax=2,
+  zmin=-0.2, zmax=4,
+  axis x line=middle,
+  axis y line=middle,
+  axis z line=middle,
+  xtick={1,1.4142},
+  xticklabels={$1$, $x(t)$},
+  ytick={1,-1.4142},
+  yticklabels={$1$,$y(t)$},
+  ztick={1,3.6652},
+  zticklabels={$1$,$z(t)$},
+  %axis equal=true,
+  every axis x label/.style={at={(xticklabel* cs:1.1)}},
+  every axis y label/.style={at={(yticklabel* cs:1.15)}},
+  every axis z label/.style={at={(zticklabel* cs:1.1)}},
+  xticklabel shift= -15pt,
+  zticklabel shift= -2pt,
+  clip=false,
+  color = myblack,
+  %view/h=135,
+  %x={(-0.6cm,-0.6cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+  ]
+  \coordinate (O) at (0,0,0);
+  \coordinate (I) at (1,0,0);
+  \coordinate (J) at (0,1,0);
+  \coordinate (K) at (0,0,1);
+  \draw[->, myblue, thick] (O) -- (I) node[anchor=south] {$\textbf{i}$};
+  \draw[->, myblue, thick] (O) -- (J) node[anchor=west] {$\textbf{j}$};
+  \draw[->, myblue, thick] (O) -- (K) node[anchor=west] {$\textbf{k}$};
+  \addplot3+[domain=0.2:2.1*pi, samples=100, samples y=0, smooth] ({2*cos(deg(x))}, {2*sin(deg(x))}, {x/1.5});
+  \coordinate (P) at (2*0.7071,-2*0.7071,14*pi/12);
+  \coordinate (Pxy) at (2*0.7071,-2*0.7071,0);
+  \fill (P) circle (1.2pt) node[anchor=west, myblue, inner sep=0.5cm] {$\mathbf{f}(t)=(x(t), y(t), z(t))$};
+  \draw[mygray, dotted] (P) -- (Pxy);
+  \draw[mygray, dotted] (Pxy) -- (2*0.7071,0,0);
+  \draw[mygray, dotted] (Pxy) -- (0,-2*0.7071,0);
+  \draw[mygray, dotted] (P) -- (0,0,3.6652);
+  \node at (2.8,0,5) {$\mathbb{R}^3$};
+  \end{axis}
+\end{tikzpicture}
+ 

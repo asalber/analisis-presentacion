@@ -1,0 +1,30 @@
+﻿\begin{tikzpicture}[x=5cm,y=5cm]
+\pgfplotsset{grid style={dashed,mygray, line width=0.1pt}}
+\tikzset{
+outer dot/.style = {scale=2.5*sqrt(\pgflinewidth)},
+  inner dot/.style = {scale=sqrt(\pgflinewidth),#1},inner dot/.default={white},
+  point/.style={insert path={ node[outer dot]{.} node[inner dot=#1]
+{.}}}
+}
+\begin{axis}[
+grid=major,
+domain=-3:3,
+%restrict y to domain=-5:5,
+xmin=-2, xmax=2,
+ymin=-2, ymax=2,
+samples=100,
+x=1cm, y=1cm,
+axis lines=middle,
+%no markers,
+color=myblack,
+legend style={fill=none, color=myblack, at={(0.5,1.04)},anchor=south, legend columns=2, legend cell align=left}
+]
+\coordinate (A) at (axis cs: {0}, {0});
+\coordinate (B) at (axis cs: {0}, {1});
+\draw [rotate around={45:(0,0)},line width=1pt, myblue] (A) ellipse (1.4142135623730951cm and 0.816496580927726cm);
+\addplot[domain=0:0.1] {x+10};
+\addplot[domain=-2:2, line width=1pt, myred] {1+x/2};
+\draw[very thick] (B) --  node[point]{} (B);
+\legend{$x^2-xy+y^2=1$, $y=x+\frac{1}{2}$};
+\end{axis}
+\end{tikzpicture}

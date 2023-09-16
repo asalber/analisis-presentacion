@@ -1,0 +1,29 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\begin{tikzpicture}
+    \begin{axis}[
+    view={120}{20},
+    height=6cm,
+    gen3dfun,
+    xmin=-2, xmax=2,
+    ymin=-1.5, ymax=2,
+    zmin=-0.2, zmax=4,
+    axis x line=middle,
+    axis y line=middle,
+    axis z line=middle,
+    %axis equal=true,
+    ticks = none,
+    clip=false,
+    color = myblack,
+    ]
+    \coordinate (O) at (0,0,0);
+    \addplot3+[domain=1:4, samples=100, samples y=0, smooth] ({2*cos(deg(x))}, {2*sin(deg(x))}, {x/1.5});
+    \coordinate (P) at (-1.6023,1.1969,1.6667);
+    \coordinate (Q) at (-2.7992,-0.4053,2.3333);
+    \fill (P) circle (1.2pt);
+    \node[anchor=east, myblue] at (-1.3073,-1.5136,2.6667) {$\mathbf{f}(t)$};
+    \draw[->, mygreen, thick] (O) -- (P) node[midway, anchor=north west] {$\mathbf{f}(a)$};
+    \draw[->, myred, thick] (P) -- (Q) node[midway, anchor=south west] {$\mathbf{f}'(a)$};
+    \node at (-1,2.5,4) {$\mathbb{R}^3$};
+    \end{axis}
+  \end{tikzpicture}

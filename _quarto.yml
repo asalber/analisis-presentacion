@@ -1,0 +1,30 @@
+project:
+  output-dir: "docs"
+
+execute: 
+  echo: true
+  cache: true
+  freeze: auto
+
+format:
+  revealjs:
+    theme: [default,custom.scss]
+    logo: img/logos/sticker.png
+    navigation-mode: vertical
+    footer: <https://aprendeconalf.es/analisis-manual>
+    code-line-numbers: false
+    code-tools:
+      code-block-bg: true
+      code-block-border-Izquierda: "#31BAE9"
+    highlight-style: monokai
+    callout-appearance: simple
+    #incremental: true
+    toc: true
+    toc-depth: 1
+    chalkboard: true
+    menu: true
+    slide-number: c/t
+    transition: convex
+    transition-speed: fast
+    template-partials:
+      - title-slide.html
