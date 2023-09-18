@@ -127,6 +127,13 @@ $$A\cup B = \{x\,:\, x\in A\mbox{ o }x\in B\}.$$
 
 ![Unión de conjuntos](img/teoria-conjuntos/union.png)
 
+---
+
+:::{#exm-union-conjuntos} 
+Dado el conjunto de los números que contiene un dado,
+$\Omega=\{1,2,3,4,5,6\}$ y sus subconjuntos $A=\{2,4,6\}$ y $B=\{1,2,3,4\}$,la unión de $A$ y $B$ es $A\cup B=\{1,2,3,4,6\}$.
+:::
+
 ##
 
 :::{#def-interseccion-conjuntos}
@@ -137,6 +144,13 @@ $$A\cap B = \{x\,:\, x\in A\mbox{ y }x\in B\}.$$
 :::
 
 ![Intersección de conjuntos](img/teoria-conjuntos/interseccion.png)
+
+---
+
+:::{#exm-interseccion-conjuntos} 
+Dado el conjunto de los números que contiene un dado,
+$\Omega=\{1,2,3,4,5,6\}$ y sus subconjuntos $A=\{2,4,6\}$ y $B=\{1,2,3,4\}$,la intersección de $A$ y $B$ es $A\cap B=\{2,4\}$.
+:::
 
 ##
 
@@ -149,6 +163,14 @@ $$\overline A = \{x\in \Omega\,:\, x\not\in A\}.$$
 
 ![Complemento de un conjunto](img/teoria-conjuntos/complemento.png){width=7cm}
 
+---
+
+:::{#exm-complemento-conjuntos} 
+Dado el conjunto de los números que contiene un dado,
+$\Omega=\{1,2,3,4,5,6\}$ y sus subconjuntos $A=\{2,4,6\}$ y $B=\{1,2,3,4\}$,
+el contrario de $A$ con respecto a $\Omega$ es $\overline A=\{1,3,5\}$, y el de $B$ es $\overline B = \{5, 6\}$.
+:::
+
 ##
 
 :::{#def-diferencia-conjuntos}
@@ -159,6 +181,13 @@ $$A-B = \{x\,:\, x\in A\mbox{ y }x\not\in B\}.$$
 :::
 
 ![Diferencia de conjuntos](img/teoria-conjuntos/diferencia.png){width=6cm}
+
+---
+
+:::{#exm-diferencia-conjuntos} 
+Dado el conjunto de los números que contiene un dado,
+$\Omega=\{1,2,3,4,5,6\}$ y sus subconjuntos $A=\{2,4,6\}$ y $B=\{1,2,3,4\}$,la diferencia de $A$ y $B$ es $A-B=\{6\}$, y la diferencia de $B$ y $A$ es $B-A=\{1,3\}$.
+:::
 
 ##
 
@@ -174,17 +203,11 @@ A\triangle B &= \{x\,:\, x\in A-B\mbox{ o }x\in B-A\}\\
 
 ![Diferencia simétrica de conjuntos](img/teoria-conjuntos/diferencia-simetrica.png){width=6cm}
 
-###
+---
 
-:::{#exm-operaciones-conjuntos} 
+:::{#exm-diferencia-simetrica-conjuntos} 
 Dado el conjunto de los números que contiene un dado,
-$\Omega=\{1,2,3,4,5,6\}$ y sus subconjuntos $A=\{2,4,6\}$ y $B=\{1,2,3,4\}$,
-
-- La unión de $A$ y $B$ es $A\cup B=\{1,2,3,4,6\}$.
-- La intersección de $A$ y $B$ es $A\cap B=\{2,4\}$.
-- El contrario de $A$ con respecto a $\Omega$ es $\overline A=\{1,3,5\}$.
-- La diferencia de $A$ y $B$ es $A-B=\{6\}$, y la diferencia de $B$ y $A$ es $B-A=\{1,3\}$.
-- La diferencia simétrica de $A$ y $B$ es $A\triangle B = \{1, 3, 6\}$.
+$\Omega=\{1,2,3,4,5,6\}$ y sus subconjuntos $A=\{2,4,6\}$ y $B=\{1,2,3,4\}$,la diferencia simétrica de $A$ y $B$ es $A\triangle B = \{1, 3, 6\}$.
 :::
 
 ## {.smaller}
@@ -213,6 +236,11 @@ Dado un conjunto universo $\Omega$ y los conjuntos $A,B,C\subseteq \Omega$, se c
 :::{#def-conjuntos-disjuntos}
 ## Conjuntos disjuntos
 Dados dos conjuntos $A$ y $B$, se dice que son _disjuntos_ si no tienen ningún elemento en común, es decir, $A\cap B=\emptyset$.
+:::
+
+:::{#exm-conjuntos-disjuntos}
+Dado el conjunto de los números que contiene un dado,
+$\Omega=\{1,2,3,4,5,6\}$, y sus subconjuntos $A=\{2,4,6\}$, $B=\{1,2,3,4\}$ y $C=\{3, 5\}$, se tiene que $A$ y $B$ no son disjuntos ya que $A\cap B=\{2, 4\}\neq \emptyset$, pero $A$ y $C$ son disjuntos pues $A\cap C=\emptyset$.
 :::
 
 ##
@@ -253,19 +281,33 @@ De manera más general, si se tienen $n$ conjuntos $A_1, A_2, \ldots, A_n$, el _
 $$A_1 \times A_2 \times \ldots \times A_n = \{ (a_1, \ldots, a_n) \, :\, a_i \in A_i\ \forall i=1, \ldots n\}$$
 :::
 
+---
+
+:::{#exm-producto-cartesiano}
+El producto cartesiano de los conjuntos $A=\{a, b, c\}$ y $B=\{1, 2\}$ es 
+
+$$
+A\times B = \{(a,1), (a,2), (a,3), (b,1), (b,2), (b,3)\}
+$$
+:::
+
 ##
 
 :::{#def-relacion-binaria}
 ## Relación binaria
 Dados dos conjuntos $A$ y $B$, se dice que $R$ es una _relación binaria_ sobre $A$ y $B$ si es un subconjunto del producto cartesiano de $A$ y $B$, es decir,
-$$ R \subseteq A \times B $$
+$$ 
+R \subseteq A \times B. 
+$$
+
+Si $(a,b)\in R$ se escribe $a R b$.
 
 Si $A$ y $B$ son el mismo conjunto, se dice que $R$ es una _relación binaria homogénea_.
 :::
 
-### 
+##
 
-Dependiendo de las propiedades que cumpla una relación tenemos los siguientes tipos de relaciones:
+Dependiendo de las propiedades que cumpla una relación binaria homogénea tenemos los siguientes tipos de relaciones:
 
 - **Reflexiva**: $\forall a \in A, (a,a) \in R$
 - **Irreflexiva**: $\forall a \in A, (a,a) \not\in R$.
@@ -279,7 +321,7 @@ Dependiendo de las propiedades que cumpla una relación tenemos los siguientes t
 
 :::{#def-relacion-equivalencia}
 ## Relación de equivalencia
-Dado un conjunto $A$ y una relación homogénea $R \subseteq A \times A$, se dice que $R$ es una _relación de equivalencia_, y se denota $(A, \sim)$, si es que cumple que $R$ es reflexiva, simétrica y transitiva, es decir, si cumple las propiedades
+Dado un conjunto $A$ y una relación homogénea $\sim \subseteq A \times A$, se dice que $\sim$ es una _relación de equivalencia_ si es que cumple que $\sim$ es reflexiva, simétrica y transitiva, es decir, si cumple las propiedades
 
 - _Reflexiva:_ $\forall a \in A, a \sim a$.
 - _Simétrica:_ $\forall a, b \in A$, si $a\sim b$ entonces $b\sim a$.
@@ -343,9 +385,9 @@ El conjunto de todas las cotas superiores de $B$ se denota $\operatorname{CS}(B)
 :::
 
 :::{#exm-cota-superior}
-Para el conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, $5$ es una cota superior. El conjunto de todas sus cotas superiores es $\operatorname{CS}(B)=\{x:x\geq 5\}$.
+Para el conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, $5$ es una cota superior. El conjunto de todas sus cotas superiores es $\operatorname{CS}(B)=\{x\in \mathbb{N}:x\geq 5\}$.
 
-Para el intervalo $(0,1)\subseteq \mathbb{R}$, cualquier número real $x\geq 1$ es una cota superior, por lo que $\operatorname{CS}([0,1)) = \{x:x\geq 1\}$.
+Para el intervalo $[0,1)\subseteq \mathbb{R}$, cualquier número real $x\geq 1$ es una cota superior, por lo que $\operatorname{CS}([0,1)) = \{x\in \mathbb{R}:x\geq 1\}$.
 :::
 
 ##
@@ -362,14 +404,14 @@ El conjunto de todas las cotas inferiores de $B$ se denota $\operatorname{CI}(B)
 :::{#exm-cota-inferior}
 El conjunto de las cotas inferiores de $B=\{3, 4, 5\}\subseteq \mathbb{N}$ es $\operatorname{CI}(B)=\{1, 2, 3\}$.
 
-El conjunto de las cotas inferiores de $[0,1)\subseteq \mathbb{R}$ es $\operatorname{CI}([0,1)) = \{x:x\leq 0\}$. 
+El conjunto de las cotas inferiores de $[0,1)\subseteq \mathbb{R}$ es $\operatorname{CI}([0,1)) = \{x\in \mathbb{R}:x\leq 0\}$. 
 :::
 
 ##
 
 :::{#def-maximo-conjunto}
 ## Máximo
-Dado un conjunto con una relación de orden parcial $(A,\preceq)$, se dice que un elemento $m\in A$ es un _máximo_ de $A$, y se denota $\max(A)$, si cualquier otro elemento de $A$ es mayor o igual que él según la relación de orden, es decir, 
+Dado un conjunto con una relación de orden parcial $(A,\preceq)$, se dice que un elemento $m\in A$ es un _máximo_ de $A$, y se denota $\max(A)$, si cualquier otro elemento de $A$ es menor o igual que él según la relación de orden, es decir, 
 
 $$\forall x \in A, x\preceq m.$$
 :::
@@ -384,7 +426,7 @@ El intervalo $[0,1)\subseteq \mathbb{R}$ no tiene máximo.
 
 :::{#def-minimo-conjunto}
 ## Mínimo
-Dado un conjunto con una relación de orden parcial $(A,\preceq)$, se dice que un elemento $m\in A$ es un _mínimo_ de $A$, y se denota $\min(A)$, si y cualquier otro elemento de $A$ es menor o igual que él según la relación de orden, es decir, 
+Dado un conjunto con una relación de orden parcial $(A,\preceq)$, se dice que un elemento $m\in A$ es un _mínimo_ de $A$, y se denota $\min(A)$, si y cualquier otro elemento de $A$ es mayor o igual que él según la relación de orden, es decir, 
 
 $$\forall x \in A, m\preceq x.$$
 :::
@@ -410,9 +452,9 @@ Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subcon
 :::
 
 :::{#exm-supremo}
-El supremo del conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $5$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}(B)=\{x:x\geq 5\}$.
+El supremo del conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $5$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}(B)=\{x\in \mathbb{N}:x\geq 5\}$.
 
-El supremo del intervalo $[0,1)\subseteq \mathbb{R}$ es $1$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}([0,1) = \{x:x\geq 1\}$.
+El supremo del intervalo $[0,1)\subseteq \mathbb{R}$ es $1$ ya que es el mínimo del conjunto de sus cotas superiores $\operatorname{CS}([0,1) = \{x\in \mathbb{R}:x\geq 1\}$.
 :::
 
 ##
@@ -425,7 +467,7 @@ Dado un subconjunto con una relación de orden parcial $(A,\preceq)$ y un subcon
 :::{#exm-infimo}
 El ínfimo del conjunto $B=\{3, 4, 5\}\subseteq \mathbb{N}$, es $3$ ya que es el máximo del conjunto de sus cotas inferiores $\operatorname{CI}(B)=\{1, 2, 3\}$.
 
-El ínfimo del intervalo $[0,1)\subseteq \mathbb{R}$ es $0$ ya que es el máximo del conjunto de sus cotas inferiores $\operatorname{CI}([0,1)) = \{x:x\leq 0\}$.
+El ínfimo del intervalo $[0,1)\subseteq \mathbb{R}$ es $0$ ya que es el máximo del conjunto de sus cotas inferiores $\operatorname{CI}([0,1)) = \{x\in \mathbb{R}:x\leq 0\}$.
 :::
 
 ###
