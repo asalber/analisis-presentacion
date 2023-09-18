@@ -287,7 +287,7 @@ $$A_1 \times A_2 \times \ldots \times A_n = \{ (a_1, \ldots, a_n) \, :\, a_i \in
 El producto cartesiano de los conjuntos $A=\{a, b, c\}$ y $B=\{1, 2\}$ es 
 
 $$
-A\times B = \{(a,1), (a,2), (a,3), (b,1), (b,2), (b,3)\}
+A\times B = \{(a,1), (a,2), (b,1), (b,2), (c,1), (c,2)\}
 $$
 :::
 
