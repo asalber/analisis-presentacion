@@ -10,8 +10,9 @@ lang: es
 
 Presentaciones del [manual de Análisis Matemático de Variable Real](https://aprendeconalf.es/analisis-manual/).
 
-1- [Teoría de conjuntos](https://aprendeconalf.es/analisis-presentacion/01-teoria-conjuntos.html#/title-slide).
-1- [Números reales](https://aprendeconalf.es/analisis-presentacion/02-numeros-reales.html#/title-slide).
+1. [Teoría de conjuntos](https://aprendeconalf.es/analisis-presentacion/01-teoria-conjuntos.html#/title-slide).
+
+1. [Números reales](https://aprendeconalf.es/analisis-presentacion/02-numeros-reales.html#/title-slide).
 
 ## Licencia
 
