@@ -45,7 +45,7 @@ Los números naturales no tienen simétrico (opuesto) para la suma, de manera qu
 El conjunto de los números _enteros_ $\mathbb{Z}$ surge de ampliar el conjunto de los números naturales con los números negativos y el cero.
 
 $$
-$\mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}
+\mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}
 $$
 
 Extendiendo el orden y las operaciones de los naturales a los números enteros enteros $\mathbb{Z}$, las siguientes propiedades lo dotan de estructura de _anillo conmutativo unitario y totalmente ordenado_.
