@@ -1,0 +1,299 @@
+---
+title: "Topología de la recta real"
+subtitle: "Análisis Matemático"
+author: "Alfredo Sánchez Alberca &nbsp; [{{< fa envelope >}}](mailto:asalber@ceu.es) [{{< fa brands twitter >}}](https://twitter.com/aprendeconalf) [{{< fa home >}}](https://aprendeconalf.es)"
+institute: Universidad CEU San Pablo
+logo: img/logos/sticker.png
+# title-slide-attributes:
+#     #data-background-color: black
+#     data-background-image: img/prompt-julia.png
+#     data-background-size: contain
+lang: es
+fig-align: center
+navigation-mode: vertical
+slide-level: 3
+---
+
+## La recta real
+
+![](img/topologia-reales/recta-real.png)
+
+## Intervalos y entornos
+
+:::{#def-intervalo-abierto}
+## Intervalo abierto
+Dados dos números reales tales que $a\leq b$, se llama _intervalo abierto_ de extremos $a$ y $b$, y se denota $(a,b)$ al conjunto de números reales comprendidos entre $a$ y $b$
+$$
+(a,b) = \{x\in \mathbb{R}: a<x<b\}.
+$$
+:::
+
+:::{#def-intervalo-cerrado}
+## Intervalo cerrado
+Dados dos números reales tales que $a\leq b$, se llama _intervalo cerrado_ de extremos $a$ y $b$, y se denota $[a,b]$ al conjunto de números reales que son mayores o iguales que $a$ y menores o iguales que $b$
+$$
+[a,b] = \{x\in \mathbb{R}: a\leq x\leq b\}.
+$$
+:::
+
+:::{.callout-warning}
+Obsérvese que si $a=b$, $(a,a)=\emptyset$ y $[a,a]=\{a\}$.
+:::
+
+---
+
+:::{#def-intervalo-semiabierto}
+## Intervalo semiabierto o semicerrado
+Dados dos números reales tales que $a<b$, se definen los _intervalos semiabiertos_ o _semicerrados_ de extremos $a$ y $b$ de la siguiente manera:
+$$
+(a,b] = \{x\in \mathbb{R}: a< x\leq b\}\quad \mbox{y}\quad [a,b) = \{x\in \mathbb{R}: a\leq x< b\}
+$$
+:::
+
+---
+
+:::{#def-intervalo-abierto-no-acotado}
+## Intervalo abierto no acotado
+Dado un número $a\in \mathbb{R}$, se definen los siguientes _intervalos abiertos no acotados_:
+$$
+(-\infty,a) = \{x\in \mathbb{R}: x<a\} \quad \mbox{y}\quad (a,\infty) = \{x\in \mathbb{R}: a< x\}
+$$
+:::
+
+:::{#def-intervalo-semiabierto-no-acotado}
+## Intervalo semiabierto no acotado
+Dado un número $a\in \mathbb{R}$, se definen los siguientes _intervalos semiabiertos no acotados_:
+$$
+(-\infty,a] = \{x\in \mathbb{R}: x\leq a\} \quad \mbox{y}\quad [a,\infty) = \{x\in \mathbb{R}: a\leq x\}
+$$
+:::
+
+##
+
+:::{#def-intervalos-anidados}
+## Intervalos anidados
+Se dice que una sucesión de intervalos $I_n$, $n\in\mathbb{N}$ es una _sucesión de intervalos anidados_ si se cumple que $I_{n+1}\subseteq I_n$ $\forall n\in\mathbb{N}$.
+:::
+
+:::{#exm-sucesion-intervalos-anidados}
+La sucesión de intervalos $I_n=[0,\frac{1}{n}]$, $\forall n\in\mathbb{N}$ es una sucesión de intervalos anidados, ya que para cada $n\in\mathbb{N}$ se cumple que $n<n+1$ y por tanto $\frac{1}{n}>\frac{1}{n+1}$, de manera que $I_{n+1}=[0,\frac{1}{n+1}]\subseteq [0,\frac{1}{n}]=I_n$.
+:::
+
+##
+
+:::{#thm-intervalos-anidados}
+## Intervalos anidados
+Dada una sucesión de intervalos cerrados y anidados $I_n=[a_n,b_n]$, $n\in\mathbb{N}$, existe un número $a\in\mathbb{R}$ tal que $a\in I_n$ $\forall n\in\mathbb{N}$. Además, si el ínfimo de las longitudes $\{b_n-a_n: n\in \mathbb{N}\}$ es $0$, entonces $a$ es único, es decir, $\cap_{n=1}^\infty I_n=\{a\}$.
+:::
+
+##
+
+:::{#def-entorno}
+## Entorno
+Dado un número $a\in \mathbb{R}$, se llama _entorno_ de $a$ a cualquier intervalo abierto $(a-\varepsilon, a+\varepsilon)$ con $\varepsilon>0$. El número $\varepsilon$ se conoce como _radio del entorno_.
+
+Para cualquier $\varepsilon>0$ el conjunto $(a-\varepsilon, a+\varepsilon)\setminus \{a\}$ se llama _entorno reducido_ de $a$.  
+:::
+
+## Clasificación de puntos
+
+:::{#def-punto-interior}
+## Punto interior
+Se dice que $a\in \mathbb{R}$ es un _punto interior_ de un conjunto $A\subseteq \mathbb{R}$, si existe un entorno de $a$ contenido en $A$, es decir, existe $\varepsilon>0$ tal que $(a-\varepsilon, a+\varepsilon) \subseteq A$.
+
+El conjunto de los puntos interiores de $A$ se llama _interior_ de $A$ y se denota por $\operatorname{Int}(A)$.
+:::
+
+:::{#exm-punto-interior} 
+$0.9$ es un punto interior del intervalo $(0,1)$ ya que podemos tomar $\varepsilon = 0.01$ tal que el entorno $(0.9-0.01,0.9+0.01) = (0.89, 0.91)\subset (0,1)$.
+
+Sin embargo, $1$ no es un punto interior del intervalo $(0,1)$ ya que por muy pequeño que tomemos $\varepsilon>0$, $1+\varepsilon > 1$ y, por tanto, el entorno $(1-\varepsilon, 1+\varepsilon)$ siempre tendrá valores mayores que 1, de manera que $(1-\varepsilon, 1+\varepsilon)\not \subseteq (0,1)$.
+:::
+
+---
+
+:::{#def-punto-exterior}
+## Punto exterior
+Se dice que $a\in \mathbb{R}$ es un _punto exterior_ de un conjunto $A\subseteq \mathbb{R}$, si existe un entorno de $a$ contenido en el complementario de $A$, es decir, existe $\varepsilon>0$ tal que $(x-\varepsilon, x+\varepsilon) \subseteq \overline A$.
+
+El conjunto de los puntos exteriores de $A$ se llama _exterior_ de $A$ y se denota por $\operatorname{Ext}(A)$.
+:::
+
+:::{#exm-punto-exterior} 
+$1.01$ es un punto exterior del conjunto $(-\infty, 1)$ ya que tomando $\varepsilon=0.001$ el entorno $(1.01-0.001, 1.01+0.001)=(1.009, 1.011)\in \overline{(-\infty, 1)}=[1,\infty)$.
+
+Sin embargo, $1$ no es un punto exterior del intervalo $(-\infty, 1)$, ya que no es un punto interior del intervalo $\overline{(-\infty, 1)}=[1,\infty)$, ya que $1-\varepsilon < 1$ $\forall \varepsilon>0$, y, por tanto, el entorno $(1-\varepsilon, 1+\varepsilon)$ siempre tendrá valores menores que 1, de manera que $(1-\varepsilon, 1+\varepsilon)\not \subseteq [1,\infty)$.
+:::
+
+---
+
+:::{.callout-warning}
+El que un punto no sea punto interior de un conjunto no significa que sea un punto exterior. Por ejemplo, $1$ no es un punto interior del intervalo $(0,1)$, y tampoco de su complementario $\overline{(0,1)}=(-\infty, 0]\cup[1,\infty)$.
+:::
+
+## 
+
+:::{#def-punto-frontera}
+## Punto frontera
+Se dice que $a\in \mathbb{R}$ es un _punto frontera_ de un conjunto $A\subseteq \mathbb{R}$, si cualquier entorno de $a$ contiene puntos de $A$ y de su complementario.
+
+El conjunto de los puntos frontera de $A$ se llama _frontera_ de $A$ y se denota por $\operatorname{Fr}(A)$.
+:::
+
+
+:::{#exm-punto-frontera} 
+El punto $1$ es un punto frontera del intervalo $[1,\infty)$ ya que no es un punto interior de $[1,\infty)$ ni de su complementario $(-\infty,1)$.
+:::
+
+## 
+
+:::{#prp-interior-intervalo-abierto}
+Todos los puntos de un intervalo abierto son puntos interiores suyos, es decir, dado un intervalo abierto $(a,b)\subseteq \mathbb{R}$, se cumple que $\operatorname{Int}((a,b)) = (a,b)$.
+:::
+
+##
+
+:::{#prp-interior-intervalo-cerrado}
+Todos los puntos de un intervalo cerrado, excepto sus extremos, son puntos interiores suyos, es decir, dado un intervalo cerrado $[a,b]\subseteq \mathbb{R}$, se cumple que $\operatorname{Int}([a,b]) = (a,b)$.
+:::
+
+A partir de estas proposiciones, es fácil ver que que para cualquier intervalo abierto $(a,b)$, $\operatorname{Int}((a,b)) = (a,b)$, $\operatorname{Ext}((a,b)) = (-\infty,a)\cup (b,\infty)$ y $\operatorname{Fr}((a,b)) = \{a, b\}$. Y para cualquier intervalo cerrado $[a,b]$, $\operatorname{Int}([a,b]) = (a,b)$, $\operatorname{Ext}([a,b]) = (-\infty,a)\cup (b,\infty)$ y $\operatorname{Fr}([a,b]) = \{a, b\}$.
+
+##
+
+:::{#prp-clasificacion-puntos}
+Dado un conjunto $A\subset \mathbb{R}$, los conjuntos $\operatorname{Int}(A)$, $\operatorname{Ext}(A)$ y $\operatorname{Fr}(A)$ forman una partición de $\mathbb{R}$, es decir, 
+
+a. $\operatorname{Int}(A)$, $\operatorname{Ext}(A)$ y $\operatorname{Fr}(A)$ son disjuntos entre sí.
+b. $\operatorname{Int}(A)\cup \operatorname{Ext}(A)\cup \operatorname{Fr}(A) = \mathbb{R}$.
+:::
+
+##
+
+:::{#def-punto-adherente}
+## Punto adherente
+Se dice que $a\in \mathbb{R}$ es un _punto adherente_ de un conjunto $A\subseteq \mathbb{R}$, si cualquier entorno de $a$ contiene puntos de $A$.
+
+El conjunto de los puntos adherentes de $A$ se llama _adherencia_ de $A$ y se denota por $\operatorname{Adh}(A)$.
+:::
+
+Resulta obvio que cualquier punto interior y frontera de un conjunto es también adherente, y que cualquier punto exterior no es adherente. Resulta evidente también que cualquier punto de un conjunto es un punto adherente, de manera que para cualquier conjunto $A$ se tiene $A\subseteq\operatorname{Adh}(A)$.
+
+##
+
+:::{#def-punto-acumulacion}
+## Punto de acumulacion
+Se dice que $a\in \mathbb{R}$ es un _punto de acumulación_ de un conjunto $A\subseteq \mathbb{R}$, si cualquier entorno reducido de $a$ contiene puntos de $A$.
+
+El conjunto de los puntos de acumulación de $A$ se llama _conjunto derivado_ de $A$ y se denota por $\operatorname{Ac}(A)$.
+:::
+
+:::{.callout-warning}
+Resulta obvio de la definición que cualquier punto de acumulación es también un punto de adherencia, es decir,  $\operatorname{Ac}(A)\subseteq  \operatorname{Adh}(A)$ para cualquier conjunto $A\subset \mathbb{R}$. Sin embargo no todo punto de adherencia es un punto de acumulación.
+:::
+
+---
+
+Es posible que un conjunto tenga puntos de acumulación que pertenezcan al conjunto y otros que no.
+
+:::{#exm-puntos-adherentes-acumulacion}
+Dado el conjunto $A=(0,1) \cup \{2\}$, se tiene que $2$ es un punto de adherencia de $A$, pues para cualquier $\varepsilon>0$ el entorno $(2-\varepsilon,2+\varepsilon)$ contiene al propio $2$ que es un punto de $A$. Sin embargo, $2$ no es un punto de acumulación, porque para $\varepsilon=0.5$, por ejemplo, el entorno reducido $(2-\varepsilon,2+\varepsilon)\setminus\{2\}=(1.5,2)\cup(2,2.5)$ no contiene puntos de $A$.
+
+En cambio el punto $0.5$ es tanto un punto de adherencia como un punto de acumulación de $A$ porque para cualquier $\varepsilon>0$ el entorno reducido $(0.5-\varepsilon,0.5+\varepsilon)\setminus \{0.5\}$ siempre contiene puntos de $A$. De hecho, para cualquier $x\in(a,b)$ y para cualquier $\varepsilon>0$, el intervalo $(x-\varepsilon,x+\varepsilon)\setminus \{x\}$ contiene puntos de $A$, y lo mismo ocurre para $a$ y $b$ al ser puntos frontera, de manera que $\operatorname{Ac}(A)=[0,1]$, mientras que $\operatorname{Adh}(A)=[0,1]\cup\{2\}$.
+:::
+
+##
+
+:::{#def-punto-aislado}
+## Punto aislado
+Se dice que $a\in \mathbb{R}$ es un _punto de aislado_ de un conjunto $A\subseteq \mathbb{R}$, si es un punto adherente de $A$, pero no de acumulación.
+:::
+
+##
+
+:::{#prp-punto-adherente-acumulacion}
+Para cualquier intervalo abierto $(a,b)$ se tiene que $\operatorname{Adh}((a,b))=\operatorname{Ac}((a,b))=[a,b]$.
+:::
+
+##
+
+:::{#prp-adherencia-conjunto-mas-acumulacion}
+Para cualquier conjunto $A\subseteq \mathbb{R}$, se tiene que $\operatorname{Adh}(A)=A\cup \operatorname{Ac}(A)$.
+:::
+
+## Conjuntos abiertos y cerrados
+
+:::{#def-conjunto-abierto}
+## Conjunto abierto
+Se dice que un conjunto $A\subset \mathbb{R}$ es _abierto_ cuando para cada $a\in A$ existe un entorno de $a$ contenido en $A$, es decir, existe $\varepsilon>0$ tal que $(a-\varepsilon, a+\varepsilon)\subset A$.
+:::
+
+:::{.callout-important}
+Obsérvese que un conjunto es abierto si todos sus puntos son interiores.
+:::
+
+---
+
+:::{#exm-intervalo-abierto-conjunto-abierto} 
+Cualquier intervalo abierto $(a,b)$ es un conjunto abierto, ya que según se vio en la @prp-interior-intervalo-abierto $\operatorname{Int}((a,b)) = (a,b)$. Por otro lado, un intervalo cerrado $[a,b]$ no es un conjunto abierto pues cualquier entorno de $a$ o $b$ no está contenido en $[a,b]$.
+:::
+
+Una colección de conjuntos abiertos se llama _topología_ y cualquier propiedad que pueda definirse en términos de conjuntos abiertos se llama _propiedad topológica_.
+
+##
+
+:::{#def-conjunto-cerrado}
+## Conjunto cerrado
+Se dice que un conjunto $A\subset \mathbb{R}$ es _cerrado_ cuando su complementario $\overline A =\mathbb{R}\setminus A$ es abierto.
+:::
+
+:::{#exm-intervalo-cerrado-conjunto-cerrado} 
+Todo intervalo cerrado $[a,b]$ es cerrado, pues su complementario $(-\infty,a)\cup (b,\infty)$ es abierto.
+:::
+
+---
+
+:::{.callout-warning}
+Un subconjunto puede ser abierto y cerrado a la vez, como por ejemplo $\mathbb{R}$ y $\emptyset$. $\mathbb{R}$ es abierto ya que todos sus puntos son interiores, y por tanto $\overline{\mathbb{R}}=\emptyset$ es cerrado. Pero, también $\emptyset$ es abierto, ya que para que un conjunto no sea abierto, al menos uno de sus puntos no debe ser interior, y en consecuencia $\overline{\emptyset}=\mathbb{R}$ es también cerrado.
+
+Un subconjunto también puede no ser abierto ni cerrado, como por ejemplo $(a,b]$, ya que $b$ no es un punto interior de $(a,b]$, y $a$ no es un punto interior de $\overline{(a,b]}=(-\infty,a]\cup (b,\infty)$. Por tanto, no abierto no implica cerrado y no cerrado no implica abierto.
+:::
+
+##
+
+:::{#prp-union-interseccion-conjuntos-abiertos-cerrados}
+Se cumplen las siguientes propiedades:
+
+1. La unión de una colección de conjuntos abiertos es un conjunto abierto.
+1. La intersección de una colección finita de conjuntos abiertos es un conjunto abierto.
+1. La intersección de una colección de conjuntos cerrados es cerrada.
+1. La unión de una colección finita de conjuntos cerrados es un conjunto cerrado.
+:::
+
+--- 
+
+:::{.callout-warning}
+La intersección de una colección infinita de conjuntos abiertos puede no ser un conjunto abierto, como por ejemplo la colección de conjuntos $I_n=(0,1+\frac{1}{n})$, $n\in\mathbb{N}$, ya que $\cap_{n=1}^\infty I_n=(0,1]$.
+
+Y la unión de una colección infinita de conjuntos cerrados puede no ser cerrada, como por ejemplo la colección de conjuntos $J_n=[\frac{1}{n},1]$, $n\in\mathbb{N}$, ya que $\cup_{n=1}^\infty J_n=(0,1]$.
+:::
+
+##
+
+:::{#thm-existencia-maximo-minimo}
+## Existencia del máximo y mínimo
+Cualquier conjunto no-vacío, cerrado y acotado superiormente tiene un máximo, y cualquier conjunto no-vacío, cerrado y acotado inferiormente tiene un mínimo.
+:::
+
+##
+
+:::{#thm-bolzano-weierstrass}
+## Bolzano-Weierstrass
+Todo subconjunto infinito de $\mathbb{R}$ acotado tiene al menos un punto de acumulación.
+:::
+
+##
+
+:::{#thm-conjunto-cerrado-puntos-acumulacion}
+Cualquier subconjunto de $\mathbb{R}$ es cerrado si y sólo si contiene a todos sus puntos de acumulación.
+:::

@@ -301,7 +301,7 @@ a. El valor absoluto del producto de dos números reales es igual que el product
 
 a. $\forall a,b\in\mathbb{R}$, si $b>0$ entonces $|a|\leq b$ si y solo si $-b\leq a\leq b$.
 
-a. $\forall a\in\mathbb{R}$, $|-a|\leq a\leq |a|$.
+a. $\forall a\in\mathbb{R}$, $-|a|\leq a\leq |a|$.
 
 a. Desigualdad triangular: $\forall a,b\in\mathbb{R}$, $|a+b|\leq |a|+|b|$.
 :::
