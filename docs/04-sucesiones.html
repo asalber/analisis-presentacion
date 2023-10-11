@@ -433,9 +433,27 @@
 <section class="slide level3">
 
 <div id="exm-convergencia-sucesion-acotada" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 6 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{1}{2^n}\right)_{n=1}^\infty\)</span> converge a 0. Para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(0&lt;n&lt;2^n\)</span>, de donde se deduce <span class="math inline">\(0&lt;\frac{1}{2^n}&lt;\frac{1}{n}\)</span>, lo que equivale a <span class="math inline">\(|\frac{1}{2^n}-0|&lt;\frac{1}{n}\)</span>. Así pues, aplicando el teorema anterior, se concluye que <span class="math inline">\(\lim_{n\to\infty}\frac{1}{2^n}=0\)</span>.</p>
-<p>Veamos ahora que <span class="math inline">\(\lim_{n\to\infty}n^{1/n}=1\)</span>. Para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>, con <span class="math inline">\(n&gt;1\)</span>, se cumple que <span class="math inline">\(n^{1/n}&gt;1\)</span>, de manera que se puede escribir <span class="math inline">\(n^{1/n} = 1+k_n\)</span>, donde <span class="math inline">\(k_n=n^{1/n}-1\)</span>. Aplicando ahora el teorema del binomio, se tiene que <span class="math inline">\(0&lt;k_n&lt;\sqrt{2/n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Por tanto, <span class="math inline">\(|n^{1/n}-1| = k_n &lt; \sqrt{2/n}=\sqrt{2}\frac{1}{\sqrt{n}}\)</span>, y como <span class="math inline">\(\sqrt{2}&gt;0\)</span> y <span class="math inline">\(\lim_{n\to\infty}\frac{1}{\sqrt{n}}=0\)</span>, por el teorema anterior se tiene que <span class="math inline">\(\lim_{n\to\infty} n^{1/n} = 1\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 6 </strong></span>Veamos que la sucesión <span class="math inline">\(\left(\frac{1}{2^n}\right)_{n=1}^\infty\)</span> converge a 0. Para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span> se cumple que <span class="math inline">\(0&lt;n&lt;2^n\)</span>, de donde se deduce <span class="math inline">\(0&lt;\frac{1}{2^n}&lt;\frac{1}{n}\)</span>, lo que equivale a <span class="math inline">\(|\frac{1}{2^n}-0|&lt;\frac{1}{n}\)</span>. Así pues, aplicando el teorema anterior y tomando <span class="math inline">\(c=1\)</span>, se concluye que <span class="math inline">\(\lim_{n\to\infty}\frac{1}{2^n}=0\)</span>.</p>
 </div>
+</section>
+<section class="slide level3">
+
+<p>Veamos ahora que <span class="math inline">\(\lim_{n\to\infty}n^{1/n}=1\)</span>. Aplicando el teorema del binomio, para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>, con <span class="math inline">\(n&gt;1\)</span>, se tiene que</p>
+<p><span class="math display">\[\begin{align*}
+\left(1+\sqrt{\frac{2}{n}}\right)^n
+&amp;= 1^n + \binom{n}{1}1^{n-1}\sqrt{\frac{2}{n}} + \binom{n}{n}1^{n-2}\left(\sqrt{\frac{2}{n}}\right)^2 + \cdots \\
+&amp; &gt; 1 + n\sqrt{\frac{2}{n}} + \frac{n(n-1)}{2!}\frac{2}{n}
+= 1 + \sqrt{\frac{2n^2}{n}} + n -1 \\
+&amp;= \sqrt{2n} + n
+&gt; n
+\end{align*}\]</span></p>
+<p>Así pues,</p>
+<p><span class="math display">\[
+n^{1/n} &lt; 1+\sqrt{\frac{2}{n}}
+\Leftrightarrow n^{1/n} - 1 &lt; \sqrt{2}{\frac{1}{\sqrt{n}}}
+\Leftrightarrow |n^{1/n} - 1| &lt; \sqrt{2}\frac{1}{\sqrt{n}},
+\]</span></p>
+<p>y como <span class="math inline">\(\sqrt{2}&gt;0\)</span> y <span class="math inline">\(\lim_{n\to\infty}\frac{1}{\sqrt{n}}=0\)</span>, por la proposición anterior teorema anterior se tiene que <span class="math inline">\(\lim_{n\to\infty} n^{1/n} = 1\)</span>.</p>
 </section></section>
 <section>
 <section id="sucesión-acotada" class="title-slide slide level2 center">
@@ -472,7 +490,7 @@
 <li><p><span class="math inline">\((a_n)_{n=1}^\infty\)</span> + <span class="math inline">\((b_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(a+b\)</span>.</p></li>
 <li><p><span class="math inline">\((a_n)_{n=1}^\infty\)</span> - <span class="math inline">\((b_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(a-b\)</span>.</p></li>
 <li><p><span class="math inline">\((a_n)_{n=1}^\infty\)</span> <span class="math inline">\((b_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(ab\)</span>.</p></li>
-<li><p><span class="math inline">\(c(a_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(cx\)</span>.</p></li>
+<li><p><span class="math inline">\(c(a_n)_{n=1}^\infty\)</span> converge a <span class="math inline">\(ca\)</span>.</p></li>
 <li><p>Si <span class="math inline">\(b_n\neq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span> y <span class="math inline">\(b\neq 0\)</span>, <span class="math inline">\(\frac{(a_n)_{n=1}^\infty}{(b_n)_{n=1}^\infty}\)</span> converge a <span class="math inline">\(\frac{a}{b}\)</span>.</p></li>
 </ol>
 </div>

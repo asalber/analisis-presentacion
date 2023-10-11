@@ -123,10 +123,31 @@ Sean $(a_n)_{n=1}^\infty$ y $(b_n)_{n=1}^\infty$ dos sucesiones de números real
 ---
 
 :::{#exm-convergencia-sucesion-acotada}
-Veamos que la sucesión $\left(\frac{1}{2^n}\right)_{n=1}^\infty$ converge a 0. Para cualquier $n\in\mathbb{N}$ se cumple que $0<n<2^n$, de donde se deduce $0<\frac{1}{2^n}<\frac{1}{n}$, lo que equivale a $|\frac{1}{2^n}-0|<\frac{1}{n}$. Así pues, aplicando el teorema anterior, se concluye que $\lim_{n\to\infty}\frac{1}{2^n}=0$.
-
-Veamos ahora que $\lim_{n\to\infty}n^{1/n}=1$. Para cualquier $n\in\mathbb{N}$, con $n>1$, se cumple que $n^{1/n}>1$, de manera que se puede escribir $n^{1/n} = 1+k_n$, donde $k_n=n^{1/n}-1$. Aplicando ahora el teorema del binomio, se tiene que $0<k_n<\sqrt{2/n}$ $\forall n\in\mathbb{N}$. Por tanto, $|n^{1/n}-1| = k_n < \sqrt{2/n}=\sqrt{2}\frac{1}{\sqrt{n}}$, y como $\sqrt{2}>0$ y $\lim_{n\to\infty}\frac{1}{\sqrt{n}}=0$, por el teorema anterior se tiene que $\lim_{n\to\infty} n^{1/n} = 1$.
+Veamos que la sucesión $\left(\frac{1}{2^n}\right)_{n=1}^\infty$ converge a 0. Para cualquier $n\in\mathbb{N}$ se cumple que $0<n<2^n$, de donde se deduce $0<\frac{1}{2^n}<\frac{1}{n}$, lo que equivale a $|\frac{1}{2^n}-0|<\frac{1}{n}$. Así pues, aplicando el teorema anterior y tomando $c=1$, se concluye que $\lim_{n\to\infty}\frac{1}{2^n}=0$.
 :::
+
+---
+
+Veamos ahora que $\lim_{n\to\infty}n^{1/n}=1$. Aplicando el teorema del binomio, para cualquier $n\in\mathbb{N}$, con $n>1$, se tiene que
+
+\begin{align*}
+\left(1+\sqrt{\frac{2}{n}}\right)^n 
+&= 1^n + \binom{n}{1}1^{n-1}\sqrt{\frac{2}{n}} + \binom{n}{n}1^{n-2}\left(\sqrt{\frac{2}{n}}\right)^2 + \cdots \\
+& > 1 + n\sqrt{\frac{2}{n}} + \frac{n(n-1)}{2!}\frac{2}{n}
+= 1 + \sqrt{\frac{2n^2}{n}} + n -1 \\
+&= \sqrt{2n} + n
+> n 
+\end{align*}
+
+Así pues, 
+
+$$
+n^{1/n} < 1+\sqrt{\frac{2}{n}} 
+\Leftrightarrow n^{1/n} - 1 < \sqrt{2}{\frac{1}{\sqrt{n}}} 
+\Leftrightarrow |n^{1/n} - 1| < \sqrt{2}\frac{1}{\sqrt{n}},
+$$
+
+y como $\sqrt{2}>0$ y $\lim_{n\to\infty}\frac{1}{\sqrt{n}}=0$, por la proposición anterior teorema anterior se tiene que $\lim_{n\to\infty} n^{1/n} = 1$.
 
 ## Sucesión acotada 
 
@@ -160,7 +181,7 @@ b. $(a_n)_{n=1}^\infty$ - $(b_n)_{n=1}^\infty$ converge a $a-b$.
 
 c. $(a_n)_{n=1}^\infty$ $(b_n)_{n=1}^\infty$ converge a $ab$.
 
-d. $c(a_n)_{n=1}^\infty$ converge a $cx$.
+d. $c(a_n)_{n=1}^\infty$ converge a $ca$.
 
 e. Si $b_n\neq 0$ $\forall n\in\mathbb{N}$ y $b\neq 0$, $\frac{(a_n)_{n=1}^\infty}{(b_n)_{n=1}^\infty}$ converge a $\frac{a}{b}$.
 :::
