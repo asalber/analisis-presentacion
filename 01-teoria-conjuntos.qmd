@@ -370,7 +370,7 @@ Al conjunto $A$ con la relación de orden total $\preceq$ se le llama _conjunto 
 :::
 
 :::{#exm-relacion-orden-total} 
-La relación de orden de los números naturales $(\mathbb{N},\leq)$ es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto $A$ ($\mathcal{P}(A),\subseteq$) no es un orden parcialmente ordenado, ya que dados dos elementos $a\neq b$ de $A$, se cumple que $\{a\}\subsetneq \{b\}$ y $\{b\}\subsetneq \{a\}$.
+La relación de orden de los números naturales $(\mathbb{N},\leq)$ es un orden totalmente ordenado. Sin embargo, la relación de inclusión en el conjunto potencia de un conjunto $A$ ($\mathcal{P}(A),\subseteq$) no es un orden totalmente ordenado, ya que dados dos elementos $a\neq b$ de $A$, se cumple que $\{a\}\subsetneq \{b\}$ y $\{b\}\subsetneq \{a\}$.
 :::
 
 ## Cotas y extremos
