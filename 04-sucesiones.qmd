@@ -303,7 +303,7 @@ $$
 a=\sqrt{2a}\Rightarrow a^2=2a \Rightarrow a^2-2a=0 \Rightarrow a(a-2) = 0,
 $$
 
-de donde se deduce, resolviendo la ecuación, que $a=0$ o $a=1$. Como $a=0$ es imposible pues $a_n\geq 1$ $\forall n\in\mathbb{N}$, se concluye que $a=2$, y por tanto, $\lim_{n\to\infty}a_n = 2$. 
+de donde se deduce, resolviendo la ecuación, que $a=0$ o $a=2$. Como $a=0$ es imposible pues $a_n\geq 1$ $\forall n\in\mathbb{N}$, se concluye que $a=2$, y por tanto, $\lim_{n\to\infty}a_n = 2$. 
 :::
 
 ###  {.scrollable}
