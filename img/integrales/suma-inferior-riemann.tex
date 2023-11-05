@@ -1,0 +1,19 @@
+\begin{tikzpicture}[scale=1]
+    \tkzInit[xmax=7.5, ymax=9, ystep=2]
+    \tkzDrawY[noticks, color=myblack]
+    \tkzDrawX[color=myblack]
+    \tkzFct[line width=1pt, color = myblue, domain = 1:7]{2*sin(\x-1)+6}
+    \tkzDrawRiemannSumInf[fill=myblue!40, opacity=.5, interval=1:7, number=6]
+    \tkzDefPointByFct(7) \tkzGetPoint{A} 
+    \tkzLabelPoint[above right, color=myblue](A){$f(x)$}
+    \foreach\v in {0,1,2}{
+        \tkzText[below, color=myblack](\v+1,-0.1){$x_\v$}
+    }
+    \tkzText[below, color=myblack](4.5,-0.1){$\cdots$}
+    \tkzText[below, color=myblack](6,-0.1){$x_{n-1}$}
+    \tkzText[below, color=myblack](7,-0.1){$x_n$}
+    \tkzText[below, color=myblack](1,-0.6){\req}
+    \tkzText[below, color=myblack](1,-1.2){$a$}
+    \tkzText[below, color=myblack](7,-0.6){\req}
+    \tkzText[below, color=myblack](7,-1.2){$b$}
+\end{tikzpicture}

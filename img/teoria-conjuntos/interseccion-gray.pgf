@@ -1,0 +1,5 @@
+﻿\usepackage(venndiagram)
+
+\begin{venndiagram2sets}
+\fillNotAorB
+\end{venndiagram2sets}

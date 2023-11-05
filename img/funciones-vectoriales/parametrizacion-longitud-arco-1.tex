@@ -1,0 +1,20 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+    \begin{axis}[
+        2dfun, 
+        height=5cm,
+        xmin=-0.5, xmax=7.5,
+        ymin=-2, ymax=6.5,
+        axis equal=true,  
+        clip=false,
+        %xtick = {-1, 1},
+        %ytick = {-1, 1},
+        color = myblack,
+        ]
+        \addplot+[domain=0:2, myblue, samples=2, smooth](3*x+1,4*x-2);
+        \node [myblue] at (2.5,4) {$\mathbf{f}(t) = (3t+1,4t-2)$};
+        \fill (1,-2) circle (1.2pt) node [anchor=west] {$\mathbf{f}(0)$};
+        \fill (4,2) circle (1.2pt) node [anchor=west] {$\mathbf{f}(1)$};
+        \fill (7,6) circle (1.2pt) node [anchor=west] {$\mathbf{f}(2)$};
+    \end{axis};
+    \end{tikzpicture}

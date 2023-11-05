@@ -1,0 +1,63 @@
+% Thanks to http://tex.stackexchange.com/a/30782/5645 for this
+% example!
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{ amssymb}
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+%\usepgfplotslibrary{polar}
+\usepackage{tkz-fct}
+\usetikzlibrary{angles, quotes}
+\usetikzlibrary{arrows.meta, arrows}
+\usetikzlibrary{external}
+\tikzexternalize[prefix={external/}]
+
+\tikzset{
+    export as png/.style={
+        external/system call/.add={}{
+            && convert -density #1 -transparent white "\image.pdf" "\image.png"
+        },
+    },
+    export as png/.default={200},
+    % Arrow tips
+    >=stealth,
+}
+
+% pgfplots settings
+\input{colors}
+\input{pgfplots}
+
+\DeclareSymbolFont{symbolsb}{OMS}{cmsy}{m}{n}
+\SetSymbolFont{symbolsb}{bold}{OMS}{cmsy}{b}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{symbolsb}
+
+\def\req{\protect\rotatebox{90}{$\scriptstyle=$}}
+
+\begin{document}
+
+\tikzset{export as png}
+
+\tikzsetnextfilename{entorno-punto-plano}
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+    \begin{axis}[
+        height=4cm,
+        gen2dfun, 
+        xmin=-0.1, xmax=2,
+        ymin=-0.1, ymax=2,
+        axis equal=true,
+        ticks=none,
+        clip=false,
+        color = myblack,
+        ]
+        \addplot+[domain=0:2*pi, samples=100, smooth, myblue] ({1+0.5*cos(deg(x))},{1+0.5*sin(deg(x))});
+        \fill[myblue!50] (1,1) circle (0.935cm);
+        \fill[myred] (1,1) circle (1.2pt) node[anchor=north, myred] {$(a_x,a_y)$};
+        \draw[<->, myblue] (1,1) -- (1.35,1.35) node[anchor=south east, midway, myblue] {$\varepsilon$};
+        \node at (2,2) {$\mathbb{R}^2$};
+    \end{axis};
+    \end{tikzpicture}
+   
+
+\end{document}

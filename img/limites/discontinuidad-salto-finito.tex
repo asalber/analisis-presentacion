@@ -1,0 +1,24 @@
+\begin{tikzpicture}[x=5cm,y=5cm]
+\pgfplotsset{grid style={dashed,mygray, line width=0.1pt}}
+\begin{axis}[
+grid=major,
+domain=-3:3,
+%restrict y to domain=-5:5,
+xmin=-3, xmax=3,
+ymin=-1, ymax=3,
+samples=100,
+x=1.1cm, y=1.1cm,
+axis y line=center,
+axis x line=middle,
+no markers,
+color=myblack,
+legend style={fill=none, color=myblack, at={(0.5,1.04)},anchor=south, legend cell align=left}
+]
+\addplot+[domain=-3:0, mark=none, color=myblue, line width=1pt] {2/(1+exp(1/x))};
+\addplot+[domain=0.001:3, mark=none, color=myblue, line width=1pt] {2/(1+exp(1/x)};
+\legend{$f(x)=\frac{2}{1+e^{1/x}}$};
+\coordinate (A) at (axis cs: {0}, {0});
+\coordinate (B) at (axis cs: {0}, {2});
+\draw [myred, decorate, decoration={ brace,amplitude=10pt,raise=1pt}] (B)--(A) node [midway, anchor=west, outer sep=10pt]{Salto};
+\end{axis}
+\end{tikzpicture}

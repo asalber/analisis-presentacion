@@ -1,0 +1,21 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+    \begin{axis}[
+      height=6cm,
+      3dfun,
+      xmin=-4, xmax=4,
+      ymin=-4, ymax=4,
+      zmin=-2, zmax=2,
+      %axis equal=true,
+      clip=false,
+      color = myblack,
+      %view/h=120,
+      colormap/viridis,
+      %mesh/interior colormap={blueblack}{color=(myblue) color=(blue)},
+    ]
+      \addplot3+[surf, shader=interp, domain=-4:4, samples=80, opacity=0.8]  {sin(deg(x^2 + y^2))/sqrt(x^2 + y^2)};
+      \node at (4, 4, 3) {$\mathbb{R}^3$};
+      \node[myblue] at (0, 0, -2.5) {$f(x,y) = \frac{\operatorname{sen}(x^2+y^2)}{\sqrt{x^2+y^2}}$};
+    \end{axis}
+  \end{tikzpicture}
+     

@@ -1,0 +1,46 @@
+\begin{tikzpicture}[scale=1, >=stealth]
+    \tikzset{cyl/.style = {thick,color=red!60}}
+    \tikzset{ellip/.style = {myblue!60, shading=axis, top color=myblue!60, right color=myblue!40, thick}}
+  
+    % Parabola
+    \draw[cyl, fill=myred!30] (0,2.5) circle [y radius =.2, x radius =1.643168];
+    \shadedraw[cyl, shading=axis, top color=myred!15, right color=myred!50] (0,2.5) circle [y radius =.16, x radius =1.51575];
+    \fill[myblue, opacity = 0.5] (0,4) -- plot[domain=-2:-1] (\x,{\x*\x}) -- (0,1);
+    \fill[myblue, opacity = 0.5] (0,1) -- plot[domain=1:2] (\x,{\x*\x}) -- (0,4);
+    %\draw[-, myblue, thick, domain=-2:-1, samples=100] plot (\x,{\x*\x});
+    \draw[-, myblue, thick, domain=1:2, samples=100] plot (\x,{\x*\x}) node[right] {$y=f(x)$};
+  
+  
+    % Ellipses & Cyllinder
+    \shadedraw[ellip] (0,4) circle [y radius =.2, x radius =2];
+    \shadedraw[ellip] (0,1) circle [y radius =.2, x radius =1];
+    \shadedraw[cyl, shading=axis, top color=myred!50, right color=myred!15] (0,0) circle [y radius =.2, x radius =1.643168];
+    \shadedraw[cyl, draw=none, shading=axis, top color=myred!50, right color=myred!15, opacity=0.5] (-1.643168,0) -- ( -1.643168,2.5) arc [start angle=180, end angle=360, x radius=1.643168cm, y radius =0.21cm] -- (1.643168, 0);
+    \shadedraw[cyl, shading=axis, top color=myred!15, right color=myred!50, opacity=0.5] (0,2.5) circle [y radius =.16, x radius =1.51575];
+    \draw[cyl, opacity=0.7, dashed] (0,0) circle [y radius =.16, x radius = 1.51575];
+    \draw[cyl, opacity=0.7, dashed] (0,0) circle [y radius =.2, x radius =1.643168];
+    \draw[myred!50] (-1.643168,0) -- (-1.643168,2.5);
+    \draw[myred!50] (1.643168,0) -- (1.643168,2.5);
+    \draw[myred!50, dashed] (1.51575,0) -- (1.51575,2.5);
+    \draw[cyl] ( -1.643168,2.5) arc [start angle=180, end angle=360, x radius=1.643168cm, y radius =0.21cm] -- (1.643168, 0);
+    
+    % Dimensions
+    \draw[myblack] (1,0.1) -- (1,-0.1);
+    \node at (1,-0.2) [below, myblack] {$a$};
+    \draw[myblack, dashed] (1,0) -- (1,1);
+    \draw[myblack] (2,0.1) -- (2,-0.1) node[below, myblack] {$b$};
+    \draw[myblack, dashed] (2,0) -- (2,4);
+    \draw[myblack] (1.51575,-0.1) -- (1.51575,0.1);
+    \draw[myblack] (1.643168,-0.1) -- (1.643168,0.1);
+    \node at (1.581139,-0.1) [below, myblack] {$\Delta x$};
+    \draw[<->, myblack] (1.75,0) -- (1.75,2.5);
+    \node at (1.75, 1.25) [right, myblack] {$f(x)$};
+  
+    % Axes
+    \draw[thick, myblack] (0,-0.5) -- (0,2.1);
+    \draw[thick, dashed, myblack] (0,2.1) -- (0,2.535);
+    \draw[->, thick, myblack] (0, 2.535) -- (0,5) node[left] {$y$};
+    \draw[->, thick, myblack] (-3,0) -- (3,0) node[below] {$x$};
+    \draw[->, thick, myblack] (-1, -0.4) -- (2.5,1) node[below] {$z$};
+  
+\end{tikzpicture}

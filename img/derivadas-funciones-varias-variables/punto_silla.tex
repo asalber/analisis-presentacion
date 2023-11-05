@@ -1,0 +1,10 @@
+\psset{unit=0.45}
+\psset{viewpoint=50 50 30 rtp2xyz,Decran=50}
+\begin{pspicture*}(-7,-4.3)(7,4.3)
+%\psSolid[object=grille,base=-4 4 -4 4,action=draw]
+\psSurface[fillcolor=blue!50,ngrid=.25 .25,incolor=yellow,algebraic,linewidth=0.25\pslinewidth,linecolor=gray](-2,-2)(2,2){x^2-y^2}
+\axesIIID(1,0,0)(4,4,4)
+\psPoint(0,0,0){p}
+\psdots[linecolor=red](p)
+\uput[r](p){$(0,0,0)$}
+\end{pspicture*}

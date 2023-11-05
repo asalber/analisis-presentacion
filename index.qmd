@@ -14,10 +14,11 @@ Presentaciones del [manual de Análisis Matemático de Variable Real](https://ap
 
 1. [El conjunto de los números reales](02-numeros-reales.html).
 
-2. [Topología de la recta real](03-topologia-reales.html).
+1. [Topología de la recta real](03-topologia-reales.html).
 
-3. [Sucesiones de números reales](04-sucesiones.html).
+1. [Sucesiones de números reales](04-sucesiones.html).
 
+1. [Límites de funciones](06-limites.html).
 
 ## Licencia
 

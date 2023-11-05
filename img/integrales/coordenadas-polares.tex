@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale=1]
+    \begin{axis}[
+        myblack,
+        width=5cm, height = 5cm,
+        axis lines=center,
+        xtick={1},
+        xticklabels={$x$},
+        ytick={1},
+        yticklabels={$y$},
+        xlabel={$x$},
+        ylabel={$y$},
+        xlabel style={below right},
+        ylabel style={above left},
+        xmin=0,
+        xmax=1.5,
+        ymin=0,
+        ymax=1.5]
+        \fill[myred] (axis cs: 1,1) circle(2pt);
+        \draw[myblue, -Stealth](axis cs: 0,0) -- (axis cs: 1,1) node [midway, label= left:$r$] {};
+        \draw[mygray, dashed] (axis cs: 1,0) -- (axis cs: 1,1) -- (axis cs: 0,1);
+        \draw[myblue] (0:0.2) arc (0:45:0.2);
+        \node[myblue] at (axis cs:0.26,0.1) {$\theta$};
+        \node[] at (axis cs:0.6,1.44) {Coordenadas};
+        \node[] at (axis cs:0.6,1.27) {cartesianas $(x,y)$};
+        \node[] at (axis cs:0.6,1.1) {polares $(r,\theta)$};
+    \end{axis}
+\end{tikzpicture}

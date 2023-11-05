@@ -1,0 +1,9 @@
+\begin{tikzpicture}[scale=1,every node/.style={transform shape}]
+\node[mygray] at (-1.5,0) {$x$};
+\node[mygray] at (1.5,0) {$y$};
+\node[myblue] at (0,0.7) {$f$};
+\node[myblue] at (0,-0.7) {$f^{-1}$};
+% draw the arrows
+\draw[myblue, -stealth] (-1.4,0.1) to [out=20,in=160] (1.4,0.1);
+\draw[myblue, -stealth] (1.4,-0.1) to [out=-160,in=-20] (-1.4,-0.1);
+\end{tikzpicture}

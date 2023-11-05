@@ -1,0 +1,22 @@
+\begin{tikzpicture}[x=5cm,y=5cm]
+\pgfplotsset{grid style={dashed,mygray, line width=0.1pt}}
+\begin{axis}[
+grid=major,
+domain=-3:3,
+%restrict y to domain=-5:5,
+xmin=-3, xmax=3,
+ymin=-3, ymax=3,
+samples=100,
+x=1.1cm, y=1.1cm,
+axis y line=center,
+axis x line=middle,
+no markers,
+color=myblack,
+legend style={fill=none, color=myblack, at={(0.5,1.03)},anchor=south, legend columns=3, legend cell align=left}
+]
+\addplot+[mark=none, color=myblue, line width=1pt] {sqrt(x)};
+\addplot+[mark=none, color=myred, line width=1pt] {x/abs(x)*abs(x)^(1/3)};
+\addplot+[mark=none, color=mygreen, line width=1pt] {x/abs(x)*abs(x)^(5/3)};
+\legend{$f(x)=\sqrt(x)$, $g(x)=\sqrt[3]{x}$, $h(x)=x^{5/3}$}
+\end{axis}
+\end{tikzpicture}

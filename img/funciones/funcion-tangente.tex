@@ -1,0 +1,26 @@
+\begin{tikzpicture}[x=5cm,y=5cm]
+\pgfplotsset{grid style={dashed,mygray, line width=0.1pt}}
+\begin{axis}[
+grid=major,
+domain=-4:4,
+restrict y to domain=-5:5,
+xmin=-4, xmax=4,
+ymin=-2.5, ymax=2.5,
+samples=100,
+x=1.1cm, y=1.1cm,
+axis y line=center,
+axis x line=middle,
+no markers,
+color=myblack,
+xtick = {-pi, -pi/2, 0, pi/2, pi},
+xticklabels = {$-\pi$, $-\pi/2$, $0$, $\pi/2$, $\pi$},
+legend style={fill=none, color=myblack, at={(0.5,1.03)},anchor=south, legend columns=3, legend cell align=left}
+]
+\addplot+[mark=none, color=myblue, line width=1pt] {tan(deg(x))};
+\legend{$f(x)=\mbox{tg}\,(x)$}
+\coordinate (A) at (axis cs: {-pi}, {0});
+\coordinate (B) at (axis cs: {pi}, {0});
+\addplot [myred, mark = none, nodes near coords=Periodo $2\pi$, every node near coord] coordinates {(0,0)};
+\draw [myred, latex-latex, thick] (A) -- (B);
+\end{axis}
+\end{tikzpicture}

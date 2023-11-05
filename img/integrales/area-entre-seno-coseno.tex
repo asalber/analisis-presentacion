@@ -1,0 +1,14 @@
+\begin{tikzpicture}[scale=1]
+    \tkzInit[xmax=3.5, ymin=-1.5, ymax=1.5, ystep=1]
+    \tkzAxeXY
+    \tkzDrawX[noticks, color=myblack]
+    \tkzFct[line width=1pt, color = myblue, domain = 0:pi]{sin(x)}
+    \tkzDefPointByFct(pi) \tkzGetPoint{A} 
+    \tkzLabelPoint[above right, color=myblue](A){$f(x)=\operatorname{sen}(x)$}
+    \tkzFct[line width=1pt, color = myred, domain = 0:pi]{cos(x)}
+    \tkzDefPointByFct(pi) \tkzGetPoint{B} 
+    \tkzLabelPoint[below right, color=myred](B){$g(x)=\cos(x)$}
+    \tkzDrawAreafg[between = b and a, color=myred!40, domain=0:0.7854]
+    \tkzDrawAreafg[color=myblue!40, domain=pi/4:pi]
+    \tkzText[color=myblack](2,-2){$\displaystyle \int_a^b |f(x)-g(x)|\,dx = 2\sqrt{2}$}
+\end{tikzpicture}

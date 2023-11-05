@@ -1,0 +1,21 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+    \begin{axis}[
+        height=5cm,
+        2dfun, 
+        xmin=-0.1, xmax=3.5,
+        ymin=-0.1, ymax=3.5,
+        axis equal=true,  
+        clip=false,
+        color = myblack,
+        ]
+        \addplot+[domain=0.3:1.8, samples=100, smooth, name path=F] ({x^2}, {2*x});
+        \coordinate (P) at (1,2);
+        \fill (P) circle (1.2pt) node[anchor=south east, myblue] {$P = \mathbf{f}(1)$};
+        \draw[->, myred, thick] (P) -- (2, 3) node[anchor=east] {$a_T$};
+        \draw[->, mygreen, thick] (P) -- (2, 1) node[anchor=east] {$a_N$};
+        \draw[mygray, dashed] (2, 3) -- (3, 2) -- (2, 1);
+        \draw[->, mypurple, thick] (P) -- (3, 2) node[anchor=west] {$\mathbf{a}(1)$};
+        \node at (3.5,3) {$\mathbb{R}^2$};
+    \end{axis};
+    \end{tikzpicture}

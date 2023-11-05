@@ -1,0 +1,10 @@
+\psset{unit=0.7}
+\psset{viewpoint=50 -40 30 rtp2xyz,Decran=60}
+\begin{pspicture*}(-7,-2)(7,5.5)
+\psSurface[fillcolor=red!50,ngrid=.25 .25,incolor=yellow,algebraic,linewidth=0.25\pslinewidth,linecolor=gray](-1.5,-1.5)(2,2){2*x+2*y-2}
+\psSurface[fillcolor=blue!50,ngrid=.25 .25,incolor=yellow,algebraic,linewidth=0.25\pslinewidth,linecolor=gray](-1.5,-1.5)(1.5,1.5){x^2+y^2}
+\axesIIID(0,0,2)(2,2,5)
+\psPoint(1,1,2){p}
+\psdots[linecolor=red](p)
+\uput[r](p){$(1,1,2)$}
+\end{pspicture*}

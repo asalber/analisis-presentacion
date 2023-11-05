@@ -1,0 +1,22 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+    \begin{axis}[
+        2dfun, 
+        height=5cm,
+        xmin=-1.5, xmax=1.5,
+        ymin=-2, ymax=1.9,
+        axis equal=true,  
+        clip=false,
+        xtick = {-1, 1},
+        ytick = {-1, 1},
+        color = myblack,
+        ]
+        \addplot+[domain=0:2*pi, myblue, samples=200, smooth]({cos(deg(x))},{sin(deg(x))});
+        \node [myblue] at (0,-1.5) {$\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))$};
+        \fill (1,0) circle (1.2pt) node [anchor=west] {$\mathbf{f}(0)$};
+        \fill (0.7071068,0.7071068) circle (1.2pt) node [anchor=south west] {$\mathbf{f}(\pi/4)$};
+        \fill (0,1) circle (1.2pt) node [anchor=south] {$\mathbf{f}(\pi/2)$};
+        \fill (-0.7071068,0.7071068) circle (1.2pt) node [anchor=south east] {$\mathbf{f}(3\pi/4)$};
+        \fill (-1,0) circle (1.2pt) node [anchor=east] {$\mathbf{f}(\pi)$};
+    \end{axis};
+    \end{tikzpicture}

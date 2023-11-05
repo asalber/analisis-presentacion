@@ -1,0 +1,39 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+    \begin{axis}[
+    view={120}{20},
+    height=6cm,
+    gen3dfun,
+    xmin=-2, xmax=2,
+    ymin=-1.5, ymax=2,
+    zmin=-0.2, zmax=4,
+    axis x line=middle,
+    axis y line=middle,
+    axis z line=middle,
+    %axis equal=true,
+    ticks = none,
+    clip=false,
+    color = myblack,
+    ]
+    \coordinate (O) at (0,0,0);
+    \addplot3+[domain=1:4, samples=100, samples y=0, smooth] ({2*cos(deg(x))}, {2*sin(deg(x))}, {x/1.5});
+    \node[anchor=east, myblue] at (-1.3073,-1.5136,2.6667) {$\mathbf{f}(t)$};
+    \coordinate (P1) at (0.1415, 1.995, 1);
+    \coordinate (P2) at (-0.8323, 1.8186, 1.3333);
+    \coordinate (P3) at (-1.6023,1.1969,1.6667);
+    \coordinate (P4) at (-1.98, 0.2822, 2);
+    \coordinate (P5) at (-1.8729,-0.7016,2.3333);
+    \fill (P1) circle (1pt) node[right, myblack] {$\mathbf{f}(a)$};
+    \fill (P2) circle (1pt);
+    \fill (P3) circle (1pt);
+    \fill (P4) circle (1pt);
+    \fill (P5) circle (1pt) node[above, myblack] {$\mathbf{f}(b)$};
+    \draw[->, mygreen, thick] (O) -- (P3) node[midway, anchor=north west] {$\mathbf{f}(t_{i-1})$};
+    \draw[->, mygreen, thick] (O) -- (P4) node[midway, anchor=west] {$\mathbf{f}(t_i)$};
+    \draw[myred, thick] (P1) -- (P2);
+    \draw[myred, thick] (P2) -- (P3);
+    \draw[->, myred, thick] (P3) -- (P4) node[midway, anchor=south west] {$\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})$};
+    \draw[myred, thick] (P4) -- (P5);
+    \node at (-1,2.5,4) {$\mathbb{R}^3$};
+    \end{axis}
+  \end{tikzpicture}

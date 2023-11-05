@@ -1,0 +1,25 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}[trim axis left, trim axis right]
+    \begin{axis}[
+      height=5cm,
+      gen2dfun, 
+      xmin=0, xmax=3.2,
+      ymin=0, ymax=2.5,
+      ticks = none,
+      %axis equal=true,
+      clip=false,
+      color = myblack,
+      ]
+      \coordinate (O) at (0,0);
+      \coordinate (A) at (3,1);
+      \coordinate (B) at (1,2);
+      \coordinate (C) at ($(A)+(B)$);
+      \coordinate (D) at (1.5, 0.5);
+      \draw[name path = u, ->, myblue, thick] (O) -- (A) node[right] {$\mathbf{u}$} ;
+      \draw[name path = v, ->, myblue, thick] (O) -- (B) node[right] {$\mathbf{v}$} ;
+      \draw[dashed] (B) -- (D);
+      \draw (A) -- (O) -- (B) pic ["$\alpha$", draw, ->] {angle = A--O--B};
+      \draw[myred, thick] (O) -- (D) pic [draw, myblack, angle radius=2mm] {right angle = B--D--O};
+      \draw [decorate, decoration={brace, amplitude=5pt, mirror}, xshift=-2pt, yshift=-2pt, mygray] (O) -- (D) node [midway, below, sloped, xshift=-2pt, yshift=-2pt, myred] {$|\mathbf{v}|\cos(\alpha)$};
+    \end{axis}
+  \end{tikzpicture}

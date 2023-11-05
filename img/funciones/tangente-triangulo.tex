@@ -1,0 +1,10 @@
+\begin{tikzpicture}[x=1cm,y=1cm,
+every node/.style={myblue}]
+\coordinate [label={below left:$A$}] (A) at (0, 0);
+\coordinate [label={above right:$C$}] (C) at (3, 2);
+\coordinate [label={below right:$B$}] (B) at (3, 0);
+\draw [myblue, thick] (A) -- (C) -- (B) -- (A);
+\draw pic[draw, myred, angle radius=1cm,"$\color{myred}\alpha$"]{angle=B--A--C};
+\draw pic[myblue, draw] {right angle= A--B--C};
+\node[anchor=west] at (0,2) {$\displaystyle\operatorname{tg}(\alpha)=\frac{BC}{AB}$};
+\end{tikzpicture}

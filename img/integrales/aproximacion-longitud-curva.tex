@@ -1,0 +1,56 @@
+\begin{tikzpicture}
+    [
+      declare function={
+        f(\t) = 0.5*sin(deg(2*\t-1.5))+1;
+      }
+    ]
+    \begin{axis}[
+    %grid=major,
+    domain=1:4,
+    %restrict y to domain=-5:5,
+    xmin=-0.1, xmax=5,
+    ymin=-0.05, ymax=2,
+    samples=100,
+    xlabel={$x$},
+    ylabel={$y$},
+    xlabel style={below right},
+    ylabel style={above left},
+    axis y line=center,
+    axis x line=center,
+    no markers,
+    color=myblack,
+    xtick = {1, 1.5, 2, 2.5, 3, 3.5, 4},
+    xticklabels = {$x_0=a$, $x_1$, $\cdots$, $x_{i-1}$, $x_i$, $\cdots$, $x_n=b$},
+    ytick = {3},
+    ]
+    \addplot[myblue, thick]{f(x)};
+    \coordinate (A1) at (axis cs: {1}, {f(1)});
+    \coordinate (A2) at (axis cs: {1.5}, {f(1.5)});
+    \coordinate (A3) at (axis cs: {2}, {f(2)});
+    \coordinate (A4) at (axis cs: {2.5}, {f(2.5)});
+    \coordinate (A5) at (axis cs: {3}, {f(3)});
+    \coordinate (A6) at (axis cs: {3.5}, {f(3.5)});
+    \coordinate (A7) at (axis cs: {4}, {f(4)});
+    \draw[color=myred, thick] (A1) -- (A2) -- (A3) -- (A4) -- (A5) -- (A6) -- (A7);
+    \draw[color = mygray, dashed] (axis cs: {1}, {0}) -- (A1);
+    \draw[color = mygray, dashed] (axis cs: {1.5}, {0}) -- (A2);
+    \draw[color = mygray, dashed] (axis cs: {2}, {0}) -- (A3);
+    \draw[color = mygray, dashed] (axis cs: {2.5}, {0}) -- (A4);
+    \draw[color = mygray, dashed] (axis cs: {3}, {0}) -- (A5);
+    \draw[color = mygray, dashed] (axis cs: {3.5}, {0}) -- (A6);
+    \draw[color = mygray, dashed] (axis cs: {4}, {0}) -- (A7);
+    \fill[myred] (A1) circle[radius=2pt];
+    \fill[myred] (A2) circle[radius=2pt];
+    \fill[myred] (A3) circle[radius=2pt];
+    \fill[myred] (A4) circle[radius=2pt];
+    \fill[myred] (A5) circle[radius=2pt];
+    \fill[myred] (A6) circle[radius=2pt];
+    \fill[myred] (A7) circle[radius=2pt];
+    \node [anchor = south east, myred] at (A1) {$A_0$};
+    \node [anchor = south, myred] at (A2) {$A_1$};
+    \node [anchor = south west, myred] at (A4) {$A_{i-1}$};
+    \node [anchor = south, myred] at (A5) {$A_i$};
+    \node [anchor = south, myred] at (A7) {$A_n$};
+    \node [anchor = west, myblue] at (axis cs: {4.3}, {f(4.2)}) {$f(x)$};
+    \end{axis}
+\end{tikzpicture}

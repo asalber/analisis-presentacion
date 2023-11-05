@@ -1,0 +1,42 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[
+    height=6cm,
+    gen3dfun,
+    xmin=-2, xmax=2,
+    ymin=-2, ymax=2,
+    zmin=-0.2, zmax=4,
+    axis x line=middle,
+    axis y line=middle,
+    axis z line=middle,
+    %axis on top,
+    xtick={1},
+    xticklabels={$x_0$},
+    ytick={1},
+    yticklabels={$y_0$},
+    ztick={2},
+    zticklabels={$z_0$},
+    %axis equal=true,
+    every axis x label/.style={at={(xticklabel* cs:1.1)}},
+    every axis y label/.style={at={(yticklabel* cs:1.1)}},
+    every axis z label/.style={at={(zticklabel* cs:1.1)}},
+    xticklabel shift= -15pt,
+    yticklabel shift= -15pt,
+    zticklabel shift= -2pt,
+    clip=false,
+    color = myblack,
+    view/h=120,
+    colormap/viridis,
+    %mesh/interior colormap={blueblack}{color=(myblue) color=(blue)},
+  ]
+    \addplot3+[surf, shader=interp, domain=-1.5:1.5, opacity=0.6]  {x^2 + y^2};
+    \coordinate (P) at (1, 1, 2);
+    \draw [-, myblack, dashed] (P) -- (0, 0, 2);
+    \draw [-, myblack, dashed] (P) -- (1, 1, 0);
+    \draw [-, myblack, dashed] (1, 1, 0) -- (1, 0, 0);
+    \draw [-, myblack, dashed] (1, 1, 0) -- (0, 1, 0);
+    \fill[myred] (P) circle (1.2pt) node[anchor=west, myred, inner sep=0.1cm] {$(x_0, y_0, f(x_0,y_0))$};
+    \node at (-2, 1.5, 5) {$\mathbb{R}^3$};
+  \end{axis}
+\end{tikzpicture}
+   

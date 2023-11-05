@@ -1,0 +1,22 @@
+\begin{tikzpicture}[x=5cm,y=5cm]
+\pgfplotsset{grid style={dashed,mygray, line width=0.1pt}}
+\begin{axis}[
+grid=major,
+domain=-3:3,
+%restrict y to domain=-5:5,
+xmin=-3, xmax=3,
+ymin=-1, ymax=3,
+samples=100,
+x=1.1cm, y=1.1cm,
+axis y line=center,
+axis x line=middle,
+no markers,
+color=myblack,
+legend style={fill=none, color=myblack, at={(0.5,1.03)},anchor=south, legend columns=3, legend cell align=left}
+]
+\addplot+[mark=none, color=myblue, line width=1pt] {exp(x)};
+\addplot+[mark=none, color=myred, line width=1pt] {2^x};
+\addplot+[mark=none, color=mygreen, line width=1pt] {0.5^x};
+\legend{$f(x)=e^x$, $g(x)=2^x$, $h(x)=0.5^x$}
+\end{axis}
+\end{tikzpicture}

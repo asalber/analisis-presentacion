@@ -1,0 +1,18 @@
+\begin{tikzpicture}[scale=1]
+    \tkzInit[xmax=7.5, ymax=9, ystep=2]
+    \tkzDrawY[noticks, color=myblack]
+    \tkzDrawX[noticks, color=myblack]
+    \tkzFct[line width=1pt, color = myblue, domain = 1:7]{2*sin(\x-1)+6}
+    \tkzDefPointByFct(7) \tkzGetPoint{A} 
+    \tkzLabelPoint[above right, color=myblue](A){$f(x)$}
+    \tkzDrawArea[color=myblue!40, domain=1:4]
+    \tkzDrawArea[color=myred!40, domain=4:7]
+    \tkzText[above, color=myblack](2.5,2){$\displaystyle\int_a^c f(x)\,dx$}
+    \tkzText[above, color=myblack](5.5,2){$\displaystyle\int_c^b f(x)\,dx$}
+    \tkzText[color=myblack](1,0){\tiny $|$}
+    \tkzText[below, color=myblack](1,-0.1){$a$}
+    \tkzText[color=myblack](4,0){\tiny $|$}
+    \tkzText[below, color=myblack](4,-0.1){$c$}
+    \tkzText[color=myblack](7,0){\tiny $|$}
+    \tkzText[below, color=myblack](7,-0.1){$b$}
+\end{tikzpicture}
