@@ -16,7 +16,6 @@ slide-level: 3
 
 ## El concepto de límite
 
-
 El concepto de límite está ligado al de tendencia.
 
 Dado un conjunto $A\subseteq \mathbb{R}$, se dice que $x\in A$ *tiende* a un número $a\in\mathbb{R}$, y lo escribimos $x\to a$, si se pueden tomar valores de $x$ tan próximos a $a$ como se quiera, pero sin llegar a valer $a$.

@@ -20,6 +20,8 @@ Presentaciones del [manual de Análisis Matemático de Variable Real](https://ap
 
 1. [Límites de funciones](06-limites.html).
 
+1. [Derivadas](07-derivadas.html).
+
 ## Licencia
 
 Esta obra está bajo una licencia Reconocimiento – No comercial – Compartir bajo la misma licencia 3.0 España de Creative Commons. Para ver una copia de esta licencia, visite [https://creativecommons.org/licenses/by-nc-sa/3.0/es/](https://creativecommons.org/licenses/by-nc-sa/3.0/es/).
