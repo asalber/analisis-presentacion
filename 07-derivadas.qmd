@@ -128,6 +128,7 @@ La tasa de variación instantánea de $f$ en el punto $a$ es la pendiente de la 
 ## Diferenciabilidad
 
 :::{#def-funcion-diferenciable-derivada}
+## Función derivable
 Dado un intervalo $I\subseteq\mathbb{R}$, una función $f:I\to\mathbb{R}$ y un punto $a\in I$, se dice que $f$ es _diferenciable_ o _derivable_ en $a$, si existe el límite
 
 $$
@@ -151,6 +152,7 @@ que es otra definición equivalente de la derivada de $f$ en $a$.
 ---
 
 :::{#def-funcion-derivada}
+## Función derivada
 Dado un intervalo $I\subseteq\mathbb{R}$ y una función $f:I\to\mathbb{R}$, se define la _función derivada_ de $f$, y se denota $f'$, a la función cuyo dominio es el conjunto de los puntos de $I$ donde $f$ es diferenciable y el valor de $f'$ es el valor de la derivada en cada uno de esos puntos.
 :::
 

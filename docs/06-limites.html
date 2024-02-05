@@ -10,7 +10,7 @@
 <link href="06-limites_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="06-limites_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="06-limites_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Límites de funciones</title>
@@ -160,7 +160,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -369,7 +370,7 @@
 <section class="slide level3">
 
 <div id="exm-limites-aproximados" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1 </strong></span>Consideremos la función <span class="math inline">\(f(x)=x^2\)</span> y veamos que pasa cuando <span class="math inline">\(x\to 2\)</span>:</p>
+<p><span class="theorem-title"><strong>Ejemplo 1</strong></span> Consideremos la función <span class="math inline">\(f(x)=x^2\)</span> y veamos que pasa cuando <span class="math inline">\(x\to 2\)</span>:</p>
 <p><span class="math display">\[
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
@@ -417,7 +418,7 @@ x       &amp; f(x)=x^2   \\
 <h2>Límites que no existen</h2>
 <p>Si la función no está definida entorno a un punto, entonces no existe el límite en dicho punto.</p>
 <div id="exm-limites-no-existen" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 2 </strong></span>Consideremos la función <span class="math inline">\(f(x)=\dfrac{1}{\sqrt{x^2-1}}\)</span> y veamos que pasa cuando <span class="math inline">\(x\to 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Ejemplo 2</strong></span> Consideremos la función <span class="math inline">\(f(x)=\dfrac{1}{\sqrt{x^2-1}}\)</span> y veamos que pasa cuando <span class="math inline">\(x\to 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
@@ -463,7 +464,7 @@ x      &amp; f(x)   \\
 
 <p>Cuando los límites laterales no coinciden entonces no existe el límite.</p>
 <div id="exm-limites-no-existen-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3 </strong></span>Consideremos la función <span class="math inline">\(f(x)=\dfrac{\lvert x\rvert}{x}\)</span> y veamos que pasa cuando <span class="math inline">\(x\to 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Ejemplo 3</strong></span> Consideremos la función <span class="math inline">\(f(x)=\dfrac{\lvert x\rvert}{x}\)</span> y veamos que pasa cuando <span class="math inline">\(x\to 0\)</span>:</p>
 <p><span class="math display">\[\begin{array}{c}
 \underbrace{\begin{array}{ccc}
 \textrm{Por la izquierda} &amp; \qquad &amp; \textrm{Por la derecha }\\
@@ -510,7 +511,7 @@ x      &amp; f(x)   \\
 <p>A veces, cuando <span class="math inline">\(x\to a\)</span> los valores de <span class="math inline">\(f(x)\)</span> crecen o decrecen infinitamente y entonces no existe el límite. En este caso se dice que la función <em>diverge</em> y se escribe</p>
 <p><span class="math display">\[\lim_{x\to a}f(x)=\pm \infty.\]</span></p>
 <div id="exm-limites-no-existen-3" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 4 </strong></span>Veamos la tendencia de la función <span class="math inline">\(f(x)=\dfrac{1}{x^2}\)</span> cuando <span class="math inline">\(x\to 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Ejemplo 4</strong></span> Veamos la tendencia de la función <span class="math inline">\(f(x)=\dfrac{1}{x^2}\)</span> cuando <span class="math inline">\(x\to 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
@@ -557,7 +558,7 @@ x      &amp; f(x)   \\
 
 <p>A veces, el límite de un función en un punto puede no existir porque la función oscila rápidamente al acercarnos a dicho punto.</p>
 <div id="exm-limites-no-existen-4" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5 </strong></span>Consideremos la función <span class="math inline">\(f(x)=\operatorname{sen} \dfrac{1}{x}\)</span> y veamos que pasa cuando <span class="math inline">\(x\to 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Ejemplo 5</strong></span> Consideremos la función <span class="math inline">\(f(x)=\operatorname{sen} \dfrac{1}{x}\)</span> y veamos que pasa cuando <span class="math inline">\(x\to 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{array}{c}
 \underbrace{\begin{array}{ccc}
@@ -623,7 +624,7 @@ x      &amp; f(x)   \\
 <section class="slide level3">
 
 <div id="exm-limites-infinito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 6 </strong></span>Estudiemos la tendencia de <span class="math inline">\(f(x)=\dfrac{1}{x}\)</span> cuando <span class="math inline">\(x\to \pm\infty\)</span>:</p>
+<p><span class="theorem-title"><strong>Ejemplo 6</strong></span> Estudiemos la tendencia de <span class="math inline">\(f(x)=\dfrac{1}{x}\)</span> cuando <span class="math inline">\(x\to \pm\infty\)</span>:</p>
 <p><span class="math display">\[
 \begin{array}{ccc}
 x\to +\infty &amp; \qquad &amp; x\to -\infty\\
@@ -666,7 +667,7 @@ x      &amp; f(x)=1/x   \\
 <section id="definición-de-límite" class="title-slide slide level2 center">
 <h2>Definición de límite</h2>
 <div id="def-limite-funcion" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1 (Límite de una función en un punto) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(l\in\mathbb{R}\)</span> es el <em>límite</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> y se escribe</p>
+<p><span class="theorem-title"><strong>Definición 1 (Límite de una función en un punto)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(l\in\mathbb{R}\)</span> es el <em>límite</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> y se escribe</p>
 <p><span class="math display">\[\lim_{x\to a} f(x) = l\]</span></p>
 <p>si para cualquier número <span class="math inline">\(\varepsilon&gt;0\)</span> existe un número <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta\)</span>.</p>
 </div>
@@ -678,7 +679,7 @@ x      &amp; f(x)=1/x   \\
 <section class="slide level3">
 
 <div id="exm-límite-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7 </strong></span>Sea <span class="math inline">\(f(x)=x^2\)</span>. Veamos que <span class="math inline">\(\lim_{n\to a}f(x)=a^2\)</span>. Para ello, dado cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> se puede tomar <span class="math inline">\(\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}&gt;0\)</span> de manera <span class="math inline">\(\forall x\neq a\)</span> si <span class="math inline">\(|x-a|&lt;\delta\)</span>, entonces <span class="math inline">\(|x-a|&lt;1\)</span> y, por tanto, <span class="math inline">\(|x+a|=|x-a+2a|\leq |x-a|+2|a|&lt;1+2|a|\)</span>, y además, <span class="math display">\[\begin{align*}
+<p><span class="theorem-title"><strong>Ejemplo 7</strong></span> Sea <span class="math inline">\(f(x)=x^2\)</span>. Veamos que <span class="math inline">\(\lim_{n\to a}f(x)=a^2\)</span>. Para ello, dado cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> se puede tomar <span class="math inline">\(\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}&gt;0\)</span> de manera <span class="math inline">\(\forall x\neq a\)</span> si <span class="math inline">\(|x-a|&lt;\delta\)</span>, entonces <span class="math inline">\(|x-a|&lt;1\)</span> y, por tanto, <span class="math inline">\(|x+a|=|x-a+2a|\leq |x-a|+2|a|&lt;1+2|a|\)</span>, y además, <span class="math display">\[\begin{align*}
 |f(x)-a^2| &amp;= |x^2-a^2| = |(x+a)(x-a)| =|x+a||x-a| \\
 &amp;&lt; (1+2|a|)\delta &lt; (1+2|a|)\frac{\varepsilon}{1+2|a|} = \varepsilon.
 \end{align*}\]</span></p>
@@ -687,14 +688,14 @@ x      &amp; f(x)=1/x   \\
 <section class="slide level3">
 
 <div id="thm-unicidad-limite-funcion" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 1 (Unicidad del límite) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, entonces es único.</p>
+<p><span class="theorem-title"><strong>Teorema 1 (Unicidad del límite)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, entonces es único.</p>
 </div>
 </section></section>
 <section>
 <section id="section" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-criterio-sucesiones" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2 (Criterio de las sucesiones) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si para cualquier sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> en <span class="math inline">\(A\setminus\{a\}\)</span> que converge a <span class="math inline">\(a\)</span>, se tiene que <span class="math inline">\((f(x_n))_{n=1}^\infty\)</span> converge a <span class="math inline">\(l\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 2 (Criterio de las sucesiones)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se cumple que <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si para cualquier sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> en <span class="math inline">\(A\setminus\{a\}\)</span> que converge a <span class="math inline">\(a\)</span>, se tiene que <span class="math inline">\((f(x_n))_{n=1}^\infty\)</span> converge a <span class="math inline">\(l\)</span>.</p>
 </div>
 <div class="callout callout-important callout-style-simple">
 <div class="callout-body">
@@ -710,7 +711,7 @@ x      &amp; f(x)=1/x   \\
 <section class="slide level3">
 
 <div id="exm-criterio-sucesiones-1" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8 </strong></span>Sea <span class="math inline">\(f(x)=\frac{1}{x}\)</span> <span class="math inline">\(\forall x\neq 0\)</span> y sea <span class="math inline">\(a\neq 0\)</span>. Entonces, para cualquier sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> convergente a <span class="math inline">\(a\)</span> con <span class="math inline">\(x_n\neq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 8</strong></span> Sea <span class="math inline">\(f(x)=\frac{1}{x}\)</span> <span class="math inline">\(\forall x\neq 0\)</span> y sea <span class="math inline">\(a\neq 0\)</span>. Entonces, para cualquier sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> convergente a <span class="math inline">\(a\)</span> con <span class="math inline">\(x_n\neq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, se tiene</p>
 <p><span class="math display">\[
 \lim_{n\to\infty}f(x_n)=\lim_{n\to\infty}\frac{1}{x_n}= \frac{\lim_{n\to\infty}1}{\lim_{n\to\infty}x_n} = \frac{1}{a},
 \]</span></p>
@@ -721,7 +722,7 @@ x      &amp; f(x)=1/x   \\
 <section class="slide level3">
 
 <div id="exm-criterio-sucesiones-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9 </strong></span>Sea <span class="math inline">\(f(x)=\operatorname{sen}\left(\frac{1}{x}\right)\)</span> <span class="math inline">\(\forall x\neq 0\)</span>. Tomando la sucesión <span class="math inline">\(\left(\frac{1}{n\pi}\right)_{n=1}^\infty\)</span>, que converge a <span class="math inline">\(0\)</span>, se tiene que</p>
+<p><span class="theorem-title"><strong>Ejemplo 9</strong></span> Sea <span class="math inline">\(f(x)=\operatorname{sen}\left(\frac{1}{x}\right)\)</span> <span class="math inline">\(\forall x\neq 0\)</span>. Tomando la sucesión <span class="math inline">\(\left(\frac{1}{n\pi}\right)_{n=1}^\infty\)</span>, que converge a <span class="math inline">\(0\)</span>, se tiene que</p>
 <p><span class="math display">\[
 \lim_{n\to\infty}f\left(\frac{1}{n\pi}\right) = \lim_{n\to\infty}\operatorname{sen}\left(\frac{1}{\frac{1}{n\pi}}\right) = \lim_{n\to\infty}\operatorname{sen}(n\pi) = 0.
 \]</span></p>
@@ -735,20 +736,20 @@ x      &amp; f(x)=1/x   \\
 <section id="section-1" class="title-slide slide level2 center">
 <h2></h2>
 <div id="def-funcion-acotada-entorno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 2 (Función acotada en un entorno de un punto) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(f\)</span> está <em>acotada</em> en el entorno de <span class="math inline">\(a\)</span> si existe un <span class="math inline">\(\delta&gt;0\)</span> y un <span class="math inline">\(c&gt;0\)</span> tal que <span class="math inline">\(|f(x)|&lt;c\)</span> <span class="math inline">\(\forall x\in A\)</span> con <span class="math inline">\(|x-a|&lt;\delta\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 2 (Función acotada en un entorno de un punto)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(f\)</span> está <em>acotada</em> en el entorno de <span class="math inline">\(a\)</span> si existe un <span class="math inline">\(\delta&gt;0\)</span> y un <span class="math inline">\(c&gt;0\)</span> tal que <span class="math inline">\(|f(x)|&lt;c\)</span> <span class="math inline">\(\forall x\in A\)</span> con <span class="math inline">\(|x-a|&lt;\delta\)</span>.</p>
 </div>
 <div id="def-funcion-acotada-entorno" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3 (Función acotada) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> está <em>acotada</em> en <span class="math inline">\(A\)</span>, si existe un <span class="math inline">\(c&gt;0\)</span> tal que <span class="math inline">\(|f(x)|\leq c\)</span> <span class="math inline">\(\forall x\in A\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 3 (Función acotada)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> está <em>acotada</em> en <span class="math inline">\(A\)</span>, si existe un <span class="math inline">\(c&gt;0\)</span> tal que <span class="math inline">\(|f(x)|\leq c\)</span> <span class="math inline">\(\forall x\in A\)</span>.</p>
 </div>
 </section>
 
 <section id="section-2" class="title-slide slide level2 center">
 <h2></h2>
 <div id="prp-limite-funcion-acotada" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f\)</span> está acotada en un entorno de <span class="math inline">\(a\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 1</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f\)</span> está acotada en un entorno de <span class="math inline">\(a\)</span>.</p>
 </div>
 <div id="exm-funcion-no-acotada" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 10 </strong></span>La función <span class="math inline">\(f(x)=\frac{1}{x}\)</span> no está acotada en un entorno de <span class="math inline">\(0\)</span>, por lo que no existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 10</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{x}\)</span> no está acotada en un entorno de <span class="math inline">\(0\)</span>, por lo que no existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(0\)</span>.</p>
 </div>
 </section>
 
@@ -756,7 +757,7 @@ x      &amp; f(x)=1/x   \\
 <section id="álgebra-de-límites" class="title-slide slide level2 center">
 <h2>Álgebra de límites</h2>
 <div id="prp-limite-suma-resta-producto-cociente-funciones" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 2 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, tales que existe <span class="math inline">\(\lim_{x\to a}f(x)\)</span> y <span class="math inline">\(\lim_{x\to a}g(x)\)</span>, entonces se cumple que</p>
+<p><span class="theorem-title"><strong>Proposición 2</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, tales que existe <span class="math inline">\(\lim_{x\to a}f(x)\)</span> y <span class="math inline">\(\lim_{x\to a}g(x)\)</span>, entonces se cumple que</p>
 <ol type="1">
 <li><p><span class="math inline">\(\lim_{x\to a}c f(x)=c\lim_{x\to a}f(x)\)</span>, <span class="math inline">\(\forall c\in\mathbb{R}\)</span>.</p></li>
 <li><p><span class="math inline">\(\lim_{x\to a}(f(x)\pm g(x))=\lim_{x\to a}f(x)\pm \lim_{x\to a}g(x).\)</span></p></li>
@@ -768,7 +769,7 @@ x      &amp; f(x)=1/x   \\
 <section class="slide level3">
 
 <div id="exm-limite-suma-resta-producto-cociente-funciones" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11 </strong></span>Sea <span class="math inline">\(f(x)=x^3+x^2-2x-1\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Ejemplo 11</strong></span> Sea <span class="math inline">\(f(x)=x^3+x^2-2x-1\)</span>, entonces</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to 2}f(x) &amp;= \lim_{x\to 2}x^3+x^2-2x-1\\  
 &amp;= \lim_{x\to 2}x^3 + \lim_{x\to 2}x^2 - \lim_{x\to 2} 2x - \lim_{x\to 2} 1\\
@@ -785,20 +786,20 @@ x      &amp; f(x)=1/x   \\
 <section id="section-3" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-compresión-funciones" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 3 (Compresión de funciones) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, tres funciones <span class="math inline">\(f,g,h:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f(x)\leq g(x)\leq h(x)\)</span> <span class="math inline">\(\forall x\in A\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=l\)</span>, entonces <span class="math inline">\(\lim_{x\to a}g(x)=l\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 3 (Compresión de funciones)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, tres funciones <span class="math inline">\(f,g,h:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f(x)\leq g(x)\leq h(x)\)</span> <span class="math inline">\(\forall x\in A\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=l\)</span>, entonces <span class="math inline">\(\lim_{x\to a}g(x)=l\)</span>.</p>
 </div>
 <div id="exm-compresion-funciones" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12 </strong></span>Sea <span class="math inline">\(f(x)=x\operatorname{sen}\left(\frac{1}{x}\right)\)</span> <span class="math inline">\(\forall x\neq 0\)</span>. Entonces <span class="math inline">\(0\leq \left|x\operatorname{sen}\left(\frac{1}{x}\right)\right|\leq |x|\)</span> <span class="math inline">\(\forall x\neq 0\)</span>. Como <span class="math inline">\(\lim_{x\to 0}|x| = 0\)</span>, aplicando el teorema de compresión de funciones se tiene que <span class="math inline">\(\lim_{x\to 0} \left|x\operatorname{sen}\left(\frac{1}{x}\right)\right|=0\)</span> y por tanto <span class="math inline">\(\lim_{x\to 0} x\operatorname{sen}\left(\frac{1}{x}\right)=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12</strong></span> Sea <span class="math inline">\(f(x)=x\operatorname{sen}\left(\frac{1}{x}\right)\)</span> <span class="math inline">\(\forall x\neq 0\)</span>. Entonces <span class="math inline">\(0\leq \left|x\operatorname{sen}\left(\frac{1}{x}\right)\right|\leq |x|\)</span> <span class="math inline">\(\forall x\neq 0\)</span>. Como <span class="math inline">\(\lim_{x\to 0}|x| = 0\)</span>, aplicando el teorema de compresión de funciones se tiene que <span class="math inline">\(\lim_{x\to 0} \left|x\operatorname{sen}\left(\frac{1}{x}\right)\right|=0\)</span> y por tanto <span class="math inline">\(\lim_{x\to 0} x\operatorname{sen}\left(\frac{1}{x}\right)=0\)</span>.</p>
 </div>
 </section>
 
 <section id="section-4" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-limite-composicion-funciones" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 4 (Límite de la composición de funciones) </strong></span>Dados dos conjuntos <span class="math inline">\(A,B\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f:A\to \mathbb{R}\)</span>, <span class="math inline">\(g:B\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(A)\subseteq B\)</span>, un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span> y un punto de acumulación <span class="math inline">\(b\)</span> de <span class="math inline">\(B\)</span>, si <span class="math inline">\(\lim_{x\to a}f(x)=b\)</span> y <span class="math inline">\(\lim_{x\to b}g(x)=l\)</span>, entonces <span class="math inline">\(\lim_{x\to a}g\circ f(x)=l\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 4 (Límite de la composición de funciones)</strong></span> Dados dos conjuntos <span class="math inline">\(A,B\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f:A\to \mathbb{R}\)</span>, <span class="math inline">\(g:B\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(A)\subseteq B\)</span>, un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span> y un punto de acumulación <span class="math inline">\(b\)</span> de <span class="math inline">\(B\)</span>, si <span class="math inline">\(\lim_{x\to a}f(x)=b\)</span> y <span class="math inline">\(\lim_{x\to b}g(x)=l\)</span>, entonces <span class="math inline">\(\lim_{x\to a}g\circ f(x)=l\)</span>.</p>
 </div>
 <div id="exm-limite-composicion-funciones" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13 </strong></span>Si tomamos las funciones <span class="math inline">\(f(x)=x^2-5\)</span> y <span class="math inline">\(g(y)=\sqrt{y}\)</span>, se cumple que <span class="math inline">\(\lim_{x\to 3}f(x)=4\)</span> y <span class="math inline">\(\lim_{y\to 4}g(y)=2\)</span>. Entonces, aplicando el teorema anterior se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 13</strong></span> Si tomamos las funciones <span class="math inline">\(f(x)=x^2-5\)</span> y <span class="math inline">\(g(y)=\sqrt{y}\)</span>, se cumple que <span class="math inline">\(\lim_{x\to 3}f(x)=4\)</span> y <span class="math inline">\(\lim_{y\to 4}g(y)=2\)</span>. Entonces, aplicando el teorema anterior se tiene</p>
 <p><span class="math display">\[
 \lim_{x\to 3}g\circ f(x)=\lim_{x\to 3}\sqrt{x^2-5} = \lim_{y\to 4} \sqrt{y} = 2.
 \]</span></p>
@@ -808,28 +809,28 @@ x      &amp; f(x)=1/x   \\
 <section id="section-5" class="title-slide slide level2 center">
 <h2></h2>
 <div id="prp-limite-valor-absoluto" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 3 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(\lim_{x\to a}|f(x)|=|\lim_{x\to a}f(x)|\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 3</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(\lim_{x\to a}|f(x)|=|\lim_{x\to a}f(x)|\)</span>.</p>
 </div>
 </section>
 
 <section id="section-6" class="title-slide slide level2 center">
 <h2></h2>
 <div id="prp-limite-raiz" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 4 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(\lim_{x\to a}\sqrt{f(x)}=\sqrt{\lim_{x\to a}f(x)}\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 4</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(\lim_{x\to a}\sqrt{f(x)}=\sqrt{\lim_{x\to a}f(x)}\)</span>.</p>
 </div>
 </section>
 
 <section id="section-7" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-criterio-cauchy" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 5 (Criterio de Cauchy) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, entonces <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-f(y)|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x,y\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta|\)</span> y <span class="math inline">\(|y-a|&lt;\delta\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 5 (Criterio de Cauchy)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, entonces <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-f(y)|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x,y\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta|\)</span> y <span class="math inline">\(|y-a|&lt;\delta\)</span>.</p>
 </div>
 </section>
 
 <section id="límites-laterales-1" class="title-slide slide level2 center">
 <h2>Límites laterales</h2>
 <div id="def-limites-laterales" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 4 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>,</p>
+<p><span class="theorem-title"><strong>Definición 4</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>,</p>
 <ol type="1">
 <li><p>Si <span class="math inline">\(a\)</span> es un punto de acumulación de <span class="math inline">\(\{x\in A: x&gt;a\}\)</span>, se dice que <span class="math inline">\(l\)</span> es el <em>límite por la derecha</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> y se denota <span class="math inline">\(\lim_{x\to a^+}f(x)=l\)</span>, si para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x\in A\)</span> con <span class="math inline">\(0&lt;x-a&lt;\delta\)</span>.</p></li>
 <li><p>Si <span class="math inline">\(a\)</span> es un punto de acumulación de <span class="math inline">\(\{x\in A: x&lt;a\}\)</span>, se dice que <span class="math inline">\(l\)</span> es el <em>límite por la izquierda</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> y se denota <span class="math inline">\(\lim_{x\to a^-}f(x)=l\)</span>, si para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x\in A\)</span> con <span class="math inline">\(0&lt;a-x&lt;\delta\)</span>.</p></li>
@@ -840,10 +841,10 @@ x      &amp; f(x)=1/x   \\
 <section id="section-8" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-limites-laterales" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 6 (Límites laterales) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y sea <span class="math inline">\(a\)</span> un punto de acumulación de los conjuntos <span class="math inline">\(\{x\in A: x&gt;a\}\)</span> y <span class="math inline">\(\{x\in A: x&lt;a\}\)</span>, entonces <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si <span class="math inline">\(\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)=l\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 6 (Límites laterales)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y sea <span class="math inline">\(a\)</span> un punto de acumulación de los conjuntos <span class="math inline">\(\{x\in A: x&gt;a\}\)</span> y <span class="math inline">\(\{x\in A: x&lt;a\}\)</span>, entonces <span class="math inline">\(\lim_{x\to a}f(x)=l\)</span> si y solo si <span class="math inline">\(\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)=l\)</span>.</p>
 </div>
 <div id="exm-limites-laterales" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 14 </strong></span>Sea</p>
+<p><span class="theorem-title"><strong>Ejemplo 14</strong></span> Sea</p>
 <p><span class="math display">\[
 f(x)=\frac{|x|}{x}=
 \begin{cases}
@@ -858,14 +859,14 @@ f(x)=\frac{|x|}{x}=
 <section id="límites-infinitos" class="title-slide slide level2 center">
 <h2>Límites infinitos</h2>
 <div id="def-limite-infinito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5 (Límite infinito) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y sea <span class="math inline">\(a\)</span> un punto de acumulación de <span class="math inline">\(A\)</span>:</p>
+<p><span class="theorem-title"><strong>Definición 5 (Límite infinito)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y sea <span class="math inline">\(a\)</span> un punto de acumulación de <span class="math inline">\(A\)</span>:</p>
 <ol type="1">
 <li><p>Se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende a <span class="math inline">\(a\)</span>, y se denota <span class="math inline">\(\lim_{x\to a}f(x)=\infty\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(f(x)&gt;\varepsilon\)</span> <span class="math inline">\(\forall x\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta\)</span>.</p></li>
 <li><p>Se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(-\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende a <span class="math inline">\(a\)</span>, y se denota <span class="math inline">\(\lim_{x\to a}f(x)=-\infty\)</span>, si para cada <span class="math inline">\(\varepsilon&lt;0\)</span> existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(f(x)&lt;\varepsilon\)</span> <span class="math inline">\(\forall x\in A\setminus\{a\}\)</span> con <span class="math inline">\(|x-a|&lt;\delta\)</span>.</p></li>
 </ol>
 </div>
 <div id="exm-limites-infinitos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 15 </strong></span>Sea <span class="math inline">\(f(x)=\frac{1}{x^2}\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, tomando <span class="math inline">\(\delta=\frac{1}{\sqrt{\varepsilon}}&gt;0\)</span>, se tiene que si <span class="math inline">\(0&lt;|x|&lt;\delta=\frac{1}{\sqrt{\varepsilon}}\)</span> entonces</p>
+<p><span class="theorem-title"><strong>Ejemplo 15</strong></span> Sea <span class="math inline">\(f(x)=\frac{1}{x^2}\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span>, tomando <span class="math inline">\(\delta=\frac{1}{\sqrt{\varepsilon}}&gt;0\)</span>, se tiene que si <span class="math inline">\(0&lt;|x|&lt;\delta=\frac{1}{\sqrt{\varepsilon}}\)</span> entonces</p>
 <p><span class="math display">\[
 f(x)=\frac{1}{x^2}&gt; \frac{1}{\left(\frac{1}{\sqrt{\varepsilon}}\right)^2} = \varepsilon.
 \]</span> Por tanto, <span class="math inline">\(\lim_{x\to 0}f(x)=\infty\)</span>.</p>
@@ -875,7 +876,7 @@ f(x)=\frac{1}{x^2}&gt; \frac{1}{\left(\frac{1}{\sqrt{\varepsilon}}\right)^2} = \
 <section id="section-9" class="title-slide slide level2 center">
 <h2></h2>
 <div id="prp-limites-infinitos" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 5 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span> y dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(x)\leq g(x)\)</span> <span class="math inline">\(\forall x\in A\setminus\{a\}\)</span>:</p>
+<p><span class="theorem-title"><strong>Proposición 5</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span> y dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(x)\leq g(x)\)</span> <span class="math inline">\(\forall x\in A\setminus\{a\}\)</span>:</p>
 <ol type="1">
 <li><p>Si <span class="math inline">\(\lim_{x\to a}f(x)=\infty\)</span> entonces <span class="math inline">\(\lim_{x\to a}g(x)=\infty\)</span>.</p></li>
 <li><p>Si <span class="math inline">\(\lim_{x\to a}g(x)=-\infty\)</span> entonces <span class="math inline">\(\lim_{x\to a}f(x)=-\infty\)</span>.</p></li>
@@ -886,11 +887,11 @@ f(x)=\frac{1}{x^2}&gt; \frac{1}{\left(\frac{1}{\sqrt{\varepsilon}}\right)^2} = \
 <section id="límites-en-el-infinito-1" class="title-slide slide level2 center">
 <h2>Límites en el infinito</h2>
 <div id="def-limite-en-infinito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6 (Límite de una función en el infinito) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to\infty}f(x)=l\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;a\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x&gt;\delta\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 6 (Límite de una función en el infinito)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to\infty}f(x)=l\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;a\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x&gt;\delta\)</span>.</p>
 <p>Y dado un conjunto <span class="math inline">\(B\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((-\infty,b)\subset B\)</span> para algún <span class="math inline">\(b\in\mathbb{R}\)</span>, y una función <span class="math inline">\(g:B\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(g\)</span> tiende a <span class="math inline">\(l\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(-\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to-\infty}g(x)=l\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&lt;b\)</span> tal que <span class="math inline">\(|f(x)-l|&lt;\varepsilon\)</span> <span class="math inline">\(\forall x&lt;\delta\)</span>.</p>
 </div>
 <div id="exm-limite-en-infinito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 16 </strong></span>Sea <span class="math inline">\(f(x)=\frac{1}{x}\)</span> <span class="math inline">\(\forall x\neq 0\)</span>. Veamos que <span class="math inline">\(\lim_{x\to\infty}f(x)=0\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta=\frac{1}{\varepsilon}&gt;0\)</span> tal que si <span class="math inline">\(x&gt;\delta=\frac{1}{\varepsilon}\)</span> se tiene <span class="math inline">\(|f(x)-0|=|f(x)| = \left|\frac{1}{x}\right|&lt;\varepsilon\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 16</strong></span> Sea <span class="math inline">\(f(x)=\frac{1}{x}\)</span> <span class="math inline">\(\forall x\neq 0\)</span>. Veamos que <span class="math inline">\(\lim_{x\to\infty}f(x)=0\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta=\frac{1}{\varepsilon}&gt;0\)</span> tal que si <span class="math inline">\(x&gt;\delta=\frac{1}{\varepsilon}\)</span> se tiene <span class="math inline">\(|f(x)-0|=|f(x)| = \left|\frac{1}{x}\right|&lt;\varepsilon\)</span>.</p>
 <p>Del mismo modo se puede probar que <span class="math inline">\(\lim_{x\to -\infty}f(x)=0\)</span>.</p>
 </div>
 </section>
@@ -898,18 +899,18 @@ f(x)=\frac{1}{x^2}&gt; \frac{1}{\left(\frac{1}{\sqrt{\varepsilon}}\right)^2} = \
 <section id="section-10" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-criterio-sucesiones-divergente" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 7 (Criterio de las sucesiones divergentes) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, entonces <span class="math inline">\(\lim_{x\to\infty}f(x)=l\)</span> si y solo si para cualquier sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> en <span class="math inline">\((a,\infty)\)</span> que diverja a <span class="math inline">\(\infty\)</span>, <span class="math inline">\(\lim_{n\to\infty}f(x_n)=l\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 7 (Criterio de las sucesiones divergentes)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, entonces <span class="math inline">\(\lim_{x\to\infty}f(x)=l\)</span> si y solo si para cualquier sucesión <span class="math inline">\((x_n)_{n=1}^\infty\)</span> en <span class="math inline">\((a,\infty)\)</span> que diverja a <span class="math inline">\(\infty\)</span>, <span class="math inline">\(\lim_{n\to\infty}f(x_n)=l\)</span>.</p>
 </div>
 </section>
 
 <section id="section-11" class="title-slide slide level2 center">
 <h2></h2>
 <div id="def-limite-infinito-en-infinito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 7 (Límite infinito en el infinito) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to\infty}f(x)=\infty\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;a\)</span> tal que <span class="math inline">\(f(x)&gt;\varepsilon\)</span> <span class="math inline">\(\forall x&gt;\delta\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 7 (Límite infinito en el infinito)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to\infty}f(x)=\infty\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&gt;a\)</span> tal que <span class="math inline">\(f(x)&gt;\varepsilon\)</span> <span class="math inline">\(\forall x&gt;\delta\)</span>.</p>
 <p>Y dado un conjunto <span class="math inline">\(B\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((-\infty,b)\subset B\)</span> para algún <span class="math inline">\(b\in\mathbb{R}\)</span>, y una función <span class="math inline">\(g:B\to \mathbb{R}\)</span>, se dice que <span class="math inline">\(g\)</span> tiende a <span class="math inline">\(\infty\)</span> cuando <span class="math inline">\(x\)</span> tiende <span class="math inline">\(-\infty\)</span>, y se denota <span class="math inline">\(\lim_{x\to-\infty}g(x)=\infty\)</span>, si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta&lt;b\)</span> tal que <span class="math inline">\(f(x)&lt;\varepsilon\)</span> <span class="math inline">\(\forall x&lt;\delta\)</span>.</p>
 </div>
 <div id="exm-limite-infinito-en-infinito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 17 </strong></span>Sea <span class="math inline">\(f(x)=x^2\)</span>. Veamos que <span class="math inline">\(\lim_{x\to\infty}f(x)=\infty\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta=\sqrt{\varepsilon}&gt;0\)</span> tal que si <span class="math inline">\(x&gt;\delta\)</span>, entonces <span class="math inline">\(f(x)=x^2&gt;(\sqrt{\varepsilon})^2 =\varepsilon\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 17</strong></span> Sea <span class="math inline">\(f(x)=x^2\)</span>. Veamos que <span class="math inline">\(\lim_{x\to\infty}f(x)=\infty\)</span>. Dado <span class="math inline">\(\varepsilon&gt;0\)</span> existe <span class="math inline">\(\delta=\sqrt{\varepsilon}&gt;0\)</span> tal que si <span class="math inline">\(x&gt;\delta\)</span>, entonces <span class="math inline">\(f(x)=x^2&gt;(\sqrt{\varepsilon})^2 =\varepsilon\)</span>.</p>
 <p>Del mismo modo se puede probar que <span class="math inline">\(\lim_{x\to-\infty}f(x)=\infty\)</span>.</p>
 </div>
 </section>
@@ -917,7 +918,7 @@ f(x)=\frac{1}{x^2}&gt; \frac{1}{\left(\frac{1}{\sqrt{\varepsilon}}\right)^2} = \
 <section id="section-12" class="title-slide slide level2 center">
 <h2></h2>
 <div id="prp-cociente-limites-infinitos" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 6 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span>, tales que <span class="math inline">\(g(x)&gt;0\)</span> <span class="math inline">\(\forall x\in A\)</span> y <span class="math inline">\(\lim_{x\to\infty}\frac{f(x)}{g(x)}=l\)</span>, entonces:</p>
+<p><span class="theorem-title"><strong>Proposición 6</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> tal que <span class="math inline">\((a,\infty)\subset A\)</span> para algún <span class="math inline">\(a\in\mathbb{R}\)</span>, y dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span>, tales que <span class="math inline">\(g(x)&gt;0\)</span> <span class="math inline">\(\forall x\in A\)</span> y <span class="math inline">\(\lim_{x\to\infty}\frac{f(x)}{g(x)}=l\)</span>, entonces:</p>
 <ol type="1">
 <li><p>Si <span class="math inline">\(l&gt;0\)</span>, <span class="math inline">\(\lim_{x\to\infty}f(x)=\infty\)</span> si y solo si <span class="math inline">\(\lim_{x\to\infty}g(x)=\infty\)</span>.</p></li>
 <li><p>Si <span class="math inline">\(l&lt;0\)</span>, <span class="math inline">\(\lim_{x\to\infty}f(x)=-\infty\)</span> si y solo si <span class="math inline">\(\lim_{x\to\infty}g(x)=\infty\)</span>.</p></li>
@@ -929,38 +930,38 @@ f(x)=\frac{1}{x^2}&gt; \frac{1}{\left(\frac{1}{\sqrt{\varepsilon}}\right)^2} = \
 <section id="límites-de-las-funciones-elementales" class="title-slide slide level2 center">
 <h2>Límites de las funciones elementales</h2>
 <div id="prp-limite-funcion-polinomica" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 7 (Límite de una función polinómica) </strong></span>Si <span class="math inline">\(f\)</span> es una función polinómica, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 7 (Límite de una función polinómica)</strong></span> Si <span class="math inline">\(f\)</span> es una función polinómica, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="prp-limite-funcion-racional" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 8 (Límite de una función racional) </strong></span>Si <span class="math inline">\(f(x)=\dfrac{p(x)}{q(x)}\)</span> con <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span> funciones polinómicas, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> que no sea una raíz de <span class="math inline">\(q(x)\)</span>, y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 8 (Límite de una función racional)</strong></span> Si <span class="math inline">\(f(x)=\dfrac{p(x)}{q(x)}\)</span> con <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span> funciones polinómicas, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> que no sea una raíz de <span class="math inline">\(q(x)\)</span>, y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 <p>Si <span class="math inline">\(a\)</span> es una raíz de <span class="math inline">\(q(x)\)</span> entonces el límite puede existir o no.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="prp-limite-funcion-potencial" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 9 (Límite de una función potencial) </strong></span>Si <span class="math inline">\(f(x)=x^r\)</span> con <span class="math inline">\(r\in \mathbb{R}\)</span>, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\)</span> tal que exista un intervalo <span class="math inline">\((a-\delta,a+\delta)\subset \textrm{Dom}(f)\)</span> para algún <span class="math inline">\(\delta &gt;0\)</span>, y en ese caso, <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 9 (Límite de una función potencial)</strong></span> Si <span class="math inline">\(f(x)=x^r\)</span> con <span class="math inline">\(r\in \mathbb{R}\)</span>, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\)</span> tal que exista un intervalo <span class="math inline">\((a-\delta,a+\delta)\subset \textrm{Dom}(f)\)</span> para algún <span class="math inline">\(\delta &gt;0\)</span>, y en ese caso, <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="prp-limite-funcion-exponencial" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 10 (Límite de una función exponencial) </strong></span>Si <span class="math inline">\(f(x)=c^x\)</span> con <span class="math inline">\(c\in \mathbb{R}\)</span> entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 10 (Límite de una función exponencial)</strong></span> Si <span class="math inline">\(f(x)=c^x\)</span> con <span class="math inline">\(c\in \mathbb{R}\)</span> entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="prp-limite-funcion-logarítmica" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 11 (Límite de una función logarítmica) </strong></span>Si <span class="math inline">\(f(x)=\log_c(x)\)</span> con <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}^+\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 11 (Límite de una función logarítmica)</strong></span> Si <span class="math inline">\(f(x)=\log_c(x)\)</span> con <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \mathbb{R}^+\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="prp-limite-funcion-trigonometrica" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 12 (Límite de una función trigonométrica) </strong></span>Si <span class="math inline">\(f(x)\)</span> es una función trigonométrica, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \textrm{Dom}(f)\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 12 (Límite de una función trigonométrica)</strong></span> Si <span class="math inline">\(f(x)\)</span> es una función trigonométrica, entonces existe el límite de <span class="math inline">\(f\)</span> en cualquier punto <span class="math inline">\(a\in \textrm{Dom}(f)\)</span> y <span class="math inline">\(\lim_{x\to a}f(x)=f(a)\)</span>.</p>
 </div>
 </section></section>
 <section>
@@ -997,7 +998,7 @@ f(x)=\frac{1}{x^2}&gt; \frac{1}{\left(\frac{1}{\sqrt{\varepsilon}}\right)^2} = \
 <h2>Factorización de polinomios en funciones racionales</h2>
 <p>Si <span class="math inline">\(f(x)=\dfrac{p(x)}{q(x)}\)</span> es una función racional que presenta una indeterminación de tipo cociente cuando <span class="math inline">\(x\to a\)</span>, y <span class="math inline">\(a\)</span> es una raíz de <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span>, se puede resolver la indeterminación factorizando los polinomios y simplificando.</p>
 <div id="exm-solucion-indeterminacion-cociente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 18 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\to \dfrac{0}{0}\)</span> cuando <span class="math inline">\(x\to 1\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 18</strong></span> La función <span class="math inline">\(f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\to \dfrac{0}{0}\)</span> cuando <span class="math inline">\(x\to 1\)</span>.</p>
 <p>Para resolver la indeterminación factorizamos los polinomios</p>
 <p><span class="math display">\[\begin{align*}
 x^3-3x+2 &amp;= (x+2)(x-1)^2,\\
@@ -1015,7 +1016,7 @@ x^4-4x+3 &amp;= (x^2+2x+3)(x-1)^2.
 <h2>División por el término de mayor orden en funciones racionales</h2>
 <p>Si <span class="math inline">\(f(x)=\dfrac{p(x)}{q(x)}\)</span> es una función racional que presenta una indeterminación de tipo cociente cuando <span class="math inline">\(x\to \pm\infty\)</span>, entonces se puede resolver dividendo <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span> por el término de mayor grado de ambos polinomios.</p>
 <div id="exm-solucion-indeterminacion-cociente-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 19 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\to \dfrac{\infty}{\infty}\)</span> cuando <span class="math inline">\(x\to \infty\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 19</strong></span> La función <span class="math inline">\(f(x)=\dfrac{x^3-3x+2}{x^4-4x+3}\to \dfrac{\infty}{\infty}\)</span> cuando <span class="math inline">\(x\to \infty\)</span>.</p>
 <p>Para resolver la indeterminación dividimos numerador y denominador por <span class="math inline">\(x^4\)</span> que es el término de mayor grado:</p>
 <p><span class="math display">\[
 \lim_{x\to \infty}\frac{x^3-3x+2}{x^4-4x+3} = \lim_{x\to \infty}\frac{\frac{x^3-3x+2}{x^4}}{\frac{x^4-4x+3}{x^4}} = \lim_{x\to \infty}\frac{\frac{1}{x}-\frac{3}{x^3}+\frac{2}{x^4}}{1-\frac{4}{x^3}+\frac{3}{x^4}} =\frac{0}{1}=0
@@ -1035,7 +1036,7 @@ x^4-4x+3 &amp;= (x^2+2x+3)(x-1)^2.
 <h2>Cambio de variable</h2>
 <p>El teorema del límite de la composición de funciones nos permite calcular límites haciendo un cambio de variable por medio de la composición de funciones.</p>
 <div id="exm-limite-cambio-variable" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 20 </strong></span>Sea <span class="math inline">\(f(x)=\frac{(x+8)^{1/3}-2}{x}\)</span>. Cuando <span class="math inline">\(x\to 0\)</span>, <span class="math inline">\(f(x)\to \frac{0}{0}\)</span>. Aplicando el cambio de variable <span class="math inline">\(y=(x+8)^{1/3}\)</span>, se tiene que <span class="math inline">\(y^3=x+8\)</span> y <span class="math inline">\(x=y^3-8\)</span>. Como <span class="math inline">\(\lim_{x\to 0}(x+8)^{1/3}=2\)</span>, aplicando el teorema del límite de la composición de funciones, se tiene que</p>
+<p><span class="theorem-title"><strong>Ejemplo 20</strong></span> Sea <span class="math inline">\(f(x)=\frac{(x+8)^{1/3}-2}{x}\)</span>. Cuando <span class="math inline">\(x\to 0\)</span>, <span class="math inline">\(f(x)\to \frac{0}{0}\)</span>. Aplicando el cambio de variable <span class="math inline">\(y=(x+8)^{1/3}\)</span>, se tiene que <span class="math inline">\(y^3=x+8\)</span> y <span class="math inline">\(x=y^3-8\)</span>. Como <span class="math inline">\(\lim_{x\to 0}(x+8)^{1/3}=2\)</span>, aplicando el teorema del límite de la composición de funciones, se tiene que</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to 0} \frac{(x+8)^{1/3}-2}{x}
 &amp;= \lim_{y\to 2}\frac{y-2}{y^3-8}
@@ -1049,11 +1050,11 @@ x^4-4x+3 &amp;= (x^2+2x+3)(x-1)^2.
 <section id="infinitésimos-equivalentes" class="title-slide slide level2 center">
 <h2>Infinitésimos equivalentes</h2>
 <div id="def-infinitesimo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 8 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(f\)</span> es un infinitésimo en <span class="math inline">\(a\)</span> si <span class="math inline">\(\lim_{x\to a}f(x)=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 8</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que <span class="math inline">\(f\)</span> es un infinitésimo en <span class="math inline">\(a\)</span> si <span class="math inline">\(\lim_{x\to a}f(x)=0\)</span>.</p>
 </div>
 <p>De manera informal, se puede decir que un infinitésimo es una cantidad infinitamente pequeña.</p>
 <div id="exm-infinitesimos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 21 </strong></span>La función identidad <span class="math inline">\(f(x)=x\)</span> es un infinitésimo en <span class="math inline">\(x=0\)</span>, ya que <span class="math inline">\(\lim_{x\to 0}x = 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 21</strong></span> La función identidad <span class="math inline">\(f(x)=x\)</span> es un infinitésimo en <span class="math inline">\(x=0\)</span>, ya que <span class="math inline">\(\lim_{x\to 0}x = 0\)</span>.</p>
 <p>Del mismo modo, la función <span class="math inline">\(g(x)=\operatorname{sen}(x)\)</span> es otro infinitésimo en <span class="math inline">\(x=0\)</span> ya que <span class="math inline">\(\lim_{x\to 0}\operatorname{sen}(x)=0\)</span>.</p>
 <p>Y la función <span class="math inline">\(h(x)=x^2-4\)</span> es un infinitésimo en <span class="math inline">\(x=2\)</span>, ya que <span class="math inline">\(\lim_{x\to 2}x^2-4 = 0\)</span>.</p>
 </div>
@@ -1061,7 +1062,7 @@ x^4-4x+3 &amp;= (x^2+2x+3)(x-1)^2.
 <section class="slide level3">
 
 <div id="prp-propiedades-infinitesimos" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 13 (Propiedades de los infinitésimos) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, tales que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son infinitésimos en <span class="math inline">\(a\)</span>. Entonces se cumple</p>
+<p><span class="theorem-title"><strong>Proposición 13 (Propiedades de los infinitésimos)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, tales que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son infinitésimos en <span class="math inline">\(a\)</span>. Entonces se cumple</p>
 <ol type="1">
 <li><span class="math inline">\(f+g\)</span> es un infinitésimo en <span class="math inline">\(a\)</span>.</li>
 <li><span class="math inline">\(f\cdot g\)</span> es un infinitésimo en <span class="math inline">\(a\)</span>.</li>
@@ -1073,12 +1074,12 @@ x^4-4x+3 &amp;= (x^2+2x+3)(x-1)^2.
 <section class="slide level3">
 
 <div id="def-infinitesimos-equivalentes" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 9 (Infinitésimos equivalentes) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, tales que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son infitésimos en <span class="math inline">\(a\)</span>, se dice que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son <em>infinitésimos equivalentes</em> en <span class="math inline">\(a\)</span>, se denota <span class="math inline">\(f(x)\approx g(x)\)</span> cuando <span class="math inline">\(x\to a\)</span>, si</p>
+<p><span class="theorem-title"><strong>Definición 9 (Infinitésimos equivalentes)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, tales que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son infitésimos en <span class="math inline">\(a\)</span>, se dice que <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son <em>infinitésimos equivalentes</em> en <span class="math inline">\(a\)</span>, se denota <span class="math inline">\(f(x)\approx g(x)\)</span> cuando <span class="math inline">\(x\to a\)</span>, si</p>
 <p><span class="math display">\[\lim_{x\to a}\frac{f(x)}{g(x)}=1.\]</span></p>
 </div>
 <p>Si <span class="math inline">\(f(x)\approx g(x)\)</span> cuando <span class="math inline">\(x\to a\)</span> entonces <span class="math inline">\(f(x)\)</span> y <span class="math inline">\(g(x)\)</span> son magnitudes equivalentes cuando <span class="math inline">\(x\to a\)</span>.</p>
 <div id="exm-infinitesimos-equivalentes" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 22 </strong></span>Los siguientes infinitésimos equivalentes cuando <span class="math inline">\(x\to 0\)</span>:</p>
+<p><span class="theorem-title"><strong>Ejemplo 22</strong></span> Los siguientes infinitésimos equivalentes cuando <span class="math inline">\(x\to 0\)</span>:</p>
 <p><span class="math display">\[
 \begin{array}{c}
 \operatorname{sen}(x) \approx x \approx \operatorname{tg}(x)\\
@@ -1094,7 +1095,7 @@ e^x-1 \approx x\\
 
 <p>A veces se puede resolver una indeterminación cuando <span class="math inline">\(x\to a\)</span> sustituyendo cualquier subexpresión de la función por un infinitésimo equivalente cuando <span class="math inline">\(x\to a\)</span>.</p>
 <div id="exm-infinitesimo-equivalente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 23 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{\operatorname{sen}(x)(1- \cos(x))}{x^3}\to \dfrac{0}{0}\)</span> cuando <span class="math inline">\(x\to 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 23</strong></span> La función <span class="math inline">\(f(x)=\dfrac{\operatorname{sen}(x)(1- \cos(x))}{x^3}\to \dfrac{0}{0}\)</span> cuando <span class="math inline">\(x\to 0\)</span>.</p>
 <p>Como <span class="math inline">\(\operatorname{sen}(x) \approx x\)</span> y <span class="math inline">\(1-\cos(x)\approx \dfrac{x^2}{2}\)</span> cuando <span class="math inline">\(x\to 0\)</span>, para resolver la indeterminación sustituimos <span class="math inline">\(\operatorname{sen}(x)\)</span> por <span class="math inline">\(x\)</span> y <span class="math inline">\(1-\cos(x)\)</span> por <span class="math inline">\(\dfrac{x^2}{2}\)</span>:</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to 0}\frac{\operatorname{sen}(x)(1- \cos (x))}{x^3}&amp;=
@@ -1107,7 +1108,7 @@ e^x-1 \approx x\\
 <section id="regla-de-lhôpital" class="title-slide slide level2 center">
 <h2>Regla de L’Hôpital</h2>
 <div id="thm-regla-lhopital" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 8 (Regla de L’Hôpital) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, tales que <span class="math inline">\(\dfrac{f(x)}{g(x)}\to \dfrac{0}{0}\)</span> o <span class="math inline">\(\dfrac{\infty}{\infty}\)</span> cuando <span class="math inline">\(x\to a\)</span>, entonces si existe <span class="math inline">\(\lim_{x\to a}\dfrac{f'(x)}{g'(x)}\)</span> se cumple que</p>
+<p><span class="theorem-title"><strong>Teorema 8 (Regla de L’Hôpital)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span>, y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, tales que <span class="math inline">\(\dfrac{f(x)}{g(x)}\to \dfrac{0}{0}\)</span> o <span class="math inline">\(\dfrac{\infty}{\infty}\)</span> cuando <span class="math inline">\(x\to a\)</span>, entonces si existe <span class="math inline">\(\lim_{x\to a}\dfrac{f'(x)}{g'(x)}\)</span> se cumple que</p>
 <p><span class="math display">\[
 \lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}.
 \]</span></p>
@@ -1126,7 +1127,7 @@ e^x-1 \approx x\\
 <section class="slide level3">
 
 <div id="exm-regla-lhopital" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 24 </strong></span>Sea <span class="math inline">\(f(x)=\dfrac{\log(x^2-1)}{x+2}\to \dfrac{\infty}{\infty}\)</span> cuando <span class="math inline">\(x\to \infty\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 24</strong></span> Sea <span class="math inline">\(f(x)=\dfrac{\log(x^2-1)}{x+2}\to \dfrac{\infty}{\infty}\)</span> cuando <span class="math inline">\(x\to \infty\)</span>.</p>
 <p>Para resolver la indeterminación aplicamos la regla de L’Hôpital:</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to \infty}\frac{\log(x^2-1)}{x+2} &amp;= \lim_{x\to
@@ -1141,7 +1142,7 @@ e^x-1 \approx x\\
 <p>Si <span class="math inline">\(f(x)\to 0\)</span> y <span class="math inline">\(g(x)\to \pm\infty\)</span> cuando <span class="math inline">\(x\to a\)</span>, entonces la indeterminación <span class="math inline">\(f(x)\cdot g(x)\to 0\cdot \pm\infty\)</span> puede convertirse en una de tipo cociente mediante la transformación:</p>
 <p><span class="math display">\[f(x)\cdot g(x) = \frac{f(x)}{1/g(x)}\to \frac{0}{0}.\]</span></p>
 <div id="exm-solucion-indeterminacion-producto" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 25 </strong></span>Sea <span class="math inline">\(f(x)=x^2e^{1/x^2}\to 0\cdot\infty\)</span> cuando <span class="math inline">\(x\to 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 25</strong></span> Sea <span class="math inline">\(f(x)=x^2e^{1/x^2}\to 0\cdot\infty\)</span> cuando <span class="math inline">\(x\to 0\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to 0}x^2e^{1/x^2} &amp;= \lim_{x\to 0}\frac{e^{1/x^2}}{1/x^2}\to \frac{\infty}{\infty}
 \end{align*}\]</span></p>
@@ -1163,7 +1164,7 @@ e^x-1 \approx x\\
 <section class="slide level3">
 
 <div id="exm-solucion-indeterminacion-producto" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 26 </strong></span>Sea <span class="math inline">\(f(x)=\left(1+\dfrac{1}{x}\right)^{x} \to 1^\infty\)</span> cuando <span class="math inline">\(x\to 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 26</strong></span> Sea <span class="math inline">\(f(x)=\left(1+\dfrac{1}{x}\right)^{x} \to 1^\infty\)</span> cuando <span class="math inline">\(x\to 0\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to 0}\left(1+\dfrac{1}{x}\right)^{x} &amp;= \lim_{x\to
 0}\exp\left(\log\left(1+\frac{1}{x}\right)^{x}\right)\\
@@ -1189,7 +1190,7 @@ e^x-1 \approx x\\
 <section class="slide level3">
 
 <div id="exm-solucion-indeterminacion-diferencia" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 27 </strong></span>Sea <span class="math inline">\(f(x)=\dfrac{1}{\operatorname{sen} x}-\dfrac{1}{x} \to \infty-\infty\)</span> cuando <span class="math inline">\(x\to 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 27</strong></span> Sea <span class="math inline">\(f(x)=\dfrac{1}{\operatorname{sen} x}-\dfrac{1}{x} \to \infty-\infty\)</span> cuando <span class="math inline">\(x\to 0\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to 0} \frac{1}{\operatorname{sen} x}-\frac{1}{x} &amp;=
 \lim_{x\to 0} \frac{x-\operatorname{sen} x}{x\operatorname{sen} x} \to \frac{0}{0}.
@@ -1220,7 +1221,7 @@ e^x-1 \approx x\\
 <section id="asíntotas-verticales" class="title-slide slide level2 center">
 <h2>Asíntotas verticales</h2>
 <div id="def-asintota-vertical" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 10 (Asíntota vertical) </strong></span>Se dice que una recta <span class="math inline">\(x=a\)</span> es una <em>asíntota vertical</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
+<p><span class="theorem-title"><strong>Definición 10 (Asíntota vertical)</strong></span> Se dice que una recta <span class="math inline">\(x=a\)</span> es una <em>asíntota vertical</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
 <p><span class="math display">\[\lim_{x\to a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\to a^-}f(x)=\pm \infty\]</span></p>
 </div>
 <p>Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.</p>
@@ -1228,7 +1229,7 @@ e^x-1 \approx x\\
 <section class="slide level3">
 
 <div id="exm-asintota-vertical" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 28 </strong></span>La recta <span class="math inline">\(x=2\)</span> es una asíntota vertical de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 28</strong></span> La recta <span class="math inline">\(x=2\)</span> es una asíntota vertical de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
 <p><span class="math display">\[\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{x-2} =\infty.\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1242,14 +1243,14 @@ e^x-1 \approx x\\
 <section id="asíntotas-horizontales" class="title-slide slide level2 center">
 <h2>Asíntotas horizontales</h2>
 <div id="def-asintota-horizontal" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 11 (Asíntota horizontal) </strong></span>Se dice que una recta <span class="math inline">\(y=a\)</span> es una <em>asíntota horizontal</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
+<p><span class="theorem-title"><strong>Definición 11 (Asíntota horizontal)</strong></span> Se dice que una recta <span class="math inline">\(y=a\)</span> es una <em>asíntota horizontal</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
 <p><span class="math display">\[\lim_{x\to +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\to \infty}f(x)=a\]</span></p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="exm-asintota-horizontal" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 29 </strong></span>La recta <span class="math inline">\(y=1\)</span> es una asíntota horizontal de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 29</strong></span> La recta <span class="math inline">\(y=1\)</span> es una asíntota horizontal de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to -\infty}\frac{x+1}{x-2}&amp;= \lim_{x\to -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\\
 \lim_{x\to +\infty}\frac{x+1}{x-2}&amp;= \lim_{x\to +\infty}1+\frac{3}{x-2} = 1.
@@ -1265,14 +1266,14 @@ e^x-1 \approx x\\
 <section id="asíntotas-oblicuas" class="slide level3">
 <h3>Asíntotas oblicuas</h3>
 <div id="def-asintota-oblicua" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 12 (Asíntota oblicua) </strong></span>Se dice que una recta <span class="math inline">\(y=a+bx\)</span> es una <em>asíntota oblicua</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
+<p><span class="theorem-title"><strong>Definición 12 (Asíntota oblicua)</strong></span> Se dice que una recta <span class="math inline">\(y=a+bx\)</span> es una <em>asíntota oblicua</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
 <p><span class="math display">\[\lim_{x\to \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\to \pm\infty}f(x)-bx=a.\]</span></p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="exm-asintota-oblicua" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 30 </strong></span>La recta <span class="math inline">\(y=x+1\)</span> es una asíntota oblicua de <span class="math inline">\(f(x)=\dfrac{x^2}{x-1}\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 30</strong></span> La recta <span class="math inline">\(y=x+1\)</span> es una asíntota oblicua de <span class="math inline">\(f(x)=\dfrac{x^2}{x-1}\)</span> ya que</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to \pm\infty}\frac{\frac{x^2}{x-1}}{x}&amp;=
 \lim_{x\to \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\\
@@ -1291,21 +1292,21 @@ e^x-1 \approx x\\
 <section id="continuidad" class="title-slide slide level2 center">
 <h2>Continuidad</h2>
 <div id="def-funcion-continua-punto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 13 (Función continua en un punto) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que la función <span class="math inline">\(f\)</span> es <em>continua</em> en el punto <span class="math inline">\(a\)</span> si</p>
+<p><span class="theorem-title"><strong>Definición 13 (Función continua en un punto)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, una función <span class="math inline">\(f:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, se dice que la función <span class="math inline">\(f\)</span> es <em>continua</em> en el punto <span class="math inline">\(a\)</span> si</p>
 <p><span class="math display">\[\lim_{x\to a}f(x)=f(a).\]</span></p>
 </div>
 <div id="exm-funcion-continua" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 31 </strong></span>La función <span class="math inline">\(f(x)=x^2\)</span> es continua en <span class="math inline">\(2\)</span> ya que <span class="math inline">\(\lim_{x\to 2}x^2 = 4 = f(2)\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 31</strong></span> La función <span class="math inline">\(f(x)=x^2\)</span> es continua en <span class="math inline">\(2\)</span> ya que <span class="math inline">\(\lim_{x\to 2}x^2 = 4 = f(2)\)</span>.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="def-funcion-continua-intervalo" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 14 (Función continua en un intervalo) </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que función <span class="math inline">\(f\)</span> es <em>continua</em> en un intervalo <span class="math inline">\(I\subseteq A\)</span>, si lo es en cada uno de los puntos de <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 14 (Función continua en un intervalo)</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:A\to \mathbb{R}\)</span>, se dice que función <span class="math inline">\(f\)</span> es <em>continua</em> en un intervalo <span class="math inline">\(I\subseteq A\)</span>, si lo es en cada uno de los puntos de <span class="math inline">\(I\)</span>.</p>
 </div>
 <p>De manera informal, se puede decir que una una función es continua en un intervalo, si puede dibujarse su gráfica en ese intervalo sin levantar el lápiz.</p>
 <div id="exm-funcion-continua" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 32 </strong></span>La función constante <span class="math inline">\(f(x)=c\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\lim_{x\to a}c = c = f(a)\)</span> <span class="math inline">\(\forall a\in\mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 32</strong></span> La función constante <span class="math inline">\(f(x)=c\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\lim_{x\to a}c = c = f(a)\)</span> <span class="math inline">\(\forall a\in\mathbb{R}\)</span>.</p>
 <p>La función identidad <span class="math inline">\(\operatorname{Id}(x)=x\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\lim_{x\to a}x = a = \operatorname{Id}(a)\)</span> <span class="math inline">\(\forall a\in\mathbb{R}\)</span>.</p>
 <p>Del mismo modo, función <span class="math inline">\(f(x)=x^2\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\lim_{x\to a}x^2 = a^2 = f(a)\)</span> <span class="math inline">\(\forall a\in\mathbb{R}\)</span>,</p>
 </div>
@@ -1313,7 +1314,7 @@ e^x-1 \approx x\\
 <section class="slide level3">
 
 <div id="exm-continuidad-seno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 33 </strong></span>Veamos que la <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>. Sea <span class="math inline">\(a\in\mathbb{R}\)</span>. Usando propiedades trigonométricas se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 33</strong></span> Veamos que la <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> es continua en todo <span class="math inline">\(\mathbb{R}\)</span>. Sea <span class="math inline">\(a\in\mathbb{R}\)</span>. Usando propiedades trigonométricas se tiene</p>
 <p><span class="math display">\[\begin{align*}
 |\operatorname{sen}(x)-\operatorname{sen}(a)|
 &amp;=|2\operatorname{sen}\left(\frac{x-a}{2}\right)\cos\left(\frac{x-a}{2}\right)| \\
@@ -1351,13 +1352,13 @@ e^x-1 \approx x\\
 <section id="discontinuidad-evitable" class="title-slide slide level2 center">
 <h2>Discontinuidad evitable</h2>
 <div id="def-discontinuiada-evitable" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 15 (Discontinuidad evitable) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad evitable</em> en el punto <span class="math inline">\(a\)</span> si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> pero <span class="math inline">\(\displaystyle \lim_{x\to a}f(x)\neq f(a)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definición 15 (Discontinuidad evitable)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad evitable</em> en el punto <span class="math inline">\(a\)</span> si existe el límite de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> pero <span class="math inline">\(\displaystyle \lim_{x\to a}f(x)\neq f(a)\)</span>.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="exm-discontinuiada-evitable" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 34 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{x^2-1}{x-1}\)</span> tiene una discontinuidad evitable en <span class="math inline">\(x=1\)</span> ya que la función no está definida en <span class="math inline">\(x=1\)</span> pero</p>
+<p><span class="theorem-title"><strong>Ejemplo 34</strong></span> La función <span class="math inline">\(f(x)=\dfrac{x^2-1}{x-1}\)</span> tiene una discontinuidad evitable en <span class="math inline">\(x=1\)</span> ya que la función no está definida en <span class="math inline">\(x=1\)</span> pero</p>
 <p><span class="math display">\[\lim_{x\to 2}\frac{x^2-1}{x-1} = \lim_{x\to 2}x+1=2.\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1371,7 +1372,7 @@ e^x-1 \approx x\\
 <section id="discontinuidad-de-1ª-especie-de-salto-finito" class="title-slide slide level2 center">
 <h2>Discontinuidad de 1ª especie de salto finito</h2>
 <div id="def-discontinuidad-1-especie-salto-finito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 16 (Discontinuidad de 1ª especie de salto finito) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 1ª especie de salto finito</em> en el punto <span class="math inline">\(a\)</span> si existen los límites laterales de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> pero</p>
+<p><span class="theorem-title"><strong>Definición 16 (Discontinuidad de 1ª especie de salto finito)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 1ª especie de salto finito</em> en el punto <span class="math inline">\(a\)</span> si existen los límites laterales de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> pero</p>
 <p><span class="math display">\[\lim_{x\to a^-}f(x)\neq \lim_{x\to a^+}f(x).\]</span></p>
 <p>A la diferencia entre ambos límite se le lama <em>salto</em> de la discontinuidad.</p>
 </div>
@@ -1379,7 +1380,7 @@ e^x-1 \approx x\\
 <section class="slide level3">
 
 <div id="exm-discontinuidad-1-especie-salto-finito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 35 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{\lvert x\rvert}{x}\)</span> tiene una discontinuidad de 1ª especie de salto finito en <span class="math inline">\(x=0\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 35</strong></span> La función <span class="math inline">\(f(x)=\dfrac{\lvert x\rvert}{x}\)</span> tiene una discontinuidad de 1ª especie de salto finito en <span class="math inline">\(x=0\)</span> ya que</p>
 <p><span class="math display">\[
 \lim_{x\to 0^-}\frac{|x|}{x}= -1 \quad \lim_{x\to 0^+}\frac{|x|}{x}= 1
 \]</span></p>
@@ -1396,7 +1397,7 @@ e^x-1 \approx x\\
 <section id="discontinuidad-de-1ª-especie-de-salto-infinito" class="title-slide slide level2 center">
 <h2>Discontinuidad de 1ª especie de salto infinito</h2>
 <div id="def-discontinuidad-1-especie-salto-infinito" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 17 (Discontinuidad de 1ª especie de salto infinito) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 1ª especie de salto infinito</em> en el punto <span class="math inline">\(a\)</span> si</p>
+<p><span class="theorem-title"><strong>Definición 17 (Discontinuidad de 1ª especie de salto infinito)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 1ª especie de salto infinito</em> en el punto <span class="math inline">\(a\)</span> si</p>
 <p><span class="math display">\[\lim_{x\to a^-}f(x)=\pm\infty \quad \textrm{o} \quad \lim_{x\to a^+}f(x)=\pm\infty.\]</span></p>
 </div>
 <p>Si <span class="math inline">\(f\)</span> tienen una discontinuidad de 1ª especie de salto infinito en un punto <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f\)</span> tienen una asíntota vertical <span class="math inline">\(x=a\)</span>.</p>
@@ -1404,7 +1405,7 @@ e^x-1 \approx x\\
 <section class="slide level3">
 
 <div id="exm-discontinuidad-1-especie-salto-infinito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 36 </strong></span>La función <span class="math inline">\(f(x)=e^{1/x}\)</span> tiene una discontinuidad de 1ª especie de salto infinito en <span class="math inline">\(x=0\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 36</strong></span> La función <span class="math inline">\(f(x)=e^{1/x}\)</span> tiene una discontinuidad de 1ª especie de salto infinito en <span class="math inline">\(x=0\)</span> ya que</p>
 <p><span class="math display">\[
 \lim_{x\to 0^-}e^{1/x}= 0 \quad \lim_{x\to 0^+}e^{1/x}= \infty
 \]</span></p>
@@ -1420,14 +1421,14 @@ e^x-1 \approx x\\
 <section id="discontinuidad-de-2ª-especie" class="title-slide slide level2 center">
 <h2>Discontinuidad de 2ª especie</h2>
 <div id="def-discontinuidad-2-especie" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 18 (Discontinuidad de 2ª especie) </strong></span>Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 2ª especie</em> en el punto <span class="math inline">\(a\)</span> si no existe alguno de los límites laterales y tampoco se trata de una discontinuidad de 1ª especie de salto infinito.</p>
+<p><span class="theorem-title"><strong>Definición 18 (Discontinuidad de 2ª especie)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> tiene una <em>discontinuidad de 2ª especie</em> en el punto <span class="math inline">\(a\)</span> si no existe alguno de los límites laterales y tampoco se trata de una discontinuidad de 1ª especie de salto infinito.</p>
 </div>
 <p>Normalmente la discontinuidades de 2ª especie se dan en puntos donde la función no definida en sus proximidades.</p>
 </section>
 <section class="slide level3">
 
 <div id="exm-discontinuidad-2-especie" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 37 </strong></span>La función <span class="math inline">\(f(x)=\dfrac{1}{\sqrt{x^2-1}}\)</span> tiene una discontinuidad de 2ª especie en <span class="math inline">\(x=1\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 37</strong></span> La función <span class="math inline">\(f(x)=\dfrac{1}{\sqrt{x^2-1}}\)</span> tiene una discontinuidad de 2ª especie en <span class="math inline">\(x=1\)</span> ya que</p>
 <p><span class="math display">\[
 \lim_{x\to 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe} \quad \lim_{x\to 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
 \]</span></p>
@@ -1443,7 +1444,7 @@ e^x-1 \approx x\\
 <section id="section-14" class="title-slide slide level2 center">
 <h2></h2>
 <div id="prp-algebra-funciones-continuas" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 14 </strong></span>Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son continuas en <span class="math inline">\(a\)</span>, entonces</p>
+<p><span class="theorem-title"><strong>Proposición 14</strong></span> Dado un conjunto <span class="math inline">\(A\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f,g:A\to \mathbb{R}\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son continuas en <span class="math inline">\(a\)</span>, entonces</p>
 <ol type="a">
 <li><span class="math inline">\(f\pm g\)</span> es continua en <span class="math inline">\(a\)</span>.</li>
 <li><span class="math inline">\(f\cdot g\)</span> es continua en <span class="math inline">\(a\)</span>.</li>
@@ -1455,27 +1456,27 @@ e^x-1 \approx x\\
 <section class="slide level3">
 
 <div id="exm-continuidad-polinomios" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 38 </strong></span>El polinomio <span class="math inline">\(p(x)=2x^2-x+3\)</span> es continuo en todo <span class="math inline">\(\mathbb{R}\)</span> ya que las funciones <span class="math inline">\(f(x)=x^2\)</span>, <span class="math inline">\(g(x)=x\)</span> y <span class="math inline">\(h(x)=3\)</span> son continuas en todo <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 38</strong></span> El polinomio <span class="math inline">\(p(x)=2x^2-x+3\)</span> es continuo en todo <span class="math inline">\(\mathbb{R}\)</span> ya que las funciones <span class="math inline">\(f(x)=x^2\)</span>, <span class="math inline">\(g(x)=x\)</span> y <span class="math inline">\(h(x)=3\)</span> son continuas en todo <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <p>De hecho, se puede demostrar de manera similar que cualquier polinomio es continuo en todo <span class="math inline">\(\mathbb{R}\)</span>.</p>
 </div>
 </section></section>
 <section id="section-15" class="title-slide slide level2 center">
 <h2></h2>
 <div id="prp-continuidad-composicion-funciones" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 15 </strong></span>Dados dos conjuntos <span class="math inline">\(A,B\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f:A\to \mathbb{R}\)</span>, <span class="math inline">\(g:B\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(A)\subseteq B\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(a\)</span> y <span class="math inline">\(g\)</span> es continua en <span class="math inline">\(f(a)\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es continua en <span class="math inline">\(a\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 15</strong></span> Dados dos conjuntos <span class="math inline">\(A,B\subseteq \mathbb{R}\)</span>, dos funciones <span class="math inline">\(f:A\to \mathbb{R}\)</span>, <span class="math inline">\(g:B\to \mathbb{R}\)</span> tales que <span class="math inline">\(f(A)\subseteq B\)</span> y un punto de acumulación <span class="math inline">\(a\)</span> de <span class="math inline">\(A\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(a\)</span> y <span class="math inline">\(g\)</span> es continua en <span class="math inline">\(f(a)\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es continua en <span class="math inline">\(a\)</span>.</p>
 </div>
 <div id="exm-continuidad-composicion-funciones" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 39 </strong></span>Sea <span class="math inline">\(f(x)=\frac{1}{x}\)</span>, que es continua en <span class="math inline">\(\mathbb{R}\setminus\{0\}\)</span> y <span class="math inline">\(g(x)=\cos(x)\)</span> que es continua en todo <span class="math inline">\(\mathbb{R}\)</span>. Entonces <span class="math inline">\(g\circ f(x)=\cos\left(\frac{1}{x}\right)\)</span> es continua en <span class="math inline">\(\mathbb{R}\setminus\{0\}\)</span>, mientras que <span class="math inline">\(f\circ g(x)=\frac{1}{\cos(x)}\)</span> es continua en <span class="math inline">\(\mathbb{R}\setminus\{(2k+1)\pi/2: k\in\mathbb{Z}\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 39</strong></span> Sea <span class="math inline">\(f(x)=\frac{1}{x}\)</span>, que es continua en <span class="math inline">\(\mathbb{R}\setminus\{0\}\)</span> y <span class="math inline">\(g(x)=\cos(x)\)</span> que es continua en todo <span class="math inline">\(\mathbb{R}\)</span>. Entonces <span class="math inline">\(g\circ f(x)=\cos\left(\frac{1}{x}\right)\)</span> es continua en <span class="math inline">\(\mathbb{R}\setminus\{0\}\)</span>, mientras que <span class="math inline">\(f\circ g(x)=\frac{1}{\cos(x)}\)</span> es continua en <span class="math inline">\(\mathbb{R}\setminus\{(2k+1)\pi/2: k\in\mathbb{Z}\}\)</span>.</p>
 </div>
 </section>
 
 <section id="funciones-continuas-en-intervalos" class="title-slide slide level2 center">
 <h2>Funciones continuas en intervalos</h2>
 <div id="thm-funcion-continua-intervalo-cerrado" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 9 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 9</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> está acotada en <span class="math inline">\(I\)</span>.</p>
 </div>
 <div id="exm-función-discontinua-no-acotada" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 40 </strong></span>La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 40</strong></span> La función</p>
 <p><span class="math display">\[
 f(x)=
 \begin{cases}
@@ -1490,35 +1491,37 @@ f(x)=
 <section id="section-16" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-extremos-funcion-continua-intervalo-cerrado" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 10 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\(I\)</span>, es decir, existen <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(c\leq f(x)\leq d\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 10</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\(I\)</span>, es decir, existen <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(c\leq f(x)\leq d\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
 </div>
 </section>
 
 <section id="section-17" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-bolzano" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 11 (Bolzano) </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, y <span class="math inline">\(f(a)&lt;0&lt;f(b)\)</span>, entonces existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f(c)=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 11 (Bolzano)</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, y <span class="math inline">\(f(a)&lt;0&lt;f(b)\)</span>, entonces existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f(c)=0\)</span>.</p>
 </div>
 </section>
 
 <section id="section-18" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-valores-intermedios" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 12 (Valores intermedios) </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> y si <span class="math inline">\(c,d\in I\)</span>, entonces para cualquier <span class="math inline">\(k\in \mathbb{R}\)</span> con <span class="math inline">\(f(c)&lt;k&lt;f(d)\)</span>, existe <span class="math inline">\(e\in I\)</span> entre <span class="math inline">\(c\)</span> y <span class="math inline">\(d\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 12 (Valores intermedios)</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> y si <span class="math inline">\(c,d\in I\)</span>, entonces para cualquier <span class="math inline">\(k\in \mathbb{R}\)</span> con <span class="math inline">\(f(c)&lt;k&lt;f(d)\)</span>, existe <span class="math inline">\(e\in I\)</span> entre <span class="math inline">\(c\)</span> y <span class="math inline">\(d\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
 </div>
 <div id="thm-valores-intermedios" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 13 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> y <span class="math inline">\(k\in\mathbb{R}\)</span> es tal que <span class="math inline">\(\inf(f(I))\leq k\leq \sup(f(I))\)</span>, entonces existe <span class="math inline">\(e\in I\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 13</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> y <span class="math inline">\(k\in\mathbb{R}\)</span> es tal que <span class="math inline">\(\inf(f(I))\leq k\leq \sup(f(I))\)</span>, entonces existe <span class="math inline">\(e\in I\)</span> tal que <span class="math inline">\(f(e)=k\)</span>.</p>
 </div>
 </section>
 
 <section id="section-19" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-imagen-funcion-continua-intervalo-cerrado-acotado" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 14 </strong></span>Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> entonces <span class="math inline">\(f(I)\)</span> es un intervalo cerrado y acotado.</p>
+<p><span class="theorem-title"><strong>Teorema 14</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span> entonces <span class="math inline">\(f(I)\)</span> es un intervalo cerrado y acotado.</p>
 </div>
-
-<img src="img/logos/sticker.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<div class="quarto-auto-generated-content">
+<p><img src="img/logos/sticker.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://aprendeconalf.es/analisis-manual" class="uri">https://aprendeconalf.es/analisis-manual</a></p>
+</div>
 </div>
 </section>
     </div>
@@ -1548,7 +1551,6 @@ f(x)=
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1810,10 +1812,9 @@ f(x)=
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1823,8 +1824,17 @@ f(x)=
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
