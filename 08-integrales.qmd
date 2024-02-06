@@ -127,8 +127,8 @@ Dadas dos particiones $P=\{x_0, x_1, \ldots, x_n\}$ y $Q=\{y_0, y_1, \ldots, y_m
 :::{#prp-sumas-riemann-refinamiento}
 Si $f:I\to\mathbb{R}$ es una función acotada en el intervalo $I=[a,b]$, $P$ es una partición de $I$ y $Q$ es un refinamiento de $P$, entonces
 
-a. $s(f,P)\leq S(f,Q)$
-b. $s(f,Q)\leq S(f,P)$
+a. $s(f,P)\leq s(f,Q)$
+b. $S(f,Q)\leq S(f,P)$
 :::
 
 ##
