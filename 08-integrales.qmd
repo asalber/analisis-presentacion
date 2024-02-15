@@ -585,20 +585,23 @@ $$
 
 es derivable en cualquier punto de $[-1,1]$ y $f'(x) = 2x\operatorname{sen}\left(\frac{1}{x^2}\right)-\frac{2\cos\left(\frac{1}{^2}\right)}{x}$, que no está acotada en $[-1,1]$, y por tanto no es integrable en $[-1,1]$.
 :::
-<!-- 
+
 ## Cálculo de areas
 
-Tal y como se ha definido la integral de una función a partir de las sumas de Riemann, no resulta extraño que la principal aplicación de las integrales definidas sea el cálculo del areas encerrada por la gráfica de una función y el eje $x$ en un intervalo de $I$. Ya hemos visto que cuando $f(x)\geq 0$ $\forall x\in I$, si $f$ es integrable en $I=[a,b]$, entonces $\int_a^b f(x)\, dx\geq 0$ es el área encerrada entre la gráfica de la función $f$ y el eje $x$ en el intervalo $I$. En esta sección veremos cómo calcular áreas de funciones que también presentan valores negativos en el intervalo de integración y generalizamos el resultado para calcular áreas encerradas entre las gráficas de dos funciones.
+La principal aplicación de la integral definida es el cálculo del área encerrada por la gráfica de una función y el eje $x$ en un intervalo de $I$. 
 
-### Cálculo del area encerrada por una función y el eje $x$. {#sec-calculo-area-funcion-ejex}
 
-Ya hemos visto que cuando una función $f(x)<0$ $\forall x\in I=[a,b]$, entonces $\int_a^b f(x)\, dx<0$, de manera que no puede interpretarse como un área porque geométricamente no tienen sentido las áreas negativas. En general, para evitar este problema, si queremos calcular el área encerrada por la gráfica de una función $f(x)$ en un intervalo $I=[a,b]$ debemos calcular la integral definida en $I$ del valor absoluto de la función, es decir, 
+## Cálculo del area encerrada por una función y el eje $x$. 
+
+Ya hemos visto que cuando una función $f(x)<0$ $\forall x\in I=[a,b]$, entonces $\int_a^b f(x)\, dx<0$, de manera que no puede interpretarse como un área porque geométricamente no tienen sentido las áreas negativas. 
+
+Para evitar este problema, calcularemos la integral definida en $I$ del valor absoluto de la función
 
 $$
 \int_a^b |f(x)|\,dx.
 $$
 
-Ahora bien, para calcular esta integral mediante primitivas, haciendo uso del teorema fundamental del cálculo, normalmente se recurre a descomponer el intervalo de integración en subintervalos donde la función sea positiva o negativa, integrar $f$ en los intervalos donde la función es positiva, integrar $-f$ en los intervalos donde la función es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.
+---
 
 :::{.content-visible when-format="html"}
 ![Area encerrada por una función positiva y negativa.](img/integrales/area-funcion-positiva-negativa-2.png)
@@ -607,6 +610,8 @@ Ahora bien, para calcular esta integral mediante primitivas, haciendo uso del te
 :::{.content-visible unless-format="html"}
 ![Area encerrada por una función positiva y negativa.](img/integrales/area-funcion-positiva-negativa-2.pdf)
 :::
+
+---
 
 :::{#exm-area-funcion-positiva-negativa}
 Veamos cómo calcular el area encerrada entre la gráfica de la función $f(x)=x^2-4x+3$ y el eje $x$ en el intervalo $[0,4]$.
@@ -620,6 +625,10 @@ Si resolvemos la ecuación $f(x)=0$ obtenemos dos raíces $x=1$ y $x=3$, de mane
 &= \frac{4}{3} - \frac{-4}{3} + \frac{4}{3} = 4
 \end{align*}
 
+:::
+
+---
+
 :::{.content-visible when-format="html"}
 ![Area encerrada por la parábola $f(x)=x^2-4x+3$.](img/integrales/area-parabola.png)
 :::
@@ -627,17 +636,18 @@ Si resolvemos la ecuación $f(x)=0$ obtenemos dos raíces $x=1$ y $x=3$, de mane
 :::{.content-visible unless-format="html"}
 ![Area encerrada por la parábola $f(x)=x^2-4x+3$.](img/integrales/area-parabola.pdf)
 :::
-:::
 
-### Area encerrada entre dos funciones
+## Area encerrada entre dos funciones
 
-Si en lugar de calcular el área encerrada entre la gráfica de una función $f$ y el eje $x$ en un intervalo $I=[a,b]$, se quiere calcular el area encerrada entre dos funciones $f$ y $g$ en un intervalo $I=[a,b]$, basta con integrar la diferencia entre las dos funciones $f-g$. Pero como $f$ puede ser mayor que $g$ en algún subintervalo de $I$ y menor en otros, para asegurarnos de calcular el area correcta, hay que integrar el valor absoluto de la diferencia, es decir,
+Si en lugar de calcular el área encerrada entre la gráfica de una función $f$ y el eje $x$ en un intervalo $I=[a,b]$, se quiere calcular el area encerrada entre dos funciones $f$ y $g$ en un intervalo $I=[a,b]$, basta con integrar la diferencia entre las dos funciones $f-g$. 
+
+Pero como $f$ puede ser mayor que $g$ en algún subintervalo de $I$ y menor en otros, para asegurarnos de calcular el area correcta, hay que integrar el valor absoluto de la diferencia, es decir,
 
 $$
 \int_a^b |f(x)-g(x)|\, dx
 $$
 
-Al igual que antes, para calcular esta integral mediante primitivas, haciendo uso del teorema fundamental del cálculo, tendremos que descomponer el intervalo de integración en subintervalos donde la diferencia $f-g$ sea sea positiva o negativa, integrar $f-g$ en los intervalos donde la diferencia es positiva, integrar $-(f-g)=g-f$ en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.
+---
 
 :::{.content-visible when-format="html"}
 ![Area encerrada entre dos funciones.](img/integrales/area-entre-funciones.png)
@@ -646,6 +656,8 @@ Al igual que antes, para calcular esta integral mediante primitivas, haciendo us
 :::{.content-visible unless-format="html"}
 ![Area encerrada entre dos funciones.](img/integrales/area-entre-funciones.pdf)
 :::
+
+---
 
 :::{#exm-area-funcion-positiva-negativa}
 Veamos cómo calcular el area encerrada entre las gráficas de las funciones $f(x)=\operatorname{sen}(x)$ y $g(x)=\cos(x)$ en el intervalo $[0,\pi]$.
@@ -658,6 +670,9 @@ Si resolvemos la ecuación $f(x)-g(x)=0$ obtenemos una raíz en $x=\pi/4$ en el 
 &= \left[\operatorname{sen}(x)+\cos(x)\right]_0^{\pi/4} + \left[-\cos(x)-\operatorname{sen}(x)\right]_{\pi/4}^{\pi} \\
 &= \sqrt{2}-1 +\sqrt{2}+1 = 2\sqrt{2}
 \end{align*}
+:::
+
+---
 
 :::{.content-visible when-format="html"}
 ![Area encerrada entre el seno y el coseno.](img/integrales/area-entre-seno-coseno.png)
@@ -666,9 +681,8 @@ Si resolvemos la ecuación $f(x)-g(x)=0$ obtenemos una raíz en $x=\pi/4$ en el 
 :::{.content-visible unless-format="html"}
 ![Area encerrada entre el seno y el coseno.](img/integrales/area-entre-seno-coseno.pdf)
 :::
-:::
 
-### Cálculo del area encerrada por una curva en coordenadas polares {#sec-integrales-coordenadas-polares}
+## Cálculo del area encerrada por una curva en coordenadas polares {#sec-integrales-coordenadas-polares}
 
 En ocasiones, para calcular el area encerrada por una curva, especialmente para curvas dadas mediante una ecuación implícita, resulta más sencillo trabajar en coordenadas polares. 
 
@@ -679,6 +693,8 @@ En ocasiones, para calcular el area encerrada por una curva, especialmente para 
 :::{.content-visible unless-format="html"}
 ![Coordenadas polares.](img/integrales/coordenadas-polares.pdf)
 :::
+
+---
 
 Para pasar de coordenadas cartesianas a coordenadas polares, primero se obtiene el valor de $r$ aplicando el teorema de Pitágoras
 
@@ -705,6 +721,8 @@ x &= r \cos(\theta)\\
 y &= r \operatorname{sen}(\theta)
 \end{align*}
 
+## Sumas de Riemann en coordenadas polares
+
 Para calcular el area encerrada por una curva dada en coordenadas polares $r=f(\theta)$ y las rectas $\theta=a$ y $\theta=b$, se puede utilizar una aproximación similar a las sumas de Riemann, descomponiendo el area en sectores de círculo con ángulos en una partición $P=\{\theta_0=a, \theta_1, \ldots, \theta_n=b\}$ de $I=[a,b]$. Si para cada uno de estos sectores se toma como radio el ínfimo de $f(\theta)$ en el correspondiente subintervalo, surgen las sumas inferiores
 
 $$
@@ -721,6 +739,8 @@ $$
 
 donde $M_i=\sup\{f(\theta): \theta\in[\theta_{i-1},\theta_i]\}$ para $i=1,\ldots,n$.
 
+---
+
 :::{.content-visible when-format="html"}
 ![Descomposición en sectores de círculos del area encerrada por una curva en polares.](img/integrales/sumas-riemann-polares.png)
 :::
@@ -729,13 +749,29 @@ donde $M_i=\sup\{f(\theta): \theta\in[\theta_{i-1},\theta_i]\}$ para $i=1,\ldots
 ![Descomposición en sectores de círculos del area encerrada por una curva en polares.](img/integrales/sumas-riemann-polares.pdf)
 :::
 
-De forma análoga se puede definir _integral inferior_ de $f$ en $I$ como $\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}$ y la _integral superior_ de $f$ en $I$ como el número $\overline{\int_a^b} f =\inf\{S(f,P): P\in \mathcal{P}(I)\}$, de manera que, si la integral inferior coincide con la superior, la función es integrable y 
+##
+
+De forma análoga se puede definir _integral inferior_ de $f$ en $I$ como 
+
+$$
+\underline{\int_a^b} f =\sup\{s(f,P): P\in \mathcal{P}(I)\}
+$$ 
+
+y la _integral superior_ de $f$ en $I$ como el número 
+
+$$
+\overline{\int_a^b} f =\inf\{S(f,P): P\in \mathcal{P}(I)\},
+$$
+
+de manera que, si la integral inferior coincide con la superior, la función es integrable y 
 
 $$
 \int_a^b \frac{f(\theta)^2}{2}\,d\theta
 $$
 
 mide el área encerrada por la curva $r=f(\theta)$ y las rectas $\theta=a$ y $\theta=b$.
+
+---
 
 :::{.content-visible when-format="html"}
 ![Area encerrada por una curva en coordenadas polares.](img/integrales/integral-riemann-polares.png)
@@ -745,6 +781,8 @@ mide el área encerrada por la curva $r=f(\theta)$ y las rectas $\theta=a$ y $\t
 ![Area encerrada por una curva en coordenadas polares.](img/integrales/integral-riemann-polares.pdf)
 :::
 
+---
+
 :::{#exm-area-semicírculo-polares}
 Un semicírculo de radio $r$ puede expresarse en coordenadas polares mediante la función $f(\theta)=r$ para $0\leq \theta\leq \pi$. Por tanto, el área encerrada por este semicírculo es 
 
@@ -752,6 +790,8 @@ $$
 \int_0^{\pi} \frac{r^2}{2} \,d\theta = \left[\frac{r^2}{2}\theta\right]_0^\pi = \frac{r^2}{2}\pi.
 $$
 :::
+
+---
 
 :::{#exm-area-curva-polar}
 Veamos ahora cómo calcular el area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.
@@ -766,6 +806,9 @@ Veamos ahora cómo calcular el area encerrada por la curva polar $r=3\operatorna
 = \frac{9}{4}2\pi 
 = \frac{9}{2}\pi.
 \end{align*}
+:::
+
+---
 
 :::{.content-visible when-format="html"}
 ![Area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.](img/integrales/area-curva-polar.png)
@@ -774,9 +817,8 @@ Veamos ahora cómo calcular el area encerrada por la curva polar $r=3\operatorna
 :::{.content-visible unless-format="html"}
 ![Area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.](img/integrales/area-curva-polar.pdf)
 :::
-:::
 
-### Cálculo del area encerrada por dos curvas en coordenadas polares
+## Cálculo del area encerrada por dos curvas en coordenadas polares
 
 También es posible calcular el area encerrada por dos curvas en coordenadas polares de forma análoga a como se hizo para el area encerrada entre dos funciones en coordenadas cartesianas. 
 
@@ -786,6 +828,8 @@ $$
 \frac{1}{2} \int_a^b f(\theta)^2\,d\theta - \frac{1}{2} \int_a^b g(\theta)^2\,d\theta = \frac{1}{2} \int_a^b f(\theta)^2-g(\theta)^2\,d\theta
 $$
 
+---
+
 :::{.content-visible when-format="html"}
 ![Area encerrada entre dos curvas polares$.](img/integrales/area-entre-curvas-polares.png)
 :::
@@ -794,7 +838,11 @@ $$
 ![Area encerrada entre dos curvas polares$.](img/integrales/area-entre-curvas-polares.pdf)
 :::
 
+##
+
 En general, cuando $f$ es mayor que $g$ en algunos subintervalos de $I$ y menor en otros, habrá que descomponer el intervalo de integración en subintervalos donde la diferencia $f-g$ sea sea positiva o negativa, integrar $f-g$ en los intervalos donde la diferencia es positiva, integrar $-(f-g)=g-f$ en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.
+
+### {.smaller}
 
 :::{#exm-area-entre-curvas-polares}
 Vamos a calcular el area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas. 
@@ -814,6 +862,9 @@ Así pues, el intervalo de integración es $[-\frac{\pi}{6},\frac{\pi}{6}]$. Com
 &= \frac{1}{2}\left(\sqrt{3}+\frac{4\pi}{6} +\sqrt{3} +\frac{4\pi}{6}\right)\\
 &= \frac{\pi}{2}+\sqrt{3}-1 \approx 2.3028
 \end{align*}
+:::
+
+---
 
 :::{.content-visible when-format="html"}
 ![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2.png)
@@ -821,7 +872,6 @@ Así pues, el intervalo de integración es $[-\frac{\pi}{6},\frac{\pi}{6}]$. Com
 
 :::{.content-visible unless-format="html"}
 ![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2.pdf)
-:::
 :::
 
 ## Integrales impropias
