@@ -939,6 +939,8 @@ siempre que este límite exista, en cuyo caso se dice que la integral impropia c
 Otra de las aplicaciones habituales de las integrales es el cálculo de volúmenes de cuerpos sólidos tridimensionales con secciones transversales regulares. El procedimiento es similar al utilizado para el cálculo de areas de regiones planas, pero en lugar de aproximar el area mediante sumas de Riemann de rectángulos, se utilizan sumas de Riemann de figuras geométricas de volumen conocido, habitualmente discos o envoltorios cilíndricos.
 Para ello tomaremos secciones transversales del cuerpo sólido del que se quiere calcular el volumen con respecto a alguno de los ejes a lo largo de una partición del intervalo donde está definido el sólido en ese eje.
 
+---
+
 :::{.content-visible when-format="html"}
 ![Sección transversal de un cuerpo sólido con respecto al eje $x$](img/integrales/seccion-transversal-piramide.png)
 :::
@@ -946,6 +948,8 @@ Para ello tomaremos secciones transversales del cuerpo sólido del que se quiere
 :::{.content-visible unless-format="html"}
 ![Sección transversal de un cuerpo sólido con respecto al eje $x$](img/integrales/seccion-transversal-piramide.pdf)
 :::
+
+##
 
 En general, si disponemos de una función $A(x)$ que nos da el área de la sección transversal del sólido para cada $x\in[a,b]$, podemos tomar una partición $P_n=\{x_0=a,x_1,\ldots, x_n=b\}$ del intervalo $[a,b]$ y aproximar el volumen del sólido en este intervalo mediante las sumas inferior y superior de Riemann
 
@@ -956,33 +960,7 @@ S(A,P_n) &= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1},x_i
 
 donde $m_i (x_i-x_{i-1})$ es el volumen de un disco cilíndrico de base $m_i$ y altura $x_i-x_{i-1}$, y $M_i (x_i-x_{i-1})$ es el volumen de un cilindro de base $M_i$ y altura $x_i-x_{i-1}$.
 
-::: {.content-visible when-format="html"}
-<div id="ggb-volumen-revolucion"></div>
-
-<script>
-var params = {
-            "appName": "classic", 
-            "width": 800, 
-            "height": 800, 
-            "showToolBar": false, 
-            "showAlgebraInput": false, 
-            "showMenuBar": false,
-            "borderColor": "#FFFFFF",
-            "enableRightClick": false,
-            "enableLabelDrags": false,
-            "enableShiftDragZoom": true,
-            "showZoomButtons": false,
-            "showResetIcon": true,
-            "showFullscreenButton": true,
-            "transparentGraphics": true,
-            "material_id":"drndnm2u"
-            };
-    var ggbApplet2 = new GGBApplet(params, true);
-    window.addEventListener("load", function() { 
-        ggbApplet2.inject('ggb-volumen-revolucion');
-    });
-</script>
-:::
+---
 
 Como ya hemos visto, si $\lim_{n\to\infty} s(A,P_n) = \lim_{n\to\infty} S(A,P_n)$, la función $A(x)$ es integrable Riemann en el intervalo $[a,b]$ y 
 
@@ -991,6 +969,8 @@ $$
 $$
 
 mide el volumen del cuerpo sólido con secciones transversales de área $A(x)$ en el intervalo $[a,b]$.
+
+---
 
 :::{#exm-volumen-esfera}
 Veamos cómo calcular el volumen de una esfera de radio $r$ centrada en el origen con ecuación $x^2+y^2+z^2=r^2$. Si cortamos la esfera con planos $x=x_i$ perpendiculares al eje $x$, sustituyendo en la ecuación de la esfera, se tiene $y^2+z^2=r^2-x_i^2$, por lo que se obtienen secciones transversales circulares con radio $\sqrt{r^2-x_i^2}$, y, por tanto, el área de estas secciones circulares será $\pi \left(\sqrt{r^2-x_i^2}\right)^2= \pi (r^2-x_i^2)$. Así pues, la función que nos da el área de la sección transversal para cualquier $x\in[-r,r]$ es $A(x)=\pi(r^2-x^2)$, y por tanto, podemos calcular el volumen de la esfera con la integral definida
@@ -1004,7 +984,7 @@ Veamos cómo calcular el volumen de una esfera de radio $r$ centrada en el orige
 \end{align*}
 :::
 
-### Cálculo de volúmenes de sólidos de revolución con discos cilíndricos
+## Cálculo de volúmenes de sólidos de revolución con discos cilíndricos
 
 Cuando el sólido se obtiene rotando una función $f(x)$ alrededor del eje $x$, se dice que el sólido resultante es un _sólido de revolución_. 
 
@@ -1016,11 +996,17 @@ Cuando el sólido se obtiene rotando una función $f(x)$ alrededor del eje $x$, 
 ![Sólido de revolución.](img/integrales/disco-solido-revolucion.pdf)
 :::
 
+##
+
 Este tipo de sólidos tiene la particularidad de que todas sus secciones transversales con respecto al eje de rotación son círculos de radio $f(x)$, por lo que el área de las secciones transversales es $A(x)=\pi f(x)^2$, y su volumen en el intervalo $[a,b]$ puede calcularse mediante la integral definida
 
 $$
 \int_a^b \pi f(x)^2\,dx
 $$
+
+[![Cálculo de volúmenes mediante discos cilíndricos](/img/logos/logo-geogebra.png) Cálculo de volúmenes mediante discos cilíndricos](https://www.geogebra.org/classic/drndnm2u)
+
+---
 
 :::{#exm-volumen-cono-revolucion}
 Si rotamos alrededor del eje $x$ el segmento de la recta $f(x)=2-x$ correspondiente al intervalo $x\in[0,2]$, se obtiene un cono con base de radio $2$ y altura $2$. El volumen de este cono es
@@ -1035,7 +1021,8 @@ Si rotamos alrededor del eje $x$ el segmento de la recta $f(x)=2-x$ correspondie
 \end{align*}
 :::
 
-### Cálculo de volúmenes de sólidos de revolución con envoltorios cilíndricos
+
+## Cálculo de volúmenes de sólidos de revolución con envoltorios cilíndricos
 
 Otra forma de calcular volúmenes de sólidos de revolución es mediante envoltorios o envolventes cilíndricas como los de figura de mas abajo. 
 
@@ -1047,39 +1034,17 @@ Otra forma de calcular volúmenes de sólidos de revolución es mediante envolto
 ![Envoltorio cilíndrico de un sólido de revolución.](img/integrales/envoltorio-cilindrico-solido-revolucion.pdf)
 :::
 
+##
+
 Los envoltorios se construyen de forma que su base es un círculo de radio $x\in [a,b]$ y perpendicular al eje de rotación del sólido de revolución y su altura es $f(x)$, de manera que su área (sin contar el área de las bases) es $2\pi x f(x)$. Sumando las áreas de estos infinitos envoltorios que se obtienen para cada $x\in[a,b]$ se obtiene al volumen del cuerpo sólido de revolución en el intervalo $[a,b]$ mediante la integral definida
 
 $$
 \int_a^b 2\pi x f(x)\,dx
 $$
 
-::: {.content-visible when-format="html"}
-<div id="ggb-volumen-revolucion-envoltorios"></div>
+[![Cálculo de volúmenes mediante envoltorios cilíndricos](/img/logos/logo-geogebra.png) Cálculo de volúmenes mediante envoltorios cilíndricos](https://www.geogebra.org/classic/bcpdxmpf)
 
-<script>
-var params = {
-            "appName": "classic", 
-            "width": 800, 
-            "height": 800, 
-            "showToolBar": false, 
-            "showAlgebraInput": false, 
-            "showMenuBar": false,
-            "borderColor": "#FFFFFF",
-            "enableRightClick": false,
-            "enableLabelDrags": false,
-            "enableShiftDragZoom": true,
-            "showZoomButtons": true,
-            "showResetIcon": true,
-            "showFullscreenButton": true,
-            "transparentGraphics": true,
-            "material_id":"bcpdxmpf"
-            };
-    var ggbApplet3 = new GGBApplet(params, true);
-    window.addEventListener("load", function() { 
-        ggbApplet3.inject('ggb-volumen-revolucion-envoltorios');
-    });
-</script>
-:::
+---
 
 :::{#exm-volumen-revolucion-envoltorios}
 El volumen del sólido de revolución que se obtiene al rotar alrededor del eje $y$ la función $f(x)=x^2$ en el intervalo $[0,2]$ puede calcularse usando tanto discos como envoltorios cilíndricos.
@@ -1106,7 +1071,11 @@ $$
 
 ## Cálculo de la longitud de una curva
 
-Otra importante aplicación geométrica de las integrales es el cálculo de la longitud de una curva dada por una función en un intervalo $[a,b]$. Una vez más, la idea consiste en dividir el intervalo $[a,b]$ en $n$ subinvervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ con $\Delta x = x_i-x{i-1}$ $i=1,\ldots,n$, y para cada subintervalo $[x_{i-1}, x_i]$ tomar el segmento que une los puntos $(x_{i-1}, f(x_{i-1}))$ y $(x_i,f(x_i))$. La suma de todos los segmentos correspondientes a la partición tomada nos dará una aproximación de la longitud de la curva de la función en el intervalo $[a,b]$.
+Otra importante aplicación geométrica de las integrales es el cálculo de la longitud de una curva dada por una función en un intervalo $[a,b]$. 
+
+Una vez más, la idea consiste en dividir el intervalo $[a,b]$ en $n$ subinvervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ con $\Delta x = x_i-x{i-1}$ $i=1,\ldots,n$, y para cada subintervalo $[x_{i-1}, x_i]$ tomar el segmento que une los puntos $(x_{i-1}, f(x_{i-1}))$ y $(x_i,f(x_i))$. La suma de todos los segmentos correspondientes a la partición tomada nos dará una aproximación de la longitud de la curva de la función en el intervalo $[a,b]$.
+
+---
 
 :::{.content-visible when-format="html"}
 ![Aproximación de la longitud de una curva mediante segmentos.](img/integrales/aproximacion-longitud-curva.png)
@@ -1115,6 +1084,8 @@ Otra importante aplicación geométrica de las integrales es el cálculo de la l
 :::{.content-visible unless-format="html"}
 ![Aproximación de la longitud de una curva mediante segmentos.](img/integrales/aproximacion-longitud-curva.pdf)
 :::
+
+---
 
 Aplicando el teorema de Pitágoras, es fácil ver que la longitud del segmento correspondiente al subintervalo $[x_{i-1},x_i]$ es 
 
@@ -1128,6 +1099,8 @@ $$
 f'(x'_i) = \frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}
 $$
 
+---
+
 de manera que 
 
 $$
@@ -1138,7 +1111,7 @@ y la longitud del segmento puede expresarse como
 
 \begin{align*}
 \sqrt{\Delta x^2+(f(x_i)-f(x_{i-1}))^2}
-&= \sqrt{\Delta x^2+(f'(x'_i)\Delta x^2}\\
+&= \sqrt{\Delta x^2+(f'(x'_i)\Delta x)^2}\\
 &= \Delta x\sqrt{1+f'(x'_i)^2},
 \end{align*}
 
@@ -1148,6 +1121,8 @@ $$
 \sum_{i=1}^n \sqrt{1+f'(x'_i)^2}\Delta x
 $$
 
+---
+
 Resulta evidente, que a medida que aumentemos el número de subintervalos $n$ de la partición, la aproximación de la longitud de la curva será mejor y en el límite tendremos su valor exacto, que puede calcularse mediante la integral definida
 
 $$
@@ -1155,6 +1130,8 @@ $$
 $$
 
 siempre y cuando $f'(x)$ sea integrable en $[a,b]$.
+
+---
 
 :::{#exm-longitud-circunferencia}
 Veamos cómo calcular la longitud de una circunferencia de radio $1$ centrada en el origen con ecuación $x^2+y^2=1$. Resolviendo esta ecuación para $y$ se tiene que $y=\pm \sqrt{1-x^2}$, y podemos tomar la función $f(x)=\sqrt{1-x^2}$ cuya gráfica es la semicircunferencia superior.
@@ -1166,6 +1143,9 @@ La derivada de $f$ es $f'(x)=\frac{-x}{\sqrt{1-x^2}}$, de manera que la longitud
 &= \int_{-1}^1 \sqrt{1+\frac{x^2}{1-x^2}}\,dx 
 = \int_{-1}^1 \sqrt{\frac{1}{1-x^2}}\,dx
 \end{align*}
+:::
+
+---
 
 Esta integral es impropia ya que $\frac{1}{1-x^2}$ tiende a $\infty$ cuando $x$ tiende a $\pm 1$, por lo que se tiene
 
@@ -1178,13 +1158,15 @@ Esta integral es impropia ya que $\frac{1}{1-x^2}$ tiende a $\infty$ cuando $x$ 
 \end{align*}
 
 Y por tanto, la longitud de la circunferencia de radio $1$ es el doble $2\pi$
-:::
+
 
 ## Cálculo de superficies de sólidos de revolución
 
 A partir del cálculo de la longitud de una curva plana, se puede calcular la superficie del sólido de revolución que se obtiene al girarla sobre el eje $x$. Siguiendo con la idea de aproximar la longitud de la curva mediante polígonos, al rotar alrededor del eje $x$ cada uno de los segmentos que forman parte del polígono, se obtiene un tronco de cono.
 
 Para calcular la superficie del envolvente del tronco de cono, veremos primero cuál es el la superficie de este envolvente para un cono completo. Si desplegamos el envolvente de un cono completo cortándolo por su generatriz, se puede comprobar que se trata de un sector de círculo con radio la generatriz del cono $l$ y con arco de circunferencia el perímetro del círculo de la base del cono $2\pi r$.
+
+---
 
 ::: {.content-visible when-format="html"}
 :::{layout-ncol="2"}
@@ -1202,6 +1184,8 @@ Para calcular la superficie del envolvente del tronco de cono, veremos primero c
 :::
 :::
 
+---
+
 El ángulo que describe este sector de círculo es $\theta = \frac{2\pi r}{l}$, y por tanto, su área es $\frac{\theta}{2}l^2= \frac{2\pi r}{2l}l^2 = \pi rl$.
 
 Para calcular ahora la superficie del envolvente del tronco de cono como del de la figura de más abajo, con radio menor $r_1$ y radio mayor $r_2$, basta con restar a la superficie del cono de radio $r_2$ y generatriz $l_2$, la superficie del cono de radio $r_1$ y generatriz $l_1$.
@@ -1213,6 +1197,8 @@ Para calcular ahora la superficie del envolvente del tronco de cono como del de 
 :::{.content-visible unless-format="html"}
 ![Tronco de cono con radio menor $r_1$ y radio mayor $r_2$.](img/integrales/cono-truncado.pdf)
 :::
+
+---
 
 La superficie del tronco de cono es, por tanto, 
 
@@ -1232,6 +1218,8 @@ $$
 \pi ((r_2-r_1)l_1+r_2l) =  \pi (r_1l+r_2l) = \pi (r_1+r_2) l.
 $$
 
+---
+
 Así pues, si tomamos una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ del intervalo $[a,b]$, la superficie del tronco de cono correspondiente al subintervalo $[x_{i-1},x_i]$ es 
 
 $$ 
@@ -1245,19 +1233,23 @@ S_i = \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2}
 $$
 para algún $x'_i\in [x_{i-1},x_i]$.
 
+---
+
 Si sumamos las superficies de todos los troncos de cono que se obtienen para la partición $P_n$, 
 
 $$
 \sum_{i=1}^n S_i = \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2},
 $$
 
-se obtiene una aproximación de la superficie del sólido de revolución generado al rotar la gráfica de la función $f$ alrededor del eje $x$. A medida que aumentamos el número de intervalos en la partición, la aproximación será mejor y en el límite cuanto $n$ tiende a $\infty$, tendremos el valor exacto de la superficie de revolución. Como ya se ha visto en las secciones anteriores, esta suma infinita es la integral de rieman de las superficie del tronco de cono, es decir, 
+se obtiene una aproximación de la superficie del sólido de revolución generado al rotar la gráfica de la función $f$ alrededor del eje $x$. A medida que aumentamos el número de intervalos en la partición, la aproximación será mejor y en el límite cuanto $n$ tiende a $\infty$, tendremos el valor exacto de la superficie de revolución. Como ya se ha visto en las secciones anteriores, esta suma infinita es la integral de Riemann de las superficie del tronco de cono, es decir, 
 
 $$
 S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2} = \int_a^b 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx,
 $$
 
 ya que, cuando los intervalos se hacen infinitamente pequeños, $f(x_{i_1})$ y $f(x_i)$ se aproximan cada vez más el uno al otro y, en el límite, acaban siendo el mismo valor $f(x)$, por lo que en la integral se pone $2 f(x)$.
+
+---
 
 :::{#exm-superficie-circunferencia}
 Veamos cómo calcular la superficie de una esfera de radio $r$ centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función $f(x)=\sqrt{r^2-x^2}$ alrededor del eje $x$, por lo que su superficie puede calcularse mediante la integral
