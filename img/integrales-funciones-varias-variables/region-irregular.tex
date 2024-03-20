@@ -1,0 +1,26 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}[]
+  \pgfplotsset{grid style={dashed, mygray, line width=0.1pt}}
+  \begin{axis}[
+  grid=major,
+  domain = -0.2:1.2,
+  xmin=-0.2, xmax=1.2,
+  ymin=-0.2, ymax=1.2,
+  x=2cm, y=2cm,
+  axis lines=middle,
+  color=myblack,
+  xtick = {0,1},
+  ytick = {0, 1}]
+  \addplot[name path = f, mark=none, color=myblue, line width=1pt] {x} node[midway, anchor = south east] {$y=x$};
+  \addplot[name path = g, mark=none, color=myblue, line width=1pt] {x^2} node[midway, anchor = north west] {$y=x^2$};
+  \addplot [fill=none] % default: fill none
+  fill between [of=f and g,
+      split,
+      % draw only selected ones:
+      % every segment no 0/.style: invisible
+      every segment no 1/.style={fill, myblue, opacity=0.4},
+      % every segment no 2/.style: invisible
+    ];
+  \node[myblue] at (axis cs: {0.5}, {0.38}) {$R$};
+  \end{axis}
+  \end{tikzpicture}

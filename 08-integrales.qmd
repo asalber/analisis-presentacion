@@ -38,13 +38,7 @@ donde $m_i=\inf\{f(x): x\in[x_{i-1},x_i]\}$ para $i=1,\ldots,n$.
 
 ---
 
-:::{.content-visible when-format="html"}
-![Suma inferior de Riemann](img/integrales/suma-inferior-riemann.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Suma inferior de Riemann](img/integrales/suma-inferior-riemann.pdf)
-:::
+![Suma inferior de Riemann](img/integrales/suma-inferior-riemann)
 
 ##
 
@@ -61,26 +55,14 @@ donde $M_i=\sup\{f(x): x\in[x_{i-1},x_i]\}$ para $i=1,\ldots,n$.
 
 ---
 
-:::{.content-visible when-format="html"}
-![Suma superior de Riemann](img/integrales/suma-superior-riemann.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Suma inferior de Riemann](img/integrales/suma-superior-riemann.pdf)
-:::
+![Suma inferior de Riemann](img/integrales/suma-superior-riemann)
 
 ---
 
 :::{.callout-warning}
 Obsérvese que si una función es negativa en un intervalo $I$, sus sumas de Riemann son negativas, ya que las alturas de los rectángulos son negativas.
 
-:::{.content-visible when-format="html"}
-![Sumas de Riemann de una función con valores positivos y negativos en un intervalo.](img/integrales/sumas-riemann-positivas-negativas.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Sumas de Riemann de una función con valores positivos y negativos en un intervalo.](img/integrales/sumas-riemann-positivas-negativas.pdf)
-:::
+![Sumas de Riemann de una función con valores positivos y negativos en un intervalo.](img/integrales/sumas-riemann-positivas-negativas){width=600}
 :::
 
 ---
@@ -139,9 +121,6 @@ Si $f:I\to\mathbb{R}$ es una función acotada en el intervalo $I=[a,b]$ y $P$ y 
 
 ## Integrales de Riemann
 
-:::{.content-visible when-format="html"}
-![Aproximación del area encerrada entre la gráfica de una función y el eje $x$ mediante sumas de Riemann.](img/integrales/sumas_riemann.gif)
-:::
 
 ## 
 
@@ -355,13 +334,7 @@ $$
 
 ---
 
-:::{.content-visible when-format="html"}
-![Aditividad de la integral respecto del intervalo de integración](img/integrales/aditividad-integral.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Aditividad de la integral respecto del intervalo de integración](img/integrales/aditividad-integral.pdf)
-:::
+![Aditividad de la integral respecto del intervalo de integración](img/integrales/aditividad-integral)
 
 
 ## Clase de las funciones integrables
@@ -603,13 +576,7 @@ $$
 
 ---
 
-:::{.content-visible when-format="html"}
-![Area encerrada por una función positiva y negativa.](img/integrales/area-funcion-positiva-negativa-2.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Area encerrada por una función positiva y negativa.](img/integrales/area-funcion-positiva-negativa-2.pdf)
-:::
+![Area encerrada por una función positiva y negativa.](img/integrales/area-funcion-positiva-negativa-2)
 
 ---
 
@@ -629,13 +596,7 @@ Si resolvemos la ecuación $f(x)=0$ obtenemos dos raíces $x=1$ y $x=3$, de mane
 
 ---
 
-:::{.content-visible when-format="html"}
-![Area encerrada por la parábola $f(x)=x^2-4x+3$.](img/integrales/area-parabola.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Area encerrada por la parábola $f(x)=x^2-4x+3$.](img/integrales/area-parabola.pdf)
-:::
+![Area encerrada por la parábola $f(x)=x^2-4x+3$.](img/integrales/area-parabola)
 
 ## Area encerrada entre dos funciones
 
@@ -649,13 +610,7 @@ $$
 
 ---
 
-:::{.content-visible when-format="html"}
-![Area encerrada entre dos funciones.](img/integrales/area-entre-funciones.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Area encerrada entre dos funciones.](img/integrales/area-entre-funciones.pdf)
-:::
+![Area encerrada entre dos funciones.](img/integrales/area-entre-funciones)
 
 ---
 
@@ -674,25 +629,13 @@ Si resolvemos la ecuación $f(x)-g(x)=0$ obtenemos una raíz en $x=\pi/4$ en el 
 
 ---
 
-:::{.content-visible when-format="html"}
-![Area encerrada entre el seno y el coseno.](img/integrales/area-entre-seno-coseno.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Area encerrada entre el seno y el coseno.](img/integrales/area-entre-seno-coseno.pdf)
-:::
+![Area encerrada entre el seno y el coseno.](img/integrales/area-entre-seno-coseno)
 
 ## Cálculo del area encerrada por una curva en coordenadas polares {#sec-integrales-coordenadas-polares}
 
 En ocasiones, para calcular el area encerrada por una curva, especialmente para curvas dadas mediante una ecuación implícita, resulta más sencillo trabajar en coordenadas polares. 
 
-:::{.content-visible when-format="html"}
-![Coordenadas polares.](img/integrales/coordenadas-polares.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Coordenadas polares.](img/integrales/coordenadas-polares.pdf)
-:::
+![Coordenadas polares.](img/integrales/coordenadas-polares)
 
 ---
 
@@ -741,13 +684,7 @@ donde $M_i=\sup\{f(\theta): \theta\in[\theta_{i-1},\theta_i]\}$ para $i=1,\ldots
 
 ---
 
-:::{.content-visible when-format="html"}
-![Descomposición en sectores de círculos del area encerrada por una curva en polares.](img/integrales/sumas-riemann-polares.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Descomposición en sectores de círculos del area encerrada por una curva en polares.](img/integrales/sumas-riemann-polares.pdf)
-:::
+![Descomposición en sectores de círculos del area encerrada por una curva en polares.](img/integrales/sumas-riemann-polares)
 
 ##
 
@@ -773,13 +710,7 @@ mide el área encerrada por la curva $r=f(\theta)$ y las rectas $\theta=a$ y $\t
 
 ---
 
-:::{.content-visible when-format="html"}
-![Area encerrada por una curva en coordenadas polares.](img/integrales/integral-riemann-polares.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Area encerrada por una curva en coordenadas polares.](img/integrales/integral-riemann-polares.pdf)
-:::
+![Area encerrada por una curva en coordenadas polares.](img/integrales/integral-riemann-polares)
 
 ---
 
@@ -810,13 +741,7 @@ Veamos ahora cómo calcular el area encerrada por la curva polar $r=3\operatorna
 
 ---
 
-:::{.content-visible when-format="html"}
-![Area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.](img/integrales/area-curva-polar.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.](img/integrales/area-curva-polar.pdf)
-:::
+![Area encerrada por la curva polar $r=3\operatorname{sen}(2\theta)$.](img/integrales/area-curva-polar)
 
 ## Cálculo del area encerrada por dos curvas en coordenadas polares
 
@@ -830,13 +755,7 @@ $$
 
 ---
 
-:::{.content-visible when-format="html"}
-![Area encerrada entre dos curvas polares$.](img/integrales/area-entre-curvas-polares.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Area encerrada entre dos curvas polares$.](img/integrales/area-entre-curvas-polares.pdf)
-:::
+![Area encerrada entre dos curvas polares$.](img/integrales/area-entre-curvas-polares)
 
 ##
 
@@ -866,17 +785,9 @@ Así pues, el intervalo de integración es $[-\frac{\pi}{6},\frac{\pi}{6}]$. Com
 
 ---
 
-:::{.content-visible when-format="html"}
-![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2.png)
-:::
+![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2)
 
-:::{.content-visible unless-format="html"}
-![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2.pdf)
-:::
-
-## Integrales impropias
-
-El concepto de integral definida de una función en un intervalo cerrado $[a,b$] y se puede generalizar a intervalos no acotados y también a funciones con discontinuidades de salto infinito.
+## Integrales impropias {.scrollable}
 
 :::{#def-integral-impropia-1}
 ## Integral impropia de primer tipo
@@ -901,7 +812,7 @@ $$
 $$
 :::
 
-Para funciones positivas en los dominios de integración, estas integrales impropias pueden interpretarse también como áreas. En particular, $\int_a^\infty f(x)\,dx$ es el area encerrada por la gráfica de $f$ y el eje $x$ en el intervalo $[a,\infty)$, $\int_{-\infty}^\infty f(x)\,dx$ es el area encerrada por la gráfica de $f$ y el eje $x$ en el intervalo $(-\infty,a]$ y $\int_{-\infty}^\infty f(x)\,dx$ es el area encerrada por la gráfica de $f$ y el eje $x$ en todo $\mathbb{R}$.
+---
 
 :::{#exm-integrales-impropias-1}
 La integral impropia de la función $f(x)=\frac{1}{x^2}$ converge en el intervalo $[1,\infty]$ ya que 
@@ -921,7 +832,7 @@ $$
 Y por tanto, el área que queda encerrada por la gráfica de $g$ y el eje $x$ por encima de $1$ es infinita.
 :::
 
-En estos casos la región encerrada por la gráfica de la función y el eje $x$ se extiende de manera infinita a lo largo del eje $x$. La misma idea puede aplicarse para calcular areas de regiones encerradas por la gráfica de $f$ y el eje $y$ cuando estas regiones se extienden de manera infinita porque la función no está acotada en algún valor del dominio de integración.
+## 
 
 :::{#def-integral-impropia-2}
 ## Integral impropia de segundo tipo
@@ -936,18 +847,7 @@ siempre que este límite exista, en cuyo caso se dice que la integral impropia c
 
 ## Cálculo de volúmenes {#sec-calculo-volumenes-integral}
 
-Otra de las aplicaciones habituales de las integrales es el cálculo de volúmenes de cuerpos sólidos tridimensionales con secciones transversales regulares. El procedimiento es similar al utilizado para el cálculo de areas de regiones planas, pero en lugar de aproximar el area mediante sumas de Riemann de rectángulos, se utilizan sumas de Riemann de figuras geométricas de volumen conocido, habitualmente discos o envoltorios cilíndricos.
-Para ello tomaremos secciones transversales del cuerpo sólido del que se quiere calcular el volumen con respecto a alguno de los ejes a lo largo de una partición del intervalo donde está definido el sólido en ese eje.
-
----
-
-:::{.content-visible when-format="html"}
-![Sección transversal de un cuerpo sólido con respecto al eje $x$](img/integrales/seccion-transversal-piramide.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Sección transversal de un cuerpo sólido con respecto al eje $x$](img/integrales/seccion-transversal-piramide.pdf)
-:::
+![Sección transversal de un cuerpo sólido con respecto al eje $x$](img/integrales/seccion-transversal-piramide)
 
 ##
 
@@ -988,13 +888,7 @@ Veamos cómo calcular el volumen de una esfera de radio $r$ centrada en el orige
 
 Cuando el sólido se obtiene rotando una función $f(x)$ alrededor del eje $x$, se dice que el sólido resultante es un _sólido de revolución_. 
 
-:::{.content-visible when-format="html"}
-![Sólido de revolución.](img/integrales/disco-solido-revolucion.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Sólido de revolución.](img/integrales/disco-solido-revolucion.pdf)
-:::
+![Sólido de revolución.](img/integrales/disco-solido-revolucion)
 
 ##
 
@@ -1026,13 +920,7 @@ Si rotamos alrededor del eje $x$ el segmento de la recta $f(x)=2-x$ correspondie
 
 Otra forma de calcular volúmenes de sólidos de revolución es mediante envoltorios o envolventes cilíndricas como los de figura de mas abajo. 
 
-:::{.content-visible when-format="html"}
-![Envoltorio cilíndrico de un sólido de revolución.](img/integrales/envoltorio-cilindrico-solido-revolucion.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Envoltorio cilíndrico de un sólido de revolución.](img/integrales/envoltorio-cilindrico-solido-revolucion.pdf)
-:::
+![Envoltorio cilíndrico de un sólido de revolución.](img/integrales/envoltorio-cilindrico-solido-revolucion)
 
 ##
 
@@ -1071,21 +959,9 @@ $$
 
 ## Cálculo de la longitud de una curva
 
-Otra importante aplicación geométrica de las integrales es el cálculo de la longitud de una curva dada por una función en un intervalo $[a,b]$. 
+![Aproximación de la longitud de una curva mediante segmentos.](img/integrales/aproximacion-longitud-curva)
 
-Una vez más, la idea consiste en dividir el intervalo $[a,b]$ en $n$ subinvervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ con $\Delta x = x_i-x{i-1}$ $i=1,\ldots,n$, y para cada subintervalo $[x_{i-1}, x_i]$ tomar el segmento que une los puntos $(x_{i-1}, f(x_{i-1}))$ y $(x_i,f(x_i))$. La suma de todos los segmentos correspondientes a la partición tomada nos dará una aproximación de la longitud de la curva de la función en el intervalo $[a,b]$.
-
----
-
-:::{.content-visible when-format="html"}
-![Aproximación de la longitud de una curva mediante segmentos.](img/integrales/aproximacion-longitud-curva.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Aproximación de la longitud de una curva mediante segmentos.](img/integrales/aproximacion-longitud-curva.pdf)
-:::
-
----
+##
 
 Aplicando el teorema de Pitágoras, es fácil ver que la longitud del segmento correspondiente al subintervalo $[x_{i-1},x_i]$ es 
 
@@ -1162,43 +1038,17 @@ Y por tanto, la longitud de la circunferencia de radio $1$ es el doble $2\pi$
 
 ## Cálculo de superficies de sólidos de revolución
 
-A partir del cálculo de la longitud de una curva plana, se puede calcular la superficie del sólido de revolución que se obtiene al girarla sobre el eje $x$. Siguiendo con la idea de aproximar la longitud de la curva mediante polígonos, al rotar alrededor del eje $x$ cada uno de los segmentos que forman parte del polígono, se obtiene un tronco de cono.
-
-Para calcular la superficie del envolvente del tronco de cono, veremos primero cuál es el la superficie de este envolvente para un cono completo. Si desplegamos el envolvente de un cono completo cortándolo por su generatriz, se puede comprobar que se trata de un sector de círculo con radio la generatriz del cono $l$ y con arco de circunferencia el perímetro del círculo de la base del cono $2\pi r$.
-
----
-
-::: {.content-visible when-format="html"}
 :::{layout-ncol="2"}
-![Cono con radio $r$ y generatriz $l$.](./img/integrales/cono.png)
+![Cono con radio $r$ y generatriz $l$.](./img/integrales/cono){width=300}
 
-![Superficie del envolvente del cono.](./img/integrales/superficie-cono.png)
-:::
-:::
-
-::: {.content-visible unless-format="html"}
-:::{layout-ncol="2"}
-![Cono con radio $r$ y generatriz $l$.](./img/integrales/cono.pdf)
-
-![Superficie del envolvente del cono.](./img/integrales/superficie-cono.pdf)
-:::
+![Superficie del envolvente del cono.](./img/integrales/superficie-cono){width=500}
 :::
 
----
+##
 
-El ángulo que describe este sector de círculo es $\theta = \frac{2\pi r}{l}$, y por tanto, su área es $\frac{\theta}{2}l^2= \frac{2\pi r}{2l}l^2 = \pi rl$.
+![Tronco de cono con radio menor $r_1$ y radio mayor $r_2$.](img/integrales/cono-truncado)
 
-Para calcular ahora la superficie del envolvente del tronco de cono como del de la figura de más abajo, con radio menor $r_1$ y radio mayor $r_2$, basta con restar a la superficie del cono de radio $r_2$ y generatriz $l_2$, la superficie del cono de radio $r_1$ y generatriz $l_1$.
-
-:::{.content-visible when-format="html"}
-![Tronco de cono con radio menor $r_1$ y radio mayor $r_2$.](img/integrales/cono-truncado.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Tronco de cono con radio menor $r_1$ y radio mayor $r_2$.](img/integrales/cono-truncado.pdf)
-:::
-
----
+##
 
 La superficie del tronco de cono es, por tanto, 
 
@@ -1223,13 +1073,13 @@ $$
 Así pues, si tomamos una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ del intervalo $[a,b]$, la superficie del tronco de cono correspondiente al subintervalo $[x_{i-1},x_i]$ es 
 
 $$ 
-S_i = \pi (f(x_{i-1}+f(x_i))l_i,
+S_i = \pi (f(x_{i-1})+f(x_i))l_i,
 $$
 
 donde $l_i$ es la longitud del segmento que une los puntos $(x_{i-1},f(x_{i-1}))$ y $(x_i,f(x_i))$, que como vimos en la sección anterior, puede expresarse, gracias al teorema del valor medio, como $\sqrt{1+f'(x'_i)^2}$ para algún $x'_i \in [x_{i-1},x_i]$. Por tanto, la superficie del tronco de cono correspondiente al subintervalo $[x_{i-1},x_i]$ puede expresarse finalmente como
 
 $$
-S_i = \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2}
+S_i = \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2}
 $$
 para algún $x'_i\in [x_{i-1},x_i]$.
 
@@ -1238,18 +1088,16 @@ para algún $x'_i\in [x_{i-1},x_i]$.
 Si sumamos las superficies de todos los troncos de cono que se obtienen para la partición $P_n$, 
 
 $$
-\sum_{i=1}^n S_i = \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2},
+\sum_{i=1}^n S_i = \sum_{i=1}^n \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2},
 $$
 
-se obtiene una aproximación de la superficie del sólido de revolución generado al rotar la gráfica de la función $f$ alrededor del eje $x$. A medida que aumentamos el número de intervalos en la partición, la aproximación será mejor y en el límite cuanto $n$ tiende a $\infty$, tendremos el valor exacto de la superficie de revolución. Como ya se ha visto en las secciones anteriores, esta suma infinita es la integral de Riemann de las superficie del tronco de cono, es decir, 
+y tomamos el límite cuando el número de subintervalos tiende a infinito, se tiene
 
 $$
-S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1}+f(x_i))\sqrt{1+f'(x'_i)^2} = \int_a^b 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx,
+S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2} = \int_a^b 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx.
 $$
 
-ya que, cuando los intervalos se hacen infinitamente pequeños, $f(x_{i_1})$ y $f(x_i)$ se aproximan cada vez más el uno al otro y, en el límite, acaban siendo el mismo valor $f(x)$, por lo que en la integral se pone $2 f(x)$.
-
----
+### {.smaller}
 
 :::{#exm-superficie-circunferencia}
 Veamos cómo calcular la superficie de una esfera de radio $r$ centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función $f(x)=\sqrt{r^2-x^2}$ alrededor del eje $x$, por lo que su superficie puede calcularse mediante la integral
@@ -1266,15 +1114,11 @@ Veamos cómo calcular la superficie de una esfera de radio $r$ centrada en el or
 \end{align*}
 :::
 
-## Aplicaciones físicas
+## Cinemática
 
-En esta sección presentamos varias aplicaciones de las integrales en distintas áreas de la Física. 
+Cuando $s(t)$ es una función que describe la posición de un objeto que se mueve a lo largo del eje $x$, $s'(t)$ es la velocidad instantánea del objeto en cada instante $t$ y $s''(t)$ es la aceleración en cada instante $t$. 
 
-### Cinemática
-
-Como ya ese vió en la [interpretación cinemática de la derivada](https://aprendeconalf.es/analisis-manual/07-derivadas.html#interpretaci%C3%B3n-cinem%C3%A1tica-de-la-derivada), cuando $s(t)$ es una función que describe la posición de un objeto que se mueve a lo largo del eje $x$, $s'(t)$ es la velocidad instantánea del objeto en cada instante $t$ y $s''(t)$ es la aceleración en cada instante $t$. 
-
-Así pues, si conocemos la velocidad instantánea $v(t)$ de un objeto en cada instante $t$, podemos averiguar su posición integrando la velocidad. Como $s(t) es una primitiva de $v(t)$, según el teorema fundamental del cálculo, se tiene 
+Por tanto
 
 $$
 \int_a^b v(t)\, dt = s(a)-s(b),
@@ -1282,9 +1126,13 @@ $$
 
 es decir, la diferencia entre la posición el objeto en los instantes $t=b$ y $t=a$.
 
+---
+
 :::{.callout-warning}
-La integral anterior mide el desplazamiento neto del objeto, que coincide con el desplazamiento absoluto si la función velocidad es positiva en el intervalo de integración, pero si toma valores positivos y negativos, para calcular la distancia total recorrida por el objeto en el intervalo $[a, b]$, es necesario integrar el valor absoluto de la velocidad, tal y como se hizo para el cálculo de áreas en la @sec-calculo-area-funcion-ejex.
+La integral anterior mide el desplazamiento neto del objeto, que coincide con el desplazamiento absoluto si la función velocidad es positiva en el intervalo de integración, pero si toma valores positivos y negativos, para calcular la distancia total recorrida por el objeto en el intervalo $[a, b]$, es necesario integrar el valor absoluto de la velocidad.
 :::
+
+##
 
 En general, suponiendo que el instante inicial en el que comienza el movimiento es el instante $t=0$, y por tanto, la posición inicial del objeto es $s(0)$, la posición que ocupa el objeto en cualquier instante $t$ viene dada por la integral
 
@@ -1292,7 +1140,9 @@ $$
 s(t) = s(0) + \int_{0}^t v(x)\,dx.
 $$
 
-Del mismo modo, si conocemos la aceleración del objeto $a(t)$ en cada instante $t$, podemos averiguar su velocidad integrando la aceleración. Como $v(t)$ es una primitiva de $a(t)$, según el teorema fundamental del cálculo, se tiene 
+##
+
+Del mismo modo, si conocemos la aceleración del objeto $a(t)$ en cada instante $t$, podemos averiguar su velocidad integrando la aceleración. 
 
 $$
 \int_a^b a(t)\, dt = v(t_1)-v(t_0),
@@ -1306,7 +1156,7 @@ $$
 v(t) = v(0) + \int_{0}^t a(x)\,dx.
 $$
 
-Combinando estos dos resultados, es posible averiguar la posición que ocupa el objeto si es conoce su aceleración.
+---
 
 :::{#exm-caida-libre}
 Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición inicial del objeto es $s(0)=s_0$ m y su velocidad inicial es $v(0)=v_0$ m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actúa sobre el objeto es la gravedad, con una aceleración constante $g=9.8$ m/s$^2$.
@@ -1330,9 +1180,9 @@ s(t) = -g\frac{t^2}{2}.
 $$
 :::
 
-### Trabajo
+## Trabajo
 
-Otra aplicación importante de las integrales en Física es el cálculo del trabajo realizado al desplazar un objeto aplicándole una fuerza. En mecánica clásica, si un objeto se desplaza en línea recta y su posición viene dada por la función $s(t)$, la _fuerza_ $F$ ejercida sobre el objeto viene dada por la [segunda ley de Newton](https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica)
+En mecánica clásica, si un objeto se desplaza en línea recta y su posición viene dada por la función $s(t)$, la _fuerza_ $F$ ejercida sobre el objeto viene dada por la [segunda ley de Newton](https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica)
 
 $$
 F = m\cdot a
@@ -1340,7 +1190,9 @@ $$
 
 donde $m$ es la masa del objeto y $a$ es la aceleración. 
 
-La unidad de medida de la fuerza en el Sistema Internacional (SI) es el _newton_ N=kg$\cdot$ m /s$^2$, es decir, si se aplica $1$ N a un objeto de masa $1$ kg, este sufrirá una aceleración de $1$ m/s$^2$.
+La unidad de medida de la fuerza en el Sistema Internacional (SI) es el _newton_ N=kg$\cdot$ m /s$^2$.
+
+##
 
 Cuando se aplica una fuerza sobre un objeto desplazándolo en línea recta una determinada distancia, el _trabajo_ $W$ realizado en ese desplazamiento viene dado por el producto de la fuerza y la distancia que recorre el objeto, es decir,
 
@@ -1351,6 +1203,8 @@ $$
 Como la fuerza se mide en newtons, la unidad del trabajo en el SI es el _julio_ $J = N\cdot m$. 
 
 Cuando la fuerza es constante, el trabajo es proporcional a la distancia recorrida.
+
+---
 
 :::{#exm-trabajo-gravedad}
 Si levantamos una pesa de 1 kg desde el suelo hasta una altura de 2 m, la fuerza ejercida es igual y opuesta a la que ejerce la gravedad, es decir, 
@@ -1366,13 +1220,15 @@ W = F\cdot d = 9.81 \mbox{ N} \cdot 2 \mbox{ m} = 19.62 \mbox{ J}
 $$
 :::
 
-Cuando la fuerza que se aplica sobre el objeto no es constante, sino que viene dada por una función $f(x)$, el cálculo no es tan sencillo, pero podemos aplicar la misma estrategia utilizada con las sumas de Riemann. Si se quiere calcular el trabajo realizado al desplazar el objeto desde la posición $x=a$ hasta $x=b$ aplicando una fuerza $f(x)$, podemos tomar una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ de $n$ intervalos de igual amplitud $\Delta x$ y aproximar el trabajo realizado en el intervalo $[x_{i-1},x_i]$ con $W_i= f(x'_i)(x_i-x_{i-1}) = f(x'_i)\Delta x$, donde $x'_i$ es cualquier valor del intervalo $[x_{i-1},x_i]$. De este modo, el trabajo realizado en el intervalo $[a,b]$ puede aproximarse mediante la suma
+## 
+
+Cuando la fuerza que se aplica sobre el objeto no es constante, sino que viene dada por una función $f(x)$, el trabajo realizado al desplazar el objeto desde la posición $x=a$ hasta $x=b$ aplicando una fuerza $f(x)$, puede aproximarse mediante la suma
 
 $$
 W = \sum_{i=1}^n W_i = \sum_{i=1}^n f(x'_i)\Delta x.
 $$
 
-Como ya se ha visto, cuando el número de subintervalos tiende a $\infty$, en el límite, si la función $f$ es integrable Riemann, podemos obtener el trabajo exacto realizado con la integral
+Y en el límite, cuando el número de subintervalos tiende a $\infty$, en el límite, podemos obtener el trabajo realizado con la integral
 
 $$
 \int_a^b f(x)\,dx
@@ -1382,6 +1238,8 @@ $$
 La integral anterior mide el trabajo realizado al aplicar una fuerza en el sentido del desplazamiento, es decir, cuando es positiva.
 :::
 
+---
+
 :::{#exm-trabajo-fuerza-variable}
 La función $f(x)=\frac{1}{1+x}$ determina la fuerza que actúa sobre una partícula situada a una distancia $x$ del origen de coordenadas. El trabajo que se realiza al desplazar la partícula desde el origen al punto $1$ es
 
@@ -1390,23 +1248,19 @@ W = \int_0^1 \frac{1}{1+x}\,dx = [\ln(1+x)]_0^1 = \ln(2) \mbox{ J}.
 $$
 :::
 
-### Centro de masas
+## Centro de masas
 
-El centro de masas de un objeto o sistema de objetos es el punto geométrico que dinámicamente se comporta como si en él estuvieran aplicadas las fuerzas que actúan sobre el objeto. En el caso de un sistema discreto, como por ejemplo una palanca sobre la que se coloca un número finito de pesos, como en la figura de más abajo, determinar el centro de gravedad es sencillo, ya que basta aplicar la [ley de la palanca de Arquímedes](https://es.wikipedia.org/wiki/Palanca), que establece
+El centro de masas de un objeto o sistema de objetos es el punto geométrico que dinámicamente se comporta como si en él estuvieran aplicadas las fuerzas que actúan sobre el objeto. En el caso de un sistema discreto, como por ejemplo una palanca sobre la que se coloca un número finito de pesos, determinar el centro de gravedad es sencillo, ya que basta aplicar la [ley de la palanca de Arquímedes](https://es.wikipedia.org/wiki/Palanca), que establece
 
 $$
 m_1d_1 = m_2d_2
 $$
 
-:::{.content-visible when-format="html"}
-![Ley de la palanca.](img/integrales/palanca.png)
-:::
+![Ley de la palanca.](img/integrales/palanca)
 
-:::{.content-visible unless-format="html"}
-![Ley de la palanca.](img/integrales/palanca.pdf)
-:::
+##
 
-Si colocamos las dos masas $m_1$ y $m_2$ sobre el eje $x$ en las posiciones $x_1$ y $x_2$ respectivamente, el centro de masas $\bar x$, que se correspondería con la posición donde habría que poner el punto de apoyo de la palanca para que las dos masas la equilibraran, se puede calcular aplicando la ley de la palanca,
+Si colocamos las dos masas $m_1$ y $m_2$ sobre el eje $x$ en las posiciones $x_1$ y $x_2$ respectivamente, el centro de masas $\bar x$ se puede calcular aplicando la ley de la palanca,
 
 $$
 m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{m_1+m_2},
@@ -1414,29 +1268,31 @@ $$
 
 que, en realidad, es la media de las posiciones de $x_1$ y $x_2$ ponderada de las masas.
 
-Debido a la fuerza de la gravedad, cada objeto ejerce una fuerza sobre la palanca que tiende a rotarla alrededor del punto de apoyo (si el objeto está a la izquierda del punto de apoyo provocará una rotación en sentido antihorario, mientras que si está a la derecha lo hará en sentido horario). Esta efecto de rotación se conoce como _momento_ o _torque_, y para un objeto de masa $m$ colocado en la posición $x$ de la palanca, toma el valor $m\cdot x\cdot g$, y sus unidades en el sistema internacional son $N\cdot m$ (aunque ya hemos visto que $N\cdot m$ son julios, en este caso las unidades de los momentos no se expresan en julios para distinguirlos del trabajo, ya que el trabajo es una magnitud escalar, mientras que el momento es una magnitud vectorial).
-
 En general, si hay $n$ objetos sobre la balanza, el centro de masas se alcanzará en el punto $\bar x$ que cumpla, 
 
 $$
 \sum_{i=1}^n m_i(x_i-\bar x) = 0 \Leftrightarrow \bar x = \frac{\sum_{i=1}^n m_ix_i}{\sum_{i=1}^n m_i}.
 $$
 
-#### Centro de masas de una varilla con densidad variable
+## Centro de masas de una varilla con densidad variable
 
-Cuando el sistema contiene infinitos objetos de distintas masas, o se trata de un objeto con una densidad variable, la cosa se complica. Por ejemplo si queremos calcular el centro de masas de una varilla metálica sobre un intervalo $[a,b]$, tal que su densidad viene dada por la función $f(x)$ kg/m, se puede descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$. Podemos aproximar la masa de cada subintervalo, asumiendo que tuviese una densidad constante $f(x_i)$, como $m_i = f(x_i)(x_i-x_{i-1}) = f(x_i) \Delta x$, y por tanto,su momento será $x_im_i = x_i f(x_i)\Delta x$. De este modo, el centro de masas de la varilla será aproximadamente, según la fórmula anterior, 
+Si queremos calcular el centro de masas de una varilla metálica sobre un intervalo $[a,b]$, tal que su densidad viene dada por la función $f(x)$ kg/m, se puede descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$. 
+
+Podemos aproximar la masa de cada subintervalo, asumiendo que tuviese una densidad constante $f(x_i)$, como $m_i = f(x_i)(x_i-x_{i-1}) = f(x_i) \Delta x$, y por tanto,su momento será $x_im_i = x_i f(x_i)\Delta x$. De este modo, el centro de masas de la varilla será aproximadamente, según la fórmula anterior, 
 
 $$
 \bar x = \frac{\sum_{i=1}^n m_ix_i}{\sum_{i=1}^n m_i} = \frac{\sum_{i=1}^n x_if(x_i)\Delta x}{\sum_{i=1}^n f(x_i)\Delta x},
 $$
 
-que es el cociente de dos sumas de Riemann. De nuevo, si aumentamos el número de subintervalos, cuando $n$ tiende a $\infty$, en el límite se obtiene el valor exacto del centro de masas mediante el cociente de dos integrales definidas
+De nuevo, si aumentamos el número de subintervalos, cuando $n$ tiende a $\infty$, en el límite se obtiene el valor exacto del centro de masas mediante el cociente de dos integrales definidas
 
 $$
 \bar x = \frac{\int_a^b xf(x)\,dx}{\int_a^b f(x)\,dx}
 $$
 
-:::{exm-centro-masas}$
+---
+
+:::{#exm-centro-masas}
 El centro de masas de una varilla situada sobre el intervalo $[5, 10]$ con una densidad en cada punto $x$ dada por la función $f(x)=2x-1$ es
 
 \begin{align*}
@@ -1450,19 +1306,19 @@ El centro de masas de una varilla situada sobre el intervalo $[5, 10]$ con una d
 \end{align*}
 :::
 
-#### Centro de masas de una región plana con densidad fija {#sec-centro-masas-region-plana-densidad-constante}
+## Centro de masas de una región plana con densidad fija {#sec-centro-masas-region-plana-densidad-constante}
 
 Cuando se tiene una región plana en $\mathbb{R}^2$, su centro de masas se conoce como _centroide_ y sus coordenadas se representan como $(\bar x, \bar y)$. El cálculo de las coordenadas del centroide, cuando todos los puntos de la región plana tienen la misma densidad $\delta$, se puede realizar de forma similar al cálculo del centro de masas de una varilla con densidad variable.
 
-Si la región está delimitada por una función $f(x)$ y el eje $x$ en un intervalo $[a,b]$, al descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b$\}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$, se puede tomar como aproximación del área correspondiente a cada subintervalo $[x_{i-1},x_i]$ el rectángulo con base el intervalo y altura el valor de la función en el punto medio del intervalo. Si llamamos al punto medio del subintervalo $i$-ésimo subintervalo $\bar x_i=\frac{x_{i-1}+x_i}{2}$, el área del rectángulo correspondiente es $A_i = f(\bar x_i)\Delta x$ y su masa $M_i = \delta f(\bar x_i)\Delta x$. Como todos los puntos tienen la misma densidad $\delta$, el centroide del rectángulo $i$-ésimo es $(\bar x_i, \frac{1}{2}f(\bar x_i))$.
+##
 
-:::{.content-visible when-format="html"}
-![Centroide de los rectángulos de una suma de Riemann.](img/integrales/suma-riemann-centro-masas.png)
-:::
+Si la región está delimitada por una función $f(x)$ y el eje $x$ en un intervalo $[a,b]$, al descomponer el intervalo $[a,b]$ en $n$ subintervalos de igual amplitud mediante una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$, con $\Delta x=x_i-x_{i-1}$ $i=1, \ldots, n$, se puede tomar como aproximación del área correspondiente a cada subintervalo $[x_{i-1},x_i]$ el rectángulo con base el intervalo y altura el valor de la función en el punto medio del intervalo. Si llamamos al punto medio del subintervalo $i$-ésimo subintervalo $\bar x_i=\frac{x_{i-1}+x_i}{2}$, el área del rectángulo correspondiente es $A_i = f(\bar x_i)\Delta x$ y su masa $M_i = \delta f(\bar x_i)\Delta x$. Como todos los puntos tienen la misma densidad $\delta$, el centroide del rectángulo $i$-ésimo es $(\bar x_i, \frac{1}{2}f(\bar x_i))$.
 
-:::{.content-visible unless-format="html"}
-![Centroide de los rectángulos de una suma de Riemann.](img/integrales/suma-riemann-centro-masas.pdf)
-:::
+##
+
+![Centroide de los rectángulos de una suma de Riemann.](img/integrales/suma-riemann-centro-masas)
+
+##
 
 El momento del rectángulo $i$-ésimo con respecto al eje $y$ es 
 
@@ -1482,11 +1338,15 @@ $$
 \delta \lim_{n\to \infty}\sum_{i=1}^n x_i f(\bar x_i)\Delta x = \delta \int_a^b x f(x)\, dx,
 $$
 
-por lo que se tiene
+##
+
+Así pues, la coordenada $\bar x$ del centroide es
 
 $$
 \bar x = \frac{\delta \int_a^b x f(x)\, dx,}{\delta \int_a^b f(x)\, dx,} = \frac{\int_a^b x f(x)\, dx,}{\int_a^b f(x)\, dx,} 
 $$
+
+##
 
 Del mismo modo, el momento del rectángulo $i$-ésimo con respecto al eje $x$ es
 
@@ -1500,17 +1360,21 @@ $$
 \sum_{i=1}^n \frac{1}{2}\delta f(\bar x_i)^2\Delta x = \frac{1}{2}\delta \sum_{i=1}^n f(\bar x_i)^2\Delta x,
 $$
 
-y, tomando particiones cada vez con más subintervalos, en el límite cuanto $n$ tiende a $\infty$ se obtiene el momento de la región con respecto al eje $y$ mediante la integral definida
+y, tomando particiones cada vez con más subintervalos, en el límite cuanto $n$ tiende a $\infty$ se obtiene el momento de la región con respecto al eje $x$ mediante la integral definida
 
 $$
 \frac{1}{2}\delta \lim_{n\to \infty}\sum_{i=1}^n f(\bar x_i)^2\Delta x = \frac{1}{2}\delta \int_a^b f(x)^2\, dx,
 $$
+
+##
 
 por lo que se tiene
 
 $$
 \bar y = \frac{\frac{1}{2}\delta \int_a^b f(x)^2\, dx,}{\delta \int_a^b f(x)\, dx,} = \frac{\int_a^b f(x)^2\, dx,}{2\int_a^b f(x)\, dx,}
 $$
+
+---
 
 :::{#exm-centroide}
 Veamos cómo calcular el centroide del semicírculo de ecuación $f(x)=\sqrt{1-x^2}$. En primer lugar calculamos el área del semicírculo. Haciendo el cambio de variable $x=\operatorname{sen}(\theta)$, $dx = \cos(\theta)d\theta$, se tiene
@@ -1527,8 +1391,11 @@ Veamos cómo calcular el centroide del semicírculo de ecuación $f(x)=\sqrt{1-x
 &= \frac{1}{2}\left(\frac{\pi}{2}+\frac{\pi}{2}\right)
 = \frac{\pi}{2}.
 \end{align*}
+:::
 
-Y ahora calculamos el momento con respecto al eje $x$.
+---
+
+Y ahora calculamos el momento con respecto al eje $y$.
 
 \begin{align*}
 \int_{-1}^1 xf(x)\,dx 
@@ -1547,7 +1414,9 @@ $$
 \bar x = \frac{\int_{-1}^1 x f(x)\, dx,}{\int_{-1}^1 f(x)\, dx,} = \frac{0}{\pi/2} = 0
 $$
 
-Finalmente calculamos el momento con respecto al eje $y$.
+---
+
+Finalmente calculamos el momento con respecto al eje $x$.
 
 \begin{align*}
 \frac{1}{2}\int_{-1}^1 f(x)^2\,dx 
@@ -1565,18 +1434,11 @@ $$
 \bar y = \frac{1}{2}\frac{\int_{-1}^1 f(x)^2\, dx,}{\int_{-1}^1 f(x)\, dx,} = \frac{4/6}{\pi/2} = \frac{4}{3\pi}.
 $$
 
-Luego el centroide es $(0, \frac{4}{3\pi})$.
-:::
+Luego el centroide es $\left(0, \frac{4}{3\pi}\right)$.
 
-## Aplicaciones estadísticas
+## Cálculo de la media de una función {#sec-valor-medio-integral}
 
-Veremos a continuación otras aplicaciones de la integral más relacionadas con la Estadística.
-
-### Cálculo de la media de una función {#sec-valor-medio-integral}
-
-Resulta sencillo calcular la media de un conjunto finito de números, pero la cosa se complica cuando el conjunto de números es infinito, como por ejemplo, cuando queremos calcular la temperatura media de un día.
-
-En esta sección veremos cómo calcular el valor medio de una función $f$ en un intervalo $[a,b]$, siempre y cuando la función sea integrable en el intervalo. La estrategia que seguiremos será la de siempre. Tomaremos una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ de $n$ intervalos de igual amplitud $\Delta x = \frac{b-a}{n}$ y aproximar el valor medio de la función mediante la suma finita
+Para calcular el valor medio de una función $f$ en un intervalo $[a,b]$, tomaremos una partición $P_n=\{x_0=a, x_1, \ldots, x_n=b\}$ de $n$ intervalos de igual amplitud $\Delta x = \frac{b-a}{n}$ y aproximar el valor medio de la función mediante la suma finita
 
 $$
 \sum_{i=1}^n \frac{f(x'_i)}{n} = \sum_{i=1}^n \frac{f(x'_i)}{\frac{b-a}{\Delta x}} = \frac{1}{b-a}\sum_{i=1}^n f(x'_i)\Delta x,
@@ -1589,6 +1451,8 @@ Cuando el número de subintervalos tiende a $\infty$, la suma anterior se parece
 $$
 \bar f[a,b] = \frac{1}{b-a}\int_a^b f(x)\,dx
 $$
+
+---
 
 :::{#exm-valor-medio}
 El valor medio de la función $f(x)=\operatorname{sen}(x)$ en el intervalo $[0,\pi/2]$ es 
@@ -1610,10 +1474,6 @@ Y el valor medio de esta misma función en el intervalo $[0,\pi]$ es
 = \frac{1}{\pi} \int_0^{\pi} \operatorname{sen}(x)\, dx \\
 &= \frac{2}{\pi}[-\cos(x)]_0^{\pi}
 = \frac{2}{\pi}(-1+1)
-= 0,
+= 0.
 \end{align*}
-
-por que la función seno es positiva en $[0,\pi/2]$ y negativa en $[\pi/2, \pi]$, de manera que los valores positivos se compensan con los negativos y se obtiene una media 0.
 :::
-
- -->

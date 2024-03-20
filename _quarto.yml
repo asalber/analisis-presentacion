@@ -26,5 +26,6 @@ format:
     slide-number: c/t
     transition: convex
     transition-speed: fast
+    default-image-extension: svg
     template-partials:
       - title-slide.html

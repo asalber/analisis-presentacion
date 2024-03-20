@@ -1,0 +1,26 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+    \begin{polaraxis}[
+        myblack,
+        xmax = 90,
+        ymax=2.2,
+        xtick={0,90},
+        xticklabels = {$0$, $\pi/2$},
+        ytick=\empty,
+        extra y tick style = {myblue},
+        extra y ticks = {1, 2},
+        extra y tick labels = {$a$, $b$},
+        extra x tick style = {myblue},
+        extra x ticks = {20, 70},
+        extra x tick labels = {$\alpha$, $\beta$},
+        %extra x tick = {80},
+        %extra x tick label = {$\beta$},
+    ]
+        %\addplot[mark=none, domain=0:360, samples=600, color=myblue, fill=myblue, opacity=0.4] {3*sin(2*x)};
+        \addplot[name path=f, mark=none, domain=20:70, samples=200, color=myblue] {1};
+        \addplot[name path=g, mark=none, domain=20:70, samples=200, color=myblue] {2};
+        \addplot[myblue, opacity=0.4] fill between [of=f and g];
+        \node[myblue] at (axis cs:45,1.5) {$I$};
+        %\node[myblue] at (axis cs:270,2.8) {$\displaystyle\frac{1}{2} \int_0^{2\pi} (3\operatorname{sen}(2\theta))^2\,d\theta=\frac{9}{2}\pi$};
+    \end{polaraxis}
+\end{tikzpicture}
