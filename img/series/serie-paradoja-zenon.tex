@@ -1,0 +1,37 @@
+% Compilar con lualatex
+% Preámbulo 
+\usepackage{luacode}
+\begin{luacode*}
+function sum(x)
+    assert(x == math.floor(x), "x must be an integer")
+    res = 0
+    for k = 1, x do
+        res = res + 1/2^k
+    end
+    tex.sprint(res)
+end
+\end{luacode*}
+
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}[declare function={sum(\n) = \directlua{sum(\n)};}]
+    \begin{axis}[
+        use fpu=false, % very important!
+        xlabel={$n$}, % Label for the x-axis
+        ylabel={$A_n$}, % Label for the y-axis
+        title={$A_n = \sum_{i=1}^n \frac{1}{2^i}$}, % Title of the plot
+        grid=major, % Adds a grid
+        %enlargelimits=false, % Fits the plot to the data
+        xmin=1, xmax=20, % Range for the x-axis
+        ymin=0, % Start y-axis at 0
+        axis lines = left, % Only show left and bottom axis lines
+        myblack
+    ]
+        % Calculation of the harmonic series
+        \addplot[
+            samples at={1,...,20}, % Calculating values from 1 to 50
+            only marks, % Only marks, no lines
+            mark=*,
+            myblue % Color of the marks
+        ] {sum(x)}; % The sum function calculates the harmonic number for each n
+    \end{axis}
+    \end{tikzpicture}

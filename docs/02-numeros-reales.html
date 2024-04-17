@@ -10,7 +10,7 @@
 <link href="02-numeros-reales_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="02-numeros-reales_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="02-numeros-reales_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>El Conjunto de los Números Reales</title>
@@ -160,7 +160,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -452,7 +453,7 @@ a-b=a+(-b)\ \forall a, b \in \mathbb{Z}.
 </div>
 </div>
 <div id="thm-densidad-racionales" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 1 (Densidad de los números racionales) </strong></span>El conjunto de los números racionaes es <em>denso</em>, es decir, entre dos números racionales siempre existe un número racional.</p>
+<p><span class="theorem-title"><strong>Teorema 1 (Densidad de los números racionales)</strong></span> El conjunto de los números racionaes es <em>denso</em>, es decir, entre dos números racionales siempre existe un número racional.</p>
 </div>
 </section></section>
 <section id="el-conjunto-de-los-números-irracionales" class="title-slide slide level2 center">
@@ -460,7 +461,7 @@ a-b=a+(-b)\ \forall a, b \in \mathbb{Z}.
 <p>Existen números como <span class="math inline">\(\pi\)</span> o <span class="math inline">\(\sqrt{2}\)</span> que no son enteros ni pueden expresarse de manera fraccionaria, por lo que no están en el conjunto de los números racionales.</p>
 <p>Estos números que no son racionales se denominan <em>irracionales</em>.</p>
 <div id="thm-densidad-irracionales" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2 </strong></span>Entre dos números racionales siempre existe un número irracional.</p>
+<p><span class="theorem-title"><strong>Teorema 2</strong></span> Entre dos números racionales siempre existe un número irracional.</p>
 </div>
 </section>
 
@@ -506,7 +507,7 @@ a-b=a+(-b)\ \forall a, b \in \mathbb{Z}.
 <section id="propiedades-algebraicas" class="slide level3 scrollable">
 <h3>Propiedades algebraicas</h3>
 <div id="prp-propiedades-algebraicas" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 1 (Propiedades de algebraicas) </strong></span>De los axiomas de cuerpo algebraico de los números reales se deducen las siguientes propiedades:</p>
+<p><span class="theorem-title"><strong>Proposición 1 (Propiedades de algebraicas)</strong></span> De los axiomas de cuerpo algebraico de los números reales se deducen las siguientes propiedades:</p>
 <ol type="a">
 <li><p>El elemento neutro de la suma (<span class="math inline">\(0\)</span>) es único: <span class="math inline">\(\forall a,b\in \mathbb{R}\)</span>, si <span class="math inline">\(a+b=a\)</span>, entonces <span class="math inline">\(b=0\)</span>.</p></li>
 <li><p>El elemento neutro del producto (<span class="math inline">\(1\)</span>) es único: <span class="math inline">\(\forall a,b\in \mathbb{R}\)</span>, si <span class="math inline">\(a\cdot b = a\)</span>, entonces <span class="math inline">\(b=1\)</span>.</p></li>
@@ -529,7 +530,7 @@ a-b=a+(-b)\ \forall a, b \in \mathbb{Z}.
 <p>A partir del axioma de tricotomía se puede descomponer el conjunto de los números reales en tres conjuntos disjuntos, los positivos <span class="math inline">\(\mathbb{R}^+\)</span>, <span class="math inline">\(\{0\}\)</span> y los negativos <span class="math inline">\(\mathbb{R}^-\)</span>.</p>
 <p>También se puede definir la siguiente relación que permite comparar dos números.</p>
 <div id="def-relación-orden" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1 (Relaciones de comparación) </strong></span>Dados dos números <span class="math inline">\(a,b\in\mathbb{R}\)</span>, se dice que:</p>
+<p><span class="theorem-title"><strong>Definición 1 (Relaciones de comparación)</strong></span> Dados dos números <span class="math inline">\(a,b\in\mathbb{R}\)</span>, se dice que:</p>
 <ul>
 <li><span class="math inline">\(a\)</span> es <em>menor</em> que <span class="math inline">\(b\)</span>, y lo notamos <span class="math inline">\(a&lt;b\)</span>, si <span class="math inline">\(b-a\in \mathbb{R}^+\)</span>.</li>
 <li><span class="math inline">\(a\)</span> es <em>menor o igual</em> que <span class="math inline">\(b\)</span>, y lo notamos <span class="math inline">\(a\leq b\)</span>, si <span class="math inline">\(b-a\in \mathbb{R}^+\)</span> o <span class="math inline">\(b-a=0\)</span>.</li>
@@ -541,7 +542,7 @@ a-b=a+(-b)\ \forall a, b \in \mathbb{Z}.
 <section class="slide level3">
 
 <div id="prp-relacion-orden" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 2 </strong></span>La relación <em>menor o igual</em> <span class="math inline">\(\leq\)</span> es una relación de orden, es decir, cumple las propiedades</p>
+<p><span class="theorem-title"><strong>Proposición 2</strong></span> La relación <em>menor o igual</em> <span class="math inline">\(\leq\)</span> es una relación de orden, es decir, cumple las propiedades</p>
 <ol type="a">
 <li><em>Reflexiva</em>: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, <span class="math inline">\(a\leq a\)</span>.</li>
 <li><em>Antisimétrica</em>: <span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, si <span class="math inline">\(a\leq b\)</span> y <span class="math inline">\(b\leq a\)</span>, entonces <span class="math inline">\(a=b\)</span>.</li>
@@ -552,7 +553,7 @@ a-b=a+(-b)\ \forall a, b \in \mathbb{Z}.
 <section id="propiedades-de-orden" class="slide level3 scrollable">
 <h3>Propiedades de orden</h3>
 <div id="prp-propiedades-axiomas-orden" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 3 (Propiedades de orden) </strong></span>De los axiomas de orden de los números reales se deducen las siguientes propiedades:</p>
+<p><span class="theorem-title"><strong>Proposición 3 (Propiedades de orden)</strong></span> De los axiomas de orden de los números reales se deducen las siguientes propiedades:</p>
 <ol type="a">
 <li><p>El cuadrado de cualquier número real distinto de <span class="math inline">\(0\)</span> es positivo: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, si <span class="math inline">\(a\neq 0\)</span>, entonces <span class="math inline">\(a^2&gt;0\)</span>.</p></li>
 <li><p>El elemento neutro de la suma es menor que el elemento neutro del producto: <span class="math inline">\(0&lt;1\)</span>.</p></li>
@@ -574,7 +575,7 @@ a-b=a+(-b)\ \forall a, b \in \mathbb{Z}.
 <h2>Valor absoluto</h2>
 <p>A partir del axioma de tricotomía también se puede definir el valor absoluto de un número real.</p>
 <div id="def-valor-absoluto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 2 (Valor absoluto) </strong></span>Dado un número <span class="math inline">\(a\in\mathbb{R}\)</span>, se define el <em>valor absoluto</em> de <span class="math inline">\(a\)</span>, y se denota <span class="math inline">\(|a|\)</span>, como</p>
+<p><span class="theorem-title"><strong>Definición 2 (Valor absoluto)</strong></span> Dado un número <span class="math inline">\(a\in\mathbb{R}\)</span>, se define el <em>valor absoluto</em> de <span class="math inline">\(a\)</span>, y se denota <span class="math inline">\(|a|\)</span>, como</p>
 <p><span class="math display">\[|a|=\begin{cases}
 a &amp; \mbox{si } a\geq 0,\\
 -a &amp; \mbox{si } a&lt;0.
@@ -582,13 +583,13 @@ a &amp; \mbox{si } a\geq 0,\\
 \]</span></p>
 </div>
 <div id="exm-valor-absoluto" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 1 </strong></span><span class="math inline">\(|1.5|=1.5\)</span> y <span class="math inline">\(|-1/2|=1/2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 1</strong></span> <span class="math inline">\(|1.5|=1.5\)</span> y <span class="math inline">\(|-1/2|=1/2\)</span>.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="prp-propiedades-valor-absoluto" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 4 (Propiedades del valor absoluto) </strong></span>Se cumplen las siguientes propiedades del valor absoluto:</p>
+<p><span class="theorem-title"><strong>Proposición 4 (Propiedades del valor absoluto)</strong></span> Se cumplen las siguientes propiedades del valor absoluto:</p>
 <ol type="a">
 <li><p>El valor absoluto de un número real y de su opuesto es el mismo: <span class="math inline">\(\forall a\in\mathbb{R}\)</span>, <span class="math inline">\(|a|=|-a|\)</span>.</p></li>
 <li><p><span class="math inline">\(\forall a,b\in\mathbb{R}\)</span>, <span class="math inline">\(|a-b| = |b-a|\)</span>.</p></li>
@@ -603,19 +604,19 @@ a &amp; \mbox{si } a\geq 0,\\
 <section id="propiedades-de-completitud" class="title-slide slide level2 center">
 <h2>Propiedades de completitud</h2>
 <div id="prp-propiedad-infimo" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 5 </strong></span>Si un subconjunto no vacío <span class="math inline">\(A\subset \mathbb{R}\)</span> tiene una cota inferior, entonces tiene un ínfimo <span class="math inline">\(m\in \mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposición 5</strong></span> Si un subconjunto no vacío <span class="math inline">\(A\subset \mathbb{R}\)</span> tiene una cota inferior, entonces tiene un ínfimo <span class="math inline">\(m\in \mathbb{R}\)</span>.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="thm-propiedad-arquimediana" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 3 (Propiedad arquimediana) </strong></span>Dado un número real <span class="math inline">\(a\in \mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span>, existe un número natural <span class="math inline">\(n\in \mathbb{N}\)</span> tal que <span class="math inline">\(a&lt;n\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 3 (Propiedad arquimediana)</strong></span> Dado un número real <span class="math inline">\(a\in \mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span>, existe un número natural <span class="math inline">\(n\in \mathbb{N}\)</span> tal que <span class="math inline">\(a&lt;n\)</span>.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="cor-consecuencias-arquimedianas" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 1 </strong></span>De la propiedad arquimediana se deducen las siguientes consecuencias:</p>
+<p><span class="theorem-title"><strong>Corolario 1</strong></span> De la propiedad arquimediana se deducen las siguientes consecuencias:</p>
 <ol type="a">
 <li>Si <span class="math inline">\(a&gt;0\in \mathbb{R}\)</span>, entonces <span class="math inline">\(\exists n\in \mathbb{N}\)</span> tal que <span class="math inline">\(0&lt;\frac{1}{n}&lt;a\)</span>.</li>
 <li>Si <span class="math inline">\(a&gt;0\in \mathbb{R}\)</span>, entonces <span class="math inline">\(\exists n\in \mathbb{N}\)</span> tal que <span class="math inline">\(n-1\leq a&lt;n\)</span>.</li>
@@ -625,20 +626,20 @@ a &amp; \mbox{si } a\geq 0,\\
 <section class="slide level3">
 
 <div id="thm-raiz-cuadrada" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 4 (Raíz cuadrada) </strong></span>Dado un número real <span class="math inline">\(a\in\mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span>, existe un número real <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x&gt;0\)</span> y <span class="math inline">\(x^2=a\)</span>. A este número se le llama <em>raíz cuadrada</em> de <span class="math inline">\(a\)</span> y se denota por <span class="math inline">\(\sqrt{a}\)</span> o <span class="math inline">\(a^{1/2}\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 4 (Raíz cuadrada)</strong></span> Dado un número real <span class="math inline">\(a\in\mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span>, existe un número real <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x&gt;0\)</span> y <span class="math inline">\(x^2=a\)</span>. A este número se le llama <em>raíz cuadrada</em> de <span class="math inline">\(a\)</span> y se denota por <span class="math inline">\(\sqrt{a}\)</span> o <span class="math inline">\(a^{1/2}\)</span>.</p>
 </div>
 <p>Del mismo modo se puede probar que para cualquier número real <span class="math inline">\(a\in\mathbb{R}\)</span> con <span class="math inline">\(a&gt;0\)</span> y para cualquier número natural <span class="math inline">\(n\in\mathbb{N}\)</span> existe un número real <span class="math inline">\(x\in\mathbb{R}\)</span> tal que <span class="math inline">\(x&gt;0\)</span> y <span class="math inline">\(x^n=a\)</span>. A este número se le llama <em>raíz <span class="math inline">\(n\)</span>-ésima</em> de <span class="math inline">\(a\)</span>.</p>
 </section>
 <section class="slide level3">
 
 <div id="thm-densidad-racionales" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 5 (Densidad de los números racionales) </strong></span>Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span> con <span class="math inline">\(a&lt;b\)</span>, existe un número racional <span class="math inline">\(q\in \mathbb{Q}\)</span> tal que <span class="math inline">\(a&lt;q&lt;b\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 5 (Densidad de los números racionales)</strong></span> Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span> con <span class="math inline">\(a&lt;b\)</span>, existe un número racional <span class="math inline">\(q\in \mathbb{Q}\)</span> tal que <span class="math inline">\(a&lt;q&lt;b\)</span>.</p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="cor-densidad-irracionales" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 2 (Densidad de los números irracionales) </strong></span>Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span> con <span class="math inline">\(a&lt;b\)</span>, existe un número irracional <span class="math inline">\(p\in \mathbb{R}\setminus \mathbb{Q}\)</span> tal que <span class="math inline">\(a&lt;p&lt;b\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 2 (Densidad de los números irracionales)</strong></span> Dados dos números reales <span class="math inline">\(a,b\in \mathbb{R}\)</span> con <span class="math inline">\(a&lt;b\)</span>, existe un número irracional <span class="math inline">\(p\in \mathbb{R}\setminus \mathbb{Q}\)</span> tal que <span class="math inline">\(a&lt;p&lt;b\)</span>.</p>
 </div>
 </section></section>
 <section id="clasificación-de-los-conjuntos-numéricos" class="title-slide slide level2 center">
@@ -665,9 +666,11 @@ a &amp; \mbox{si } a\geq 0,\\
     \end{cases}
 \]</span></p>
 <p>En particular se cumple que <span class="math inline">\(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}\)</span>.</p>
-
-<img src="img/logos/sticker.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<div class="quarto-auto-generated-content">
+<p><img src="img/logos/sticker.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://aprendeconalf.es/analisis-manual" class="uri">https://aprendeconalf.es/analisis-manual</a></p>
+</div>
 </div>
 </section>
     </div>
@@ -697,7 +700,6 @@ a &amp; \mbox{si } a\geq 0,\\
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -959,10 +961,27 @@ a &amp; \mbox{si } a\geq 0,\\
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -972,8 +991,17 @@ a &amp; \mbox{si } a\geq 0,\\
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -987,7 +1015,11 @@ a &amp; \mbox{si } a\geq 0,\\
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
