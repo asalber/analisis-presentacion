@@ -1,344 +1,116 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
+
+<title>Derivadas de funciones</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
 <script src="07-derivadas_files/libs/clipboard/clipboard.min.js"></script>
-<script src="07-derivadas_files/libs/quarto-html/tabby.min.js"></script>
+<script src="07-derivadas_files/libs/quarto-html/quarto.js"></script>
 <script src="07-derivadas_files/libs/quarto-html/popper.min.js"></script>
 <script src="07-derivadas_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="07-derivadas_files/libs/quarto-html/anchor.min.js"></script>
 <link href="07-derivadas_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="07-derivadas_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="07-derivadas_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="07-derivadas_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="07-derivadas_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="07-derivadas_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="07-derivadas_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="07-derivadas_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="07-derivadas_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.553">
+<link href="07-derivadas_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 
-  <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
-  <title>Derivadas de funciones</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="07-derivadas_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="07-derivadas_files/libs/revealjs/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-      vertical-align: middle;
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
     }
-  </style>
-  <link rel="stylesheet" href="07-derivadas_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="07-derivadas_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="07-derivadas_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="07-derivadas_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="07-derivadas_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="07-derivadas_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="07-derivadas_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-
-  .callout {
-    margin-top: 1em;
-    margin-bottom: 1em;  
-    border-radius: .25rem;
   }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
-  .callout.callout-style-simple { 
-    padding: 0em 0.5em;
-    border-left: solid #acacac .3rem;
-    border-right: solid 1px silver;
-    border-top: solid 1px silver;
-    border-bottom: solid 1px silver;
-    display: flex;
-  }
-
-  .callout.callout-style-default {
-    border-left: solid #acacac .3rem;
-    border-right: solid 1px silver;
-    border-top: solid 1px silver;
-    border-bottom: solid 1px silver;
-  }
-
-  .callout .callout-body-container {
-    flex-grow: 1;
-  }
-
-  .callout.callout-style-simple .callout-body {
-    font-size: 1rem;
-    font-weight: 400;
-  }
-
-  .callout.callout-style-default .callout-body {
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .callout.callout-titled.callout-style-simple .callout-body {
-    margin-top: 0.2em;
-  }
-
-  .callout:not(.callout-titled) .callout-body {
-      display: flex;
-  }
-
-  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
-    padding-left: 1.6em;
-  }
-
-  .callout.callout-titled .callout-header {
-    padding-top: 0.2em;
-    margin-bottom: -0.2em;
-  }
-
-  .callout.callout-titled .callout-title  p {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
-    
-  .callout.callout-titled.callout-style-simple .callout-content  p {
-    margin-top: 0;
-  }
-
-  .callout.callout-titled.callout-style-default .callout-content  p {
-    margin-top: 0.7em;
-  }
-
-  .callout.callout-style-simple div.callout-title {
-    border-bottom: none;
-    font-size: .9rem;
-    font-weight: 600;
-    opacity: 75%;
-  }
-
-  .callout.callout-style-default  div.callout-title {
-    border-bottom: none;
-    font-weight: 600;
-    opacity: 85%;
-    font-size: 0.9rem;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-
-  .callout.callout-style-default div.callout-content {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-
-  .callout.callout-style-simple .callout-icon::before {
-    height: 1rem;
-    width: 1rem;
-    display: inline-block;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: 1rem 1rem;
-  }
-
-  .callout.callout-style-default .callout-icon::before {
-    height: 0.9rem;
-    width: 0.9rem;
-    display: inline-block;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: 0.9rem 0.9rem;
-  }
-
-  .callout-title {
-    display: flex
-  }
-    
-  .callout-icon::before {
-    margin-top: 1rem;
-    padding-right: .5rem;
-  }
-
-  .callout.no-icon::before {
-    display: none !important;
-  }
-
-  .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
-  }
-
-  .callout.callout-titled .callout-icon::before {
-    margin-top: .5rem;
-    padding-right: .5rem;
-  }
-
-  .callout:not(.callout-titled) .callout-icon::before {
-    margin-top: 1rem;
-    padding-right: .5rem;
-  }
-
-  /* Callout Types */
-
-  div.callout-note {
-    border-left-color: #4582ec !important;
-  }
-
-  div.callout-note .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
-  }
-
-  div.callout-note.callout-style-default .callout-title {
-    background-color: #dae6fb
-  }
-
-  div.callout-important {
-    border-left-color: #d9534f !important;
-  }
-
-  div.callout-important .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
-  }
-
-  div.callout-important.callout-style-default .callout-title {
-    background-color: #f7dddc
-  }
-
-  div.callout-warning {
-    border-left-color: #f0ad4e !important;
-  }
-
-  div.callout-warning .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
-  }
-
-  div.callout-warning.callout-style-default .callout-title {
-    background-color: #fcefdc
-  }
-
-  div.callout-tip {
-    border-left-color: #02b875 !important;
-  }
-
-  div.callout-tip .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
-  }
-
-  div.callout-tip.callout-style-default .callout-title {
-    background-color: #ccf1e3
-  }
-
-  div.callout-caution {
-    border-left-color: #fd7e14 !important;
-  }
-
-  div.callout-caution .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
-  }
-
-  div.callout-caution.callout-style-default .callout-title {
-    background-color: #ffe5d0
-  }
-
-  </style>
-  <style type="text/css">
-    .reveal div.sourceCode {
-      margin: 0;
-      overflow: auto;
-    }
-    .reveal div.hanging-indent {
-      margin-left: 1em;
-      text-indent: -1em;
-    }
-    .reveal .slide:not(.center) {
-      height: 100%;
-    }
-    .reveal .slide.scrollable {
-      overflow-y: auto;
-    }
-    .reveal .footnotes {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide .absolute {
-      position: absolute;
-      display: block;
-    }
-    .reveal .footnotes ol {
-      counter-reset: ol;
-      list-style-type: none; 
-      margin-left: 0;
-    }
-    .reveal .footnotes ol li:before {
-      counter-increment: ol;
-      content: counter(ol) ". "; 
-    }
-    .reveal .footnotes ol li > p:first-child {
-      display: inline-block;
-    }
-    .reveal .slide ul,
-    .reveal .slide ol {
-      margin-bottom: 0.5em;
-    }
-    .reveal .slide ul li,
-    .reveal .slide ol li {
-      margin-top: 0.4em;
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide ul[role="tablist"] li {
-      margin-bottom: 0;
-    }
-    .reveal .slide ul li > *:first-child,
-    .reveal .slide ol li > *:first-child {
-      margin-block-start: 0;
-    }
-    .reveal .slide ul li > *:last-child,
-    .reveal .slide ol li > *:last-child {
-      margin-block-end: 0;
-    }
-    .reveal .slide .columns:nth-child(3) {
-      margin-block-start: 0.8em;
-    }
-    .reveal blockquote {
-      box-shadow: none;
-    }
-    .reveal .tippy-content>* {
-      margin-top: 0.2em;
-      margin-bottom: 0.7em;
-    }
-    .reveal .tippy-content>*:last-child {
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide > img.stretch.quarto-figure-center,
-    .reveal .slide > img.r-stretch.quarto-figure-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-left,
-    .reveal .slide > img.r-stretch.quarto-figure-left  {
-      display: block;
-      margin-left: 0;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-right,
-    .reveal .slide > img.r-stretch.quarto-figure-right  {
-      display: block;
-      margin-left: auto;
-      margin-right: 0; 
-    }
-  </style>
 </head>
-<body class="quarto-light">
-  <div class="reveal">
-    <div class="slides">
 
-<section id="title-slide" class="center">
-      <img class="title-logo" src="img/logos/sticker.png" width="250" style="float:right">
-        <p class="subtitle">Análisis Matemático</p>
-      <h1 class="title">Derivadas de funciones</h1>
-      <p class="author">Alfredo Sánchez Alberca &nbsp; <a href="mailto:asalber@ceu.es"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a href="https://twitter.com/aprendeconalf"><i class="fa-brands fa-twitter" aria-label="twitter"></i></a> <a href="https://aprendeconalf.es"><i class="fa-solid fa-home" aria-label="home"></i></a></p>
-        <p class="institute">Universidad CEU San Pablo</p>
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="07-derivadas.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Derivadas de funciones</h1>
+<p class="subtitle lead">Análisis Matemático</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autor/a</div>
+  <div class="quarto-title-meta-heading">Afiliación</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Alfredo Sánchez Alberca &nbsp; <a href="mailto:asalber@ceu.es"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a href="https://twitter.com/aprendeconalf"><i class="fa-brands fa-twitter" aria-label="twitter"></i></a> <a href="https://aprendeconalf.es"><i class="fa-solid fa-home" aria-label="home"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Universidad CEU San Pablo
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
       
-  </section>
-<section id="incremento" class="title-slide slide level2 center">
-<h2>Incremento</h2>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="incremento" class="level2">
+<h2 class="anchored" data-anchor-id="incremento">Incremento</h2>
 <div id="def-incremento" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1 (Incremento)</strong></span> Dada una función <span class="math inline">\(y=f(x)\)</span>, se llama <em>incremento</em> de <span class="math inline">\(f\)</span> en un intervalo <span class="math inline">\([a,b]\)</span> a la diferencia entre el valor de <span class="math inline">\(f\)</span> en cada uno de los extremos del intervalo, y se nota</p>
 <p><span class="math display">\[\Delta y= f(b)-f(a).\]</span></p>
@@ -347,19 +119,15 @@
 <p><span class="math display">\[\Delta x=\Delta y= f(b)-f(a)=b-a,\]</span></p>
 <p>y por tanto, el incremento de <span class="math inline">\(x\)</span> en un intervalo es la amplitud del intervalo. Esto nos permite escribir el intervalo <span class="math inline">\([a,b]\)</span> como <span class="math inline">\([a,a+\Delta x]\)</span>.</p>
 </section>
-
-<section>
-<section id="tasa-de-variación-media" class="title-slide slide level2 center">
-<h2>Tasa de variación media</h2>
+<section id="tasa-de-variación-media" class="level2">
+<h2 class="anchored" data-anchor-id="tasa-de-variación-media">Tasa de variación media</h2>
 <div id="def-tasa-variacion-media" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 2 (Tasa de variación media)</strong></span> Dada una función <span class="math inline">\(y=f(x)\)</span>, se llama <em>tasa de variación media</em> de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([a,a+\Delta x]\)</span>, al cociente entre el incremento de <span class="math inline">\(y\)</span> y el incremento de <span class="math inline">\(x\)</span> en dicho intervalo, y se escribe</p>
 <p><span class="math display">\[
 \operatorname{TVM}(f,[a,a+\Delta x])=\frac{\Delta y}{\Delta x}=\frac{f(a+\Delta x)-f(a)}{\Delta x}.
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-tasa-variacion-media" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 1</strong></span> Consideremos la función <span class="math inline">\(y=x^2\)</span> que mide el área de un cuadrado de chapa metálica de lado <span class="math inline">\(x\)</span>.</p>
 <p>Si en un determinado instante el lado del cuadrado es <span class="math inline">\(a\)</span>, y sometemos la chapa a un proceso de calentamiento que aumenta el lado del cuadrado una cantidad <span class="math inline">\(\Delta x\)</span>, ¿en cuánto se incrementará el área del cuadrado?</p>
@@ -370,20 +138,26 @@
 <p>¿Cuál será la tasa de variación media del área en el intervalo <span class="math inline">\([a,a+\Delta x]\)</span>?</p>
 <p><span class="math display">\[\operatorname{TVM}f[a,a+\Delta x]=\frac{\Delta y}{\Delta x}=\frac{2a\Delta x+\Delta x^2}{\Delta x}=2a+\Delta x.\]</span></p>
 </div>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas/variacion_area_cuadrado.png" class="img-fluid figure-img"></p>
+<figcaption>Variación que experimenta el area de un cuadrado al variar el lado</figcaption>
+</figure>
+</div>
 </section>
-<section class="slide level3">
-
-
-<img data-src="img/derivadas/variacion_area_cuadrado.png" class="r-stretch quarto-figure-center"><p class="caption">Variación que experimenta el area de un cuadrado al variar el lado</p></section></section>
-<section id="interpretación-geométrica-de-la-tasa-de-variación-media" class="title-slide slide level2 center">
-<h2>Interpretación geométrica de la tasa de variación media</h2>
+<section id="interpretación-geométrica-de-la-tasa-de-variación-media" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-geométrica-de-la-tasa-de-variación-media">Interpretación geométrica de la tasa de variación media</h2>
 <p>La tasa de variación media de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([a,a+\Delta x]\)</span> es la pendiente de la recta <em>secante</em> a <span class="math inline">\(f\)</span> en los puntos <span class="math inline">\((a,f(a))\)</span> y <span class="math inline">\((a+\Delta x,f(a+\Delta x))\)</span>.</p>
-
-<img data-src="img/derivadas/secante.png" class="r-stretch quarto-figure-center"><p class="caption">Gráfica de la recta secante a una función en dos puntos.</p></section>
-
-<section>
-<section id="tasa-de-variación-instantánea" class="title-slide slide level2 center">
-<h2>Tasa de variación instantánea</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas/secante.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfica de la recta secante a una función en dos puntos.</figcaption>
+</figure>
+</div>
+</section>
+<section id="tasa-de-variación-instantánea" class="level2">
+<h2 class="anchored" data-anchor-id="tasa-de-variación-instantánea">Tasa de variación instantánea</h2>
 <p>En muchas ocasiones, es interesante estudiar la tasa de variación que experimenta una función, no en intervalo, sino en un punto.</p>
 <p>Conocer la tendencia de variación de una función en un instante puede ayudarnos a predecir valores en instantes próximos.</p>
 <div id="def-tasa-variacion-instantanea" class="theorem definition">
@@ -397,9 +171,7 @@
 f'(a) \mbox{ o bien } \frac{df}{dx}(a)
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-tasa-variacion-instantanea" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 2</strong></span> Consideremos de nuevo la función <span class="math inline">\(y=x^2\)</span> que mide el área de un cuadrado de chapa metálica de lado <span class="math inline">\(x\)</span>.</p>
 <p>Si en un determinado instante el lado del cuadrado es <span class="math inline">\(a\)</span>, y sometemos la chapa a un proceso de calentamiento que aumenta el lado del cuadrado, ¿cuál es la tasa de variación instantánea del área del cuadrado en dicho instante?</p>
@@ -414,26 +186,27 @@ f'(a) \mbox{ o bien } \frac{df}{dx}(a)
 <li><span class="math inline">\(f'(a)&gt;0\)</span> indica que la tendencia es creciente.</li>
 <li><span class="math inline">\(f'(a)&lt;0\)</span> indica que la tendencia es decreciente.</li>
 </ul>
-</section></section>
-<section>
-<section id="interpretación-geométrica-de-la-tasa-de-variación-instantánea" class="title-slide slide level2 center">
-<h2>Interpretación geométrica de la tasa de variación instantánea</h2>
+</section>
+<section id="interpretación-geométrica-de-la-tasa-de-variación-instantánea" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-geométrica-de-la-tasa-de-variación-instantánea">Interpretación geométrica de la tasa de variación instantánea</h2>
 <p>La tasa de variación instantánea de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(a\)</span> es la pendiente de la recta <em>tangente</em> a <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,f(a))\)</span>.</p>
-
-<img data-src="img/derivadas/tangente.png" class="r-stretch quarto-figure-center"><p class="caption">Gráfica de la recta tangente a una función en un punto.</p></section>
-<section class="slide level3">
-
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/derivadas/secante-tangente.gif"></p>
+<figure class="figure">
+<p><img src="img/derivadas/tangente.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfica de la recta tangente a una función en un punto.</figcaption>
+</figure>
+</div>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas/secante-tangente.gif" class="img-fluid figure-img"></p>
 <figcaption>Aproximación de la recta secante a la recta tangente en un punto.</figcaption>
 </figure>
 </div>
-<p><a href="https://www.geogebra.org/m/TX3ABH6F"><img data-src="img/logos/logo-geogebra.png"></a></p>
-</section></section>
-<section>
-<section id="diferenciabilidad" class="title-slide slide level2 center">
-<h2>Diferenciabilidad</h2>
+<p><a href="https://www.geogebra.org/m/TX3ABH6F"><img src="img/logos/logo-geogebra.png" class="img-fluid"></a></p>
+</section>
+<section id="diferenciabilidad" class="level2">
+<h2 class="anchored" data-anchor-id="diferenciabilidad">Diferenciabilidad</h2>
 <div id="def-funcion-diferenciable-derivada" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 4 (Función derivable)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> o <em>derivable</em> en <span class="math inline">\(a\)</span>, si existe el límite</p>
 <p><span class="math display">\[
@@ -442,38 +215,40 @@ f'(a) \mbox{ o bien } \frac{df}{dx}(a)
 <p>En tal caso, al valor del límite se le llama <em>derivada</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> y se denota <span class="math inline">\(f'(a)\)</span>.</p>
 <p>Se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> en el intervalo <span class="math inline">\(I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en todos los puntos de <span class="math inline">\(I\)</span>.</p>
 </div>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Si en la definición anterior llamamos <span class="math inline">\(h=x-a\)</span>, resulta</p>
 <p><span class="math display">\[
 f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h},
 \]</span> que es otra definición equivalente de la derivada de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>.</p>
 </div>
 </div>
-</div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="def-funcion-derivada" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5 (Función derivada)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, se define la <em>función derivada</em> de <span class="math inline">\(f\)</span>, y se denota <span class="math inline">\(f'\)</span>, a la función cuyo dominio es el conjunto de los puntos de <span class="math inline">\(I\)</span> donde <span class="math inline">\(f\)</span> es diferenciable y el valor de <span class="math inline">\(f'\)</span> es el valor de la derivada en cada uno de esos puntos.</p>
 </div>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>La notación <span class="math inline">\(f'(a)\)</span> para la derivada de <span class="math inline">\(f\)</span> se debe a Lagrange, pero también es común en Ciencias e Ingenierías utilizar la notación de <span class="math inline">\(\frac{df}{dx}\)</span> debida a Leibniz. En esta última notación <span class="math inline">\(df\)</span> y <span class="math inline">\(dx\)</span> se conocen como <em>diferenciales</em> de <span class="math inline">\(f\)</span> y <span class="math inline">\(x\)</span>, y representan variaciones infinitesimales de <span class="math inline">\(f\)</span> y <span class="math inline">\(x\)</span> respectivamente.</p>
 </div>
 </div>
-</div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-derivada-1" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 3</strong></span> Sea <span class="math inline">\(f(x)=Id(x)=x\)</span> la función identidad. Entonces, para cualquier <span class="math inline">\(a\in\mathbb{R}\)</span>, se tiene que</p>
 <p><span class="math display">\[
@@ -490,9 +265,7 @@ f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h},
 \]</span></p>
 <p>Por tanto, <span class="math inline">\(f(x)\)</span> es diferenciable en todo <span class="math inline">\(\mathbb{R}\)</span> y <span class="math inline">\(f'(a)=2a\)</span>.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-derivada-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 4</strong></span> Sea la función <span class="math inline">\(f(x)=|x|\)</span>. Veamos si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(0\)</span>. Para ello calculamos los límites laterales.</p>
 <p><span class="math display">\[\begin{align*}
@@ -501,9 +274,9 @@ f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h},
 \end{align*}\]</span></p>
 <p>Por tanto, como los límites laterales no coinciden, <span class="math inline">\(f\)</span> no es diferenciable en <span class="math inline">\(0\)</span>.</p>
 </div>
-</section></section>
-<section id="recta-tangente" class="title-slide slide level2 center">
-<h2>Recta tangente</h2>
+</section>
+<section id="recta-tangente" class="level2">
+<h2 class="anchored" data-anchor-id="recta-tangente">Recta tangente</h2>
 <div id="def-tangente-funcion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 6 (Recta tangente a la gráfica de una función)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, se define la <em>recta tangente</em> a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como la recta que pasa por el punto <span class="math inline">\((a,f(a))\)</span> con pendiente <span class="math inline">\(f'(a)\)</span>, es decir, la recta con ecuación</p>
 <p><span class="math display">\[
@@ -511,19 +284,15 @@ y=f(a)+f'(a)(x-a)
 \]</span></p>
 </div>
 </section>
-
-<section>
-<section id="recta-normal" class="title-slide slide level2 center">
-<h2>Recta normal</h2>
+<section id="recta-normal" class="level2">
+<h2 class="anchored" data-anchor-id="recta-normal">Recta normal</h2>
 <div id="def-normal-funcion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 7 (Recta normal a la gráfica de una función)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, se define la <em>recta normal</em> a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como la recta que pasa por el punto <span class="math inline">\((a,f(a))\)</span> y es perpendicular a la recta tangente a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>, es decir, la recta con ecuación</p>
 <p><span class="math display">\[
 y=f(a)-\frac{1}{f'(a)}(x-a)
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-tangente-normal-funcion" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 5</strong></span> Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la recta tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\(1\)</span> es</p>
 <p><span class="math display">\[
@@ -534,27 +303,28 @@ y = f(1)+f'(1)(x-1) = 1+2(x-1) = 2x-1,
 y = f(1)-\frac{1}{f'(1)}(x-1) = 1-\frac{1}{2}(x-1) = \frac{-x}{2}+\frac{3}{2}.
 \]</span></p>
 </div>
-</section></section>
-<section id="section" class="title-slide slide level2 center">
-<h2></h2>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 <div id="thm-diferenciabilidad-implica-continuidad" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 1</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span>, una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> y un punto <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span> entonces <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(a\)</span>.</p>
 </div>
-<div class="callout callout-caution callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Precaución
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>El recíproco de este teorema no es cierto, es decir, pueden existir funciones continuas en un punto que no sean derivables en ese punto, como por ejemplo la función <span class="math inline">\(f(x)=|x|\)</span> que es continua en <span class="math inline">\(0\)</span> pero, como se ha visto, no es derivable en <span class="math inline">\(0\)</span>.</p>
 </div>
 </div>
-</div>
 </section>
-
-<section>
-<section id="álgebra-de-derivadas" class="title-slide slide level2 center">
-<h2>Álgebra de derivadas</h2>
+<section id="álgebra-de-derivadas" class="level2">
+<h2 class="anchored" data-anchor-id="álgebra-de-derivadas">Álgebra de derivadas</h2>
 <div id="prp-algebra-derivadas" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y dos funciones <span class="math inline">\(f,g:I\to \mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son diferenciables en <span class="math inline">\(a\in I\)</span>, entonces</p>
 <ol type="a">
@@ -565,9 +335,7 @@ y = f(1)-\frac{1}{f'(1)}(x-1) = 1-\frac{1}{2}(x-1) = \frac{-x}{2}+\frac{3}{2}.
 <li><p>Si <span class="math inline">\(g(c)\neq 0\)</span>, <span class="math inline">\(\frac{f}{g}\)</span> es diferenciable en <span class="math inline">\(a\)</span> y <span class="math inline">\(\left(\dfrac{f}{g}\right)'(a)=\dfrac{f'(a)g(a)-f(a)g'(a)}{g(a)^2}\)</span>.</p></li>
 </ol>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-algebra-derivadas" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 6</strong></span> Veamos cuál es la función derivada de la función racional <span class="math inline">\(f(x)=\dfrac{x^2-2x+1}{x}\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
@@ -578,18 +346,15 @@ f'(x)
 &amp;= \frac{2x^2-2x-x^2+2x-1}{x^2} = \frac{x^2-1}{x^2}  \forall x\neq 0.
 \end{align*}\]</span></p>
 </div>
-</section></section>
-<section>
-<section id="regla-de-la-cadena" class="title-slide slide level2 center">
-<h2>Regla de la cadena</h2>
+</section>
+<section id="regla-de-la-cadena" class="level2">
+<h2 class="anchored" data-anchor-id="regla-de-la-cadena">Regla de la cadena</h2>
 <div id="thm-regla-cadena" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 2 (Regla de la cadena)</strong></span> Dados dos intervalos <span class="math inline">\(I,J\subseteq \mathbb{R}\)</span> y dos funciones <span class="math inline">\(f:I\to \mathbb{R}\)</span> y <span class="math inline">\(g:J\to\mathbb{R}\)</span> tales que <span class="math inline">\(f(I)\subseteq J\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en en <span class="math inline">\(a\)</span> y <span class="math inline">\(g\)</span> es diferenciable en <span class="math inline">\(f(a)\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es diferenciable en <span class="math inline">\(a\)</span> y <span class="math display">\[
 (g\circ f)'(a) = g'(f(a))f'(a).
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-regla-cadena" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7</strong></span> Si <span class="math inline">\(g(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(f(x)=x^2\)</span>, entonces <span class="math inline">\(g\circ f(x)=\operatorname{sen}(x^2)\)</span> y, aplicando la regla de la cadena, su derivada vale</p>
 <p><span class="math display">\[
@@ -600,10 +365,9 @@ f'(x)
 (f\circ g)'(x)=f'(g(z))g'(z) = 2g(x)\cos(x) = 2\operatorname{sen}(x)\cos(x).
 \]</span></p>
 </div>
-</section></section>
-<section>
-<section id="derivada-de-la-función-inversa" class="title-slide slide level2 center">
-<h2>Derivada de la función inversa</h2>
+</section>
+<section id="derivada-de-la-función-inversa" class="level2">
+<h2 class="anchored" data-anchor-id="derivada-de-la-función-inversa">Derivada de la función inversa</h2>
 <p>La regla de la cadena nos permite calcular la derivada de la función inversa de una función.</p>
 <div id="thm-derivada-funcion-inversa" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 3 (Derivada de la función inversa)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to \mathbb{R}\)</span> continua e inyectiva en <span class="math inline">\(I\)</span>, y sea <span class="math inline">\(J=f(I)\)</span> y <span class="math inline">\(f^{-1}:J\to\mathbb{R}\)</span> la función inversa de <span class="math inline">\(f\)</span>. Si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\in I\)</span> y <span class="math inline">\(f'(a)\neq 0\)</span>, entonces <span class="math inline">\(f^{-1}\)</span> es diferenciable en <span class="math inline">\(f(a)\)</span> y</p>
@@ -611,26 +375,20 @@ f'(x)
 (f^{-1})'(f(a)) = \frac{1}{f'(a)}.
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="cor-derivada-funcion-inversa" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 1</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> inyectiva en <span class="math inline">\(I\)</span>, y sea <span class="math inline">\(J=f(I)\)</span> y <span class="math inline">\(f^{-1}:J\to\mathbb{R}\)</span> la función inversa de <span class="math inline">\(f\)</span>. Si <span class="math inline">\(f\)</span> es derivable en <span class="math inline">\(I\)</span> y <span class="math inline">\(f'(x)\neq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(f^{-1}\)</span> es derivable en <span class="math inline">\(I\)</span> y <span class="math inline">\(\forall y\in J\)</span>,</p>
 <p><span class="math display">\[
 (f^{-1})'(y) = \frac{1}{f'(f^{-1}(y))}
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-derivada-funcion-inversa" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 8</strong></span> La inversa de la función exponencial <span class="math inline">\(y=f(x)=e^x\)</span> es el logaritmo neperiano <span class="math inline">\(x=f^{-1}(y)=\ln y\)</span>, de modo que, aplicando el teorema anterior, la función derivada del logaritmo es <span class="math display">\[
 \left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{e^x}=\frac{1}{e^{\ln y}}=\frac{1}{y}.
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-derivada-funcion-inversa-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9</strong></span> Si <span class="math inline">\(n\in\mathbb{N}\)</span> es par, la función <span class="math inline">\(f(x)=x^n\)</span> <span class="math inline">\(\forall x\in \mathbb{R}^+\)</span> es inyectiva y derivable, con <span class="math inline">\(f'(x)=nx^{n-1}&gt;0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}^+\)</span>. Por tanto, la función <span class="math inline">\(f^{-1}(y)=\sqrt[n]{y}\)</span> es derivable en <span class="math inline">\(\mathbb{R}^+\)</span> y <span class="math inline">\(\forall y\in \mathbb{R}^+\)</span>,</p>
 <p><span class="math display">\[\begin{align*}
@@ -642,26 +400,26 @@ f'(x)
 (f^{-1})'(y) = \frac{1}{n}y^{\frac{1}{n}-1}.
 \]</span></p>
 </div>
-</section></section>
-<section>
-<section id="derivadas-implícitas" class="title-slide slide level2 center">
-<h2>Derivadas implícitas</h2>
+</section>
+<section id="derivadas-implícitas" class="level2">
+<h2 class="anchored" data-anchor-id="derivadas-implícitas">Derivadas implícitas</h2>
 <div id="exm-funcion-implicita" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 10</strong></span> La función <span class="math inline">\(y=x^2\)</span> también se puede expresar implícitamente mediante la ecuación <span class="math inline">\(y-x^2=0\)</span>.</p>
 </div>
-<div class="callout callout-caution callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Precaución
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>El problema de la representación implícita es que no toda ecuación en <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> define una función. Por ejemplo, la ecuación <span class="math inline">\(y^2-x=0\)</span> no define una función, ya que si se despeja <span class="math inline">\(y\)</span> de la ecuación se obtiene <span class="math inline">\(y=\pm\sqrt{x}\)</span>, que no es una función ya que para cualquier valor de <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(y\)</span> puede tomar dos valores, lo cual no está permitido en una función.</p>
 </div>
 </div>
-</div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Dada una ecuación <span class="math inline">\(F(x,y)=0\)</span>, que define implícitamente <span class="math inline">\(y\)</span> como función de <span class="math inline">\(x\)</span>, si <span class="math inline">\(y\)</span> es derivable en un punto <span class="math inline">\((x_0, y_0)\)</span>, se puede calcular la derivada mediante el siguiente procedimiento:</p>
 <ol type="1">
 <li><p>Calcular la derivada de las expresiones de ambos lados de la ecuación. <span class="math inline">\(F'(x,y)=0\)</span>. En el cálculo de estas derivadas hay que tener en cuenta que <span class="math inline">\(y\)</span> es una función que depende de <span class="math inline">\(x\)</span> y aplicar la regla de la cadena para derivarla.</p></li>
@@ -670,9 +428,7 @@ f'(x)
 <li><p>Resolver la ecuación para <span class="math inline">\(y'\)</span>.</p></li>
 <li><p>Sustituir <span class="math inline">\(x=x_0\)</span>, <span class="math inline">\(y=y_0\)</span>.</p></li>
 </ol>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-derivada-implicita" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 11</strong></span> Dada la ecuación <span class="math inline">\(e^y-x^2=0\)</span> que define a <span class="math inline">\(y\)</span> como función implícita de <span class="math inline">\(x\)</span>, veamos cómo calcular su derivada en el punto <span class="math inline">\((1,0)\)</span> implícitamente</p>
 <p><span class="math display">\[\begin{align*}
@@ -682,9 +438,7 @@ f'(x)
 <p>En este caso, es posible obtener la representación explícita de la función, ya que <span class="math inline">\(e^y-x^2=0 \Rightarrow e^y=x^2 \Rightarrow y=\ln(x^2) = 2\ln(x)\)</span>. Si calculamos su derivada explícitamente, se tiene <span class="math inline">\(y'=\frac{2}{x}\)</span>, y para <span class="math inline">\(x=1\)</span> se tiene <span class="math inline">\(y'(1) = \frac{2}{1}=2\)</span>, que coincide con el resultado anterior.</p>
 </div>
 <p>Aún cuando la ecuación <span class="math inline">\(F(x,y)=0\)</span> no defina implícitamente a <span class="math inline">\(y\)</span> como función de <span class="math inline">\(x\)</span>, es posible utiliza el procedimiento anterior para estudiar la tasa de variación instantánea de <span class="math inline">\(y\)</span> con respecto a <span class="math inline">\(x\)</span> en un punto <span class="math inline">\((x_0, y_0)\)</span> que cumpla la ecuación.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-derivada-implicita-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 12</strong></span> La ecuación <span class="math inline">\(x^2-xy+y^2=1\)</span> no define a <span class="math inline">\(y\)</span> como función explícita de <span class="math inline">\(x\)</span>, ya que para <span class="math inline">\(x=0\)</span> se obtienen dos posibles valores de <span class="math inline">\(y\)</span>, <span class="math inline">\(0^2-0\cdot y+y^2=1 \Rightarrow y^2=1 \Rightarrow y=\pm 1\)</span>. No obstante, en el punto <span class="math inline">\((0,1)\)</span>, se puede calcular la tasa de variación instantánea de <span class="math inline">\(y\)</span> con respecto a <span class="math inline">\(x\)</span>,</p>
 <p><span class="math display">\[
@@ -696,30 +450,35 @@ f'(x)
 <p>y sustituyendo <span class="math inline">\(x=0\)</span>, <span class="math inline">\(y=1\)</span> se tiene <span class="math inline">\(y'(0)=\frac{-2\cdot 0+1}{-0+2\cdot 1} = \frac{1}{2}\)</span>.</p>
 <p>Si dibujamos la gráfica de los puntos que cumplen la ecuación, se puede comprobar que la recta tangente a la gráfica en el punto <span class="math inline">\((0,1)\)</span> tiene pendiente <span class="math inline">\(1/2\)</span>.</p>
 </div>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/derivadas/tangente-curva-implicita.png" class="img-fluid figure-img"></p>
+<figcaption>Recta tangente a la curva implícita <span class="math inline">\(x^2-xy+y^2=1\)</span> en el punto <span class="math inline">\((0,1)\)</span>.</figcaption>
+</figure>
+</div>
 </section>
-<section class="slide level3">
-
-
-<img data-src="./img/derivadas/tangente-curva-implicita.png" class="r-stretch quarto-figure-center"><p class="caption">Recta tangente a la curva implícita <span class="math inline">\(x^2-xy+y^2=1\)</span> en el punto <span class="math inline">\((0,1)\)</span>.</p></section></section>
-<section id="teorema-del-valor-medio-y-aplicaciones" class="title-slide slide level2 center">
-<h2>Teorema del valor medio y aplicaciones</h2>
+<section id="teorema-del-valor-medio-y-aplicaciones" class="level2">
+<h2 class="anchored" data-anchor-id="teorema-del-valor-medio-y-aplicaciones">Teorema del valor medio y aplicaciones</h2>
 <div id="thm-extremo-interior" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 4 (Extremo interior)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> con un extremo relativo en un punto interior <span class="math inline">\(a\in I\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(a\)</span>, entonces <span class="math inline">\(f'(a)=0\)</span>.</p>
 </div>
-<div class="callout callout-caution callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Precaución
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>El resultado anterior no es cierto si el punto <span class="math inline">\(a\)</span> no es interior de <span class="math inline">\(I\)</span>. Para verlo, basta considerar <span class="math inline">\(f(x)=x\)</span> <span class="math inline">\(\forall x\in[0,1]\)</span>. Se observa que <span class="math inline">\(f\)</span> tiene un máximo relativo en <span class="math inline">\(1\)</span>, pero <span class="math inline">\(f'(1)\neq 0\)</span>.</p>
 </div>
 </div>
-</div>
 </section>
-
-<section id="section-1" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"></h2>
 <div id="cor-extremo-interior" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 2</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq \mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> con un extremo relativo en un punto <span class="math inline">\(a\in I\)</span>, entonces <span class="math inline">\(f'(a)\)</span> no existe o <span class="math inline">\(f'(a)=0\)</span>.</p>
 </div>
@@ -727,24 +486,21 @@ f'(x)
 <p><span class="theorem-title"><strong>Ejemplo 13</strong></span> La función <span class="math inline">\(f(x)=|x|\)</span> tiene un mínimo relativo en <span class="math inline">\(0\)</span> que es un punto interior de <span class="math inline">\(\mathbb{R}\)</span>. Sin embargo, <span class="math inline">\(f'(0)\)</span> no existe.</p>
 </div>
 </section>
-
-<section id="section-2" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2"></h2>
 <div id="def-punto-critico" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 8 (Punto crítico)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, se dice que <span class="math inline">\(a\)</span> es un <em>punto crítico</em> o <em>punto singular</em> de <span class="math inline">\(f\)</span>, si <span class="math inline">\(f'(a)=0\)</span>.</p>
 </div>
 <p>Gráficamente, los puntos críticos son puntos donde la tangente a la gráfica de la función es horizontal.</p>
 </section>
-
-<section id="section-3" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3"></h2>
 <div id="thm-rolle" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 5 (Rolle)</strong></span> Dada una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span> continua en <span class="math inline">\([a,b]\)</span> y diferenciable en <span class="math inline">\((a,b)\)</span>, si <span class="math inline">\(f(a)=f(b)\)</span>, entonces <span class="math inline">\(f\)</span> tiene al menos un punto crítico en <span class="math inline">\((a,b)\)</span>, es decir, existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f'(c)=0\)</span>.</p>
 </div>
 </section>
-
-<section id="section-4" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4"></h2>
 <div id="thm-valor-medio" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6 (Valor medio)</strong></span> Dada una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span> continua en <span class="math inline">\([a,b]\)</span> y diferenciable en <span class="math inline">\((a,b)\)</span>, entonces existe <span class="math inline">\(c\in (a,b)\)</span> tal que</p>
 <p><span class="math display">\[
@@ -752,10 +508,8 @@ f'(c) = \frac{f(b)-f(a)}{b-a}.
 \]</span></p>
 </div>
 </section>
-
-<section>
-<section id="estudio-del-crecimiento-de-una-función" class="title-slide slide level2 center">
-<h2>Estudio del crecimiento de una función</h2>
+<section id="estudio-del-crecimiento-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="estudio-del-crecimiento-de-una-función">Estudio del crecimiento de una función</h2>
 <p>La principal aplicación de la derivada es el estudio del crecimiento de una función mediante el signo de la derivada.</p>
 <div id="thm-crecimiento-signo-derivada" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 7 (Signo de la derivada)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> diferenciable en <span class="math inline">\(I\)</span>, entonces:</p>
@@ -764,38 +518,36 @@ f'(c) = \frac{f(b)-f(a)}{b-a}.
 <li><span class="math inline">\(f\)</span> es decreciente en <span class="math inline">\(I\)</span> si y sólo si <span class="math inline">\(f'(x)\leq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>.</li>
 </ol>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-crecimiento" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 14</strong></span> La función <span class="math inline">\(f(x)=x^3\)</span> es creciente en todo <span class="math inline">\(\mathbb{R}\)</span> ya que <span class="math inline">\(\forall x\in \mathbb{R}\ f'(x)\geq 0\)</span>.</p>
 </div>
-<div class="callout callout-warning callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Una función puede ser creciente o decreciente en un intervalo y no tener derivada.</p>
 </div>
 </div>
-</div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-crecimiento-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 15</strong></span> Consideremos la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span>. Su derivada <span class="math inline">\(f'(x)=4x^3-4x\)</span> está definida en todo <span class="math inline">\(\mathbb{R}\)</span> y es continua.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/derivadas/crecimiento.png"></p>
+<figure class="figure">
+<p><img src="img/derivadas/crecimiento.png" class="img-fluid figure-img"></p>
 <figcaption>Estudio del crecimiento de una función.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section>
-<section id="determinación-de-los-extremos-relativos-de-una-función" class="title-slide slide level2 center">
-<h2>Determinación de los extremos relativos de una función</h2>
+</section>
+<section id="determinación-de-los-extremos-relativos-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="determinación-de-los-extremos-relativos-de-una-función">Determinación de los extremos relativos de una función</h2>
 <p>Como consecuencia del resultado anterior, la derivada también sirve para determinar los extremos relativos de una función.</p>
 <div id="thm-extremos-relativos" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 8 (Criterio de la primera derivada)</strong></span> Sea una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span> continua en <span class="math inline">\([a,b]\)</span> y derivable en <span class="math inline">\((a,c)\cup (c,b)\)</span> para un punto <span class="math inline">\(c\in(a,b)\)</span>.</p>
@@ -804,27 +556,27 @@ f'(c) = \frac{f(b)-f(a)}{b-a}.
 <li>Si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\((c-\delta, c+\delta)\subseteq[a,b]\)</span> y <span class="math inline">\(f'(x)\leq 0\)</span> y <span class="math inline">\(\forall x\in(c-\delta,c)\)</span> y <span class="math inline">\(f'(x)\geq 0\)</span> <span class="math inline">\(\forall x\in(c,c+\delta)\)</span>, entonces <span class="math inline">\(f\)</span> tiene un <em>mínimo relativo</em> en <span class="math inline">\(c\)</span>.</li>
 </ol>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-extremos-relativos" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 16</strong></span> Consideremos de nuevo la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span>. Su derivada <span class="math inline">\(f'(x)=4x^3-4x\)</span> está definida en todo <span class="math inline">\(\mathbb{R}\)</span> y es continua.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/derivadas/extremos.png"></p>
+<figure class="figure">
+<p><img src="img/derivadas/extremos.png" class="img-fluid figure-img"></p>
 <figcaption>Estudio de los extremos de una función</figcaption>
 </figure>
 </div>
 </div>
-</section>
-<section class="slide level3">
-
-<div class="callout callout-caution callout-style-simple">
-<div class="callout-body">
+<hr>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Precaución
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>El recíproco de las implicaciones del teorema anterior no tiene por qué ser cierto. Por ejemplo, la función</p>
 <p><span class="math display">\[
 f(x)=
@@ -836,18 +588,15 @@ f(x)=
 <p>tiene un mínimo relativo y absoluto en <span class="math inline">\(x=0\)</span>, pero su derivada toma valores positivos y negativos en cualquier entorno de <span class="math inline">\(0\)</span>.</p>
 </div>
 </div>
-</div>
-</section></section>
-<section id="section-5" class="title-slide slide level2 center">
-<h2></h2>
+</section>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5"></h2>
 <div id="thm-darboux" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9 (Darboux)</strong></span> Dada una función <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\([a,b]\)</span> y <span class="math inline">\(f'(a)&lt;k&lt;f'(b)\)</span>, entonces existe <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f'(c)=k\)</span>.</p>
 </div>
 </section>
-
-<section>
-<section id="determinación-de-los-extremos-absolutos-de-una-función" class="title-slide slide level2 center">
-<h2>Determinación de los extremos absolutos de una función</h2>
+<section id="determinación-de-los-extremos-absolutos-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="determinación-de-los-extremos-absolutos-de-una-función">Determinación de los extremos absolutos de una función</h2>
 <p>Para encontrar los extremos absolutos de una función <span class="math inline">\(f\)</span> derivable en <span class="math inline">\([a,b]\)</span>, basta con seguir el siguiente procedimiento:</p>
 <ol type="1">
 <li>Calcular los puntos críticos de <span class="math inline">\(f\)</span>.</li>
@@ -855,37 +604,33 @@ f(x)=
 <li>Calcular el valor de <span class="math inline">\(f\)</span> en los extremos del intervalo, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>.</li>
 <li>El máximo absoluto será el mayor de los valores obtenidos en los pasos 2 y 3, y el mínimo absoluto será el menor de los valores obtenidos en esos mismos pasos.</li>
 </ol>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-extremos-absolutos" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 17</strong></span> Veamos cuáles son los extremos absolutos de la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span> en el intervalo <span class="math inline">\([0,2]\)</span>. Seguiremos el procedimiento anterior para la determinación de los extremos absolutos.</p>
 <ol type="1">
-<li><p>En el <a href="#/exm-extremos-relativos" class="quarto-xref">Ejemplo&nbsp;16</a> se vió que <span class="math inline">\(f\)</span> tenía tres puntos críticos en <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>. El punto crítico en <span class="math inline">\(-1\)</span> se puede descartar al no pertenecer al intervalo <span class="math inline">\([0,2]\)</span>.</p></li>
+<li><p>En el <a href="#exm-extremos-relativos" class="quarto-xref">Ejemplo&nbsp;16</a> se vió que <span class="math inline">\(f\)</span> tenía tres puntos críticos en <span class="math inline">\(-1\)</span>, <span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>. El punto crítico en <span class="math inline">\(-1\)</span> se puede descartar al no pertenecer al intervalo <span class="math inline">\([0,2]\)</span>.</p></li>
 <li><p>El valor de la función en los puntos críticos del intervalo <span class="math inline">\([0,2]\)</span> son <span class="math inline">\(f(0)=1\)</span> y <span class="math inline">\(f(1)=0\)</span>.</p></li>
 <li><p>El valor de la función en los extremos del intervalo <span class="math inline">\([0,2]\)</span> es <span class="math inline">\(f(0)=1\)</span> y <span class="math inline">\(f(2)=9\)</span>.</p></li>
 <li><p>El máximo absoluto de <span class="math inline">\(f\)</span> en <span class="math inline">\([a,b]\)</span> es <span class="math inline">\(\max\{f(0),f(1),f(2)\}=\max\{1,0,9\}=9\)</span> y el mínimo absoluto es <span class="math inline">\(\min\{f(0),f(1),f(2)\}=\max\{1,0,9\}=0\)</span>.</p></li>
 </ol>
 </div>
-</section></section>
-<section id="localización-de-raíces" class="title-slide slide level2 center">
-<h2>Localización de raíces</h2>
+</section>
+<section id="localización-de-raíces" class="level2">
+<h2 class="anchored" data-anchor-id="localización-de-raíces">Localización de raíces</h2>
 <p>Si una función <span class="math inline">\(g\)</span> es la derivada de otra función <span class="math inline">\(f\)</span>, el teorema de Rolle nos asegura que entre dos raíces cualesquiera de <span class="math inline">\(f\)</span> existe al menos una raíz de <span class="math inline">\(g\)</span>.</p>
 <div id="exm-localizacion-raices-teorema-valor-medio" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 18</strong></span> La función <span class="math inline">\(g(x)=\cos(x)\)</span> es la derivada de la función <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span>, de manera que, entre dos raíces cualesquiera de <span class="math inline">\(\operatorname{sen}(x)\)</span> existe al menos una raíz de <span class="math inline">\(\cos(x)\)</span>.</p>
 </div>
 </section>
-
-<section id="desigualdades" class="title-slide slide level2 center">
-<h2>Desigualdades</h2>
+<section id="desigualdades" class="level2">
+<h2 class="anchored" data-anchor-id="desigualdades">Desigualdades</h2>
 <p>El teorema del valor medio se puede usar en la obtención de desigualdades tales como <span class="math inline">\(-x\leq \operatorname{sen}(x)\leq x\)</span>, donde la igualdad se da para <span class="math inline">\(x=0\)</span> y la desigualdad se cumple para <span class="math inline">\(x&gt;0\)</span>.</p>
 <div id="exm-desigualdad-teorema-valor-medio" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 19</strong></span> Sea <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> cuya derivada es <span class="math inline">\(f'(x)=\cos(x)\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>. Aplicando el teorema del valor medio a <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([0,x]\)</span> para <span class="math inline">\(x&gt;0\)</span>, se tiene que <span class="math inline">\(\frac{\operatorname{sen}(x)-\operatorname{sen}(0)}{x-0} = \cos(c)\)</span> para algún <span class="math inline">\(c\in(0,x)\)</span>. Como <span class="math inline">\(\operatorname{sen(0)}=0\)</span> y <span class="math inline">\(-1\leq \cos(x)\leq 1\)</span> <span class="math inline">\(\forall x\in \mathbb{R}\)</span>, se tiene <span class="math inline">\(\operatorname{sen}(x)=\cos(c)x\)</span> para algún <span class="math inline">\(c\in(0,x)\)</span>, de lo que se deduce que <span class="math inline">\(-x\leq \operatorname{sen}(x)\leq x\)</span>.</p>
 </div>
 </section>
-
-<section id="estimación-de-errores" class="title-slide slide level2 center">
-<h2>Estimación de errores</h2>
+<section id="estimación-de-errores" class="level2">
+<h2 class="anchored" data-anchor-id="estimación-de-errores">Estimación de errores</h2>
 <p>Otra interesante aplicación es el cálculo aproximado del valor de una función en un punto <span class="math inline">\(c\in (a,b)\)</span>, si se conoce el valor de la función en <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>.</p>
 <div id="exm-estimacion-errores-teorema-valor-medio" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 20</strong></span> Veamos cómo calcular <span class="math inline">\(\sqrt{105}\)</span> de manera aproximada. Para ello tomamos la función <span class="math inline">\(f(x)=\sqrt{x}\)</span> que es derivable en todo <span class="math inline">\(\mathbb{R}\)</span> con derivada <span class="math inline">\(f'(x)=\frac{1}{2\sqrt{x}}\)</span>. Aplicando el teorema del valor medio en el intervalo <span class="math inline">\([100, 105]\)</span> se tiene que <span class="math inline">\(\frac{\sqrt{105}-\sqrt{100}}{105-100}=\frac{1}{2\sqrt{c}}\)</span> para algún <span class="math inline">\(c\in(100,105)\)</span>.</p>
@@ -897,10 +642,8 @@ f(x)=
 \end{align*}\]</span></p>
 </div>
 </section>
-
-<section>
-<section id="estudio-de-la-concavidad-de-una-función" class="title-slide slide level2 center">
-<h2>Estudio de la concavidad de una función</h2>
+<section id="estudio-de-la-concavidad-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="estudio-de-la-concavidad-de-una-función">Estudio de la concavidad de una función</h2>
 <div id="thm-concavidad" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 10 (Criterio de la segunda derivada)</strong></span> Dado un intervalo <span class="math inline">\(I\subseteq\mathbb{R}\)</span> abierto y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> dos veces diferenciable en <span class="math inline">\(I\)</span>. Entonces,</p>
 <ol type="1">
@@ -908,46 +651,47 @@ f(x)=
 <li><span class="math inline">\(f\)</span> es cóncava hacia abajo en <span class="math inline">\(I\)</span>, si y sólo si, <span class="math inline">\(f''(x)\leq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>.</li>
 </ol>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-concavidad" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 21</strong></span> La función <span class="math inline">\(f(x)=x^2\)</span> tiene segunda derivada <span class="math inline">\(f''(x)=2&gt;0\)</span> y por tanto es cóncava en todo <span class="math inline">\(\mathbb{R}\)</span>.</p>
 </div>
-<div class="callout callout-warning callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Una función puede ser cóncava hacia arriba o hacia abajo en un intervalo y no tener derivada.</p>
 </div>
 </div>
-</div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-concavidad-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 22</strong></span> Consideremos de nuevo la función <span class="math inline">\(f(x)=x^4-2x^2+1\)</span>. Su segunda derivada <span class="math inline">\(f''(x)=12x^2-4\)</span> está definida en todo <span class="math inline">\(\mathbb{R}\)</span> y es continua.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/derivadas/concavidad.png"></p>
+<figure class="figure">
+<p><img src="img/derivadas/concavidad.png" class="img-fluid figure-img"></p>
 <figcaption>Estudio de la concavidad de una función.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section>
-<section id="cinemática-movimiento-rectilíneo" class="title-slide slide level2 center">
-<h2>Cinemática: Movimiento rectilíneo</h2>
+</section>
+<section id="cinemática-movimiento-rectilíneo" class="level2">
+<h2 class="anchored" data-anchor-id="cinemática-movimiento-rectilíneo">Cinemática: Movimiento rectilíneo</h2>
 <p>Cuando una función <span class="math inline">\(f(t)\)</span> describe la posición de un objeto móvil sobre la recta real en el instante <span class="math inline">\(t\)</span>, tomando como referencia el origen de coordenadas <span class="math inline">\(O\)</span> y el vector unitario <span class="math inline">\(\mathbf{i}=(1)\)</span>, se puede representar la posición <span class="math inline">\(P\)</span> del móvil en cada instante <span class="math inline">\(t\)</span> mediante un vector <span class="math inline">\(\vec{OP}=x\mathbf{i}\)</span> donde <span class="math inline">\(x=f(t)\)</span>.</p>
-
-<img data-src="img/derivadas/movimiento_rectilineo.png" class="r-stretch quarto-figure-center"><p class="caption">Interpretación cinemática del movimiento rectilíneo.</p><p>En este contexto, si se toman los instantes <span class="math inline">\(t=t_0\)</span> y <span class="math inline">\(t=t_0+\Delta t\)</span>, ambos del dominio <span class="math inline">\(I\)</span> de <span class="math inline">\(f\)</span>, el vector</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas/movimiento_rectilineo.png" class="img-fluid figure-img"></p>
+<figcaption>Interpretación cinemática del movimiento rectilíneo.</figcaption>
+</figure>
+</div>
+<p>En este contexto, si se toman los instantes <span class="math inline">\(t=t_0\)</span> y <span class="math inline">\(t=t_0+\Delta t\)</span>, ambos del dominio <span class="math inline">\(I\)</span> de <span class="math inline">\(f\)</span>, el vector</p>
 <p><span class="math display">\[\mathbf{v}_m=\frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}\]</span></p>
 <p>que se conoce como <em>velocidad media</em> del espacio recorrido por <span class="math inline">\(f\)</span> entre los instantes <span class="math inline">\(t_0\)</span> y <span class="math inline">\(t_0+\Delta t\)</span>.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-movimiento-rectilineo" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 23</strong></span> Un vehículo realiza un viaje de Madrid a Barcelona. Sea <span class="math inline">\(f(t)\)</span> la función que da la posición el vehículo en cada instante <span class="math inline">\(t\)</span>. Si el vehículo parte de Madrid (km 0) a las 8 y llega a Barcelona (km 600) a las 14 horas, entonces la velocidad media del vehículo en el trayecto es</p>
 <p><span class="math display">\[
@@ -961,23 +705,23 @@ f(x)=
 <p>Es decir, la derivada de la posición respecto del tiempo, es un campo de vectores que recibe el nombre de <em>velocidad a lo largo de la trayectoria <span class="math inline">\(f\)</span></em>.</p>
 <p>Siguiendo con el ejemplo anterior, lo que marca el velocímetro en un determinado instante sería el módulo del vector velocidad en ese instante.</p>
 </div>
-</section>
-<section class="slide level3">
-
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>También tiene sentido pensar en <span class="math inline">\(f(t)\)</span> como una función que mide otras magnitudes como por ejemplo la temperatura de un cuerpo, la concentración de un gas, la cantidad de un compuesto en una reacción química o el precio de las acciones de una compañía en cada instante <span class="math inline">\(t\)</span>.</p>
 </div>
 </div>
-</div>
-</section></section>
-<section>
-<section id="movimiento-curvilíneo" class="title-slide slide level2 center">
-<h2>Movimiento curvilíneo</h2>
+</section>
+<section id="movimiento-curvilíneo" class="level2">
+<h2 class="anchored" data-anchor-id="movimiento-curvilíneo">Movimiento curvilíneo</h2>
 <p>La derivada como velocidad a lo largo de una trayectoria en la recta real puede generalizarse a trayectorias en cualquier espacio euclídeo <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 <p>Para el caso del plano real <span class="math inline">\(\mathbb{R}^2\)</span>, si <span class="math inline">\(f(t)\)</span> describe la posición de un objeto móvil en el plano en el instante <span class="math inline">\(t\)</span>, tomando como referencia el origen de coordenadas <span class="math inline">\(O\)</span> y los vectores coordenados <span class="math inline">\(\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}\)</span>, se puede representar la posición <span class="math inline">\(P\)</span> del móvil en cada instante <span class="math inline">\(t\)</span> mediante un vector <span class="math inline">\(\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}\)</span> cuyas coordenadas</p>
 <p><span class="math display">\[
@@ -989,22 +733,22 @@ y=y(t)
 t\in I\subseteq \mathbb{R}
 \]</span></p>
 <p>se conocen como <em>funciones coordenadas</em> de <span class="math inline">\(f\)</span> y se escribe <span class="math inline">\(f(t)=(x(t),y(t))\)</span>.</p>
-
-<img data-src="img/derivadas/movimiento_curvilineo.png" class="r-stretch quarto-figure-center"><p class="caption">Interpretación cinemática del movimiento curvilineo.</p></section>
-<section class="slide level3">
-
-</section></section>
-<section>
-<section id="velocidad-en-una-trayectoria-curvilínea-en-el-plano" class="title-slide slide level2 center">
-<h2>Velocidad en una trayectoria curvilínea en el plano</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas/movimiento_curvilineo.png" class="img-fluid figure-img"></p>
+<figcaption>Interpretación cinemática del movimiento curvilineo.</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="velocidad-en-una-trayectoria-curvilínea-en-el-plano" class="level2">
+<h2 class="anchored" data-anchor-id="velocidad-en-una-trayectoria-curvilínea-en-el-plano">Velocidad en una trayectoria curvilínea en el plano</h2>
 <p>En este contexto de una trayectoria <span class="math inline">\(f(t)=(x(t),y(t))\)</span> en el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, para un instante <span class="math inline">\(t=t_0\)</span>, si existe el vector</p>
 <p><span class="math display">\[
 \mathbf{v} = \lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
 \]</span></p>
 <p>entonces <span class="math inline">\(f\)</span> es derivable en el instante <span class="math inline">\(t=t_0\)</span> y el vector <span class="math inline">\(\mathbf{v}=f'(t_0)\)</span> se conoce como <em>velocidad</em> de <span class="math inline">\(f\)</span> en ese instante.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Como <span class="math inline">\(f(t)=(x(t),y(t))\)</span>,</p>
 <p><span class="math display">\[\begin{align*}
 f'(t)&amp;=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}\\
@@ -1018,9 +762,7 @@ f'(t)&amp;=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}\
 <p><span class="math display">\[
 \mathbf{v} = x'(t_0)\mathbf{i}+y'(t_0)\mathbf{j}.
 \]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-movimiento-curvilineo" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 24</strong></span> Dada la trayectoria <span class="math inline">\(f(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya imagen es la circunferencia de centro el origen de coordenadas y radio 1, sus funciones coordenadas son <span class="math inline">\(x(t) = \cos(t)\)</span>, <span class="math inline">\(y(t) = \operatorname{sen}(t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, y su velocidad es</p>
 <p><span class="math display">\[
@@ -1028,17 +770,16 @@ f'(t)&amp;=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}\
 \]</span></p>
 <p>En el instante <span class="math inline">\(t=\pi/4\)</span>, el móvil estará en la posición <span class="math inline">\(f(\pi/4) = (\cos(\pi/4),\operatorname{sen}(\pi/4)) =(\sqrt{2}/2,\sqrt{2}/2)\)</span> y se moverá con una velocidad <span class="math inline">\(\mathbf{v}=f'(\pi/4)=(-\operatorname{sen}(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/derivadas/circunferencia.png"></p>
+<figure class="figure">
+<p><img src="img/derivadas/circunferencia.png" class="img-fluid figure-img"></p>
 <figcaption>Trayectoria de la circunferencia.</figcaption>
 </figure>
 </div>
 <p>Obsérvese que el módulo del vector velocidad siempre será 1 ya que <span class="math inline">\(\lvert \mathbf{v}\rvert = \sqrt{(-\operatorname{sen}(t))^2+(\cos(t))^2}=1\)</span>.</p>
 </div>
-</section></section>
-<section>
-<section id="recta-tangente-a-una-trayectoria-en-el-plano" class="title-slide slide level2 center">
-<h2>Recta tangente a una trayectoria en el plano</h2>
+</section>
+<section id="recta-tangente-a-una-trayectoria-en-el-plano" class="level2">
+<h2 class="anchored" data-anchor-id="recta-tangente-a-una-trayectoria-en-el-plano">Recta tangente a una trayectoria en el plano</h2>
 <p>Los vectores paralelos a la velocidad <span class="math inline">\(\mathbf{v}\)</span> se denominan <em>vectores tangentes</em> a la trayectoria <span class="math inline">\(f\)</span> en el instante <span class="math inline">\(t=t_0\)</span>, y la recta que pasa por <span class="math inline">\(P=f(t_0)\)</span> dirigida por <span class="math inline">\(\mathbf{v}\)</span> es la recta tangente a <span class="math inline">\(f\)</span> cuando <span class="math inline">\(t=t_0\)</span>.</p>
 <div id="def-tangente-trayectoria" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9 (Recta tangente a una trayectoria)</strong></span> Dada una trayectoria <span class="math inline">\(f\)</span> sobre el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, se llama <em>recta tangente</em> a <span class="math inline">\(f\)</span> en <span class="math inline">\(t=t_0\)</span> a la recta de ecuación</p>
@@ -1047,9 +788,7 @@ l: (x,y)&amp;= f(t_0)+tf'(t_0) = (x(t_0),y(t_0))+t(x'(t_0),y'(t_0))\\
 &amp;= (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0)).
 \end{align*}\]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-tangente-trayectoria" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 25</strong></span> Se ha visto que para la trayectoria <span class="math inline">\(f(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, cuya imagen es la circunferencia de centro el origen de coordenadas y radio 1, en el instante <span class="math inline">\(t=\pi/4\)</span> la posición del móvil era <span class="math inline">\(f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)\)</span> y su velocidad <span class="math inline">\(\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)\)</span>, de modo que la recta tangente a <span class="math inline">\(f\)</span> en ese instante es</p>
 <p><span class="math display">\[\begin{align*}
@@ -1058,9 +797,7 @@ l &amp;: X=f(\pi/2)+t\mathbf{v} = \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\ri
 \left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right).
 \end{align*}\]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>De la ecuación vectorial de la recta tangente a <span class="math inline">\(f\)</span> para <span class="math inline">\(t=t_0\)</span>, se obtiene que sus funciones cartesianas son</p>
 <p><span class="math display">\[
 s\begin{cases}
@@ -1077,9 +814,7 @@ y=y(t_0)+ty'(t_0)
 <p><span class="math display">\[
 y-y(t_0)=\frac{y'(t_0)}{x'(t_0)}(x-x(t_0)).
 \]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Partiendo de la ecuación vectorial de la tangente del ejemplo anterior <span class="math inline">\(l=\left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right)\)</span>, su ecuación cartesiana es</p>
 <p><span class="math display">\[
 \begin{gathered}
@@ -1088,10 +823,9 @@ y-\sqrt{2}/2 = \frac{-\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow \\
 y=-x+\sqrt{2}.
 \end{gathered}
 \]</span></p>
-</section></section>
-<section>
-<section id="recta-normal-a-una-trayectoria-en-el-plano" class="title-slide slide level2 center">
-<h2>Recta normal a una trayectoria en el plano</h2>
+</section>
+<section id="recta-normal-a-una-trayectoria-en-el-plano" class="level2">
+<h2 class="anchored" data-anchor-id="recta-normal-a-una-trayectoria-en-el-plano">Recta normal a una trayectoria en el plano</h2>
 <div id="def-normal-trayectoria" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 10 (Recta normal a una trayectoria)</strong></span> Dada una trayectoria <span class="math inline">\(f\)</span> sobre el plano real <span class="math inline">\(\mathbb{R}^2\)</span>, se llama <em>recta normal</em> a <span class="math inline">\(f\)</span> en <span class="math inline">\(t=t_0\)</span> a la recta de ecuación</p>
 <p><span class="math display">\[\begin{align*}
@@ -1107,19 +841,20 @@ l: (x,y) &amp;= (x(t_0),y(t_0))+t(y'(t_0),-x'(t_0)) =\\
 <p><span class="math display">\[
 y-y(t_0) = \frac{-x'(t_0)}{y'(t_0)}(x-x(t_0)).
 \]</span></p>
-<div class="callout callout-important callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>La recta normal es perpendicular a la recta tangente ya que sus vectores directores son ortogonales.</p>
 </div>
 </div>
-</div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-normal-trayectoria" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 26</strong></span> Siguiendo con el ejemplo de la trayectoria <span class="math inline">\(f(t) = (\cos(t),\operatorname{sen}(t))\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, la recta normal en el instante <span class="math inline">\(t=\pi/4\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
@@ -1132,16 +867,15 @@ l&amp;: (x,y)=(\cos(\pi/2),\operatorname{sen}(\pi/2))+t(\cos(\pi/2),\operatornam
 \frac{x-\sqrt{2}/2}{\sqrt{2}/2} = \frac{y-\sqrt{2}/2}{\sqrt{2}/2}\Rightarrow y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/derivadas/circunferencia_tangente_normal.png"></p>
+<figure class="figure">
+<p><img src="img/derivadas/circunferencia_tangente_normal.png" class="img-fluid figure-img"></p>
 <figcaption>Tangente y normal a la trayectoria de una circunferencia.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section>
-<section id="rectas-tangente-y-normal-a-una-función" class="title-slide slide level2 center">
-<h2>Rectas tangente y normal a una función</h2>
+</section>
+<section id="rectas-tangente-y-normal-a-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="rectas-tangente-y-normal-a-una-función">Rectas tangente y normal a una función</h2>
 <p>Un caso particular de las recta tangente y normal a una trayectoria son la recta tangente y normal a una función de una variable real. Si se tiene la función <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(x\in I\subseteq \mathbb{R}\)</span>, una trayectoria que traza la gráfica de <span class="math inline">\(f\)</span> es <span class="math inline">\(g(t) = (t,f(t))  \quad t\in I,\)</span> y su velocidad es <span class="math inline">\(g'(t) = (1,f'(t)),\)</span> de modo que la recta tangente para <span class="math inline">\(t=a\)</span> es</p>
 <p><span class="math display">\[
 \frac{x-a}{1} = \frac{y-f(a)}{f'(a)} \Rightarrow y-f(a) = f'(a)(x-a),
@@ -1150,9 +884,7 @@ l&amp;: (x,y)=(\cos(\pi/2),\operatorname{sen}(\pi/2))+t(\cos(\pi/2),\operatornam
 <p><span class="math display">\[
 \frac{x-a}{f'(a)} = \frac{y-f(a)}{-1} \Rightarrow y-f(a) = \frac{-1}{f'(a)}(x-a),
 \]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-tangente-normal-funcion-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 27</strong></span> Dada la función <span class="math inline">\(y=f(x)=x^2\)</span>, la trayectoria que dibuja la gráfica de esta función es <span class="math inline">\(g(t)=(t,t^2)\)</span> y su velocidad es <span class="math inline">\(g'(t)=(1,2t)\)</span>, de modo que en el punto <span class="math inline">\((1,1)\)</span>, que se alcanza en el instante <span class="math inline">\(t=1\)</span>, la recta tangente es</p>
 <p><span class="math display">\[
@@ -1163,10 +895,9 @@ l&amp;: (x,y)=(\cos(\pi/2),\operatorname{sen}(\pi/2))+t(\cos(\pi/2),\operatornam
 \frac{x-1}{2} = \frac{y-1}{-1} \Rightarrow y-1 = \frac{-1}{2}(x-1) \Rightarrow y = \frac{-x}{2}+\frac{3}{2}.
 \]</span></p>
 </div>
-</section></section>
-<section>
-<section id="recta-tangente-a-una-trayectoria-en-el-espacio" class="title-slide slide level2 center">
-<h2>Recta tangente a una trayectoria en el espacio</h2>
+</section>
+<section id="recta-tangente-a-una-trayectoria-en-el-espacio" class="level2">
+<h2 class="anchored" data-anchor-id="recta-tangente-a-una-trayectoria-en-el-espacio">Recta tangente a una trayectoria en el espacio</h2>
 <p>El concepto de recta tangente a una trayectoria en el plano real puede extenderse fácilmente a trayectorias en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
 <p>Si <span class="math inline">\(f(t)=(x(t),y(t),z(t))\)</span>, <span class="math inline">\(t\in I\subseteq \mathbb{R}\)</span>, es una trayectoria en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, entonces el móvil que recorre esta trayectoria en el instante <span class="math inline">\(t=t_0\)</span>, ocupará la posición <span class="math inline">\(P=(x(t_0),y(t_0),z(t_0))\)</span> y tendrá una velocidad <span class="math inline">\(\mathbf{v}=f'(t)=(x'(t),y'(t),z'(t))\)</span>, de manera que la recta tangente a <span class="math inline">\(f\)</span> en ese instante será</p>
 <p><span class="math display">\[\begin{align*}
@@ -1178,9 +909,7 @@ l&amp;: (x,y,z)=(x(t_0),y(t_0),z(t_0))+t(x'(t_0),y'(t_0),z'(t_0)) =\\
 \frac{x-x(t_0)}{x'(t_0)}=\frac{y-y(t_0)}{y'(t_0)}=\frac{z-z(t_0)}{z'(t_0)},
 \]</span></p>
 <p>siempre que <span class="math inline">\(x'(t_0)\neq 0\)</span>, <span class="math inline">\(y'(t_0)\neq 0\)</span> y <span class="math inline">\(z'(t_0)\neq 0\)</span>.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-tangente-tracyectoria-espacio" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 28</strong></span> Dada la trayectoria del espacio <span class="math inline">\(f(t)=(\cos(t), \operatorname{sen}(t), t)\)</span>, <span class="math inline">\(t\in \mathbb{R}\)</span>, en el instante <span class="math inline">\(t=\pi/2\)</span>, la trayectoria pasará por el punto</p>
 <p><span class="math display">\[
@@ -1195,17 +924,16 @@ f(\pi/2)=(\cos(\pi/2),\operatorname{sen}(\pi/2),\pi/2)=(0,1,\pi/2),
 l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/derivadas/tangente_trayectoria_espacio.png"></p>
+<figure class="figure">
+<p><img src="img/derivadas/tangente_trayectoria_espacio.png" class="img-fluid figure-img"></p>
 <figcaption>Gráfica de la tangente a una trayectoria en el espacio.</figcaption>
 </figure>
 </div>
 </div>
 <p><img src="img/logos/logo-geogebra.png#left"> <strong><a href="http://ggbtu.be/m156108" target="_blank">Ejemplo interactivo</a></strong></p>
-</section></section>
-<section>
-<section id="polinomios-de-taylor" class="title-slide slide level2 center">
-<h2>Polinomios de Taylor</h2>
+</section>
+<section id="polinomios-de-taylor" class="level2">
+<h2 class="anchored" data-anchor-id="polinomios-de-taylor">Polinomios de Taylor</h2>
 <p>Una aplicación muy útil de la derivada es la aproximación de funciones mediante polinomios.</p>
 <p>Los polinomios son funciones sencillas de calcular (mediante sumas y productos), que tienen muy buenas propiedades:</p>
 <ul>
@@ -1214,9 +942,8 @@ l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
 <li>Son derivables hasta cualquier orden y sus derivadas son continuas.</li>
 </ul>
 <p>En esta sección veremos cómo aproximar una función <span class="math inline">\(f(x)\)</span> mediante un polinomio <span class="math inline">\(p(x)\)</span> cerca de un valor <span class="math inline">\(x=a\)</span>.</p>
-</section>
-<section id="aproximación-mediante-un-polinomio-de-grado-0" class="slide level3">
-<h3>Aproximación mediante un polinomio de grado 0</h3>
+<section id="aproximación-mediante-un-polinomio-de-grado-0" class="level3">
+<h3 class="anchored" data-anchor-id="aproximación-mediante-un-polinomio-de-grado-0">Aproximación mediante un polinomio de grado 0</h3>
 <p>Un polinomio de grado 0 tiene ecuación <span class="math display">\[p(x) = c_0,\]</span> donde <span class="math inline">\(c_0\)</span> es una constante.</p>
 <p>Como el polinomio debe valer lo que la función en el punto <span class="math inline">\(a\)</span>, debe cumplir</p>
 <p><span class="math display">\[
@@ -1226,13 +953,16 @@ p(a) = c_0 = f(a).
 <p><span class="math display">\[
 p(x) = f(a).
 \]</span></p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas/polinomio_grado_0.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfica del polinomio de Taylor de grado 0</figcaption>
+</figure>
+</div>
 </section>
-<section class="slide level3">
-
-
-<img data-src="img/derivadas/polinomio_grado_0.png" class="r-stretch quarto-figure-center"><p class="caption">Gráfica del polinomio de Taylor de grado 0</p></section>
-<section id="aproximación-mediante-un-polinomio-de-grado-1" class="slide level3">
-<h3>Aproximación mediante un polinomio de grado 1</h3>
+<section id="aproximación-mediante-un-polinomio-de-grado-1" class="level3">
+<h3 class="anchored" data-anchor-id="aproximación-mediante-un-polinomio-de-grado-1">Aproximación mediante un polinomio de grado 1</h3>
 <p>Un polinomio de grado 1 es una recta y tiene ecuación</p>
 <p><span class="math display">\[
 p(x) = c_0+c_1x,
@@ -1247,9 +977,7 @@ p(x) = c_0+c_1(x-a).
 <li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen la misma tasa de crecimiento en <span class="math inline">\(a\)</span>: <span class="math inline">\(p'(a) = f'(a)\)</span>.</li>
 </ul>
 <p>Esta última condición nos asegura que en un entorno de <span class="math inline">\(a\)</span>, <span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen aproximadamente la misma tendencia de crecimiento, pero requiere que la función <span class="math inline">\(f\)</span> sea derivable en <span class="math inline">\(a\)</span>.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Imponiendo las condiciones anteriores tenemos</p>
 <ul>
 <li><span class="math inline">\(p(x)=c_0+c_1(x-a) \Rightarrow p(a)=c_0+c_1(a-a)=c_0=f(a)\)</span>,</li>
@@ -1260,14 +988,17 @@ p(x) = c_0+c_1(x-a).
 p(x) = f(a)+f '(a)(x-a),
 \]</span></p>
 <p>que resulta ser la recta tangente a <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,f(a))\)</span>.</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas/polinomio_grado_1.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfica del polinomio de Taylor de grado 1</figcaption>
+</figure>
+</div>
 </section>
-<section class="slide level3">
-
-
-<img data-src="img/derivadas/polinomio_grado_1.png" class="r-stretch quarto-figure-center"><p class="caption">Gráfica del polinomio de Taylor de grado 1</p></section></section>
-<section>
-<section id="aproximación-mediante-un-polinomio-de-grado-2" class="title-slide slide level2 center">
-<h2>Aproximación mediante un polinomio de grado 2</h2>
+</section>
+<section id="aproximación-mediante-un-polinomio-de-grado-2" class="level2">
+<h2 class="anchored" data-anchor-id="aproximación-mediante-un-polinomio-de-grado-2">Aproximación mediante un polinomio de grado 2</h2>
 <p>Un polinomio de grado 2 es una parábola y tiene ecuación</p>
 <p><span class="math display">\[
 p(x) = c_0+c_1x+c_2x^2,
@@ -1283,9 +1014,7 @@ p(x) = c_0+c_1(x-a)+c_2(x-a)^2.
 <li><span class="math inline">\(p\)</span> y <span class="math inline">\(f\)</span> tienen la misma curvatura en <span class="math inline">\(a\)</span>: <span class="math inline">\(p''(a)=f''(a)\)</span>.</li>
 </ul>
 <p>Esta última condición requiere que la función <span class="math inline">\(f\)</span> sea dos veces derivable en <span class="math inline">\(a\)</span>.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Imponiendo las condiciones anteriores tenemos</p>
 <ul>
 <li><span class="math inline">\(p(x)=c_0+c_1(x-a)+c_2(x-a)^2 \Rightarrow p(a)=c_0=f(a)\)</span>,</li>
@@ -1296,14 +1025,16 @@ p(x) = c_0+c_1(x-a)+c_2(x-a)^2.
 <p><span class="math display">\[
 p(x) = f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2.
 \]</span></p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas/polinomio_grado_2.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfica del polinomio de Taylor de grado 2</figcaption>
+</figure>
+</div>
 </section>
-<section class="slide level3">
-
-
-<img data-src="img/derivadas/polinomio_grado_2.png" class="r-stretch quarto-figure-center"><p class="caption">Gráfica del polinomio de Taylor de grado 2</p></section></section>
-<section>
-<section id="aproximación-mediante-un-polinomio-de-grado-n" class="title-slide slide level2 center">
-<h2>Aproximación mediante un polinomio de grado <span class="math inline">\(n\)</span></h2>
+<section id="aproximación-mediante-un-polinomio-de-grado-n" class="level2">
+<h2 class="anchored" data-anchor-id="aproximación-mediante-un-polinomio-de-grado-n">Aproximación mediante un polinomio de grado <span class="math inline">\(n\)</span></h2>
 <p>Un polinomio de grado <span class="math inline">\(n\)</span> tiene ecuación</p>
 <p><span class="math display">\[
 p(x) = c_0+c_1x+c_2x^2+\cdots +c_nx^n,
@@ -1320,9 +1051,7 @@ p(x) = c_0+c_1(x-a)+c_2(x-a)^2+\cdots +c_n(x-a)^n.
 <li><span class="math inline">\(\cdots\)</span></li>
 <li><span class="math inline">\(p^{(n}(a)=f^{(n}(a)\)</span>.</li>
 </ul>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Las sucesivas derivadas de <span class="math inline">\(p\)</span> valen</p>
 <p><span class="math display">\[\begin{align*}
 p(x) &amp;= c_0+c_1(x-a)+c_2(x-a)^2+\cdots +c_n(x-a)^n,\\
@@ -1339,9 +1068,7 @@ p^{(n}(x) &amp;= n(n-1)(n-2)\cdots 1c_n = n!c_n.
 <li><span class="math inline">\(\cdots\)</span></li>
 <li><span class="math inline">\(p^{(n}(a)=n!c_n=f^{(n}(a)=c_n=\frac{f^{(n}(a)}{n!}\)</span>.</li>
 </ul>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="def-polinomio-taylor" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 11 (Polinomio de Taylor de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(a\)</span>)</strong></span> Dada una función <span class="math inline">\(f\)</span>, <span class="math inline">\(n\)</span> veces derivable en <span class="math inline">\(x=a\)</span>, se define el <em>polinomio de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como</p>
 <p><span class="math display">\[\begin{align*}
@@ -1354,19 +1081,20 @@ p_f^n(a+h) &amp;= f(a)+f'(a)h+\frac{f''(a)}{2}h^2+\cdots +\frac{f^{(n}(a)}{n!}h^
 &amp;= \sum_{i=0}^{n}\frac{f^{(i}(a)}{i!}h^i.
 \end{align*}\]</span></p>
 </div>
-<div class="callout callout-important callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>El polinomio de Taylor de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> es el polinomio de orden <span class="math inline">\(n\)</span> que mejor aproxima a <span class="math inline">\(f\)</span> alrededor de <span class="math inline">\(a\)</span>, ya que es el único que cumple las <span class="math inline">\(n+1\)</span> condiciones anteriores.</p>
 </div>
 </div>
-</div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-polinomio-taylor" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 29</strong></span> Vamos a aproximar la función <span class="math inline">\(f(x)=\log x\)</span> en un entorno del punto <span class="math inline">\(1\)</span> mediante un polinomio de grado <span class="math inline">\(3\)</span>.</p>
 <p>La ecuación del polinomio de Taylor de orden <span class="math inline">\(3\)</span> para <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(1\)</span> es</p>
@@ -1389,14 +1117,16 @@ p_{f,1}^3(x)
 &amp;= \frac{2}{3}x^3-\frac{3}{2}x^2+3x-\frac{11}{6}.
 \end{align*}\]</span></p>
 </div>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas/polinomio_taylor_logaritmo.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfica del polinomio de Taylor del logaritmo</figcaption>
+</figure>
+</div>
 </section>
-<section class="slide level3">
-
-
-<img data-src="img/derivadas/polinomio_taylor_logaritmo.png" class="r-stretch quarto-figure-center"><p class="caption">Gráfica del polinomio de Taylor del logaritmo</p></section></section>
-<section>
-<section id="polinomio-de-maclaurin-de-orden-n" class="title-slide slide level2 center">
-<h2>Polinomio de Maclaurin de orden <span class="math inline">\(n\)</span></h2>
+<section id="polinomio-de-maclaurin-de-orden-n" class="level2">
+<h2 class="anchored" data-anchor-id="polinomio-de-maclaurin-de-orden-n">Polinomio de Maclaurin de orden <span class="math inline">\(n\)</span></h2>
 <p>La ecuación del polinomio de Taylor se simplifica cuando el punto en torno al cual queremos aproximar es el <span class="math inline">\(0\)</span>.</p>
 <div id="def-polinomio-maclaurin" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 12 (Polinomio de Maclaurin de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span>)</strong></span> Dada una función <span class="math inline">\(f\)</span>, <span class="math inline">\(n\)</span> veces derivable en <span class="math inline">\(0\)</span>, se define el <em>polinomio de Maclaurin</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> como</p>
@@ -1405,9 +1135,7 @@ p_{f,0}^n(x) &amp;= f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\cdots +\frac{f^{(n}(0)}{n!}
 &amp;= \sum_{i=0}^{n}\frac{f^{(i}(0)}{i!}x^i.
 \end{align*}\]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-polinomio-maclaurin" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 30</strong></span> Vamos a aproximar la función <span class="math inline">\(f(x)=\operatorname{sen} x\)</span> en un entorno del punto <span class="math inline">\(0\)</span> mediante un polinomio de grado <span class="math inline">\(3\)</span>.</p>
 <p>La ecuación del polinomio de Maclaurin de orden <span class="math inline">\(3\)</span> para <span class="math inline">\(f\)</span> es</p>
@@ -1428,14 +1156,17 @@ f'''(x)=-\cos x &amp; &amp; f'''(0)=-\cos 0=-1.
 p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
 \]</span></p>
 </div>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/derivadas/polinomio_mclaurin_seno.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfica del polinomio de Maclaurin del seno</figcaption>
+</figure>
+</div>
 </section>
-<section class="slide level3">
-
-
-<img data-src="img/derivadas/polinomio_mclaurin_seno.png" class="r-stretch quarto-figure-center"><p class="caption">Gráfica del polinomio de Maclaurin del seno</p></section></section>
-<section id="polinomios-de-maclaurin-de-funciones-elementales" class="title-slide slide level2 center">
-<h2>Polinomios de Maclaurin de funciones elementales</h2>
-<table>
+<section id="polinomios-de-maclaurin-de-funciones-elementales" class="level2">
+<h2 class="anchored" data-anchor-id="polinomios-de-maclaurin-de-funciones-elementales">Polinomios de Maclaurin de funciones elementales</h2>
+<table class="table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -1470,10 +1201,8 @@ p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
 </tbody>
 </table>
 </section>
-
-<section>
-<section id="resto-de-taylor" class="title-slide slide level2 center">
-<h2>Resto de Taylor</h2>
+<section id="resto-de-taylor" class="level2">
+<h2 class="anchored" data-anchor-id="resto-de-taylor">Resto de Taylor</h2>
 <p>Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor <span class="math inline">\(a\)</span>, pero siempre se comete un error en dicha aproximación.</p>
 <div id="def-resto-taylor" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 13 (Resto de Taylor)</strong></span> Si <span class="math inline">\(f\)</span> es una función para la que existe el su polinomio de Taylor de orden <span class="math inline">\(n\)</span> en <span class="math inline">\(a\)</span>, <span class="math inline">\(p_{f,a}^n\)</span>, entonces se define el <em>resto de Taylor</em> de orden <span class="math inline">\(n\)</span> para <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span> como</p>
@@ -1481,9 +1210,7 @@ p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
 r_{f,a}^n(x)=f(x)-p_{f,a}^n(x).
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>El resto mide el error cometido al aproximar <span class="math inline">\(f(x)\)</span> mediante <span class="math inline">\(p_{f,a}^n(x)\)</span> y permite expresar la función <span class="math inline">\(f\)</span> como la suma de un polinomio de Taylor más su resto correspondiente:</p>
 <p><span class="math display">\[
 f(x)=p_{f,a}^n(x) + r_{f,a}^n(x).
@@ -1493,10 +1220,9 @@ f(x)=p_{f,a}^n(x) + r_{f,a}^n(x).
 \lim_{h\rightarrow 0}\frac{r_{f,a}^n(a+h)}{h^n}=0,
 \]</span></p>
 <p>lo cual indica que el resto <span class="math inline">\(r_{f,a}^n(a+h)\)</span> es mucho menor que <span class="math inline">\(h^n\)</span>.</p>
-</section></section>
-<section>
-<section id="section-6" class="title-slide slide level2 center">
-<h2></h2>
+</section>
+<section id="section-6" class="level2">
+<h2 class="anchored" data-anchor-id="section-6"></h2>
 <div id="thm-forma-Lagrange-resto" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 11 (Forma de Lagrange del resto de Taylor)</strong></span> Si <span class="math inline">\(f\)</span> es una función tal que <span class="math inline">\(f^{(n+1}(t)\)</span> es continua en un intervalo que incluye a <span class="math inline">\(a\)</span> y <span class="math inline">\(x\)</span>, entonces</p>
 <p><span class="math display">\[
@@ -1505,9 +1231,7 @@ R^n_{f,a}(x)=\frac{f^{(n+1}(c)}{(n+1)!}(x-a)^{n+1}
 <p>para algún <span class="math inline">\(c\)</span> entre <span class="math inline">\(a\)</span> y <span class="math inline">\(x\)</span>.</p>
 </div>
 <p>La forma de Lagrange del resto de Taylor permite, en muchas ocasiones, dar una cota de las aproximaciones realizadas mediante un polinomio de Taylor.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-cota-resto" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 31</strong></span> Dada la función <span class="math inline">\(f(x)=\cos(x)\)</span> el polinomio de MacLaurin de cuarto grado de <span class="math inline">\(f\)</span> es</p>
 <p><span class="math display">\[
@@ -1524,401 +1248,422 @@ R^4_{f,0}(0.1)=\frac{f^{5}(c)}{5!}0.1^5 = \frac{-\operatorname{sen}(c)}{5!}0.1^5
 \]</span></p>
 <p>que es una cota del error cometido en la aproximación.</p>
 </div>
-<div class="quarto-auto-generated-content">
-<p><img src="img/logos/sticker.png" class="slide-logo"></p>
-<div class="footer footer-default">
-<p><a href="https://aprendeconalf.es/analisis-manual" class="uri">https://aprendeconalf.es/analisis-manual</a></p>
-</div>
-</div>
-</section></section>
-    </div>
-  </div>
+</section>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="07-derivadas_files/libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="07-derivadas_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="07-derivadas_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="07-derivadas_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="07-derivadas_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="07-derivadas_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="07-derivadas_files/libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="07-derivadas_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="07-derivadas_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="07-derivadas_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="07-derivadas_files/libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
-'smaller': false,
- 
-        // Display controls in the bottom right corner
-        controls: false,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: 'c/t',
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: false,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: false,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'convex',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'fast',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: 1050,
-
-        height: 700,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.1,
-
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
-        // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
-
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
-      });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
       }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
-      });
-      clipboard.on('success', function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copiado");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copiado");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
       }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
           } else {
-            return "";
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
           }
         });
       }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
       }
-    });
-    </script>
-    
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
 
 </body></html>
