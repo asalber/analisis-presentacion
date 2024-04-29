@@ -400,6 +400,52 @@ El criterio de la integral permite averiguar si una serie de términos positivos
 Por ejemplo, $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi}{6}$, pero $\int_1^\infty \frac{1}{x^2}\,dx = 1$.
 :::
 
+## 
+
+Aunque la integral impropia no siempre coincide con la suma de la serie, podemos usarla para calcular la suma de la serie de manera aproximada.
+
+Si tomamos la suma parcial $A_n = \sum_{i=1}^n a_i$ como una aproximación de la suma $\sum_{n=1}^\infty a_n$, entonces el error de la aproximación viene dado por 
+
+$$
+R_n = \sum_{n=1}^\infty a_n - A_n= a_{n+1}+a_{n+2}+\cdots,
+$$
+
+que se conoce también como _residuo_ de la serie. 
+
+:::{#prp-residuo-acotado}
+Dada una serie $\sum a_n$ de términos positivos, si $a_n=f(n)$ para una función $f$ continua, positiva y decreciente en el intervalo $[n,\infty)$, y $\sum a_n$ converge, entonces
+
+$$
+\int_{n+1}^\infty f(x)\,dx \leq R_n \leq \int_n^\infty f(x)\,dx.
+$$
+:::
+
+---
+
+:::{#exm-residuo-acotado}
+Vamos a dar una aproximación para la serie $\sum \frac{1}{n^2}$ usando la suma parcial de orden 5, que vale
+
+$$
+A_5 = \sum_{i=1}^5 \frac{1}{n^2} = 1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+\frac{1}{25} = 1.4636111111.
+$$
+
+Usando la proposición anterior se puede obtener una cota para el residuo de la serie, que es
+
+$$
+\begin{gathered}
+\int_6^\infty \frac{1}{x^2}\,dx \leq R_5 \leq \int_5^\infty \frac{1}{x^2}\,dx, \Leftrightarrow \\
+\left[-\frac{1}{x}\right]_6^\infty \leq R_5 \leq \left[-\frac{1}{x}\right]_5^\infty, \Leftrightarrow \\
+\frac{1}{6} \leq R_5 \leq \frac{1}{5}.
+\end{gathered}
+$$
+
+Por tanto, la suma de la serie $\sum \frac{1}{n^2}$ está acotada por
+
+$$
+1.4636111111 + \frac{1}{6} \leq \sum_{n=1}^\infty \frac{1}{n^2} \leq 1.4636111111 + \frac{1}{5}.
+$$
+:::
+
 ##
 
 :::{#thm-criterio-cociente}

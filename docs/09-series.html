@@ -705,6 +705,43 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 <section>
 <section id="section-14" class="title-slide slide level2 center">
 <h2></h2>
+<p>Aunque la integral impropia no siempre coincide con la suma de la serie, podemos usarla para calcular la suma de la serie de manera aproximada.</p>
+<p>Si tomamos la suma parcial <span class="math inline">\(A_n = \sum_{i=1}^n a_i\)</span> como una aproximación de la suma <span class="math inline">\(\sum_{n=1}^\infty a_n\)</span>, entonces el error de la aproximación viene dado por</p>
+<p><span class="math display">\[
+R_n = \sum_{n=1}^\infty a_n - A_n= a_{n+1}+a_{n+2}+\cdots,
+\]</span></p>
+<p>que se conoce también como <em>residuo</em> de la serie.</p>
+<div id="prp-residuo-acotado" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 6</strong></span> Dada una serie <span class="math inline">\(\sum a_n\)</span> de términos positivos, si <span class="math inline">\(a_n=f(n)\)</span> para una función <span class="math inline">\(f\)</span> continua, positiva y decreciente en el intervalo <span class="math inline">\([n,\infty)\)</span>, y <span class="math inline">\(\sum a_n\)</span> converge, entonces</p>
+<p><span class="math display">\[
+\int_{n+1}^\infty f(x)\,dx \leq R_n \leq \int_n^\infty f(x)\,dx.
+\]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
+<div id="exm-residuo-acotado" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 16</strong></span> Vamos a dar una aproximación para la serie <span class="math inline">\(\sum \frac{1}{n^2}\)</span> usando la suma parcial de orden 5, que vale</p>
+<p><span class="math display">\[
+A_5 = \sum_{i=1}^5 \frac{1}{n^2} = 1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+\frac{1}{25} = 1.4636111111.
+\]</span></p>
+<p>Usando la proposición anterior se puede obtener una cota para el residuo de la serie, que es</p>
+<p><span class="math display">\[
+\begin{gathered}
+\int_6^\infty \frac{1}{x^2}\,dx \leq R_5 \leq \int_5^\infty \frac{1}{x^2}\,dx, \Leftrightarrow \\
+\left[-\frac{1}{x}\right]_6^\infty \leq R_5 \leq \left[-\frac{1}{x}\right]_5^\infty, \Leftrightarrow \\
+\frac{1}{6} \leq R_5 \leq \frac{1}{5}.
+\end{gathered}
+\]</span></p>
+<p>Por tanto, la suma de la serie <span class="math inline">\(\sum \frac{1}{n^2}\)</span> está acotada por</p>
+<p><span class="math display">\[
+1.4636111111 + \frac{1}{6} \leq \sum_{n=1}^\infty \frac{1}{n^2} \leq 1.4636111111 + \frac{1}{5}.
+\]</span></p>
+</div>
+</section></section>
+<section>
+<section id="section-15" class="title-slide slide level2 center">
+<h2></h2>
 <div id="thm-criterio-cociente" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6 (Criterio del cociente)</strong></span> Dadas dos series de términos positivos <span class="math inline">\(\sum a_n\)</span> y <span class="math inline">\(\sum b_n\)</span>, si existe el límite</p>
 <p><span class="math display">\[
@@ -716,7 +753,7 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 <section class="slide level3">
 
 <div id="exm-criterio-cociente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 16</strong></span> Veamos que la serie <span class="math inline">\(\sum \frac{1}{2^n-n}\)</span> converge. Ya hemos visto que la serie <span class="math inline">\(\sum \frac{1}{2^n}\)</span> converge, pero no podemos usar directamente el criterio de comparación de series porque <span class="math inline">\(\frac{1}{2^n-n}&gt;\frac{1}{2^n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Sin embargo, usando el criterio del cociente se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 17</strong></span> Veamos que la serie <span class="math inline">\(\sum \frac{1}{2^n-n}\)</span> converge. Ya hemos visto que la serie <span class="math inline">\(\sum \frac{1}{2^n}\)</span> converge, pero no podemos usar directamente el criterio de comparación de series porque <span class="math inline">\(\frac{1}{2^n-n}&gt;\frac{1}{2^n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Sin embargo, usando el criterio del cociente se tiene</p>
 <p><span class="math display">\[
 \lim_{n\to\infty} \frac{\frac{1}{2^n-n}}{\frac{1}{2^n}} = \lim_{n\to\infty} \frac{2^n}{2^n-n} = \lim_{n\to\infty}\frac{1}{1-\frac{n}{2^n}} = 1&gt;0,
 \]</span></p>
@@ -736,7 +773,7 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 </div>
 </div>
 <div id="exm-no-aplicacion-criterio-cociente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 17</strong></span> Si tomamos la serie geométrica <span class="math inline">\(\sum \frac{1}{2^n}\)</span> y la serie armónica <span class="math inline">\(\frac{1}{n}\)</span>, se cumple que</p>
+<p><span class="theorem-title"><strong>Ejemplo 18</strong></span> Si tomamos la serie geométrica <span class="math inline">\(\sum \frac{1}{2^n}\)</span> y la serie armónica <span class="math inline">\(\frac{1}{n}\)</span>, se cumple que</p>
 <p><span class="math display">\[
 \lim_{n\to\infty}\frac{\frac{1}{2^n}}{\frac{1}{n}} = \lim_{n\to\infty}\frac{n}{2^n} = 0.
 \]</span></p>
@@ -749,7 +786,7 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 </section>
 
 <section>
-<section id="section-15" class="title-slide slide level2 center">
+<section id="section-16" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-criterio-serie-alternada" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 7 (Criterio de la serie alternada (Leibniz))</strong></span> Dada una serie alternada <span class="math inline">\(\sum (-1)^{n-1} a_n\)</span>, con <span class="math inline">\(a_n&gt;0\)</span>, si <span class="math inline">\((a_n)_{n=1}^\infty\)</span> es monótona decreciente y <span class="math inline">\(\lim_{n\to\infty} a_n = 0\)</span>, entonces la serie converge.</p>
@@ -758,7 +795,7 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 <section class="slide level3">
 
 <div id="exm-criterio-serie-alternada" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 18</strong></span> La serie armónica alternada <span class="math inline">\(\sum \frac{(-1)^{n-1}}{n}\)</span> cumple las condiciones del teorema anterior, ya que, <span class="math inline">\(\frac{1}{n+1}\leq \frac{1}{n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y además <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n}=0\)</span>, por lo que converge.</p>
+<p><span class="theorem-title"><strong>Ejemplo 19</strong></span> La serie armónica alternada <span class="math inline">\(\sum \frac{(-1)^{n-1}}{n}\)</span> cumple las condiciones del teorema anterior, ya que, <span class="math inline">\(\frac{1}{n+1}\leq \frac{1}{n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, y además <span class="math inline">\(\lim_{n\to\infty} \frac{1}{n}=0\)</span>, por lo que converge.</p>
 <p>Veamos ahora que la serie <span class="math inline">\(\sum (-1)^{n-1}\frac{n}{n^2+1}\)</span> también cumple las condiciones del teorema. La primera condición se cumple ya que,</p>
 <p><span class="math display">\[
 \begin{gathered}
@@ -785,21 +822,21 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 
 <p>Si la serie es de términos positivos, entonces <span class="math inline">\(|a_n|=a_n\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span> y, por tanto, la convergencia y la convergencia absoluta son equivalentes. Pero si la serie es alternante o tiene tanto términos positivos como negativos, puede ocurrir que la serie sea convergente pero no absolutamente convergente.</p>
 <div id="exm-serie-absolutamente-convergente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 19</strong></span> La serie <span class="math inline">\(\sum \frac{(-1)^n}{n^2}\)</span> es absolutamente convergente ya que <span class="math inline">\(\sum \left|\frac{(-1)^n}{n^2}\right|=\sum \frac{1}{n^2}\)</span>, que es convergente al ser una serie <span class="math inline">\(p\)</span> con <span class="math inline">\(p=2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 20</strong></span> La serie <span class="math inline">\(\sum \frac{(-1)^n}{n^2}\)</span> es absolutamente convergente ya que <span class="math inline">\(\sum \left|\frac{(-1)^n}{n^2}\right|=\sum \frac{1}{n^2}\)</span>, que es convergente al ser una serie <span class="math inline">\(p\)</span> con <span class="math inline">\(p=2\)</span>.</p>
 </div>
 <p>Que una serie sea absolutamente convergente quiere decir que sus términos se hacen pequeños (en valor absoluto) lo suficientemente rápido para garantizar que la suma converge sin tener en cuenta su signo.</p>
 </section></section>
-<section id="section-16" class="title-slide slide level2 center">
+<section id="section-17" class="title-slide slide level2 center">
 <h2></h2>
 <div id="def-serie-condicionalmente-convergente" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 7 (Serie condicionalmente convergente)</strong></span> Una serie <span class="math inline">\(\sum a_n\)</span> es <em>condicionalmente convergente</em> si es convergente pero no absolutamente convergente.</p>
 </div>
 <div id="exm-serie-condicionalmente-convergente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 20</strong></span> Ya hemos visto que la serie armónica alternada <span class="math inline">\(\sum \frac{(-1)^n}{n}\)</span> es convergente, pero no es absolutamente convergente, ya que <span class="math inline">\(\sum \left|\frac{(-1)^n}{n}\right|=\sum \frac{1}{n}\)</span>, que se trata de la serie armónica, y por tanto, no converge. Por tanto la serie armónica alternada es condicionalmente convergente.</p>
+<p><span class="theorem-title"><strong>Ejemplo 21</strong></span> Ya hemos visto que la serie armónica alternada <span class="math inline">\(\sum \frac{(-1)^n}{n}\)</span> es convergente, pero no es absolutamente convergente, ya que <span class="math inline">\(\sum \left|\frac{(-1)^n}{n}\right|=\sum \frac{1}{n}\)</span>, que se trata de la serie armónica, y por tanto, no converge. Por tanto la serie armónica alternada es condicionalmente convergente.</p>
 </div>
 </section>
 
-<section id="section-17" class="title-slide slide level2 center">
+<section id="section-18" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-condicion-convergencia-absoluta" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 8</strong></span> Si una serie es absolutamente convergente, entonces es convergente.</p>
@@ -807,7 +844,7 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 </section>
 
 <section>
-<section id="section-18" class="title-slide slide level2 center">
+<section id="section-19" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-criterio-razon" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9 (Criterio de la razón (D’Alembert))</strong></span> Dada una serie <span class="math inline">\(\sum a_n\)</span>, se cumple:</p>
@@ -820,7 +857,7 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 <section class="slide level3">
 
 <div id="exm-criterio-razon" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 21</strong></span> Veamos que la serie <span class="math inline">\(\sum (-1)^n \frac{n^2}{2^n}\)</span> es absolutamente convergente aplicando el criterio de la razón.</p>
+<p><span class="theorem-title"><strong>Ejemplo 22</strong></span> Veamos que la serie <span class="math inline">\(\sum (-1)^n \frac{n^2}{2^n}\)</span> es absolutamente convergente aplicando el criterio de la razón.</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right| &amp;= \lim_{n\to\infty} \left|\frac{\frac{(-1)^{n+1}(n+1)^2}{2^{n+1}}}{\frac{(-1)^n n^2}{2^n}}\right| = \lim_{n\to\infty} \frac{(n+1)^2}{2^{n+1}}\frac{2^n}{n^2}\\
 &amp;= \lim_{n\to\infty}\frac{1}{2}\left(\frac{n+1}{n}\right)^2 = \frac{1}{2}\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^2 = \frac{1}{2}&lt;1,
@@ -838,7 +875,7 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 </div>
 </section></section>
 <section>
-<section id="section-19" class="title-slide slide level2 center">
+<section id="section-20" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-criterio-raiz" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 10 (Criterio de la raíz (Cauchy))</strong></span> Dada una serie <span class="math inline">\(\sum a_n\)</span>, se cumple:</p>
@@ -851,7 +888,7 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 <section class="slide level3">
 
 <div id="exm-criterio-raíz" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 22</strong></span> Veamos que la serie <span class="math inline">\(\sum \left(\frac{3n}{2n+1}\right)^n\)</span> diverge aplicando el criterio de la raíz. Para ello basta ver que</p>
+<p><span class="theorem-title"><strong>Ejemplo 23</strong></span> Veamos que la serie <span class="math inline">\(\sum \left(\frac{3n}{2n+1}\right)^n\)</span> diverge aplicando el criterio de la raíz. Para ello basta ver que</p>
 <p><span class="math display">\[
 \lim_{n\to\infty} \sqrt[n]{\left(\frac{3n}{2n+1}\right)^n} = \lim_{n\to\infty} \frac{3n}{2n+1} = \lim_{n\to\infty} \frac{3}{2+\frac{1}{n}} = \frac{3}{2} &gt;1.
 \]</span></p>
@@ -918,7 +955,7 @@ var params = {
 </div>
 <p>Una serie funcional puede ser convergente para algunos valores de <span class="math inline">\(x\)</span> y divergente para otros.</p>
 <div id="exm-convergencia-puntual" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 23</strong></span> La serie funcional <span class="math inline">\(\sum x^n\)</span> es una serie geométrica de razón <span class="math inline">\(x\)</span>, de modo que, será convergente cuando <span class="math inline">\(|x|&lt;1\)</span> y divergente en caso contrario.</p>
+<p><span class="theorem-title"><strong>Ejemplo 24</strong></span> La serie funcional <span class="math inline">\(\sum x^n\)</span> es una serie geométrica de razón <span class="math inline">\(x\)</span>, de modo que, será convergente cuando <span class="math inline">\(|x|&lt;1\)</span> y divergente en caso contrario.</p>
 </div>
 <div id="def-dominio-convergencia-puntual-serie-funcional" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9 (Dominio de convergencia puntual de una serie funcional)</strong></span> Dada una serie funcional <span class="math inline">\(\sum f_n\)</span>, se llama <em>dominio de convergencia puntual</em> de las serie al conjunto <span class="math inline">\(\mathcal{C}=\{x\in\mathbb{R}: \sum f_n(x) \mbox{ converge}\}\)</span></p>
@@ -929,7 +966,7 @@ F(x) = \sum_{n=1}^\infty f_n(x),\ \forall x\in \mathcal{C}.
 \]</span></p>
 </div>
 <div id="exm-funcion-suma" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 24</strong></span> El dominio de convergencia puntual de la serie funcional <span class="math inline">\(\sum \frac{x}{n^2}\)</span> es <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\forall x\in\mathbb{R}\)</span>, <span class="math inline">\(\sum \frac{x}{n^2}=x\sum\frac{1}{n^2}\)</span>, que converge al ser <span class="math inline">\(\sum \frac{1}{n^2}\)</span> convergente. Además, como vimos que <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2}=\frac{\pi^2}{6}\)</span>, se tiene que su su función suma es <span class="math inline">\(\sum_{n=1}^\infty \frac{x}{n^2} = x\sum_{n=1}^\infty \frac{1}{n^2}= \frac{\pi^2}{6}x\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 25</strong></span> El dominio de convergencia puntual de la serie funcional <span class="math inline">\(\sum \frac{x}{n^2}\)</span> es <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\forall x\in\mathbb{R}\)</span>, <span class="math inline">\(\sum \frac{x}{n^2}=x\sum\frac{1}{n^2}\)</span>, que converge al ser <span class="math inline">\(\sum \frac{1}{n^2}\)</span> convergente. Además, como vimos que <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2}=\frac{\pi^2}{6}\)</span>, se tiene que su su función suma es <span class="math inline">\(\sum_{n=1}^\infty \frac{x}{n^2} = x\sum_{n=1}^\infty \frac{1}{n^2}= \frac{\pi^2}{6}x\)</span>.</p>
 </div>
 <p>De particular interés son las series que se obtienen a partir de sucesiones de la forma <span class="math inline">\((c_nx^n)_{n=1}^\infty\)</span> que dan lugar a polinomios. Como ya vimos con los <a href="07-derivadas.qmd#polinomios-de-taylor">polinomios de Taylor</a>, estas series nos permitirán estudiar funciones complicadas mediante simples polinomios.</p>
 <div id="def-serie-potencias" class="theorem definition">
@@ -937,7 +974,7 @@ F(x) = \sum_{n=1}^\infty f_n(x),\ \forall x\in \mathcal{C}.
 <p>La sucesión <span class="math inline">\((c_n)_{n=0}^\infty\)</span> se llama <em>sucesión de coeficientes de la serie</em>, y al término <span class="math inline">\(c_0\)</span> se le llama <em>término independiente</em>.</p>
 </div>
 <div id="exm-serie-potencias" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 25</strong></span> Tomando <span class="math inline">\(a=0\)</span> y la sucesión de coeficientes <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span>, se tiene la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>, cuyas primeras sumas funcionales parciales son</p>
+<p><span class="theorem-title"><strong>Ejemplo 26</strong></span> Tomando <span class="math inline">\(a=0\)</span> y la sucesión de coeficientes <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span>, se tiene la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>, cuyas primeras sumas funcionales parciales son</p>
 <p><span class="math display">\[\begin{align*}
 F_1 &amp;= x\\
 F_2 &amp;= x+\frac{x^2}{2}\\
@@ -948,7 +985,7 @@ F_n &amp;= \sum_{i=1}^n \frac{x^i}{i}
 </div>
 <p>Para cualquier serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, está claro que <span class="math inline">\(a\)</span> pertenece al dominio de convergencia puntual de la serie, pues para <span class="math inline">\(x=a\)</span> se tiene <span class="math inline">\(\sum_{n=1}^\infty c_n(a-a)^n = c_0\)</span>. Veremos a continuación un par resultados que nos ayudarán a ver para qué otros valores de <span class="math inline">\(x\)</span> la serie de potencias converge.</p>
 <div id="prp-intervalo-convergencia-serie-potencias" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposición 6</strong></span> Dada una serie de potencias <span class="math inline">\(\sum c_nx^n\)</span> centrada en el <span class="math inline">\(0\)</span>,</p>
+<p><span class="theorem-title"><strong>Proposición 7</strong></span> Dada una serie de potencias <span class="math inline">\(\sum c_nx^n\)</span> centrada en el <span class="math inline">\(0\)</span>,</p>
 <ol type="a">
 <li>Si la serie converge para <span class="math inline">\(x=b\neq 0\)</span>, entonces converge para cualquier <span class="math inline">\(x\)</span> tal que <span class="math inline">\(|x|&lt;|b|\)</span>.</li>
 <li>Si la serie diverge para <span class="math inline">\(x=d\neq 0\)</span>, entonces diverge para cualquier <span class="math inline">\(x\)</span> con <span class="math inline">\(|x|&gt;|d|\)</span>.</li>
@@ -978,7 +1015,7 @@ F_n &amp;= \sum_{i=1}^n \frac{x^i}{i}
 </div>
 </div>
 <div id="exm-intervalo-convergencia-serie-potencias" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 26</strong></span> Ya se vio que la serie armónica <span class="math inline">\(\sum \frac{1}{n}\)</span> es divergente, y por tanto, la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span> es divergente para <span class="math inline">\(x=1\)</span>, lo que significa, según la proposición anterior, que también diverge para <span class="math inline">\(|x|&gt;1\)</span>. Por otro lado, para <span class="math inline">\(x=1/2\)</span>, se tiene la serie</p>
+<p><span class="theorem-title"><strong>Ejemplo 27</strong></span> Ya se vio que la serie armónica <span class="math inline">\(\sum \frac{1}{n}\)</span> es divergente, y por tanto, la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span> es divergente para <span class="math inline">\(x=1\)</span>, lo que significa, según la proposición anterior, que también diverge para <span class="math inline">\(|x|&gt;1\)</span>. Por otro lado, para <span class="math inline">\(x=1/2\)</span>, se tiene la serie</p>
 <p><span class="math display">\[
 \sum \frac{\left(\frac{1}{2}\right)^n}{n} = \sum \frac{1}{n2^n},
 \]</span></p>
@@ -1059,7 +1096,7 @@ R=\frac{1}{\lim_{n\to\infty} \sqrt[n]{|c_n|}}.
 </div>
 </div>
 <div id="exm-radio-convergencia-raiz" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 27</strong></span> Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{(x-2)^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
+<p><span class="theorem-title"><strong>Ejemplo 28</strong></span> Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{(x-2)^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
 <p><span class="math display">\[
 R= \frac{1}{\lim_{n\to\infty} \sqrt[n]{|\frac{1}{n}|}} = \frac{1}{1} = 1
 \]</span></p>
@@ -1088,7 +1125,7 @@ R = \lim_{n\to\infty} \left|\frac{c_n}{c_{n+1}}\right|.
 </div>
 </div>
 <div id="exm-radio-convergencia-razon" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 28</strong></span> Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
+<p><span class="theorem-title"><strong>Ejemplo 29</strong></span> Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
 <p><span class="math display">\[
 R = \lim_{n\to\infty} \frac{1/n}{1/n+1} = \lim_{n\to\infty} \frac{n+1}{n} = 1.
 \]</span></p>
@@ -1102,7 +1139,7 @@ R = \lim_{n\to\infty} \frac{1/n}{1/n+1} = \lim_{n\to\infty} \frac{n+1}{n} = 1.
 <p>para cualquier <span class="math inline">\(x\)</span> en un entorno de <span class="math inline">\(a\)</span>.</p>
 </div>
 <div id="exm-funciones-analiticas" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 29</strong></span> Cualquier polinomio de grado <span class="math inline">\(n\)</span> es una función analítica en todo <span class="math inline">\(\mathbb{R}\)</span> ya que puede representarse trivialmente como una serie de potencias tomando coeficientes nulos para los términos de grado mayor que <span class="math inline">\(n\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 30</strong></span> Cualquier polinomio de grado <span class="math inline">\(n\)</span> es una función analítica en todo <span class="math inline">\(\mathbb{R}\)</span> ya que puede representarse trivialmente como una serie de potencias tomando coeficientes nulos para los términos de grado mayor que <span class="math inline">\(n\)</span>.</p>
 <p>Otras funciones elementales como la función exponencial, la función logarítmica y las trigonométricas son también analíticas en cualquier intervalo abierto de su dominio.</p>
 </div>
 </section>
@@ -1118,7 +1155,7 @@ R = \lim_{n\to\infty} \frac{1/n}{1/n+1} = \lim_{n\to\infty} \frac{n+1}{n} = 1.
 \]</span></p>
 </div>
 <div id="exm-serie-taylor" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 30</strong></span> Veamos cuál es la serie de Taylor de la función <span class="math inline">\(f(x)=\ln(x)\)</span> en <span class="math inline">\(a=1\)</span>. Para ello calculamos las primeras derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\(a=1\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 31</strong></span> Veamos cuál es la serie de Taylor de la función <span class="math inline">\(f(x)=\ln(x)\)</span> en <span class="math inline">\(a=1\)</span>. Para ello calculamos las primeras derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\(a=1\)</span>.</p>
 <p><span class="math display">\[
 \begin{array}{lll}
 f(x)=\ln x &amp; \quad &amp; f(1)=\ln 1 =0,\\
@@ -1149,7 +1186,7 @@ A_n(x) &amp;= \sum_{i=1}^n \frac{(-1)^{i-1}}{i}(x-1)^i\\
 \]</span></p>
 </div>
 <div id="exm-serie-taylor" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 31</strong></span> Veamos cuál es la serie de Maclaurin de la función <span class="math inline">\(f(x)=\frac{1}{1-x}\)</span>. Para ello calculamos las primeras derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\(0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 32</strong></span> Veamos cuál es la serie de Maclaurin de la función <span class="math inline">\(f(x)=\frac{1}{1-x}\)</span>. Para ello calculamos las primeras derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\(0\)</span>.</p>
 <p><span class="math display">\[
 \begin{array}{lll}
 f(x)=\frac{1}{1-x} &amp; \quad &amp; f(0)= 1,\\
@@ -1239,7 +1276,7 @@ f(x) = \sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n,
 </div>
 </div>
 <div id="exm-funcion-no-coincidente-serie-taylor" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 32</strong></span> La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 33</strong></span> La función</p>
 <p><span class="math display">\[
 f(x) =
 \begin{cases}
@@ -1277,7 +1314,7 @@ e^{-1/x^2} &amp; \mbox{si $x\neq 0$}\\
 </div>
 </div>
 <div id="exm-serie-maclaurin-seno" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 33</strong></span> Veamos que <span class="math inline">\(\operatorname{sen}(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 34</strong></span> Veamos que <span class="math inline">\(\operatorname{sen}(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</p>
 <p>El polinomio de Maclaurin de grado <span class="math inline">\(2n+1\)</span> para la función <span class="math inline">\(\operatorname{sen}(x)\)</span> es</p>
 <p><span class="math display">\[
 p_{f,0}^{2n+1}(x) = \sum_{i=0}^n (-1)^i\frac{x^{2i+1}}{(2i+1)!}
