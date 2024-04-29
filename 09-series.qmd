@@ -304,7 +304,7 @@ Dada una sucesión $(a_n)_{n=1}^\infty$, las series de la forma $\sum (a_n-a_{n+
 La serie $\sum \frac{1}{n^2+n}$ es una serie telescópica, ya que 
 
 $$
-\sum \frac{1}{n^2+1} = \sum \frac{1}{n}-\frac{1}{n+1}.
+\sum \frac{1}{n^2+n} = \sum \frac{1}{n}-\frac{1}{n+1}.
 $$
 :::
 
