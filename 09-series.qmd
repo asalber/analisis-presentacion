@@ -364,6 +364,14 @@ Dada una serie $\sum a_n$ de términos positivos, si $a_n=f(n)$ para una funció
 
 ---
 
+![Serie como suma superior de Riemann.](img/series/integral-cota-inferior-serie.svg)
+
+---
+
+![Serie como suma inferior de Riemann.](img/series/integral-cota-superior-serie.svg)
+
+---
+
 :::{#exm-criterio-integral}
 Veamos cómo podemos probar que la serie $p$ $\sum_{n=1}^\infty \frac{1}{n^p}$ converge para $p>1$ usando el criterio de la integral.
 

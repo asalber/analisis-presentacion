@@ -1,0 +1,44 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        enlargelimits=true,
+        %grid=major,
+        xlabel=$x$,
+        ylabel=$y$,
+        xmin=0, xmax=7,
+        ymin=0, ymax=1.2,
+        xtick={1,2,3,4,5,6},
+        ytick=\empty,
+        yticklabels={},
+        clip=false,
+        %axis on top,
+        domain=1:7,
+        samples=100,
+        %xlabel near ticks,
+        %ylabel near ticks
+        myblack
+    ]
+        % Plot the function 1/x
+        \addplot[myblue, thick] {1/x} node[pos=0.85, anchor=south west] {$y=f(x)$};
+    
+        % Add Riemann rectangles
+        \addplot[ybar interval, mark=no, fill=myblue, opacity=0.5] plot coordinates {
+            (1, 1/2)
+            (2, 1/3)
+            (3, 1/4)
+            (4, 1/5)
+            (5, 1/6)
+            (6, 1/7)
+            (6, 0)  % This is to complete the last rectangle
+        };
+        \node at (axis cs:1.5,0.1) {$a_2$};
+        \node at (axis cs:2.5,0.1) {$a_3$};
+        \node at (axis cs:3.5,0.1) {$a_4$};
+        \node at (axis cs:4.5,0.1) {$a_5$};
+        \node at (axis cs:5.5,0.1) {$a_6$};
+        \node at (axis cs:6.5,0.1) {$\cdots$};
+        \node[myblue] at (axis cs:4.5,0.7) {$\displaystyle \sum_{n=2}^\infty a_n$};
+    
+    \end{axis}
+    \end{tikzpicture}
