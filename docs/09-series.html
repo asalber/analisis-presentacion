@@ -10,7 +10,7 @@
 <link href="09-series_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="09-series_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="09-series_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.553">
+  <meta name="generator" content="quarto-1.4.554">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Series de número reales</title>
@@ -905,6 +905,7 @@ A_5 = \sum_{i=1}^5 \frac{1}{n^2} = 1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+\frac{
 
 En muchas ocasiones, aún cuando se pueda probar que una serie converge, puede ser difícil encontrar su suma, por lo que tendremos que conformarnos con una aproximación tomando el valor de su suma parcial de orden $n$ para algún $n$ en particular. En estos casos, lo importante es disponer de una cota del error cometido lo suficientemente pequeña. -->
 </section></section>
+<section>
 <section id="series-de-potencias" class="title-slide slide level2 center">
 <h2>Series de potencias</h2>
 <p>Del mismo modo que hemos estudiado las series que se obtienen a partir de una sucesión numérica, en Análisis resulta también interesante estudiar las series que se obtienen a partir de una <a href="04-sucesiones.qmd#sucesiones-de-funciones">sucesión de funciones</a>.</p>
@@ -915,6 +916,9 @@ En muchas ocasiones, aún cuando se pueda probar que una serie converge, puede s
 \]</span></p>
 <p>El número <span class="math inline">\(F_n=\sum_{i=1}^n f_i\)</span> se llama <em>suma funcional parcial de orden</em> <span class="math inline">\(n\)</span> de la serie funcional, y habitualmente utilizaremos la notación <span class="math inline">\(\sum f_n\)</span> para referirnos a la serie funcional de término general <span class="math inline">\(f_n\)</span>.</p>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="-exm-serie-funcional">
 <p>Las primeras sumas funcionales parciales de la serie funcional <span class="math inline">\(\sum \frac{x}{n^2}\)</span> son</p>
 <p><span class="math display">\[\begin{align*}
@@ -924,47 +928,19 @@ F_3 &amp;= x+\frac{x}{4}+\frac{x}{9}\\
 \vdots\\
 F_n &amp;= \sum_{i=1}^n \frac{x}{i^2}
 \end{align*}\]</span></p>
-<div id="ggb-serie-funcional">
+<p><a href="https://geogebra.org/classic/ef8bz5hr" target="_blank"><img data-src="img/logos/logo-geogebra.png"></a></p>
+</div>
+</section>
+<section class="slide level3">
 
-</div>
-<script>
-var params = {
-            "appName": "graphing", 
-            "width": 600, 
-            "height": 450, 
-            "showToolBar": false, 
-            "showAlgebraInput": false, 
-            "showMenuBar": false,
-            "borderColor": "#FFFFFF",
-            "enableRightClick": false,
-            "enableLabelDrags": false,
-            "enableShiftDragZoom": false,
-            "showZoomButtons": false,
-            "showResetIcon": true,
-            //"showFullscreenButton": true,
-            "transparentGraphics": true,
-            "material_id":"ef8bz5hr"
-            };
-    var ggbApplet3 = new GGBApplet(params, true);
-    window.addEventListener("load", function() { 
-        ggbApplet3.inject('ggb-serie-funcional');
-    });
-</script>
-</div>
-<div class="callout callout-important callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>Debe quedar claro que una serie funcional es una sucesión funcional, y por tanto, todos los resultados vistos para <a href="04-sucesiones.qmd#sucesiones-de-funciones">sucesiones funcionales</a> son válidos para las series funcionales.</p>
-</div>
-</div>
-</div>
 <p>Una serie funcional puede ser convergente para algunos valores de <span class="math inline">\(x\)</span> y divergente para otros.</p>
 <div id="exm-convergencia-puntual" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 24</strong></span> La serie funcional <span class="math inline">\(\sum x^n\)</span> es una serie geométrica de razón <span class="math inline">\(x\)</span>, de modo que, será convergente cuando <span class="math inline">\(|x|&lt;1\)</span> y divergente en caso contrario.</p>
 </div>
+</section></section>
+<section>
+<section id="section-21" class="title-slide slide level2 center">
+<h2></h2>
 <div id="def-dominio-convergencia-puntual-serie-funcional" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9 (Dominio de convergencia puntual de una serie funcional)</strong></span> Dada una serie funcional <span class="math inline">\(\sum f_n\)</span>, se llama <em>dominio de convergencia puntual</em> de las serie al conjunto <span class="math inline">\(\mathcal{C}=\{x\in\mathbb{R}: \sum f_n(x) \mbox{ converge}\}\)</span></p>
 </div>
@@ -973,14 +949,24 @@ var params = {
 F(x) = \sum_{n=1}^\infty f_n(x),\ \forall x\in \mathcal{C}.
 \]</span></p>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="exm-funcion-suma" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 25</strong></span> El dominio de convergencia puntual de la serie funcional <span class="math inline">\(\sum \frac{x}{n^2}\)</span> es <span class="math inline">\(\mathbb{R}\)</span>, ya que <span class="math inline">\(\forall x\in\mathbb{R}\)</span>, <span class="math inline">\(\sum \frac{x}{n^2}=x\sum\frac{1}{n^2}\)</span>, que converge al ser <span class="math inline">\(\sum \frac{1}{n^2}\)</span> convergente. Además, como vimos que <span class="math inline">\(\sum_{n=1}^\infty \frac{1}{n^2}=\frac{\pi^2}{6}\)</span>, se tiene que su su función suma es <span class="math inline">\(\sum_{n=1}^\infty \frac{x}{n^2} = x\sum_{n=1}^\infty \frac{1}{n^2}= \frac{\pi^2}{6}x\)</span>.</p>
 </div>
+</section></section>
+<section>
+<section id="section-22" class="title-slide slide level2 center">
+<h2></h2>
 <p>De particular interés son las series que se obtienen a partir de sucesiones de la forma <span class="math inline">\((c_nx^n)_{n=1}^\infty\)</span> que dan lugar a polinomios. Como ya vimos con los <a href="07-derivadas.qmd#polinomios-de-taylor">polinomios de Taylor</a>, estas series nos permitirán estudiar funciones complicadas mediante simples polinomios.</p>
 <div id="def-serie-potencias" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 11 (Serie de potencias)</strong></span> Dado un número real <span class="math inline">\(a\in\mathbb{R}\)</span> y una sucesión de números reales <span class="math inline">\((c_n)_{n=0}^\infty\)</span>, se llama <em>serie de potencias centrada en <span class="math inline">\(a\)</span></em> a la serie <span class="math inline">\(\sum c_n(x-a)^n\)</span>.</p>
 <p>La sucesión <span class="math inline">\((c_n)_{n=0}^\infty\)</span> se llama <em>sucesión de coeficientes de la serie</em>, y al término <span class="math inline">\(c_0\)</span> se le llama <em>término independiente</em>.</p>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="exm-serie-potencias" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 26</strong></span> Tomando <span class="math inline">\(a=0\)</span> y la sucesión de coeficientes <span class="math inline">\(\left(\frac{1}{n}\right)_{n=1}^\infty\)</span>, se tiene la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>, cuyas primeras sumas funcionales parciales son</p>
 <p><span class="math display">\[\begin{align*}
@@ -992,6 +978,10 @@ F_n &amp;= \sum_{i=1}^n \frac{x^i}{i}
 \end{align*}\]</span></p>
 </div>
 <p>Para cualquier serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, está claro que <span class="math inline">\(a\)</span> pertenece al dominio de convergencia puntual de la serie, pues para <span class="math inline">\(x=a\)</span> se tiene <span class="math inline">\(\sum_{n=1}^\infty c_n(a-a)^n = c_0\)</span>. Veremos a continuación un par resultados que nos ayudarán a ver para qué otros valores de <span class="math inline">\(x\)</span> la serie de potencias converge.</p>
+</section></section>
+<section>
+<section id="section-23" class="title-slide slide level2 center">
+<h2></h2>
 <div id="prp-intervalo-convergencia-serie-potencias" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 7</strong></span> Dada una serie de potencias <span class="math inline">\(\sum c_nx^n\)</span> centrada en el <span class="math inline">\(0\)</span>,</p>
 <ol type="a">
@@ -999,29 +989,9 @@ F_n &amp;= \sum_{i=1}^n \frac{x^i}{i}
 <li>Si la serie diverge para <span class="math inline">\(x=d\neq 0\)</span>, entonces diverge para cualquier <span class="math inline">\(x\)</span> con <span class="math inline">\(|x|&gt;|d|\)</span>.</li>
 </ol>
 </div>
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Demostración</strong></p>
-</div>
-<div class="callout-content">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Veamos la prueba de cada parte.</p>
-<ol type="a">
-<li><p>Supongamos <span class="math inline">\(\sum c_nb^n\)</span> converge. Entonces, por el criterio de divergencia se tiene que <span class="math inline">\(\lim_{n\to\infty} c_nb^n=0\)</span>, y, por tanto, tomando <span class="math inline">\(\varepsilon = 1\)</span>, existe un <span class="math inline">\(k\in\mathbb{N}\)</span> tal que <span class="math inline">\(|c_nb^n|&lt;1\)</span> <span class="math inline">\(\forall n\geq k\)</span>. De esta manera se cumple</p>
-<p><span class="math display">\[
-|c_nx^n| =  \left|\frac{c_nb^nx^n}{b^n}\right| = |c_nb_n|\left|\frac{x}{b}\right|^n &lt; \left|\frac{x}{b}\right|^n,
-\]</span></p>
-<p>Como <span class="math inline">\(\sum \left(\frac{x}{b}\right)^n\)</span> es una serie geométrica, converge para <span class="math inline">\(\left|\frac{x}{b}\right|&lt;1\)</span>, es decir, <span class="math inline">\(|x|&lt;|b|\)</span>, y en tal caso, por el criterio de comparación de series, <span class="math inline">\(\sum |c_nx^n|\)</span> converge, de modo que <span class="math inline">\(\sum c_nx^n\)</span> es absolutamente convergente.</p></li>
-<li><p>Supongamos ahora que <span class="math inline">\(\sum c_nd^n\)</span> diverge. Entonces para cualquier <span class="math inline">\(|x|&gt;|d|\)</span> la serie <span class="math inline">\(\sum c_nx^n\)</span> no puede converger porque por el resultado anterior, si <span class="math inline">\(\sum c_nx^n\)</span> converge, también debería converger <span class="math inline">\(\sum c_nd^n\)</span> al ser <span class="math inline">\(|d|&lt;|x|\)</span>.</p></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
+</section>
+<section class="slide level3">
+
 <div id="exm-intervalo-convergencia-serie-potencias" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 27</strong></span> Ya se vio que la serie armónica <span class="math inline">\(\sum \frac{1}{n}\)</span> es divergente, y por tanto, la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span> es divergente para <span class="math inline">\(x=1\)</span>, lo que significa, según la proposición anterior, que también diverge para <span class="math inline">\(|x|&gt;1\)</span>. Por otro lado, para <span class="math inline">\(x=1/2\)</span>, se tiene la serie</p>
 <p><span class="math display">\[
@@ -1030,6 +1000,9 @@ F_n &amp;= \sum_{i=1}^n \frac{x^i}{i}
 <p>que, por el criterio de comparación de series, converge al ser <span class="math inline">\(\frac{1}{n2^n}\leq\frac{1}{2^n}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span> y ser <span class="math inline">\(\sum \frac{1}{2^n}\)</span> convergente. Eso significa que la serie de potencias también converge para <span class="math inline">\(|x|\leq \frac{1}{2}\)</span>.</p>
 <p>Más adelante se mostrará que el dominio de convergencia puntual de esta serie de potencias es el intervalo <span class="math inline">\([-1,1)\)</span>.</p>
 </div>
+</section></section>
+<section id="section-24" class="title-slide slide level2 center">
+<h2></h2>
 <div id="cor-intervalo-convergencia-serie-potencias" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 3</strong></span> Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span> centrada en el <span class="math inline">\(a\)</span>,</p>
 <ol type="a">
@@ -1037,40 +1010,13 @@ F_n &amp;= \sum_{i=1}^n \frac{x^i}{i}
 <li>Si la serie diverge para <span class="math inline">\(x=d\neq a\)</span>, entonces diverge para cualquier <span class="math inline">\(x\)</span> con <span class="math inline">\(|x-a|&gt;|d-a|\)</span>.</li>
 </ol>
 </div>
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Demostración</strong></p>
-</div>
-<div class="callout-content">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>La demostración es sencilla a partir de la proposición anterior haciendo el cambio de variable <span class="math inline">\(y=x-a\)</span>, y se deja como ejercicio.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+
+<section id="section-25" class="title-slide slide level2 center">
+<h2></h2>
 <p>El siguiente teorema resulta de gran utilidad a la hora de determinar el dominio de convergencia puntual de una serie de potencias.</p>
 <div id="thm-radio-convergencia" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 11 (Radio de convergencia)</strong></span> Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, se cumple que, o bien el dominio de convergencia puntual es <span class="math inline">\(\mathbb{R}\)</span>, o bien existe un número <span class="math inline">\(R\geq 0\)</span>, llamado <em>radio de convergencia</em> tal que la serie converge si <span class="math inline">\(|x-a|&lt;R\)</span> y diverge si <span class="math inline">\(|x-a|&gt;R\)</span>.</p>
-</div>
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Demostración</strong></p>
-</div>
-<div class="callout-content">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Sea el conjunto <span class="math inline">\(A=\{x-a: \sum c_n(x-a)^n \mbox{ converge}\}\)</span>. Entonces <span class="math inline">\(A\neq \emptyset\)</span> ya que <span class="math inline">\(\sum c_n(x-a)^n\)</span> converge, al menos, para <span class="math inline">\(x=a\)</span>, y por tanto <span class="math inline">\(0\in A\)</span>. Supongamos además que <span class="math inline">\(A\neq \mathbb{R}\)</span>. Entonces existe un número <span class="math inline">\(d\neq a\)</span> tal que la serie <span class="math inline">\(\sum c_n(d-a)^n\)</span> diverge, y por el corolario anterior, también diverge para <span class="math inline">\(|x-a|&gt;|d-a|\)</span>, de manera que <span class="math inline">\(|x-a|\leq |d-a|\)</span> <span class="math inline">\(\forall (x-a) \in A\)</span>, y por el axioma de completitud se tiene que existe el supremo de <span class="math inline">\(A\)</span>.</p>
-<p>Sea <span class="math inline">\(R=\sup(A)\)</span>. Si <span class="math inline">\(|x-a|&gt;R\)</span>, entonces <span class="math inline">\((x-a)\not\in A\)</span>, por lo que <span class="math inline">\(\sum c_n(x-a)^n\)</span> diverge. Y si <span class="math inline">\(|x-a|&lt;R\)</span>, entonces <span class="math inline">\(|x-a|\)</span> no es una cota superior de <span class="math inline">\(A\)</span>, de manera que existe <span class="math inline">\((b-a)\in A\)</span> tal que <span class="math inline">\(b-a&gt;|x-a|\)</span>. Como <span class="math inline">\(b-a\in A\)</span>, <span class="math inline">\(\sum c_n(b-a)^n\)</span> converge, y por el corolario anterior, <span class="math inline">\(\sum c_n(x-a)^n\)</span> también converge.</p>
-</div>
-</div>
-</div>
 </div>
 <div class="callout callout-warning callout-style-simple">
 <div class="callout-body">
@@ -1082,27 +1028,20 @@ F_n &amp;= \sum_{i=1}^n \frac{x^i}{i}
 </div>
 </div>
 </div>
+</section>
+
+<section>
+<section id="section-26" class="title-slide slide level2 center">
+<h2></h2>
 <div id="thm-radio-convergencia-raiz" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 12</strong></span> Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, si la sucesión <span class="math inline">\((\sqrt[n]{|c_n|})_{n=1}^\infty\)</span> converge, entonces el radio de convergencia de la serie de potencias es</p>
 <p><span class="math display">\[
 R=\frac{1}{\lim_{n\to\infty} \sqrt[n]{|c_n|}}.
 \]</span></p>
 </div>
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Demostración</strong></p>
-</div>
-<div class="callout-content">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio usando el criterio de la raíz.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+<section class="slide level3">
+
 <div id="exm-radio-convergencia-raiz" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 28</strong></span> Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{(x-2)^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
 <p><span class="math display">\[
@@ -1111,27 +1050,19 @@ R= \frac{1}{\lim_{n\to\infty} \sqrt[n]{|\frac{1}{n}|}} = \frac{1}{1} = 1
 <p>Por tanto, la serie converge para todo <span class="math inline">\(|x-2|&lt;1\)</span>, es decir, <span class="math inline">\(1&lt;x&lt;3\)</span>. En <span class="math inline">\(x=1\)</span> y <span class="math inline">\(x=3\)</span> el teorema del radio de convergencia no dice nada, pero podemos estudiar la convergencia de estos dos casos particulares. En <span class="math inline">\(x=1\)</span> tenemos la serie <span class="math inline">\(\sum \frac{(-1)^n}{n}\)</span> que es la serie armónica alternada, y por tanto, converge. Y en <span class="math inline">\(x=3\)</span> tenemos la serie <span class="math inline">\(\sum \frac{1}{n}\)</span> que es la serie armónica, y por tanto diverge.</p>
 <p>Así pues, el dominio de convergencia puntal de la serie de potencias es el intervalo <span class="math inline">\([1,3)\)</span>.</p>
 </div>
+</section></section>
+<section>
+<section id="section-27" class="title-slide slide level2 center">
+<h2></h2>
 <div id="thm-radio-convergencia-razon" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 13</strong></span> Dada una serie de potencias <span class="math inline">\(\sum c_n(x-a)^n\)</span>, si <span class="math inline">\(c_n\neq 0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span> y la sucesión <span class="math inline">\(\left(\frac{c_n}{c_{n+1}}\right)_{n=1}^\infty\)</span> converge, entonces el radio de convergencia de la serie de potencias es</p>
 <p><span class="math display">\[
 R = \lim_{n\to\infty} \left|\frac{c_n}{c_{n+1}}\right|.
 \]</span></p>
 </div>
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Demostración</strong></p>
-</div>
-<div class="callout-content">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Se deja como ejercicio usando el criterio de la razón.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+<section class="slide level3">
+
 <div id="exm-radio-convergencia-razon" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 29</strong></span> Veamos cuál es el dominio de convergencia puntual de la serie de potencias <span class="math inline">\(\sum \frac{x^n}{n}\)</span>. Utilizando el teorema anterior, el radio de convergencia de la serie es</p>
 <p><span class="math display">\[
@@ -1140,28 +1071,36 @@ R = \lim_{n\to\infty} \frac{1/n}{1/n+1} = \lim_{n\to\infty} \frac{n+1}{n} = 1.
 <p>Por tanto, la serie converge para <span class="math inline">\(|x|&lt;1\)</span>. En <span class="math inline">\(x=1\)</span> la serie que resulta es la serie armónica, que es divergente, y en <span class="math inline">\(x=-1\)</span> la serie que resulta es la serie armónica alternada que converge.</p>
 <p>Así pues, el domino de convergencia puntual de la serie de potencias es el intervalo <span class="math inline">\([-1,1)\)</span>.</p>
 </div>
+</section></section>
+<section>
+<section id="section-28" class="title-slide slide level2 center">
+<h2></h2>
 <p>Las funciones que pueden representarse mediante una serie de potencias en un intervalo de su dominio tienen propiedades muy interesantes, como que son infinitamente derivables en ese intervalo.</p>
 <div id="def-funcion-analitica" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 12 (Función analítica)</strong></span> Dada una función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>analítica</em> en un intervalo <span class="math inline">\(I\)</span>, si para cualquier <span class="math inline">\(a\in I\)</span> <span class="math inline">\(f\)</span> se puede expresar como una serie de potencias centrada en <span class="math inline">\(a\)</span>, es decir,</p>
 <p><span class="math display">\[ f(x) = \sum_{n=1}^\infty c_n(x-a)^n\]</span></p>
 <p>para cualquier <span class="math inline">\(x\)</span> en un entorno de <span class="math inline">\(a\)</span>.</p>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="exm-funciones-analiticas" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 30</strong></span> Cualquier polinomio de grado <span class="math inline">\(n\)</span> es una función analítica en todo <span class="math inline">\(\mathbb{R}\)</span> ya que puede representarse trivialmente como una serie de potencias tomando coeficientes nulos para los términos de grado mayor que <span class="math inline">\(n\)</span>.</p>
 <p>Otras funciones elementales como la función exponencial, la función logarítmica y las trigonométricas son también analíticas en cualquier intervalo abierto de su dominio.</p>
 </div>
-</section>
-
+</section></section>
 <section>
 <section id="series-de-taylor" class="title-slide slide level2 center">
 <h2>Series de Taylor</h2>
-<p>En la sección <strong>?@sec-polinomios-taylor</strong> se vio como aproximar el valor de una función en un punto mediante un polinomio de grado <span class="math inline">\(n\)</span>. En esta sección veremos como explotar la misma idea para expresar funciones mediante series de potencias. Esta técnica resulta útil para estudiar funciones complicadas usando su expresión como serie de potencias.</p>
 <div id="def-serie-taylor" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 13 (Serie de Taylor)</strong></span> Dada una función <span class="math inline">\(f(x)\)</span> con derivadas de orden <span class="math inline">\(n\)</span> en <span class="math inline">\(a\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, se define la <em>serie de Taylor</em> de <span class="math inline">\(f\)</span> centrada en <span class="math inline">\(a\)</span>, como</p>
 <p><span class="math display">\[
 \sum \frac{f^{(n)}(a)}{n!}(x-a)^n.
 \]</span></p>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="exm-serie-taylor" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 31</strong></span> Veamos cuál es la serie de Taylor de la función <span class="math inline">\(f(x)=\ln(x)\)</span> en <span class="math inline">\(a=1\)</span>. Para ello calculamos las primeras derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\(a=1\)</span>.</p>
 <p><span class="math display">\[
@@ -1186,6 +1125,10 @@ A_n(x) &amp;= \sum_{i=1}^n \frac{(-1)^{i-1}}{i}(x-1)^i\\
 \end{align*}\]</span></p>
 <p>que resulta ser el polinomio de Taylor de orden <span class="math inline">\(n\)</span> de <span class="math inline">\(f\)</span> en <span class="math inline">\(a=1\)</span>.</p>
 </div>
+</section></section>
+<section>
+<section id="section-29" class="title-slide slide level2 center">
+<h2></h2>
 <p>Un caso particular bastante habitual es la serie de Taylor en <span class="math inline">\(a=0\)</span>.</p>
 <div id="def-serie-maclaurin" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 14 (Serie de Maclaurin)</strong></span> Dada una función <span class="math inline">\(f(x)\)</span> con derivadas de orden <span class="math inline">\(n\)</span> en <span class="math inline">\(0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, se define la <em>serie de Maclaurin</em> de <span class="math inline">\(f\)</span>, como</p>
@@ -1193,7 +1136,10 @@ A_n(x) &amp;= \sum_{i=1}^n \frac{(-1)^{i-1}}{i}(x-1)^i\\
 \sum \frac{f^{(n)}(0)}{n!}x^n.
 \]</span></p>
 </div>
-<div id="exm-serie-taylor" class="theorem example">
+</section>
+<section class="slide level3">
+
+<div id="exm-serie-maclaurin" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 32</strong></span> Veamos cuál es la serie de Maclaurin de la función <span class="math inline">\(f(x)=\frac{1}{1-x}\)</span>. Para ello calculamos las primeras derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\(0\)</span>.</p>
 <p><span class="math display">\[
 \begin{array}{lll}
@@ -1211,67 +1157,16 @@ f^{(n)}(x) = \frac{n!}{(1-x)^(n+1)} &amp; &amp; f^{(n)}(0) = n!
 \]</span></p>
 <p>que es una serie geométrica de razón <span class="math inline">\(x\)</span>, y por tanto, converge para <span class="math inline">\(|x|&lt;1\)</span>, con suma <span class="math inline">\(\sum_{n=1}^\infty x^n =\frac{1}{1-x}\)</span>, es decir, <span class="math inline">\(f(x)\)</span> coincide con la suma de sus serie de Maclaurin para <span class="math inline">\(|x|&lt;1\)</span>.</p>
 </div>
+</section></section>
+<section>
+<section id="section-30" class="title-slide slide level2 center">
+<h2></h2>
 <div id="thm-serie-taylor" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 14</strong></span> Si <span class="math inline">\(f\)</span> es una función analítica en un intervalo <span class="math inline">\(I\)</span>, entonces para cualquier <span class="math inline">\(a\in I\)</span> se cumple que</p>
 <p><span class="math display">\[
 f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n
 \]</span></p>
 <p><span class="math inline">\(\forall x\in\mathcal{C}\)</span>.</p>
-</div>
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Demostración</strong></p>
-</div>
-<div class="callout-content">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Supongamos que <span class="math inline">\(f\)</span> es analítica en el intervalo <span class="math inline">\(I\)</span>. Entonces, para cualquier <span class="math inline">\(a\in I\)</span>, <span class="math inline">\(f\)</span> puede expresarse mediante una serie de potencias centrada en <span class="math inline">\(a\)</span>,</p>
-<p><span class="math display">\[
-f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots
-\]</span></p>
-<p><span class="math inline">\(\forall x\in\mathcal{C}\)</span>. En particular, para <span class="math inline">\(x=a\)</span> se tiene</p>
-<p><span class="math display">\[
-f(a) = c_0 + c_1(a-a) + c_2(a-a)^2 + c_3(a-a)^3 + \cdots = c_0.
-\]</span></p>
-<p>Como las series de potencias se pueden derivar término a término (como si fuesen polinomios) en el interior del dominio de convergencia, es decir, son infinitamente derivables en <span class="math inline">\(|x−a|&lt;R\)</span>, se tiene que la primera derivada de <span class="math inline">\(f\)</span> vale</p>
-<p><span class="math display">\[
-f'(x) = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + 4c_4(x-a)^4 \cdots
-\]</span></p>
-<p>y en <span class="math inline">\(x=a\)</span> se tiene</p>
-<p><span class="math display">\[
-f'(a) = c_1 + 2c_2(a-a) + 3c_3(a-a)^2 + 4c_4(a-a)^4 \cdots = c_1
-\]</span></p>
-<p>La segunda derivada de <span class="math inline">\(f\)</span> vale</p>
-<p><span class="math display">\[
-f''(x) = 2c_2 + 3\cdot 2 c_3(x-a) + 4\cdot 3c_4(x-a)^2 \cdots
-\]</span></p>
-<p>y en <span class="math inline">\(x=a\)</span> se tiene</p>
-<p><span class="math display">\[
-f''(a) = 2c_2 + 3\cdot 2 c_3(a-a) + 4\cdot 3c_4(a-a)^2 \cdots = 2c_2 \rightarrow c_2 = \frac{f''(a)}{2!}
-\]</span></p>
-<p>La tercera derivada de <span class="math inline">\(f\)</span> vale</p>
-<p><span class="math display">\[
-f'''(x) = 3!c_3 + 4\cdot 3\cdot 2c_4(x-a)+ 5\cdot 4\cdot 3c_5(x-a)^2 \cdots
-\]</span></p>
-<p>y en <span class="math inline">\(x=a\)</span> se tiene</p>
-<p><span class="math display">\[
-f'''(a) = 3!c_3 + 4\cdot 3\cdot 2c_4(a-a)+ 5\cdot 4\cdot 3c_5(a-a)^2 \cdots = 3!c_3 \rightarrow \frac{f'''(a)}{3!}
-\]</span></p>
-<p>Continuando con este proceso, se deduce que</p>
-<p><span class="math display">\[
-c_n = \frac{f^{(n)}(a)}{n!},
-\]</span></p>
-<p>por lo que la suma que se obtiene es</p>
-<p><span class="math display">\[
-f(x) = \sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n,
-\]</span></p>
-<p>que es la serie de Taylor de <span class="math inline">\(f\)</span> centrada en <span class="math inline">\(a\)</span>.</p>
-</div>
-</div>
-</div>
 </div>
 <div class="callout callout-warning callout-style-simple">
 <div class="callout-body">
@@ -1283,6 +1178,9 @@ f(x) = \sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n,
 </div>
 </div>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="exm-funcion-no-coincidente-serie-taylor" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 33</strong></span> La función</p>
 <p><span class="math display">\[
@@ -1294,6 +1192,10 @@ e^{-1/x^2} &amp; \mbox{si $x\neq 0$}\\
 \]</span></p>
 <p>es infinitamente derivable en <span class="math inline">\(x=0\)</span> y <span class="math inline">\(f^{(n)}(0)=0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>, de manera que su serie de Maclaurin es <span class="math inline">\(\sum 0\)</span>, que obviamente, converge para cualquier número <span class="math inline">\(x\in\mathbb{R}\)</span>, pero su suma, que es nula, no coincide con <span class="math inline">\(f\)</span> salvo en <span class="math inline">\(x=0\)</span>.</p>
 </div>
+</section></section>
+<section>
+<section id="section-31" class="title-slide slide level2 center">
+<h2></h2>
 <p>Cabe preguntarse, ¿cuándo <span class="math inline">\(f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n\)</span>?</p>
 <p>Evidentemente, esta igualdad no se cumple para los valores de <span class="math inline">\(x\)</span> fuera del dominio de <span class="math inline">\(f\)</span>, y tampoco para los valores fuera del dominio de convergencia puntual de la serie. Pero además se tiene que cumplir la siguiente condición.</p>
 <div id="thm-condicion-serie-taylor" class="theorem">
@@ -1303,24 +1205,9 @@ e^{-1/x^2} &amp; \mbox{si $x\neq 0$}\\
 \]</span></p>
 <p>para <span class="math inline">\(|x-a|&lt;R\)</span>, entonces <span class="math inline">\(f(x)\)</span> es igual a la suma de su serie de Taylor centrada en <span class="math inline">\(a\)</span> en el intervalo <span class="math inline">\(|x-a|&lt;R\)</span>.</p>
 </div>
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Demostración</strong></p>
-</div>
-<div class="callout-content">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Sea <span class="math inline">\(f(x)=p_{f,a}^n(x) + r_{f,a}^n(x)\)</span> y supongamos que <span class="math inline">\(\lim_{n\to\infty} r_{f,a}^n(x) = 0\)</span>. Entonces <span class="math inline">\(p_{f,a}^n(x) = f(x) - r_{f,a}^n(x)\)</span>, y tomando límites se tiene</p>
-<p><span class="math display">\[
-\lim_{n\to\infty} p_{f,a}^n(x) = \lim_{n\to\infty} f(x) - r_{f,a}^n(x) = f(x) - \lim_{n\to\infty} r_{f,a}^n(x) = f(x).
-\]</span></p>
-</div>
-</div>
-</div>
-</div>
+</section>
+<section class="slide level3">
+
 <div id="exm-serie-maclaurin-seno" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 34</strong></span> Veamos que <span class="math inline">\(\operatorname{sen}(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</p>
 <p>El polinomio de Maclaurin de grado <span class="math inline">\(2n+1\)</span> para la función <span class="math inline">\(\operatorname{sen}(x)\)</span> es</p>
@@ -1336,6 +1223,10 @@ r_{f,a}^{2n+1}(x) = (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\cos(c),
 <p><span class="math display">\[
 -(-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\leq (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\cos(c) \leq (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}
 \]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
 <p>y como</p>
 <p><span class="math display">\[
 \lim_{n\to\infty} -(-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!} = \lim_{n\to\infty} (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!} = 0,
@@ -1344,10 +1235,9 @@ r_{f,a}^{2n+1}(x) = (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\cos(c),
 <p><span class="math display">\[
 \lim_{n\to\infty} r_{f,a}^{2n+1}(x) = \lim_{n\to\infty} (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\cos(c) = 0.
 \]</span></p>
-</div>
-</section>
-<section id="series-de-maclaurin-de-funciones-elementales" class="slide level3">
-<h3>Series de Maclaurin de funciones elementales</h3>
+</section></section>
+<section id="series-de-maclaurin-de-funciones-elementales" class="title-slide slide level2 center">
+<h2>Series de Maclaurin de funciones elementales</h2>
 <p>La siguiente tabla recoge las series de Maclaurin de algunas funciones elementales habituales.</p>
 <table>
 <colgroup>
@@ -1406,7 +1296,7 @@ r_{f,a}^{2n+1}(x) = (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\cos(c),
 <p><a href="https://aprendeconalf.es/analisis-manual" class="uri">https://aprendeconalf.es/analisis-manual</a></p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

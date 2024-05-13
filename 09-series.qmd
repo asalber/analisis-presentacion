@@ -634,6 +634,8 @@ $$
 El número $F_n=\sum_{i=1}^n f_i$ se llama _suma funcional parcial de orden_ $n$ de la serie funcional, y habitualmente utilizaremos la notación $\sum f_n$ para referirnos a la serie funcional de término general $f_n$.
 :::
 
+---
+
 :::{#-exm-serie-funcional}
 Las primeras sumas funcionales parciales de la serie funcional $\sum \frac{x}{n^2}$ son 
 
@@ -645,44 +647,18 @@ F_3 &= x+\frac{x}{4}+\frac{x}{9}\\
 F_n &= \sum_{i=1}^n \frac{x}{i^2}
 \end{align*}
 
-::: {.content-visible when-format="html"}
-<div id="ggb-serie-funcional"></div>
-
-<script>
-var params = {
-            "appName": "graphing", 
-            "width": 600, 
-            "height": 450, 
-            "showToolBar": false, 
-            "showAlgebraInput": false, 
-            "showMenuBar": false,
-            "borderColor": "#FFFFFF",
-            "enableRightClick": false,
-            "enableLabelDrags": false,
-            "enableShiftDragZoom": false,
-            "showZoomButtons": false,
-            "showResetIcon": true,
-            //"showFullscreenButton": true,
-            "transparentGraphics": true,
-            "material_id":"ef8bz5hr"
-            };
-    var ggbApplet3 = new GGBApplet(params, true);
-    window.addEventListener("load", function() { 
-        ggbApplet3.inject('ggb-serie-funcional');
-    });
-</script>
-:::
+<a href="https://geogebra.org/classic/ef8bz5hr" target="_blank">![](img/logos/logo-geogebra.png)</a>
 :::
 
-:::{.callout-important}
-Debe quedar claro que una serie funcional es una sucesión funcional, y por tanto, todos los resultados vistos para [sucesiones funcionales](04-sucesiones.qmd#sucesiones-de-funciones) son válidos para las series funcionales.
-:::
+---
 
 Una serie funcional puede ser convergente para algunos valores de $x$ y divergente para otros.
 
 :::{#exm-convergencia-puntual}
 La serie funcional $\sum x^n$ es una serie geométrica de razón $x$, de modo que, será convergente cuando $|x|<1$ y divergente en caso contrario.
 :::
+
+##
 
 :::{#def-dominio-convergencia-puntual-serie-funcional}
 ## Dominio de convergencia puntual de una serie funcional
@@ -697,9 +673,13 @@ F(x) = \sum_{n=1}^\infty f_n(x),\ \forall x\in \mathcal{C}.
 $$
 :::
 
+---
+
 :::{#exm-funcion-suma}
 El dominio de convergencia puntual de la serie funcional $\sum \frac{x}{n^2}$ es $\mathbb{R}$, ya que $\forall x\in\mathbb{R}$, $\sum \frac{x}{n^2}=x\sum\frac{1}{n^2}$, que converge al ser $\sum \frac{1}{n^2}$ convergente. Además, como vimos que $\sum_{n=1}^\infty \frac{1}{n^2}=\frac{\pi^2}{6}$, se tiene que su su función suma es $\sum_{n=1}^\infty \frac{x}{n^2} = x\sum_{n=1}^\infty \frac{1}{n^2}= \frac{\pi^2}{6}x$.
 :::
+
+##
 
 De particular interés son las series que se obtienen a partir de sucesiones de la forma $(c_nx^n)_{n=1}^\infty$ que dan lugar a polinomios. Como ya vimos con los [polinomios de Taylor](07-derivadas.qmd#polinomios-de-taylor), estas series nos permitirán estudiar funciones complicadas mediante simples polinomios.
 
@@ -709,6 +689,8 @@ Dado un número real $a\in\mathbb{R}$ y una sucesión de números reales $(c_n)_
 
 La sucesión $(c_n)_{n=0}^\infty$ se llama _sucesión de coeficientes de la serie_, y al término $c_0$ se le llama _término independiente_.
 :::
+
+---
 
 :::{#exm-serie-potencias}
 Tomando $a=0$ y la sucesión de coeficientes $\left(\frac{1}{n}\right)_{n=1}^\infty$, se tiene la serie de potencias $\sum \frac{x^n}{n}$, cuyas primeras sumas funcionales parciales son 
@@ -724,6 +706,8 @@ F_n &= \sum_{i=1}^n \frac{x^i}{i}
 
 Para cualquier serie de potencias $\sum c_n(x-a)^n$, está claro que $a$ pertenece al dominio de convergencia puntual de la serie, pues para $x=a$ se tiene $\sum_{n=1}^\infty c_n(a-a)^n = c_0$. Veremos a continuación un par resultados que nos ayudarán a ver para qué otros valores de $x$ la serie de potencias converge.
 
+##
+
 :::{#prp-intervalo-convergencia-serie-potencias}
 Dada una serie de potencias $\sum c_nx^n$ centrada en el $0$, 
 
@@ -731,22 +715,7 @@ a. Si la serie converge para $x=b\neq 0$, entonces converge para cualquier $x$ t
 b. Si la serie diverge para $x=d\neq 0$, entonces diverge para cualquier $x$ con $|x|>|d|$.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Veamos la prueba de cada parte.
-
-a. Supongamos $\sum c_nb^n$ converge. Entonces, por el criterio de divergencia se tiene que $\lim_{n\to\infty} c_nb^n=0$, y, por tanto, tomando $\varepsilon = 1$, existe un $k\in\mathbb{N}$ tal que $|c_nb^n|<1$ $\forall n\geq k$. De esta manera se cumple
-
-    $$
-    |c_nx^n| =  \left|\frac{c_nb^nx^n}{b^n}\right| = |c_nb_n|\left|\frac{x}{b}\right|^n < \left|\frac{x}{b}\right|^n,
-    $$
-
-    Como $\sum \left(\frac{x}{b}\right)^n$ es una serie geométrica, converge para $\left|\frac{x}{b}\right|<1$, es decir, $|x|<|b|$, y en tal caso, por el criterio de comparación de series, $\sum |c_nx^n|$ converge, de modo que $\sum c_nx^n$ es absolutamente convergente.
-
-b. Supongamos ahora que $\sum c_nd^n$ diverge. Entonces para cualquier $|x|>|d|$ la serie $\sum c_nx^n$ no puede converger porque por el resultado anterior, si $\sum c_nx^n$ converge, también debería converger $\sum c_nd^n$ al ser $|d|<|x|$.
-:::
-:::
+---
 
 :::{#exm-intervalo-convergencia-serie-potencias}
 Ya se vio que la serie armónica $\sum \frac{1}{n}$ es divergente, y por tanto, la serie de potencias $\sum \frac{x^n}{n}$ es divergente para $x=1$, lo que significa, según la proposición anterior, que también diverge para $|x|>1$. Por otro lado, para $x=1/2$, se tiene la serie
@@ -760,6 +729,8 @@ que, por el criterio de comparación de series, converge al ser $\frac{1}{n2^n}\
 Más adelante se mostrará que el dominio de convergencia puntual de esta serie de potencias es el intervalo $[-1,1)$.
 :::
 
+##
+
 :::{#cor-intervalo-convergencia-serie-potencias}
 Dada una serie de potencias $\sum c_n(x-a)^n$ centrada en el $a$, 
 
@@ -767,12 +738,7 @@ a. Si la serie converge para $x=b\neq a$, entonces converge para cualquier $x$ t
 b. Si la serie diverge para $x=d\neq a$, entonces diverge para cualquier $x$ con $|x-a|>|d-a|$.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-La demostración es sencilla a partir de la proposición anterior haciendo el cambio de variable $y=x-a$, y se deja como ejercicio.
-:::
-:::
+##
 
 El siguiente teorema resulta de gran utilidad a la hora de determinar el dominio de convergencia puntual de una serie de potencias.
 
@@ -781,18 +747,11 @@ El siguiente teorema resulta de gran utilidad a la hora de determinar el dominio
 Dada una serie de potencias $\sum c_n(x-a)^n$, se cumple que, o bien el dominio de convergencia puntual es $\mathbb{R}$, o bien existe un número $R\geq 0$, llamado _radio de convergencia_ tal que la serie converge si $|x-a|<R$ y diverge si $|x-a|>R$.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Sea el conjunto $A=\{x-a: \sum c_n(x-a)^n \mbox{ converge}\}$. Entonces $A\neq \emptyset$ ya que $\sum c_n(x-a)^n$ converge, al menos, para $x=a$, y por tanto $0\in A$. Supongamos además que $A\neq \mathbb{R}$. Entonces existe un número $d\neq a$ tal que la serie $\sum c_n(d-a)^n$ diverge, y por el corolario anterior, también diverge para $|x-a|>|d-a|$, de manera que $|x-a|\leq |d-a|$ $\forall (x-a) \in A$, y por el axioma de completitud se tiene que existe el supremo de $A$. 
-
-Sea $R=\sup(A)$. Si $|x-a|>R$, entonces $(x-a)\not\in A$, por lo que $\sum c_n(x-a)^n$ diverge. Y si $|x-a|<R$, entonces $|x-a|$ no es una cota superior de $A$, de manera que existe $(b-a)\in A$ tal que $b-a>|x-a|$. Como $b-a\in A$, $\sum c_n(b-a)^n$ converge, y por el corolario anterior, $\sum c_n(x-a)^n$ también converge.
-:::
-:::
-
 :::{.callout-warning}
 El teorema anterior no afirma nada sobre los puntos $|x-a|=R$. De hecho, en estos los puntos la serie puede converger o divergir. Y tampoco proporciona un procedimiento para calcular el radio de convergencia de una serie de potencias. Afortunadamente, los siguientes teoremas permitirán su cálculo la mayoría de las veces.
 :::
+
+##
 
 :::{#thm-radio-convergencia-raiz}
 Dada una serie de potencias $\sum c_n(x-a)^n$, si la sucesión $(\sqrt[n]{|c_n|})_{n=1}^\infty$ converge, entonces el radio de convergencia de la serie de potencias es 
@@ -802,12 +761,8 @@ R=\frac{1}{\lim_{n\to\infty} \sqrt[n]{|c_n|}}.
 $$
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Se deja como ejercicio usando el criterio de la raíz.
-:::
-:::
+
+---
 
 :::{#exm-radio-convergencia-raiz}
 Veamos cuál es el dominio de convergencia puntual de la serie de potencias $\sum \frac{(x-2)^n}{n}$. Utilizando el teorema anterior, el radio de convergencia de la serie es 
@@ -821,6 +776,8 @@ Por tanto, la serie converge para todo $|x-2|<1$, es decir, $1<x<3$. En $x=1$ y 
 Así pues, el dominio de convergencia puntal de la serie de potencias es el intervalo $[1,3)$.
 :::
 
+##
+
 :::{#thm-radio-convergencia-razon}
 Dada una serie de potencias $\sum c_n(x-a)^n$, si $c_n\neq 0$ $\forall n\in\mathbb{N}$ y la sucesión $\left(\frac{c_n}{c_{n+1}}\right)_{n=1}^\infty$ converge, entonces el radio de convergencia de la serie de potencias es 
 
@@ -829,12 +786,7 @@ R = \lim_{n\to\infty} \left|\frac{c_n}{c_{n+1}}\right|.
 $$
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Se deja como ejercicio usando el criterio de la razón.
-:::
-:::
+---
 
 :::{#exm-radio-convergencia-razon}
 Veamos cuál es el dominio de convergencia puntual de la serie de potencias $\sum \frac{x^n}{n}$. Utilizando el teorema anterior, el radio de convergencia de la serie es 
@@ -848,6 +800,8 @@ Por tanto, la serie converge para $|x|<1$. En $x=1$ la serie que resulta es la s
 Así pues, el domino de convergencia puntual de la serie de potencias es el intervalo $[-1,1)$.
 :::
 
+##
+
 Las funciones que pueden representarse mediante una serie de potencias en un intervalo de su dominio tienen propiedades muy interesantes, como que son infinitamente derivables en ese intervalo. 
 
 :::{#def-funcion-analitica}
@@ -859,6 +813,8 @@ $$ f(x) = \sum_{n=1}^\infty c_n(x-a)^n$$
 para cualquier $x$ en un entorno de $a$.
 :::
 
+---
+
 :::{#exm-funciones-analiticas}
 Cualquier polinomio de grado $n$ es una función analítica en todo $\mathbb{R}$ ya que puede representarse trivialmente como una serie de potencias tomando coeficientes nulos para los términos de grado mayor que $n$.
 
@@ -866,8 +822,6 @@ Otras funciones elementales como la función exponencial, la función logarítmi
 :::
 
 ## Series de Taylor
-
-En la sección @sec-polinomios-taylor se vio como aproximar el valor de una función en un punto mediante un polinomio de grado $n$. En esta sección veremos como explotar la misma idea para expresar funciones mediante series de potencias. Esta técnica resulta útil para estudiar funciones complicadas usando su expresión como serie de potencias.
 
 :::{#def-serie-taylor}
 ## Serie de Taylor
@@ -877,6 +831,8 @@ $$
 \sum \frac{f^{(n)}(a)}{n!}(x-a)^n.
 $$
 :::
+
+---
 
 :::{#exm-serie-taylor}
 Veamos cuál es la serie de Taylor de la función $f(x)=\ln(x)$ en $a=1$. Para ello calculamos las primeras derivadas de $f$ en $a=1$.
@@ -909,6 +865,8 @@ A_n(x) &= \sum_{i=1}^n \frac{(-1)^{i-1}}{i}(x-1)^i\\
 que resulta ser el polinomio de Taylor de orden $n$ de $f$ en $a=1$.
 :::
 
+##
+
 Un caso particular bastante habitual es la serie de Taylor en $a=0$.
 
 :::{#def-serie-maclaurin}
@@ -920,7 +878,9 @@ $$
 $$
 :::
 
-:::{#exm-serie-taylor}
+---
+
+:::{#exm-serie-maclaurin}
 Veamos cuál es la serie de Maclaurin de la función $f(x)=\frac{1}{1-x}$. Para ello calculamos las primeras derivadas de $f$ en $0$.
 
 $$
@@ -943,6 +903,8 @@ $$
 que es una serie geométrica de razón $x$, y por tanto, converge para $|x|<1$, con suma $\sum_{n=1}^\infty x^n =\frac{1}{1-x}$, es decir, $f(x)$ coincide con la suma de sus serie de Maclaurin para $|x|<1$.
 :::
 
+## 
+
 :::{#thm-serie-taylor}
 Si $f$ es una función analítica en un intervalo $I$, entonces para cualquier $a\in I$ se cumple que
 
@@ -953,76 +915,11 @@ $$
 $\forall x\in\mathcal{C}$.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Supongamos que $f$ es analítica en el intervalo $I$. Entonces, para cualquier $a\in I$, $f$ puede expresarse mediante una serie de potencias centrada en $a$,
-
-$$
-f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots 
-$$
-
-$\forall x\in\mathcal{C}$. En particular, para $x=a$ se tiene
-
-$$
-f(a) = c_0 + c_1(a-a) + c_2(a-a)^2 + c_3(a-a)^3 + \cdots = c_0.
-$$
-
-Como las series de potencias se pueden derivar término a término (como si fuesen polinomios) en el interior del dominio de convergencia, es decir, son infinitamente derivables en $|x−a|<R$, se tiene que la primera derivada de $f$ vale 
-
-$$
-f'(x) = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + 4c_4(x-a)^4 \cdots
-$$
-
-y en $x=a$ se tiene
-
-$$
-f'(a) = c_1 + 2c_2(a-a) + 3c_3(a-a)^2 + 4c_4(a-a)^4 \cdots = c_1
-$$
-
-La segunda derivada de $f$ vale
-
-$$
-f''(x) = 2c_2 + 3\cdot 2 c_3(x-a) + 4\cdot 3c_4(x-a)^2 \cdots
-$$
- 
-y en $x=a$ se tiene
-
-$$
-f''(a) = 2c_2 + 3\cdot 2 c_3(a-a) + 4\cdot 3c_4(a-a)^2 \cdots = 2c_2 \rightarrow c_2 = \frac{f''(a)}{2!}
-$$
-
-La tercera derivada de $f$ vale 
-
-$$
-f'''(x) = 3!c_3 + 4\cdot 3\cdot 2c_4(x-a)+ 5\cdot 4\cdot 3c_5(x-a)^2 \cdots
-$$
- 
-y en $x=a$ se tiene
-
-$$
-f'''(a) = 3!c_3 + 4\cdot 3\cdot 2c_4(a-a)+ 5\cdot 4\cdot 3c_5(a-a)^2 \cdots = 3!c_3 \rightarrow \frac{f'''(a)}{3!}
-$$
-
-Continuando con este proceso, se deduce que 
-
-$$
-c_n = \frac{f^{(n)}(a)}{n!},
-$$
-
-por lo que la suma que se obtiene es
-
-$$
-f(x) = \sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n,
-$$
-
-que es la serie de Taylor de $f$ centrada en $a$.
-:::
-:::
-
 :::{.callout-warning}
 El teorema anterior garantiza que si una función es analítica en un intervalo $I$, entonces puede representarse mediante la serie es la serie de Taylor en $a$, $\forall a\in I$, pero no todas las funciones son analíticas.
 :::
+
+---
 
 :::{#exm-funcion-no-coincidente-serie-taylor}
 La función 
@@ -1038,6 +935,8 @@ $$
 es infinitamente derivable en $x=0$ y $f^{(n)}(0)=0$ $\forall n\in\mathbb{N}$, de manera que su serie de Maclaurin es $\sum 0$, que obviamente, converge para cualquier número $x\in\mathbb{R}$, pero su suma, que es nula, no coincide con $f$ salvo en $x=0$.
 :::
 
+## 
+
 Cabe preguntarse, ¿cuándo $f(x)=\sum_{n=1}^\infty \frac{f^{n}(a)}{n!}(x-a)^n$?
 
 Evidentemente, esta igualdad no se cumple para los valores de $x$ fuera del dominio de $f$, y tampoco para los valores fuera del dominio de convergencia puntual de la serie. Pero además se tiene que cumplir la siguiente condición.
@@ -1052,16 +951,7 @@ $$
 para $|x-a|<R$, entonces $f(x)$ es igual a la suma de su serie de Taylor centrada en $a$ en el intervalo $|x-a|<R$.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Sea $f(x)=p_{f,a}^n(x) + r_{f,a}^n(x)$ y supongamos que $\lim_{n\to\infty} r_{f,a}^n(x) = 0$. Entonces $p_{f,a}^n(x) = f(x) - r_{f,a}^n(x)$, y tomando límites se tiene
-
-$$
-\lim_{n\to\infty} p_{f,a}^n(x) = \lim_{n\to\infty} f(x) - r_{f,a}^n(x) = f(x) - \lim_{n\to\infty} r_{f,a}^n(x) = f(x).
-$$
-:::
-:::
+---
 
 :::{#exm-serie-maclaurin-seno}
 Veamos que $\operatorname{sen}(x) = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}$ $\forall x\in\mathbb{R}$.
@@ -1085,6 +975,9 @@ Como $|\cos(c)|\leq 1$ $\forall c\in\mathbb{R}$, se tiene que
 $$
 -(-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\leq (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\cos(c) \leq (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}
 $$
+:::
+
+---
 
 y como 
 
@@ -1097,9 +990,8 @@ por el teorema de compresión de límites, se tiene que
 $$
 \lim_{n\to\infty} r_{f,a}^{2n+1}(x) = \lim_{n\to\infty} (-1)^{n+1}\frac{x^{2n+3}}{(2n+3)!}\cos(c) = 0.
 $$
-:::
 
-### Series de Maclaurin de funciones elementales
+## Series de Maclaurin de funciones elementales
 
 La siguiente tabla recoge las series de Maclaurin de algunas funciones elementales habituales.
 
