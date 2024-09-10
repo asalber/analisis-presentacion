@@ -1,0 +1,27 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+
+    % Axis settings
+    \begin{axis}[
+        axis equal,
+        axis lines=middle,
+        xlabel=$x$, ylabel=$y$,
+        xmin=-1, xmax=1,
+        ymin=-1, ymax=1,
+        samples=100,
+        domain=0:360,
+        ticks=none
+    ]
+    
+    % Parametric plot of a smooth curve (Circle)
+    \addplot [parametric, smooth, myblue, thick, domain=0:360]({cos(2*x)}, {sin(x)});
+    \node[myblue] at (axis cs: 0.6, 0.8) {$\mathbf{f}(t) = (\cos(2t), \operatorname{sen}(t))$};
+    
+    % Draw the vector
+    \draw[myred, -{Stealth[length=2mm, width=2mm]}] (0,0) -- ({cos(0)}, {sin(0)}) node[midway, above]  {$t=0$};
+    \draw[myred, -{Stealth[length=2mm, width=2mm]}] (0,0) -- ({cos(45)}, {sin(22.5)}) node[midway, above]  {$t=\pi/8$};
+    \draw[myred, -{Stealth[length=2mm, width=2mm]}] (0,0) -- ({cos(90)}, {sin(45)}) node[midway, above]  {$t=\pi/4$};
+    \draw[myred, -{Stealth[length=2mm, width=2mm]}] (0,0) -- ({cos(-45)}, {sin(-22.5)}) node[midway, below, left]  {$t=-\pi/8$};
+    \end{axis}
+    
+    \end{tikzpicture}
