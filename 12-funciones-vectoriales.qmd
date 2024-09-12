@@ -68,7 +68,7 @@ Una curva puede ser la trayectoria de más de una función vectorial, es decir, 
 ---
 
 :::{#exm-parametrizacion-trayectorias}
-Las función vectorial $\mathbf{f}(t)=(\operatorname{sen}(t),\cos(t))$ describe la misma trayectoria en el intervalo $t\in[0,2\pi]$, que la función $\mathbf{g}(x) = (\operatorname{sen}(2x), \cos(2x))$ en el intervalo $x\in[0,\pi]$. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable $t=2x$, y de la segunda a la primera mediante el cambio de variable $x=t/2$.
+Las función vectorial $\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t))$ describe la misma trayectoria en el intervalo $t\in[0,2\pi]$, que la función $\mathbf{g}(x) = (\cos(2x), \operatorname{sen}(2x))$ en el intervalo $x\in[0,\pi]$. Se puede pasar de la primera parametrización a la segunda mediante el cambio de variable $t=2x$, y de la segunda a la primera mediante el cambio de variable $x=t/2$.
 
 :::{.columns}
 :::{.column width="50%"}
@@ -471,15 +471,15 @@ $$
 :::
 
 ---
+
 ![Plano normal a una trayectoria en el espacio.](img/funciones-vectoriales/plano-normal-trayectoria-espacio){width=100%}
 
 [![Ejemplo interactivo](/img/logos/logo-geogebra.png)Ejemplo interactivo](https://www.geogebra.org/m/Q2C7EfBn)
 
 ## Integral de una función vectorial
 
-Al igual que la derivada, el concepto de integral se puede extender de funciones reales a funciones vectoriales de forma natural, expresando la integral en términos de las integrales de las funciones componentes. El teorema fundamental del Cálculo también se cumple para funciones vectoriales.
-
 :::{#def-primitiva-funcion-vectorial}
+### Primitiva de una función vectorial
 Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$, se dice que una función vectorial $\mathbf{F}(t)$ es una _primitiva_ de $\mathbf{f}(t)$ si se cumple que $\mathbf{F}'(t) = \mathbf{f}(t)$.
 :::
 
@@ -488,7 +488,10 @@ Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$, se dice que una f
 Si $\mathbf{F}(t)$ es una primitiva de $\mathbf{f}(t)$ en $\mathbb{R}^n$, también lo es la función vectorial $\mathbf{F}(t)+\mathbf{C}$, para cualquier vector constante $C$ en $\mathbb{R}^n$.
 :::
 
+## 
+
 :::{#def-integral-indefinida-funcion-vectorial}
+### Integral indefinida de una función vectorial
 Dada una función vectorial $\mathbf{f}(t)$ en $\mathbb{R}^n$, se define la _integral indefinida_ de $\mathbf{f}(t)$ como
 
 $$
@@ -506,20 +509,7 @@ $$
 $$
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Supongamos que $\mathbf{F}(t)=(F_1(t),\ldots,F_n(t))$ es una primitiva de $\mathbf{f}(t)=(f_1(t), \ldots, f_n(t))$.Entonces,
-
-$$
-\left(\int f_1(t)\, dt, \ldots, \int f_n(t)\,dt\right) 
-= (F_1(t)+C_1,\ldots, F_n(t)+C_n)
-= \mathbf{F}(t)+\mathbf{C} = \int \mathbf{f}(t)\, dt,
-$$
-
-donde $C_1,\ldots,C_n$ son escalares constantes y $\mathbf{C}=(C_1,\ldots, C_n)$. 
-:::
-:::
+---
 
 :::{#exm-integral-indefinida-funcion-vectorial}
 La integral indefinida de la función $\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2x} \mathbf{k}$ es
@@ -531,6 +521,8 @@ La integral indefinida de la función $\mathbf{f}(t) = (3t+1) \mathbf{i} + \oper
 \end{align*}
 :::
 
+##
+
 :::{#def-integral-definida-funcion-vectorial}
 Dada una función vectorial $\mathbf{f}(t)=(f_1(t),\ldots, f_n(t))$ en $\mathbb{R}^n$, con $f_1(t),\ldots,f_n(t)$ funciones integrables Riemann en $I=[a,b]$, se define la _integral definida_ de $\mathbf{f}(t)$ en $I$ como
 
@@ -541,61 +533,9 @@ $$
 
 ## Longitud de la trayectoria de una función vectorial
 
-Un problema habitual cuando se trabaja con funciones vectoriales es averiguar la longitud de su trayectoria. 
-
-Para medir la longitud de arco de la curva que describe una función vectorial $\mathbf{f}(t)=(f_1(t),\ldots,f_n(t))$ en el intervalo $t\in[a,b]$ podemos seguir la misma estrategia que usamos para medir la longitud de la gráfica de una función real, descomponiendo la trayectoria en los tramos correspondientes a una partición del intervalo $[a,b]$ en $m$ subintervalos $\mathcal{P}_m = \{t_0=a, t_1, \ldots, t_m=b\}$. Cada uno de los tramos puede aproximarse por un segmento $\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})$, de manera que la longitud de la trayectoria puede aproximarse mediante la suma 
-
-$$
-\sum_{i=1}^m |\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})|.
-$$
-
 ![Aproximación de la longitud de una trayectoria mediante segmentos.](img/funciones-vectoriales/longitud-trayectoria-funcion-vectorial)
 
-Resulta evidente que a medida que se toman refinamientos sucesivos de la partición, esta aproximación será mejor, de manera que podemos llegar a obtener la longitud exacta de la curva tomando el límite cuando $m\to\infty$, es decir,
-
-$$
-\lim_{m\to\infty}\sum_{i=1}^m |\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})|.
-$$
-
-Ahora bien, como 
-
-\begin{align*}
-\mathbf{f}(t_i)-\mathbf{f}(t_i-1) 
-&= (f_1(t_i),\ldots,f_n(t_i))-(f_1(t_{i-1}),\ldots,f_n(t_{i-1})) \\
-&= (f_1(t_i)-f_1(t_{i-1}),\ldots,f_n(t_i)-f_n(t_{i-1}))
-\end{align*}
-
-se tiene que 
-
-$$
-\lim_{m\to\infty}\sum_{i=1}^m |\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})| =
-\lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j(t_i)-f_j(t_{i-1}))^2}.
-$$
-
-Por otro lado, si las funciones componentes $f_j(t)$ son continuas en $[a,b]$ y diferenciables en $(a,b)$, el teorema del valor medio asegura que existe un valor $t_{ij}\in(t_{i-1},t_i)$ tal que 
-
-$$
-f_j(t_i)-f_j(t_{i-1}) = f_j'(t_{ij})(t_i-t_{i-1}) = f_j'(t_{ij}) \Delta t,
-$$
-
-de manera que la expresión anterior se puede escribir
-
-\begin{align*}
-\lim_{m\to\infty}\sum_{i=1}^m |\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})| 
-&= \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j'(t_{ij})\Delta t)^2} \\
-&= \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j'(t_{ij}))^2}\Delta t.
-\end{align*}
-
-Esta última suma se parece a una suma de Riemann, aunque los $t_{ij}$, en general, pueden ser distintos para cada función componente $f_j$. No obstante, al ir tomando particiones cada vez más refinadas, en el límite cuando $n\to\infty$, los intervalos $(t_{i-1},t_i)$ acaban colapsando en un único punto, por lo que este límite puede expresarse como la integral de Riemann
-
-\begin{align*}
-\lim_{m\to\infty}\sum_{i=1}^m |\mathbf{f}(t_i)-\mathbf{f}(t_{i-1})| 
-&= \lim_{m\to\infty}\sum_{i=1}^m \sqrt{\sum_{j=1}^n (f_j'(t))^2}\Delta t. \\
-&= \int_a^b \sqrt{\sum_{j=1}^n (f_j'(t_{ij}))^2}\, dt \\
-&= \int_a^b |\mathbf{f}'(t)|\, dt
-\end{align*}
-
-Así pues, podemos definir la longitud de una trayectoria de una función vectorial de esta manera.
+##
 
 :::{#def-longitud-trayectoria-funcion-vectorial}
 ## Longitud de la trayectoria de una función vectorial
@@ -607,6 +547,8 @@ $$
 
 siempre y cuando la trayectoria se recorra exactamente una vez para $t\in[a,b]$.
 :::
+
+---
 
 :::{#exm-longitud-trayectoria-espiral}
 Veamos cuánto mide la trayectoria descrita por la función vectorial $\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t), t)$ en el intervalo $[0,2\pi]$.
@@ -621,7 +563,7 @@ Veamos cuánto mide la trayectoria descrita por la función vectorial $\mathbf{f
 \end{align*}
 :::
 
-En ocasiones es interesante parametrizar una trayectoria con respecto a su longitud, que no depende de un sistema de coordenadas particular. Para ello se puede utilizar la siguiente función.
+## 
 
 :::{#def-funcion-longitud-arco}
 ## Función longitud de arco de una trayectoria
@@ -633,6 +575,8 @@ $$
 
 siempre y cuando la trayectoria de $\mathbf{f}$ se recorra exactamente una vez para $t\in[a,b]$.
 :::
+
+## 
 
 A partir de la función longitud de arco se puede reparametrizar $\mathbf{f}(t)$ como $\mathbf{f}(t(s))$, donde $t(s)$ es la función inversa de $s(t)$. A esta parametrización de la trayectoria se le conoce como _parametrización de la longitud de arco_.
 
@@ -647,10 +591,15 @@ $$
 donde $t(s)$ es la inversa de la función longitud de arco de $\mathbf{f}$.
 :::
 
+---
+
 :::{#exm-parametrización-longitud-arco}
 La función vectorial $\mathbf{f}(t)=(3t+1, 4t-2)$ traza la siguiente gráfica en el intervalo $t\in[0,2]$.
+:::
 
 ![Parametrización de una trayectoria recta.](img/funciones-vectoriales/parametrizacion-longitud-arco-1)
+
+---
 
 La función longitud de arco de esta función vectorial es
 
@@ -669,49 +618,14 @@ Así que, tomando la función inversa $t=s/5$, y haciendo el cambio de variable 
 $$
 \mathbf{f}(t) = \mathbf{f}(s/5) = \left(\frac{3}{5}s+1, \frac{4}{5}s-2\right) = \tilde{\mathbf{f}}(s).
 $$
-:::
+
+##
 
 :::{#prp-parametrizacion-longitud-arco}
 Si $\mathbf{f}(t)$ es una función vectorial que admite una parametrización de longitud de arco de su trayectoria, entonces $\tilde{\mathbf{f}}'(s)$ es un vector unitario.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Sea $s$ el parámetro dado por la función longitud de arco de la trayectoria de la función vectorial $\mathbf{f}(t)$ para $t\in[a,b]$, es decir,
-
-$$
-s(t) = \int_a^t |\mathbf{f}'(x)|\, dx.
-$$
-
-Entonces, por el teorema fundamental del cálculo para funciones vectoriales se tiene que 
-
-$$
-\frac{ds}{dt} = s'(t) = |\mathbf{f}'(t)|.
-$$
-
-Por otro lado, al realizar el cambio de variable para parametrizar la función vectorial mediante la longitud de arco, al aplicar la regla de la cadena se tiene
-
-$$
-\tilde{\mathbf{f}}'(s) 
-= (\mathbf{f}\circ t)'(s)
-= \mathbf{f}'(t(s)) t'(s)
-= \frac{d\mathbf{f}}{dt}\frac{dt}{ds}
-= \frac{\frac{d\mathbf{f}}{dt}}{\frac{ds}{dt}}
-= \frac{\mathbf{f}'(t)}{\mathbf{s}'(t)}
-= \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|},
-$$
-
-y por tanto, 
-
-$$
-|\tilde{\mathbf{f}}'(s)| 
-= \left|\frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}\right|
-= \frac{|\mathbf{f}'(t)|}{|\mathbf{f}'(t)|}
-= 1.
-$$
-:::
-:::
+---
 
 Una de las ventajas de la parametrización de longitud de arco de la trayectoria de una función vectorial $\mathbf{f}(s)$, es que la longitud de la trayectoria en el intervalo $s\in[a,b]$ es $b-a$, ya que 
 
@@ -721,9 +635,9 @@ $$
 
 ## Curvatura
 
-Otro aspecto importante de una trayectoria es su curvatura, que nos permite ver cómo de rápido gira una curva. Si pensamos en la trayectoria que describe una carretera, en un tramo recto no hay curvatura, y por tanto, no tendremos que girar el volante, mientras que en una curva si que habrá que girar el volante para trazar la curva. Cuanto mayor sea la curvatura de la trayectoria de la carretera, más rápido tendremos que girar el volante para cambiar la dirección del vehículo.
-
 Para estudiar la curvatura de la trayectoria de una función vectorial $\mathbf{f}(t)$, analizaremos la variación que experimenta la dirección del vector tangente a la trayectoria, que recordemos es $\mathbf{f}'(t)$, y por tanto, vendrá dada por la segunda derivada $\mathbf{f}''(t)$. Sin embargo, este valor depende de la parametrización de la trayectoria. 
+
+---
 
 :::{#exm-curvatura-dependiente-parametrizacion}
 Ya hemos visto que la función vectorial $\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t))$ describe una trayectoria circular de radio 1 centrada en el origen. Su derivada vale $\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t))$ y su segunda derivada $\mathbf{f}''(t)=(-\cos(t),-\operatorname{sen}(t))$, que tiene módulo $|\mathbf{f}''(t)| = \sqrt{(-\cos(t))^2+(-\operatorname{sen}(t))^2} = 1$ para cualquier valor de $t$.
@@ -731,6 +645,8 @@ Ya hemos visto que la función vectorial $\mathbf{f}(t)=(\cos(t),\operatorname{s
 Sin embargo, si tomamos una parametrización distinta $\mathbf{g}(t)=(\cos(2t), \operatorname{sen}(2t))$ de esta misma trayectoria, se tiene que $\mathbf{g}'(t)=(-2\operatorname{sen}(2t),2\cos(2t))$ y $\mathbf{g}''(t)=(-4\cos(2t), -4\operatorname{sen}(2t))$, que tiene módulo 
 $|\mathbf{g}''(t)| = \sqrt{(-4\cos(t))^2+(-4\operatorname{sen}(t))^2} = 4$ para cualquier valor de $t$.
 :::
+
+##
 
 Así pues, para hacer independiente la curvatura de una trayectoria de su parametrización, utilizaremos la parametrización de la longitud de arco. 
 
@@ -744,6 +660,8 @@ $$
 :::
 
 El inconveniente de esta definición es que nos obliga a usar la parametrización longitud de arco, que, a su vez, requiere calcular la longitud de arco de la trayectoria, lo cual no siempre es fácil. Afortunadamente, es posible calcular la curvatura de la trayectoria de cualquier función vectorial $\mathbf{f}(t)$ sin necesidad de hacer el cambio a la parametrización longitud de arco. Para ello necesitamos normalizar el vector velocidad.
+
+##
 
 :::{#def-vector-tangente-unitario}
 ## Vector tangente unitario de una función vectorial
@@ -764,33 +682,7 @@ $$
 donde $\mathbf{T}'(t)$ es el vector tangente unitario de $\mathbf{f}(t)$.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Sea $s(t)$ la función longitud de arco de la trayectoria de $\mathbf{f}(t)$ y $\tilde{\mathbf{f}}(s)$ su parametrización longitud de arco. Entonces,
-
-\begin{align*}
-\tilde{\mathbf{f}}''(s) 
-&= \frac{d}{ds}\left(\frac{d\tilde{\mathbf{f}}}{ds}\right)
-= \frac{d}{ds}\left(\frac{d(\mathbf{f}\circ t)}{ds}\right) \\
-&= \frac{d}{ds}\left(\frac{d\mathbf{f}}{dt}\frac{dt}{ds}\right)
-= \frac{d}{ds}\left(\frac{d\mathbf{f}/dt}{ds/dt}\right) \tag{Regla cadena} \\
-&= \frac{d}{ds}\left(\frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}\right)
-= \frac{d}{ds}(\mathbf{T}(t)) \\
-&= \frac{dT}{dt}\frac{dt}{ds} 
-= \frac{dT/dt}{ds/dt} \tag{Regla cadena} \\
-&= \frac{\mathbf{T}'(t)}{|\mathbf{f}'(t)|}.
-\end{align*}
-
-Y por tanto,
-
-$$
-\kappa(s) 
-= |\tilde{\mathbf{f}}''(s)| 
-= \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|}.
-$$
-:::
-:::
+---
 
 :::{#exm-curvatura-trayectoria}
 Veamos cuál es la curvatura de la espiral que describe la función vectorial $\mathbf{f}(t)=(\cos(t),\operatorname{sen}(t),t)$. Su primera derivada vale $\mathbf{f}'(t)=(-\operatorname{sen}(t),\cos(t),1)$, y su módulo es $|\mathbf{f}'(t)| = \sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2+1^2} = \sqrt{2}$, de manera que el vector tangente unitario es
@@ -812,6 +704,8 @@ Así pues, su curvatura es
 \end{align*}
 :::
 
+##
+
 En el caso de una trayectoria en el espacio real $\mathbb{R}^3$ se puede utilizar la siguiente fórmula, que suele ser más rápida de calcular, para calcular su curvatura. 
 
 :::{#thm-curvatura-trayectoria-espacio-real}
@@ -821,74 +715,6 @@ $$
 \kappa(t) 
 = \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}.
 $$
-:::
-
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Como el vector tangente unitario de $\mathbf{f}(t)$ es $\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|}$, se tiene que 
-
-$$
-\mathbf{f}'(t) = |\mathbf{f}'(t)|\mathbf{T}(t).
-$$
-
-Por otro lado, si $s(t)$ es la función longitud de arco de $\mathbf{f}(t)$, por el teorema fundamental del cálculo vimos que $s'(t)=|\mathbf{f}'(t)|$, por lo que sustituyendo en la expresión anterior se tiene
-
-$$
-\mathbf{f}'(t) = s'(t)\mathbf{T}(t).
-$$
-
-Así pues, 
-
-$$
-\mathbf{f}''(t) 
-= (s'(t)\mathbf{T}(t))'
-= s''(t)\mathbf{T}(t)+s'(t)\mathbf{T}'(t).
-$$
-
-Si ahora hacemos el producto vectorial de la primera y segunda derivada de $\mathbf{f}$ se tiene
-
-\begin{align*}
-\mathbf{f}'(t)\times \mathbf{f}''(t) 
-&= (s'(t)\mathbf{T}(t))\times (s''(t)\mathbf{T}(t)+s'(t)\mathbf{T}'(t))\\
-&= s'(t)s''(t)(\mathbf{T}(t)\times \mathbf{T}(t)) + s'(t)^2 (\mathbf{T}(t)\times \mathbf{T}'(t)).
-\end{align*}
-
-Ahora bien, como $\mathbf{T}(t)\times \mathbf{T}(t)=0$, la expresión anterior se simplifica a 
-
-$$
-\mathbf{f}'(t)\times \mathbf{f}''(t) 
-= s'(t)^2 (\mathbf{T}(t)\times \mathbf{T}'(t)).
-$$
-
-Y como $\mathbf{T}(t)$ y $\mathbf{T}'(t)$ son ortogonales, se cumple que 
-
-$$
-|\mathbf{T}(t)\times \mathbf{T}'(t)| = |\mathbf{T}(t)||\mathbf{T}'(t)|\operatorname{sen}(\pi/2) = |\mathbf{T}'(t)|,
-$$
-
-por lo que se tiene 
-
-$$
-|\mathbf{f}'(t)\times \mathbf{f}''(t)| 
-= s'(t)^2 |\mathbf{T}'(t)|,
-$$
-
-de donde se deduce
-
-$$
-|\mathbf{T}'(t)| 
-= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{s'(t)^2}
-= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^2}.
-$$
-
-Y finalmente, la curvatura es
-
-$$
-= \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|} 
-= \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}.
-$$
-:::
 :::
 
 ## Cinemática: Movimiento curvilíneo
