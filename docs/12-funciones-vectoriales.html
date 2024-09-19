@@ -800,11 +800,11 @@ x'(a)(x-x(a))+y'(a)(y-y(a))+z'(a)(z-z(a))=0.
 <section class="slide level3">
 
 <div id="exm-integral-indefinida-funcion-vectorial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9</strong></span> La integral indefinida de la función <span class="math inline">\(\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2x} \mathbf{k}\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 9</strong></span> La integral indefinida de la función <span class="math inline">\(\mathbf{f}(t) = (3t+1) \mathbf{i} + \operatorname{sen}(t) \mathbf{j} + e^{2t} \mathbf{k}\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int \mathbf{f}(t)\, dt
-&amp;= \int 3t+1\ dt \mathbf{i} + \int \operatorname{sen}(t)\ dt \mathbf{j} + \int e^{2x}\ dt \mathbf{k} \\
-&amp;= \left(\frac{3}{2}t^2+t\right) \mathbf{i} - \cos(t) \mathbf{j} + \frac{e^{2x}}{2} \mathbf{k}.
+&amp;= \int 3t+1\ dt \mathbf{i} + \int \operatorname{sen}(t)\ dt \mathbf{j} + \int e^{2t}\ dt \mathbf{k} \\
+&amp;= \left(\frac{3}{2}t^2+t\right) \mathbf{i} - \cos(t) \mathbf{j} + \frac{e^{2t}}{2} \mathbf{k} + \mathbf{C}.
 \end{align*}\]</span></p>
 </div>
 </section></section>
@@ -981,39 +981,14 @@ T(t)
 </div>
 </section>
 
+<section id="cinemática-movimiento-circular" class="title-slide slide level2 center">
+<h2>Cinemática: Movimiento circular</h2>
+
+<img data-src="img/funciones-vectoriales/movimiento-curvilineo-plano.svg" class="r-stretch quarto-figure-center"><p class="caption">Trayectoria de un movimiento curvilíneo en el plano real.</p></section>
+
 <section>
-<section id="cinemática-movimiento-curvilíneo" class="title-slide slide level2 center">
-<h2>Cinemática: Movimiento curvilíneo</h2>
-<p>Una de las principales aplicaciones de las funciones vectoriales la encontramos en la Cinemática, que es la rama de la mecánica que estudia el movimiento de los cuerpos.</p>
-</section>
-<section id="vector-velocidad" class="slide level3">
-<h3>Vector velocidad</h3>
-<p>La derivada como velocidad a lo largo de una trayectoria en la recta real puede generalizarse a trayectorias en cualquier espacio euclídeo <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
-<p>Para el caso del plano real <span class="math inline">\(\mathbb{R}^2\)</span>, si la función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> describe la posición de un objeto móvil en el plano en el instante <span class="math inline">\(t\)</span>, tomando como referencia el origen de coordenadas <span class="math inline">\(O\)</span> y los vectores coordenados <span class="math inline">\(\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}\)</span>, se puede representar la posición <span class="math inline">\(P\)</span> del móvil en cada instante <span class="math inline">\(t\)</span> mediante un vector <span class="math inline">\(\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}\)</span> cuyas coordenadas</p>
-<p><span class="math display">\[
-\begin{cases}
-x=x(t) \\
-y=y(t)
-\end{cases}
-\quad
-t\in \mbox{Dom}(f)
-\]</span></p>
-<p>son las funciones coordenadas de <span class="math inline">\(\mathbf{f}\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/funciones-vectoriales/movimiento-curvilineo-plano.svg"></p>
-<figcaption>Trayectoria de un movimiento curvilíneo en el plano real.</figcaption>
-</figure>
-</div>
-<p>En este contexto, para incrementos pequeños de tiempo, el vector <span class="math inline">\(\mathbf{f}(t+\Delta t)-\mathbf{f}(t)\)</span> aproxima la dirección del desplazamiento y su módulo la longitud de la trayectoria desde el punto <span class="math inline">\(\mathbf{f}(t)\)</span> al punto <span class="math inline">\(\mathbf{f}(t+\Delta t)\)</span>, es decir, el espacio recorrido entre estos dos instantes, de manera que el cociente</p>
-<p><span class="math display">\[
-\frac{\mathbf{f}(t+\Delta t)-\mathbf{f}(t)}{\Delta t}
-\]</span></p>
-<p>mide la velocidad media durante ese desplazamiento. Tomando el límite para incrementos de tiempo cada vez menores, se obtiene</p>
-<p><span class="math display">\[
-\lim_{\Delta t\to 0} \frac{\mathbf{f}(t+\Delta t)-\mathbf{f}(t)}{\Delta t} = \mathbf{f}'(t),
-\]</span></p>
-<p>que es el vector derivada de la función vectorial, y que recordemos es tangente a la trayectoria.</p>
+<section id="vector-velocidad" class="title-slide slide level2 center">
+<h2>Vector velocidad</h2>
 <div id="def-vector-velocidad-funcion-vectorial" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 18 (Vector velocidad)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>vector velocidad</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector</p>
 <p><span class="math display">\[
@@ -1032,7 +1007,9 @@ t\in \mbox{Dom}(f)
 </div>
 </div>
 </div>
-<p>El vector velocidad explica cómo cambia la posición del objeto con respecto al tiempo. Por ejemplo, si tenemos que en un instante <span class="math inline">\(t=a\)</span> el vector velocidad es <span class="math inline">\(\mathbf{v}=(1,-2)\)</span>, eso indica que la tendencia de cambio del objeto es a avanzar una unidad en eje <span class="math inline">\(x\)</span> y retroceder dos unidades en el eje <span class="math inline">\(y\)</span> por cada unidad de tiempo que pase.</p>
+</section>
+<section class="slide level3">
+
 <div id="exm-movimiento-curvilineo-plano" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 14</strong></span> El vector velocidad de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, es</p>
 <p><span class="math display">\[
@@ -1041,22 +1018,20 @@ t\in \mbox{Dom}(f)
 = (-\operatorname{sen}(t), \cos(t)).
 \]</span></p>
 <p>En el instante <span class="math inline">\(t=\pi/4\)</span>, el móvil estará en la posición <span class="math inline">\(\mathbf{f}(\pi/4) = (\cos(\pi/4),\operatorname{sen}(\pi/4)) =(\sqrt{2}/2,\sqrt{2}/2)\)</span> y se moverá con una velocidad <span class="math inline">\(\mathbf{v}(\pi/4)=\mathbf{f}'(\pi/4)=(-\operatorname{sen}(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/funciones-vectoriales/velocidad-trayectoria-circular.svg"></p>
-<figcaption>Velocidad de una trayectoria circular en el plano.</figcaption>
-</figure>
 </div>
-<p>Obsérvese que el módulo del vector velocidad siempre será 1 ya que</p>
+</section>
+<section class="slide level3">
+
+
+<img data-src="img/funciones-vectoriales/velocidad-trayectoria-circular.svg" class="r-stretch quarto-figure-center"><p class="caption">Velocidad de una trayectoria circular en el plano.</p><p>Obsérvese que el módulo del vector velocidad siempre será 1 ya que</p>
 <p><span class="math display">\[
 |\mathbf{v}(t)|=\sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2}=1,
 \]</span></p>
 <p>y por tanto, la velocidad instantánea con la que se mueve el móvil es constante.</p>
-</div>
-</section>
-<section id="vector-aceleración" class="slide level3">
-<h3>Vector aceleración</h3>
-<p>Del mismo modo que el vector velocidad <span class="math inline">\(\mathbf{v}(t)=\mathbf{f}'(t)\)</span> explica la variación de la posición de un objeto dada por <span class="math inline">\(\mathbf{f}(t)\)</span>, la segunda derivada <span class="math inline">\(\mathbf{f}''(t)\)</span> explica la variación de la velocidad <span class="math inline">\(\mathbf{v}(t)\)</span>.</p>
+</section></section>
+<section>
+<section id="vector-aceleración" class="title-slide slide level2 center">
+<h2>Vector aceleración</h2>
 <div id="def-vector-aceleracion-funcion-vectorial" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 19 (Vector aceleración)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>vector aceleración</em> de <span class="math inline">\(\mathbf{f}\)</span> al vector derivada del vector velocidad, es decir,</p>
 <p><span class="math display">\[
@@ -1064,35 +1039,50 @@ t\in \mbox{Dom}(f)
 \]</span></p>
 </div>
 <p>El vector aceleración explica cómo cambia la velocidad de un objeto móvil, tanto en dirección como en magnitud. De este modo, la trayectoria que describe el objeto siempre se curva en la dirección que indica el vector aceleración.</p>
+</section>
+<section class="slide level3">
+
 <div id="exm-vector-aceleración-función-vectorial" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 15</strong></span> Siguiendo con el ejemplo anterior de la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span>, cuya trayectoria es la circunferencia unitaria centrada en el origen de coordenadas, hemos visto que el vector velocidad es <span class="math inline">\(\mathbf{v}(t)=(-\operatorname{sen}(t), \cos(t))\)</span>, y por tanto el vector aceleración es</p>
 <p><span class="math display">\[
 \mathbf{a}(t) = (-\cos(t), -\operatorname{sen}(t)),
 \]</span></p>
 <p>que es justo el vector opuesto al vector posición <span class="math inline">\(\mathbf{f}(t)\)</span>, por lo que en el caso del movimiento circular uniforme, el vector aceleración siempre apunta hacia el centro de la circunferencia. En particular en el instante <span class="math inline">\(\pi/4\)</span>, se tiene el vector aceleración <span class="math inline">\(\mathbf{a}(\pi/4)=(-\sqrt{2}/2,-\sqrt{2}/2)\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/funciones-vectoriales/aceleracion-trayectoria-circular.svg"></p>
-<figcaption>Aceleración de una trayectoria circular en el plano.</figcaption>
-</figure>
 </div>
-</div>
-<p>En este ejemplo, el vector aceleración resulta ser ortogonal al vector velocidad, pero en general no tiene por qué ser así. Si recordamos el vector unitario tangente a la trayectoria que recorre el objeto, tenemos que <span class="math inline">\(\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|} = \frac{\mathbf{v}(t)}{|\mathbf{v}(t)|}\)</span> y, por tanto, podemos expresar el vector velocidad como <span class="math inline">\(\mathbf{v}(t)=|\mathbf{v}(t)|\mathbf{T}(t)\)</span>. Haciendo la derivada de esta expresión, se llega a</p>
+</section>
+<section class="slide level3">
+
+
+<img data-src="img/funciones-vectoriales/aceleracion-trayectoria-circular.svg" class="r-stretch quarto-figure-center"><p class="caption">Aceleración de una trayectoria circular en el plano.</p></section></section>
+<section>
+<section id="section-13" class="title-slide slide level2 center">
+<h2></h2>
+<p>Si recordamos el vector unitario tangente a la trayectoria que recorre el objeto, tenemos que <span class="math inline">\(\mathbf{T}(t) = \frac{\mathbf{f}'(t)}{|\mathbf{f}'(t)|} = \frac{\mathbf{v}(t)}{|\mathbf{v}(t)|}\)</span> y, por tanto, podemos expresar el vector velocidad como <span class="math inline">\(\mathbf{v}(t)=|\mathbf{v}(t)|\mathbf{T}(t)\)</span>. Haciendo la derivada de esta expresión, se llega a</p>
 <p><span class="math display">\[
 \mathbf{a}(t)
 = |\mathbf{v}(t)|'\mathbf{T}(t)+|\mathbf{v}(t)|\mathbf{T}'(t).
 \]</span></p>
+</section>
+<section class="slide level3">
+
 <p>Esta expresión puede reescribirse, a su vez, aprovechando que <span class="math inline">\(\mathbf{T}'(t)\)</span> es ortogonal a <span class="math inline">\(\mathbf{T}(t)\)</span>, y por tanto, el vector <span class="math inline">\(\mathbf{N}(t)=\frac{\mathbf{T}'(t)}{|\mathbf{T}'(t)|}\)</span> es un vector unitario ortogonal a la velocidad, por lo que llegamos a</p>
 <p><span class="math display">\[
 \mathbf{a}(t)
 = |\mathbf{v}(t)|'\mathbf{T}(t)+|\mathbf{v}(t)||\mathbf{T}'(t)|\mathbf{N}(t).
 \]</span></p>
+</section>
+<section class="slide level3">
+
 <p>Y finalmente, si recordamos la definición de curvatura que vimos en la sección anterior, <span class="math inline">\(\kappa(t) = \frac{|\mathbf{T}'(t)|}{|\mathbf{f}'(t)|} = \frac{|\mathbf{T}'(t)|}{|\mathbf{v}(t)|}\)</span>, se puede concluir que</p>
 <p><span class="math display">\[
 \mathbf{a}(t)
 = |\mathbf{v}(t)|'\mathbf{T}(t)+\kappa(t)|\mathbf{v}(t)|^2\mathbf{N}(t).
 \]</span></p>
 <p>Esta fórmula descompone el vector aceleración como combinación lineal de los vectores tangente y normal unitarios.</p>
+</section></section>
+<section>
+<section id="componentes-tangencial-y-normal-del-vector-aceleración" class="title-slide slide level2 center">
+<h2>Componentes tangencial y normal del vector aceleración</h2>
 <div id="def-componente-tangencial-normal-aceleracion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 20 (Componentes tangencial y normal del vector aceleración)</strong></span> Dada una función vectorial <span class="math inline">\(\mathbf{f}(t)\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span> que describe el movimiento de un objeto en función del tiempo <span class="math inline">\(t\)</span>, se llama <em>componente tangencial del vector aceleración</em> de <span class="math inline">\(\mathbf{f}\)</span> a</p>
 <p><span class="math display">\[
@@ -1108,7 +1098,9 @@ a_N(t) = \kappa(t)|\mathbf{v}(t)|^2.
 a(t) = a_T(t)\mathbf{T}(t) + a_N(t)\mathbf{N}(t),
 \]</span></p>
 <p>donde <span class="math inline">\(\mathbf{T}(t)\)</span> y <span class="math inline">\(\mathbf{N}(t)\)</span> son los vectores unitarios tangente y normal a la trayectoria que recorre el objeto.</p>
-<p>Según esto, la componente tangencial <span class="math inline">\(|v(t)|'\)</span>, que apunta al igual que el vector velocidad en la misma dirección del movimiento, depende de cómo varía la rapidez con la que se mueve el objeto, pero no de cómo cambia su dirección. Mientras que la componente normal <span class="math inline">\(\kappa(t)|\mathbf{v}(t)|^2\)</span>, depende de la rapidez con la que se mueve el objeto, pero también de la curvatura de la trayectoria que recorre. Esto es fácil de experimentar al conducir un coche por una carretera curva. Cuanto más cerrada sea la curva o cuanto mayor sea la rapidez con la que se toma, mayor será la aceleración en el sentido normal, lo que, como veremos en la próxima sección, se traduce en una mayor fuerza centrífuga que nos empujará hacia la puerta del exterior de la curva.</p>
+</section>
+<section class="slide level3">
+
 <div id="exm-componente-tangencial-normal-aceleracion" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 16</strong></span> Veamos cuáles son las componentes tangencial y normal de la aceleración de un objeto que recorre la trayectoria dada por la función vectorial <span class="math inline">\(f(t)=(t^2,2t)\)</span> en el instante <span class="math inline">\(t=1\)</span>.</p>
 <p>El vector velocidad es <span class="math inline">\(\mathbf{v}(t) = \mathbf{f}'(t) = (2t,2)\)</span>, y la rapidez</p>
@@ -1120,6 +1112,10 @@ a(t) = a_T(t)\mathbf{T}(t) + a_N(t)\mathbf{N}(t),
 a_T(t) = |\mathbf{v}(t)|' = \frac{2t}{\sqrt{t^2+1}},
 \]</span></p>
 <p>que en <span class="math inline">\(t=1\)</span> vale <span class="math inline">\(a_T(1) = \sqrt{2}\)</span>.</p>
+</div>
+</section>
+<section class="slide level3">
+
 <p>Por otro lado, el vector tangente unitario es</p>
 <p><span class="math display">\[
 \mathbf{T}(t)
@@ -1138,6 +1134,9 @@ a_T(t) = |\mathbf{v}(t)|' = \frac{2t}{\sqrt{t^2+1}},
 \sqrt{\left(\frac{1}{t^2\sqrt{t^2+1} + \sqrt{t^2 + 1}}\right)^2 +\left(\frac{-t}{t^2\sqrt{t^2 + 1} + \sqrt{t^2 + 1}} \right)^2}
 = \frac{1}{t^2+1},
 \]</span></p>
+</section>
+<section class="slide level3">
+
 <p>por lo que la curvatura es</p>
 <p><span class="math display">\[
 \kappa(t)
@@ -1160,13 +1159,13 @@ a(1)
 = \sqrt{2}\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right) + \sqrt{2}\left(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\right)
 = (2, 0).
 \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/funciones-vectoriales/componentes-aceleracion.svg"></p>
-<figcaption>Componentes tangencial y normal de la aceleración.</figcaption>
-</figure>
-</div>
-</div>
+</section>
+<section class="slide level3">
+
+
+<img data-src="img/funciones-vectoriales/componentes-aceleracion.svg" class="r-stretch quarto-figure-center"><p class="caption">Componentes tangencial y normal de la aceleración.</p></section>
+<section class="slide level3">
+
 <p>En el caso de una función vectorial en el espacio real <span class="math inline">\(\mathbb{R}^3\)</span>, el cálculo de las componentes tangencial y normal de la aceleración se puede simplificar teniendo en cuenta que</p>
 <p><span class="math display">\[\begin{align*}
 \mathbf{v}(t)\mathbf{a}(t)
@@ -1175,6 +1174,9 @@ a(1)
 &amp;=  |\mathbf{v}(t)||\mathbf{v}(t)|'
 \end{align*}\]</span></p>
 <p>ya que <span class="math inline">\(\mathbf{T}(t)\mathbf{T}(t)= |\mathbf{T}(t)|^2 = 1\)</span> al ser <span class="math inline">\(\mathbf{T}(t)\)</span> un vector unitario y <span class="math inline">\(\mathbf{T}(t)\mathbf{N}(t)=0\)</span> al ser <span class="math inline">\(\mathbf{T}(t)\)</span> y <span class="math inline">\(\mathbf{N}(t)\)</span> vectores ortogonales.</p>
+</section>
+<section class="slide level3">
+
 <p>De este modo, se tiene que</p>
 <p><span class="math display">\[
 a_T(t)
@@ -1189,6 +1191,9 @@ a_N
 = \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}|\mathbf{f}'(t)|^2
 = \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|}.
 \]</span></p>
+</section>
+<section class="slide level3">
+
 <div id="exm-componente-tangencial-normal-trayectoria" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 17</strong></span> Un objeto se mueve en el espacio real de acuerdo a la función vectorial <span class="math inline">\(\mathbf{f}(t) = t^3\mathbf{i} + (3t-1)\mathbf{j} + 2t^2 \mathbf{k}\)</span>.</p>
 <p>Su vector velocidad es <span class="math inline">\(\mathbf{v}(t)=\mathbf{f}'(t) = (3t^2, 3, 4t)\)</span> y su vector aceleración <span class="math inline">\(\mathbf{a}(t) = \mathbf{f}''(t)=(6t, 0, 4)\)</span>.</p>
@@ -1199,6 +1204,10 @@ a_T
 = \frac{18t^3+16t^2}{\sqrt{(3t^2)^2 + 3^2 + (4t)^2}}
 = \frac{18t^3+16t^2}{\sqrt{9t^3+16t^2+9}}.
 \]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
 <p>Para obtener la componente normal, se tiene que</p>
 <p><span class="math display">\[
 \mathbf{f}'(t)\times \mathbf{f}''(t)
@@ -1219,16 +1228,19 @@ a_N
 = \frac{\sqrt{12^2+(12t^2)^2+(-18t)^2}}{\sqrt{9t^3+16t^2+9}} \\
 &amp;= \frac{\sqrt{144t^4+324t^2+144}}{\sqrt{9t^3+16t^2+9}}.
 \end{align*}\]</span></p>
-</div>
-</section>
-<section id="vector-fuerza" class="slide level3">
-<h3>Vector fuerza</h3>
+</section></section>
+<section>
+<section id="vector-fuerza" class="title-slide slide level2 center">
+<h2>Vector fuerza</h2>
 <p>Como ya vimos en el capítulo de integrales, la <a href="https://es.wikipedia.org/wiki/Leyes_de_Newton#Segunda_ley_de_Newton_o_ley_fundamental_de_la_din%C3%A1mica">segunda ley de Newton</a> relaciona la masa y la aceleración de un objeto con la fuerza que actúa sobre él mediante la fórmula</p>
 <p><span class="math display">\[
 \mathbf{F}(t) = m\mathbf{a}(t).
 \]</span></p>
 <p>donde <span class="math inline">\(\mathbf{F}(t)\)</span> es fuerza que actúa sobre el objeto en el instante <span class="math inline">\(t\)</span>, <span class="math inline">\(m\)</span> es su masa y <span class="math inline">\(\mathbf{a}(t)\)</span> es la aceleración del objeto en ese instante.</p>
 <p>Como hemos visto, en el caso del movimiento curvilíneo, la aceleración es un vector, y por tanto la fuerza será otro vector proporcional a él.</p>
+</section>
+<section class="slide level3">
+
 <div id="exm-fuerza-centrípeta" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 18</strong></span> En el ejemplo anterior vimos como el movimiento circular descrito por la función vectorial <span class="math inline">\(\mathbf{f}(t) = (\cos(t),\operatorname{sen}(t))\)</span> tenía una aceleración <span class="math inline">\(\mathbf{a}(t) = -(\cos(t), \operatorname{sen}(t))\)</span>. Por tanto, si el objeto que se mueve sobre esta trayectoria tiene masa <span class="math inline">\(m\)</span>, la fuerza que actúa sobre él es</p>
 <p><span class="math display">\[
