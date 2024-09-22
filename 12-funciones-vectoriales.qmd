@@ -682,6 +682,9 @@ $$
 donde $\mathbf{T}'(t)$ es el vector tangente unitario de $\mathbf{f}(t)$.
 :::
 
+
+[![Ejemplo interactivo](/img/logos/logo-geogebra.png)Ejemplo interactivo](https://www.geogebra.org/m/gua3ycdj)
+
 ---
 
 :::{#exm-curvatura-trayectoria}
@@ -963,6 +966,8 @@ a_N
 = \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|}.
 $$
 
+[![Ejemplo interactivo](/img/logos/logo-geogebra.png)Ejemplo interactivo](https://www.geogebra.org/m/kcnxeccy)
+
 ---
 
 :::{#exm-componente-tangencial-normal-trayectoria}
@@ -1005,6 +1010,8 @@ a_N
 = \frac{\sqrt{12^2+(12t^2)^2+(-18t)^2}}{\sqrt{9t^3+16t^2+9}} \\
 &= \frac{\sqrt{144t^4+324t^2+144}}{\sqrt{9t^3+16t^2+9}}.
 \end{align*}
+
+
 
 ## Vector fuerza
 
