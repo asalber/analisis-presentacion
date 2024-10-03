@@ -10,7 +10,7 @@
 <link href="13-derivadas-funciones-varias-variables_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="13-derivadas-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="13-derivadas-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.57">
+  <meta name="generator" content="quarto-1.5.0">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Derivadas de funciones de varias variables</title>
@@ -428,9 +428,6 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </section>
 <section class="slide level3">
 
-<div>
-
-</div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -601,11 +598,7 @@ f_1(y)=f(c,y)=\frac{cy}{2},
 \]</span></p>
 <p>con <span class="math inline">\(c\)</span> constante.</p>
 </div>
-</section>
-<section class="slide level3">
-
 </section></section>
-<section>
 <section id="derivadas-parciales" class="title-slide slide level2 center">
 <h2>Derivadas parciales</h2>
 <div id="def-derivada-parcial" class="theorem definition">
@@ -619,15 +612,14 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 \]</span></p>
 </div>
 </section>
-<section id="interpretación-geométrica-de-la-derivada-parcial" class="slide level3">
-<h3>Interpretación geométrica de la derivada parcial</h3>
-<p>Geométricamente, <span class="math inline">\(z=f(x,y)\)</span> define una superficie. Si se corta esta superficie con el plano de ecuación <span class="math inline">\(y=b\)</span> (es decir, si <span class="math inline">\(y\)</span> se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya pendiente en el punto <span class="math inline">\((a,b)\)</span> es la derivada parcial de <span class="math inline">\(f\)</span> con respecto a <span class="math inline">\(x\)</span> en el punto <span class="math inline">\((a,b)\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/derivadas-funciones-varias-variables/derivada-parcial-x.png"></p>
-<figcaption>Derivada parcial con respecto a <span class="math inline">\(x\)</span>.</figcaption>
-</figure>
-</div>
+
+<section>
+<section id="interpretación-geométrica-de-la-derivada-parcial" class="title-slide slide level2 center">
+<h2>Interpretación geométrica de la derivada parcial</h2>
+
+<img data-src="./img/derivadas-funciones-varias-variables/derivada-parcial-x.png" class="r-stretch quarto-figure-center"><p class="caption">Derivada parcial con respecto a <span class="math inline">\(x\)</span>.</p></section>
+<section class="slide level3">
+
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./img/derivadas-funciones-varias-variables/derivada-parcial-y.png"></p>
@@ -640,15 +632,10 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 <figcaption>Ejemplo interactivo con Geogebra</figcaption>
 </figure>
 </div>
-<p>Como se puede observar, la definición de derivada para funciones de una variable es un caso particular de esta definición para <span class="math inline">\(n=1\)</span>.</p>
-<p>Al medir la variación de <span class="math inline">\(f\)</span> con respecto a la variación de una sola de sus variables <span class="math inline">\(x_i\)</span> en un punto <span class="math inline">\(a=(a_1,\ldots,a_n)\)</span>, el resto de las variables se pueden considerar como constantes y, en tal caso, podemos ver a <span class="math inline">\(f\)</span> como una función parcial <span class="math inline">\(i\)</span>-ésima</p>
-<p><span class="math display">\[
-f_i(x_i)=f(a_1,\ldots,a_{i-1},x_i,a_{i+1},\ldots,a_n).
-\]</span></p>
-<p>La derivada parcial de <span class="math inline">\(f\)</span> con respecto a <span class="math inline">\(x_i\)</span> puede calcularse derivando esta función:</p>
-<p><span class="math display">\[
-\frac{\partial f}{\partial x_i}(a)=f_i'(a_i).
-\]</span></p>
+</section></section>
+<section>
+<section id="section-1" class="title-slide slide level2 center">
+<h2></h2>
 <div class="callout callout-important callout-titled callout-style-simple">
 <div class="callout-body">
 <div class="callout-title">
@@ -662,6 +649,9 @@ f_i(x_i)=f(a_1,\ldots,a_{i-1},x_i,a_{i+1},\ldots,a_n).
 </div>
 </div>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="exm-calculo-derivada-parcial" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9</strong></span> En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
 <p><span class="math display">\[
@@ -679,13 +669,16 @@ v(t,p)=\frac{nRt}{p},
 \]</span></p>
 </div>
 </section></section>
+<section>
 <section id="vector-gradiente" class="title-slide slide level2 center">
 <h2>Vector gradiente</h2>
 <div id="def-vector-gradiente" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9 (Vector gradiente)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, se llama <em>gradiente</em> de <span class="math inline">\(f\)</span>, y se escribe <span class="math inline">\(\nabla f\)</span>, a la función que a cada punto <span class="math inline">\(a=(a_1,\ldots,a_n)\)</span> le asigna el vector cuyas componentes son las derivadas parciales de <span class="math inline">\(f\)</span> en <span class="math inline">\(a\)</span>,</p>
 <p><span class="math display">\[\nabla f(a)=\left(\frac{\partial f}{\partial x_1}(a),\ldots,\frac{\partial f}{\partial x_n}(a)\right).\]</span></p>
 </div>
-<p>Más adelante se mostrará que vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la función en ese punto. De este modo, <span class="math inline">\(\nabla f(a)\)</span> indica la dirección de máximo crecimiento de la función, mientras que <span class="math inline">\(-\nabla f(a)\)</span> indica la dirección de máximo decrecimiento.</p>
+</section>
+<section class="slide level3">
+
 <div id="exm-vector-gradiente" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 10</strong></span> Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
 <p><span class="math display">\[
@@ -705,11 +698,10 @@ z}(x,y,z)\right)=\left(\frac{1}{y},\frac{-x}{y^2},2z\right).
 |\nabla f(2,1,1)|=|\sqrt{1^2+(-2)^2+2^2}|=|\sqrt{9}|=3 \mbox{ $^\circ$C/m}.
 \]</span></p>
 </div>
-</section>
-
-<section id="recta-normal-y-plano-tangente-a-una-superficie" class="title-slide slide level2 center">
-<h2>Recta normal y plano tangente a una superficie</h2>
-<p>Ya se ha visto que para una función de dos variables <span class="math inline">\(f(x,y)\)</span>, <span class="math inline">\(f'_{x}(a,b)\)</span> es la pendiente de la recta tangente a la superficie de <span class="math inline">\(f\)</span> en <span class="math inline">\((a,b)\)</span> en su intersección con el plano <span class="math inline">\(y=b\)</span>, y que <span class="math inline">\(f'_y(a,b)\)</span> es la pendiente de la recta tangente a la superficie de <span class="math inline">\(f\)</span> en <span class="math inline">\((a,b)\)</span> en su intersección con el plano <span class="math inline">\(x=a\)</span>. Estas dos rectas tangentes definen, en realidad, un plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span>.</p>
+</section></section>
+<section>
+<section id="recta-normal-a-una-superficie" class="title-slide slide level2 center">
+<h2>Recta normal a una superficie</h2>
 <p>Si tomamos los vectores <span class="math inline">\((1, 0, f'_x(a,b))\)</span> y <span class="math inline">\((0, 1, f'_y(a,b))\)</span> en las direcciones de estas dos rectas tangentes, su producto vectorial será normal a la superficie.</p>
 <p><span class="math display">\[\begin{align*}
 (0, 1, f'_y(a,b)) \times (1, 0, f'_x(a,b))
@@ -723,6 +715,9 @@ z}(x,y,z)\right)=\left(\frac{1}{y},\frac{-x}{y^2},2z\right).
 &amp;= (f_x(a,b), f_y(a,b), -1)
 \end{align*}\]</span></p>
 <p>Usando este vector podemos construir la ecuación de la recta normal a la superficie de <span class="math inline">\(f\)</span>.</p>
+</section>
+<section class="slide level3">
+
 <div id="def-recta-normal-superficie" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 10 (Recta normal a la superficie de una función de dos variables)</strong></span> Dada una función de dos variables <span class="math inline">\(f(x,y)\)</span> con derivadas parciales continuas en el punto <span class="math inline">\((a,b)\)</span> se define la <em>recta normal a la superficie</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> como la recta de ecuación</p>
 <p><span class="math display">\[
@@ -732,19 +727,29 @@ z}(x,y,z)\right)=\left(\frac{1}{y},\frac{-x}{y^2},2z\right).
 \end{gathered}
 \]</span></p>
 </div>
-<p>Para obtener la ecuación del plano tangente a la superficie de <span class="math inline">\(f\)</span> también podemos usar este vector normal a la superficie, ya que cualquier punto del plano debe cumplir la ecuación</p>
+</section></section>
+<section>
+<section id="plano-tangente-a-una-superficie" class="title-slide slide level2 center">
+<h2>Plano tangente a una superficie</h2>
+<p>El vector normal puede utilizarse para construir la ecuación del plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span>.</p>
 <p><span class="math display">\[
 \begin{gathered}
 ((x,y,z)-(a,b,f(a,b)))\left(\frac{\partial f}{\partial x}(a,b), \frac{\partial f}{\partial y}(a,b), -1\right) = 0 \\
-\Leftrightarrow (x-a)\frac{\partial f}{\partial x}(a,b) + (y-b)\frac{\partial f}{\partial y}(a,b) - (z-f(ab)) = 0.
+\Leftrightarrow (x-a)\frac{\partial f}{\partial x}(a,b) + (y-b)\frac{\partial f}{\partial y}(a,b) - (z-f(a,b)) = 0.
 \end{gathered}
 \]</span></p>
+</section>
+<section class="slide level3">
+
 <div id="def-plano-tangente-superficie" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 11 (Plano tangente a la superficie de una función de dos variables)</strong></span> Dada una función de dos variables <span class="math inline">\(f(x,y)\)</span> con derivadas parciales continuas en el punto <span class="math inline">\((a,b)\)</span> se define el <em>plano tangente a la superficie</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> como el plano de ecuación</p>
 <p><span class="math display">\[
 z = \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)(y-b)+f(a,b)
 \]</span></p>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="exm-recta-normal-plano-tangente" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 11</strong></span> La recta normal a la superficie de la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span> tiene ecuación</p>
 <p><span class="math display">\[
@@ -759,13 +764,14 @@ z
 &amp;= \frac{\partial f}{\partial x}(1,1)(x-1) + \frac{\partial f}{\partial y}(1,1)(y-1)+f(1,1) \\
 &amp;= 2(x-1) + 2(y-1) + 2 =  2x+2y-2.
 \end{align*}\]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/derivadas-funciones-varias-variables/recta-normal-plano-tangente.png"></p>
-<figcaption>Recta normal y plano tangente a la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span>.</figcaption>
-</figure>
 </div>
-</div>
+</section>
+<section class="slide level3">
+
+
+<img data-src="./img/derivadas-funciones-varias-variables/recta-normal-plano-tangente.png" class="r-stretch quarto-figure-center"><p class="caption">Recta normal y plano tangente a la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span>.</p></section>
+<section class="slide level3">
+
 <div class="callout callout-warning callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
@@ -787,11 +793,10 @@ f(x,y) =
 \]</span></p>
 <p>Cuando <span class="math inline">\(y=0\)</span> esta función es constante y vale <span class="math inline">\(0\)</span> por lo que su derivada parcial con respecto a <span class="math inline">\(x\)</span> es <span class="math inline">\(\frac{\partial f}{\partial x} = 0\)</span>. Del mismo modo, cuando <span class="math inline">\(x=0\)</span> esta función es constante y vale <span class="math inline">\(0\)</span> por lo que su derivada parcial con respecto a <span class="math inline">\(y\)</span> también se anula <span class="math inline">\(\frac{\partial f}{\partial x} = 0\)</span>. Sin embargo, esta función no tiene plano tangente en el punto <span class="math inline">\((0,0)\)</span> como se puede apreciar en la <a href="#/fig-no-existencia-limite-2" class="quarto-xref">Figura&nbsp;1</a>.</p>
 </div>
-</section>
-
+</section></section>
+<section>
 <section id="diferenciabilidad" class="title-slide slide level2 center">
 <h2>Diferenciabilidad</h2>
-<p>En el capítulo de derivadas de funciones de una variable se definió el diferencial de una función <span class="math inline">\(y=f(x)\)</span> como la aplicación lineal <span class="math inline">\(dy = f'(x)dx\)</span> y se vió cómo el diferencial puede utilizarse para aproximar la variación de <span class="math inline">\(f\)</span> en un entorno de <span class="math inline">\(x\)</span>. La misma idea puede generalizarse a funciones de varias variables.</p>
 <div id="def-diferencial-total" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 12 (Diferencial total)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>, se define el <em>diferencial total</em> de la función <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P=(a_1, \ldots, a_n)\)</span> como</p>
 <p><span class="math display">\[
@@ -800,6 +805,9 @@ dy
 = \frac{\partial f}{\partial x_1}(P)dx_1 + \cdots + \frac{\partial f}{\partial x_n}(P)dx_n
 \]</span></p>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="exm-diferencial-total" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 13</strong></span> Dada la función <span class="math inline">\(u=f(x,y,z) = x^2+yz\)</span>, su gradiente es <span class="math inline">\(\nabla f(x,y,z) = (2x, z, y)\)</span>, y en el punto <span class="math inline">\((1, 1, 1)\)</span> vale <span class="math inline">\((2, 1, 1)\)</span>, por lo que el diferencial total de <span class="math inline">\(f\)</span> en <span class="math inline">\((1, 1, 1)\)</span> es</p>
 <p><span class="math display">\[
@@ -809,6 +817,10 @@ du
 = 2dx + dy + dz.
 \]</span></p>
 </div>
+</section></section>
+<section>
+<section id="section-2" class="title-slide slide level2 center">
+<h2></h2>
 <div id="def-funcion-2-variables-diferenciable" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 13 (Función diferenciable de dos variables)</strong></span> Dada una función de dos variables <span class="math inline">\(z=f(x,y)\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> en el punto <span class="math inline">\((a,b)\)</span> si</p>
 <p><span class="math display">\[
@@ -820,6 +832,9 @@ du
 <p><span class="math display">\[
 \Delta z \approx dz = \nabla f(a, b) (\Delta x, \Delta y)
 \]</span></p>
+</section>
+<section class="slide level3">
+
 <p>Si en la ecuación anterior reescribimos <span class="math inline">\(\Delta x = x-a\)</span> y <span class="math inline">\(\Delta y = y-b\)</span>, se tiene que</p>
 <p><span class="math display">\[\begin{align*}
 \Delta z
@@ -831,7 +846,19 @@ du
 <p><span class="math display">\[
 f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)(y-b) + f(a,b).
 \]</span></p>
-<p>Si se observa bien, el lado derecho de esta igualdad es la ecuación del plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span>. De esta manera, si una <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a,b)\)</span> podemos aproximar el valor de la función en cualquier punto <span class="math inline">\((x,y)\)</span> de un entorno de <span class="math inline">\((a,b)\)</span>, como el valor del plano tangente en ese punto. El error en la aproximación es <span class="math inline">\(\varepsilon_1 \Delta x + \varepsilon_2 \Delta y\)</span> que tiende a <span class="math inline">\(0\)</span> cuando <span class="math inline">\((x,y)\)</span> se aproxima a <span class="math inline">\((a,b)\)</span>. Además, dado que <span class="math inline">\(\varepsilon_1\)</span> y <span class="math inline">\(\varepsilon_2 \to 0\)</span> cuando <span class="math inline">\((x,y)\to (a,b)\)</span>, la cantidad <span class="math inline">\(\varepsilon_1 \Delta x + \varepsilon_2 \Delta y\)</span> se aproxima a <span class="math inline">\(0\)</span> mucho más rápidamente que <span class="math inline">\(\Delta x\)</span> o <span class="math inline">\(\Delta y\)</span> se aproximan a <span class="math inline">\(0\)</span>, por lo que el plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((a,b)\)</span> dará muy buenas aproximaciones de <span class="math inline">\(f\)</span> en un entorno cercano de <span class="math inline">\((a,b)\)</span>.</p>
+<div class="callout callout-important callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><em>Podemos usar el plano tangente a la superficie de <span class="math inline">\(f\)</span> en <span class="math inline">\((a,b)\)</span> como una aproximación de la función en un entorno de <span class="math inline">\((a,b)\)</span>.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level3">
+
 <div id="exm-aproximacion-funcion-dos-variables-plano-tangente" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 14</strong></span> Veamos que la función <span class="math inline">\(f(x,y)=x^2 + y^2\)</span> es diferenciable en cualquier punto <span class="math inline">\((a,b)\)</span></p>
 <p><span class="math display">\[\begin{align*}
@@ -847,12 +874,17 @@ f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\par
 \Delta z = \frac{\partial f}{\partial x}(a,b) \Delta x + \frac{\partial f}{\partial y}(a,b) + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y
 \]</span></p>
 <p>y, además <span class="math inline">\(\varepsilon_1\to 0\)</span> y <span class="math inline">\(\varepsilon_2\to 0\)</span> cuando <span class="math inline">\((x,y)\to (a,b)\)</span>, por lo que la función <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a,b)\)</span>.</p>
-<p>Así pues, podemos utilizar el plano tangente <span class="math inline">\(z = 2x+2y-2\)</span> que calculamos en el <a href="#/recta-normal-y-plano-tangente-a-una-superficie" class="quarto-xref">Ejemplo&nbsp;11</a> para aproximar la función en un entorno del punto <span class="math inline">\((1, 1, 2)\)</span>. Por ejemplo, la aproximación de <span class="math inline">\(f\)</span> en <span class="math inline">\((0.9, 1.2)\)</span> es</p>
+</div>
+</section>
+<section class="slide level3">
+
+<p>Así pues, podemos utilizar el plano tangente <span class="math inline">\(z = 2x+2y-2\)</span> que calculamos en el <a href="#/exm-recta-normal-plano-tangente" class="quarto-xref">Ejemplo&nbsp;11</a> para aproximar la función en un entorno del punto <span class="math inline">\((1, 1, 2)\)</span>. Por ejemplo, la aproximación de <span class="math inline">\(f\)</span> en <span class="math inline">\((0.9, 1.2)\)</span> es</p>
 <p><span class="math display">\[
 f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 \]</span></p>
-</div>
-<p>El concepto de función diferenciable se generaliza de manera natural para funciones de <span class="math inline">\(n\)</span> variables.</p>
+</section></section>
+<section id="section-3" class="title-slide slide level2 center">
+<h2></h2>
 <div id="def-funcion-varias-variables-diferenciable" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 14 (Función diferenciable)</strong></span> Dada una función de n variables <span class="math inline">\(z=f(x_1,\ldots,x_n)\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> en el punto <span class="math inline">\((a_1,\ldots,a_n)\)</span> si</p>
 <p><span class="math display">\[\begin{align*}
@@ -862,63 +894,18 @@ f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 \end{align*}\]</span></p>
 <p>con <span class="math inline">\((\varepsilon_1,\ldots, \varepsilon_n) \to (0,\ldots,0)\)</span> cuando <span class="math inline">\((x_1,\ldots,x_n)\to (a_1,\ldots,a_n)\)</span>.</p>
 </div>
-<p>En general, demostrar que una función es diferenciable en un punto puede ser una tarea complicada, pero afortunadamente, el siguiente teorema proporciona una condición suficiente para que una función sea diferenciable.</p>
+</section>
+
+<section id="section-4" class="title-slide slide level2 center">
+<h2></h2>
 <div id="thm-diferenciabilidad-funciones-varias-variables" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 1</strong></span> Si una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> tiene derivadas parciales continuas en un entorno de <span class="math inline">\((a_1,\ldots,a_n)\)</span>, entonces <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a_1,\ldots,a_n)\)</span>.</p>
 </div>
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Demostración</strong></p>
-</div>
-<div class="callout-content">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Veremos la demostración en el caso de una función de dos variables <span class="math inline">\(f(x,y)\)</span>.</p>
-<p><span class="math display">\[\begin{align*}
-\Delta z
-&amp;= f(a+\Delta x, b+\Delta y) - f(a,b) \\
-&amp;= f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) + f(a+\Delta x, b) - f(a,b)
-\end{align*}\]</span></p>
-<p>Como en los dos primeros términos de esta expresión se mantiene constante <span class="math inline">\(a+\Delta x\)</span>, podemos considerar la función parcial <span class="math inline">\(f_2(y)\)</span> que resulta de fijar el valor de <span class="math inline">\(x\)</span> a <span class="math inline">\(a+\Delta x\)</span>, de manera que <span class="math inline">\(f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) = f_2(b+\Delta y)-f_2(b)\)</span>. Entonces, como <span class="math inline">\(f'_2(y)=\frac{\partial f}{\partial y}(a+\Delta x, y)\)</span> existe en el intervalo <span class="math inline">\([b, b+\Delta y]\)</span>, por el teorema del valor medio (<strong>?@thm-valor-medio</strong>), existe un valor <span class="math inline">\(b_0\in(b, b+\Delta y)\)</span> tal que</p>
-<p><span class="math display">\[
-f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) = \frac{\partial f}{\partial y}(a+\Delta x, b_0) \Delta y.
-\]</span></p>
-<p>Del mismo modo, como en <span class="math inline">\(f(a+\Delta x, b) - f(a,b)\)</span> se mantiene constante <span class="math inline">\(b\)</span>, podemos considerar la función parcial <span class="math inline">\(f_1(x)\)</span> que resulta de fijar <span class="math inline">\(y=b\)</span>, de manera que <span class="math inline">\(f(a+\Delta x, b) - f(a,b)=f_1(a+\Delta x)-f_1(a)\)</span>. Al igual que antes, como <span class="math inline">\(f'_1(y)=\frac{\partial f}{\partial x}(x, b)\)</span> existe en el intervalo <span class="math inline">\([a, a+\Delta x]\)</span>, por el teorema del valor medio, existe otro valor <span class="math inline">\(a_0\in(a, a+\Delta x)\)</span> tal que</p>
-<p><span class="math display">\[
-f(a+\Delta x, b) - f(a,b) = \frac{\partial f}{\partial x}(a_0, b) \Delta x.
-\]</span></p>
-<p>Por tanto, la expresión inicial se puede reescribir como</p>
-<p><span class="math display">\[\begin{align*}
-\Delta z
-&amp;= f(a+\Delta x, b+\Delta y) - f(a,b) \\
-&amp;= \frac{\partial f}{\partial x}(a_0, b) \Delta x + \frac{\partial f}{\partial y}(a+\Delta x, b_0) \Delta y.
-\end{align*}\]</span></p>
-<p>Si ahora definimos</p>
-<p><span class="math display">\[\begin{align*}
-\varepsilon_1 &amp;= \frac{\partial f}{\partial x}(a_0,b)-\frac{\partial f}{\partial x}(a,b),\\
-\varepsilon_2 &amp;= \frac{\partial f}{\partial y}(a+\Delta x, b_0)-\frac{\partial f}{\partial y}(a,b),
-\end{align*}\]</span></p>
-<p>se tiene que</p>
-<p><span class="math display">\[\begin{align*}
-\Delta z
-&amp;=
-\left(\varepsilon_1 + \frac{\partial f}{\partial x}(a, b)\right)\Delta x + \left(\varepsilon_2 + \frac{\partial f}{\partial y}(a, b)\right)\Delta y \\
-&amp;= \frac{\partial f}{\partial x}(a, b)\Delta x + \frac{\partial f}{\partial y}(a, b)\Delta y + \varepsilon_1\Delta x + \varepsilon_2\Delta y.
-\end{align*}\]</span></p>
-<p>Finalmente, como las derivadas parciales de <span class="math inline">\(f\)</span> son continuas en un entorno de <span class="math inline">\((a,b)\)</span>, cuando <span class="math inline">\(\Delta x\to 0\)</span> y <span class="math inline">\(\Delta y\to 0\)</span>, se tiene que <span class="math inline">\(\frac{\partial f}{\partial x}(a_0,b)\to \frac{\partial f}{\partial x}(a,b)\)</span>, y <span class="math inline">\(\frac{\partial f}{\partial y}(a+\Delta x, b_0)\to \frac{\partial f}{\partial y}(a,b)\)</span>, de manera que, <span class="math inline">\(\varepsilon_1\to 0\)</span> y <span class="math inline">\(\varepsilon_2\to 0\)</span>, por lo que se concluye que <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\((a,b)\)</span>.</p>
-<p>Esta demostración puede generalizarse fácilmente a funciones de <span class="math inline">\(n\)</span> variables.</p>
-</div>
-</div>
-</div>
-</div>
 </section>
 
+<section>
 <section id="regla-de-la-cadena" class="title-slide slide level2 center">
 <h2>Regla de la cadena</h2>
-<p>En el <strong>?@thm-regla-cadena</strong> vimos cómo calcular la derivada de una composición de dos funciones de una variable real. Una función de varias variables también puede componerse con otras funciones, y en particular, resulta interesante estudiar la derivada de la composición de una función vectorial con una función de varias variables.</p>
 <p>Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables y <span class="math inline">\(g:\mathbb{R}\rightarrow \mathbb{R}^n\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^n\)</span>, entonces es posible componer <span class="math inline">\(g\)</span> con <span class="math inline">\(f\)</span>, de manera que <span class="math inline">\(f\circ g:\mathbb{R}\rightarrow \mathbb{R}\)</span> es una función real de variable real.</p>
 <div id="thm-regla-cadena-funciones-varias-variables" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 2 (Regla de la cadena)</strong></span> Si <span class="math inline">\(z=f(x_1,\ldots,x_n)\)</span> es una función de <span class="math inline">\(n\)</span> variables diferenciable y <span class="math inline">\(g(t)=(x_1(t),\ldots,x_n(t))\)</span> es una función vectorial en <span class="math inline">\(\mathbb{R}^n\)</span> diferenciable, entonces</p>
@@ -926,43 +913,9 @@ f(a+\Delta x, b) - f(a,b) = \frac{\partial f}{\partial x}(a_0, b) \Delta x.
 \frac{dz}{dt} = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = \frac{\partial z}{\partial x_1}\frac{dx_1}{dt} + \cdots +\frac{\partial z}{\partial x_n}\frac{dx_n}{dt}
 \]</span></p>
 </div>
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Demostración</strong></p>
-</div>
-<div class="callout-content">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Como <span class="math inline">\(f\)</span> es diferenciable se tiene que</p>
-<p><span class="math display">\[
-\Delta z = \nabla f(a_1,\ldots,a_n) (\Delta x_1,\ldots, \Delta x_n) + (\varepsilon_1,\ldots, \varepsilon_n)(\Delta x_1,\ldots, \Delta x_n)
-\]</span></p>
-<p>con <span class="math inline">\((\varepsilon_1,\ldots,\varepsilon_n) \to (0,\ldots,0)\)</span> cuando <span class="math inline">\((\Delta x_1, \ldots, \Delta x_n) \to (0,\ldots,0)\)</span>.</p>
-<p>Entonces, tomando <span class="math inline">\(\Delta t\neq 0\)</span> se tiene</p>
-<p><span class="math display">\[\begin{align*}
-\frac{\Delta z}{\Delta t}
-&amp;= \nabla f(a_1,\ldots,a_n) \frac{(\Delta x_1,\ldots, \Delta x_n)}{\Delta t} + (\varepsilon_1,\ldots, \varepsilon_n) \frac{(\Delta x_1,\ldots, \Delta x_n)}{\Delta t} \\
-&amp;= \nabla f(a_1,\ldots,a_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) + (\varepsilon_1,\ldots, \varepsilon_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right)
-\end{align*}\]</span></p>
-<p>Y tomando el límite cuando <span class="math inline">\(\Delta t \to 0\)</span> se concluye</p>
-<p><span class="math display">\[\begin{align*}
-\frac{dz}{dt} &amp;=
-\lim_{\Delta t\to 0}\frac{\Delta z}{\Delta t} \\
-&amp;= \lim_{\Delta t\to 0} \nabla f(a_1,\ldots,a_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) + (\varepsilon_1,\ldots, \varepsilon_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) \\
-&amp;= \nabla f(a_1,\ldots,a_n)  \lim_{\Delta t\to 0}\left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) + \lim_{\Delta t \to 0}(\varepsilon_1,\ldots, \varepsilon_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) \\
-&amp;= \nabla f(a_1,\ldots,a_n) \left(\frac{dx_1}{dt},\ldots, \frac{dx_n}{dt}\right)
-\end{align*}\]</span></p>
-<p>ya que cuando <span class="math inline">\(\Delta t \to 0\)</span> <span class="math inline">\((\Delta x_1, \ldots, \Delta x_n) \to (0,\ldots,0)\)</span>, y por tanto, <span class="math inline">\((\varepsilon_1,\ldots,\varepsilon_n) \to (0,\ldots,0)\)</span>, por lo que</p>
-<p><span class="math display">\[
-\lim_{\Delta t\to  0} (\varepsilon_1,\ldots, \varepsilon_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) = 0.
-\]</span></p>
-</div>
-</div>
-</div>
-</div>
+</section>
+<section class="slide level3">
+
 <div id="exm-regla-cadena" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 15</strong></span> Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos t,\operatorname{sen} t)\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
 <p><span class="math display">\[
@@ -979,17 +932,11 @@ g'(t) = (-\operatorname{sen}(t), \cos(t)),
 &amp;= (2\cos(t)\operatorname{sen}(t),\cos(t)^2)\cdot (-\operatorname{sen}(t),\cos(t)) \\
 &amp;= -2\cos(t)\operatorname{sen}(t)^2+\cos(t)^3.
 \end{align*}\]</span></p>
-<p>Se puede llegar al mismo resultado, sin aplicar la regla de la cadena, derivando directamente la función compuesta</p>
-<p><span class="math display">\[
-(f\circ g)(t) = f(g(t)) = f(\cos(t), \operatorname{sen}(t)) = \cos(t)^2\operatorname{sen}(t),
-\]</span></p>
-<p>de manera que</p>
-<p><span class="math display">\[\begin{align*}
-(f\circ g)'(t)
-&amp;= 2\cos(t)(-\operatorname{sen}(t))\operatorname{sen}(t)+\cos(t)^2 \cos(t)\\
-&amp;= -2\cos(t)\operatorname{sen}(t)^2+\cos(t)^3.
-\end{align*}\]</span></p>
 </div>
+</section></section>
+<section>
+<section id="section-5" class="title-slide slide level2 center">
+<h2></h2>
 <p>La regla de la cadena para la composición de una función vectorial con una función de varias variables permite obtener fácilmente el álgebra de derivadas para funciones reales de una variable real:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -999,6 +946,9 @@ g'(t) = (-\operatorname{sen}(t), \cos(t)),
 (u\circ v)' &amp;= u'(v)v'
 \end{aligned}
 \]</span></p>
+</section>
+<section class="slide level3">
+
 <p>Por ejemplo, para deducir la derivada de la suma se toma la función de dos variables <span class="math inline">\(f(x,y)=x+y\)</span> y la función vectorial <span class="math inline">\(g(t)=(u(t),v(t))\)</span>, de manera que aplicando la regla de la cadena se tiene</p>
 <p><span class="math display">\[\begin{align*}
 (u+v)'(t)
@@ -1011,15 +961,17 @@ g'(t) = (-\operatorname{sen}(t), \cos(t)),
 &amp;= (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) \\
 &amp;= (v(t),u(t))\cdot (u'(t),v'(t)) = u'(t)v(t)+u(t)v'(t).
 \end{align*}\]</span></p>
-</section>
-
+</section></section>
 <section id="derivación-implícita" class="title-slide slide level2 center">
 <h2>Derivación implícita</h2>
 <p>Hasta ahora hemos estado trabajando con funciones de varias variables explícitas, es decir, de la forma <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>, pero también es posible definir una función de varias variables de manera implícita mediante una ecuación de la forma <span class="math inline">\(F(x_1,\ldots,x_n, y)=0\)</span>, donde <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>.</p>
 <div id="exm-funcion-implicita-2-variables" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 16</strong></span> La ecuación <span class="math inline">\(x^2+y^2+z^2 = 1\)</span> define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita <span class="math inline">\(z=f(x,y)\)</span> ya que si despejamos <span class="math inline">\(z\)</span> se tiene que <span class="math inline">\(z=\pm\sqrt{1-x^2-y^2}\)</span>, que no es una función ya que asigna dos imágenes a cada punto <span class="math inline">\((x,y)\)</span>. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función <span class="math inline">\(z=\sqrt{1-x^2-y^2}\)</span> que corresponde a la semiesfera positiva de radio 1 centrada en el origen.</p>
 </div>
-<p>El teorema siguiente nos proporciona las condiciones suficientes para que una ecuación como la anterior defina de manera implícita a una de sus variables como función de las otras.</p>
+</section>
+
+<section id="section-6" class="title-slide slide level2 center">
+<h2></h2>
 <div id="thm-funcion-implicita" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 3 (Teorema de la función implícita)</strong></span> Si <span class="math inline">\(F(x_1,\ldots,x_n,y)\)</span> es una función de <span class="math inline">\(n+1\)</span> variables definida sobre un entorno abierto del punto <span class="math inline">\((a_1,\ldots,a_n,b)\)</span> y tal que</p>
 <ol type="a">
@@ -2014,7 +1966,18 @@ f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\c
         }
         return false;
       }
-      const onCopySuccess = function(e) {
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -2046,47 +2009,7 @@ f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\c
         }, 1000);
         // clear code selection
         e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
       });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        // For code content inside modals, clipBoardJS needs to be initialized with a container option
-        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -2123,11 +2046,7 @@ f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\c
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {

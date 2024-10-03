@@ -225,13 +225,7 @@ Por consiguiente, no existe el límite de $f$ en $(0,0)$.
 
 ---
 
-::: {.content-visible when-format="html"}
 ![Función de dos variables sin límite en $(0,0)$.](./img/derivadas-funciones-varias-variables/no-existencia-limite.png){#fig-no-existencia-limite-2}
-:::
-
-:::{.content-visible unless-format="html"}
-![Función de dos variables sin límite en $(0,0)$.](./img/derivadas-funciones-varias-variables/no-existencia-limite.pdf){#fig-no-existencia-limite-2}
-:::
 
 ---
 
@@ -291,8 +285,6 @@ $$
 con $c$ constante.
 :::
 
----
-
 ## Derivadas parciales
 
 :::{#def-derivada-parcial}
@@ -310,46 +302,24 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 $$
 :::
 
-### Interpretación geométrica de la derivada parcial
+## Interpretación geométrica de la derivada parcial
 
-Geométricamente, $z=f(x,y)$ define una superficie. Si se corta esta superficie con el plano de ecuación $y=b$ (es decir, si $y$ se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya pendiente en el punto $(a,b)$ es la derivada parcial de $f$ con respecto a $x$ en el punto $(a,b)$.
-
-::: {.content-visible when-format="html"}
 ![Derivada parcial con respecto a $x$.](./img/derivadas-funciones-varias-variables/derivada-parcial-x.png)
-:::
 
-:::{.content-visible unless-format="html"}
-![Derivada parcial con respecto a $x$.](./img/derivadas-funciones-varias-variables/derivada-parcial-x.png)
-:::
+---
 
-::: {.content-visible when-format="html"}
 ![Derivada parcial con respecto a $y$.](./img/derivadas-funciones-varias-variables/derivada-parcial-y.png)
-:::
-
-:::{.content-visible unless-format="html"}
-![Derivada parcial con respecto a $y$.](./img/derivadas-funciones-varias-variables/derivada-parcial-y.png)
-:::
 
 [![Ejemplo interactivo con Geogebra](img/logos/logo-geogebra.png)](https://www.geogebra.org/classic/ywur7vzr)
 
-Como se puede observar, la definición de derivada para funciones de una variable es un caso particular de esta definición para $n=1$.
-
-Al medir la variación de $f$ con respecto a la variación de una sola de sus variables $x_i$ en un punto $a=(a_1,\ldots,a_n)$, el resto de las variables se pueden considerar como constantes y, en tal caso, podemos ver a $f$ como una función parcial $i$-ésima
-
-$$
-f_i(x_i)=f(a_1,\ldots,a_{i-1},x_i,a_{i+1},\ldots,a_n).
-$$
-
-La derivada parcial de $f$ con respecto a $x_i$ puede calcularse derivando esta función:
-
-$$
-\frac{\partial f}{\partial x_i}(a)=f_i'(a_i).
-$$
+## 
 
 :::{.callout-important}
 ## Regla
 Para derivar parcialmente $f(x_1,\ldots,x_n)$ con respecto a una variable $x_i$, se deriva $f$ como si la única variable fuese $x_i$, tratando el resto de las variables como constantes.
 :::
+
+---
 
 :::{#exm-calculo-derivada-parcial}
 En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables
@@ -384,7 +354,7 @@ Dada una función de $n$ variables $f:\mathbb{R}^n\rightarrow \mathbb{R}$, se ll
 $$\nabla f(a)=\left(\frac{\partial f}{\partial x_1}(a),\ldots,\frac{\partial f}{\partial x_n}(a)\right).$$
 :::
 
-Más adelante se mostrará que vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la función en ese punto. De este modo, $\nabla f(a)$ indica la dirección de máximo crecimiento de la función, mientras que $-\nabla f(a)$ indica la dirección de máximo decrecimiento.
+---
 
 :::{#exm-vector-gradiente}
 Al calentar una superficie la temperatura $t$ (en ºC) en cada punto $(x,y,z)$ (en m) de dicha superficie viene dada por la función:
@@ -413,9 +383,7 @@ $$
 $$
 :::
 
-## Recta normal y plano tangente a una superficie
-
-Ya se ha visto que para una función de dos variables $f(x,y)$, $f'_{x}(a,b)$ es la pendiente de la recta tangente a la superficie de $f$ en $(a,b)$ en su intersección con el plano $y=b$, y que $f'_y(a,b)$ es la pendiente de la recta tangente a la superficie de $f$ en $(a,b)$ en su intersección con el plano $x=a$. Estas dos rectas tangentes definen, en realidad, un plano tangente a la superficie de $f$ en el punto $(a,b)$. 
+## Recta normal a una superficie
 
 Si tomamos los vectores $(1, 0, f'_x(a,b))$ y $(0, 1, f'_y(a,b))$ en las direcciones de estas dos rectas tangentes, su producto vectorial será normal a la superficie. 
 
@@ -433,6 +401,8 @@ Si tomamos los vectores $(1, 0, f'_x(a,b))$ y $(0, 1, f'_y(a,b))$ en las direcci
 
 Usando este vector podemos construir la ecuación de la recta normal a la superficie de $f$.
 
+---
+
 :::{#def-recta-normal-superficie}
 ## Recta normal a la superficie de una función de dos variables
 Dada una función de dos variables $f(x,y)$ con derivadas parciales continuas en el punto $(a,b)$ se define la _recta normal a la superficie_ de $f$ en el punto $(a,b)$ como la recta de ecuación 
@@ -445,14 +415,18 @@ $$
 $$
 :::
 
-Para obtener la ecuación del plano tangente a la superficie de $f$ también podemos usar este vector normal a la superficie, ya que cualquier punto del plano debe cumplir la ecuación
+## Plano tangente a una superficie
+
+El vector normal puede utilizarse para construir la ecuación del plano tangente a la superficie de $f$ en el punto $(a,b)$.
 
 $$
 \begin{gathered}
 ((x,y,z)-(a,b,f(a,b)))\left(\frac{\partial f}{\partial x}(a,b), \frac{\partial f}{\partial y}(a,b), -1\right) = 0 \\
-\Leftrightarrow (x-a)\frac{\partial f}{\partial x}(a,b) + (y-b)\frac{\partial f}{\partial y}(a,b) - (z-f(ab)) = 0.
+\Leftrightarrow (x-a)\frac{\partial f}{\partial x}(a,b) + (y-b)\frac{\partial f}{\partial y}(a,b) - (z-f(a,b)) = 0.
 \end{gathered}
 $$
+
+---
 
 :::{#def-plano-tangente-superficie}
 ## Plano tangente a la superficie de una función de dos variables
@@ -462,6 +436,8 @@ $$
 z = \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)(y-b)+f(a,b)
 $$
 :::
+
+---
 
 :::{#exm-recta-normal-plano-tangente}
 La recta normal a la superficie de la función $f(x,y)=x^2+y^2$ en el punto $(1,1,2)$ tiene ecuación
@@ -480,15 +456,13 @@ z
 &= \frac{\partial f}{\partial x}(1,1)(x-1) + \frac{\partial f}{\partial y}(1,1)(y-1)+f(1,1) \\
 &= 2(x-1) + 2(y-1) + 2 =  2x+2y-2.
 \end{align*}
-
-::: {.content-visible when-format="html"}
-![Recta normal y plano tangente a la función $f(x,y)=x^2+y^2$ en el punto $(1,1,2)$.](./img/derivadas-funciones-varias-variables/recta-normal-plano-tangente.png)
 :::
 
-:::{.content-visible unless-format="html"}
+---
+
 ![Recta normal y plano tangente a la función $f(x,y)=x^2+y^2$ en el punto $(1,1,2)$.](./img/derivadas-funciones-varias-variables/recta-normal-plano-tangente.png)
-:::
-:::
+
+---
 
 :::{.callout-warning}
 La existencia de las derivadas parciales de una función de dos variables $f(x,y)$ en un punto $(a,b)$ no garantiza la existencia de la recta normal y el plano tangente en ese punto.
@@ -510,8 +484,6 @@ Cuando $y=0$ esta función es constante y vale $0$ por lo que su derivada parcia
 
 ## Diferenciabilidad
 
-En el capítulo de derivadas de funciones de una variable se definió el diferencial de una función $y=f(x)$ como la aplicación lineal $dy = f'(x)dx$ y se vió cómo el diferencial puede utilizarse para aproximar la variación de $f$ en un entorno de $x$. La misma idea puede generalizarse a funciones de varias variables.
-
 :::{#def-diferencial-total}
 ## Diferencial total
 Dada una función de $n$ variables $y=f(x_1,\ldots,x_n)$, se define el _diferencial total_ de la función $f$ en el punto $P=(a_1, \ldots, a_n)$ como 
@@ -523,6 +495,8 @@ dy
 $$
 :::
 
+---
+
 :::{#exm-diferencial-total}
 Dada la función $u=f(x,y,z) = x^2+yz$, su gradiente es $\nabla f(x,y,z) = (2x, z, y)$, y en el punto $(1, 1, 1)$ vale $(2, 1, 1)$, por lo que el diferencial total de $f$ en $(1, 1, 1)$ es 
 
@@ -533,6 +507,8 @@ du
 = 2dx + dy + dz.
 $$
 :::
+
+##
 
 :::{#def-funcion-2-variables-diferenciable}
 ## Función diferenciable de dos variables
@@ -551,6 +527,8 @@ $$
 \Delta z \approx dz = \nabla f(a, b) (\Delta x, \Delta y)
 $$
 
+---
+
 Si en la ecuación anterior reescribimos $\Delta x = x-a$ y $\Delta y = y-b$, se tiene que 
 
 \begin{align*}
@@ -566,7 +544,11 @@ $$
 f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)(y-b) + f(a,b).
 $$
 
-Si se observa bien, el lado derecho de esta igualdad es la ecuación del plano tangente a la superficie de $f$ en el punto $(a,b)$. De esta manera, si una $f$ es diferenciable en $(a,b)$ podemos aproximar el valor de la función en cualquier punto $(x,y)$ de un entorno de $(a,b)$, como el valor del plano tangente en ese punto. El error en la aproximación es $\varepsilon_1 \Delta x + \varepsilon_2 \Delta y$ que tiende a $0$ cuando $(x,y)$ se aproxima a $(a,b)$. Además, dado que $\varepsilon_1$ y $\varepsilon_2 \to 0$ cuando $(x,y)\to (a,b)$, la cantidad $\varepsilon_1 \Delta x + \varepsilon_2 \Delta y$ se aproxima a $0$ mucho más rápidamente que $\Delta x$ o $\Delta y$ se aproximan a $0$, por lo que el plano tangente a la superficie de $f$ en el punto $(a,b)$ dará muy buenas aproximaciones de $f$ en un entorno cercano de $(a,b)$.
+:::{.callout-important collapse="true"}
+_Podemos usar el plano tangente a la superficie de $f$ en $(a,b)$ como una aproximación de la función en un entorno de $(a,b)$._
+:::
+
+---
 
 :::{#exm-aproximacion-funcion-dos-variables-plano-tangente}
 Veamos que la función $f(x,y)=x^2 + y^2$ es diferenciable en cualquier punto $(a,b)$
@@ -587,15 +569,17 @@ $$
 $$
 
 y, además $\varepsilon_1\to 0$ y $\varepsilon_2\to 0$ cuando $(x,y)\to (a,b)$, por lo que la función $f$ es diferenciable en $(a,b)$.
+:::
+
+---
 
 Así pues, podemos utilizar el plano tangente $z = 2x+2y-2$  que calculamos en el @exm-recta-normal-plano-tangente para aproximar la función en un entorno del punto $(1, 1, 2)$. Por ejemplo, la aproximación de $f$ en $(0.9, 1.2)$ es 
 
 $$
 f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 $$
-:::
 
-El concepto de función diferenciable se generaliza de manera natural para funciones de $n$ variables. 
+##
 
 :::{#def-funcion-varias-variables-diferenciable}
 ## Función diferenciable
@@ -610,68 +594,13 @@ Dada una función de n variables $z=f(x_1,\ldots,x_n)$, se dice que $f$ es _dife
 con $(\varepsilon_1,\ldots, \varepsilon_n) \to (0,\ldots,0)$ cuando $(x_1,\ldots,x_n)\to (a_1,\ldots,a_n)$.
 :::
 
-En general, demostrar que una función es diferenciable en un punto puede ser una tarea complicada, pero afortunadamente, el siguiente teorema proporciona una condición suficiente para que una función sea diferenciable.
+##
 
 :::{#thm-diferenciabilidad-funciones-varias-variables}
 Si una función de $n$ variables $f(x_1,\ldots,x_n)$ tiene derivadas parciales continuas en un entorno de $(a_1,\ldots,a_n)$, entonces $f$ es diferenciable en $(a_1,\ldots,a_n)$.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Veremos la demostración en el caso de una función de dos variables $f(x,y)$. 
-
-\begin{align*}
-\Delta z 
-&= f(a+\Delta x, b+\Delta y) - f(a,b) \\
-&= f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) + f(a+\Delta x, b) - f(a,b) 
-\end{align*}
-
-Como en los dos primeros términos de esta expresión se mantiene constante $a+\Delta x$, podemos considerar la función parcial $f_2(y)$ que resulta de fijar el valor de $x$ a $a+\Delta x$, de manera que $f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) = f_2(b+\Delta y)-f_2(b)$. Entonces, como $f'_2(y)=\frac{\partial f}{\partial y}(a+\Delta x, y)$ existe en el intervalo $[b, b+\Delta y]$, por el teorema del valor medio (@thm-valor-medio), existe un valor $b_0\in(b, b+\Delta y)$ tal que 
-
-$$
-f(a+\Delta x, b+\Delta y) - f(a+\Delta x, b) = \frac{\partial f}{\partial y}(a+\Delta x, b_0) \Delta y.
-$$
-
-Del mismo modo, como en $f(a+\Delta x, b) - f(a,b)$ se mantiene constante $b$, podemos considerar la función parcial $f_1(x)$ que resulta de fijar $y=b$, de manera que $f(a+\Delta x, b) - f(a,b)=f_1(a+\Delta x)-f_1(a)$. Al igual que antes, como $f'_1(y)=\frac{\partial f}{\partial x}(x, b)$ existe en el intervalo $[a, a+\Delta x]$, por el teorema del valor medio, existe otro valor $a_0\in(a, a+\Delta x)$ tal que 
-
-$$
-f(a+\Delta x, b) - f(a,b) = \frac{\partial f}{\partial x}(a_0, b) \Delta x.
-$$
-
-Por tanto, la expresión inicial se puede reescribir como 
-
-\begin{align*}
-\Delta z 
-&= f(a+\Delta x, b+\Delta y) - f(a,b) \\
-&= \frac{\partial f}{\partial x}(a_0, b) \Delta x + \frac{\partial f}{\partial y}(a+\Delta x, b_0) \Delta y.
-\end{align*}
-
-Si ahora definimos 
-
-\begin{align*}
-\varepsilon_1 &= \frac{\partial f}{\partial x}(a_0,b)-\frac{\partial f}{\partial x}(a,b),\\
-\varepsilon_2 &= \frac{\partial f}{\partial y}(a+\Delta x, b_0)-\frac{\partial f}{\partial y}(a,b),
-\end{align*}
-
-se tiene que 
-
-\begin{align*}
-\Delta z 
-&=
-\left(\varepsilon_1 + \frac{\partial f}{\partial x}(a, b)\right)\Delta x + \left(\varepsilon_2 + \frac{\partial f}{\partial y}(a, b)\right)\Delta y \\
-&= \frac{\partial f}{\partial x}(a, b)\Delta x + \frac{\partial f}{\partial y}(a, b)\Delta y + \varepsilon_1\Delta x + \varepsilon_2\Delta y.
-\end{align*}
-
-Finalmente, como las derivadas parciales de $f$ son continuas en un entorno de $(a,b)$, cuando $\Delta x\to 0$ y $\Delta y\to 0$, se tiene que $\frac{\partial f}{\partial x}(a_0,b)\to \frac{\partial f}{\partial x}(a,b)$, y $\frac{\partial f}{\partial y}(a+\Delta x, b_0)\to \frac{\partial f}{\partial y}(a,b)$, de manera que, $\varepsilon_1\to 0$ y $\varepsilon_2\to 0$, por lo que se concluye que $f$ es diferenciable en $(a,b)$.
-
-Esta demostración puede generalizarse fácilmente a funciones de $n$ variables.
-:::
-:::
-
 ## Regla de la cadena
-
-En el @thm-regla-cadena vimos cómo calcular la derivada de una composición de dos funciones de una variable real. Una función de varias variables también puede componerse con otras funciones, y en particular, resulta interesante estudiar la derivada de la composición de una función vectorial con una función de varias variables.
 
 Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es una función de $n$ variables y $g:\mathbb{R}\rightarrow \mathbb{R}^n$ es una función vectorial en $\mathbb{R}^n$, entonces es posible componer $g$ con $f$, de manera que $f\circ g:\mathbb{R}\rightarrow \mathbb{R}$ es una función real de variable real.
 
@@ -684,42 +613,7 @@ $$
 $$
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Como $f$ es diferenciable se tiene que 
-
-$$
-\Delta z = \nabla f(a_1,\ldots,a_n) (\Delta x_1,\ldots, \Delta x_n) + (\varepsilon_1,\ldots, \varepsilon_n)(\Delta x_1,\ldots, \Delta x_n)
-$$
-
-con $(\varepsilon_1,\ldots,\varepsilon_n) \to (0,\ldots,0)$ cuando $(\Delta x_1, \ldots, \Delta x_n) \to (0,\ldots,0)$.
-
-Entonces, tomando $\Delta t\neq 0$ se tiene
-
-\begin{align*}
-\frac{\Delta z}{\Delta t}
-&= \nabla f(a_1,\ldots,a_n) \frac{(\Delta x_1,\ldots, \Delta x_n)}{\Delta t} + (\varepsilon_1,\ldots, \varepsilon_n) \frac{(\Delta x_1,\ldots, \Delta x_n)}{\Delta t} \\
-&= \nabla f(a_1,\ldots,a_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) + (\varepsilon_1,\ldots, \varepsilon_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right)
-\end{align*}
-
-Y tomando el límite cuando $\Delta t \to 0$ se concluye
-
-\begin{align*}
-\frac{dz}{dt} &=
-\lim_{\Delta t\to 0}\frac{\Delta z}{\Delta t} \\
-&= \lim_{\Delta t\to 0} \nabla f(a_1,\ldots,a_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) + (\varepsilon_1,\ldots, \varepsilon_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) \\
-&= \nabla f(a_1,\ldots,a_n)  \lim_{\Delta t\to 0}\left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) + \lim_{\Delta t \to 0}(\varepsilon_1,\ldots, \varepsilon_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) \\
-&= \nabla f(a_1,\ldots,a_n) \left(\frac{dx_1}{dt},\ldots, \frac{dx_n}{dt}\right)
-\end{align*}
-
-ya que cuando $\Delta t \to 0$ $(\Delta x_1, \ldots, \Delta x_n) \to (0,\ldots,0)$, y por tanto, $(\varepsilon_1,\ldots,\varepsilon_n) \to (0,\ldots,0)$, por lo que 
-
-$$
-\lim_{\Delta t\to  0} (\varepsilon_1,\ldots, \varepsilon_n) \left(\frac{\Delta x_1}{\Delta t},\ldots, \frac{\Delta x_n}{\Delta t}\right) = 0.
-$$
-:::
-:::
+---
 
 :::{#exm-regla-cadena}
 Si se toma el campo escalar del plano real $f(x,y)=x^2y$ y la función vectorial $g(t)=(\cos t,\operatorname{sen} t)$ $t\in [0,2\pi]$ del mismo plano, entonces
@@ -742,21 +636,9 @@ por lo que
 &= (2\cos(t)\operatorname{sen}(t),\cos(t)^2)\cdot (-\operatorname{sen}(t),\cos(t)) \\
 &= -2\cos(t)\operatorname{sen}(t)^2+\cos(t)^3.
 \end{align*}
-
-Se puede llegar al mismo resultado, sin aplicar la regla de la cadena, derivando directamente la función compuesta
-
-$$
-(f\circ g)(t) = f(g(t)) = f(\cos(t), \operatorname{sen}(t)) = \cos(t)^2\operatorname{sen}(t),
-$$
-
-de manera que
-
-\begin{align*}
-(f\circ g)'(t) 
-&= 2\cos(t)(-\operatorname{sen}(t))\operatorname{sen}(t)+\cos(t)^2 \cos(t)\\
-&= -2\cos(t)\operatorname{sen}(t)^2+\cos(t)^3.
-\end{align*}
 :::
+
+##
 
 La regla de la cadena para la composición de una función vectorial con una función de varias variables permite obtener fácilmente el álgebra de derivadas para funciones reales de una variable real:
 
@@ -768,6 +650,8 @@ $$
 (u\circ v)' &= u'(v)v'
 \end{aligned}
 $$
+
+---
 
 Por ejemplo, para deducir la derivada de la suma se toma la función de dos variables $f(x,y)=x+y$ y la función vectorial $g(t)=(u(t),v(t))$, de manera que aplicando la regla de la cadena se tiene
 
@@ -795,7 +679,7 @@ La ecuación $x^2+y^2+z^2 = 1$ define la esfera de radio 1 centrada en el origen
 que $z=\pm\sqrt{1-x^2-y^2}$, que no es una función ya que asigna dos imágenes a cada punto $(x,y)$. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función $z=\sqrt{1-x^2-y^2}$ que corresponde a la semiesfera positiva de radio 1 centrada en el origen.
 :::
 
-El teorema siguiente nos proporciona las condiciones suficientes para que una ecuación como la anterior defina de manera implícita a una de sus variables como función de las otras.
+##
 
 :::{#thm-funcion-implicita}
 ## Teorema de la función implícita
