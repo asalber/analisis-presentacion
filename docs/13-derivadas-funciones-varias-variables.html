@@ -10,7 +10,7 @@
 <link href="13-derivadas-funciones-varias-variables_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="13-derivadas-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="13-derivadas-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.0">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Derivadas de funciones de varias variables</title>
@@ -428,6 +428,9 @@ C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
 </section>
 <section class="slide level3">
 
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -917,7 +920,7 @@ f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 <section class="slide level3">
 
 <div id="exm-regla-cadena" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 15</strong></span> Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos t,\operatorname{sen} t)\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
+<p><span class="theorem-title"><strong>Ejemplo 15</strong></span> Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos(t),\operatorname{sen}(t))\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
 <p><span class="math display">\[
 \nabla f(x,y) = (2xy, x^2),
 \]</span></p>
@@ -979,38 +982,22 @@ g'(t) = (-\operatorname{sen}(t), \cos(t)),
 <li>Todas las derivadas parciales de <span class="math inline">\(F\)</span> son continuas en el entorno de <span class="math inline">\((a_1,\ldots,a_n,b)\)</span>.</li>
 <li><span class="math inline">\(\frac{\partial F}{\partial y}\neq 0\)</span>.</li>
 </ol>
-<p>Entonces la ecuación <span class="math inline">\(F(a_1,\ldots,a_n,b)=0\)</span> define a <span class="math inline">\(y\)</span> como una función de <span class="math inline">\(x\)</span> en el entorno de <span class="math inline">\((a_1,\ldots,a_n,b)\)</span>.</p>
+<p>Entonces la ecuación <span class="math inline">\(F(a_1,\ldots,a_n,b)=0\)</span> define a <span class="math inline">\(y\)</span> como una función de <span class="math inline">\(x_1, \ldots, x_n\)</span> en el entorno de <span class="math inline">\((a_1,\ldots,a_n,b)\)</span>.</p>
 </div>
-<p>Cuando una ecuación define de manera implícita una de sus variables como función de las otras, no siempre es posible obtener la forma explícita de esa función, por lo que necesitamos saber cómo calcular la derivada de estas funciones en forma implícita.</p>
+</section>
+
+<section>
+<section id="section-7" class="title-slide slide level2 center">
+<h2></h2>
 <div id="thm-derivada-implicita-funcion-varias-variables" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 4</strong></span> Si <span class="math inline">\(F(x_1,\ldots,x_n,y)=0\)</span> define a <span class="math inline">\(y\)</span> implícitamente como función derivable de <span class="math inline">\(x_1,\ldots,x_n\)</span>, entonces</p>
 <p><span class="math display">\[
 \frac{\partial y}{\partial x_i} = -\frac{F'_{x_i}(x_1,\ldots,x_n,y)}{F'_{y}(x_1,\ldots,x_n,y)}.
 \]</span></p>
 </div>
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Demostración</strong></p>
-</div>
-<div class="callout-content">
-<div class="proof">
-<p><span class="proof-title"><em>Prueba</em>. </span>Si la ecuación <span class="math inline">\(F(x_1,\ldots,x_n,y)=0\)</span> define a <span class="math inline">\(y\)</span> como una función de <span class="math inline">\(x_1, \ldots, x_n\)</span>, es decir, <span class="math inline">\(y=f(x_1,\ldots,x_n)\)</span>, entonces, tomando <span class="math inline">\(z=F(x_1,\ldots,x_n,f(x_1,\ldots,x_n))\)</span> y aplicando la regla de la cadena se tiene</p>
-<p><span class="math display">\[\begin{align*}
-\frac{\partial z}{\partial x_i}
-&amp;= F'_{x_1}(x_1,\ldots,x_n,y)\frac{\partial x_1}{\partial x_i} + \cdots + F'_{x_n}(x_1,\ldots,x_n,y)\frac{\partial x_n}{\partial x_i} + F'_{y}(x_1,\ldots,x_n,y)\frac{\partial y}{\partial x_i} \\
-&amp;= F'_{x_i}(x_1,\ldots,x_n,y) + F'_{y}(x_1,\ldots,x_n,y)\frac{\partial y}{\partial x_i} = 0
-\end{align*}\]</span> de donde se deduce</p>
-<p><span class="math display">\[
-\frac{\partial y}{\partial x_i} = -\frac{F'_{x_i}(x_1,\ldots,x_n,y)}{F'_{y}(x_1,\ldots,x_n,y)}.
-\]</span></p>
-</div>
-</div>
-</div>
-</div>
+</section>
+<section class="slide level3">
+
 <div id="exm-derivada-implicita" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 17</strong></span> La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
 <p><span class="math display">\[
@@ -1020,6 +1007,10 @@ F(x,y) = x^2+y^2-1 = 0.
 <p><span class="math display">\[
 y'=-\frac{F'_x(x,y)}{F'_y(x,y)} = -\frac{2x}{2y}=-\frac{x}{y}.
 \]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
 <p>Podría llegarse al mismo resultado, despejando <span class="math inline">\(y\)</span> de la ecuación de la circunferencia,</p>
 <p><span class="math display">\[
 x^2+y^2=1 \Leftrightarrow y^2=1-x^2 \Leftrightarrow y= \pm\sqrt{1-x^2}.
@@ -1029,14 +1020,15 @@ x^2+y^2=1 \Leftrightarrow y^2=1-x^2 \Leftrightarrow y= \pm\sqrt{1-x^2}.
 y' = \frac{1}{2\sqrt{1-x^2}}(-2x) = \frac{-x}{\sqrt{1-x^2}},
 \]</span></p>
 <p>que coincide con el resultado de la derivación implícita, teniendo en cuenta que <span class="math inline">\(y=\sqrt{1-x^2}\)</span>.</p>
-</div>
-</section>
-
+</section></section>
 <section id="derivada-direccional" class="title-slide slide level2 center">
 <h2>Derivada direccional</h2>
 <p>Hemos visto que para una función de dos variables <span class="math inline">\(f(x,y)\)</span>, <span class="math inline">\(f'_x(a,b)\)</span> es la tasa de variación instantánea de <span class="math inline">\(f\)</span> con respecto a <span class="math inline">\(x\)</span> en el punto <span class="math inline">\((a,b)\)</span>, es decir, cuando nos desplazamos desde el punto <span class="math inline">\((a,b)\)</span> en la dirección del eje <span class="math inline">\(X\)</span>, y que <span class="math inline">\(f'_y(a,b)\)</span> es la tasa de variación instantánea de <span class="math inline">\(f\)</span> con respecto a <span class="math inline">\(y\)</span> en el punto <span class="math inline">\((a,b)\)</span>, es decir, cuando nos desplazamos desde el punto <span class="math inline">\((a,b)\)</span> en la dirección del eje <span class="math inline">\(Y\)</span>.</p>
 <p>Pero, <em>¿qué pasa si nos movemos en cualquier otra dirección?</em></p>
-<p>La tasa de variación instantánea de <span class="math inline">\(f\)</span> en un punto <span class="math inline">\((a,b)\)</span> en la dirección de un vector unitario cualquiera <span class="math inline">\(u\)</span> se conoce como <em>derivada direccional</em>.</p>
+</section>
+
+<section id="section-8" class="title-slide slide level2 center">
+<h2></h2>
 <div id="def-derivada-direccional" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 15 (Derivada direccional)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span>, un punto <span class="math inline">\(P\)</span> y un vector unitario <span class="math inline">\(\mathbf{u}\)</span> en <span class="math inline">\(\mathbb{R}^n\)</span>, el límite</p>
 <p><span class="math display">\[
@@ -1044,8 +1036,10 @@ f'_{\mathbf{u}}(P) = \lim_{h\rightarrow 0}\frac{f(P+h\mathbf{u})-f(P)}{h},
 \]</span></p>
 <p>cuando existe, se llama <em>derivada direccional</em> de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(P\)</span> en la dirección de <span class="math inline">\(\mathbf{u}\)</span>.</p>
 </div>
-<p>Obsérvese que las derivadas parciales son las derivadas direccionales en las direcciones de los vectores coordenados.</p>
-<p>El siguiente teorema nos permitirá calcular derivadas direccionales de manera más sencilla, sin necesidad de calcular el límite anterior.</p>
+</section>
+
+<section id="section-9" class="title-slide slide level2 center">
+<h2></h2>
 <div id="thm-derivada-direccional" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 5</strong></span> Si <span class="math inline">\(f:\mathbb{R}^n\rightarrow \mathbb{R}\)</span> es una función de <span class="math inline">\(n\)</span> variables cuyas derivadas parciales existen en un punto <span class="math inline">\(P\)</span> y <span class="math inline">\(\mathbf{u}\)</span> es un vector unitario en <span class="math inline">\(\mathbb{R}^n\)</span>, entonces</p>
 <p><span class="math display">\[
@@ -1573,7 +1567,7 @@ h'(0)
 = \nabla f(a,b,c)\mathbf{f}'(0)
 =0,
 \]</span></p>
-<p>de donde se deduce que <span class="math inline">\(\nabla f(a,b,c)\)</span> es ortogonal a vector tangente a la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=0\)</span>. Pero como la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> está inscrita en la superficie de nivel de nivel <span class="math inline">\(g(x,y,z)=0\)</span>, por el <a href="#/derivada-direccional" class="quarto-xref">Teorema&nbsp;7</a>, si <span class="math inline">\(\nabla g(a,b,c)\neq 0\)</span> entonces también es ortogonal a <span class="math inline">\(\mathbf{f}'(0)\)</span>, por lo que <span class="math inline">\(\nabla f(a,b,c)\)</span> y <span class="math inline">\(\nabla g(a,b,c)\)</span> deben ser paralelos, es decir,</p>
+<p>de donde se deduce que <span class="math inline">\(\nabla f(a,b,c)\)</span> es ortogonal a vector tangente a la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> en <span class="math inline">\(t=0\)</span>. Pero como la trayectoria de <span class="math inline">\(\mathbf{f}\)</span> está inscrita en la superficie de nivel de nivel <span class="math inline">\(g(x,y,z)=0\)</span>, por el <a href="#/section-9" class="quarto-xref">Teorema&nbsp;7</a>, si <span class="math inline">\(\nabla g(a,b,c)\neq 0\)</span> entonces también es ortogonal a <span class="math inline">\(\mathbf{f}'(0)\)</span>, por lo que <span class="math inline">\(\nabla f(a,b,c)\)</span> y <span class="math inline">\(\nabla g(a,b,c)\)</span> deben ser paralelos, es decir,</p>
 <p><span class="math display">\[
 \nabla f(a,b,c)
 = k\nabla g(a,b,c)
@@ -1966,18 +1960,7 @@ f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\c
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -2009,7 +1992,47 @@ f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\c
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -2046,7 +2069,11 @@ f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\c
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

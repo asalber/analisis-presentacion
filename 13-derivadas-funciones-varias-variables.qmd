@@ -616,7 +616,7 @@ $$
 ---
 
 :::{#exm-regla-cadena}
-Si se toma el campo escalar del plano real $f(x,y)=x^2y$ y la función vectorial $g(t)=(\cos t,\operatorname{sen} t)$ $t\in [0,2\pi]$ del mismo plano, entonces
+Si se toma el campo escalar del plano real $f(x,y)=x^2y$ y la función vectorial $g(t)=(\cos(t),\operatorname{sen}(t))$ $t\in [0,2\pi]$ del mismo plano, entonces
 
 $$
 \nabla f(x,y) = (2xy, x^2),
@@ -689,10 +689,10 @@ a.  $F(a_1,\ldots,a_n,b)=0$
 a.  Todas las derivadas parciales de $F$ son continuas en el entorno de $(a_1,\ldots,a_n,b)$.
 a.  $\frac{\partial F}{\partial y}\neq 0$.
 
-Entonces la ecuación $F(a_1,\ldots,a_n,b)=0$ define a $y$ como una función de $x$ en el entorno de $(a_1,\ldots,a_n,b)$.
+Entonces la ecuación $F(a_1,\ldots,a_n,b)=0$ define a $y$ como una función de $x_1, \ldots, x_n$ en el entorno de $(a_1,\ldots,a_n,b)$.
 ::: 
 
-Cuando una ecuación define de manera implícita una de sus variables como función de las otras, no siempre es posible obtener la forma explícita de esa función, por lo que necesitamos saber cómo calcular la derivada de estas funciones en forma implícita.
+##
 
 :::{#thm-derivada-implicita-funcion-varias-variables}
 Si $F(x_1,\ldots,x_n,y)=0$ define a $y$ implícitamente como función derivable de $x_1,\ldots,x_n$, entonces 
@@ -702,23 +702,7 @@ $$
 $$
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Si la ecuación $F(x_1,\ldots,x_n,y)=0$ define a $y$ como una función de $x_1, \ldots, x_n$, es decir, $y=f(x_1,\ldots,x_n)$, entonces, tomando $z=F(x_1,\ldots,x_n,f(x_1,\ldots,x_n))$ y aplicando la regla de la cadena se tiene
-
-\begin{align*}
-\frac{\partial z}{\partial x_i} 
-&= F'_{x_1}(x_1,\ldots,x_n,y)\frac{\partial x_1}{\partial x_i} + \cdots + F'_{x_n}(x_1,\ldots,x_n,y)\frac{\partial x_n}{\partial x_i} + F'_{y}(x_1,\ldots,x_n,y)\frac{\partial y}{\partial x_i} \\
-&= F'_{x_i}(x_1,\ldots,x_n,y) + F'_{y}(x_1,\ldots,x_n,y)\frac{\partial y}{\partial x_i} = 0
-\end{align*}
-de donde se deduce
-
-$$
-\frac{\partial y}{\partial x_i} = -\frac{F'_{x_i}(x_1,\ldots,x_n,y)}{F'_{y}(x_1,\ldots,x_n,y)}.
-$$
-:::
-:::
+---
 
 :::{#exm-derivada-implicita}
 La ecuación $x^2+y^2=1$ define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como
@@ -732,6 +716,9 @@ Si se piensa en $y$ como función implícita de $x$, es decir, $y=f(x)$, se tien
 $$
 y'=-\frac{F'_x(x,y)}{F'_y(x,y)} = -\frac{2x}{2y}=-\frac{x}{y}.
 $$
+:::
+
+---
 
 Podría llegarse al mismo resultado, despejando $y$ de la ecuación de la circunferencia,
 
@@ -746,7 +733,7 @@ y' = \frac{1}{2\sqrt{1-x^2}}(-2x) = \frac{-x}{\sqrt{1-x^2}},
 $$
 
 que coincide con el resultado de la derivación implícita, teniendo en cuenta que $y=\sqrt{1-x^2}$.
-:::
+
 
 ## Derivada direccional
 
@@ -754,7 +741,7 @@ Hemos visto que para una función de dos variables $f(x,y)$, $f'_x(a,b)$ es la t
 
 Pero, _¿qué pasa si nos movemos en cualquier otra dirección?_
 
-La tasa de variación instantánea de $f$ en un punto $(a,b)$ en la dirección de un vector unitario cualquiera $u$ se conoce como _derivada direccional_.
+##
 
 :::{#def-derivada-direccional}
 ## Derivada direccional
@@ -767,9 +754,7 @@ $$
 cuando existe, se llama _derivada direccional_ de $f$ en el punto $P$ en la dirección de $\mathbf{u}$.
 :::
 
-Obsérvese que las derivadas parciales son las derivadas direccionales en las direcciones de los vectores coordenados.
-
-El siguiente teorema nos permitirá calcular derivadas direccionales de manera más sencilla, sin necesidad de calcular el límite anterior.
+##
 
 :::{#thm-derivada-direccional}
 Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es una función de $n$ variables cuyas derivadas parciales existen en un punto $P$ y $\mathbf{u}$ es un vector unitario en $\mathbb{R}^n$, entonces 
