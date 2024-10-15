@@ -521,7 +521,7 @@ $$
 con $\varepsilon_1$ y $\varepsilon_2 \to 0$ cuanto $(x,y)\to (a,b)$.
 :::
 
-Si una función de dos variables es diferenciable en un punto $(a,b)$, podemos usar el diferencial total $dz$ como una aproximación de la variación $\Delta z$ que experimenta la función en cualquier punto $(x,y)$ en un entorno de $(a,b)$, ya que $\varepsilon_1 \Delta x + \varepsilon_2 \Delta \to 0$ cuando $(x,y)\to (a,b)$, es decir, 
+Si una función de dos variables es diferenciable en un punto $(a,b)$, podemos usar el diferencial total $dz$ como una aproximación de la variación $\Delta z$ que experimenta la función en cualquier punto $(x,y)$ en un entorno de $(a,b)$, ya que $\varepsilon_1 \Delta x + \varepsilon_2 \Delta y \to 0$ cuando $(x,y)\to (a,b)$, es decir, 
 
 $$
 \Delta z \approx dz = \nabla f(a, b) (\Delta x, \Delta y)
@@ -672,7 +672,21 @@ Y para deducir derivada del producto, tomando $f(x,y)=xy$, se tiene
 
 ## Derivación implícita
 
-Hasta ahora hemos estado trabajando con funciones de varias variables explícitas, es decir, de la forma $y=f(x_1,\ldots,x_n)$, pero también es posible definir una función de varias variables de manera implícita mediante una ecuación de la forma $F(x_1,\ldots,x_n, y)=0$, donde $y=f(x_1,\ldots,x_n)$.
+Hasta ahora hemos estado trabajando con funciones de varias variables explícitas, es decir, de la forma 
+
+$$
+y=f(x_1,\ldots,x_n),
+$$
+
+pero también es posible definir una función de varias variables de manera implícita mediante una ecuación de la forma 
+
+$$
+F(x_1,\ldots,x_n, y) = 0,
+$$
+
+donde $y=f(x_1,\ldots,x_n)$.
+
+---
 
 :::{#exm-funcion-implicita-2-variables}
 La ecuación $x^2+y^2+z^2 = 1$ define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita $z=f(x,y)$ ya que si despejamos $z$ se tiene
@@ -689,7 +703,7 @@ a.  $F(a_1,\ldots,a_n,b)=0$
 a.  Todas las derivadas parciales de $F$ son continuas en el entorno de $(a_1,\ldots,a_n,b)$.
 a.  $\frac{\partial F}{\partial y}\neq 0$.
 
-Entonces la ecuación $F(a_1,\ldots,a_n,b)=0$ define a $y$ como una función de $x_1, \ldots, x_n$ en el entorno de $(a_1,\ldots,a_n,b)$.
+Entonces la ecuación $F(x_1,\ldots,x_n,y)=0$ define a $y$ como una función de $x_1, \ldots, x_n$ en el entorno de $(a_1,\ldots,a_n,b)$.
 ::: 
 
 ##
@@ -754,6 +768,8 @@ $$
 cuando existe, se llama _derivada direccional_ de $f$ en el punto $P$ en la dirección de $\mathbf{u}$.
 :::
 
+[![Ejemplo interactivo con Geogebra](img/logos/logo-geogebra.png)](https://www.geogebra.org/m/xyu2226b)
+
 ##
 
 :::{#thm-derivada-direccional}
@@ -764,28 +780,7 @@ f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u}.
 $$
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Si se considera un vector unitario $\mathbf{u}$, la función vectorial cuya trayectoria pasa por $P$, dirigida por $\mathbf{u}$, tiene ecuación
-
-$$
-g(t)=P+t\mathbf{u},\ t\in\mathbb{R},
-$$ 
-
-que para $t=0$, pasa por $P=g(0)$ con velocidad $\mathbf{u}=g'(0)$.
-
-Así, la tasa de variación de $f$ en el punto $P$ en la dirección de $\mathbf{u}$ es
-
-$$
-(f\circ g)'(0) = \nabla f(g(0))\cdot g'(0) = \nabla f(P)\cdot \mathbf{u}.
-$$
-:::
-:::
-
-En el caso de una función de dos variables $f(x,y)$, la derivada direccional $f_{\mathbf{u}}(a,b)$ da la tasa de variación de $f$ en el punto $(a,b)$ cuando empezamos a cambiar $x$ e $y$ en la dirección del vector $\mathbf{u}$.
-
-[![Ejemplo interactivo con Geogebra](img/logos/logo-geogebra.png)](https://www.geogebra.org/m/xyu2226b)
+---
 
 :::{#exm-derivada-direccional}
 Dada la función $f(x,y) = x^2+y^2$, su vector gradiente es
@@ -807,44 +802,13 @@ $$
 \mathbf{v'}=\frac{\mathbf{v}}{|\mathbf{v}|}.
 $$
 
+##
+
 :::{#thm-gradiente-direccion-maximo-crecimiento}
 Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es una función de $n$ variables cuyas derivadas parciales existen en un punto $P$ entonces la dirección de máximo crecimiento de $f$ es la del vector gradiente $\nabla f(P)$.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Como se ha visto, para un vector unitario $\mathbf{u}$
-
-$$
-f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = |\nabla f(P)|\cos(\theta),
-$$
-
-donde $\theta$ es el ángulo que forma $\mathbf{u}$ con el vector gradiente $\nabla f(P)$.
-
-Teniendo en cuenta que $-1\leq \cos(\theta)\leq 1$, para cualquier vector $\mathbf{u}$ se cumple
-
-$$
--|\nabla f(P)|\leq f'_{\mathbf{u}}(P)\leq |\nabla f(P)|.
-$$
-
-Además, si $\mathbf{u}$ tiene la misma dirección y sentido que el gradiente, se tiene
-
-$$
-f'_{\mathbf{u}}(P)=|\nabla f(P)| \cos(0)= |\nabla f(P)|.
-$$
-
-Por tanto, el crecimiento máximo de un campo escalar se produce en la dirección y sentido del gradiente.
-
-Del mismo modo, si $\mathbf{u}$ tiene la misma dirección y sentido opuesto al gradiente, se tiene
-
-$$
-f'_{\mathbf{u}}(P)=|\nabla f(P)| \cos(\pi)=-|\nabla f(P)|.
-$$
-
-Por tanto, el decrecimiento máximo de un campo escalar se produce en la dirección y sentido opuesto al gradiente.
-:::
-:::
+##
 
 :::{#thm-gradiente-normal-curvas-nivel}
 Sea $C$ el conjunto de nivel de una función de varias variables $f$ que incluye a un punto $P$. Si $\mathbf{v}$ es un vector tangente a una trayectoria que circule por $C$ en $P$, entonces
@@ -856,34 +820,14 @@ $$
 Es decir, el vector gradiente de $f$ en $P$ es normal a $C$ en $P$, siempre que no sea nulo.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Si se considera una trayectoria $g(t)$ a lo largo del conjunto de nivel $C$ que pase por $P=g(t_0)$, de modo que $\mathbf{v}=g'(t_0)$, entonces
-
-$$
-(f\circ g)(t) = f(g(t)) = C,
-$$
-
-que es constante para cualquier $t$, y al aplicar la regla de la cadena se tiene
-
-$$
-(f\circ g)'(t) = \nabla f(g(t))\cdot  g'(t) = 0,
-$$
-
-de modo que, cuanto $t=t_0$, se tiene
-
-$$
-\nabla f(P)\cdot \mathbf{v} = 0.
-$$
-:::
-:::
 
 Según el resultado anterior, la recta normal a una línea $f(x,y)=0$ en un punto $P=(a,b)$, tiene ecuación
 
 $$
 P+t\nabla f(P) = (a, b) + t \nabla f(a,b).
 $$
+
+---
 
 :::{#exm-tangente-normal-funcion-implicita-plano}
 Dado el campo escalar $f(x,y)=x^2+y^2-1$, y el punto $P=(0,1)$, resulta que el conjunto de nivel que pasa por $P$, para el que $f(x,y)=f(P)=0$ es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de $f$, $\nabla f(x,y) = (2x,2y)$, que en el punto $P=(0,1)$ vale $\nabla f(0,1) = (0,2)$, la recta normal a la circunferencia en $P$ es
@@ -919,6 +863,8 @@ $$\frac{\partial ^2 f}{\partial x_j \partial x_i}= \frac{\partial}{\partial x_j}
 
 De forma análoga se definen las derivadas de orden superior.
 
+---
+
 :::{#exm-derivadas-segundo-orden}
 La función de dos variables $$f(x,y)=x^y$$ tiene cuatro derivadas parciales de segundo orden, que son:
 
@@ -941,7 +887,7 @@ yx^{y-1}\log x+x^y\frac{1}{x},\\
 x^y(\log x)^2.\end{aligned}$$
 :::
 
-En el ejemplo anterior se aprecia que las _derivadas cruzadas_ de segundo orden $\frac{\partial^2 f}{\partial y\partial x}$ y $\frac{\partial^2 f}{\partial x\partial y}$ coinciden. El siguiente teorema establece bajo qué condiciones el orden de derivación no importa.
+##
 
 :::{#thm-igualdad-derivadas-cruzadas}
 ## Igualdad de las derivadas cruzadas 
@@ -953,45 +899,7 @@ $$
 $$
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Por la definición de derivada parcial se tiene
-
-\begin{align*}
-\frac{\partial^2 f}{\partial x \partial y} (a,b)
-&= \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right)(a,b) 
-= \lim_{\Delta x\to 0} \frac{f'_y(a+\Delta x,b)-f'_y(a,b)}{\Delta x} \\
-&= \lim_{\Delta x\to 0} \frac{\lim_{\Delta y\to 0}\frac{f(a+\Delta x,b+\Delta y)-f(a+\Delta x,b)}{\Delta y} - \lim_{\Delta y\to 0}\frac{f(a,b+\Delta y)-f(a,b)}{\Delta y}}{\Delta x} \\
-&= \lim_{\Delta x\to 0}\lim_{\Delta y\to 0} \frac{f(a+\Delta x, b+\Delta y)- f(a,b+\Delta y) -f(a+\Delta x, b) + f(a,b)}{\Delta x \Delta y}
-\end{align*}
-
-Si se considera la función $g(t) = f(a+t, b+\Delta y)-f(a+t,b)$ en el intervalo $[0,\Delta x]$, como $f$ es derivable, $g$ es derivable, y por el teorema del valor medio, existe un valor $c\in (0,\Delta x)$ tal que
-
-$$
-\begin{gathered}
-\frac{f(a+\Delta x, b+\Delta y)- f(a,b+\Delta y) -f(a+\Delta x, b) + f(a,b)}{\Delta x} \\
-= g'(c)
-= (f'_x(a+c, b+\Delta y) - f'_x(a+c,b)),
-\end{gathered}
-$$
-
-de manera que, sustituyendo en la expresión anterior, se tiene
-
-\begin{align*}
-\frac{\partial^2 f}{\partial x \partial y} (a,b)
-&= \lim_{\Delta x\to 0}\lim_{\Delta y\to 0} \frac{f'_x(a+c, b+\Delta y) - f'_x(a+c,b)}{\Delta y} \\
-&= \lim_{\Delta x\to 0}\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)(a+c, b) \\
-&= \lim_{\Delta x\to 0}\frac{\partial^2 f}{\partial y\partial x}(a+c, b).
-\end{align*}
-
-Finalmente, como $\Delta x \to 0$, $c\to 0$, y como $\frac{\partial^2 f}{\partial y\partial x}$ es continua, se concluye que 
-
-$$
-\frac{\partial^2 f}{\partial x \partial y} (a,b) = \frac{\partial^2 f}{\partial y \partial x} (a,b).
-$$
-:::
-:::
+Una consecuencia del teorema es que, al calcular una derivada parcial de segundo orden que cumpla lo anterior, *¡el orden en que se realicen las derivadas parciales no importa!*
 
 ## Matriz hessiana
 
@@ -1019,6 +927,8 @@ $$\nabla^2f(a)=\left(
 
 Al determinante de esta matriz se le llama *hessiano* de $f$ en $a$, y se nota $Hf(a)=\lvert \nabla^2f(a)\rvert$.
 :::
+
+---
 
 :::{#exm-matriz-hessiana}
 Consideremos de nuevo la función de dos variables $f(x,y)=x^y$. Su matriz hessiana es
@@ -1065,9 +975,7 @@ $$Hf(1,2)=\left|
 $$
 :::
 
-Una consecuencia del teorema es que, al calcular una derivada parcial de segundo orden que cumpla lo anterior, *¡el orden en que se realicen las derivadas parciales no importa!*
-
-Si el teorema se cumple para todas las derivadas parciales de segundo orden, entonces la matriz hessiana es simétrica.
+Si el teorema de la igualdad de las derivadas cruzadas se cumple para todas las derivadas parciales de segundo orden, entonces la matriz hessiana es simétrica.
 
 ## Extremos
 
@@ -1088,7 +996,7 @@ $$
 A los máximos y mínimos de $f$ se les conoce como _extremos relativos_ de $f$.
 :::
 
-Para determinar los extremos de una función de varias variables utilizaremos sus derivadas, de forma parecida a como lo hicimos para funciones de una variable.
+##
 
 :::{#prp-anulacion-gradiente-extremo}
 Si $f:\mathbb{R}^n\to \mathbb{R}$ es una función de $n$ variables, con derivadas parciales, que tiene un extremo relativo en el punto $P$, entonces 
@@ -1098,32 +1006,9 @@ $$
 $$
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Tomando la trayectoria que pasa por $P$ con la dirección y sentido del gradiente, 
-
-$$
-g(t)=P+t\nabla f(P),
-$$ 
-
-la función $h=(f\circ g)(t)$ nunca decrece ya que
-
-$$
-h'(t)
-= (f\circ g)'(t) 
-= \nabla f(g(t))\cdot g'(t) 
-= \nabla f(P)\cdot \nabla f(P) = 
-|\nabla f(P)|^2\geq 0.
-$$
-
-y sólo se anula si $\nabla f(P)= \mathbf{0}$.
-
-Así pues, si $\nabla f(P)\neq \mathbf{0}$, entonces $P$ no puede ser un máximo ya que siguiendo la trayectoria de $g$ desde $P$ se encontrarían puntos en los que la imagen de $f$ es mayor que en $P$. Del mismo modo, siguiendo la trayectoria opuesta a $g$ se encontrarían puntos en los que la imagen de $f$ es menor que la imagen en $P$, por lo que tampoco puede ser un mínimo.
-:::
-:::
-
 A los puntos donde se anula el vector gradiente, se les denomina _puntos críticos_.
+
+---
 
 :::{#exm-extremos-relativos}
 Para el campo escalar $f(x,y)=x^2+y^2$, resulta evidente que sólo tiene un mínimo en el origen $(0,0)$ ya que
@@ -1135,7 +1020,7 @@ $$
 En este punto se cumple, $\nabla f(0,0) = (0,0)$.
 :::
 
-### Puntos de silla
+## Puntos de silla
 
 No todos los puntos críticos son extremos. Si se considera, por ejemplo, el campo escalar $f(x,y)=y^2-x^2$, su gradiente es
 
@@ -1143,13 +1028,11 @@ $$\nabla f(x,y) = (2y,-2x),$$
 
 que sólo se anula en el punto $(0,0)$. Sin embargo, este punto no es un mínimo relativo ya que los puntos $(x,0)$ del eje $X$ tienen imágenes $f(x,0) = -x^2 \leq 0 = f(0,0)$, y tampoco es un máximo relativo ya que los puntos $(0,y)$ del eje $Y$ tienen imágenes $f(0,y)= y^2 \geq 0 = f(0,0)$. Este tipo de puntos que anulan el gradiente pero que no son extremos, se conocen como _puntos de silla_.
 
-:::{.content-visible when-format="html"}
-![Punto de silla de la función $f(x,y)=y^2-x^2$.](img/derivadas-funciones-varias-variables/punto-silla.svg)
-:::
+---
 
-:::{.content-visible unless-format="html"}
-![Punto de silla de la función $f(x,y)=y^2-x^2$.](img/derivadas-funciones-varias-variables/punto-silla.pdf)
-:::
+![Punto de silla de la función $f(x,y)=y^2-x^2$.](img/derivadas-funciones-varias-variables/punto-silla.png)
+
+##
 
 De la fórmula de Taylor de segundo grado para un campo escalar $f$ en un punto $P$ se deduce que
 
@@ -1172,6 +1055,8 @@ Se pueden dar cuatro posibilidades:
 - Indefinido: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}>0$ para algún $\mathbf{v}\neq 0$ y $\nabla^2f(P)\mathbf{u}\cdot\mathbf{u}<0$ para algún $\mathbf{u}\neq 0$.
 - Semidefinido: Cualquier otro caso distinto de los anteriores.
 
+---
+
 Así pues, dependiendo el signo de $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}$, se tiene
 
 :::{#thm-extremos-funcion-varias-variables} 
@@ -1184,6 +1069,8 @@ Dado un punto crítico $P$ de una función de $n$ variables $f$ que tiene matriz
 En el caso de que $\nabla^2f(P)$ sea semidefinido, no se puede obtener ninguna conclusión y hay que recurrir a derivadas parciales de orden superior.
 :::
 
+---
+
 En el caso particular de una función de dos variables se tiene
 
 :::{#thm-extremos-funcion-dos-variables}
@@ -1194,45 +1081,7 @@ Dado un punto crítico $(a, b)$ de una función de dos variables $f(x,y)$ que ti
 - Si $|\nabla^2 f(P)|<0$ entonces $f$ tiene un _punto de silla_ en $(a,b)$.
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Tomando un vector unitario cualquiera $\mathbf{u}=(u_x,u_y)$, la derivada direccional de $f$ en $(a,b)$ es 
-
-$$
-f'_u(a,b) 
-= \nabla f(a,b)\mathbf{u}
-= f'_x(a,b)u_x + f'_y(a,b) u_y.
-$$
-
-Y la derivada direccional de segundo orden es
-
-\begin{align*}
-f''_{uu}(a,b) 
-&= f'_u(f'_u)(a,b)
-= \nabla (f'_u)(a,b)\mathbf{u} 
-= (f'_u)'_x(a,b)u_x + (f'_u)'_y(a,b) u_y \\
-&= (f'_x u_x + f'_y u_y)'_x(a,b)u_x + (f'_x u_x + f'_y u_y.)'_y(a,b) u_y \\
-&= f''_{xx}(a,b)u_x^2 + f''_{yx}(a,b)u_yu_x + f''_{xy}(a,b)u_xu_y + f''_{yy}(a,b)u_y^2 \\
-&= f''_{xx}(a,b)u_x^2 + 2f''_{xy}(a,b)u_xu_y + f''_{yy}(a,b)u_y^2 \tag{1}
-\end{align*}
-(1) Aplicando el teorema de la igualdad de las derivadas cruzadas.
-
-Completando el cuadrado de esta última expresión se tiene que 
-
-\begin{align*}
-f''_{uu}(a,b) 
-&= f''_{xx}(a,b)\left(u_x+\frac{f''_{xy}(a,b)}{f''_{xx}(a,b)}u_y\right)^2+\frac{u_y^2}{f''_{xx}(a,b)}(f''_{xx}(a,b)f''_{yy}(a,b)-f''_{xy}(a,b)^2) \\
-&= f''_{xx}(a,b)\left(u_x+\frac{f''_{xy}(a,b)}{f''_{xx}(a,b)}u_y\right)^2+\frac{u_y^2}{f''_{xx}(a,b)}|\nabla^2 f(a,b)|
-\end{align*}
-
-Si $|\nabla ^2f(a,b)|>0$ y $f''_{xx}(a,b)>0$, como $\nabla ^2f(x,y)$ y $f''_{xx}(x,y)$ son continuas en un entorno de $(a,b)$, se tiene que $|\nabla ^2f(x,y)>0$ y $f''_{xx}(x,y)>0$ para $(x,y)$ en un entorno de $(a,b)$. Por tanto, observando la expresión anterior, podemos concluir que $f''_{uu}(x,y)>0$ en un entorno de $(a,b)$, es decir, la curva que interseca la superficie de $f$ con el plano que pasa por $(a,b,f(a,b))$ en la dirección de $\mathbf{u}$ es cóncava hacia arriba. Como esto esto es cierto para cualquier dirección $\mathbf{u}$, la gráfica de $f$ queda por encima del plano tangente en $(a,b,f(a,b))$ en un entorno de $(a,b)$, y por tanto, $f$ tienen un mínimo local en $(a,b)$.
-
-Del mismo modo, $|\nabla ^2f(a,b)|>0$ y $f''_{xx}(a,b)<0$, podemos concluir que $f''_{uu}(x,y)<0$ en un entorno de $(a,b)$, es decir, la curva que interseca la superficie de $f$ con el plano que pasa por $(a,b,f(a,b))$ en la dirección de $\mathbf{u}$ es cóncava hacia abajo. Como esto esto es cierto para cualquier dirección $\mathbf{u}$, la gráfica de $f$ queda por debajo del plano tangente en $(a,b,f(a,b))$ en un entorno de $(a,b)$, y por tanto, $f$ tienen un máximo local en $(a,b)$.
-
-Finalmente, si $|\nabla ^2f(a,b)<0$ los dos sumandos de la expresión de la derivada direccional de segundo orden anterior tienen signo distinto, y el signo de la derivada direccional dependerá de la dirección del vector $\mathbf{u}$, por lo que puede haber direcciones donde $f''_{uu}(x,y)>0$ y la curva que interseca la superficie de $f$ con el plano que pasa por $(a,b,f(a,b))$ en la dirección de $\mathbf{u}$ sea cóncava hacia arriba, y direcciones donde $f''_{uu}(x,y)<0$ y la curva que interseca la superficie de $f$ con el plano que pasa por $(a,b,f(a,b))$ en la dirección de $\mathbf{u}$ sea cóncava hacia abajo, de manera que $f$ tiene un punto de silla en $(a,b)$.
-:::
-:::
+---
 
 :::{#exm-extremos-relativos-2}
 Dado el campo escalar $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$, se tiene que su gradiente vale
@@ -1259,6 +1108,9 @@ y el hessiano vale
 $$
 |\nabla^2 f(x,y)| = -4xy.
 $$
+:::
+
+---
 
 Así pues, se tiene
 
@@ -1267,18 +1119,16 @@ Así pues, se tiene
 - Punto $(-1,1)$: $|\nabla^2 f(-1,1)|=4>0$ y $\frac{\partial^2}{\partial x^2}(-1,1)=-2<0 \Rightarrow$ Máximo relativo.
 - Punto $(-1,-1)$: $|\nabla^2 f(-1,-1)|=-4<0 \Rightarrow$ Punto de silla.
 
-:::{.content-visible when-format="html"}
-![Punto de silla de la función $f(x,y)=y^2-x^2$.](img/derivadas-funciones-varias-variables/extremos.svg)
-:::
 
-:::{.content-visible unless-format="html"}
-![Punto de silla de la función $f(x,y)=y^2-x^2$.](img/derivadas-funciones-varias-variables/extremos.pdf)
-:::
-:::
+---
+
+![Punto de silla de la función $f(x,y)=y^2-x^2$.](img/derivadas-funciones-varias-variables/extremos.png)
 
 ## Extremos condicionados
 
-En ocasiones es interesante calcular los extremos relativos de una función de varias variables no en todo su dominio, sino en los puntos que cumple una o varias ecuaciones, como por ejemplo, calcular los extremos de la función $f(x,y)$ para los puntos que cumplen la ecuación $g(x,y)=0$. Cuando es posible despejar una de las variables de la ecuación y expresarla como una función explícita de la otra, se puede sustituir esa variable en $f$ y obtener una función de una variable, de manera que se pueden obtener sus extremos como se vio en el capítulo de derivadas de funciones de una variable.
+En ocasiones es interesante calcular los extremos relativos de una función de varias variables no en todo su dominio, sino en los puntos que cumple una o varias ecuaciones, como por ejemplo, calcular los extremos de la función $f(x,y)$ para los puntos que cumplen la ecuación $g(x,y)=0$. 
+
+---
 
 :::{#exm-extremos-condicionados}
 Si consideramos la misma función del ejemplo anterior $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$, para calcular sus extremos relativos sujetos a la restricción $y+2x=0$, podemos sustituir $y=-2x$ en la fórmula de la función y se obtiene 
@@ -1293,25 +1143,24 @@ $$
 que es, en realidad, una función de una variable $f(x)=3x^3-3x$. Si calculamos su derivada y la igualamos a 0, se obtienen los puntos críticos $f'(x) = 9x^2-3 = 0 \Leftrightarrow x=\pm\sqrt{1/3}$. Como la segunda derivada es $f''(x) = 18x$, se tiene que $f''(-\sqrt{1/3})<0$ por lo que la función tiene un máximo local en $-\sqrt{1/3}$, y $f''(\sqrt{1/3})>0$ por lo que la función tiene un mínimo local en $\sqrt{1/3}$.
 :::
 
-Ahora bien, cuando no es posible despejar una de las variables de la restricción $g(x,y)=0$, la cosa se complica. Afortunadamente, existe otro procedimiento para calcular los extremos de una función de varias variables sujeto a una o varias restricciones. A continuación explicamos el fundamento de este método para funciones de dos variables, aunque puede generalizarse para funciones de más de dos variables.
-
 ## Multiplicadores de Lagrange
 
 Dada una función de dos variables $f(x,y)$, si se quieren obtener los extremos de esta función sujetos a la restricción $g(x,y)=0$, en realidad, se trata de encontrar los extremos relativos de $f$ entre los puntos $(x,y)$ que están en la curva de nivel $g(x,y)=0$. Si dibujamos en el plano la curva de nivel de la ecuación junto a las curvas de nivel de $f$, el problema se reduce a encontrar el menor y el mayor valor de $k$ para el que la curva de nivel $f(x,y)=k$ se corta con la curva de nivel $g(x,y)=0$. 
 
-:::{exm-curvas-nivel-restricciones}
+---
+
+:::{#exm-curvas-nivel-restricciones}
 La siguiente gráfica muestra las curvas de nivel de la función del ejemplo anterior $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$ junto a la curva de nivel de la restricción $g(x,y)=y+2x=0$.
 
-:::{.content-visible when-format="html"}
 ![Curvas de nivel con restricción.](img/derivadas-funciones-varias-variables/multiplicadores-lagrange.png)
+
 :::
 
-:::{.content-visible unless-format="html"}
-![Curvas de nivel con restricción.](img/derivadas-funciones-varias-variables/multiplicadores-lagrange.pdf)
-:::
+---
 
-Como se aprecia en la gráfica el mayor de la curva de nivel de $f$ que se corta con la recta $y+2x=0$ es aproximadamente $1.15$ y ocurre en el punto $(-\sqrt{1/3}, 2\sqrt{1/3})$, y el menor valor de la curva de nivel de $f$ que se corta con la recta es aproximadamente $-1.5$ y ocurre en el punto $(\sqrt{1/3}, -2\sqrt{1/3})$.
-:::
+Como se aprecia en la gráfica el mayor valor de la curva de nivel de $f$ que se corta con la recta $y+2x=0$ es aproximadamente $1.15$ y ocurre en el punto $(-\sqrt{1/3}, 2\sqrt{1/3})$, y el menor valor de la curva de nivel de $f$ que se corta con la recta es aproximadamente $-1.5$ y ocurre en el punto $(\sqrt{1/3}, -2\sqrt{1/3})$.
+
+##
 
 En el ejemplo anterior se observa que los valores extremos se obtienen donde las curvas de nivel de la función y de la restricción son tangentes, y por tanto, sus vectores gradientes en los puntos de tangencia tendrán la misma dirección, es decir, si $(a,b)$ es un punto donde las curvas de nivel son tangentes, se tiene que
 
@@ -1321,46 +1170,19 @@ $$
 
 Al número $k$ de esta ecuación se le llama _multiplicador de Lagrange_, y este resultado da lugar al siguiente procedimiento para obtener los extremos de una función de varias variables con restricciones.
 
+## 
+
 :::{#thm-multiplicadores-lagrange}
 ## Multiplicadores de Lagrange
 Dada una función de $n$ variables $f(x_1,\ldots,x_n)$, los extremos relativos de $f$ sujetos a la restricción $g(x_1,\ldots,x_n)=0$, si $\nabla g(x_1\ldots,x_n)\neq 0$, son los puntos que cumplen las ecuaciones
 
 \begin{align*}
-\nabla F(x_1,\ldots,x_n) = k\nabla g(x_1,\ldots,x_n) \\
-g(x_1,\ldots, x_n) = 0 
+\nabla f(x_1,\ldots,x_n) &= k\nabla g(x_1,\ldots,x_n) \\
+g(x_1,\ldots, x_n) &= 0 
 \end{align*}
 :::
 
-:::{.callout-note collapse="true"}
-## Demostración
-:::{.proof}
-Daremos la prueba para 3 variables. Supongamos que $f(x,y,z)$ tiene un máximo relativo en el punto $(a,b,c)$ de la superficie definida por $g(x,y,z)=0$. Si consideramos una trayectoria con ecuación $\mathbf{f}(t)=(x(t),y(t),z(t))$ que esté sobre la superficie que define $g$ y tal que $\mathbf(f)(0)=(a,b,c)$, la función $h(t)=f(\mathbf{f}(t))$ tendrá un extremo relativo en $h(0)=f(\mathbf{f}(0))=f(a,b,c)$, y por tanto $h'(0)=0$. Pero, por otro lado, aplicando la regla de la cadena a la composición de $f$ y $\mathbf{f}$ se tiene
-
-$$
-h'(t) 
-= f(\mathbf{f}(t))' 
-= \nabla f(\mathbf{f}(t))\mathbf{f}'(t),
-$$
-
-y en $t=0$ se cumple que 
-
-$$
-h'(0) 
-= f(\mathbf{f}(0))' 
-= \nabla f(a,b,c)\mathbf{f}'(0) 
-=0,
-$$
-
-de donde se deduce que $\nabla f(a,b,c)$ es ortogonal a vector tangente a la trayectoria de $\mathbf{f}$ en $t=0$. Pero como la trayectoria de $\mathbf{f}$ está inscrita en la superficie de nivel de nivel $g(x,y,z)=0$, por el @thm-gradiente-normal-curvas-nivel, si $\nabla g(a,b,c)\neq 0$ entonces también es ortogonal a $\mathbf{f}'(0)$, por lo que $\nabla f(a,b,c)$ y $\nabla g(a,b,c)$ deben ser paralelos, es decir, 
-
-$$
-\nabla f(a,b,c)
-= k\nabla g(a,b,c)
-$$
-
-Para dimensiones mayores la demostración es similar.
-:::
-:::
+---
 
 :::{#exm-multiplicadores-lagrange}
 Veamos cuáles son los extremos relativos de la función $f(x,y)=2x^2+y^2$ sobre los puntos de la circunferencia $x^2+y^2=1$.
@@ -1382,7 +1204,7 @@ x^2+y^2-1=0
 \end{cases}
 $$
 
-Resolviendo el sistema se obtienen cuatro soluciones en lso puntos $(0,1)$, $(0,-1)$, $(1,0)$ y $(-1,0)$, y si evaluamos $f$ en cada uno de estos puntos se tiene
+Resolviendo el sistema se obtienen cuatro soluciones en los puntos $(0,1)$, $(0,-1)$, $(1,0)$ y $(-1,0)$, y si evaluamos $f$ en cada uno de estos puntos se tiene
 
 $$
 f(0,1) = 1 \quad f(0,-1) = 1 \quad f(1,0)=2 \quad f(-1,0)=2,
@@ -1397,7 +1219,7 @@ por lo que se concluye que $f$ tiene máximos relativos en $(1,0)$ y $(-1,0)$, d
 
 Ya se vio cómo aproximar funciones de una variable mediante polinomios de Taylor. Esto también se puede generalizar a la aproximación de funciones de varias variables mediante polinomios de varias variables.
 
-### Aproximación lineal de una función de varias variables
+## Aproximación lineal de una función de varias variables
 
 Si $P$ es un punto del dominio de una función de $n$ variables $f$ y $\mathbf{v}$ un vector en $\mathbb{R}^n$, la _fórmula de Taylor_ de primer grado de $f$ alrededor del
 punto $P$ es
@@ -1420,6 +1242,8 @@ $$
 \lim_{|\mathbf{v}|\rightarrow 0} \frac{R^1_{f,P}(\mathbf{v})}{|\mathbf{v}|} = 0
 $$
 
+---
+
 Para una función de dos variables $f(x,y)$ y $P=(a, b)$, teniendo en cuenta que para un punto cualquiera $Q=(x,y)$, el vector $\mathbf{v}=\vec{PQ}=(x-a, y-b)$, el polinomio de Taylor de $f$ en el punto $P$, puede expresarse
 
 \begin{align*}
@@ -1428,6 +1252,8 @@ P^1_{f,P}(x,y) &= f(a,b)+\nabla f(a,b)(x-a,y-b) =\\
 \end{align*}
 
 que coincide con el plano tangente a $f$ en $(a,b)$.
+
+---
 
 :::{#exm-aproximacion-lineal-funcion-varias-variables}
 Dado el campo escalar $f(x,y)=\log(xy)$, su gradiente es
@@ -1452,7 +1278,7 @@ f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = 1.01+1.01-2 = 0.02.
 $$
 :::
 
-### Aproximación cuadrática de una función de varias variables
+## Aproximación cuadrática de una función de varias variables
 
 Si $P$ es un punto del dominio de una función de $n$ variables $f$ y $\mathbf{v}$ un vector, la _fórmula de Taylor_ de segundo grado de $f$ alrededor del punto $P$ es
 
@@ -1476,6 +1302,8 @@ $$
 
 lo que indica que el resto es mucho más pequeño que el cuadrado del módulo de $\mathbf{v}$, y por tanto, la aproximación cuadrática es mejor que la lineal.
 
+---
+
 Si $f$ es un campo escalar de dos variables $f(x,y)$ y $P=(a, b)$, el polinomio de Taylor de $f$ en el punto $P$, puede expresarse
 
 $$
@@ -1486,6 +1314,8 @@ P^2_{f,P}(x,y) = f(a,b)+\nabla f(a,b)(x-a,y-b) +\\
 +\frac{1}{2}\left(\frac{\partial^2 f}{\partial x^2}(a,b) (x-a)^2 + 2\frac{\partial^2 f}{\partial y\partial x}(a,b) (x-a)(y-b) + \frac{\partial^2 f}{\partial y^2}(a,b) (y-b)^2\right)
 \end{gathered}
 $$
+
+### {.smaller}
 
 :::{#exm-polinomio-taylor-funcion-varias-variables}
 Dado el campo escalar $f(x,y)=\log(xy)$, su gradiente es
