@@ -444,7 +444,7 @@ Sean $(a_n)_{n=1}^\infty$, $(b_n)_{n=1}^\infty$ y $(c_n)_{n=1}^\infty$ sucesione
 
 a. $\lim_{n\to\infty}(a_n+b_n)=\infty$.
 b. $\lim_{n\to\infty}(a_nb_n)=\infty$.
-c. $\lim_{n\to\infty}(a_n+c_n)=-\infty$.
+c. $\lim_{n\to\infty}(a_nc_n)=-\infty$.
 d. $\lim_{n\to\infty}ka_n=\infty$ $\forall k>0$ y $\lim_{n\to\infty}ka_n=-\infty$ $\forall k<0$.
 e. $\lim_{n\to\infty}\frac{1}{a_n}=0$.
 :::
