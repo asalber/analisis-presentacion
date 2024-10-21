@@ -18,6 +18,8 @@ Presentaciones del [manual de Análisis Matemático de Variable Real](https://ap
 
 1. [Sucesiones de números reales](04-sucesiones.html).
 
+1. [Funciones reales de variable real](05-funciones.html).
+
 1. [Límites de funciones](06-limites.html).
 
 1. [Derivadas](07-derivadas.html).
