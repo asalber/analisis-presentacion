@@ -799,7 +799,7 @@ Sea $f(x)=\frac{(x+8)^{1/3}-2}{x}$. Cuando $x\to 0$, $f(x)\to \frac{0}{0}$. Apli
 \lim_{x\to 0} \frac{(x+8)^{1/3}-2}{x} 
 &= \lim_{y\to 2}\frac{y-2}{y^3-8} 
 = \lim_{y\to 2}\frac{y-2}{(y-2)(y^2+2y+4)} \\
-&= \lim_{y\to 2} \frac{1}{y^2+2y+4} = \frac{2}{12}.
+&= \lim_{y\to 2} \frac{1}{y^2+2y+4} = \frac{1}{12}.
 \end{align*}
 :::
 
@@ -937,11 +937,10 @@ $$\exp\left(\log f(x)^{g(x)}\right) = \exp\left(g(x)\cdot \log f(x)\right).$$
 Sea $f(x)=\left(1+\dfrac{1}{x}\right)^{x} \to 1^\infty$ cuando $x\to 0$.
 
 \begin{align*}
-\lim_{x\to 0}\left(1+\dfrac{1}{x}\right)^{x} &= \lim_{x\to
-0}\exp\left(\log\left(1+\frac{1}{x}\right)^{x}\right)\\ 
-&= \exp\left(\lim_{x\to
-0}x\log\left(1+\frac{1}{x}\right)\right)\\
-&= \exp\left(\lim_{x\to 0}\frac{\log\left(1+\frac{1}{x}\right)}{1/x}\right)
+\lim_{x\to \infty}\left(1+\dfrac{1}{x}\right)^{x} 
+&= \lim_{x\to \infty}\exp\left(\log\left(1+\frac{1}{x}\right)^{x}\right)\\ 
+&= \exp\left(\lim_{x\to \infty}x\log\left(1+\frac{1}{x}\right)\right)\\
+&= \exp\left(\lim_{x\to \infty}\frac{\log\left(1+\frac{1}{x}\right)}{1/x}\right)
 \end{align*}
 
 Aplicando ahora la regla de L´Hôpital tenemos:
