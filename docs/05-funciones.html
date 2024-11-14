@@ -10,7 +10,7 @@
 <link href="05-funciones_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="05-funciones_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="05-funciones_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.0">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Funciones de números reales</title>
@@ -550,6 +550,9 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <p><span class="theorem-title"><strong>Definición 10 (Función creciente y decreciente)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> es <em>creciente</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple <span class="math inline">\(f(x_1)\leq f(x_2)\)</span>.</p>
 <p>Se dice que una función <span class="math inline">\(f\)</span> es <em>decreciente</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple <span class="math inline">\(f(x_1)\geq f(x_2)\)</span>.</p>
 </div>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -577,6 +580,9 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <div id="def-extremos-funcion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 11 (Máximo y mínimo relativo)</strong></span> Se dice que una función <span class="math inline">\(f:\mathbb{R}\rightarrow\mathbb{R}\)</span> tiene un <em>máximo relativo</em> en <span class="math inline">\(a\)</span>, si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que para todo <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> se cumple <span class="math inline">\(f(a)\geq f(x)\)</span>.</p>
 <p>Y se dice que <span class="math inline">\(f\)</span> tiene un <em>mínimo relativo</em> en <span class="math inline">\(a\)</span>, si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que para todo <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> se cumple <span class="math inline">\(f(a)\leq f(x)\)</span>.</p>
+</div>
+<div>
+
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -611,6 +617,9 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </section>
 <section class="slide level3">
 
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -1325,18 +1334,7 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1368,7 +1366,47 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1405,7 +1443,11 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

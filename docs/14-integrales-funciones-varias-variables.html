@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<script src="14-integrales-funciones-varias-variables_files/libs/clipboard/clipboard.min.js"></script>
+<script src="14-integrales-funciones-varias-variables_files/libs/quarto-html/tabby.min.js"></script>
+<script src="14-integrales-funciones-varias-variables_files/libs/quarto-html/popper.min.js"></script>
+<script src="14-integrales-funciones-varias-variables_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="14-integrales-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="14-integrales-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.57">
+
+  <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
+  <title>Integrales de funciones de varias variables</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="14-integrales-funciones-varias-variables_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="14-integrales-funciones-varias-variables_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="14-integrales-funciones-varias-variables_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="center">
+      <img class="title-logo" src="img/logos/sticker.png" width="250" style="float:right">
+        <p class="subtitle">Análisis Matemático</p>
+      <h1 class="title">Integrales de funciones de varias variables</h1>
+      <p class="author">Alfredo Sánchez Alberca &nbsp; <a href="mailto:asalber@ceu.es"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a href="https://twitter.com/aprendeconalf"><i class="fa-brands fa-twitter" aria-label="twitter"></i></a> <a href="https://aprendeconalf.es"><i class="fa-solid fa-home" aria-label="home"></i></a></p>
+        <p class="institute">Universidad CEU San Pablo</p>
+      
+  </section>
+<section id="sumas-de-riemann" class="title-slide slide level2 center">
+<h2>Sumas de Riemann</h2>
+<div id="def-intervalo-n-dimensional-cerrado" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 1 (Intervalo <span class="math inline">\(n\)</span> dimensional)</strong></span> Dados <span class="math inline">\(n\)</span> intervalos cerrados de <span class="math inline">\(\mathbb{R}\)</span> <span class="math inline">\(I_i=[a_i,b_i]\)</span> <span class="math inline">\(i=1\ldots n\)</span>, su producto cartesiano <span class="math inline">\(I = I_1\times \cdots \times I_n\)</span> se conoce como <em>intervalo <span class="math inline">\(n\)</span> dimensional cerrado</em> o <em>hiperrectángulo</em>.</p>
+</div>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>En <span class="math inline">\(\mathbb{R}^2\)</span>, el intervalo <span class="math inline">\([a_x,b_x]\times [a_y,b_y]\)</span> define un <em>rectángulo</em>, mientras que en <span class="math inline">\(\mathbb{R}^3\)</span> el intervalo <span class="math inline">\([a_x,b_x]\times [a_y,b_y]\times [a_z,b_z]\)</span> define una <em>caja</em>.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="section" class="title-slide slide level2 center">
+<h2></h2>
+<div id="def-particion-n-dimensional" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 2 (Partición de un intervalo <span class="math inline">\(n\)</span> dimensional)</strong></span> Dado un intervalo <span class="math inline">\(n\)</span> dimensional cerrado <span class="math inline">\(I=I_1\times\cdots\times I_n\)</span>, con <span class="math inline">\(I_i=[a_i,b_i]\)</span> <span class="math inline">\(i=1,\ldots,n\)</span>, y una partición <span class="math inline">\(P_i=\{x_{i,0}=a_i,x_{i,1}\ldots,x_{i,m_i}\}\)</span> de cada intervalo <span class="math inline">\(I_i\)</span>, el producto cartesiano <span class="math inline">\(P=P_1\times\cdots\times P_n\)</span> se conoce como <em>partición <span class="math inline">\(n\)</span> dimensional</em> de <span class="math inline">\(I\)</span>.</p>
+<p>El conjunto de todas las particiones <span class="math inline">\(n\)</span> dimensionales de <span class="math inline">\(I\)</span> se denota <span class="math inline">\(\mathcal{P}(I)\)</span>.</p>
+</div>
+</section>
+
+<section>
+<section id="section-1" class="title-slide slide level2 center">
+<h2></h2>
+<div id="def-suma-inferior-superior-riemann-n-dimensional" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 3 (Sumas de Riemann)</strong></span> Dada una función <span class="math inline">\(f:I\to \mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\subset \mathbb{R}^n\)</span> y una partición <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(P\)</span> de <span class="math inline">\(I\)</span>, se define la <em>suma inferior de Riemann</em> de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span>, y se denota <span class="math inline">\(s(f,P)\)</span>, como</p>
+<p><span class="math display">\[
+s(f,P) = \sum_{i_1=1}^{m_1}\cdots \sum_{i_n=1}^{m_n} m_{i_1,\ldots,i_n} (x_{1,i_1}-x_{1,i_1-1})\cdots (x_{n,i_n}-x_{n,i_n-1}),
+\]</span></p>
+<p>donde <span class="math inline">\(m_{i_1,\ldots,i_n} = \inf\{f(x_1,\ldots,x_n): x_j\in[x_{j,i_j-1}, x_{j,i_j}]\ \forall j=1,\ldots, n\}\)</span>.</p>
+<p>Del mismo modo, se define la <em>suma superior de Riemann</em> de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span>, y se denota <span class="math inline">\(S(f,P)\)</span>, como</p>
+<p><span class="math display">\[
+S(f,P) = \sum_{i_1=1}^{m_1}\cdots \sum_{i_n=1}^{m_n} M_{i_1,\ldots,i_n} (x_{1,i_1}-x_{1,i_1-1})\cdots (x_{n,i_n}-x_{n,i_n-1}),
+\]</span></p>
+<p>donde <span class="math inline">\(M_{i_1,\ldots,i_n} = \sup\{f(x_1,\ldots,x_n): x_j\in[x_{j,i_j-1}, x_{j,i_j}]\ \forall j=1,\ldots, n\}\)</span>.</p>
+</div>
+</section>
+<section class="slide level3">
+
+<p>Aunque la definición es un poco enrevesada para <span class="math inline">\(\mathbb{R}^n\)</span>, si <span class="math inline">\(f(x,y)\)</span> es una función de dos variables acotada en el intervalo <span class="math inline">\(I=[a,b]\times [c,d]\subset \mathbb{R}^2\)</span>, y <span class="math inline">\(P=P_x\times P_y\)</span> es una partición de <span class="math inline">\(I\)</span> con <span class="math inline">\(P_x=\{x_0=a,x_1,\ldots, x_n=b\}\)</span> y <span class="math inline">\(P_x=\{y_0=c,y_1,\ldots, y_m=d\}\)</span>, las sumas de Riemann inferior y superior de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span> son</p>
+<p><span class="math display">\[\begin{align*}
+s(f,P) &amp;= \sum_{i=1}^n \sum_{j=1}^m m_{ij}(x_i-x_{i-1})(y_j-y_{j-1}), \\
+S(f,P) &amp;= \sum_{i=1}^n \sum_{j=1}^m M_{ij}(x_i-x_{i-1})(y_j-y_{j-1}),
+\end{align*}\]</span></p>
+<p>donde <span class="math inline">\(m_{ij}\)</span> y <span class="math inline">\(M_{ij}\)</span> son el ínfimo y el supremo de <span class="math inline">\(\{f(x,y): (x,y)\in [x_{i-1},x_i]\times [y_{j-1},y_j]\}\)</span>.</p>
+</section>
+<section class="slide level3">
+
+<p>Gráficamente, si <span class="math inline">\(f(x,y)\)</span> es una función positiva en <span class="math inline">\(I\)</span>, la suma inferior se puede interpretar como la suma de los volúmenes de los prismas de base rectangular con lados <span class="math inline">\([x_{i-1},x_i]\)</span> y <span class="math inline">\([y_{j-1},y_j]\)</span> y altura <span class="math inline">\(m_{ij}\)</span>.</p>
+
+<img data-src="img/integrales-funciones-varias-variables/suma-riemann-funcion-varias-variables.svg" class="r-stretch quarto-figure-center"><p class="caption">Suma inferior de Riemann en <span class="math inline">\(\mathbb{R}^2\)</span></p></section>
+<section class="slide level3">
+
+<div id="exm-sumas-riemann" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1</strong></span> Veamos cómo calcular las sumas de Riemann de la función <span class="math inline">\(f(x,y)=x^2y\)</span> en el rectángulo <span class="math inline">\([0,1]\times [0,1]\)</span> para la partición <span class="math inline">\(P=\{0, 0.5, 1\}\times \{0, 0.5, 1\}\)</span></p>
+<p>Esta partición descompone el intervalo bidimensional <span class="math inline">\([0,1]\times [0,1]\)</span> en <span class="math inline">\(4\)</span> rectángulos (en realidad cuadrados) como los que se ven la siguiente figura.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/integrales-funciones-varias-variables/particion-intervalo-bidimensional.svg" width="400"></p>
+<figcaption>Partición del intervalo <span class="math inline">\([0,1]\times [0,1]\)</span> en 4 subintervalos.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="slide level3">
+
+<p>Como <span class="math inline">\(f\)</span> es creciente tanto en <span class="math inline">\(x\)</span> como en <span class="math inline">\(y\)</span> en el intervalo <span class="math inline">\(I\)</span>, alcanzará el mínimo en el extremo inferior izquierdo de cada subintervalo y el máximo en el extremo superior derecho. Por tanto, la suma inferior de Riemann es</p>
+<p><span class="math display">\[\begin{align*}
+s(f,P) &amp;= f(0,0)(0.5-0)(0.5-0) + f(0,0.5)(0.5-0)(1-0.5) \\
+&amp;+ f(0.5,0)(1-0.5)(0.5-0) + f(0.5, 0.5)(1-0.5)(1-0.5) \\
+&amp;= 0\cdot 0.25 + 0 \cdot 0.25 + 0 \cdot 0.25 + 0.125 \cdot 0.25
+= 0.03125.
+\end{align*}\]</span></p>
+<p>Y la suma superior de Riemann es</p>
+<p><span class="math display">\[\begin{align*}
+S(f,P) &amp;= f(0.5,0.5)(0.5-0)(0.5-0) + f(0.5,1)(0.5-0)(1-0.5) \\
+&amp;+ f(1,0.5)(1-0.5)(0.5-0) + f(1, 1)(1-0.5)(1-0.5) \\
+&amp;= 0.125\cdot 0.25 + 0.25 \cdot 0.25 + 0.5 \cdot 0.25 + 1 \cdot 0.25
+= 0.46875.
+\end{align*}\]</span></p>
+</section></section>
+<section id="integral-de-riemann-múltiple" class="title-slide slide level2 center">
+<h2>Integral de Riemann múltiple</h2>
+<div id="def-integral-inferior-superior-riemann-multiple" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4 (Integral inferior y superior de Riemann)</strong></span> Dada una función <span class="math inline">\(f:I\to \mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\subset \mathbb{R}^n\)</span> y una partición <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(P\)</span> de <span class="math inline">\(I\)</span>, se define la <em>integral inferior de Riemann</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, como</p>
+<p><span class="math display">\[
+\underline{\int_I} f = \sup\{s(f,P): P\in\mathcal{P}(I)\}.
+\]</span></p>
+<p>Y se define la <em>integral superior de Riemann</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, como</p>
+<p><span class="math display">\[
+\overline{\int_I} f = \inf\{S(f,P): P\in\mathcal{P}(I)\}.
+\]</span></p>
+</div>
+</section>
+
+<section id="section-2" class="title-slide slide level2 center">
+<h2></h2>
+<div id="def-integral-riemann-n-dimensional" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 5</strong></span> Dada una función <span class="math inline">\(f:I\to \mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\subset \mathbb{R}^n\)</span>, se dice que <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> si</p>
+<p><span class="math display">\[
+\underline{\int_I} f = \overline{\int_I}f,
+\]</span></p>
+<p>y a este valor se le llama <em>integral de Riemann</em> o <em>integral definida</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> y se denota por</p>
+<p><span class="math display">\[
+\int_I f \quad \mbox{o bien} \quad \int_I f(x_1,\ldots,x_n)\,dA,
+\]</span> donde <span class="math inline">\(dA = dx_1\cdots dx_n\)</span>.</p>
+</div>
+</section>
+
+<section>
+<section id="section-3" class="title-slide slide level2 center">
+<h2></h2>
+<div id="prp-integral-riemann-n-dimensional" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 1</strong></span> Si <span class="math inline">\(f:I\to \mathbb{R}\)</span> es integrable Riemann en el intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\subset \mathbb{R}^n\)</span>, entonces</p>
+<p><span class="math display">\[
+\int_I f = \lim_{m\to \infty} \sum_{i_1=1}^m\cdots \sum_{i_n=1}^m f(x_{1,i_1},\ldots, x_{n,i_n})\Delta A,
+\]</span></p>
+<p>donde <span class="math inline">\(P\)</span> es una partición de <span class="math inline">\(I\)</span> en <span class="math inline">\(m^n\)</span> subintervalos de igual tamaño y <span class="math inline">\(\Delta A = (x_{1,i_1}-x_{1,i_1-1})\cdots (x_{n,i_n}-x_{n,i_n-1})\)</span> es el hipervolumen de los subintervalos de la partición.</p>
+</div>
+</section>
+<section class="slide level3">
+
+<p>En el caso de una función de dos variables <span class="math inline">\(f(x,y)\)</span> la proposición anterior establece que si <span class="math inline">\(f\)</span> es integrable Riemann en un intervalo <span class="math inline">\([a,b]\times [c,d]\)</span>, entonces</p>
+<p><span class="math display">\[
+\int_I f = \lim_{n\to \infty}\sum_{i=1}^n\sum_{j=1}^n f(x_i, y_j)\Delta A,
+\]</span></p>
+<p>donde <span class="math inline">\(P_n = \{x_0=a,x_1,\ldots,x_n=b\}\times \{y_0=c,y_1,\ldots,y_n=d\}\)</span> y <span class="math inline">\(\Delta A = (x_i-x_{i-1})(y_j-y_{j-1})\)</span>, es el área de los rectángulos definidos por cada subintervalo de la partición. Es decir, la integral de Riemann aparece al tomar particiones cada vez más refinadas con subintervalos de igual tamaño y hacer la suma de las áreas de los subintervalos multiplicadas por el valor de la función en el extremo superior derecho del subintervalo.</p>
+</section>
+<section class="slide level3">
+
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Cuando se quieren hacer explícitas las variables de las que depende la función <span class="math inline">\(f\)</span>, la integral de Riemann se suele escribir</p>
+<p><span class="math display">\[
+\int_{I} f(x,y) \,dx\,dy
+\]</span></p>
+<p>para funciones de dos variables y</p>
+<p><span class="math display">\[
+\int_{I} f(x,y,z) \,dx\,dy\,dz
+\]</span></p>
+<p>para funciones de tres variables.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section id="propiedades-de-las-integrales-de-riemann-múltiples" class="title-slide slide level2 center">
+<h2>Propiedades de las Integrales de Riemann múltiples</h2>
+<p>Las <a href="http://localhost:1313/09-integrales.html#propiedades-de-la-integral-de-riemann">propiedades de la integral de Riemann</a> para funciones de una variable también se pueden generalizar para integrales de Riemann múltiples.</p>
+<div id="thm-propiedades-integrales-Riemann-multiples" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 1</strong></span> Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en un intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\)</span>, entonces</p>
+<ol type="a">
+<li><p><span class="math inline">\(f+g\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_I (f+g) = \int_I f + \int_I g.\)</span></p></li>
+<li><p>Para cualquier <span class="math inline">\(c\in\mathbb{R}\)</span>, <span class="math inline">\(cf\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y <span class="math inline">\(\int_I cf = c\int_I f\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(f(x_1,\ldots,x_n) \leq g(x_1,\ldots,x_n)\)</span> <span class="math inline">\(\forall (x_1,\ldots,x_n)\in I\)</span>, entonces <span class="math inline">\(\int_I f \leq \int_I g\)</span>.</p></li>
+</ol>
+</div>
+</section>
+
+<section>
+<section id="integrales-múltiples-iteradas" class="title-slide slide level2 center">
+<h2>Integrales múltiples iteradas</h2>
+<p>El procedimiento para reducir el cálculo de una integral múltiple al cálculo de varias integrales simples es, en el fondo, el mismo que se utilizó para calcular derivadas parciales, es decir, realizar integrales simples de las funciones parciales que se obtienen al fijar como constantes todas las variables excepto aquella con respecto a la que se integra.</p>
+</section>
+<section class="slide level3">
+
+<p>Veamos el procedimiento para una función de dos variables. Supongamos que <span class="math inline">\(f(x,y)\)</span> es integrable Riemann en el intervalo <span class="math inline">\(I=[a,b]\times [c,d]\)</span>. Si mantenemos <span class="math inline">\(x\)</span> constante, podemos calcular la integral definida simple con respecto a <span class="math inline">\(y\)</span> en el intervalo <span class="math inline">\([c,d]\)</span>, es decir, <span class="math inline">\(\int_c^d f(x,y)\, dy\)</span>. Para cada valor de <span class="math inline">\(x\)</span>, esta integral tomará un valor distinto, por lo que podemos definir la función</p>
+<p><span class="math display">\[
+A(x) = \int_c^d f(x,y)\,dy,
+\]</span></p>
+<p>que solo depende de <span class="math inline">\(x\)</span>. Si ahora se integra esta función con respecto a <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([a,b]\)</span>, se tiene</p>
+<p><span class="math display">\[
+\int_a^b A(x)\,dx = \int_a^b\int_c^d f(x,y)\,dy\,dx.
+\]</span></p>
+<p>Esta integral se conoce como <em>integral doble iterada</em>, primero con respecto a <span class="math inline">\(y\)</span> y después con respecto a <span class="math inline">\(x\)</span>.</p>
+</section>
+<section class="slide level3">
+
+<p>De manera similar, podríamos haber integrado primero con respecto a <span class="math inline">\(x\)</span> y luego con respecto a <span class="math inline">\(y\)</span>, y tendríamos esta otra integral doble iterada</p>
+<p><span class="math display">\[
+\int_c^d\int_a^b f(x,y)\,dx\,dy.
+\]</span></p>
+</section></section>
+<section>
+<section id="section-4" class="title-slide slide level2 center">
+<h2></h2>
+<div id="thm-teorema-fubini" class="theorem">
+<p><span class="theorem-title"><strong>Teorema 2 (Fubini)</strong></span> Si <span class="math inline">\(f(x,y)\)</span> es una función continua en un intervalo <span class="math inline">\(I=[a,b]\times [c,d]\)</span>, entonces</p>
+<p><span class="math display">\[
+\int_I f(x,y)\, dA
+= \int_a^b\int_c^d f(x,y)\,dy\,dx
+= \int_c^d\int_a^b f(x,y)\,dx\,dy.
+\]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
+<div id="exm-integrales-iteradas" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 2</strong></span> La integral doble de la función <span class="math inline">\(f(x,y)=12-2x-y^2\)</span> en el intervalo <span class="math inline">\(I=[0,1]\times[0,3]\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\int_I f(x,y)\, dA
+&amp;= \int_0^1 \int_0^3 12-2x-y^2 \,dy\,dx
+= \int_0^1 \left[12y-2xy-\frac{y^3}{3}\right]_0^3\,dx \\
+&amp;= \int_0^1 36-6x-\frac{3^3}{3}\, dx
+= \int_0^1 27-6x\,dx \\
+&amp;= [27x-3x^2]_0^1
+= 27-3
+= 24.
+\end{align*}\]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
+<p>Podríamos haber llegado a este mismo resultado haciendo la otra integral iterada</p>
+<p><span class="math display">\[\begin{align*}
+\int_I f(x,y)\, dA
+&amp;= \int_0^3 \int_0^1 12-2x-y^2 \,dx\,dy
+= \int_0^3 \left[12x-x^2-xy^2\right]_0^1\,dy \\
+&amp;= \int_0^3 12-1-y^2\, dy
+= \int_0^3 11-y^2\,dy \\
+&amp;= \left[11y-\frac{y^3}{3}\right]_0^3
+= 33 - \frac{3^3}{3}
+= 24.
+\end{align*}\]</span></p>
+<div class="callout callout-important callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Aunque cuando la función es integrable Riemann el orden de integración de las integrales iteradas no importa, a menudo, una integral iterada suele ser más fácil de calcular que la otra.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level3">
+
+<div id="exm-integrales-iteradas-2" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3</strong></span> Para calcular la integral de la función <span class="math inline">\(f(x,y) = xe^{xy}\)</span> en el intervalo <span class="math inline">\(I=[0,1]\times [0,1]\)</span>, si primero integramos con respecto a <span class="math inline">\(y\)</span> y después con respecto a <span class="math inline">\(x\)</span> se tiene</p>
+<p><span class="math display">\[\begin{align*}
+\int_I f(x,y)\, dA
+&amp;= \int_0^1 \int_0^1 xe^{xy}\,dy\,dx
+= \int_0^1 \left[e^{xy}\right]_0^1 \,dx\\
+&amp;= \int_0^1 e^x-1\,dx
+= [e^x-x]_0^1
+= e - 2.
+\end{align*}\]</span></p>
+<p>Sin embargo, si primero integramos con respecto a <span class="math inline">\(x\)</span> y luego con respecto a <span class="math inline">\(y\)</span> se tiene una integral mucho más difícil de calcular.</p>
+</div>
+<p><a href="https://www.geogebra.org/classic/s5ve2dxb"><img data-src="./img/logos/logo-geogebra.png" alt="Calculadora de integrales dobles iteradas."> Calculadora de sumas de Riemann</a></p>
+</section></section>
+<section>
+<section id="section-5" class="title-slide slide level2 center">
+<h2></h2>
+<p>En el caso de que <span class="math inline">\(f(x,y)\)</span> pueda factorizarse como producto de funciones que sólo dependen de <span class="math inline">\(x\)</span> o de <span class="math inline">\(y\)</span>, entonces el cálculo de la integral doble se simplifica.</p>
+<div id="prp-integral-doble-producto-funciones" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposición 2</strong></span> Si <span class="math inline">\(f(x,y)=g(x)h(y)\)</span> es integrable Riemann en el intervalo <span class="math inline">\(I=[a,b]\times [c,d]\)</span>, entonces</p>
+<p><span class="math display">\[
+\int_I f(x,y)\, dA
+= \int_a^b g(x)\,dx \int_c^d h(y)\,dy.
+\]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
+<div id="exm-integral-doble-producto-funciones" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4</strong></span> La integral doble de la función <span class="math inline">\(f(x,y) = e^{2x-3y}\)</span> en el intervalo <span class="math inline">\(I=[0,1]\times [0,2]\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\int_I e^{2x-3y} \,dx\,dy
+&amp;= \int_I e^{2x}e^{-3y} \,dx\,dy
+= \int_0^1 e^{2x}\,dx\, \int_0^2 e^{-3y}\,dy \\
+&amp;= \left[\frac{e^{2x}}{2}\right]_0^1\, \left[\frac{-e^{-3y}}{3}\right]_0^2
+= \left(\frac{e^2}{2}-\frac{1}{2}\right)\left(\frac{-e^6}{3}+\frac{1}{3}\right)
+\end{align*}\]</span></p>
+</div>
+</section></section>
+<section id="integrales-sobre-regiones-no-regulares" class="title-slide slide level2 center">
+<h2>Integrales sobre regiones no regulares</h2>
+<p>En muchos problemas reales, como por ejemplo en el cálculo de volúmenes, la región de integración no es un integración no es un intervalo <span class="math inline">\(n\)</span> dimensional o hiperrectángulo, sino una región no regular, es decir, con fronteras curvas. En esta sección veremos cómo calcular integrales dobles de funciones de dos variables para algunos tipos de regiones irregulares acotadas del plano <span class="math inline">\(xy\)</span>.</p>
+<p>En general, la integral de Riemann de una función <span class="math inline">\(f\)</span> sobre un intervalo <span class="math inline">\(n\)</span> dimensional puede extenderse a una región irregular acotada <span class="math inline">\(R\)</span> simplemente tomando un intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\)</span> que incluya la región, es decir <span class="math inline">\(R\subseteq I\)</span> y redefiniendo <span class="math inline">\(f\)</span> como</p>
+<p><span class="math display">\[
+F(x_1,\ldots,x_n) =
+\begin{cases}
+f(x_1,\ldots,x_n) &amp; \mbox{si $(x,1,\ldots,x_n)\in R$}\\
+0 &amp; \mbox{si $(x,1,\ldots,x_n)\in I\setminus R$}
+\end{cases}
+\]</span>.</p>
+<p>y calculando la integral de Riemann de <span class="math inline">\(F\)</span> sobre <span class="math inline">\(I\)</span> como se ha visto en la sección anterior, es decir,</p>
+<p><span class="math display">\[
+\int_{R} f(x_1,\ldots,x_n)\,dA
+= \int_{I} F(x_1,\ldots,x_n)\,dA.
+\]</span></p>
+<p>Este procedimiento tiene sentido siempre que <span class="math inline">\(f\)</span> sea continua sobre la frontera de la región <span class="math inline">\(R\)</span>, ya que el valor de <span class="math inline">\(F\)</span> en los puntos que están fuera de la región <span class="math inline">\(R\)</span> es <span class="math inline">\(0\)</span>, y por tanto, no contribuyen la suma de la integral.</p>
+<p>En el caso de funciones de dos variables, existen varios tipos de regiones en el plano <span class="math inline">\(xy\)</span> donde la integral de Riemann se puede calcular mediante integrales iteradas donde los límites de integración dependen de funciones que delimitan la región de integración.</p>
+<p>Si <span class="math inline">\(R\)</span> es una región del plano <span class="math inline">\(xy\)</span> delimitada por las gráficas de dos funciones <span class="math inline">\(g_1(x)\)</span> y <span class="math inline">\(g_2(x)\)</span>, es decir,</p>
+<p><span class="math display">\[
+R = \{(x,y): a\leq x \leq b, g_1(x)\leq y \leq g_2(x)\},
+\]</span></p>
+<p>la integral de Riemann <span class="math inline">\(f\)</span> sobre esta región se puede calcular mediante la integral iterada</p>
+<p><span class="math display">\[
+\int_{R} f(x,y)\,dA
+= \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx.
+\]</span></p>
+<p>Del mismo modo, si <span class="math inline">\(R\)</span> es una región del plano <span class="math inline">\(xy\)</span> delimitada por las gráficas de dos funciones <span class="math inline">\(g_1(y)\)</span> y <span class="math inline">\(g_2(y)\)</span>, es decir,</p>
+<p><span class="math display">\[
+R = \{(x,y): g_1(y)\leq x \leq g_2(y), a\leq y\leq b\},
+\]</span></p>
+<p>la integral de Riemann <span class="math inline">\(f\)</span> sobre esta región se puede calcular mediante la integral iterada</p>
+<p><span class="math display">\[
+\int_{R} f(x,y)\,dA
+= \int_a^b \int_{g_1(y)}^{g_2(y)} f(x,y)\,dx\,dy.
+\]</span></p>
+<div id="exm-integral-region-irregular" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 5</strong></span> Veamos cómo calcular la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región encerrada entre las curvas <span class="math inline">\(y=x\)</span> e <span class="math inline">\(y=x^2\)</span>. La región encerrada entre las curvas se muestra en el siguiente gráfico.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/integrales-funciones-varias-variables/region-irregular.svg" width="200"></p>
+<figcaption>Región comprendida entre las curvas <span class="math inline">\(y=x\)</span> e <span class="math inline">\(y=x^2\)</span>.</figcaption>
+</figure>
+</div>
+<p>Esta región puede expresarse como <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span>, por lo que la integral doble de <span class="math inline">\(f\)</span> sobre esta región puede calcularse mediante la integral iterada</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^1\int_{x^2}^x xy\,dy\,dx
+&amp;= \int_0^1 \left[x\frac{y^2}{2}\right]_{x^2}^x\,dx
+= \int_0^1 x\frac{x^2-x^4}{2}\,dx
+= \int_0^1 \frac{x^3-x^5}{2}\,dx\\
+&amp;= \left[\frac{x^4}{8}-\frac{x^6}{12}\right]_0^1
+= \frac{1}{8}-\frac{1}{12}
+= \frac{1}{24}.
+\end{align*}\]</span></p>
+<p>En este caso, la región también puede expresarse como <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: y\leq x\leq \sqrt{y}, 0\leq y\leq 1\}\)</span>, por lo que la integral doble de <span class="math inline">\(f\)</span> sobre esta región también puede calcularse mediante la integral iterada</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^1\int_y^{\sqrt{y}} xy\,dx\,dy
+&amp;= \int_0^1 \left[\frac{x^2}{2}y\right]_y^{\sqrt{y}}\,dy
+= \int_0^1 \frac{y-y^2}{2}y\,dy
+= \int_0^1 \frac{y^2-y^3}{2}\,dx\\
+&amp;= \left[\frac{y^3}{6}-\frac{y^4}{8}\right]_0^1
+= \frac{1}{6}-\frac{1}{8}
+= \frac{1}{24}.
+\end{align*}\]</span></p>
+</div>
+<p>En este tipo de integrales iteradas, hay que integrar siempre primero con respecto a la variable que está acotada por las funciones que definen la región y después con respecto a la variable que está acotada por valores fijos. Cuando interese realizar la integral iterada en el otro orden, porque resulte más sencilla, previamente hay que cambiar la expresión de la región de integración mediante las funciones inversas, siempre y cuando sea posible.</p>
+<div id="exm-integral-region-irregular-2" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6</strong></span> Para calcular la integral de la función <span class="math inline">\(f(x,y)=e^{-y^2}\)</span> en la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 2x\}\)</span>, como <span class="math inline">\(y\)</span> está acotada por una función de <span class="math inline">\(x\)</span>, habría que hacer la integral iterada</p>
+<p><span class="math display">\[
+\int_0^1\int_0^{2x} e^{-y^2}\,dy\,dx.
+\]</span></p>
+<p>Sin embargo, la función <span class="math inline">\(e^{-y^2}\)</span> no tiene primitiva elemental, por lo que necesariamente hay que realizar la integral iterada en el otro orden, pero para ello previamente hay que expresar la región como <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq \frac{y}{2}, 0\leq y\leq 2\}\)</span>, con lo que la integral doble sobre esta región es</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^2\int_0^{y/2} e^{-y^2}\,dx\,dy
+&amp;= \int_0^2 e^{-y^2}[x]_0^{y/2}\,dy
+= \int_0^2 e^{-y^2}\frac{y}{2}\,dy \\
+&amp;= \left[\frac{-e^{-y^2}}{4}\right]_0^2
+= \frac{-e^{-4}+1}{4}.
+\end{align*}\]</span></p>
+</div>
+</section>
+
+<section id="integrales-dobles-en-coordenadas-polares" class="title-slide slide level2 center">
+<h2>Integrales dobles en coordenadas polares</h2>
+<p>Al que igual que se vio en la <strong>?@sec-integrales-coordenadas-polares</strong>, para integrar determinadas funciones es preferible hacer un cambio a coordenadas polares. Recordemos que para pasar de coordenadas cartesianas <span class="math inline">\((x,y)\)</span> a coordenadas polares <span class="math inline">\((r,\theta)\)</span> se utilizan las fórmulas</p>
+<p><span class="math display">\[
+r = \sqrt{x^2 + y^2} \qquad \theta = \operatorname{arcsin}\left(\frac{y}{\sqrt{x^2+y^2}}\right) = \operatorname{arccos}\left(\frac{x}{\sqrt{x^2+y^2}}\right),
+\]</span></p>
+<p>y para pasar de coordenadas polares a cartesianas se utiliza la fórmula</p>
+<p><span class="math display">\[
+x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
+\]</span></p>
+<p>En coordenadas polares un intervalo bidimensional <span class="math inline">\(I=[a,b]\times[\alpha,\beta]\)</span> define un sector de disco como el que se muestra a continuación.</p>
+
+<img data-src="img/integrales-funciones-varias-variables/intervalo-bidimensional-polar.svg" width="300" class="r-stretch quarto-figure-center"><p class="caption">Intervalo bidimensional en coordenadas polares.</p><p>Si la función <span class="math inline">\(f(x,y)\)</span> es continua sobre un intervalo polar <span class="math inline">\(I=[a,b]\times[\alpha,\beta]\)</span> con <span class="math inline">\(\beta-\alpha\leq 2\pi\)</span>, la integral doble de <span class="math inline">\(f\)</span> sobre esta región se puede calcular mediante la integral iterada</p>
+<p><span class="math display">\[
+\int_I f(x,y)\,dA
+= \int_{\alpha}^{\beta}\int_a^b f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta.
+\]</span></p>
+<div id="exm-volumen-esfera" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 7</strong></span> La gráfica de la función <span class="math inline">\(f(x,y)=\sqrt{a^2-x^2-y^2}\)</span> es una semiesfera de radio uno centrada en el origen de coordenadas. Para calcular su volumen, la región de integración es el círculo de radio uno centrado en el origen de coordenadas, que puede expresarse como <span class="math inline">\(R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, -\sqrt{a^2-x^2}\leq y\leq \sqrt{a^2-x^2}\}\)</span>. En este caso la integral en coordenadas rectangulares es complicada y merece la pena hacer la integral en coordenadas polares.</p>
+<p><span class="math display">\[\begin{align*}
+\int_I f(x,y)\,dA
+&amp;= \int_0^{2\pi}\int_0^a f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta \\
+&amp;= \int_0^{2\pi}\int_0^a \sqrt{a^2-(r\cos(\theta))^2-(r\operatorname{sen}(\theta))^2}r\,dr\,d\theta \\
+&amp;= \int_0^{2\pi}\int_0^a \sqrt{a^2-r^2(\cos(\theta)^2+\operatorname{sen}(\theta)^2)}r\,dr\,d\theta \\
+&amp;= \int_0^{2\pi}\int_0^a  \sqrt{a^2-r^2}r\,dr\,d\theta
+= \int_0^{2\pi} -\left[\frac{(a^2-r^2)^{3/2}}{3}\right]_0^a\,d\theta \\
+&amp;= \int_0^{2\pi} \frac{a^2}{3}\,d\theta
+= \left[\frac{a^2\theta}{3}\right]_0^{2\pi}
+= \frac{2\pi a^2}{3}.
+\end{align*}\]</span></p>
+<p>Y por tanto, el volumen de la esfera de radio uno centrada en el origen es <span class="math inline">\(\frac{4}{3}\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
+</div>
+<p>Cuando la región de integración es irregular pero puede expresarse de la forma <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: \alpha\leq \theta\leq \beta, g_1(\theta)\leq r\leq g_2(\theta)\}\)</span>, la integral doble en coordenadas polares puede calcularse mediante la integral iterada</p>
+<p><span class="math display">\[
+\int_R f(x.y)\,dA
+= \int_{\alpha}^{\beta} \int_{g_1(\theta)}^{g_2(\theta)} f(r\cos(\theta),r\operatorname{sen}(\theta))r\,dr\,d\theta.
+\]</span></p>
+<div id="exm-integral-region-irregular-polar" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8</strong></span> Veamos cómo calcular el volumen encerrado entre la gráfica integral del paraboloide <span class="math inline">\(f(x,y)=x^2+y^2\)</span> y el plano <span class="math inline">\(xy\)</span> sobre la circunferencia de ecuación <span class="math inline">\(x^2+(y^2-1)=1\)</span>. En coordenadas polares, la circunferencia que delimita la región de integración puede escribirse como <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: 0\leq \theta\leq \pi, 0\leq r\leq 2\operatorname{sen}(\theta)\}\)</span>. Por tanto, podemos calcular la integral de <span class="math inline">\(f\)</span> sobre la región <span class="math inline">\(R\)</span> mediante la integral iterada</p>
+<p><span class="math display">\[\begin{align*}
+\int_R f(x,y)\,dA
+&amp;= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta \\
+&amp;= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} ((r\cos(\theta))^2 + (r\operatorname{sen}{\theta})^2)r\,dr\,d\theta \\
+&amp;= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} r^3\,dr\,d\theta
+= \int_0^\pi \left[\frac{r^4}{4}\right]_0^{2\operatorname{sen}(\theta)} \,d\theta \\
+&amp;= \int_0^\pi 4\operatorname{sen}(\theta)^4 \,d\theta
+= \int_0^\pi (1-\cos(2\theta))^2\,d\theta \\
+&amp;= \int_0^\pi 1 - 2\cos(2\theta) + \cos(2\theta)^2 \,d\theta \\
+&amp;= \int_0^\pi 1 - 2\cos(2\theta) + \frac{1+\cos(4\theta)}{2}\,d\theta \\
+&amp;= \left[\theta - \operatorname{sen}(2\theta) + \frac{\theta}{2} + \frac{\operatorname{sen}(4\theta)}{8}\right]_0^\pi
+= \frac{3}{2}\pi.
+\end{align*}\]</span></p>
+</div>
+</section>
+
+<section id="cálculo-de-volúmenes" class="title-slide slide level2 center">
+<h2>Cálculo de volúmenes</h2>
+<p>Cuando <span class="math inline">\(f(x,y)\)</span> es positiva en el intervalo de integración <span class="math inline">\(I=[a,b]\times[c,b]\)</span>, la integral doble <span class="math inline">\(\int_I f(x,y)\,dx\,dy\)</span> da el volumen del sólido encerrado entre la superficie de <span class="math inline">\(f\)</span> y el plano <span class="math inline">\(xy\)</span> en la región delimitada por <span class="math inline">\(I\)</span>. Ahora bien, si <span class="math inline">\(f\)</span> es negativa en <span class="math inline">\(I\)</span>, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen.</p>
+<p>La cosa se complica cuando <span class="math inline">\(f\)</span> puede tomar valores positivos y negativos en el intervalo <span class="math inline">\(I\)</span>. En tal caso, para obtener el volumen tendremos que calcular la integral del valor absoluto de la función, o bien descomponer el intervalo de integración <span class="math inline">\(I\)</span> en subintervalos donde la función sea positiva o negativa, integrar la función en cada uno de estos subintervalos y luego sumar el valor absoluto de estas integrales.</p>
+<div id="exm-volumen-integral-doble" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 9</strong></span> Veamos cómo calcular el volumen de la función <span class="math inline">\(f(x,y)=x^2y\)</span> en el intervalo <span class="math inline">\(I=[-1,1]\times[-1,1]\)</span>. En el intervalo de integración, la función toma valores negativos en el subintervalo <span class="math inline">\(I_1=[-1,1]\times[-1,0]\)</span> y valores positivos en el intervalo <span class="math inline">\([-1,1]\times[0,1]\)</span>, por lo que el volumen encerrado entre la gráfica de la función y el plano <span class="math inline">\(xy\)</span> viene dado por la suma de las integrales</p>
+<p><span class="math display">\[\begin{align*}
+\int_{I_1} -f(x,y)\,dA
+&amp;= \int_{-1}^1\int_{-1}^0 -x^2y\,dy\,x
+= \int_{-1}^1 \left[-x^2\frac{y^2}{2}\right]_{-1}^0\,dx \\
+&amp;= \int_{-1}^1 \frac{x^2}{2}\,dx
+= \left[\frac{x^3}{6}\right]_{-1}^1 \\
+&amp;= \frac{1}{6}+\frac{1}{6}
+= \frac{1}{3}.
+\end{align*}\]</span></p>
+<p>y</p>
+<p><span class="math display">\[\begin{align*}
+\int_{I_1} f(x,y)\,dA
+&amp;= \int_{-1}^1\int_0^1 x^2y\,dy\,x
+= \int_{-1}^1 \left[x^2\frac{y^2}{2}\right]_0^1\,dx \\
+&amp;= \int_{-1}^1 \frac{x^2}{2}\,dx
+= \left[\frac{x^3}{6}\right]_{-1}^1 \\
+&amp;= \frac{1}{6}+\frac{1}{6}
+= \frac{1}{3},
+\end{align*}\]</span></p>
+<p>es decir,</p>
+<p><span class="math display">\[
+\int_I x^2y\,dA
+= \int_{I_1} x^2y\,dA + \int_{I_2} x^2y\,dA
+= \frac{1}{3} + \frac{1}{3}
+= \frac{2}{3}.
+\]</span></p>
+</div>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Obsérvese que también se puede usar la integral doble para calcular el área de una región plana integrando sobre esta región la función <span class="math inline">\(f(x,y)=1\)</span>, ya que cuanto la altura <span class="math inline">\(1\)</span>, el volumen coincide con el área de la base.</p>
+<p>Del mismo modo se puede usar una integral tripe para calcular el volumen de una región tridimensional.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="cálculo-del-area-de-una-superficie" class="title-slide slide level2 center">
+<h2>Cálculo del area de una superficie</h2>
+<p>Otra aplicación menos intuitiva de la las integrales dobles es el cálculo del área de la superficie de una función sobre una región <span class="math inline">\(R\)</span>. Si <span class="math inline">\(f\)</span> es una función de dos variables <span class="math inline">\(f(x,y)\)</span>, con derivadas parciales continuas sobre un intervalo bidimensional <span class="math inline">\(I=[a,b]\times[c,d]\)</span>, para aproximar el área de la superficie de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(I\)</span> podemos tomar una partición <span class="math inline">\(P_x=\{x_0=a,x_1,\ldots, x_n=b\}\)</span> del intervalo <span class="math inline">\([a,b]\)</span> en <span class="math inline">\(n\)</span> subintervalos de igual tamaño, y otra <span class="math inline">\(P_y=\{y_0=a,y_1,\ldots, y_n=b\}\)</span> del intervalo <span class="math inline">\([c,d]\)</span>, y descomponer el intervalo <span class="math inline">\(I\)</span> en subintervalos rectangulares <span class="math inline">\(I_{ij}\)</span> mediante la partición <span class="math inline">\(P_n=P_x\times P_y\)</span>. De esta manera, todos los subintervalos <span class="math inline">\(I_{ij}\)</span> tendrán el mismo área <span class="math inline">\(\Delta A = \Delta x\Delta y\)</span>.</p>
+<p>Si para cada subintervalo <span class="math inline">\(I_{ij}\)</span>, podemos calcular el plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((x_i, y_j, f(x_i,y_j))\)</span>, el paralelogramo <span class="math inline">\(T_{ij}\)</span> que define el plano tangente sobre el intervalo <span class="math inline">\(I_{ij}\)</span> nos dará una aproximación del área de la superficie de <span class="math inline">\(f\)</span> sobre el subintervalo <span class="math inline">\(I_{ij}\)</span>, y por tanto, la suma de las áreas de estos paralelogramos tangentes será una aproximación de la superficie de <span class="math inline">\(f\)</span> sobre el intervalo <span class="math inline">\(I\)</span>.</p>
+<p>Si para cada paralelogramo <span class="math inline">\(T_{ij}\)</span> consideramos los vectores <span class="math inline">\(\mathbf{u}_{ij}\)</span> y <span class="math inline">\(\mathbf{v}_{ij}\)</span> con origen en <span class="math inline">\((x_i, y_j)\)</span> y con la misma dirección y longitud que los lados del paralelogramo, tal y como se aprecia en la gráfica de más abajo, se tiene que el área del paralelogramo es <span class="math inline">\(\Delta T_{ij} = |\mathbf{u}_{ij}\times\mathbf{v}_{ij}|\)</span>, tal y como se vió en la <strong>?@prp-paralelogramo-producto-vectorial</strong>.</p>
+<p>Por otro lado, como <span class="math inline">\(\mathbf{u}_{ij}\)</span> está contenido en la intersección plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((x_i,y_j,f(x_i,y_j))\)</span>, con el plano <span class="math inline">\(y=y_j\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_x(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((\Delta x, 0, f'_x(x_i,y_j)\Delta x)\)</span>. Del mismo modo, como <span class="math inline">\(\mathbf{v}_{ij}\)</span> está contenido en la intersección plano tangente, con el plano <span class="math inline">\(x=x_i\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_y(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((0, \Delta y, f'_y(x_i,y_j)\Delta y)\)</span>.</p>
+<p>Así pues, el producto vectorial de <span class="math inline">\(\mathbf{u}_{ij}\)</span> y <span class="math inline">\(\mathbf{v}_{ij}\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{u}_{ij}\times\mathbf{v}_{ij}
+&amp;=
+\begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+\Delta x &amp; 0 &amp; f'_x(x_i,y_j)\Delta x \\
+0 &amp; \Delta y &amp; f'_y(x_i,y_j)\Delta y
+\end{vmatrix} \\
+&amp;= -f'_x(x_i,y_j)\Delta x\Delta y \mathbf{i} -f'_y(x_i,y_j)\Delta x\Delta y \mathbf{j} + \Delta x\Delta y \mathbf{k} \\
+&amp;= (-f'_x(x_i,y_j), -f'_y(x_i,y_j), 1)\Delta x\Delta y,
+\end{align*}\]</span></p>
+<p>y el área del paralelogramo <span class="math inline">\(T_{ij}\)</span> es</p>
+<p><span class="math display">\[
+\Delta T_{ij}
+= |\mathbf{u}_{ij}\times\mathbf{v}_{ij}|
+= \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\Delta x\Delta y.
+\]</span></p>
+<p>De este modo, el área de la superficie de <span class="math inline">\(f\)</span> sobre el intervalo <span class="math inline">\(I\)</span> se puede aproximar mediante la suma</p>
+<p><span class="math display">\[
+\sum_{i=1}^n\sum_{j=1}^n \Delta T_{ij}
+= \sum_{i=1}^n\sum_{j=1}^n \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\Delta x\Delta y.
+\]</span></p>
+<p>Tomando particiones cada vez más refinadas, en el límite cuando <span class="math inline">\(n\to \infty\)</span> se tiene que el área de la superficie de <span class="math inline">\(f\)</span> sobre el intervalo <span class="math inline">\(I\)</span> viene dado por la integral</p>
+<p><span class="math display">\[
+A_I(f) = \int_I \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\,dA.
+\]</span></p>
+<div id="exm-área-superficie-semi-esfera" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10</strong></span> La gráfica de la función <span class="math inline">\(f(x,y)=\sqrt{a^2-x^2-y^2}\)</span> es la semiesfera de radio <span class="math inline">\(a\)</span> centrada en el origen de coordenadas. El área de la superficie de esta semiesfera puede calcularse mediante la integral</p>
+<p><span class="math display">\[
+A_R(f) = \int_R \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\,dA
+\]</span></p>
+<p>donde <span class="math inline">\(R=\{(x,y)\in \mathbb{R}: -a\leq x\leq a, -\sqrt{a^2-x^2}\leq y\leq \sqrt{a^2-x^2}\}\)</span>.</p>
+<p>Como las derivadas parciales de <span class="math inline">\(f\)</span> valen</p>
+<p><span class="math display">\[\begin{align*}
+f'_x(x,y) &amp;= \frac{-x}{\sqrt{a^2-x^2-y^2}}, \\
+f'_y(x,y) &amp;= \frac{-y}{\sqrt{a^2-x^2-y^2}},
+\end{align*}\]</span></p>
+<p>la integral anterior se puede calcular mediante la integral iterada</p>
+<p><span class="math display">\[
+A_R(f) = \int_{-a}^a \int_{-\sqrt{a^2-x^2}}^{\sqrt{a^2-x^2}} \sqrt{\frac{x^2}{a^2-x^2-y^2} + \frac{y^2}{a^2-x^2-y^2} + 1}\,dy\,dx.
+\]</span></p>
+<p>Esta integral, no obstante, es difícil de calcular, por lo que merece la pena hacer el cambio a coordenadas polares, de manera que la región de integración polar es <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: 0\leq \theta\leq 2\pi, 0\leq r\leq a\}\)</span> y la integral se convierte en</p>
+<p><span class="math display">\[\begin{align*}
+A_R(f)
+&amp;= \int_0^{2\pi} \int_0^a \sqrt{\frac{r^2\cos(\theta)^2}{a^2-r^2}+\frac{r^2\operatorname{sen}(\theta)^2}{a^2-r^2}+1}r\,dr\,d\theta \\
+&amp;= \int_0^{2\pi} \int_0^a \sqrt{\frac{a^2}{a^2-r^2}}r\,dr\,d\theta.
+\end{align*}\]</span></p>
+<p>Esta última integral es impropia ya que <span class="math inline">\(\frac{a^2}{a^2-r^2}\to \infty\)</span> cuando <span class="math inline">\(r\to a\)</span>, pero la integral es finita, ya que</p>
+<p><span class="math display">\[
+\lim_{s\to a^-}\int_0^s \sqrt{\frac{a^2}{a^2-r^2}} r\,dr
+= \lim_{s\to a^-} a(-\sqrt{a^2-s^2}+a) = a^2,
+\]</span></p>
+<p>y siguiendo con el cálculo de la integral anterior se tiene</p>
+<p><span class="math display">\[
+A_R(f)
+= \int_0^{2\pi} a^2\,d\theta
+= 2\pi a^2,
+\]</span></p>
+<p>por lo que el área de la esfera de radio <span class="math inline">\(a\)</span> centrada en el origen de coordenadas es <span class="math inline">\(4\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
+</div>
+</section>
+
+<section>
+<section id="aplicaciones-físicas" class="title-slide slide level2 center">
+<h2>Aplicaciones físicas</h2>
+
+</section>
+<section id="centro-de-masas" class="slide level3">
+<h3>Centro de masas</h3>
+<p>Una aplicación física inmediata de las integrales dobles o triples es el cálculo de la masa de una sólido plano o del espacio con densidad variable en cada punto. Si <span class="math inline">\(\delta(x,y)\)</span> es la densidad en cada uno de los puntos de un sólido que ocupa una región <span class="math inline">\(R\)</span> del plano <span class="math inline">\(xy\)</span>, la masa total del sólido puede calcularse mediante la integral</p>
+<p><span class="math display">\[
+m = \int_R \delta(x,y)\,dA,
+\]</span></p>
+<p>siempre y cuando la función <span class="math inline">\(\delta\)</span> sea integrable en la región <span class="math inline">\(R\)</span>.</p>
+<div id="exm-masa-region-plana" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 11</strong></span> Una placa metálica tiene la forma de región <span class="math inline">\(R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 1-x^2\}\)</span> y la densidad en cada punto viene dada por la función <span class="math inline">\(\delta(x,y)=xy\)</span> en gr/cm<span class="math inline">\(^2\)</span>. Entonces su masa es</p>
+<p><span class="math display">\[\begin{align*}
+m
+&amp;= \int_R \delta(x,y)\,dA
+= \int_0^1 \int_0^{1-x^2} xy\,dy\,dx
+= \int_0^1 x\left[\frac{y^2}{2}\right]_0^{1-x^2}\,dx \\
+&amp;= \int_0^1 x\frac{(1-x^2)^2}{2}\,dx
+= \int_0^1 \frac{x-2x^3+x^5}{2}\,dx \\
+&amp;= \left[\frac{x^2}{4}-\frac{2x^4}{8}+\frac{x^6}{12}\right]_0^1
+= \frac{1}{4}-\frac{2}{8}+\frac{1}{12}
+= \frac{1}{12} \mbox{ gr}.
+\end{align*}\]</span></p>
+</div>
+<p>También podemos utilizar las integrales dobles para calcular el <em>momento</em> de cada punto de un sólido <span class="math inline">\(R\)</span> del plano <span class="math inline">\(xy\)</span> con respecto a cada uno de los ejes. Tal y como se vio en la <strong>?@sec-centro-masas-region-plana-densidad-constante</strong>, el momento con respecto a cada eje en un punto <span class="math inline">\((x,y)\)</span> de un sólido plano <span class="math inline">\(R\)</span> viene dado por el producto de la masa en el punto y la distancia del punto al eje, es decir, el momento con respecto al eje <span class="math inline">\(x\)</span> es <span class="math inline">\(xm(xy)\)</span> y el momento con respecto al eje <span class="math inline">\(y\)</span> es <span class="math inline">\(ym(x,y)\)</span>, donde <span class="math inline">\(m(x,y)\)</span> es la masa en el punto <span class="math inline">\((x,y)\)</span>. La suma de los momentos en cada uno de los puntos del sólido región <span class="math inline">\(R\)</span> nos dará el momento de todo el sólido. Así pues, si <span class="math inline">\(\delta(x,y)\)</span> es la densidad en cada uno de los puntos de un sólido plano <span class="math inline">\(R\)</span>, los momentos de <span class="math inline">\(R\)</span> con respecto a los ejes <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> pueden calcularse, respectivamente, mediante las integrales</p>
+<p><span class="math display">\[\begin{align*}
+M_x
+&amp;= \int_R y\delta(x,y)\,dA \\
+M_y
+&amp;= \int_R x\delta(x,y)\,dA
+\end{align*}\]</span></p>
+<p>A partir de los momentos resulta sencillo calcular el <em>centro de masas</em> o <em>centroide</em> <span class="math inline">\((\bar x, \bar y)\)</span> del sólido plano, dividiendo cada momento por la masa del sólido, es decir,</p>
+<p><span class="math display">\[\begin{align*}
+\bar x
+&amp;= \frac{M_y}{m}
+= \frac{\int_R x\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA} \\
+\bar y
+&amp;= \frac{M_x}{m}
+= \frac{\int_R y\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
+\end{align*}\]</span></p>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Un sólido plano se comporta como si toda su masa se concentrara en el centroide, de manera que se mantendría en equilibrio horizontal al apoyarlo sobre este punto.</p>
+</div>
+</div>
+</div>
+<div id="exm-centro-masas-solido-plano-densidad-variable" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 12</strong></span> El momento con respecto al eje <span class="math inline">\(x\)</span> de la placa metálica del ejemplo anterior es</p>
+<p><span class="math display">\[\begin{align*}
+M_x
+&amp;= \int_R y\delta(x,y)\,dA
+= \int_0^1 \int_0^{1-x^2} xy^2\,dy\,dx
+= \int_0^1 x\left[\frac{y^3}{3}\right]_0^{1-x^2}\,dx \\
+&amp;= \int_0^1 x\frac{(1-x^2)^3}{3}\,dx
+= \int_0^1 \frac{x-3x^3+3x^5-x^7}{3}\,dx \\
+&amp;= \left[\frac{x^2}{6}-\frac{x^4}{4}+\frac{x^6}{6}-\frac{x^8}{24}\right]_0^1
+= \frac{1}{6}-\frac{1}{4}+\frac{1}{6}-\frac{1}{24}
+= \frac{1}{24} \mbox{ gr$\cdot$ cm}.
+\end{align*}\]</span></p>
+<p>Del mismo modo, el momento con respecto al eje <span class="math inline">\(y\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+M_y
+&amp;= \int_R x\delta(x,y)\,dA
+= \int_0^1 \int_0^{1-x^2} x^2y\,dy\,dx
+= \int_0^1 x^2\left[\frac{y^2}{2}\right]_0^{1-x^2}\,dx \\
+&amp;= \int_0^1 x^2\frac{(1-x^2)^2}{2}\,dx
+= \int_0^1 \frac{x^2-2x^4+x^6}{2}\,dx \\
+&amp;= \left[\frac{x^3}{6}-\frac{x^5}{5}+\frac{x^7}{14}\right]_0^1
+= \frac{1}{6}-\frac{1}{5}+\frac{1}{14}
+= \frac{4}{105} \mbox{ gr$\cdot$ cm}.
+\end{align*}\]</span></p>
+<p>Por lo tanto, el centroide de la placa metálica tendrá coordenadas</p>
+<p><span class="math display">\[\begin{align*}
+\bar x
+&amp;= \frac{M_x}{m}
+= \frac{\int_R y\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
+= \frac{1/24}{1/12} = 0.5 \mbox{ cm},\\
+\bar y
+&amp;= \frac{M_y}{m}
+= \frac{\int_R x\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
+= \frac{4/105}{1/12} = \frac{16}{35} \approx 0.4571  \mbox{ cm}.
+\end{align*}\]</span></p>
+</div>
+</section></section>
+<section>
+<section id="aplicaciones-estadísticas" class="title-slide slide level2 center">
+<h2>Aplicaciones estadísticas</h2>
+
+</section>
+<section id="valor-medio-de-una-función" class="slide level3">
+<h3>Valor medio de una función</h3>
+<p>En la <strong>?@sec-valor-medio-integral</strong> vimos cómo utilizar la integral definida para calcular el valor medio de una función de una variable en un intervalo unidimensional. Para funciones de dos variables podemos usar la misma idea para calcular el valor medio de una función sobre una región <span class="math inline">\(R\)</span> dividiendo la integral por el área de la región de integración, y para funciones de tres variables dividiendo por el volumen de la región de integración. En general, para calcular el valor medio de una función de varias variables en una región de <span class="math inline">\(\mathbb{R}^n\)</span> utilizaremos la integral de la siguiente definición.</p>
+<div id="def-valor-medio-funcion-varias-variables" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6 (Valor medio de una función de varias variables)</strong></span> Dada una función <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span> integrable sobre una región <span class="math inline">\(R\subset \mathbb{R}^n\)</span>, el <em>valor medio</em> de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(R\)</span> es</p>
+<p><span class="math display">\[
+\bar{f}_R = \frac{\int_R f(x_1,\ldots,x_n)\,dA}{\int_R\,dA}
+\]</span></p>
+</div>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Obsérvese que la integral del denominador <span class="math inline">\(\int_R\,dA\)</span>, para una función de dos variables da el área de la región <span class="math inline">\(R\)</span>, mientras que para una función de tres variables da el volumen de la región <span class="math inline">\(R\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exm-valor-medio-funcion-varias-variables" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 13</strong></span> En el <a href="#/integrales-sobre-regiones-no-regulares" class="quarto-xref">Ejemplo&nbsp;5</a> vimos que la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span> era <span class="math inline">\(\int_R xy\,dA = \frac{1}{24}\)</span>. Como el área de la región <span class="math inline">\(R\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\int_R \,dA
+&amp;= \int_0^1 \int_{x^2}^x  \,dy\,dx
+= \int_0^1 [y]_{x^2}^x\,dx
+= \int_0^1 x-x^2\,dx \\
+&amp;= \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
+= \frac{1}{2}-\frac{1}{3}
+= \frac{1}{6}.
+\end{align*}\]</span></p>
+<p>el valor medio de <span class="math inline">\(f\)</span> en <span class="math inline">\(R\)</span> es</p>
+<p><span class="math display">\[
+\bar f_R
+= \frac{\int_R xy\,dA}{\int_R\,dA}
+= \frac{1/24}{1/6}
+= \frac{1}{4}.
+\]</span></p>
+</div>
+<div class="quarto-auto-generated-content">
+<p><img src="img/logos/sticker.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://aprendeconalf.es/analisis-manual" class="uri">https://aprendeconalf.es/analisis-manual</a></p>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'convex',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copiado");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copiado");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
