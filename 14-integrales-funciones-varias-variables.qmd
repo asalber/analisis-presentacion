@@ -329,8 +329,6 @@ La integral doble de la función $f(x,y) = e^{2x-3y}$ en el intervalo $I=[0,1]\t
 
 ## Integrales sobre regiones no regulares
 
-En muchos problemas reales, como por ejemplo en el cálculo de volúmenes, la región de integración no es un integración no es un intervalo $n$ dimensional o hiperrectángulo, sino una región no regular, es decir, con fronteras curvas. En esta sección veremos cómo calcular integrales dobles de funciones de dos variables para algunos tipos de regiones irregulares acotadas del plano $xy$.
-
 En general, la integral de Riemann de una función $f$ sobre un intervalo $n$ dimensional puede extenderse a una región irregular acotada $R$ simplemente tomando un intervalo $n$ dimensional $I$ que incluya la región, es decir $R\subseteq I$ y redefiniendo $f$ como
 
 $$
@@ -348,9 +346,7 @@ $$
 = \int_{I} F(x_1,\ldots,x_n)\,dA. 
 $$
 
-Este procedimiento tiene sentido siempre que $f$ sea continua sobre la frontera de la región $R$, ya que el valor de $F$ en los puntos que están fuera de la región $R$ es $0$, y por tanto, no contribuyen la suma de la integral.
-
-En el caso de funciones de dos variables, existen varios tipos de regiones en el plano $xy$ donde la integral de Riemann se puede calcular mediante integrales iteradas donde los límites de integración dependen de funciones que delimitan la región de integración. 
+##
 
 Si $R$ es una región del plano $xy$ delimitada por las gráficas de dos funciones $g_1(x)$ y $g_2(x)$, es decir, 
 
@@ -365,6 +361,8 @@ $$
 = \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx.
 $$
 
+---
+
 Del mismo modo, si $R$ es una región del plano $xy$ delimitada por las gráficas de dos funciones $g_1(y)$ y $g_2(y)$, es decir, 
 
 $$
@@ -378,16 +376,21 @@ $$
 = \int_a^b \int_{g_1(y)}^{g_2(y)} f(x,y)\,dx\,dy.
 $$
 
+---
+
 :::{#exm-integral-region-irregular}
 Veamos cómo calcular la integral doble de la función $f(x,y)=xy$ sobre la región encerrada entre las curvas $y=x$ e $y=x^2$. La región encerrada entre las curvas se muestra en el siguiente gráfico. 
 
 :::{.content-visible when-format="html"}
-![Región comprendida entre las curvas $y=x$ e $y=x^2$.](img/integrales-funciones-varias-variables/region-irregular.svg){width=200}
+![Región comprendida entre las curvas $y=x$ e $y=x^2$.](img/integrales-funciones-varias-variables/region-irregular.svg){width=500}
 :::
 
 :::{.content-visible unless-format="html"}
 ![Región comprendida entre las curvas $y=x$ e $y=x^2$.](img/integrales-funciones-varias-variables/region-irregular.pdf)
 :::
+:::
+
+---
 
 Esta región puede expresarse como $R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}$, por lo que la integral doble de $f$ sobre esta región puede calcularse mediante la integral iterada
 
@@ -412,9 +415,12 @@ En este caso, la región también puede expresarse como $R=\{(x,y)\in \mathbb{R}
 = \frac{1}{6}-\frac{1}{8}
 = \frac{1}{24}.
 \end{align*}
-:::
+
+---
 
 En este tipo de integrales iteradas, hay que integrar siempre primero con respecto a la variable que está acotada por las funciones que definen la región y después con respecto a la variable que está acotada por valores fijos. Cuando interese realizar la integral iterada en el otro orden, porque resulte más sencilla, previamente hay que cambiar la expresión de la región de integración mediante las funciones inversas, siempre y cuando sea posible.
+
+---
 
 :::{#exm-integral-region-irregular-2}
 Para calcular la integral de la función $f(x,y)=e^{-y^2}$ en la región $R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 2x\}$, como $y$ está acotada por una función de $x$, habría que hacer la integral iterada
@@ -436,7 +442,7 @@ Sin embargo, la función $e^{-y^2}$ no tiene primitiva elemental, por lo que nec
 
 ## Integrales dobles en coordenadas polares
 
-Al que igual que se vio en la @sec-integrales-coordenadas-polares, para integrar determinadas funciones es preferible hacer un cambio a coordenadas polares. Recordemos que para pasar de coordenadas cartesianas $(x,y)$ a coordenadas polares $(r,\theta)$ se utilizan las fórmulas
+Para integrar determinadas funciones es preferible hacer un cambio a coordenadas polares. Recordemos que para pasar de coordenadas cartesianas $(x,y)$ a coordenadas polares $(r,\theta)$ se utilizan las fórmulas
 
 $$
 r = \sqrt{x^2 + y^2} \qquad \theta = \operatorname{arcsin}\left(\frac{y}{\sqrt{x^2+y^2}}\right) = \operatorname{arccos}\left(\frac{x}{\sqrt{x^2+y^2}}\right),
@@ -448,15 +454,19 @@ $$
 x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 $$
 
+##
+
 En coordenadas polares un intervalo bidimensional $I=[a,b]\times[\alpha,\beta]$ define un sector de disco como el que se muestra a continuación.
 
 :::{.content-visible when-format="html"}
-![Intervalo bidimensional en coordenadas polares.](img/integrales-funciones-varias-variables/intervalo-bidimensional-polar.svg){width=300}
+![Intervalo bidimensional en coordenadas polares.](img/integrales-funciones-varias-variables/intervalo-bidimensional-polar.svg){width=400}
 :::
 
 :::{.content-visible unless-format="html"}
 ![Intervalo bidimensional en coordenadas polares.](img/integrales-funciones-varias-variables/intervalo-bidimensional-polar.pdf)
 :::
+
+##
 
 Si la función $f(x,y)$ es continua sobre un intervalo polar $I=[a,b]\times[\alpha,\beta]$ con $\beta-\alpha\leq 2\pi$, la integral doble de $f$ sobre esta región se puede calcular mediante la integral iterada
 
@@ -464,6 +474,8 @@ $$
 \int_I f(x,y)\,dA 
 = \int_{\alpha}^{\beta}\int_a^b f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta.
 $$
+
+---
 
 :::{#exm-volumen-esfera}
 La gráfica de la función $f(x,y)=\sqrt{a^2-x^2-y^2}$ es una semiesfera de radio uno centrada en el origen de coordenadas. Para calcular su volumen, la región de integración es el círculo de radio uno centrado en el origen de coordenadas, que puede expresarse como $R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, -\sqrt{a^2-x^2}\leq y\leq \sqrt{a^2-x^2}\}$. En este caso la integral en coordenadas rectangulares es complicada y merece la pena hacer la integral en coordenadas polares.
@@ -483,6 +495,8 @@ La gráfica de la función $f(x,y)=\sqrt{a^2-x^2-y^2}$ es una semiesfera de radi
 Y por tanto, el volumen de la esfera de radio uno centrada en el origen es $\frac{4}{3}\pi a^2$, que coincide con la fórmula habitual.
 :::
 
+##
+
 Cuando la región de integración es irregular pero puede expresarse de la forma $R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: \alpha\leq \theta\leq \beta, g_1(\theta)\leq r\leq g_2(\theta)\}$, la integral doble en coordenadas polares puede calcularse mediante la integral iterada 
 
 $$
@@ -490,8 +504,13 @@ $$
 = \int_{\alpha}^{\beta} \int_{g_1(\theta)}^{g_2(\theta)} f(r\cos(\theta),r\operatorname{sen}(\theta))r\,dr\,d\theta.
 $$
 
+---
+
 :::{#exm-integral-region-irregular-polar}
 Veamos cómo calcular el volumen encerrado entre la gráfica integral del paraboloide $f(x,y)=x^2+y^2$ y el plano $xy$ sobre la circunferencia de ecuación $x^2+(y^2-1)=1$. En coordenadas polares, la circunferencia que delimita la región de integración puede escribirse como $R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: 0\leq \theta\leq \pi, 0\leq r\leq 2\operatorname{sen}(\theta)\}$. Por tanto, podemos calcular la integral de $f$ sobre la región $R$ mediante la integral iterada
+:::
+
+---
 
 \begin{align*}
 \int_R f(x,y)\,dA
@@ -506,13 +525,15 @@ Veamos cómo calcular el volumen encerrado entre la gráfica integral del parabo
 &= \left[\theta - \operatorname{sen}(2\theta) + \frac{\theta}{2} + \frac{\operatorname{sen}(4\theta)}{8}\right]_0^\pi
 = \frac{3}{2}\pi.
 \end{align*}
-:::
+
 
 ## Cálculo de volúmenes
 
 Cuando $f(x,y)$ es positiva en el intervalo de integración $I=[a,b]\times[c,b]$, la integral doble $\int_I f(x,y)\,dx\,dy$ da el volumen del sólido encerrado entre la superficie de $f$ y el plano $xy$ en la región delimitada por $I$. Ahora bien, si $f$ es negativa en $I$, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen. 
 
 La cosa se complica cuando $f$ puede tomar valores positivos y negativos en el intervalo $I$. En tal caso, para obtener el volumen tendremos que calcular la integral del valor absoluto de la función, o bien descomponer el intervalo de integración $I$ en subintervalos donde la función sea positiva o negativa, integrar la función en cada uno de estos subintervalos y luego sumar el valor absoluto de estas integrales.
+
+---
 
 :::{#exm-volumen-integral-doble}
 Veamos cómo calcular el volumen de la función $f(x,y)=x^2y$ en el intervalo $I=[-1,1]\times[-1,1]$. En el intervalo de integración, la función toma valores negativos en el subintervalo $I_1=[-1,1]\times[-1,0]$ y valores positivos en el intervalo $[-1,1]\times[0,1]$, por lo que el volumen encerrado entre la gráfica de la función y el plano $xy$ viene dado por la suma de las integrales
@@ -526,6 +547,9 @@ Veamos cómo calcular el volumen de la función $f(x,y)=x^2y$ en el intervalo $I
 &= \frac{1}{6}+\frac{1}{6} 
 = \frac{1}{3}.
 \end{align*}
+:::
+
+---
 
 y
 
@@ -547,7 +571,8 @@ $$
 = \frac{1}{3} + \frac{1}{3}
 = \frac{2}{3}.
 $$
-:::
+
+##
 
 :::{.callout-tip}
 Obsérvese que también se puede usar la integral doble para calcular el área de una región plana integrando sobre esta región la función $f(x,y)=1$, ya que cuanto la altura $1$, el volumen coincide con el área de la base. 
