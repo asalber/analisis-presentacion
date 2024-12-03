@@ -908,13 +908,16 @@ f'_y(x,y) &amp;= \frac{-y}{\sqrt{a^2-x^2-y^2}},
 <p><span class="math display">\[
 A_R(f) = \int_{-a}^a \int_{-\sqrt{a^2-x^2}}^{\sqrt{a^2-x^2}} \sqrt{\frac{x^2}{a^2-x^2-y^2} + \frac{y^2}{a^2-x^2-y^2} + 1}\,dy\,dx.
 \]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
 <p>Esta integral, no obstante, es difícil de calcular, por lo que merece la pena hacer el cambio a coordenadas polares, de manera que la región de integración polar es <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: 0\leq \theta\leq 2\pi, 0\leq r\leq a\}\)</span> y la integral se convierte en</p>
 <p><span class="math display">\[\begin{align*}
 A_R(f)
 &amp;= \int_0^{2\pi} \int_0^a \sqrt{\frac{r^2\cos(\theta)^2}{a^2-r^2}+\frac{r^2\operatorname{sen}(\theta)^2}{a^2-r^2}+1}r\,dr\,d\theta \\
 &amp;= \int_0^{2\pi} \int_0^a \sqrt{\frac{a^2}{a^2-r^2}}r\,dr\,d\theta.
 \end{align*}\]</span></p>
-</div>
 </section>
 <section class="slide level3">
 
@@ -932,17 +935,16 @@ A_R(f)
 <p>por lo que el área de la esfera de radio <span class="math inline">\(a\)</span> centrada en el origen de coordenadas es <span class="math inline">\(4\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
 </section></section>
 <section>
-<section id="aplicaciones-físicas" class="title-slide slide level2 center">
-<h2>Aplicaciones físicas</h2>
-
-</section>
-<section id="centro-de-masas" class="slide level3">
-<h3>Centro de masas</h3>
+<section id="centro-de-masas" class="title-slide slide level2 center">
+<h2>Centro de masas</h2>
 <p>Una aplicación física inmediata de las integrales dobles o triples es el cálculo de la masa de una sólido plano o del espacio con densidad variable en cada punto. Si <span class="math inline">\(\delta(x,y)\)</span> es la densidad en cada uno de los puntos de un sólido que ocupa una región <span class="math inline">\(R\)</span> del plano <span class="math inline">\(xy\)</span>, la masa total del sólido puede calcularse mediante la integral</p>
 <p><span class="math display">\[
 m = \int_R \delta(x,y)\,dA,
 \]</span></p>
 <p>siempre y cuando la función <span class="math inline">\(\delta\)</span> sea integrable en la región <span class="math inline">\(R\)</span>.</p>
+</section>
+<section class="slide level3">
+
 <div id="exm-masa-region-plana" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 11</strong></span> Una placa metálica tiene la forma de región <span class="math inline">\(R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 1-x^2\}\)</span> y la densidad en cada punto viene dada por la función <span class="math inline">\(\delta(x,y)=xy\)</span> en gr/cm<span class="math inline">\(^2\)</span>. Entonces su masa es</p>
 <p><span class="math display">\[\begin{align*}
@@ -957,8 +959,11 @@ m
 = \frac{1}{12} \mbox{ gr}.
 \end{align*}\]</span></p>
 </div>
-<p>También podemos utilizar las integrales dobles para calcular el <em>momento</em> de cada punto de un sólido <span class="math inline">\(R\)</span> del plano <span class="math inline">\(xy\)</span> con respecto a cada uno de los ejes. Tal y como se vio en la <strong>?@sec-centro-masas-region-plana-densidad-constante</strong>, el momento con respecto a cada eje en un punto <span class="math inline">\((x,y)\)</span> de un sólido plano <span class="math inline">\(R\)</span> viene dado por el producto de la masa en el punto y la distancia del punto al eje, es decir, el momento con respecto al eje <span class="math inline">\(x\)</span> es <span class="math inline">\(xm(xy)\)</span> y el momento con respecto al eje <span class="math inline">\(y\)</span> es <span class="math inline">\(ym(x,y)\)</span>, donde <span class="math inline">\(m(x,y)\)</span> es la masa en el punto <span class="math inline">\((x,y)\)</span>. La suma de los momentos en cada uno de los puntos del sólido región <span class="math inline">\(R\)</span> nos dará el momento de todo el sólido. Así pues, si <span class="math inline">\(\delta(x,y)\)</span> es la densidad en cada uno de los puntos de un sólido plano <span class="math inline">\(R\)</span>, los momentos de <span class="math inline">\(R\)</span> con respecto a los ejes <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> pueden calcularse, respectivamente, mediante las integrales</p>
-<p><span class="math display">\[\begin{align*}
+</section></section>
+<section>
+<section id="section-11" class="title-slide slide level2 center">
+<h2></h2>
+<p>También podemos utilizar las integrales dobles para calcular el <em>momento</em> de cada punto de un sólido <span class="math inline">\(R\)</span> del plano <span class="math inline">\(xy\)</span> con respecto a cada uno de los ejes. <span class="math display">\[\begin{align*}
 M_x
 &amp;= \int_R y\delta(x,y)\,dA \\
 M_y
@@ -973,6 +978,9 @@ M_y
 &amp;= \frac{M_x}{m}
 = \frac{\int_R y\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
 \end{align*}\]</span></p>
+</section>
+<section class="slide level3">
+
 <div class="callout callout-note callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
@@ -983,6 +991,9 @@ M_y
 </div>
 </div>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="exm-centro-masas-solido-plano-densidad-variable" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 12</strong></span> El momento con respecto al eje <span class="math inline">\(x\)</span> de la placa metálica del ejemplo anterior es</p>
 <p><span class="math display">\[\begin{align*}
@@ -1008,6 +1019,10 @@ M_y
 = \frac{1}{6}-\frac{1}{5}+\frac{1}{14}
 = \frac{4}{105} \mbox{ gr$\cdot$ cm}.
 \end{align*}\]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
 <p>Por lo tanto, el centroide de la placa metálica tendrá coordenadas</p>
 <p><span class="math display">\[\begin{align*}
 \bar x
@@ -1019,16 +1034,10 @@ M_y
 = \frac{\int_R x\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
 = \frac{4/105}{1/12} = \frac{16}{35} \approx 0.4571  \mbox{ cm}.
 \end{align*}\]</span></p>
-</div>
 </section></section>
 <section>
-<section id="aplicaciones-estadísticas" class="title-slide slide level2 center">
-<h2>Aplicaciones estadísticas</h2>
-
-</section>
-<section id="valor-medio-de-una-función" class="slide level3">
-<h3>Valor medio de una función</h3>
-<p>En la <strong>?@sec-valor-medio-integral</strong> vimos cómo utilizar la integral definida para calcular el valor medio de una función de una variable en un intervalo unidimensional. Para funciones de dos variables podemos usar la misma idea para calcular el valor medio de una función sobre una región <span class="math inline">\(R\)</span> dividiendo la integral por el área de la región de integración, y para funciones de tres variables dividiendo por el volumen de la región de integración. En general, para calcular el valor medio de una función de varias variables en una región de <span class="math inline">\(\mathbb{R}^n\)</span> utilizaremos la integral de la siguiente definición.</p>
+<section id="valor-medio-de-una-función" class="title-slide slide level2 center">
+<h2>Valor medio de una función</h2>
 <div id="def-valor-medio-funcion-varias-variables" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 6 (Valor medio de una función de varias variables)</strong></span> Dada una función <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span> integrable sobre una región <span class="math inline">\(R\subset \mathbb{R}^n\)</span>, el <em>valor medio</em> de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(R\)</span> es</p>
 <p><span class="math display">\[
@@ -1045,6 +1054,9 @@ M_y
 </div>
 </div>
 </div>
+</section>
+<section class="slide level3">
+
 <div id="exm-valor-medio-funcion-varias-variables" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 13</strong></span> En el <a href="#/exm-integral-region-irregular" class="quarto-xref">Ejemplo&nbsp;5</a> vimos que la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span> era <span class="math inline">\(\int_R xy\,dA = \frac{1}{24}\)</span>. Como el área de la región <span class="math inline">\(R\)</span> es</p>
 <p><span class="math display">\[\begin{align*}

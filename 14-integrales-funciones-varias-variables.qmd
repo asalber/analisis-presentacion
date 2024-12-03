@@ -653,6 +653,9 @@ la integral anterior se puede calcular mediante la integral iterada
 $$
 A_R(f) = \int_{-a}^a \int_{-\sqrt{a^2-x^2}}^{\sqrt{a^2-x^2}} \sqrt{\frac{x^2}{a^2-x^2-y^2} + \frac{y^2}{a^2-x^2-y^2} + 1}\,dy\,dx.
 $$
+:::
+
+---
 
 Esta integral, no obstante, es difícil de calcular, por lo que merece la pena hacer el cambio a coordenadas polares, de manera que la región de integración polar es $R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: 0\leq \theta\leq 2\pi, 0\leq r\leq a\}$ y la integral se convierte en
 
@@ -661,8 +664,6 @@ A_R(f)
 &= \int_0^{2\pi} \int_0^a \sqrt{\frac{r^2\cos(\theta)^2}{a^2-r^2}+\frac{r^2\operatorname{sen}(\theta)^2}{a^2-r^2}+1}r\,dr\,d\theta \\
 &= \int_0^{2\pi} \int_0^a \sqrt{\frac{a^2}{a^2-r^2}}r\,dr\,d\theta.
 \end{align*}
-
-:::
 
 ---
 
@@ -685,9 +686,7 @@ por lo que el área de la esfera de radio $a$ centrada en el origen de coordenad
 
 
 
-## Aplicaciones físicas
-
-### Centro de masas
+## Centro de masas
 Una aplicación física inmediata de las integrales dobles o triples es el cálculo de la masa de una sólido plano o del espacio con densidad variable en cada punto. Si $\delta(x,y)$ es la densidad en cada uno de los puntos de un sólido que ocupa una región $R$ del plano $xy$, la masa total del sólido puede calcularse mediante la integral
 
 $$
@@ -695,6 +694,8 @@ m = \int_R \delta(x,y)\,dA,
 $$ 
 
 siempre y cuando la función $\delta$ sea integrable en la región $R$.
+
+---
 
 :::{#exm-masa-region-plana}
 Una placa metálica tiene la forma de región $R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 1-x^2\}$ y la densidad en cada punto viene dada por la función $\delta(x,y)=xy$ en gr/cm$^2$. Entonces su masa es
@@ -712,8 +713,9 @@ m
 \end{align*}
 :::
 
-También podemos utilizar las integrales dobles para calcular el _momento_ de cada punto de un sólido $R$ del plano $xy$ con respecto a cada uno de los ejes. Tal y como se vio en la @sec-centro-masas-region-plana-densidad-constante, el momento con respecto a cada eje en un punto $(x,y)$ de un sólido plano $R$ viene dado por el producto de la masa en el punto y la distancia del punto al eje, es decir, el momento con respecto al eje $x$ es $xm(xy)$ y el momento con respecto al eje $y$ es $ym(x,y)$, donde $m(x,y)$ es la masa en el punto $(x,y)$. La suma de los momentos en cada uno de los puntos del sólido región $R$ nos dará el momento de todo el sólido. Así pues, si $\delta(x,y)$ es la densidad en cada uno de los puntos de un sólido plano $R$, los momentos de $R$ con respecto a los ejes $x$ e $y$ pueden calcularse, respectivamente, mediante las integrales
+##
 
+También podemos utilizar las integrales dobles para calcular el _momento_ de cada punto de un sólido $R$ del plano $xy$ con respecto a cada uno de los ejes.
 \begin{align*}
 M_x 
 &= \int_R y\delta(x,y)\,dA \\
@@ -732,10 +734,14 @@ A partir de los momentos resulta sencillo calcular el _centro de masas_ o _centr
 = \frac{\int_R y\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
 \end{align*}
 
+---
+
 :::{.callout-note}
 Un sólido plano se comporta como si toda su masa se concentrara en el centroide, de manera que se mantendría en equilibrio horizontal al apoyarlo sobre este punto.
 :::
- 
+
+---
+
 :::{#exm-centro-masas-solido-plano-densidad-variable}
 El momento con respecto al eje $x$ de la placa metálica del ejemplo anterior es
 
@@ -764,6 +770,9 @@ M_y
 = \frac{1}{6}-\frac{1}{5}+\frac{1}{14}
 = \frac{4}{105} \mbox{ gr$\cdot$ cm}.
 \end{align*}
+:::
+
+---
 
 Por lo tanto, el centroide de la placa metálica tendrá coordenadas
 
@@ -777,11 +786,8 @@ Por lo tanto, el centroide de la placa metálica tendrá coordenadas
 = \frac{\int_R x\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
 = \frac{4/105}{1/12} = \frac{16}{35} \approx 0.4571  \mbox{ cm}.
 \end{align*}
-:::
 
-## Aplicaciones estadísticas
-### Valor medio de una función
-En la @sec-valor-medio-integral vimos cómo utilizar la integral definida para calcular el valor medio de una función de una variable en un intervalo unidimensional. Para funciones de dos variables podemos usar la misma idea para calcular el valor medio de una función sobre una región $R$ dividiendo la integral por el área de la región de integración, y para funciones de tres variables dividiendo por el volumen de la región de integración. En general, para calcular el valor medio de una función de varias variables en una región de $\mathbb{R}^n$ utilizaremos la integral de la siguiente definición.
+## Valor medio de una función
 
 :::{#def-valor-medio-funcion-varias-variables}
 ## Valor medio de una función de varias variables
@@ -795,6 +801,8 @@ $$
 :::{.callout-note}
 Obsérvese que la integral del denominador $\int_R\,dA$, para una función de dos variables da el área de la región $R$, mientras que para una función de tres variables da el volumen de la región $R$.
 :::
+
+---
 
 :::{#exm-valor-medio-funcion-varias-variables}
 En el @exm-integral-region-irregular vimos que la integral doble de la función $f(x,y)=xy$ sobre la región $R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}$ era $\int_R xy\,dA = \frac{1}{24}$. Como el área de la región $R$ es 
