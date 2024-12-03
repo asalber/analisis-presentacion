@@ -850,12 +850,16 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 </div>
 </section>
 
+<section>
 <section id="cálculo-del-area-de-una-superficie" class="title-slide slide level2 center">
 <h2>Cálculo del area de una superficie</h2>
-<p>Otra aplicación menos intuitiva de la las integrales dobles es el cálculo del área de la superficie de una función sobre una región <span class="math inline">\(R\)</span>. Si <span class="math inline">\(f\)</span> es una función de dos variables <span class="math inline">\(f(x,y)\)</span>, con derivadas parciales continuas sobre un intervalo bidimensional <span class="math inline">\(I=[a,b]\times[c,d]\)</span>, para aproximar el área de la superficie de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(I\)</span> podemos tomar una partición <span class="math inline">\(P_x=\{x_0=a,x_1,\ldots, x_n=b\}\)</span> del intervalo <span class="math inline">\([a,b]\)</span> en <span class="math inline">\(n\)</span> subintervalos de igual tamaño, y otra <span class="math inline">\(P_y=\{y_0=a,y_1,\ldots, y_n=b\}\)</span> del intervalo <span class="math inline">\([c,d]\)</span>, y descomponer el intervalo <span class="math inline">\(I\)</span> en subintervalos rectangulares <span class="math inline">\(I_{ij}\)</span> mediante la partición <span class="math inline">\(P_n=P_x\times P_y\)</span>. De esta manera, todos los subintervalos <span class="math inline">\(I_{ij}\)</span> tendrán el mismo área <span class="math inline">\(\Delta A = \Delta x\Delta y\)</span>.</p>
-<p>Si para cada subintervalo <span class="math inline">\(I_{ij}\)</span>, podemos calcular el plano tangente a la superficie de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\((x_i, y_j, f(x_i,y_j))\)</span>, el paralelogramo <span class="math inline">\(T_{ij}\)</span> que define el plano tangente sobre el intervalo <span class="math inline">\(I_{ij}\)</span> nos dará una aproximación del área de la superficie de <span class="math inline">\(f\)</span> sobre el subintervalo <span class="math inline">\(I_{ij}\)</span>, y por tanto, la suma de las áreas de estos paralelogramos tangentes será una aproximación de la superficie de <span class="math inline">\(f\)</span> sobre el intervalo <span class="math inline">\(I\)</span>.</p>
-<p>Si para cada paralelogramo <span class="math inline">\(T_{ij}\)</span> consideramos los vectores <span class="math inline">\(\mathbf{u}_{ij}\)</span> y <span class="math inline">\(\mathbf{v}_{ij}\)</span> con origen en <span class="math inline">\((x_i, y_j)\)</span> y con la misma dirección y longitud que los lados del paralelogramo, tal y como se aprecia en la gráfica de más abajo, se tiene que el área del paralelogramo es <span class="math inline">\(\Delta T_{ij} = |\mathbf{u}_{ij}\times\mathbf{v}_{ij}|\)</span>, tal y como se vió en la <strong>?@prp-paralelogramo-producto-vectorial</strong>.</p>
-<p>Por otro lado, como <span class="math inline">\(\mathbf{u}_{ij}\)</span> está contenido en la intersección plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((x_i,y_j,f(x_i,y_j))\)</span>, con el plano <span class="math inline">\(y=y_j\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_x(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((\Delta x, 0, f'_x(x_i,y_j)\Delta x)\)</span>. Del mismo modo, como <span class="math inline">\(\mathbf{v}_{ij}\)</span> está contenido en la intersección plano tangente, con el plano <span class="math inline">\(x=x_i\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_y(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((0, \Delta y, f'_y(x_i,y_j)\Delta y)\)</span>.</p>
+
+<img data-src="img/integrales-funciones-varias-variables/planto-tangente-aproximacion-area-superficie.png" class="r-stretch quarto-figure-center"><p class="caption">Aproximación de la superficie de una función mediante paralelogramos.</p></section>
+<section class="slide level3">
+
+<p>Para cada paralelogramo <span class="math inline">\(T_{ij}\)</span> consideramos los vectores <span class="math inline">\(\mathbf{u}_{ij}\)</span> y <span class="math inline">\(\mathbf{v}_{ij}\)</span> con origen en <span class="math inline">\((x_i, y_j)\)</span> y con la misma dirección y longitud que los lados del paralelogramo.</p>
+<p>Como <span class="math inline">\(\mathbf{u}_{ij}\)</span> está contenido en la intersección plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((x_i,y_j,f(x_i,y_j))\)</span>, con el plano <span class="math inline">\(y=y_j\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_x(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((\Delta x, 0, f'_x(x_i,y_j)\Delta x)\)</span>.</p>
+<p>Del mismo modo, como <span class="math inline">\(\mathbf{v}_{ij}\)</span> está contenido en la intersección plano tangente, con el plano <span class="math inline">\(x=x_i\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_y(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((0, \Delta y, f'_y(x_i,y_j)\Delta y)\)</span>.</p>
 <p>Así pues, el producto vectorial de <span class="math inline">\(\mathbf{u}_{ij}\)</span> y <span class="math inline">\(\mathbf{v}_{ij}\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \mathbf{u}_{ij}\times\mathbf{v}_{ij}
@@ -868,6 +872,9 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 &amp;= -f'_x(x_i,y_j)\Delta x\Delta y \mathbf{i} -f'_y(x_i,y_j)\Delta x\Delta y \mathbf{j} + \Delta x\Delta y \mathbf{k} \\
 &amp;= (-f'_x(x_i,y_j), -f'_y(x_i,y_j), 1)\Delta x\Delta y,
 \end{align*}\]</span></p>
+</section>
+<section class="slide level3">
+
 <p>y el área del paralelogramo <span class="math inline">\(T_{ij}\)</span> es</p>
 <p><span class="math display">\[
 \Delta T_{ij}
@@ -883,6 +890,9 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 <p><span class="math display">\[
 A_I(f) = \int_I \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\,dA.
 \]</span></p>
+</section>
+<section class="slide level3">
+
 <div id="exm-área-superficie-semi-esfera" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 10</strong></span> La gráfica de la función <span class="math inline">\(f(x,y)=\sqrt{a^2-x^2-y^2}\)</span> es la semiesfera de radio <span class="math inline">\(a\)</span> centrada en el origen de coordenadas. El área de la superficie de esta semiesfera puede calcularse mediante la integral</p>
 <p><span class="math display">\[
@@ -904,6 +914,10 @@ A_R(f)
 &amp;= \int_0^{2\pi} \int_0^a \sqrt{\frac{r^2\cos(\theta)^2}{a^2-r^2}+\frac{r^2\operatorname{sen}(\theta)^2}{a^2-r^2}+1}r\,dr\,d\theta \\
 &amp;= \int_0^{2\pi} \int_0^a \sqrt{\frac{a^2}{a^2-r^2}}r\,dr\,d\theta.
 \end{align*}\]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
 <p>Esta última integral es impropia ya que <span class="math inline">\(\frac{a^2}{a^2-r^2}\to \infty\)</span> cuando <span class="math inline">\(r\to a\)</span>, pero la integral es finita, ya que</p>
 <p><span class="math display">\[
 \lim_{s\to a^-}\int_0^s \sqrt{\frac{a^2}{a^2-r^2}} r\,dr
@@ -916,9 +930,7 @@ A_R(f)
 = 2\pi a^2,
 \]</span></p>
 <p>por lo que el área de la esfera de radio <span class="math inline">\(a\)</span> centrada en el origen de coordenadas es <span class="math inline">\(4\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
-</div>
-</section>
-
+</section></section>
 <section>
 <section id="aplicaciones-físicas" class="title-slide slide level2 center">
 <h2>Aplicaciones físicas</h2>

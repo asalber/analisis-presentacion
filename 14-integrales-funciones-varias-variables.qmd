@@ -582,13 +582,14 @@ Del mismo modo se puede usar una integral tripe para calcular el volumen de una 
 
 ## Cálculo del area de una superficie 
 
-Otra aplicación menos intuitiva de la las integrales dobles es el cálculo del área de la superficie de una función sobre una región $R$. Si $f$ es una función de dos variables $f(x,y)$, con derivadas parciales continuas sobre un intervalo bidimensional $I=[a,b]\times[c,d]$, para aproximar el área de la superficie de $f$ sobre $I$ podemos tomar una partición $P_x=\{x_0=a,x_1,\ldots, x_n=b\}$ del intervalo $[a,b]$ en $n$ subintervalos de igual tamaño, y otra $P_y=\{y_0=a,y_1,\ldots, y_n=b\}$ del intervalo $[c,d]$, y descomponer el intervalo $I$ en subintervalos rectangulares $I_{ij}$ mediante la partición $P_n=P_x\times P_y$. De esta manera, todos los subintervalos $I_{ij}$ tendrán el mismo área $\Delta A = \Delta x\Delta y$.
+![Aproximación de la superficie de una función mediante paralelogramos.](img/integrales-funciones-varias-variables/planto-tangente-aproximacion-area-superficie.png)
 
-Si para cada subintervalo $I_{ij}$, podemos calcular el plano tangente a la superficie de $f$ en el punto $(x_i, y_j, f(x_i,y_j))$, el paralelogramo $T_{ij}$ que define el plano tangente sobre el intervalo $I_{ij}$ nos dará una aproximación del área de la superficie de $f$ sobre el subintervalo $I_{ij}$, y por tanto, la suma de las áreas de estos paralelogramos tangentes será una aproximación de la superficie de $f$ sobre el intervalo $I$.
+---
 
-Si para cada paralelogramo $T_{ij}$ consideramos los vectores $\mathbf{u}_{ij}$ y $\mathbf{v}_{ij}$ con origen en $(x_i, y_j)$ y con la misma dirección y longitud que los lados del paralelogramo, tal y como se aprecia en la gráfica de más abajo, se tiene que el área del paralelogramo es $\Delta T_{ij} = |\mathbf{u}_{ij}\times\mathbf{v}_{ij}|$, tal y como se vió en la @prp-paralelogramo-producto-vectorial. 
+Para cada paralelogramo $T_{ij}$ consideramos los vectores $\mathbf{u}_{ij}$ y $\mathbf{v}_{ij}$ con origen en $(x_i, y_j)$ y con la misma dirección y longitud que los lados del paralelogramo.
 
-Por otro lado, como $\mathbf{u}_{ij}$ está contenido en la intersección plano tangente a $f$ en $(x_i,y_j,f(x_i,y_j))$, con el plano $y=y_j$, se tiene que su pendiente es $f'_x(x_i,y_j)$, por lo que sus coordenadas son $(\Delta x, 0, f'_x(x_i,y_j)\Delta x)$. 
+Como $\mathbf{u}_{ij}$ está contenido en la intersección plano tangente a $f$ en $(x_i,y_j,f(x_i,y_j))$, con el plano $y=y_j$, se tiene que su pendiente es $f'_x(x_i,y_j)$, por lo que sus coordenadas son $(\Delta x, 0, f'_x(x_i,y_j)\Delta x)$. 
+
 Del mismo modo, como $\mathbf{v}_{ij}$ está contenido en la intersección plano tangente, con el plano $x=x_i$, se tiene que su pendiente es $f'_y(x_i,y_j)$, por lo que sus coordenadas son $(0, \Delta y, f'_y(x_i,y_j)\Delta y)$. 
 
 Así pues, el producto vectorial de $\mathbf{u}_{ij}$ y $\mathbf{v}_{ij}$ es
@@ -604,6 +605,8 @@ Así pues, el producto vectorial de $\mathbf{u}_{ij}$ y $\mathbf{v}_{ij}$ es
 &= -f'_x(x_i,y_j)\Delta x\Delta y \mathbf{i} -f'_y(x_i,y_j)\Delta x\Delta y \mathbf{j} + \Delta x\Delta y \mathbf{k} \\
 &= (-f'_x(x_i,y_j), -f'_y(x_i,y_j), 1)\Delta x\Delta y,
 \end{align*}
+
+---
 
 y el área del paralelogramo $T_{ij}$ es
 
@@ -625,6 +628,8 @@ Tomando particiones cada vez más refinadas, en el límite cuando $n\to \infty$ 
 $$
 A_I(f) = \int_I \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\,dA.
 $$
+
+---
 
 :::{#exm-área-superficie-semi-esfera}
 La gráfica de la función $f(x,y)=\sqrt{a^2-x^2-y^2}$ es la semiesfera de radio $a$ centrada en el origen de coordenadas. El área de la superficie
@@ -657,6 +662,10 @@ A_R(f)
 &= \int_0^{2\pi} \int_0^a \sqrt{\frac{a^2}{a^2-r^2}}r\,dr\,d\theta.
 \end{align*}
 
+:::
+
+---
+
 Esta última integral es impropia ya que $\frac{a^2}{a^2-r^2}\to \infty$ cuando $r\to a$, pero la integral es finita, ya que 
 
 $$
@@ -673,7 +682,8 @@ A_R(f)
 $$
 
 por lo que el área de la esfera de radio $a$ centrada en el origen de coordenadas es $4\pi a^2$, que coincide con la fórmula habitual.
-:::
+
+
 
 ## Aplicaciones físicas
 
