@@ -787,7 +787,7 @@ Así pues, el intervalo de integración es $[-\frac{\pi}{6},\frac{\pi}{6}]$. Com
 
 ![Area encerrada entre las curvas polares $r=3\cos(\theta)$ y $r=1+\cos(\theta)$.](img/integrales/area-entre-curvas-polares-2)
 
-## Integrales impropias {.scrollable}
+## Integrales impropias {.smaller}
 
 :::{#def-integral-impropia-1}
 ## Integral impropia de primer tipo
@@ -832,9 +832,9 @@ $$
 Y por tanto, el área que queda encerrada por la gráfica de $g$ y el eje $x$ por encima de $1$ es infinita.
 :::
 
-## 
+## {.smaller}
 
-:::{#def-integral-impropia-2}
+:::{#def-integral-impropia-2} 
 ## Integral impropia de segundo tipo
 Dada una función $f:I\to\mathbb{R}$ continua en $I=[a,b)$ y discontinua en $b$, se define la _integral impropia_ de $f$ en $I$ como el límite
 
@@ -843,7 +843,30 @@ $$
 $$
 
 siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.
+
+Del mismo modo, si $f$ es continua en $I=(a,b]$ y discontinua en $a$, se define la _integral impropia_ de $f$ en $I$ como el límite
+
+$$
+\int_a^b f(x)\,dx = \lim_{t\to a^+} \int_t^b f(x)\,dx.
+$$
+
+siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.
 :::
+
+---
+
+:::{#exm-integrales-impropias-2}
+La función $f(x)=\frac{1}{\sqrt{x}}$ no está definida en $x=0$, pero podemos calcular su integral impropia en el intervalo $[0,1]$.
+
+$$
+\int_0^1 \frac{1}{\sqrt{x}}\,dx 
+= \lim_{t\to 0^+} \int_t^1 \frac{1}{\sqrt{x}}\,dx 
+= \lim_{t\to 0^+} \left[2\sqrt{x}\right]_t^1 
+= \lim_{t\to 0^+} 2-2\sqrt{t} 
+= 2.
+$$
+:::
+
 
 ## Cálculo de volúmenes {#sec-calculo-volumenes-integral}
 
