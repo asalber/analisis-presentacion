@@ -3,7 +3,7 @@ title: Presentaciones de Análisis Matemático de Variable Real
 format: 
     html:
         theme:
-            dark: [darkly, custom-dark.scss]
+            dark: [darkly, custom.scss]
             light: [flatly, custom.scss]
 lang: es
 ---

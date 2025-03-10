@@ -98,7 +98,7 @@ La siguiente gráfica representa algunas de las curvas de nivel de la función $
 
 ---
 
-::: {layout-ncol=2}
+:::{layout-ncol=2}
 ![Curvas de nivel de un mapa topográfico.](./img/derivadas-funciones-varias-variables/mapa-topografico.jpg)
 
 ![Curvas de nivel de un mapa de presión atmosférica.](./img/derivadas-funciones-varias-variables/mapa-isobaras.jpg)
@@ -229,7 +229,7 @@ Por consiguiente, no existe el límite de $f$ en $(0,0)$.
 
 ---
 
-{#exm-algebra-limites-funciones-varias-variables}
+:::{#exm-algebra-limites-funciones-varias-variables}
 El límite de la función $f(x,y)=\frac{3xy^2}{x^2+y^3}$ en el punto $(2,1)$ es
 
 \begin{align*}

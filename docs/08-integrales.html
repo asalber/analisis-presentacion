@@ -300,9 +300,10 @@ S(f,P) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}) = \sum_{i=1}^n c(x_i-x_{i-1})\\
 <p>Así pues, <span class="math inline">\(s(f,P) = S(f,P)=c(b-a)\)</span> <span class="math inline">\(\forall P\in\mathcal{P}(I)\)</span> y <span class="math inline">\(\int_a^b f(x)\,dx = c(b-a)\)</span>.</p>
 </div>
 </section>
-<section class="slide level3">
-
-<p>:::{#exm-sumas-riemann-2}{.scrollable} Veamos que <span class="math inline">\(f(x)=x\)</span> es integrable en <span class="math inline">\([0,1]\)</span>.</p>
+<section id="section-9" class="slide level3 smaller">
+<h3></h3>
+<div id="exm-sumas-riemann-2" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3</strong></span> Veamos que <span class="math inline">\(f(x)=x\)</span> es integrable en <span class="math inline">\([0,1]\)</span>.</p>
 <p>Sea <span class="math inline">\(P_n=\{0, \frac{1}{n}, \frac{2}{n}, \ldots, \frac{n}{n}\}\)</span> una partición de <span class="math inline">\([0,1]\)</span>. Vamos a probar primero que <span class="math inline">\(\sup\{s(f,P_n):n\in\mathbb{N}\} = \inf\{S(f,P_n):n\in\mathbb{N}\}\)</span>. Como <span class="math inline">\(f\)</span> es creciente y continua en <span class="math inline">\([0,1]\)</span>, se cumple que</p>
 <p><span class="math display">\[\begin{align*}
 m_i &amp;= \inf\{f(x): x\in[x_{i-1},x_i]\} = f(x_{i-1}),\\
@@ -315,6 +316,10 @@ s(f,P_n) &amp;= \sum_{i=1}^n m_i\left(\frac{i}{n}-\frac{i-1}{n}\right) = \sum_{i
 S(f,P_n) &amp;= \sum_{i=1}^n M_i\left(\frac{i}{n}-\frac{i-1}{n}\right) = \sum_{i=1}^n f\left(\frac{i}{n}\right)\frac{1}{n} = \sum_{i=1}^n \frac{i}{n}\frac{1}{n}\\
 &amp; = \frac{1}{n^2}\sum_{i=1}^n i =\frac{1}{n^2}\frac{n(n+1)}{2} = \frac{1}{2}\left(1+\frac{1}{n}\right).\\
 \end{align*}\]</span></p>
+</div>
+</section>
+<section class="slide level3">
+
 <p>Así pues,</p>
 <p><span class="math display">\[
 \begin{gathered}
@@ -329,12 +334,12 @@ S(f,P_n) &amp;= \sum_{i=1}^n M_i\left(\frac{i}{n}-\frac{i-1}{n}\right) = \sum_{i
 \leq \overline{\int_0^1} f =\inf\{S(f,P):P\in\mathcal{P}(I)\} \leq \inf\{S(f,P_n):n\in\mathbb{N}\}
 \end{gathered}
 \]</span></p>
-<p>se puede concluir que <span class="math inline">\(\underline{\int_0^1} f = \overline{\int_0^1} f\)</span>, y por tanto <span class="math inline">\(\int_0^1 f(x)\, dx = \frac{1}{2}\)</span>. :::</p>
+<p>se puede concluir que <span class="math inline">\(\underline{\int_0^1} f = \overline{\int_0^1} f\)</span>, y por tanto <span class="math inline">\(\int_0^1 f(x)\, dx = \frac{1}{2}\)</span>.</p>
 </section>
 <section class="slide level3">
 
 <div id="exm-funcion-no-integrable-riemann" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3</strong></span> La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 4</strong></span> La función</p>
 <p><span class="math display">\[
 f(x) =
 \begin{cases}
@@ -351,14 +356,14 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 <p>Así pues, <span class="math inline">\(\underline{\int_a^b}f = 0 \neq \overline{\int_a^b}f=1\)</span>.</p>
 </div>
 </section></section>
-<section id="section-9" class="title-slide slide level2 center">
+<section id="section-10" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-criterio-integrabilidad-riemann" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 1 (Criterio de integrabilidad de Riemann)</strong></span> Una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span> es integrable en <span class="math inline">\(I\)</span> si y sólo si para cada <span class="math inline">\(\varepsilon&gt;0\)</span> existe una partición <span class="math inline">\(P\in\mathcal{P}(I)\)</span> tal que <span class="math inline">\(S(f,P)-s(f,P)&lt;\varepsilon\)</span>.</p>
 </div>
 </section>
 
-<section id="section-10" class="title-slide slide level2 center">
+<section id="section-11" class="title-slide slide level2 center">
 <h2></h2>
 <div id="cor-criterio-integrabilidad-riemann" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 1</strong></span> Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(I=[a,b]\)</span>, si existe una sucesión de particiones <span class="math inline">\((P_n)_{n=1}^\infty\)</span> de <span class="math inline">\(I\)</span> tal que <span class="math inline">\(\lim_{n\to\infty} S(f,P_n)-s(f,P_n) =0\)</span>, entonces <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> y</p>
@@ -389,7 +394,7 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 </div>
 </section>
 
-<section id="section-11" class="title-slide slide level2 center">
+<section id="section-12" class="title-slide slide level2 center">
 <h2></h2>
 <div id="prp-integral-funcion-positiva" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 5</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\geq 0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \geq 0\)</span>.</p>
@@ -399,7 +404,7 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 </div>
 </section>
 
-<section id="section-12" class="title-slide slide level2 center">
+<section id="section-13" class="title-slide slide level2 center">
 <h2></h2>
 <div class="callout callout-caution callout-style-simple">
 <div class="callout-body">
@@ -437,7 +442,7 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 </div>
 </section>
 
-<section id="section-13" class="title-slide slide level2 center">
+<section id="section-14" class="title-slide slide level2 center">
 <h2></h2>
 <div id="cor-integral-funcion-mayor-que-otra" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 3</strong></span> Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(f(x)\leq g(x)\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces <span class="math inline">\(\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx\)</span>.</p>
@@ -448,7 +453,7 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 </section>
 
 <section>
-<section id="section-14" class="title-slide slide level2 center">
+<section id="section-15" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-aditividad-integral-intervalo" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 3 (Aditividad de la integral respecto del intervalo de integración)</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función acotada en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(c\in(a,b)\)</span>, entonces <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> si y sólo si <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\([a,c]\)</span> y <span class="math inline">\([c,b]\)</span>. Además, en este caso,</p>
@@ -468,14 +473,14 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 </div>
 </section>
 
-<section id="section-15" class="title-slide slide level2 center">
+<section id="section-16" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-integrabilidad-funciones-continuas" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 5</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 </section>
 
-<section id="section-16" class="title-slide slide level2 center">
+<section id="section-17" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-integrabilidad-funciones-discontinuas" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 6</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(I=[a,b]\)</span>, salvo en un punto <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
@@ -485,35 +490,35 @@ M_i &amp;= \sup\{f(x): x\in [x_{i-1},x_i]\} = 1,
 </div>
 </section>
 
-<section id="section-17" class="title-slide slide level2 center">
+<section id="section-18" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-integrabilidad-composicion-funciones" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 7</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(g:J\to\mathbb{R}\)</span> es una función continua en <span class="math inline">\(J=[c,d]\)</span> con <span class="math inline">\(f(I)\subseteq J\)</span>, entonces <span class="math inline">\(g\circ f\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 </section>
 
-<section id="section-18" class="title-slide slide level2 center">
+<section id="section-19" class="title-slide slide level2 center">
 <h2></h2>
 <div id="cor-integrabilidad-valor-absoluto" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 6</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(|f|\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 </section>
 
-<section id="section-19" class="title-slide slide level2 center">
+<section id="section-20" class="title-slide slide level2 center">
 <h2></h2>
 <div id="cor-integrabilidad-potencias" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 7</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(f^n\)</span> es integrable en <span class="math inline">\(I\)</span> para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
 </div>
 </section>
 
-<section id="section-20" class="title-slide slide level2 center">
+<section id="section-21" class="title-slide slide level2 center">
 <h2></h2>
 <div id="cor-integrabilidad-funcion-inversa" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 8</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es una función integrable en <span class="math inline">\(I=[a,b]\)</span> tal que <span class="math inline">\(f(x)&gt;0\)</span> <span class="math inline">\(\forall x\in I\)</span>, entonces la función <span class="math inline">\(\frac{1}{f}\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
 </div>
 </section>
 
-<section id="section-21" class="title-slide slide level2 center">
+<section id="section-22" class="title-slide slide level2 center">
 <h2></h2>
 <div id="cor-integrabilidad-funcion-producto" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corolario 9</strong></span> Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces la función <span class="math inline">\(fg\)</span> es integrable en <span class="math inline">\(I\)</span>.</p>
@@ -531,7 +536,7 @@ F(x) = \int_a^x f(t)\, dt
 </div>
 </section>
 
-<section id="section-22" class="title-slide slide level2 center">
+<section id="section-23" class="title-slide slide level2 center">
 <h2></h2>
 <div id="prp-integral-valor-absoluto" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 6</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span>, entonces</p>
@@ -542,7 +547,7 @@ F(x) = \int_a^x f(t)\, dt
 </section>
 
 <section>
-<section id="section-23" class="title-slide slide level2 center">
+<section id="section-24" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-integral-indefinida-continua" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 8</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> es la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(F\)</span> es continua en <span class="math inline">\(I\)</span>.</p>
@@ -551,7 +556,7 @@ F(x) = \int_a^x f(t)\, dt
 <section class="slide level3">
 
 <div id="exm-integral-indefinida-continua" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 4</strong></span> Sea</p>
+<p><span class="theorem-title"><strong>Ejemplo 5</strong></span> Sea</p>
 <p><span class="math display">\[
 f(x)=
 \begin{cases}
@@ -573,7 +578,7 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
 \]</span></p>
 </div>
 </section></section>
-<section id="section-24" class="title-slide slide level2 center">
+<section id="section-25" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-teorema-fundamental-calculo-1" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 9 (Teorema fundamental del Cálculo I)</strong></span> Dada <span class="math inline">\(f:I\to\mathbb{R}\)</span> integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F(x)=\int_a^x f(t)\,dt\)</span> la integral indefinida de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(c\in I\)</span>, entonces <span class="math inline">\(F\)</span> es derivable en <span class="math inline">\(c\)</span> y <span class="math inline">\(F'(c)=f(c)\)</span>.</p>
@@ -591,7 +596,7 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
 </section>
 
 <section>
-<section id="section-25" class="title-slide slide level2 center">
+<section id="section-26" class="title-slide slide level2 center">
 <h2></h2>
 <div id="def-primitiva" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9 (Primitiva de una función)</strong></span> Dada una función <span class="math inline">\(f:I\to\ \mathbb{R}\)</span> integrable en <span class="math inline">\(I\)</span>, a cualquier función <span class="math inline">\(F\)</span> que cumple <span class="math inline">\(F'=f\)</span> se le llama <em>primitiva</em> de <span class="math inline">\(f\)</span>.</p>
@@ -610,7 +615,7 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
 <section class="slide level3">
 
 <div id="exm-teorema-fundamental-calculo-alternativo" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5</strong></span> Dada la función <span class="math inline">\(f(x)=2x\)</span>, es fácil ver que <span class="math inline">\(F(x)=x^2+C\)</span> es una primitiva de <span class="math inline">\(f\)</span> para cualquier <span class="math inline">\(C\in\mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 6</strong></span> Dada la función <span class="math inline">\(f(x)=2x\)</span>, es fácil ver que <span class="math inline">\(F(x)=x^2+C\)</span> es una primitiva de <span class="math inline">\(f\)</span> para cualquier <span class="math inline">\(C\in\mathbb{R}\)</span>.</p>
 <p>En un ejemplo anterior vimos que <span class="math inline">\(\int_0^1 x\,dx = \frac{1}{2}\)</span>, de modo que</p>
 <p><span class="math display">\[
 \int_0^1 2x\,dx = 2 \int_0^1 x\,dx = 2\frac{1}{2} = 1.
@@ -619,7 +624,7 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
 </div>
 </section></section>
 <section>
-<section id="section-26" class="title-slide slide level2 center">
+<section id="section-27" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-teorema-fundamental-calculo-2" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 10 (Teorema fundamental del cálculo II)</strong></span> Si <span class="math inline">\(f:I\to\mathbb{R}\)</span> es integrable en <span class="math inline">\(I=[a,b]\)</span> y <span class="math inline">\(F\)</span> es una primitiva de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, entonces</p>
@@ -632,7 +637,7 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
 <section class="slide level3">
 
 <div id="exm-regla-barrow" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 6</strong></span> Dada la función <span class="math inline">\(f(x)=x^2\)</span>, la función <span class="math inline">\(F_0(x)= \frac{x^3}{3}\)</span> es una primitiva de <span class="math inline">\(f\)</span>, y por tanto, podemos usarla para calcular la siguiente integral</p>
+<p><span class="theorem-title"><strong>Ejemplo 7</strong></span> Dada la función <span class="math inline">\(f(x)=x^2\)</span>, la función <span class="math inline">\(F_0(x)= \frac{x^3}{3}\)</span> es una primitiva de <span class="math inline">\(f\)</span>, y por tanto, podemos usarla para calcular la siguiente integral</p>
 <p><span class="math display">\[
 \int_0^1 x^2\, dx = F_0(1)-F_0(0) = \frac{1^3}{3}-\frac{0^3}{3} = \frac{1}{3}.
 \]</span></p>
@@ -645,7 +650,7 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
 <section class="slide level3">
 
 <div id="exm-regla-barrow-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7</strong></span> Dada la función <span class="math inline">\(f(x)=\cos(x)\)</span>, la función <span class="math inline">\(F(x)= \operatorname{sen}(x)\)</span> es una primitiva de <span class="math inline">\(f\)</span>, y por tanto, podemos usarla para calcular la siguiente integral</p>
+<p><span class="theorem-title"><strong>Ejemplo 8</strong></span> Dada la función <span class="math inline">\(f(x)=\cos(x)\)</span>, la función <span class="math inline">\(F(x)= \operatorname{sen}(x)\)</span> es una primitiva de <span class="math inline">\(f\)</span>, y por tanto, podemos usarla para calcular la siguiente integral</p>
 <p><span class="math display">\[
 \int_{\pi/2}^\pi \cos(x)\, dx = F(\pi)-F(\pi/2) = \operatorname{sen}(\pi)-\operatorname{sen}(\pi/2) = 0-1 = -1.
 \]</span></p>
@@ -655,7 +660,7 @@ F(x) = \int_{-1}^0 f + \int_0^x f = \int_0^x f = \int_0^1 1 = x.
 <section class="slide level3">
 
 <div id="exm-funcion-integrable-sin-primitiva" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8</strong></span> La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 9</strong></span> La función</p>
 <p><span class="math display">\[
 f(x) =
 \begin{cases}
@@ -670,7 +675,7 @@ f(x) =
 
 <p>También puede darse el caso de que <span class="math inline">\(f\)</span> tenga primitiva, y sin embargo, no sea integrable.</p>
 <div id="exm-funcion-no-integrable-con-primitiva" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9</strong></span> La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 10</strong></span> La función</p>
 <p><span class="math display">\[
 f(x)=
 \begin{cases}
@@ -702,7 +707,7 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 <section class="slide level3">
 
 <div id="exm-area-funcion-positiva-negativa" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 10</strong></span> Veamos cómo calcular el area encerrada entre la gráfica de la función <span class="math inline">\(f(x)=x^2-4x+3\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([0,4]\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 11</strong></span> Veamos cómo calcular el area encerrada entre la gráfica de la función <span class="math inline">\(f(x)=x^2-4x+3\)</span> y el eje <span class="math inline">\(x\)</span> en el intervalo <span class="math inline">\([0,4]\)</span>.</p>
 <p>Si resolvemos la ecuación <span class="math inline">\(f(x)=0\)</span> obtenemos dos raíces <span class="math inline">\(x=1\)</span> y <span class="math inline">\(x=3\)</span>, de manera que la función es positiva en el intervalo <span class="math inline">\((0,1)\)</span> y <span class="math inline">\((3,4)\)</span> y negativa en el intervalo <span class="math inline">\((1,3)\)</span>. Por tanto, el área encerrada entre la gráfica de la función y el eje <span class="math inline">\(x\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^4 |f(x)|\,dx
@@ -732,7 +737,7 @@ x^2\operatorname{sen}\left(\frac{1}{x^2}\right) &amp; \mbox{si $x\in[-1,1]\setmi
 <section class="slide level3">
 
 <div id="exm-area-funcion-positiva-negativa" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11</strong></span> Veamos cómo calcular el area encerrada entre las gráficas de las funciones <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(g(x)=\cos(x)\)</span> en el intervalo <span class="math inline">\([0,\pi]\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 12</strong></span> Veamos cómo calcular el area encerrada entre las gráficas de las funciones <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(g(x)=\cos(x)\)</span> en el intervalo <span class="math inline">\([0,\pi]\)</span>.</p>
 <p>Si resolvemos la ecuación <span class="math inline">\(f(x)-g(x)=0\)</span> obtenemos una raíz en <span class="math inline">\(x=\pi/4\)</span> en el intervalo de integración. Se cumple que <span class="math inline">\(f(x)&lt;g(x)\)</span> <span class="math inline">\(\forall x\in\left(0,\frac{\pi}{4}\right)\)</span> y <span class="math inline">\(f(x)&gt;g(x)\)</span> <span class="math inline">\(\forall x\in\left(\frac{\pi}{4},\pi\right)\)</span>. Por tanto, el área comprendida entre las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> en el intervalo <span class="math inline">\([0,\pi]\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^\pi |f(x)-g(x)|\,dx
@@ -792,7 +797,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 
 <img data-src="img/integrales/sumas-riemann-polares.svg" class="r-stretch quarto-figure-center"><p class="caption">Descomposición en sectores de círculos del area encerrada por una curva en polares.</p></section></section>
 <section>
-<section id="section-27" class="title-slide slide level2 center">
+<section id="section-28" class="title-slide slide level2 center">
 <h2></h2>
 <p>De forma análoga se puede definir <em>integral inferior</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como</p>
 <p><span class="math display">\[
@@ -815,7 +820,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <section class="slide level3">
 
 <div id="exm-area-semicírculo-polares" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12</strong></span> Un semicírculo de radio <span class="math inline">\(r\)</span> puede expresarse en coordenadas polares mediante la función <span class="math inline">\(f(\theta)=r\)</span> para <span class="math inline">\(0\leq \theta\leq \pi\)</span>. Por tanto, el área encerrada por este semicírculo es</p>
+<p><span class="theorem-title"><strong>Ejemplo 13</strong></span> Un semicírculo de radio <span class="math inline">\(r\)</span> puede expresarse en coordenadas polares mediante la función <span class="math inline">\(f(\theta)=r\)</span> para <span class="math inline">\(0\leq \theta\leq \pi\)</span>. Por tanto, el área encerrada por este semicírculo es</p>
 <p><span class="math display">\[
 \int_0^{\pi} \frac{r^2}{2} \,d\theta = \left[\frac{r^2}{2}\theta\right]_0^\pi = \frac{r^2}{2}\pi.
 \]</span></p>
@@ -824,7 +829,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <section class="slide level3">
 
 <div id="exm-area-curva-polar" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13</strong></span> Veamos ahora cómo calcular el area encerrada por la curva polar <span class="math inline">\(r=3\operatorname{sen}(2\theta)\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 14</strong></span> Veamos ahora cómo calcular el area encerrada por la curva polar <span class="math inline">\(r=3\operatorname{sen}(2\theta)\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^{2\pi} \frac{r^2}{2}
 &amp;= \frac{1}{2}\int_0^{2\pi} (3\operatorname{sen}(2\theta))^2\,d\theta
@@ -855,26 +860,26 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 
 <img data-src="img/integrales/area-entre-curvas-polares.svg" class="r-stretch quarto-figure-center"><p class="caption">Area encerrada entre dos curvas polares$.</p></section></section>
 <section>
-<section id="section-28" class="title-slide slide level2 center">
+<section id="section-29" class="title-slide slide level2 center">
 <h2></h2>
 <p>En general, cuando <span class="math inline">\(f\)</span> es mayor que <span class="math inline">\(g\)</span> en algunos subintervalos de <span class="math inline">\(I\)</span> y menor en otros, habrá que descomponer el intervalo de integración en subintervalos donde la diferencia <span class="math inline">\(f-g\)</span> sea sea positiva o negativa, integrar <span class="math inline">\(f-g\)</span> en los intervalos donde la diferencia es positiva, integrar <span class="math inline">\(-(f-g)=g-f\)</span> en los intervalos donde la diferencia es negativa, y finalmente, sumar las areas correspondientes a cada subintervalo.</p>
 </section>
-<section id="section-29" class="slide level3 smaller">
+<section id="section-30" class="slide level3 smaller">
 <h3></h3>
 <div id="exm-area-entre-curvas-polares" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 14</strong></span> Vamos a calcular el area encerrada entre las curvas polares <span class="math inline">\(r=3\cos(\theta)\)</span> y <span class="math inline">\(r=1+\cos(\theta)\)</span>. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas.</p>
+<p><span class="theorem-title"><strong>Ejemplo 15</strong></span> Vamos a calcular el area encerrada entre las curvas polares <span class="math inline">\(r=3\cos(\theta)\)</span> y <span class="math inline">\(r=1+\cos(\theta)\)</span>. Para ello primero debemos determinar el intervalo de integración a partir de los puntos de corte de las dos curvas.</p>
 <p><span class="math display">\[
-3\cos(\theta) = 1 + \cos(\theta) \Leftrightarrow \cos(\theta) = \frac{1}{2} \Leftrightarrow \theta = \operatorname{arccos}\left(\frac{1}{2}\right) = \pm \frac{\pi}{6}
+3\cos(\theta) = 1 + \cos(\theta) \Leftrightarrow \cos(\theta) = \frac{1}{2} \Leftrightarrow \theta = \operatorname{arccos}\left(\frac{1}{2}\right) = \pm \frac{\pi}{3}
 \]</span></p>
-<p>Así pues, el intervalo de integración es <span class="math inline">\([-\frac{\pi}{6},\frac{\pi}{6}]\)</span>. Como en este intervalo <span class="math inline">\(1+\cos(\theta) \leq 3\cos(\theta)\)</span>, el area encerrada entre estas dos curvas es</p>
+<p>Así pues, el intervalo de integración es <span class="math inline">\([-\frac{\pi}{3},\frac{\pi}{3}]\)</span>. Como en este intervalo <span class="math inline">\(1+\cos(\theta) \leq 3\cos(\theta)\)</span>, el area encerrada entre estas dos curvas es</p>
 <p><span class="math display">\[\begin{align*}
-\frac{1}{2}\int_{-\pi/6}^{\pi/6}f(\theta)^2-g(\theta)^2\,d\theta
-&amp;= \frac{1}{2} \int_{-\pi/6}^{\pi/6}(3\cos(\theta))^2 - (1+\cos(\theta))^2 \,d\theta \\
-&amp;= \frac{1}{2} \int_{-\pi/6}^{\pi/6}(8\cos(\theta))^2 - 2\cos(\theta) - 1 \,d\theta \\
-&amp;= \frac{1}{2}\left(8\int_{-\pi/6}^{\pi/6}\cos(\theta)^2\,d\theta - 2\int_{-\pi/6}^{\pi/6}\cos(\theta)\,d\theta - \int_{-\pi/6}^{\pi/6}\,d\theta \right) \\
-&amp;= \frac{1}{2}\left([2\operatorname{sen}(2\theta)+4\theta]_{-\pi/6}^{\pi/6} - 2[\operatorname{sen}(\theta)]_{-\pi/6}^{\pi/6} - [\theta]_{-\pi/6}^{\pi/6} \right) \\
-&amp;= \frac{1}{2}\left(\sqrt{3}+\frac{4\pi}{6} +\sqrt{3} +\frac{4\pi}{6}\right)\\
-&amp;= \frac{\pi}{2}+\sqrt{3}-1 \approx 2.3028
+\frac{1}{2}\int_{-\pi/3}^{\pi/3}f(\theta)^2-g(\theta)^2\,d\theta
+&amp;= \frac{1}{2} \int_{-\pi/3}^{\pi/3}(3\cos(\theta))^2 - (1+\cos(\theta))^2 \,d\theta \\
+&amp;= \frac{1}{2} \int_{-\pi/3}^{\pi/3}8\cos(\theta)^2 - 2\cos(\theta) - 1 \,d\theta \\
+&amp;= \frac{1}{2}\left(8\int_{-\pi/3}^{\pi/3}\cos(\theta)^2\,d\theta - 2\int_{-\pi/3}^{\pi/3}\cos(\theta)\,d\theta - \int_{-\pi/3}^{\pi/3}\,d\theta \right) \\
+&amp;= \frac{1}{2}\left([2\operatorname{sen}(2\theta)+4\theta]_{-\pi/3}^{\pi/3} - 2[\operatorname{sen}(\theta)]_{-\pi/3}^{\pi/3} - [\theta]_{-\pi/3}^{\pi/3} \right) \\
+&amp;= \frac{1}{2}\left(\sqrt{3}+\frac{4\pi}{3} +\sqrt{3} +\frac{4\pi}{3}- \sqrt{3} - \sqrt{3} - \frac{\pi}{3} -\frac{\pi}{3}\right)\\
+&amp;= \pi.
 \end{align*}\]</span></p>
 </div>
 </section>
@@ -904,7 +909,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <section class="slide level3">
 
 <div id="exm-integrales-impropias-1" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 15</strong></span> La integral impropia de la función <span class="math inline">\(f(x)=\frac{1}{x^2}\)</span> converge en el intervalo <span class="math inline">\([1,\infty]\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 16</strong></span> La integral impropia de la función <span class="math inline">\(f(x)=\frac{1}{x^2}\)</span> converge en el intervalo <span class="math inline">\([1,\infty]\)</span> ya que</p>
 <p><span class="math display">\[
 \int_1^\infty \frac{1}{x^2}\,dx = \lim_{t\to\infty} \int_1^t \frac{1}{x^2}\,dx = \lim_{t\to\infty}\left[\frac{-1}{x}\right]_1^t = \lim_{n\to\infty} 1-\frac{1}{t} = 1.
 \]</span></p>
@@ -917,7 +922,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 </div>
 </section></section>
 <section>
-<section id="section-30" class="title-slide slide level2 smaller center">
+<section id="section-31" class="title-slide slide level2 smaller center">
 <h2></h2>
 <div id="def-integral-impropia-2" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 11 (Integral impropia de segundo tipo)</strong></span> Dada una función <span class="math inline">\(f:I\to\mathbb{R}\)</span> continua en <span class="math inline">\(I=[a,b)\)</span> y discontinua en <span class="math inline">\(b\)</span>, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span> como el límite</p>
@@ -935,7 +940,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <section class="slide level3">
 
 <div id="exm-integrales-impropias-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 16</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{\sqrt{x}}\)</span> no está definida en <span class="math inline">\(x=0\)</span>, pero podemos calcular su integral impropia en el intervalo <span class="math inline">\([0,1]\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 17</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{\sqrt{x}}\)</span> no está definida en <span class="math inline">\(x=0\)</span>, pero podemos calcular su integral impropia en el intervalo <span class="math inline">\([0,1]\)</span>.</p>
 <p><span class="math display">\[
 \int_0^1 \frac{1}{\sqrt{x}}\,dx
 = \lim_{t\to 0^+} \int_t^1 \frac{1}{\sqrt{x}}\,dx
@@ -951,7 +956,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <img data-src="img/integrales/seccion-transversal-piramide.svg" class="r-stretch quarto-figure-center"><p class="caption">Sección transversal de un cuerpo sólido con respecto al eje <span class="math inline">\(x\)</span></p></section>
 
 <section>
-<section id="section-31" class="title-slide slide level2 center">
+<section id="section-32" class="title-slide slide level2 center">
 <h2></h2>
 <p>En general, si disponemos de una función <span class="math inline">\(A(x)\)</span> que nos da el área de la sección transversal del sólido para cada <span class="math inline">\(x\in[a,b]\)</span>, podemos tomar una partición <span class="math inline">\(P_n=\{x_0=a,x_1,\ldots, x_n=b\}\)</span> del intervalo <span class="math inline">\([a,b]\)</span> y aproximar el volumen del sólido en este intervalo mediante las sumas inferior y superior de Riemann</p>
 <p><span class="math display">\[\begin{align*}
@@ -971,7 +976,7 @@ S(A,P_n) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1}
 <section class="slide level3">
 
 <div id="exm-volumen-esfera" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 17</strong></span> Veamos cómo calcular el volumen de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2+z^2=r^2\)</span>. Si cortamos la esfera con planos <span class="math inline">\(x=x_i\)</span> perpendiculares al eje <span class="math inline">\(x\)</span>, sustituyendo en la ecuación de la esfera, se tiene <span class="math inline">\(y^2+z^2=r^2-x_i^2\)</span>, por lo que se obtienen secciones transversales circulares con radio <span class="math inline">\(\sqrt{r^2-x_i^2}\)</span>, y, por tanto, el área de estas secciones circulares será <span class="math inline">\(\pi \left(\sqrt{r^2-x_i^2}\right)^2= \pi (r^2-x_i^2)\)</span>. Así pues, la función que nos da el área de la sección transversal para cualquier <span class="math inline">\(x\in[-r,r]\)</span> es <span class="math inline">\(A(x)=\pi(r^2-x^2)\)</span>, y por tanto, podemos calcular el volumen de la esfera con la integral definida</p>
+<p><span class="theorem-title"><strong>Ejemplo 18</strong></span> Veamos cómo calcular el volumen de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2+z^2=r^2\)</span>. Si cortamos la esfera con planos <span class="math inline">\(x=x_i\)</span> perpendiculares al eje <span class="math inline">\(x\)</span>, sustituyendo en la ecuación de la esfera, se tiene <span class="math inline">\(y^2+z^2=r^2-x_i^2\)</span>, por lo que se obtienen secciones transversales circulares con radio <span class="math inline">\(\sqrt{r^2-x_i^2}\)</span>, y, por tanto, el área de estas secciones circulares será <span class="math inline">\(\pi \left(\sqrt{r^2-x_i^2}\right)^2= \pi (r^2-x_i^2)\)</span>. Así pues, la función que nos da el área de la sección transversal para cualquier <span class="math inline">\(x\in[-r,r]\)</span> es <span class="math inline">\(A(x)=\pi(r^2-x^2)\)</span>, y por tanto, podemos calcular el volumen de la esfera con la integral definida</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-r}^r \pi(r^2-x^2)\,dx
 &amp;= \pi\left[r^2x-\frac{x^3}{3}\right]_{-r}^r \\
@@ -988,7 +993,7 @@ S(A,P_n) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1}
 <img data-src="img/integrales/disco-solido-revolucion.svg" class="r-stretch quarto-figure-center"><p class="caption">Sólido de revolución.</p></section>
 
 <section>
-<section id="section-32" class="title-slide slide level2 center">
+<section id="section-33" class="title-slide slide level2 center">
 <h2></h2>
 <p>Este tipo de sólidos tiene la particularidad de que todas sus secciones transversales con respecto al eje de rotación son círculos de radio <span class="math inline">\(f(x)\)</span>, por lo que el área de las secciones transversales es <span class="math inline">\(A(x)=\pi f(x)^2\)</span>, y su volumen en el intervalo <span class="math inline">\([a,b]\)</span> puede calcularse mediante la integral definida</p>
 <p><span class="math display">\[
@@ -999,7 +1004,7 @@ S(A,P_n) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1}
 <section class="slide level3">
 
 <div id="exm-volumen-cono-revolucion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 18</strong></span> Si rotamos alrededor del eje <span class="math inline">\(x\)</span> el segmento de la recta <span class="math inline">\(f(x)=2-x\)</span> correspondiente al intervalo <span class="math inline">\(x\in[0,2]\)</span>, se obtiene un cono con base de radio <span class="math inline">\(2\)</span> y altura <span class="math inline">\(2\)</span>. El volumen de este cono es</p>
+<p><span class="theorem-title"><strong>Ejemplo 19</strong></span> Si rotamos alrededor del eje <span class="math inline">\(x\)</span> el segmento de la recta <span class="math inline">\(f(x)=2-x\)</span> correspondiente al intervalo <span class="math inline">\(x\in[0,2]\)</span>, se obtiene un cono con base de radio <span class="math inline">\(2\)</span> y altura <span class="math inline">\(2\)</span>. El volumen de este cono es</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^2 \pi f(x)^2\,dx
 &amp;= \int_0^2 \pi (2-x)^2\,dx
@@ -1017,7 +1022,7 @@ S(A,P_n) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1}
 <img data-src="img/integrales/envoltorio-cilindrico-solido-revolucion.svg" class="r-stretch quarto-figure-center"><p class="caption">Envoltorio cilíndrico de un sólido de revolución.</p></section>
 
 <section>
-<section id="section-33" class="title-slide slide level2 center">
+<section id="section-34" class="title-slide slide level2 center">
 <h2></h2>
 <p>Los envoltorios se construyen de forma que su base es un círculo de radio <span class="math inline">\(x\in [a,b]\)</span> y perpendicular al eje de rotación del sólido de revolución y su altura es <span class="math inline">\(f(x)\)</span>, de manera que su área (sin contar el área de las bases) es <span class="math inline">\(2\pi x f(x)\)</span>. Sumando las áreas de estos infinitos envoltorios que se obtienen para cada <span class="math inline">\(x\in[a,b]\)</span> se obtiene al volumen del cuerpo sólido de revolución en el intervalo <span class="math inline">\([a,b]\)</span> mediante la integral definida</p>
 <p><span class="math display">\[
@@ -1028,7 +1033,7 @@ S(A,P_n) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1}
 <section class="slide level3">
 
 <div id="exm-volumen-revolucion-envoltorios" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 19</strong></span> El volumen del sólido de revolución que se obtiene al rotar alrededor del eje <span class="math inline">\(y\)</span> la función <span class="math inline">\(f(x)=x^2\)</span> en el intervalo <span class="math inline">\([0,2]\)</span> puede calcularse usando tanto discos como envoltorios cilíndricos.</p>
+<p><span class="theorem-title"><strong>Ejemplo 20</strong></span> El volumen del sólido de revolución que se obtiene al rotar alrededor del eje <span class="math inline">\(y\)</span> la función <span class="math inline">\(f(x)=x^2\)</span> en el intervalo <span class="math inline">\([0,2]\)</span> puede calcularse usando tanto discos como envoltorios cilíndricos.</p>
 <p>Si usamos discos discos cilíndricos debemos expresar <span class="math inline">\(x\)</span> en función de <span class="math inline">\(y\)</span>, es decir <span class="math inline">\(x=\sqrt{y}\)</span> y calcular la siguiente integral definida en el intervalo <span class="math inline">\([f(0),f(2)]\)</span></p>
 <p><span class="math display">\[
 \int_0^4 \pi g(y)^2\,dy
@@ -1052,7 +1057,7 @@ S(A,P_n) &amp;= \sum_{i=1}^n M_i(x_i-x_{i-1}),\quad M_i=\sup\{A(x): x\in(x_{i-1}
 <img data-src="img/integrales/aproximacion-longitud-curva.svg" class="r-stretch quarto-figure-center"><p class="caption">Aproximación de la longitud de una curva mediante segmentos.</p></section>
 
 <section>
-<section id="section-34" class="title-slide slide level2 center">
+<section id="section-35" class="title-slide slide level2 center">
 <h2></h2>
 <p>Aplicando el teorema de Pitágoras, es fácil ver que la longitud del segmento correspondiente al subintervalo <span class="math inline">\([x_{i-1},x_i]\)</span> es</p>
 <p><span class="math display">\[
@@ -1091,7 +1096,7 @@ f(x_i)-f(x_{i-1})=f'(x'_i)(x_i-x_{i-1}) = f'(x'_i)\Delta x,
 <section class="slide level3">
 
 <div id="exm-longitud-circunferencia" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 20</strong></span> Veamos cómo calcular la longitud de una circunferencia de radio <span class="math inline">\(1\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2=1\)</span>. Resolviendo esta ecuación para <span class="math inline">\(y\)</span> se tiene que <span class="math inline">\(y=\pm \sqrt{1-x^2}\)</span>, y podemos tomar la función <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span> cuya gráfica es la semicircunferencia superior.</p>
+<p><span class="theorem-title"><strong>Ejemplo 21</strong></span> Veamos cómo calcular la longitud de una circunferencia de radio <span class="math inline">\(1\)</span> centrada en el origen con ecuación <span class="math inline">\(x^2+y^2=1\)</span>. Resolviendo esta ecuación para <span class="math inline">\(y\)</span> se tiene que <span class="math inline">\(y=\pm \sqrt{1-x^2}\)</span>, y podemos tomar la función <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span> cuya gráfica es la semicircunferencia superior.</p>
 <p>La derivada de <span class="math inline">\(f\)</span> es <span class="math inline">\(f'(x)=\frac{-x}{\sqrt{1-x^2}}\)</span>, de manera que la longitud de la semicircunferencia es</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-1}^1 \sqrt{1+\left(\frac{-x}{\sqrt{1-x^2}}\right)^2}\,dx
@@ -1139,13 +1144,13 @@ f(x_i)-f(x_{i-1})=f'(x'_i)(x_i-x_{i-1}) = f'(x'_i)\Delta x,
 </div>
 </section>
 
-<section id="section-35" class="title-slide slide level2 center">
+<section id="section-36" class="title-slide slide level2 center">
 <h2></h2>
 
 <img data-src="img/integrales/cono-truncado.svg" class="r-stretch quarto-figure-center"><p class="caption">Tronco de cono con radio menor <span class="math inline">\(r_1\)</span> y radio mayor <span class="math inline">\(r_2\)</span>.</p></section>
 
 <section>
-<section id="section-36" class="title-slide slide level2 center">
+<section id="section-37" class="title-slide slide level2 center">
 <h2></h2>
 <p>La superficie del tronco de cono es, por tanto,</p>
 <p><span class="math display">\[
@@ -1182,10 +1187,10 @@ S_i = \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2}
 S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2} = \int_a^b 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx.
 \]</span></p>
 </section>
-<section id="section-37" class="slide level3 smaller">
+<section id="section-38" class="slide level3 smaller">
 <h3></h3>
 <div id="exm-superficie-circunferencia" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 21</strong></span> Veamos cómo calcular la superficie de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función <span class="math inline">\(f(x)=\sqrt{r^2-x^2}\)</span> alrededor del eje <span class="math inline">\(x\)</span>, por lo que su superficie puede calcularse mediante la integral</p>
+<p><span class="theorem-title"><strong>Ejemplo 22</strong></span> Veamos cómo calcular la superficie de una esfera de radio <span class="math inline">\(r\)</span> centrada en el origen. Esta esfera es el sólido de revolución que surge al rotar la función <span class="math inline">\(f(x)=\sqrt{r^2-x^2}\)</span> alrededor del eje <span class="math inline">\(x\)</span>, por lo que su superficie puede calcularse mediante la integral</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-r}^r 2 \pi f(x)\sqrt{1+f'(x)^2}\,dx
 &amp;= \int_{-r}^r 2 \pi \sqrt{r^2-x^2}\sqrt{1+\left(\frac{-x}{\sqrt{r^2-x^2}}\right)^2}\,dx \\
@@ -1220,7 +1225,7 @@ S = \lim_{n\to\infty} \sum_{i=1}^n \pi (f(x_{i-1})+f(x_i))\sqrt{1+f'(x'_i)^2} = 
 </div>
 </div>
 </section></section>
-<section id="section-38" class="title-slide slide level2 center">
+<section id="section-39" class="title-slide slide level2 center">
 <h2></h2>
 <p>En general, suponiendo que el instante inicial en el que comienza el movimiento es el instante <span class="math inline">\(t=0\)</span>, y por tanto, la posición inicial del objeto es <span class="math inline">\(s(0)\)</span>, la posición que ocupa el objeto en cualquier instante <span class="math inline">\(t\)</span> viene dada por la integral</p>
 <p><span class="math display">\[
@@ -1229,7 +1234,7 @@ s(t) = s(0) + \int_{0}^t v(x)\,dx.
 </section>
 
 <section>
-<section id="section-39" class="title-slide slide level2 center">
+<section id="section-40" class="title-slide slide level2 center">
 <h2></h2>
 <p>Del mismo modo, si conocemos la aceleración del objeto <span class="math inline">\(a(t)\)</span> en cada instante <span class="math inline">\(t\)</span>, podemos averiguar su velocidad integrando la aceleración.</p>
 <p><span class="math display">\[
@@ -1244,7 +1249,7 @@ v(t) = v(0) + \int_{0}^t a(x)\,dx.
 <section class="slide level3">
 
 <div id="exm-caida-libre" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 22</strong></span> Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición inicial del objeto es <span class="math inline">\(s(0)=s_0\)</span> m y su velocidad inicial es <span class="math inline">\(v(0)=v_0\)</span> m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actúa sobre el objeto es la gravedad, con una aceleración constante <span class="math inline">\(g=9.8\)</span> m/s<span class="math inline">\(^2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 23</strong></span> Veamos cómo podemos deducir la famosa fórmula de la posición de un objeto en caída libre. En este caso, supondremos que la posición inicial del objeto es <span class="math inline">\(s(0)=s_0\)</span> m y su velocidad inicial es <span class="math inline">\(v(0)=v_0\)</span> m/s. Además, supondremos que no hay rozamiento, por lo que la única fuerza que actúa sobre el objeto es la gravedad, con una aceleración constante <span class="math inline">\(g=9.8\)</span> m/s<span class="math inline">\(^2\)</span>.</p>
 <p>Integrando la aceleración obtenemos la velocidad del objeto en cada instante <span class="math inline">\(t\)</span>.</p>
 <p><span class="math display">\[
 v(t) = v(0) + \int_{0}^t -g\,dx  = v_0 -g [x]_0^t = v_0-gt
@@ -1270,7 +1275,7 @@ F = m\cdot a
 </section>
 
 <section>
-<section id="section-40" class="title-slide slide level2 center">
+<section id="section-41" class="title-slide slide level2 center">
 <h2></h2>
 <p>Cuando se aplica una fuerza sobre un objeto desplazándolo en línea recta una determinada distancia, el <em>trabajo</em> <span class="math inline">\(W\)</span> realizado en ese desplazamiento viene dado por el producto de la fuerza y la distancia que recorre el objeto, es decir,</p>
 <p><span class="math display">\[
@@ -1282,7 +1287,7 @@ W = F\cdot d
 <section class="slide level3">
 
 <div id="exm-trabajo-gravedad" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 23</strong></span> Si levantamos una pesa de 1 kg desde el suelo hasta una altura de 2 m, la fuerza ejercida es igual y opuesta a la que ejerce la gravedad, es decir,</p>
+<p><span class="theorem-title"><strong>Ejemplo 24</strong></span> Si levantamos una pesa de 1 kg desde el suelo hasta una altura de 2 m, la fuerza ejercida es igual y opuesta a la que ejerce la gravedad, es decir,</p>
 <p><span class="math display">\[
 F = m\cdot g = 1 \mbox{ kg} \cdot 9.81 \mbox{ m/s$^2$} = 9.8 \mbox{ N},
 \]</span></p>
@@ -1293,7 +1298,7 @@ W = F\cdot d = 9.81 \mbox{ N} \cdot 2 \mbox{ m} = 19.62 \mbox{ J}
 </div>
 </section></section>
 <section>
-<section id="section-41" class="title-slide slide level2 center">
+<section id="section-42" class="title-slide slide level2 center">
 <h2></h2>
 <p>Cuando la fuerza que se aplica sobre el objeto no es constante, sino que viene dada por una función <span class="math inline">\(f(x)\)</span>, el trabajo realizado al desplazar el objeto desde la posición <span class="math inline">\(x=a\)</span> hasta <span class="math inline">\(x=b\)</span> aplicando una fuerza <span class="math inline">\(f(x)\)</span>, puede aproximarse mediante la suma</p>
 <p><span class="math display">\[
@@ -1317,7 +1322,7 @@ W = \sum_{i=1}^n W_i = \sum_{i=1}^n f(x'_i)\Delta x.
 <section class="slide level3">
 
 <div id="exm-trabajo-fuerza-variable" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 24</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{1+x}\)</span> determina la fuerza que actúa sobre una partícula situada a una distancia <span class="math inline">\(x\)</span> del origen de coordenadas. El trabajo que se realiza al desplazar la partícula desde el origen al punto <span class="math inline">\(1\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 25</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{1+x}\)</span> determina la fuerza que actúa sobre una partícula situada a una distancia <span class="math inline">\(x\)</span> del origen de coordenadas. El trabajo que se realiza al desplazar la partícula desde el origen al punto <span class="math inline">\(1\)</span> es</p>
 <p><span class="math display">\[
 W = \int_0^1 \frac{1}{1+x}\,dx = [\ln(1+x)]_0^1 = \ln(2) \mbox{ J}.
 \]</span></p>
@@ -1332,7 +1337,7 @@ m_1d_1 = m_2d_2
 
 <img data-src="img/integrales/palanca.svg" class="r-stretch quarto-figure-center"><p class="caption">Ley de la palanca.</p></section>
 
-<section id="section-42" class="title-slide slide level2 center">
+<section id="section-43" class="title-slide slide level2 center">
 <h2></h2>
 <p>Si colocamos las dos masas <span class="math inline">\(m_1\)</span> y <span class="math inline">\(m_2\)</span> sobre el eje <span class="math inline">\(x\)</span> en las posiciones <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> respectivamente, el centro de masas <span class="math inline">\(\bar x\)</span> se puede calcular aplicando la ley de la palanca,</p>
 <p><span class="math display">\[
@@ -1361,7 +1366,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 <section class="slide level3">
 
 <div id="exm-centro-masas" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 25</strong></span> El centro de masas de una varilla situada sobre el intervalo <span class="math inline">\([5, 10]\)</span> con una densidad en cada punto <span class="math inline">\(x\)</span> dada por la función <span class="math inline">\(f(x)=2x-1\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 26</strong></span> El centro de masas de una varilla situada sobre el intervalo <span class="math inline">\([5, 10]\)</span> con una densidad en cada punto <span class="math inline">\(x\)</span> dada por la función <span class="math inline">\(f(x)=2x-1\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \bar x
 &amp;= \frac{\int_5^{10} xf(x)\,dx}{\int_5^{10} f(x)\,dx}
@@ -1378,17 +1383,17 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 <p>Cuando se tiene una región plana en <span class="math inline">\(\mathbb{R}^2\)</span>, su centro de masas se conoce como <em>centroide</em> y sus coordenadas se representan como <span class="math inline">\((\bar x, \bar y)\)</span>. El cálculo de las coordenadas del centroide, cuando todos los puntos de la región plana tienen la misma densidad <span class="math inline">\(\delta\)</span>, se puede realizar de forma similar al cálculo del centro de masas de una varilla con densidad variable.</p>
 </section>
 
-<section id="section-43" class="title-slide slide level2 center">
+<section id="section-44" class="title-slide slide level2 center">
 <h2></h2>
 <p>Si la región está delimitada por una función <span class="math inline">\(f(x)\)</span> y el eje <span class="math inline">\(x\)</span> en un intervalo <span class="math inline">\([a,b]\)</span>, al descomponer el intervalo <span class="math inline">\([a,b]\)</span> en <span class="math inline">\(n\)</span> subintervalos de igual amplitud mediante una partición <span class="math inline">\(P_n=\{x_0=a, x_1, \ldots, x_n=b\}\)</span>, con <span class="math inline">\(\Delta x=x_i-x_{i-1}\)</span> <span class="math inline">\(i=1, \ldots, n\)</span>, se puede tomar como aproximación del área correspondiente a cada subintervalo <span class="math inline">\([x_{i-1},x_i]\)</span> el rectángulo con base el intervalo y altura el valor de la función en el punto medio del intervalo. Si llamamos al punto medio del subintervalo <span class="math inline">\(i\)</span>-ésimo subintervalo <span class="math inline">\(\bar x_i=\frac{x_{i-1}+x_i}{2}\)</span>, el área del rectángulo correspondiente es <span class="math inline">\(A_i = f(\bar x_i)\Delta x\)</span> y su masa <span class="math inline">\(M_i = \delta f(\bar x_i)\Delta x\)</span>. Como todos los puntos tienen la misma densidad <span class="math inline">\(\delta\)</span>, el centroide del rectángulo <span class="math inline">\(i\)</span>-ésimo es <span class="math inline">\((\bar x_i, \frac{1}{2}f(\bar x_i))\)</span>.</p>
 </section>
 
-<section id="section-44" class="title-slide slide level2 center">
+<section id="section-45" class="title-slide slide level2 center">
 <h2></h2>
 
 <img data-src="img/integrales/suma-riemann-centro-masas.svg" class="r-stretch quarto-figure-center"><p class="caption">Centroide de los rectángulos de una suma de Riemann.</p></section>
 
-<section id="section-45" class="title-slide slide level2 center">
+<section id="section-46" class="title-slide slide level2 center">
 <h2></h2>
 <p>El momento del rectángulo <span class="math inline">\(i\)</span>-ésimo con respecto al eje <span class="math inline">\(y\)</span> es</p>
 <p><span class="math display">\[
@@ -1404,7 +1409,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 \]</span></p>
 </section>
 
-<section id="section-46" class="title-slide slide level2 center">
+<section id="section-47" class="title-slide slide level2 center">
 <h2></h2>
 <p>Así pues, la coordenada <span class="math inline">\(\bar x\)</span> del centroide es</p>
 <p><span class="math display">\[
@@ -1412,7 +1417,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 \]</span></p>
 </section>
 
-<section id="section-47" class="title-slide slide level2 center">
+<section id="section-48" class="title-slide slide level2 center">
 <h2></h2>
 <p>Del mismo modo, el momento del rectángulo <span class="math inline">\(i\)</span>-ésimo con respecto al eje <span class="math inline">\(x\)</span> es</p>
 <p><span class="math display">\[
@@ -1429,7 +1434,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 </section>
 
 <section>
-<section id="section-48" class="title-slide slide level2 center">
+<section id="section-49" class="title-slide slide level2 center">
 <h2></h2>
 <p>por lo que se tiene</p>
 <p><span class="math display">\[
@@ -1439,7 +1444,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 <section class="slide level3">
 
 <div id="exm-centroide" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 26</strong></span> Veamos cómo calcular el centroide del semicírculo de ecuación <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span>. En primer lugar calculamos el área del semicírculo. Haciendo el cambio de variable <span class="math inline">\(x=\operatorname{sen}(\theta)\)</span>, <span class="math inline">\(dx = \cos(\theta)d\theta\)</span>, se tiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 27</strong></span> Veamos cómo calcular el centroide del semicírculo de ecuación <span class="math inline">\(f(x)=\sqrt{1-x^2}\)</span>. En primer lugar calculamos el área del semicírculo. Haciendo el cambio de variable <span class="math inline">\(x=\operatorname{sen}(\theta)\)</span>, <span class="math inline">\(dx = \cos(\theta)d\theta\)</span>, se tiene</p>
 <p><span class="math display">\[\begin{align*}
 \int_{-1}^1 f(x)\,dx
 &amp;= \int_{-1}^1 \sqrt{1-x^2}\,dx
@@ -1506,7 +1511,7 @@ m_1(\bar x-x_1) = m_2(x_2-\bar x) \Leftrightarrow \bar x = \frac{m_1x_1+m_2x_2}{
 <section class="slide level3">
 
 <div id="exm-valor-medio" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 27</strong></span> El valor medio de la función <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> en el intervalo <span class="math inline">\([0,\pi/2]\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 28</strong></span> El valor medio de la función <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> en el intervalo <span class="math inline">\([0,\pi/2]\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \bar f[0,\pi/2]
 &amp;= \frac{1}{\pi/2} \int_0^{\pi/2} f(x)\, dx

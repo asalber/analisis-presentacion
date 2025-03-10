@@ -356,7 +356,8 @@ Figura&nbsp;1: Función de dos variables sin límite en <span class="math inline
 </p></section>
 <section class="slide level3">
 
-<p>{#exm-algebra-limites-funciones-varias-variables} El límite de la función <span class="math inline">\(f(x,y)=\frac{3xy^2}{x^2+y^3}\)</span> en el punto <span class="math inline">\((2,1)\)</span> es</p>
+<div id="exm-algebra-limites-funciones-varias-variables" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 8</strong></span> El límite de la función <span class="math inline">\(f(x,y)=\frac{3xy^2}{x^2+y^3}\)</span> en el punto <span class="math inline">\((2,1)\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \lim_{(x,y)\to(2,1)} f(x,y)
 &amp;= \lim_{(x,y)\to(2,1)} \frac{3xy^2}{x^2+y^3} \\
@@ -364,7 +365,8 @@ Figura&nbsp;1: Función de dos variables sin límite en <span class="math inline
 &amp;= \frac{3\lim_{(x,y)\to(2,1)} x\lim_{(x,y)\to(2,1)}y^2}{\lim_{(x,y)\to(2,1)} x^2+\lim_{(x,y)\to(2,1)}y^3} \\
 &amp;= \frac{3\cdot 2\cdot 1^2}{2^2 + 1^3}
 = \frac{6}{5}.
-\end{align*}\]</span> :::</p>
+\end{align*}\]</span></p>
+</div>
 </section></section>
 <section>
 <section id="continuidad-de-funciones-de-varias-variables" class="title-slide slide level2 center">
@@ -394,7 +396,7 @@ Figura&nbsp;1: Función de dos variables sin límite en <span class="math inline
 <section class="slide level3">
 
 <div id="exm-funcion-parcial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 8</strong></span> Si consideramos la función del área de un triángulo</p>
+<p><span class="theorem-title"><strong>Ejemplo 9</strong></span> Si consideramos la función del área de un triángulo</p>
 <p><span class="math display">\[f(x,y)=\frac{xy}{2},\]</span></p>
 <p>y fijamos el valor de la base <span class="math inline">\(x=c\)</span>, entonces el área del triángulo ya sólo depende de la altura y <span class="math inline">\(f\)</span> se convierte en una función de una sola variable, que es la función parcial:</p>
 <p><span class="math display">\[
@@ -457,7 +459,7 @@ f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
 <section class="slide level3">
 
 <div id="exm-calculo-derivada-parcial" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 9</strong></span> En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
+<p><span class="theorem-title"><strong>Ejemplo 10</strong></span> En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables</p>
 <p><span class="math display">\[
 v(t,p)=\frac{nRt}{p},
 \]</span></p>
@@ -484,7 +486,7 @@ v(t,p)=\frac{nRt}{p},
 <section class="slide level3">
 
 <div id="exm-vector-gradiente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 10</strong></span> Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
+<p><span class="theorem-title"><strong>Ejemplo 11</strong></span> Al calentar una superficie la temperatura <span class="math inline">\(t\)</span> (en ºC) en cada punto <span class="math inline">\((x,y,z)\)</span> (en m) de dicha superficie viene dada por la función:</p>
 <p><span class="math display">\[
 t(x,y,z)=\frac{x}{y}+z^2.
 \]</span></p>
@@ -555,7 +557,7 @@ z = \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\partial y}(a,b)
 <section class="slide level3">
 
 <div id="exm-recta-normal-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11</strong></span> La recta normal a la superficie de la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span> tiene ecuación</p>
+<p><span class="theorem-title"><strong>Ejemplo 12</strong></span> La recta normal a la superficie de la función <span class="math inline">\(f(x,y)=x^2+y^2\)</span> en el punto <span class="math inline">\((1,1,2)\)</span> tiene ecuación</p>
 <p><span class="math display">\[
 \begin{gathered}
 (1,1,2)+ t \left(\frac{\partial f}{\partial x}(1,1), \frac{\partial f}{\partial y}(1,1), -1\right) \\
@@ -587,7 +589,7 @@ z
 </div>
 </div>
 <div id="exm-funcion-sin-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12</strong></span> La función</p>
+<p><span class="theorem-title"><strong>Ejemplo 13</strong></span> La función</p>
 <p><span class="math display">\[
 f(x,y) =
 \begin{cases}
@@ -613,7 +615,7 @@ dy
 <section class="slide level3">
 
 <div id="exm-diferencial-total" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13</strong></span> Dada la función <span class="math inline">\(u=f(x,y,z) = x^2+yz\)</span>, su gradiente es <span class="math inline">\(\nabla f(x,y,z) = (2x, z, y)\)</span>, y en el punto <span class="math inline">\((1, 1, 1)\)</span> vale <span class="math inline">\((2, 1, 1)\)</span>, por lo que el diferencial total de <span class="math inline">\(f\)</span> en <span class="math inline">\((1, 1, 1)\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 14</strong></span> Dada la función <span class="math inline">\(u=f(x,y,z) = x^2+yz\)</span>, su gradiente es <span class="math inline">\(\nabla f(x,y,z) = (2x, z, y)\)</span>, y en el punto <span class="math inline">\((1, 1, 1)\)</span> vale <span class="math inline">\((2, 1, 1)\)</span>, por lo que el diferencial total de <span class="math inline">\(f\)</span> en <span class="math inline">\((1, 1, 1)\)</span> es</p>
 <p><span class="math display">\[
 du
 = \nabla f(1, 1, 1)(dx, dy, dz)
@@ -664,7 +666,7 @@ f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\par
 <section class="slide level3">
 
 <div id="exm-aproximacion-funcion-dos-variables-plano-tangente" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 14</strong></span> Veamos que la función <span class="math inline">\(f(x,y)=x^2 + y^2\)</span> es diferenciable en cualquier punto <span class="math inline">\((a,b)\)</span></p>
+<p><span class="theorem-title"><strong>Ejemplo 15</strong></span> Veamos que la función <span class="math inline">\(f(x,y)=x^2 + y^2\)</span> es diferenciable en cualquier punto <span class="math inline">\((a,b)\)</span></p>
 <p><span class="math display">\[\begin{align*}
 \Delta z
 &amp;= f(a+\Delta x, b+\Delta y) - f(a,b)
@@ -682,7 +684,7 @@ f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\par
 </section>
 <section class="slide level3">
 
-<p>Así pues, podemos utilizar el plano tangente <span class="math inline">\(z = 2x+2y-2\)</span> que calculamos en el <a href="#/exm-recta-normal-plano-tangente" class="quarto-xref">Ejemplo&nbsp;11</a> para aproximar la función en un entorno del punto <span class="math inline">\((1, 1, 2)\)</span>. Por ejemplo, la aproximación de <span class="math inline">\(f\)</span> en <span class="math inline">\((0.9, 1.2)\)</span> es</p>
+<p>Así pues, podemos utilizar el plano tangente <span class="math inline">\(z = 2x+2y-2\)</span> que calculamos en el <a href="#/exm-recta-normal-plano-tangente" class="quarto-xref">Ejemplo&nbsp;12</a> para aproximar la función en un entorno del punto <span class="math inline">\((1, 1, 2)\)</span>. Por ejemplo, la aproximación de <span class="math inline">\(f\)</span> en <span class="math inline">\((0.9, 1.2)\)</span> es</p>
 <p><span class="math display">\[
 f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 \]</span></p>
@@ -721,7 +723,7 @@ f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 <section class="slide level3">
 
 <div id="exm-regla-cadena" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 15</strong></span> Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos(t),\operatorname{sen}(t))\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
+<p><span class="theorem-title"><strong>Ejemplo 16</strong></span> Si se toma el campo escalar del plano real <span class="math inline">\(f(x,y)=x^2y\)</span> y la función vectorial <span class="math inline">\(g(t)=(\cos(t),\operatorname{sen}(t))\)</span> <span class="math inline">\(t\in [0,2\pi]\)</span> del mismo plano, entonces</p>
 <p><span class="math display">\[
 \nabla f(x,y) = (2xy, x^2),
 \]</span></p>
@@ -782,7 +784,7 @@ F(x_1,\ldots,x_n, y) = 0,
 <section class="slide level3">
 
 <div id="exm-funcion-implicita-2-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 16</strong></span> La ecuación <span class="math inline">\(x^2+y^2+z^2 = 1\)</span> define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita <span class="math inline">\(z=f(x,y)\)</span> ya que si despejamos <span class="math inline">\(z\)</span> se tiene que <span class="math inline">\(z=\pm\sqrt{1-x^2-y^2}\)</span>, que no es una función ya que asigna dos imágenes a cada punto <span class="math inline">\((x,y)\)</span>. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función <span class="math inline">\(z=\sqrt{1-x^2-y^2}\)</span> que corresponde a la semiesfera positiva de radio 1 centrada en el origen.</p>
+<p><span class="theorem-title"><strong>Ejemplo 17</strong></span> La ecuación <span class="math inline">\(x^2+y^2+z^2 = 1\)</span> define la esfera de radio 1 centrada en el origen. Esta ecuación no define una función implícita <span class="math inline">\(z=f(x,y)\)</span> ya que si despejamos <span class="math inline">\(z\)</span> se tiene que <span class="math inline">\(z=\pm\sqrt{1-x^2-y^2}\)</span>, que no es una función ya que asigna dos imágenes a cada punto <span class="math inline">\((x,y)\)</span>. Sin embargo, si se toma sólo la raíz positiva, la ecuación anterior define de manera implícita la función <span class="math inline">\(z=\sqrt{1-x^2-y^2}\)</span> que corresponde a la semiesfera positiva de radio 1 centrada en el origen.</p>
 </div>
 </section></section>
 <section id="section-6" class="title-slide slide level2 center">
@@ -811,7 +813,7 @@ F(x_1,\ldots,x_n, y) = 0,
 <section class="slide level3">
 
 <div id="exm-derivada-implicita" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 17</strong></span> La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
+<p><span class="theorem-title"><strong>Ejemplo 18</strong></span> La ecuación <span class="math inline">\(x^2+y^2=1\)</span> define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como</p>
 <p><span class="math display">\[
 F(x,y) = x^2+y^2-1 = 0.
 \]</span></p>
@@ -869,7 +871,7 @@ f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u}.
 <section class="slide level3">
 
 <div id="exm-derivada-direccional" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 18</strong></span> Dada la función <span class="math inline">\(f(x,y) = x^2+y^2\)</span>, su vector gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 19</strong></span> Dada la función <span class="math inline">\(f(x,y) = x^2+y^2\)</span>, su vector gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = (2x,2y),
 \]</span></p>
@@ -908,7 +910,7 @@ P+t\nabla f(P) = (a, b) + t \nabla f(a,b).
 <section class="slide level3">
 
 <div id="exm-tangente-normal-funcion-implicita-plano" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 19</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2-1\)</span>, y el punto <span class="math inline">\(P=(0,1)\)</span>, resulta que el conjunto de nivel que pasa por <span class="math inline">\(P\)</span>, para el que <span class="math inline">\(f(x,y)=f(P)=0\)</span> es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de <span class="math inline">\(f\)</span>, <span class="math inline">\(\nabla f(x,y) = (2x,2y)\)</span>, que en el punto <span class="math inline">\(P=(0,1)\)</span> vale <span class="math inline">\(\nabla f(0,1) = (0,2)\)</span>, la recta normal a la circunferencia en <span class="math inline">\(P\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 20</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2-1\)</span>, y el punto <span class="math inline">\(P=(0,1)\)</span>, resulta que el conjunto de nivel que pasa por <span class="math inline">\(P\)</span>, para el que <span class="math inline">\(f(x,y)=f(P)=0\)</span> es la circunferencia de radio 1 centrada en el origen. Así pues, tomando como vector normal el gradiente de <span class="math inline">\(f\)</span>, <span class="math inline">\(\nabla f(x,y) = (2x,2y)\)</span>, que en el punto <span class="math inline">\(P=(0,1)\)</span> vale <span class="math inline">\(\nabla f(0,1) = (0,2)\)</span>, la recta normal a la circunferencia en <span class="math inline">\(P\)</span> es</p>
 <p><span class="math display">\[
 P + t \nabla f(P) = (0,1) + t (0,2) = (0, 1+2t),
 \]</span></p>
@@ -937,7 +939,7 @@ P + t \nabla f(P) = (0,1) + t (0,2) = (0, 1+2t),
 <section class="slide level3">
 
 <div id="exm-derivadas-segundo-orden" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 20</strong></span> La función de dos variables <span class="math display">\[f(x,y)=x^y\]</span> tiene cuatro derivadas parciales de segundo orden, que son:</p>
+<p><span class="theorem-title"><strong>Ejemplo 21</strong></span> La función de dos variables <span class="math display">\[f(x,y)=x^y\]</span> tiene cuatro derivadas parciales de segundo orden, que son:</p>
 <p><span class="math display">\[\begin{aligned}
 \frac{\partial^2 f}{\partial x^2}(x,y) &amp;=
 \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}(x,y)\right) =
@@ -997,7 +999,7 @@ x^y(\log x)^2.\end{aligned}\]</span></p>
 <section class="slide level3">
 
 <div id="exm-matriz-hessiana" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 21</strong></span> Consideremos de nuevo la función de dos variables <span class="math inline">\(f(x,y)=x^y\)</span>. Su matriz hessiana es</p>
+<p><span class="theorem-title"><strong>Ejemplo 22</strong></span> Consideremos de nuevo la función de dos variables <span class="math inline">\(f(x,y)=x^y\)</span>. Su matriz hessiana es</p>
 <p><span class="math display">\[\nabla^2f(x,y)=\left(
 \begin{array}{cc}
 \dfrac{\partial^2 f}{\partial x^2} &amp; \dfrac{\partial^2 f}{\partial x \partial y}\\
@@ -1066,7 +1068,7 @@ f(P)\leq f(Q)\ \forall Q, |\vec{PQ}|&lt;\epsilon.
 <section class="slide level3">
 
 <div id="exm-extremos-relativos" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 22</strong></span> Para el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2\)</span>, resulta evidente que sólo tiene un mínimo en el origen <span class="math inline">\((0,0)\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 23</strong></span> Para el campo escalar <span class="math inline">\(f(x,y)=x^2+y^2\)</span>, resulta evidente que sólo tiene un mínimo en el origen <span class="math inline">\((0,0)\)</span> ya que</p>
 <p><span class="math display">\[
 f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
 \]</span></p>
@@ -1132,7 +1134,7 @@ f(P+\mathbf{v})-f(P)\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
 <section class="slide level3">
 
 <div id="exm-extremos-relativos-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 23</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, se tiene que su gradiente vale</p>
+<p><span class="theorem-title"><strong>Ejemplo 24</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, se tiene que su gradiente vale</p>
 <p><span class="math display">\[
 \nabla f(x,y)= (x^2-1,-y^2+1),
 \]</span></p>
@@ -1174,7 +1176,7 @@ f(P+\mathbf{v})-f(P)\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
 <section class="slide level3">
 
 <div id="exm-extremos-condicionados" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 24</strong></span> Si consideramos la misma función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, para calcular sus extremos relativos sujetos a la restricción <span class="math inline">\(y+2x=0\)</span>, podemos sustituir <span class="math inline">\(y=-2x\)</span> en la fórmula de la función y se obtiene</p>
+<p><span class="theorem-title"><strong>Ejemplo 25</strong></span> Si consideramos la misma función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span>, para calcular sus extremos relativos sujetos a la restricción <span class="math inline">\(y+2x=0\)</span>, podemos sustituir <span class="math inline">\(y=-2x\)</span> en la fórmula de la función y se obtiene</p>
 <p><span class="math display">\[
 f(x,y)
 = f(x,-2x)
@@ -1192,7 +1194,7 @@ f(x,y)
 <section class="slide level3">
 
 <div id="exm-curvas-nivel-restricciones" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 25</strong></span> La siguiente gráfica muestra las curvas de nivel de la función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span> junto a la curva de nivel de la restricción <span class="math inline">\(g(x,y)=y+2x=0\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 26</strong></span> La siguiente gráfica muestra las curvas de nivel de la función del ejemplo anterior <span class="math inline">\(f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y\)</span> junto a la curva de nivel de la restricción <span class="math inline">\(g(x,y)=y+2x=0\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/derivadas-funciones-varias-variables/multiplicadores-lagrange.png"></p>
@@ -1228,7 +1230,7 @@ g(x_1,\ldots, x_n) &amp;= 0
 <section class="slide level3">
 
 <div id="exm-multiplicadores-lagrange" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 26</strong></span> Veamos cuáles son los extremos relativos de la función <span class="math inline">\(f(x,y)=2x^2+y^2\)</span> sobre los puntos de la circunferencia <span class="math inline">\(x^2+y^2=1\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 27</strong></span> Veamos cuáles son los extremos relativos de la función <span class="math inline">\(f(x,y)=2x^2+y^2\)</span> sobre los puntos de la circunferencia <span class="math inline">\(x^2+y^2=1\)</span>.</p>
 <p>Tomando <span class="math inline">\(g(x,y)=x^2+y^2-1\)</span>, podemos expresar la circunferencia mediante la ecuación <span class="math inline">\(g(x,y)=0\)</span>. Los extremos relativos de <span class="math inline">\(f\)</span> condicionados por <span class="math inline">\(g(x,y)=0\)</span>, deben cumplir la ecuación de los multiplicadores de Lagrange</p>
 <p><span class="math display">\[
 \nabla f(x,y) = k \nabla g(x,y)
@@ -1284,7 +1286,7 @@ P^1_{f,P}(x,y) &amp;= f(a,b)+\nabla f(a,b)(x-a,y-b) =\\
 <section class="slide level3">
 
 <div id="exm-aproximacion-lineal-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 27</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 28</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
 \]</span></p>
@@ -1333,7 +1335,7 @@ P^2_{f,P}(x,y) = f(a,b)+\nabla f(a,b)(x-a,y-b) +\\
 <section id="section-17" class="slide level3 smaller">
 <h3></h3>
 <div id="exm-polinomio-taylor-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 28</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
+<p><span class="theorem-title"><strong>Ejemplo 29</strong></span> Dado el campo escalar <span class="math inline">\(f(x,y)=\log(xy)\)</span>, su gradiente es</p>
 <p><span class="math display">\[
 \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
 \]</span></p>
