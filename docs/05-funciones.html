@@ -1,145 +1,117 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
+
+<title>Funciones de números reales</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
 <script src="05-funciones_files/libs/clipboard/clipboard.min.js"></script>
-<script src="05-funciones_files/libs/quarto-html/tabby.min.js"></script>
+<script src="05-funciones_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="05-funciones_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="05-funciones_files/libs/quarto-html/popper.min.js"></script>
 <script src="05-funciones_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="05-funciones_files/libs/quarto-html/anchor.min.js"></script>
 <link href="05-funciones_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="05-funciones_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="05-funciones_files/libs/quarto-html/quarto-syntax-highlighting-2124ca1cf500079e6f4baffc20a28816.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="05-funciones_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="05-funciones_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="05-funciones_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="05-funciones_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="05-funciones_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="05-funciones_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.6">
+<link href="05-funciones_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 
-  <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
-  <title>Funciones de números reales</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="05-funciones_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="05-funciones_files/libs/revealjs/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-      vertical-align: middle;
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
     }
-  </style>
-  <link rel="stylesheet" href="05-funciones_files/libs/revealjs/dist/theme/quarto-5b06271ac7fb8d89379da83c3d0f227c.css">
-  <link href="05-funciones_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="05-funciones_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="05-funciones_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="05-funciones_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="05-funciones_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="05-funciones_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-    .reveal div.sourceCode {
-      margin: 0;
-      overflow: auto;
-    }
-    .reveal div.hanging-indent {
-      margin-left: 1em;
-      text-indent: -1em;
-    }
-    .reveal .slide:not(.center) {
-      height: 100%;
-    }
-    .reveal .slide.scrollable {
-      overflow-y: auto;
-    }
-    .reveal .footnotes {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide .absolute {
-      position: absolute;
-      display: block;
-    }
-    .reveal .footnotes ol {
-      counter-reset: ol;
-      list-style-type: none; 
-      margin-left: 0;
-    }
-    .reveal .footnotes ol li:before {
-      counter-increment: ol;
-      content: counter(ol) ". "; 
-    }
-    .reveal .footnotes ol li > p:first-child {
-      display: inline-block;
-    }
-    .reveal .slide ul,
-    .reveal .slide ol {
-      margin-bottom: 0.5em;
-    }
-    .reveal .slide ul li,
-    .reveal .slide ol li {
-      margin-top: 0.4em;
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide ul[role="tablist"] li {
-      margin-bottom: 0;
-    }
-    .reveal .slide ul li > *:first-child,
-    .reveal .slide ol li > *:first-child {
-      margin-block-start: 0;
-    }
-    .reveal .slide ul li > *:last-child,
-    .reveal .slide ol li > *:last-child {
-      margin-block-end: 0;
-    }
-    .reveal .slide .columns:nth-child(3) {
-      margin-block-start: 0.8em;
-    }
-    .reveal blockquote {
-      box-shadow: none;
-    }
-    .reveal .tippy-content>* {
-      margin-top: 0.2em;
-      margin-bottom: 0.7em;
-    }
-    .reveal .tippy-content>*:last-child {
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide > img.stretch.quarto-figure-center,
-    .reveal .slide > img.r-stretch.quarto-figure-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-left,
-    .reveal .slide > img.r-stretch.quarto-figure-left  {
-      display: block;
-      margin-left: 0;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-right,
-    .reveal .slide > img.r-stretch.quarto-figure-right  {
-      display: block;
-      margin-left: auto;
-      margin-right: 0; 
-    }
-  </style>
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
-<body class="quarto-light">
-  <div class="reveal">
-    <div class="slides">
 
-<section id="title-slide" class="center">
-      <img class="title-logo" src="img/logos/sticker.png" width="250" style="float:right">
-        <p class="subtitle">Análisis Matemático</p>
-      <h1 class="title">Funciones de números reales</h1>
-      <p class="author">Alfredo Sánchez Alberca &nbsp; <a href="mailto:asalber@ceu.es"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a href="https://twitter.com/aprendeconalf"><i class="fa-brands fa-twitter" aria-label="twitter"></i></a> <a href="https://aprendeconalf.es"><i class="fa-solid fa-home" aria-label="home"></i></a></p>
-        <p class="institute">Universidad CEU San Pablo</p>
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="05-funciones.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Funciones de números reales</h1>
+<p class="subtitle lead">Análisis Matemático</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autor/a</div>
+  <div class="quarto-title-meta-heading">Afiliación</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Alfredo Sánchez Alberca &nbsp; <a href="mailto:asalber@ceu.es"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a href="https://twitter.com/aprendeconalf"><i class="fa-brands fa-twitter" aria-label="twitter"></i></a> <a href="https://aprendeconalf.es"><i class="fa-solid fa-home" aria-label="home"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Universidad CEU San Pablo
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
       
-  </section>
-<section id="el-concepto-de-función" class="title-slide slide level2 center">
-<h2>El concepto de función</h2>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="el-concepto-de-función" class="level2">
+<h2 class="anchored" data-anchor-id="el-concepto-de-función">El concepto de función</h2>
 <div id="def-funcion-real" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1 (Función de una variable)</strong></span> Una <em>función</em> <span class="math inline">\(f\)</span> de un conjunto <span class="math inline">\(A\)</span> en otro <span class="math inline">\(B\)</span> es una <em>relación</em> que asocia cada elemento <span class="math inline">\(a\in A\)</span>, con un <em>único</em> elemento de <span class="math inline">\(B\)</span> que se denota <span class="math inline">\(f(a)\)</span>, y se llama <em>imagen</em> de <span class="math inline">\(a\)</span> mediante <span class="math inline">\(f\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
@@ -147,12 +119,16 @@ f:\,&amp;A\longrightarrow B\\
 &amp;a\longrightarrow f(a)
 \end{align*}\]</span></p>
 </div>
-
-<img data-src="./img/funciones/funcion.svg" width="300" class="r-stretch quarto-figure-center"><p class="caption">Ejemplo de función.</p><p>Cuando el conjunto inicial y final es el de los números reales <span class="math inline">\(\mathbb{R}\)</span>, entonces se dice que <span class="math inline">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> es una <em>función real de variable real</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/funcion.png" class="img-fluid figure-img" width="300"></p>
+<figcaption>Ejemplo de función.</figcaption>
+</figure>
+</div>
+<p>Cuando el conjunto inicial y final es el de los números reales <span class="math inline">\(\mathbb{R}\)</span>, entonces se dice que <span class="math inline">\(f:\mathbb{R}\rightarrow \mathbb{R}\)</span> es una <em>función real de variable real</em>.</p>
 </section>
-
-<section id="representación-de-funciones-por-extensión" class="title-slide slide level2 center">
-<h2>Representación de funciones por extensión</h2>
+<section id="representación-de-funciones-por-extensión" class="level2">
+<h2 class="anchored" data-anchor-id="representación-de-funciones-por-extensión">Representación de funciones por extensión</h2>
 <ul>
 <li><p><strong>Representación en forma de tabla</strong>. Se escriben los pares <span class="math inline">\((x,y)\)</span> de la función de forma explícita en una tabla.</p>
 <p><span class="math display">\[
@@ -166,12 +142,15 @@ f:\,&amp;A\longrightarrow B\\
   \]</span></p></li>
 <li><p><strong>Representación gráfica</strong>. Se representan los pares <span class="math inline">\((x,y)\)</span> de la función mediante puntos con las correspondientes coordenadas en el plano Real cartesiano.</p></li>
 </ul>
-
-<img data-src="./img/funciones/grafica-funcion.svg" class="r-stretch quarto-figure-center"><p class="caption">Gráfica de una función.</p></section>
-
-<section>
-<section id="representación-de-funciones-por-intensión" class="title-slide slide level2 center">
-<h2>Representación de funciones por intensión</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/grafica-funcion.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfica de una función.</figcaption>
+</figure>
+</div>
+</section>
+<section id="representación-de-funciones-por-intensión" class="level2">
+<h2 class="anchored" data-anchor-id="representación-de-funciones-por-intensión">Representación de funciones por intensión</h2>
 <ul>
 <li><p><strong>Representación algebraica explícita</strong>. Se da fórmula o expresión <span class="math inline">\(f(x)\)</span> que determina el valor de <span class="math inline">\(y\)</span> asociado a cada <span class="math inline">\(x\)</span> mediante la función.</p>
 <p><span class="math display">\[y=x^2\]</span></p></li>
@@ -184,15 +163,17 @@ f:\,&amp;A\longrightarrow B\\
   \end{cases}
   \]</span></p></li>
 </ul>
-</section>
-<section class="slide level3">
-
-<div class="callout callout-caution callout-style-simple">
-<div class="callout-body">
+<hr>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Precaución
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>La representación algebraica paramétrica puede dar lugar a relaciones que no son funciones. Por ejemplo <span class="math display">\[\begin{cases}
   x = t^2 \\
   y = t
@@ -200,72 +181,73 @@ f:\,&amp;A\longrightarrow B\\
   \]</span> que no es una función al asignar a los valores de <span class="math inline">\(x\)</span> dos imágenes distintas.</p>
 </div>
 </div>
-</div>
-</section></section>
-<section>
-<section id="dominio-de-una-función" class="title-slide slide level2 center">
-<h2>Dominio de una función</h2>
+</section>
+<section id="dominio-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="dominio-de-una-función">Dominio de una función</h2>
 <div id="def-dominio-funcion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 2 (Dominio de una función)</strong></span> El <em>dominio</em> de una función <span class="math inline">\(f\)</span> es el conjunto de valores para los que la función está definida</p>
 <p><span class="math display">\[Dom(f)=\{x\in \mathbb{R}: f(x)\in \mathbb{R}\}\]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-dominio-funcion" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 1</strong></span> Dada la función <span class="math display">\[f(x)=\frac{1}{\sqrt{x^2-1}}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/ejemplo-dominio.svg" width="600"></p>
+<figure class="figure">
+<p><img src="./img/funciones/ejemplo-dominio.png" class="img-fluid figure-img" width="600"></p>
 <figcaption>Dominio de la función <span class="math inline">\(f(x)=\frac{1}{\sqrt{x^2-1}}\)</span>.</figcaption>
 </figure>
 </div>
 <p><span class="math display">\[\mbox{Dom}(f)=(-\infty,-1)\cup(1,\infty)\]</span></p>
 </div>
-</section></section>
-<section>
-<section id="imagen-de-una-función" class="title-slide slide level2 center">
-<h2>Imagen de una función</h2>
+</section>
+<section id="imagen-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="imagen-de-una-función">Imagen de una función</h2>
 <div id="def-imagen-funcion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3 (Imagen de una función)</strong></span> La <em>imagen</em> de una función <span class="math inline">\(f\)</span> es el conjunto de valores que la función puede tomar</p>
 <p><span class="math display">\[Img(f)=\{y\in \mathbb{R}: y=f(x) \mbox{ para algún } x\in\mathbb{R}\}\]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-imagen-funcion" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 2</strong></span> Dada la función <span class="math inline">\(f(x)=x^2-2\)</span></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/ejemplo-imagen.svg" width="500"></p>
+<figure class="figure">
+<p><img src="./img/funciones/ejemplo-imagen.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>Imagen de la función <span class="math inline">\(f(x)=x^2-2\)</span>.</figcaption>
 </figure>
 </div>
 <p><span class="math display">\[\mbox{Img}(f)=[-2,\infty)\]</span></p>
 </div>
-</section></section>
-<section id="función-constante" class="title-slide slide level2 center">
-<h2>Función constante</h2>
+</section>
+<section id="función-constante" class="level2">
+<h2 class="anchored" data-anchor-id="función-constante">Función constante</h2>
 <div id="def-funcion-constante" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 4 (Función constante)</strong></span> Se dice que una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span> es una <em>funcion constante</em>, cuando asocia cada elemento <span class="math inline">\(x\in \mathbb{R}\)</span> con el mismo número <span class="math inline">\(c\in\mathbb{R}\)</span>, es decir,</p>
 <p><span class="math display">\[f(x)=c\ \forall x\in\mathbb{R}.\]</span></p>
 </div>
-
-<img data-src="./img/funciones/funcion-constante.svg" width="500" class="r-stretch quarto-figure-center"><p class="caption">Gráfica de una función constante.</p><p>El dominio de la función constante <span class="math inline">\(f(x)=c\)</span> es <span class="math inline">\(\mathbb{R}\)</span> y su imagen <span class="math inline">\(\{c\}\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/funcion-constante.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>Gráfica de una función constante.</figcaption>
+</figure>
+</div>
+<p>El dominio de la función constante <span class="math inline">\(f(x)=c\)</span> es <span class="math inline">\(\mathbb{R}\)</span> y su imagen <span class="math inline">\(\{c\}\)</span>.</p>
 </section>
-
-<section id="función-identidad" class="title-slide slide level2 center">
-<h2>Función identidad</h2>
+<section id="función-identidad" class="level2">
+<h2 class="anchored" data-anchor-id="función-identidad">Función identidad</h2>
 <div id="def-funcion-identidad" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5 (Función Identidad)</strong></span> Se llama <em>función identidad</em>, a la función <span class="math inline">\(Id: \mathbb{R}\rightarrow \mathbb{R}\)</span> que asocia cada elemento <span class="math inline">\(x\in \mathbb{R}\)</span> con sigo mismo, es decir,</p>
 <p><span class="math display">\[Id(x)=x.\]</span></p>
 </div>
-
-<img data-src="./img/funciones/funcion-identidad.svg" width="500" class="r-stretch quarto-figure-center"><p class="caption">Gráfica de la función identidad.</p><p>El dominio y la imagen de la función identidad es <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/funcion-identidad.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>Gráfica de la función identidad.</figcaption>
+</figure>
+</div>
+<p>El dominio y la imagen de la función identidad es <span class="math inline">\(\mathbb{R}\)</span>.</p>
 </section>
-
-<section id="álgebra-de-funciones" class="title-slide slide level2 center">
-<h2>Álgebra de funciones</h2>
+<section id="álgebra-de-funciones" class="level2">
+<h2 class="anchored" data-anchor-id="álgebra-de-funciones">Álgebra de funciones</h2>
 <div id="def-funcion-suma-resta-producto-cociente" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 6 (Funciones suma, resta, producto y cociente)</strong></span> Dadas dos funciones <span class="math inline">\(f,g: \mathbb{R}\rightarrow \mathbb{R}\)</span> se definen las siguientes funciones:</p>
 <ul>
@@ -276,9 +258,8 @@ f:\,&amp;A\longrightarrow B\\
 </ul>
 </div>
 </section>
-
-<section id="section" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 <div id="prp-dominio-funcion-suma-resta-producto-cociente" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1</strong></span> Dadas dos funciones <span class="math inline">\(f,g: \mathbb{R}\rightarrow \mathbb{R}\)</span>, se cumple:</p>
 <ul>
@@ -289,9 +270,8 @@ f:\,&amp;A\longrightarrow B\\
 </ul>
 </div>
 </section>
-
-<section id="función-raíz" class="title-slide slide level2 center">
-<h2>Función raíz</h2>
+<section id="función-raíz" class="level2">
+<h2 class="anchored" data-anchor-id="función-raíz">Función raíz</h2>
 <div id="def-funcion-raiz" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 7 (Función raíz)</strong></span> Dada una función <span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span> se definen la _función raíz <span class="math inline">\(n\)</span>-ésima, como</p>
 <p><span class="math display">\[
@@ -309,10 +289,8 @@ f:\,&amp;A\longrightarrow B\\
 \]</span></p>
 </div>
 </section>
-
-<section>
-<section id="composición-de-funciones" class="title-slide slide level2 center">
-<h2>Composición de funciones</h2>
+<section id="composición-de-funciones" class="level2">
+<h2 class="anchored" data-anchor-id="composición-de-funciones">Composición de funciones</h2>
 <div id="def-composicion-funciones" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 8 (Composición de funciones)</strong></span> Dadas dos funciones <span class="math inline">\(g:A\rightarrow B\)</span> y <span class="math inline">\(f:B\rightarrow C\)</span>, se define la <em>función compuesta</em> <span class="math inline">\(f\circ g\)</span>, (leído <span class="math inline">\(g\)</span> compuesto con <span class="math inline">\(f\)</span>) como la función</p>
 <p><span class="math display">\[\begin{aligned}
@@ -321,53 +299,50 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </div>
 <p>Para calcular la función compuesta <span class="math inline">\(f\circ g(x)\)</span>, primero se aplica <span class="math inline">\(g\)</span> sobre <span class="math inline">\(x\)</span> y luego, se aplica <span class="math inline">\(f\)</span> sobre <span class="math inline">\(g(x)\)</span>:</p>
 <p><span class="math display">\[x\stackrel{g}{\longrightarrow}g(x)\stackrel{f}{\longrightarrow}f(g(x))\]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-composicion-funciones" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 3</strong></span> Si <span class="math inline">\(g(x)=\sqrt x\)</span> y <span class="math inline">\(f(x)=\operatorname{sen} x\)</span>, entonces</p>
 <p><span class="math display">\[f\circ g(x)=f(g(x))=f(\sqrt x)=\operatorname{sen} \sqrt x.\]</span></p>
 </div>
-</section></section>
-<section>
-<section id="función-inversa" class="title-slide slide level2 center">
-<h2>Función inversa</h2>
+</section>
+<section id="función-inversa" class="level2">
+<h2 class="anchored" data-anchor-id="función-inversa">Función inversa</h2>
 <div id="def-funcion-inversa" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 9 (Función inversa)</strong></span> Se llama <em>función inversa</em> de <span class="math inline">\(f:A\rightarrow B\)</span> a la función <span class="math inline">\(f^{-1}:B\rightarrow A\)</span> (cuando exista) que cumple</p>
 <p><span class="math display">\[f\circ f^{-1}=f^{-1}\circ f=Id(x)\]</span></p>
 </div>
 <p>La función inversa de <span class="math inline">\(f\)</span> deshace o revierte el efecto de <span class="math inline">\(f\)</span>. Es decir, si <span class="math inline">\(f:A\rightarrow B\)</span> asocia un elemento <span class="math inline">\(x\in A\)</span> con otro <span class="math inline">\(y\in B\)</span>, entonces <span class="math inline">\(f^{-1}\)</span> asocia el elemento <span class="math inline">\(y\)</span> con el <span class="math inline">\(x\)</span>.</p>
-
-<img data-src="./img/funciones/funcion-inversa.svg" width="300" class="r-stretch quarto-figure-center"><p class="caption">Función inversa.</p></section>
-<section class="slide level3">
-
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/funcion-inversa.png" class="img-fluid figure-img" width="300"></p>
+<figcaption>Función inversa.</figcaption>
+</figure>
+</div>
+<hr>
 <div id="exm-funcion-inversa" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 4</strong></span> La inversa de <span class="math inline">\(f(x)=x^3\)</span> es la función <span class="math inline">\(f^{-1}(x)=\sqrt[3]{x}.\)</span> Sin embargo, la inversa de la función <span class="math inline">\(x^2\)</span> no es <span class="math inline">\(\sqrt{x}\)</span> ya que la raíz tiene dos imágenes, una positiva y otra negativa, y por tanto no sería una función.</p>
 </div>
-</section></section>
-<section id="crecimiento-de-una-función" class="title-slide slide level2 center">
-<h2>Crecimiento de una función</h2>
+</section>
+<section id="crecimiento-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="crecimiento-de-una-función">Crecimiento de una función</h2>
 <div id="def-crecimiento-funcion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 10 (Función creciente y decreciente)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> es <em>creciente</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple <span class="math inline">\(f(x_1)\leq f(x_2)\)</span>.</p>
 <p>Se dice que una función <span class="math inline">\(f\)</span> es <em>decreciente</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple <span class="math inline">\(f(x_1)\geq f(x_2)\)</span>.</p>
-</div>
-<div>
-
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-creciente.svg" width="400"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-creciente.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Función creciente.</figcaption>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-decreciente.svg" width="400"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-decreciente.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Función decreciente.</figcaption>
 </figure>
 </div>
@@ -375,30 +350,26 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </div>
 </div>
 </section>
-
-<section id="extremos-de-una-función" class="title-slide slide level2 center">
-<h2>Extremos de una función</h2>
+<section id="extremos-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="extremos-de-una-función">Extremos de una función</h2>
 <div id="def-extremos-funcion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 11 (Máximo y mínimo relativo)</strong></span> Se dice que una función <span class="math inline">\(f:\mathbb{R}\rightarrow\mathbb{R}\)</span> tiene un <em>máximo relativo</em> en <span class="math inline">\(a\)</span>, si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que para todo <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> se cumple <span class="math inline">\(f(a)\geq f(x)\)</span>.</p>
 <p>Y se dice que <span class="math inline">\(f\)</span> tiene un <em>mínimo relativo</em> en <span class="math inline">\(a\)</span>, si existe un <span class="math inline">\(\delta&gt;0\)</span> tal que para todo <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> se cumple <span class="math inline">\(f(a)\leq f(x)\)</span>.</p>
-</div>
-<div>
-
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/maximo.svg" width="400"></p>
+<figure class="figure">
+<p><img src="./img/funciones/maximo.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Máximo relativo.</figcaption>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/minimo.svg" width="400"></p>
+<figure class="figure">
+<p><img src="./img/funciones/minimo.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Mínimo relativo.</figcaption>
 </figure>
 </div>
@@ -406,76 +377,70 @@ f\circ g:\,&amp; A\longrightarrow C\\
 </div>
 </div>
 </section>
-
-<section>
-<section id="concavidad-de-una-función" class="title-slide slide level2 center">
-<h2>Concavidad de una función</h2>
+<section id="concavidad-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="concavidad-de-una-función">Concavidad de una función</h2>
 <div id="def-concavidad-funcion" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 12 (Función cóncava hacia arriba y hacia abajo)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> es <em>cóncava hacia arriba</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple que el segmento que une los puntos <span class="math inline">\((x_1,f(x_1))\)</span> y <span class="math inline">\((x_2,f(x_2))\)</span> queda por encima de la gráfica de <span class="math inline">\(f\)</span>.</p>
 <p>Se dice que una función <span class="math inline">\(f\)</span> es <em>cóncava hacia abajo</em> en un intervalo <span class="math inline">\(I\)</span>, si para todo <span class="math inline">\(x_1,x_2\in I\)</span>, con <span class="math inline">\(x_1&lt;x_2\)</span>, se cumple que el segmento que une los puntos <span class="math inline">\((x_1,f(x_1))\)</span> y <span class="math inline">\((x_2,f(x_2))\)</span> queda por debajo de la gráfica de <span class="math inline">\(f\)</span>.</p>
 <p>Al punto donde cambia la concavidad de una función se le llama <em>punto de inflexión</em>.</p>
 </div>
-</section>
-<section class="slide level3">
-
-<div>
-
-</div>
+<hr>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-concava-arriba.svg" width="400"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-concava-arriba.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Función cóncava hacia arriba.</figcaption>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-concava-abajo.svg" width="400"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-concava-abajo.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Función cóncava hacia abajo.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section></section>
-<section id="funciones-periódicas" class="title-slide slide level2 center">
-<h2>Funciones periódicas</h2>
+</section>
+<section id="funciones-periódicas" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-periódicas">Funciones periódicas</h2>
 <div id="def-funcion-periodica" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 13 (Función periódica y periodo)</strong></span> Se dice que una función <span class="math inline">\(f\)</span> es <em>periódica</em> si existe un valor <span class="math inline">\(h&gt;0\)</span> tal que</p>
 <p><span class="math display">\[f(x+h)=f(x)\]</span></p>
 <p>para todo <span class="math inline">\(x\in \mbox{Dom}(f)\)</span>.</p>
 <p>Al menor valor de <span class="math inline">\(h\)</span> que verifica la igualdad anterior se le llama <em>periodo</em> de <span class="math inline">\(f\)</span>, y a la diferencia entre el máximo y el mínimo de la función se le llama <em>amplitud</em> de <span class="math inline">\(f\)</span>.</p>
 </div>
-
-<img data-src="./img/funciones/funcion-periodica.svg" width="600" class="r-stretch quarto-figure-center"><p class="caption">Periodo y amplitud de una función periódica.</p></section>
-
-<section>
-<section id="funciones-polinómicas" class="title-slide slide level2 center">
-<h2>Funciones polinómicas</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/funcion-periodica.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Periodo y amplitud de una función periódica.</figcaption>
+</figure>
+</div>
+</section>
+<section id="funciones-polinómicas" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-polinómicas">Funciones polinómicas</h2>
 <div id="def-funcion-polinomica" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 14 (Función polinómica)</strong></span> Una <em>función polinómica</em> es una función de la forma</p>
 <p><span class="math display">\[f(x)=a_0+a_1x+a_2x^2+\cdots+a_nx^n,\]</span></p>
 <p>donde <span class="math inline">\(n\)</span> es un entero no negativo que se llama <em>grado del polinomio</em>, y <span class="math inline">\(a_0,\ldots,a_n\)</span> son constantes reales (<span class="math inline">\(a_n\neq 0\)</span>) que se llaman <em>coeficientes del polinomio</em>.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-funcion-polinomica" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 5</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-polinomica.svg" width="500"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-polinomica.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>Gráficas de funciones polinómicas.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section id="propiedades-de-las-funciones-polinómicas" class="title-slide slide level2 center">
-<h2>Propiedades de las funciones polinómicas</h2>
+</section>
+<section id="propiedades-de-las-funciones-polinómicas" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-las-funciones-polinómicas">Propiedades de las funciones polinómicas</h2>
 <ul>
 <li>Su dominio es <span class="math inline">\(\mathbb{R}\)</span>.</li>
 <li>Si el grado es impar, su imagen es <span class="math inline">\(\mathbb{R}\)</span>.</li>
@@ -484,30 +449,26 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <li>Un polinomio de grado <span class="math inline">\(n\)</span> tiene a lo sumo <span class="math inline">\(n\)</span> raíces (puntos donde <span class="math inline">\(f(x)=0\)</span>).</li>
 </ul>
 </section>
-
-<section>
-<section id="funciones-racionales" class="title-slide slide level2 center">
-<h2>Funciones racionales</h2>
+<section id="funciones-racionales" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-racionales">Funciones racionales</h2>
 <div id="def-funcion-racional" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 15 (Función racional)</strong></span> Una <em>función racional</em> es una función de la forma</p>
 <p><span class="math display">\[f(x)=\frac{p(x)}{q(x)}\]</span></p>
 <p>donde <span class="math inline">\(p(x)\)</span> y <span class="math inline">\(q(x)\)</span> son funcione polinómicas con <span class="math inline">\(q(x)\neq 0\)</span>.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-funcion-racional" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 6</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-racional.svg" width="500"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-racional.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>Gráficas de funciones racionales.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section id="propiedades-de-las-funciones-racionales" class="title-slide slide level2 center">
-<h2>Propiedades de las funciones racionales</h2>
+</section>
+<section id="propiedades-de-las-funciones-racionales" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-las-funciones-racionales">Propiedades de las funciones racionales</h2>
 <ul>
 <li>Su dominio es <span class="math inline">\(\mathbb{R}\)</span> menos las raíces del polinomio del denominador. En estos puntos suele haber asíntotas verticales.</li>
 <li>La tendencia en <span class="math inline">\(\infty\)</span> y <span class="math inline">\(-\infty\)</span> depende del grado del numerador y del denominador. Si <span class="math inline">\(f(x)=\dfrac{a_0+\cdots +a_nx^n}{b_0+\cdots+b_mx^m}\)</span>, entonces
@@ -520,28 +481,24 @@ f\circ g:\,&amp; A\longrightarrow C\\
 <li>Pueden descomponerse en suma de fracciones simples.</li>
 </ul>
 </section>
-
-<section>
-<section id="funciones-potenciales" class="title-slide slide level2 center">
-<h2>Funciones potenciales</h2>
+<section id="funciones-potenciales" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-potenciales">Funciones potenciales</h2>
 <div id="def-funcion-potencial" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 16 (Función potencial)</strong></span> Una <em>función potencial</em> es una función de la forma <span class="math display">\[f(x)=x^r,\]</span> donde <span class="math inline">\(r\)</span> es un número real.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-funcion-potencial" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-potencial.svg" width="500"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-potencial.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>Gráficas de funciones potenciales.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section id="propiedades-de-las-funciones-potenciales" class="title-slide slide level2 center">
-<h2>Propiedades de las funciones potenciales</h2>
+</section>
+<section id="propiedades-de-las-funciones-potenciales" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-las-funciones-potenciales">Propiedades de las funciones potenciales</h2>
 <ul>
 <li>Si el exponente es un número racional <span class="math inline">\(n/m\)</span>, entonces <span class="math display">\[x^{n/m}=\sqrt[m]{x^n}.\]</span> Estas funciones se llaman <em>irracionales</em>. En este caso,
 <ul>
@@ -560,28 +517,24 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Los polinomios de la forma <span class="math inline">\(f(x)=x^n\)</span> son un caso particular de funciones potenciales.</li>
 </ul>
 </section>
-
-<section>
-<section id="funciones-exponenciales" class="title-slide slide level2 center">
-<h2>Funciones exponenciales</h2>
+<section id="funciones-exponenciales" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-exponenciales">Funciones exponenciales</h2>
 <div id="def-funcion-exponencial" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 17 (Función exponencial)</strong></span> Una <em>función exponencial</em> de base <span class="math inline">\(a\)</span> es una función de la forma <span class="math display">\[f(x)=a^x,\]</span> donde <span class="math inline">\(a\)</span> es un valor real positivo distinto de 1.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-funcion-exponencial" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 8</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-exponencial.svg" width="500"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-exponencial.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>Gráficas de funciones exponenciales.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section id="propiedades-de-las-funciones-exponenciales" class="title-slide slide level2 center">
-<h2>Propiedades de las funciones exponenciales</h2>
+</section>
+<section id="propiedades-de-las-funciones-exponenciales" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-las-funciones-exponenciales">Propiedades de las funciones exponenciales</h2>
 <ul>
 <li>Su dominio es <span class="math inline">\(\mathbb{R}\)</span>.</li>
 <li>Su imagen es <span class="math inline">\(\mathbb{R}^+\)</span>.</li>
@@ -596,30 +549,25 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Un caso particular sería <span class="math inline">\(a=1\)</span> que es una función constante.</li>
 </ul>
 </section>
-
-<section>
-<section id="funciones-logarítmicas" class="title-slide slide level2 center">
-<h2>Funciones logarítmicas</h2>
+<section id="funciones-logarítmicas" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-logarítmicas">Funciones logarítmicas</h2>
 <div id="def-funcion-logaritmica" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 18 (Función logarítmica)</strong></span> Dada una función exponencial <span class="math inline">\(f(x)=a^x\)</span>, se define la <em>función logarítmica</em> de base <span class="math inline">\(a\)</span> como la función inversa de <span class="math inline">\(f\)</span>, y se denota</p>
 <p><span class="math display">\[f^{-1}(x)=\log_a x,\]</span></p>
 <p>donde <span class="math inline">\(a\)</span> es un valor real positivo distinto de 1.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-funcion-logaritmica" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-logaritmica.svg" width="500"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-logaritmica.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>Gráficas de funciones logaritmicas.</figcaption>
 </figure>
 </div>
 </div>
-</section>
-<section id="propiedades-de-las-funciones-logarítmicas" class="slide level3">
-<h3>Propiedades de las funciones logarítmicas</h3>
+<section id="propiedades-de-las-funciones-logarítmicas" class="level3">
+<h3 class="anchored" data-anchor-id="propiedades-de-las-funciones-logarítmicas">Propiedades de las funciones logarítmicas</h3>
 <ul>
 <li>Por ser la inversa de la función exponencial, sus gráficas son simétricas respecto a la bisectriz del primer y tercer cuadrantes. Por tanto:
 <ul>
@@ -636,9 +584,10 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 </ul></li>
 <li>No tiene sentido para <span class="math inline">\(a=1\)</span> por que sería una función constante.</li>
 </ul>
-</section></section>
-<section id="funciones-trigonométricas" class="title-slide slide level2 center">
-<h2>Funciones trigonométricas</h2>
+</section>
+</section>
+<section id="funciones-trigonométricas" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-trigonométricas">Funciones trigonométricas</h2>
 <p>Surgen en geometría al medir las relaciones entre los catetos de un triángulo rectángulo, que dependen del ángulo del cateto contiguo y la hipotenusa de dicho triángulo. No obstante, esta no es la única definición posible, sino que también pueden definirse a partir de la función exponencial compleja.</p>
 <ul>
 <li>Seno</li>
@@ -649,38 +598,38 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Arcotangente</li>
 </ul>
 </section>
-
-<section id="seno-de-un-ángulo" class="title-slide slide level2 center">
-<h2>Seno de un ángulo</h2>
+<section id="seno-de-un-ángulo" class="level2">
+<h2 class="anchored" data-anchor-id="seno-de-un-ángulo">Seno de un ángulo</h2>
 <div id="def-seno-angulo" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 19 (Seno de un ángulo)</strong></span> Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>seno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{sen} \alpha\)</span>, como el cociente entre el cateto opuesto y la hipotenusa.</p>
 </div>
-
-<img data-src="./img/funciones/seno-triangulo.svg" width="250" class="r-stretch quarto-figure-center"><p class="caption">Seno de un ángulo de un triángulo rectángulo.</p></section>
-
-<section>
-<section id="función-seno" class="title-slide slide level2 center">
-<h2>Función seno</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/seno-triangulo.png" class="img-fluid figure-img" width="250"></p>
+<figcaption>Seno de un ángulo de un triángulo rectángulo.</figcaption>
+</figure>
+</div>
+</section>
+<section id="función-seno" class="level2">
+<h2 class="anchored" data-anchor-id="función-seno">Función seno</h2>
 <div id="def-funcion-seno" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 20 (Función seno)</strong></span> Se define la función <em>seno</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{sen}(x)\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su seno.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-funcion-seno" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 10</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-seno.svg" width="600"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-seno.png" class="img-fluid figure-img" width="600"></p>
 <figcaption>Gráfica de la función seno.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section id="propiedades-de-la-función-seno" class="title-slide slide level2 center">
-<h2>Propiedades de la función seno</h2>
+</section>
+<section id="propiedades-de-la-función-seno" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-la-función-seno">Propiedades de la función seno</h2>
 <ul>
 <li>Su dominio es <span class="math inline">\(\mathbb{R}\)</span>.</li>
 <li>Su imagen es el intervalo <span class="math inline">\([-1,1]\)</span>.</li>
@@ -692,38 +641,38 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Es una función impar: <span class="math inline">\(\operatorname{sen}(-x)=-\operatorname{sen} x\)</span>.</li>
 </ul>
 </section>
-
-<section id="coseno-de-un-ángulo" class="title-slide slide level2 center">
-<h2>Coseno de un ángulo</h2>
+<section id="coseno-de-un-ángulo" class="level2">
+<h2 class="anchored" data-anchor-id="coseno-de-un-ángulo">Coseno de un ángulo</h2>
 <div id="def-coseno-angulo" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 21 (Coseno de un ángulo)</strong></span> Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define el <em>coseno</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\cos \alpha\)</span>, como el cociente entre el cateto contiguo y la hipotenusa.</p>
 </div>
-
-<img data-src="./img/funciones/coseno-triangulo.svg" width="250" class="r-stretch quarto-figure-center"><p class="caption">Coseno de un ángulo de un triángulo rectángulo.</p></section>
-
-<section>
-<section id="función-coseno" class="title-slide slide level2 center">
-<h2>Función coseno</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/coseno-triangulo.png" class="img-fluid figure-img" width="250"></p>
+<figcaption>Coseno de un ángulo de un triángulo rectángulo.</figcaption>
+</figure>
+</div>
+</section>
+<section id="función-coseno" class="level2">
+<h2 class="anchored" data-anchor-id="función-coseno">Función coseno</h2>
 <div id="def-funcion-coseno" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 22 (Función coseno)</strong></span> Se define la función <em>coseno</em>,</p>
 <p><span class="math display">\[f(x)=\cos(x)\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su coseno.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-grafica-funcion-coseno" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 11</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-coseno.svg" width="600"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-coseno.png" class="img-fluid figure-img" width="600"></p>
 <figcaption>Gráfica de la función coseno.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section id="propiedades-de-la-función-coseno" class="title-slide slide level2 center">
-<h2>Propiedades de la función coseno</h2>
+</section>
+<section id="propiedades-de-la-función-coseno" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-la-función-coseno">Propiedades de la función coseno</h2>
 <ul>
 <li><p>Su dominio es <span class="math inline">\(\mathbb{R}\)</span>.</p></li>
 <li><p>Su imagen es el intervalo <span class="math inline">\([-1,1]\)</span>.</p></li>
@@ -733,38 +682,38 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li><p>Es una función par: <span class="math inline">\(\cos(-x)=\cos x\)</span>.</p></li>
 </ul>
 </section>
-
-<section id="tangente-de-un-ángulo" class="title-slide slide level2 center">
-<h2>Tangente de un ángulo</h2>
+<section id="tangente-de-un-ángulo" class="level2">
+<h2 class="anchored" data-anchor-id="tangente-de-un-ángulo">Tangente de un ángulo</h2>
 <div id="def-tangente-angulo" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 23 (Tangente de un ángulo)</strong></span> Sea <span class="math inline">\(\alpha\)</span> cualquiera de los ángulos agudos de un triángulo rectángulo, se define la <em>tangente</em> de <span class="math inline">\(\alpha\)</span>, y se nota <span class="math inline">\(\operatorname{tg} \alpha\)</span>, como el cociente entre el cateto opuesto y el cateto contiguo.</p>
 </div>
-
-<img data-src="./img/funciones/tangente-triangulo.svg" width="250" class="r-stretch quarto-figure-center"><p class="caption">Tangente de un ángulo de un triángulo rectángulo.</p></section>
-
-<section>
-<section id="función-tangente" class="title-slide slide level2 center">
-<h2>Función tangente</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/funciones/tangente-triangulo.png" class="img-fluid figure-img" width="250"></p>
+<figcaption>Tangente de un ángulo de un triángulo rectángulo.</figcaption>
+</figure>
+</div>
+</section>
+<section id="función-tangente" class="level2">
+<h2 class="anchored" data-anchor-id="función-tangente">Función tangente</h2>
 <div id="def-funcion-tangente" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 24 (Función tangente)</strong></span> Se define la función <em>tangente</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{tg}(x)=\frac{\operatorname{sen}(x)}{\cos(x)}\]</span></p>
 <p>como la función que asocia a cada ángulo <span class="math inline">\(x\)</span> (habitualmente medido en radianes) su tangente.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-funcion-tangente" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 12</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-tangente.svg" width="600"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-tangente.png" class="img-fluid figure-img" width="600"></p>
 <figcaption>Gráfica de la función tangente.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section id="propiedades-de-la-función-tangente" class="title-slide slide level2 center">
-<h2>Propiedades de la función tangente</h2>
+</section>
+<section id="propiedades-de-la-función-tangente" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-la-función-tangente">Propiedades de la función tangente</h2>
 <ul>
 <li><p>Su dominio es <span class="math inline">\(\mathbb{R}\)</span> menos las raíces del coseno, es decir <span class="math inline">\(\mathbb{R}-\{2k\pi/2: k\in \mathbb{Z}\}\)</span>.</p></li>
 <li><p>Su imagen es <span class="math inline">\(\mathbb{R}\)</span>.</p></li>
@@ -773,30 +722,26 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li><p>Algunos valores para recordar: <span class="math inline">\(\operatorname{tg} 0=0\)</span>, <span class="math inline">\(\operatorname{tg} \pi/6= 1/\sqrt{3}\)</span>, <span class="math inline">\(\operatorname{tg} \pi/4=1\)</span>, <span class="math inline">\(\operatorname{tg} \pi/3= \sqrt{3}\)</span>, <span class="math inline">\(\operatorname{tg} \pi =0\)</span>, <span class="math inline">\(\operatorname{tg} 2\pi=0\)</span>.</p></li>
 </ul>
 </section>
-
-<section>
-<section id="función-arcoseno" class="title-slide slide level2 center">
-<h2>Función arcoseno</h2>
+<section id="función-arcoseno" class="level2">
+<h2 class="anchored" data-anchor-id="función-arcoseno">Función arcoseno</h2>
 <div id="def-funcion-arcoseno" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 25 (Función arcoseno)</strong></span> Se define la función <em>arcoseno</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{arcsen}(x)\]</span></p>
 <p>como la función inversa de la función seno.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-funcion-arcoseno" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 13</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-arcoseno.svg" width="400"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-arcoseno.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Gráfica de la función arcoseno.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section id="propiedades-de-la-función-arcoseno" class="title-slide slide level2 center">
-<h2>Propiedades de la función arcoseno</h2>
+</section>
+<section id="propiedades-de-la-función-arcoseno" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-la-función-arcoseno">Propiedades de la función arcoseno</h2>
 <ul>
 <li>Por ser la inversa de la función seno, sus gráficas son simétricas respecto a la bisectriz del primer y tercer cuadrantes. Por tanto:
 <ul>
@@ -806,30 +751,26 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Es creciente en todo el dominio.</li>
 </ul>
 </section>
-
-<section>
-<section id="función-arcocoseno" class="title-slide slide level2 center">
-<h2>Función arcocoseno</h2>
+<section id="función-arcocoseno" class="level2">
+<h2 class="anchored" data-anchor-id="función-arcocoseno">Función arcocoseno</h2>
 <div id="def-funcion-arcocoseno" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 26 (Función arcocoseno)</strong></span> Se define la función <em>arcocoseno</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{arccos}(x)\]</span></p>
 <p>como la función inversa de la función coseno.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-funcion-arcocoseno" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 14</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-arcocoseno.svg" width="400"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-arcocoseno.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Gráfica de la función arcocoseno.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section id="propiedades-de-la-función-arcoseno-1" class="title-slide slide level2 center">
-<h2>Propiedades de la función arcoseno</h2>
+</section>
+<section id="propiedades-de-la-función-arcoseno-1" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-la-función-arcoseno-1">Propiedades de la función arcoseno</h2>
 <ul>
 <li>Por ser la inversa de la función coseno, sus gráficas son simétricas respecto a la bisectriz del primer y tercer cuadrantes. Por tanto:
 <ul>
@@ -839,30 +780,26 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Es decreciente en todo el dominio.</li>
 </ul>
 </section>
-
-<section>
-<section id="función-arcotangente" class="title-slide slide level2 center">
-<h2>Función arcotangente</h2>
+<section id="función-arcotangente" class="level2">
+<h2 class="anchored" data-anchor-id="función-arcotangente">Función arcotangente</h2>
 <div id="def-funcion-arcotangente" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 27 (Función arcotangente)</strong></span> Se define la función <em>arcotangente</em>,</p>
 <p><span class="math display">\[f(x)=\operatorname{arctg}(x)\]</span></p>
 <p>como la función inversa de la función tangente.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-funcion-arcotangente" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 15</strong></span> &nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/funciones/funcion-arcotangente.svg" width="600"></p>
+<figure class="figure">
+<p><img src="./img/funciones/funcion-arcotangente.png" class="img-fluid figure-img" width="600"></p>
 <figcaption>Gráfica de la función arcotangente.</figcaption>
 </figure>
 </div>
 </div>
-</section></section>
-<section id="propiedades-de-la-función-arcotangente" class="title-slide slide level2 center">
-<h2>Propiedades de la función arcotangente</h2>
+</section>
+<section id="propiedades-de-la-función-arcotangente" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-la-función-arcotangente">Propiedades de la función arcotangente</h2>
 <ul>
 <li>Por ser la inversa de la función tangente, sus gráficas son simétricas respecto a la bisectriz del primer y tercer cuadrantes. Por tanto:
 <ul>
@@ -872,9 +809,8 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li>Es creciente en todo el dominio.</li>
 </ul>
 </section>
-
-<section id="algunas-relaciones-trigonométricas" class="title-slide slide level2 center">
-<h2>Algunas relaciones trigonométricas</h2>
+<section id="algunas-relaciones-trigonométricas" class="level2">
+<h2 class="anchored" data-anchor-id="algunas-relaciones-trigonométricas">Algunas relaciones trigonométricas</h2>
 <ul>
 <li><span class="math inline">\(\operatorname{sen}^2 x+\cos^2 x=1\)</span></li>
 <li><span class="math inline">\(\operatorname{sen}(x+y)=\operatorname{sen} x \cos y+\cos x \operatorname{sen} y\)</span></li>
@@ -884,411 +820,412 @@ Además, si <span class="math inline">\(f(x)=x^r\)</span> y <span class="math in
 <li><span class="math inline">\(\cos x + \cos y = 2 \cos \dfrac{x+y}{2}\cos\dfrac{x-y}{2}\)</span></li>
 <li><span class="math inline">\(\cos x - \cos y = -2 \operatorname{sen} \dfrac{x+y}{2}\operatorname{sen}\dfrac{x-y}{2}\)</span></li>
 </ul>
-
 </section>
-    </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="img/logos/sticker.png" class="slide-logo"></p>
-<div class="footer footer-default">
-<p><a href="https://aprendeconalf.es/analisis-manual" class="uri">https://aprendeconalf.es/analisis-manual</a></p>
-</div>
-</div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="05-funciones_files/libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="05-funciones_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="05-funciones_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="05-funciones_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="05-funciones_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="05-funciones_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="05-funciones_files/libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="05-funciones_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="05-funciones_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="05-funciones_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="05-funciones_files/libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
-'smaller': false,
- 
-        // Display controls in the bottom right corner
-        controls: false,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: 'c/t',
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: false,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: false,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'convex',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'fast',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: 1050,
-
-        height: 700,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.1,
-
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
         },
-
-        // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
-
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
-      });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copiado");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copiado");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
       };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
             });
-            return popup.innerHTML;
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
           });
         }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
       }
-    });
-    </script>
-    
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
 
 </body></html>

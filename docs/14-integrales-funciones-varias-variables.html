@@ -1,171 +1,143 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
+
+<title>Integrales de funciones de varias variables</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
 <script src="14-integrales-funciones-varias-variables_files/libs/clipboard/clipboard.min.js"></script>
-<script src="14-integrales-funciones-varias-variables_files/libs/quarto-html/tabby.min.js"></script>
+<script src="14-integrales-funciones-varias-variables_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="14-integrales-funciones-varias-variables_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="14-integrales-funciones-varias-variables_files/libs/quarto-html/popper.min.js"></script>
 <script src="14-integrales-funciones-varias-variables_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="14-integrales-funciones-varias-variables_files/libs/quarto-html/anchor.min.js"></script>
 <link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/quarto-syntax-highlighting-2124ca1cf500079e6f4baffc20a28816.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="14-integrales-funciones-varias-variables_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="14-integrales-funciones-varias-variables_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="14-integrales-funciones-varias-variables_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="14-integrales-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="14-integrales-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.6">
+<link href="14-integrales-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 
-  <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
-  <title>Integrales de funciones de varias variables</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="14-integrales-funciones-varias-variables_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="14-integrales-funciones-varias-variables_files/libs/revealjs/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-      vertical-align: middle;
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
     }
-  </style>
-  <link rel="stylesheet" href="14-integrales-funciones-varias-variables_files/libs/revealjs/dist/theme/quarto-5b06271ac7fb8d89379da83c3d0f227c.css">
-  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-    .reveal div.sourceCode {
-      margin: 0;
-      overflow: auto;
-    }
-    .reveal div.hanging-indent {
-      margin-left: 1em;
-      text-indent: -1em;
-    }
-    .reveal .slide:not(.center) {
-      height: 100%;
-    }
-    .reveal .slide.scrollable {
-      overflow-y: auto;
-    }
-    .reveal .footnotes {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide .absolute {
-      position: absolute;
-      display: block;
-    }
-    .reveal .footnotes ol {
-      counter-reset: ol;
-      list-style-type: none; 
-      margin-left: 0;
-    }
-    .reveal .footnotes ol li:before {
-      counter-increment: ol;
-      content: counter(ol) ". "; 
-    }
-    .reveal .footnotes ol li > p:first-child {
-      display: inline-block;
-    }
-    .reveal .slide ul,
-    .reveal .slide ol {
-      margin-bottom: 0.5em;
-    }
-    .reveal .slide ul li,
-    .reveal .slide ol li {
-      margin-top: 0.4em;
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide ul[role="tablist"] li {
-      margin-bottom: 0;
-    }
-    .reveal .slide ul li > *:first-child,
-    .reveal .slide ol li > *:first-child {
-      margin-block-start: 0;
-    }
-    .reveal .slide ul li > *:last-child,
-    .reveal .slide ol li > *:last-child {
-      margin-block-end: 0;
-    }
-    .reveal .slide .columns:nth-child(3) {
-      margin-block-start: 0.8em;
-    }
-    .reveal blockquote {
-      box-shadow: none;
-    }
-    .reveal .tippy-content>* {
-      margin-top: 0.2em;
-      margin-bottom: 0.7em;
-    }
-    .reveal .tippy-content>*:last-child {
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide > img.stretch.quarto-figure-center,
-    .reveal .slide > img.r-stretch.quarto-figure-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-left,
-    .reveal .slide > img.r-stretch.quarto-figure-left  {
-      display: block;
-      margin-left: 0;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-right,
-    .reveal .slide > img.r-stretch.quarto-figure-right  {
-      display: block;
-      margin-left: auto;
-      margin-right: 0; 
-    }
-  </style>
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
-<body class="quarto-light">
-  <div class="reveal">
-    <div class="slides">
 
-<section id="title-slide" class="center">
-      <img class="title-logo" src="img/logos/sticker.png" width="250" style="float:right">
-        <p class="subtitle">Análisis Matemático</p>
-      <h1 class="title">Integrales de funciones de varias variables</h1>
-      <p class="author">Alfredo Sánchez Alberca &nbsp; <a href="mailto:asalber@ceu.es"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a href="https://twitter.com/aprendeconalf"><i class="fa-brands fa-twitter" aria-label="twitter"></i></a> <a href="https://aprendeconalf.es"><i class="fa-solid fa-home" aria-label="home"></i></a></p>
-        <p class="institute">Universidad CEU San Pablo</p>
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="14-integrales-funciones-varias-variables.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Integrales de funciones de varias variables</h1>
+<p class="subtitle lead">Análisis Matemático</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autor/a</div>
+  <div class="quarto-title-meta-heading">Afiliación</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Alfredo Sánchez Alberca &nbsp; <a href="mailto:asalber@ceu.es"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a href="https://twitter.com/aprendeconalf"><i class="fa-brands fa-twitter" aria-label="twitter"></i></a> <a href="https://aprendeconalf.es"><i class="fa-solid fa-home" aria-label="home"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Universidad CEU San Pablo
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
       
-  </section>
-<section id="sumas-de-riemann" class="title-slide slide level2 center">
-<h2>Sumas de Riemann</h2>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sumas-de-riemann" class="level2">
+<h2 class="anchored" data-anchor-id="sumas-de-riemann">Sumas de Riemann</h2>
 <div id="def-intervalo-n-dimensional-cerrado" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 1 (Intervalo <span class="math inline">\(n\)</span> dimensional)</strong></span> Dados <span class="math inline">\(n\)</span> intervalos cerrados de <span class="math inline">\(\mathbb{R}\)</span> <span class="math inline">\(I_i=[a_i,b_i]\)</span> <span class="math inline">\(i=1\ldots n\)</span>, su producto cartesiano <span class="math inline">\(I = I_1\times \cdots \times I_n\)</span> se conoce como <em>intervalo <span class="math inline">\(n\)</span> dimensional cerrado</em> o <em>hiperrectángulo</em>.</p>
 </div>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>En <span class="math inline">\(\mathbb{R}^2\)</span>, el intervalo <span class="math inline">\([a_x,b_x]\times [a_y,b_y]\)</span> define un <em>rectángulo</em>, mientras que en <span class="math inline">\(\mathbb{R}^3\)</span> el intervalo <span class="math inline">\([a_x,b_x]\times [a_y,b_y]\times [a_z,b_z]\)</span> define una <em>caja</em>.</p>
 </div>
 </div>
-</div>
 </section>
-
-<section id="section" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 <div id="def-particion-n-dimensional" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 2 (Partición de un intervalo <span class="math inline">\(n\)</span> dimensional)</strong></span> Dado un intervalo <span class="math inline">\(n\)</span> dimensional cerrado <span class="math inline">\(I=I_1\times\cdots\times I_n\)</span>, con <span class="math inline">\(I_i=[a_i,b_i]\)</span> <span class="math inline">\(i=1,\ldots,n\)</span>, y una partición <span class="math inline">\(P_i=\{x_{i,0}=a_i,x_{i,1}\ldots,x_{i,m_i}\}\)</span> de cada intervalo <span class="math inline">\(I_i\)</span>, el producto cartesiano <span class="math inline">\(P=P_1\times\cdots\times P_n\)</span> se conoce como <em>partición <span class="math inline">\(n\)</span> dimensional</em> de <span class="math inline">\(I\)</span>.</p>
 <p>El conjunto de todas las particiones <span class="math inline">\(n\)</span> dimensionales de <span class="math inline">\(I\)</span> se denota <span class="math inline">\(\mathcal{P}(I)\)</span>.</p>
 </div>
 </section>
-
-<section>
-<section id="section-1" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"></h2>
 <div id="def-suma-inferior-superior-riemann-n-dimensional" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 3 (Sumas de Riemann)</strong></span> Dada una función <span class="math inline">\(f:I\to \mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\subset \mathbb{R}^n\)</span> y una partición <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(P\)</span> de <span class="math inline">\(I\)</span>, se define la <em>suma inferior de Riemann</em> de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span>, y se denota <span class="math inline">\(s(f,P)\)</span>, como</p>
 <p><span class="math display">\[
@@ -178,36 +150,33 @@ S(f,P) = \sum_{i_1=1}^{m_1}\cdots \sum_{i_n=1}^{m_n} M_{i_1,\ldots,i_n} (x_{1,i_
 \]</span></p>
 <p>donde <span class="math inline">\(M_{i_1,\ldots,i_n} = \sup\{f(x_1,\ldots,x_n): x_j\in[x_{j,i_j-1}, x_{j,i_j}]\ \forall j=1,\ldots, n\}\)</span>.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Aunque la definición es un poco enrevesada para <span class="math inline">\(\mathbb{R}^n\)</span>, si <span class="math inline">\(f(x,y)\)</span> es una función de dos variables acotada en el intervalo <span class="math inline">\(I=[a,b]\times [c,d]\subset \mathbb{R}^2\)</span>, y <span class="math inline">\(P=P_x\times P_y\)</span> es una partición de <span class="math inline">\(I\)</span> con <span class="math inline">\(P_x=\{x_0=a,x_1,\ldots, x_n=b\}\)</span> y <span class="math inline">\(P_x=\{y_0=c,y_1,\ldots, y_m=d\}\)</span>, las sumas de Riemann inferior y superior de <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(P\)</span> son</p>
 <p><span class="math display">\[\begin{align*}
 s(f,P) &amp;= \sum_{i=1}^n \sum_{j=1}^m m_{ij}(x_i-x_{i-1})(y_j-y_{j-1}), \\
 S(f,P) &amp;= \sum_{i=1}^n \sum_{j=1}^m M_{ij}(x_i-x_{i-1})(y_j-y_{j-1}),
 \end{align*}\]</span></p>
 <p>donde <span class="math inline">\(m_{ij}\)</span> y <span class="math inline">\(M_{ij}\)</span> son el ínfimo y el supremo de <span class="math inline">\(\{f(x,y): (x,y)\in [x_{i-1},x_i]\times [y_{j-1},y_j]\}\)</span>.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Gráficamente, si <span class="math inline">\(f(x,y)\)</span> es una función positiva en <span class="math inline">\(I\)</span>, la suma inferior se puede interpretar como la suma de los volúmenes de los prismas de base rectangular con lados <span class="math inline">\([x_{i-1},x_i]\)</span> y <span class="math inline">\([y_{j-1},y_j]\)</span> y altura <span class="math inline">\(m_{ij}\)</span>.</p>
-
-<img data-src="img/integrales-funciones-varias-variables/suma-riemann-funcion-varias-variables.svg" class="r-stretch quarto-figure-center"><p class="caption">Suma inferior de Riemann en <span class="math inline">\(\mathbb{R}^2\)</span></p></section>
-<section class="slide level3">
-
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales-funciones-varias-variables/suma-riemann-funcion-varias-variables.svg" class="img-fluid figure-img"></p>
+<figcaption>Suma inferior de Riemann en <span class="math inline">\(\mathbb{R}^2\)</span></figcaption>
+</figure>
+</div>
+<hr>
 <div id="exm-sumas-riemann" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 1</strong></span> Veamos cómo calcular las sumas de Riemann de la función <span class="math inline">\(f(x,y)=x^2y\)</span> en el rectángulo <span class="math inline">\([0,1]\times [0,1]\)</span> para la partición <span class="math inline">\(P=\{0, 0.5, 1\}\times \{0, 0.5, 1\}\)</span></p>
 <p>Esta partición descompone el intervalo bidimensional <span class="math inline">\([0,1]\times [0,1]\)</span> en <span class="math inline">\(4\)</span> rectángulos (en realidad cuadrados) como los que se ven la siguiente figura.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/integrales-funciones-varias-variables/particion-intervalo-bidimensional.svg" width="400"></p>
+<figure class="figure">
+<p><img src="img/integrales-funciones-varias-variables/particion-intervalo-bidimensional.svg" class="img-fluid figure-img" width="400"></p>
 <figcaption>Partición del intervalo <span class="math inline">\([0,1]\times [0,1]\)</span> en 4 subintervalos.</figcaption>
 </figure>
 </div>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Como <span class="math inline">\(f\)</span> es creciente tanto en <span class="math inline">\(x\)</span> como en <span class="math inline">\(y\)</span> en el intervalo <span class="math inline">\(I\)</span>, alcanzará el mínimo en el extremo inferior izquierdo de cada subintervalo y el máximo en el extremo superior derecho. Por tanto, la suma inferior de Riemann es</p>
 <p><span class="math display">\[\begin{align*}
 s(f,P) &amp;= f(0,0)(0.5-0)(0.5-0) + f(0,0.5)(0.5-0)(1-0.5) \\
@@ -222,9 +191,9 @@ S(f,P) &amp;= f(0.5,0.5)(0.5-0)(0.5-0) + f(0.5,1)(0.5-0)(1-0.5) \\
 &amp;= 0.125\cdot 0.25 + 0.25 \cdot 0.25 + 0.5 \cdot 0.25 + 1 \cdot 0.25
 = 0.46875.
 \end{align*}\]</span></p>
-</section></section>
-<section id="integral-de-riemann-múltiple" class="title-slide slide level2 center">
-<h2>Integral de Riemann múltiple</h2>
+</section>
+<section id="integral-de-riemann-múltiple" class="level2">
+<h2 class="anchored" data-anchor-id="integral-de-riemann-múltiple">Integral de Riemann múltiple</h2>
 <div id="def-integral-inferior-superior-riemann-multiple" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 4 (Integral inferior y superior de Riemann)</strong></span> Dada una función <span class="math inline">\(f:I\to \mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\subset \mathbb{R}^n\)</span> y una partición <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(P\)</span> de <span class="math inline">\(I\)</span>, se define la <em>integral inferior de Riemann</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(I\)</span>, como</p>
 <p><span class="math display">\[
@@ -236,9 +205,8 @@ S(f,P) &amp;= f(0.5,0.5)(0.5-0)(0.5-0) + f(0.5,1)(0.5-0)(1-0.5) \\
 \]</span></p>
 </div>
 </section>
-
-<section id="section-2" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2"></h2>
 <div id="def-integral-riemann-n-dimensional" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5</strong></span> Dada una función <span class="math inline">\(f:I\to \mathbb{R}\)</span> acotada en el intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\subset \mathbb{R}^n\)</span>, se dice que <span class="math inline">\(f\)</span> es integrable Riemann en <span class="math inline">\(I\)</span> si</p>
 <p><span class="math display">\[
@@ -250,10 +218,8 @@ S(f,P) &amp;= f(0.5,0.5)(0.5-0)(0.5-0) + f(0.5,1)(0.5-0)(1-0.5) \\
 \]</span> donde <span class="math inline">\(dA = dx_1\cdots dx_n\)</span>.</p>
 </div>
 </section>
-
-<section>
-<section id="section-3" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3"></h2>
 <div id="prp-integral-riemann-n-dimensional" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 1</strong></span> Si <span class="math inline">\(f:I\to \mathbb{R}\)</span> es integrable Riemann en el intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\subset \mathbb{R}^n\)</span>, entonces</p>
 <p><span class="math display">\[
@@ -261,23 +227,23 @@ S(f,P) &amp;= f(0.5,0.5)(0.5-0)(0.5-0) + f(0.5,1)(0.5-0)(1-0.5) \\
 \]</span></p>
 <p>donde <span class="math inline">\(P\)</span> es una partición de <span class="math inline">\(I\)</span> en <span class="math inline">\(m^n\)</span> subintervalos de igual tamaño y <span class="math inline">\(\Delta A = (x_{1,i_1}-x_{1,i_1-1})\cdots (x_{n,i_n}-x_{n,i_n-1})\)</span> es el hipervolumen de los subintervalos de la partición.</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>En el caso de una función de dos variables <span class="math inline">\(f(x,y)\)</span> la proposición anterior establece que si <span class="math inline">\(f\)</span> es integrable Riemann en un intervalo <span class="math inline">\([a,b]\times [c,d]\)</span>, entonces</p>
 <p><span class="math display">\[
 \int_I f = \lim_{n\to \infty}\sum_{i=1}^n\sum_{j=1}^n f(x_i, y_j)\Delta A,
 \]</span></p>
 <p>donde <span class="math inline">\(P_n = \{x_0=a,x_1,\ldots,x_n=b\}\times \{y_0=c,y_1,\ldots,y_n=d\}\)</span> y <span class="math inline">\(\Delta A = (x_i-x_{i-1})(y_j-y_{j-1})\)</span>, es el área de los rectángulos definidos por cada subintervalo de la partición. Es decir, la integral de Riemann aparece al tomar particiones cada vez más refinadas con subintervalos de igual tamaño y hacer la suma de las áreas de los subintervalos multiplicadas por el valor de la función en el extremo superior derecho del subintervalo.</p>
-</section>
-<section class="slide level3">
-
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Cuando se quieren hacer explícitas las variables de las que depende la función <span class="math inline">\(f\)</span>, la integral de Riemann se suele escribir</p>
 <p><span class="math display">\[
 \int_{I} f(x,y) \,dx\,dy
@@ -289,10 +255,9 @@ S(f,P) &amp;= f(0.5,0.5)(0.5-0)(0.5-0) + f(0.5,1)(0.5-0)(1-0.5) \\
 <p>para funciones de tres variables.</p>
 </div>
 </div>
-</div>
-</section></section>
-<section id="propiedades-de-las-integrales-de-riemann-múltiples" class="title-slide slide level2 center">
-<h2>Propiedades de las Integrales de Riemann múltiples</h2>
+</section>
+<section id="propiedades-de-las-integrales-de-riemann-múltiples" class="level2">
+<h2 class="anchored" data-anchor-id="propiedades-de-las-integrales-de-riemann-múltiples">Propiedades de las Integrales de Riemann múltiples</h2>
 <p>Las <a href="http://localhost:1313/09-integrales.html#propiedades-de-la-integral-de-riemann">propiedades de la integral de Riemann</a> para funciones de una variable también se pueden generalizar para integrales de Riemann múltiples.</p>
 <div id="thm-propiedades-integrales-Riemann-multiples" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 1</strong></span> Si <span class="math inline">\(f,g:I\to\mathbb{R}\)</span> son dos funciones integrables Riemann en un intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\)</span>, entonces</p>
@@ -303,14 +268,10 @@ S(f,P) &amp;= f(0.5,0.5)(0.5-0)(0.5-0) + f(0.5,1)(0.5-0)(1-0.5) \\
 </ol>
 </div>
 </section>
-
-<section>
-<section id="integrales-múltiples-iteradas" class="title-slide slide level2 center">
-<h2>Integrales múltiples iteradas</h2>
+<section id="integrales-múltiples-iteradas" class="level2">
+<h2 class="anchored" data-anchor-id="integrales-múltiples-iteradas">Integrales múltiples iteradas</h2>
 <p>El procedimiento para reducir el cálculo de una integral múltiple al cálculo de varias integrales simples es, en el fondo, el mismo que se utilizó para calcular derivadas parciales, es decir, realizar integrales simples de las funciones parciales que se obtienen al fijar como constantes todas las variables excepto aquella con respecto a la que se integra.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Veamos el procedimiento para una función de dos variables. Supongamos que <span class="math inline">\(f(x,y)\)</span> es integrable Riemann en el intervalo <span class="math inline">\(I=[a,b]\times [c,d]\)</span>. Si mantenemos <span class="math inline">\(x\)</span> constante, podemos calcular la integral definida simple con respecto a <span class="math inline">\(y\)</span> en el intervalo <span class="math inline">\([c,d]\)</span>, es decir, <span class="math inline">\(\int_c^d f(x,y)\, dy\)</span>. Para cada valor de <span class="math inline">\(x\)</span>, esta integral tomará un valor distinto, por lo que podemos definir la función</p>
 <p><span class="math display">\[
 A(x) = \int_c^d f(x,y)\,dy,
@@ -320,17 +281,14 @@ A(x) = \int_c^d f(x,y)\,dy,
 \int_a^b A(x)\,dx = \int_a^b\int_c^d f(x,y)\,dy\,dx.
 \]</span></p>
 <p>Esta integral se conoce como <em>integral doble iterada</em>, primero con respecto a <span class="math inline">\(y\)</span> y después con respecto a <span class="math inline">\(x\)</span>.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>De manera similar, podríamos haber integrado primero con respecto a <span class="math inline">\(x\)</span> y luego con respecto a <span class="math inline">\(y\)</span>, y tendríamos esta otra integral doble iterada</p>
 <p><span class="math display">\[
 \int_c^d\int_a^b f(x,y)\,dx\,dy.
 \]</span></p>
-</section></section>
-<section>
-<section id="section-4" class="title-slide slide level2 center">
-<h2></h2>
+</section>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4"></h2>
 <div id="thm-teorema-fubini" class="theorem">
 <p><span class="theorem-title"><strong>Teorema 2 (Fubini)</strong></span> Si <span class="math inline">\(f(x,y)\)</span> es una función continua en un intervalo <span class="math inline">\(I=[a,b]\times [c,d]\)</span>, entonces</p>
 <p><span class="math display">\[
@@ -339,9 +297,7 @@ A(x) = \int_c^d f(x,y)\,dy,
 = \int_c^d\int_a^b f(x,y)\,dx\,dy.
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-integrales-iteradas" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 2</strong></span> La integral doble de la función <span class="math inline">\(f(x,y)=12-2x-y^2\)</span> en el intervalo <span class="math inline">\(I=[0,1]\times[0,3]\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
@@ -355,9 +311,7 @@ A(x) = \int_c^d f(x,y)\,dy,
 = 24.
 \end{align*}\]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Podríamos haber llegado a este mismo resultado haciendo la otra integral iterada</p>
 <p><span class="math display">\[\begin{align*}
 \int_I f(x,y)\, dA
@@ -369,19 +323,20 @@ A(x) = \int_c^d f(x,y)\,dy,
 = 33 - \frac{3^3}{3}
 = 24.
 \end{align*}\]</span></p>
-<div class="callout callout-important callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Aunque cuando la función es integrable Riemann el orden de integración de las integrales iteradas no importa, a menudo, una integral iterada suele ser más fácil de calcular que la otra.</p>
 </div>
 </div>
-</div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-integrales-iteradas-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 3</strong></span> Para calcular la integral de la función <span class="math inline">\(f(x,y) = xe^{xy}\)</span> en el intervalo <span class="math inline">\(I=[0,1]\times [0,1]\)</span>, si primero integramos con respecto a <span class="math inline">\(y\)</span> y después con respecto a <span class="math inline">\(x\)</span> se tiene</p>
 <p><span class="math display">\[\begin{align*}
@@ -394,11 +349,10 @@ A(x) = \int_c^d f(x,y)\,dy,
 \end{align*}\]</span></p>
 <p>Sin embargo, si primero integramos con respecto a <span class="math inline">\(x\)</span> y luego con respecto a <span class="math inline">\(y\)</span> se tiene una integral mucho más difícil de calcular.</p>
 </div>
-<p><a href="https://www.geogebra.org/classic/s5ve2dxb"><img data-src="./img/logos/logo-geogebra.png" alt="Calculadora de integrales dobles iteradas."> Calculadora de sumas de Riemann</a></p>
-</section></section>
-<section>
-<section id="section-5" class="title-slide slide level2 center">
-<h2></h2>
+<p><a href="https://www.geogebra.org/classic/s5ve2dxb"><img src="./img/logos/logo-geogebra.png" class="img-fluid" alt="Calculadora de integrales dobles iteradas."> Calculadora de sumas de Riemann</a></p>
+</section>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5"></h2>
 <p>En el caso de que <span class="math inline">\(f(x,y)\)</span> pueda factorizarse como producto de funciones que sólo dependen de <span class="math inline">\(x\)</span> o de <span class="math inline">\(y\)</span>, entonces el cálculo de la integral doble se simplifica.</p>
 <div id="prp-integral-doble-producto-funciones" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 2</strong></span> Si <span class="math inline">\(f(x,y)=g(x)h(y)\)</span> es integrable Riemann en el intervalo <span class="math inline">\(I=[a,b]\times [c,d]\)</span>, entonces</p>
@@ -407,9 +361,7 @@ A(x) = \int_c^d f(x,y)\,dy,
 = \int_a^b g(x)\,dx \int_c^d h(y)\,dy.
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-integral-doble-producto-funciones" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 4</strong></span> La integral doble de la función <span class="math inline">\(f(x,y) = e^{2x-3y}\)</span> en el intervalo <span class="math inline">\(I=[0,1]\times [0,2]\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
@@ -420,9 +372,9 @@ A(x) = \int_c^d f(x,y)\,dy,
 = \left(\frac{e^2}{2}-\frac{1}{2}\right)\left(\frac{-e^6}{3}+\frac{1}{3}\right)
 \end{align*}\]</span></p>
 </div>
-</section></section>
-<section id="integrales-sobre-regiones-no-regulares" class="title-slide slide level2 center">
-<h2>Integrales sobre regiones no regulares</h2>
+</section>
+<section id="integrales-sobre-regiones-no-regulares" class="level2">
+<h2 class="anchored" data-anchor-id="integrales-sobre-regiones-no-regulares">Integrales sobre regiones no regulares</h2>
 <p>En general, la integral de Riemann de una función <span class="math inline">\(f\)</span> sobre un intervalo <span class="math inline">\(n\)</span> dimensional puede extenderse a una región irregular acotada <span class="math inline">\(R\)</span> simplemente tomando un intervalo <span class="math inline">\(n\)</span> dimensional <span class="math inline">\(I\)</span> que incluya la región, es decir <span class="math inline">\(R\subseteq I\)</span> y redefiniendo <span class="math inline">\(f\)</span> como</p>
 <p><span class="math display">\[
 F(x_1,\ldots,x_n) =
@@ -437,10 +389,8 @@ f(x_1,\ldots,x_n) &amp; \mbox{si $(x,1,\ldots,x_n)\in R$}\\
 = \int_{I} F(x_1,\ldots,x_n)\,dA.
 \]</span></p>
 </section>
-
-<section>
-<section id="section-6" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section-6" class="level2">
+<h2 class="anchored" data-anchor-id="section-6"></h2>
 <p>Si <span class="math inline">\(R\)</span> es una región del plano <span class="math inline">\(xy\)</span> delimitada por las gráficas de dos funciones <span class="math inline">\(g_1(x)\)</span> y <span class="math inline">\(g_2(x)\)</span>, es decir,</p>
 <p><span class="math display">\[
 R = \{(x,y): a\leq x \leq b, g_1(x)\leq y \leq g_2(x)\},
@@ -450,9 +400,7 @@ R = \{(x,y): a\leq x \leq b, g_1(x)\leq y \leq g_2(x)\},
 \int_{R} f(x,y)\,dA
 = \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx.
 \]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Del mismo modo, si <span class="math inline">\(R\)</span> es una región del plano <span class="math inline">\(xy\)</span> delimitada por las gráficas de dos funciones <span class="math inline">\(g_1(y)\)</span> y <span class="math inline">\(g_2(y)\)</span>, es decir,</p>
 <p><span class="math display">\[
 R = \{(x,y): g_1(y)\leq x \leq g_2(y), a\leq y\leq b\},
@@ -462,21 +410,17 @@ R = \{(x,y): g_1(y)\leq x \leq g_2(y), a\leq y\leq b\},
 \int_{R} f(x,y)\,dA
 = \int_a^b \int_{g_1(y)}^{g_2(y)} f(x,y)\,dx\,dy.
 \]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-integral-region-irregular" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 5</strong></span> Veamos cómo calcular la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región encerrada entre las curvas <span class="math inline">\(y=x\)</span> e <span class="math inline">\(y=x^2\)</span>. La región encerrada entre las curvas se muestra en el siguiente gráfico.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/integrales-funciones-varias-variables/region-irregular.svg" width="500"></p>
+<figure class="figure">
+<p><img src="img/integrales-funciones-varias-variables/region-irregular.svg" class="img-fluid figure-img" width="500"></p>
 <figcaption>Región comprendida entre las curvas <span class="math inline">\(y=x\)</span> e <span class="math inline">\(y=x^2\)</span>.</figcaption>
 </figure>
 </div>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Esta región puede expresarse como <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span>, por lo que la integral doble de <span class="math inline">\(f\)</span> sobre esta región puede calcularse mediante la integral iterada</p>
 <p><span class="math display">\[\begin{align*}
 \int_0^1\int_{x^2}^x xy\,dy\,dx
@@ -497,13 +441,9 @@ R = \{(x,y): g_1(y)\leq x \leq g_2(y), a\leq y\leq b\},
 = \frac{1}{6}-\frac{1}{8}
 = \frac{1}{24}.
 \end{align*}\]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>En este tipo de integrales iteradas, hay que integrar siempre primero con respecto a la variable que está acotada por las funciones que definen la región y después con respecto a la variable que está acotada por valores fijos. Cuando interese realizar la integral iterada en el otro orden, porque resulte más sencilla, previamente hay que cambiar la expresión de la región de integración mediante las funciones inversas, siempre y cuando sea posible.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-integral-region-irregular-2" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 6</strong></span> Para calcular la integral de la función <span class="math inline">\(f(x,y)=e^{-y^2}\)</span> en la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 2x\}\)</span>, como <span class="math inline">\(y\)</span> está acotada por una función de <span class="math inline">\(x\)</span>, habría que hacer la integral iterada</p>
 <p><span class="math display">\[
@@ -518,9 +458,9 @@ R = \{(x,y): g_1(y)\leq x \leq g_2(y), a\leq y\leq b\},
 = \frac{-e^{-4}+1}{4}.
 \end{align*}\]</span></p>
 </div>
-</section></section>
-<section id="integrales-dobles-en-coordenadas-polares" class="title-slide slide level2 center">
-<h2>Integrales dobles en coordenadas polares</h2>
+</section>
+<section id="integrales-dobles-en-coordenadas-polares" class="level2">
+<h2 class="anchored" data-anchor-id="integrales-dobles-en-coordenadas-polares">Integrales dobles en coordenadas polares</h2>
 <p>Para integrar determinadas funciones es preferible hacer un cambio a coordenadas polares. Recordemos que para pasar de coordenadas cartesianas <span class="math inline">\((x,y)\)</span> a coordenadas polares <span class="math inline">\((r,\theta)\)</span> se utilizan las fórmulas</p>
 <p><span class="math display">\[
 r = \sqrt{x^2 + y^2} \qquad \theta = \operatorname{arcsin}\left(\frac{y}{\sqrt{x^2+y^2}}\right) = \operatorname{arccos}\left(\frac{x}{\sqrt{x^2+y^2}}\right),
@@ -530,24 +470,24 @@ r = \sqrt{x^2 + y^2} \qquad \theta = \operatorname{arcsin}\left(\frac{y}{\sqrt{x
 x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 \]</span></p>
 </section>
-
-<section id="section-7" class="title-slide slide level2 center">
-<h2></h2>
+<section id="section-7" class="level2">
+<h2 class="anchored" data-anchor-id="section-7"></h2>
 <p>En coordenadas polares un intervalo bidimensional <span class="math inline">\(I=[a,b]\times[\alpha,\beta]\)</span> define un sector de disco como el que se muestra a continuación.</p>
-
-<img data-src="img/integrales-funciones-varias-variables/intervalo-bidimensional-polar.svg" width="400" class="r-stretch quarto-figure-center"><p class="caption">Intervalo bidimensional en coordenadas polares.</p></section>
-
-<section>
-<section id="section-8" class="title-slide slide level2 center">
-<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales-funciones-varias-variables/intervalo-bidimensional-polar.svg" class="img-fluid figure-img" width="400"></p>
+<figcaption>Intervalo bidimensional en coordenadas polares.</figcaption>
+</figure>
+</div>
+</section>
+<section id="section-8" class="level2">
+<h2 class="anchored" data-anchor-id="section-8"></h2>
 <p>Si la función <span class="math inline">\(f(x,y)\)</span> es continua sobre un intervalo polar <span class="math inline">\(I=[a,b]\times[\alpha,\beta]\)</span> con <span class="math inline">\(\beta-\alpha\leq 2\pi\)</span>, la integral doble de <span class="math inline">\(f\)</span> sobre esta región se puede calcular mediante la integral iterada</p>
 <p><span class="math display">\[
 \int_I f(x,y)\,dA
 = \int_{\alpha}^{\beta}\int_a^b f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta.
 \]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-volumen-esfera" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7</strong></span> La gráfica de la función <span class="math inline">\(f(x,y)=\sqrt{a^2-x^2-y^2}\)</span> es una semiesfera de radio uno centrada en el origen de coordenadas. Para calcular su volumen, la región de integración es el círculo de radio uno centrado en el origen de coordenadas, que puede expresarse como <span class="math inline">\(R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, -\sqrt{a^2-x^2}\leq y\leq \sqrt{a^2-x^2}\}\)</span>. En este caso la integral en coordenadas rectangulares es complicada y merece la pena hacer la integral en coordenadas polares.</p>
 <p><span class="math display">\[\begin{align*}
@@ -563,24 +503,19 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 \end{align*}\]</span></p>
 <p>Y por tanto, el volumen de la esfera de radio uno centrada en el origen es <span class="math inline">\(\frac{4}{3}\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
 </div>
-</section></section>
-<section>
-<section id="section-9" class="title-slide slide level2 center">
-<h2></h2>
+</section>
+<section id="section-9" class="level2">
+<h2 class="anchored" data-anchor-id="section-9"></h2>
 <p>Cuando la región de integración es irregular pero puede expresarse de la forma <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: \alpha\leq \theta\leq \beta, g_1(\theta)\leq r\leq g_2(\theta)\}\)</span>, la integral doble en coordenadas polares puede calcularse mediante la integral iterada</p>
 <p><span class="math display">\[
 \int_R f(x.y)\,dA
 = \int_{\alpha}^{\beta} \int_{g_1(\theta)}^{g_2(\theta)} f(r\cos(\theta),r\operatorname{sen}(\theta))r\,dr\,d\theta.
 \]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-integral-region-irregular-polar" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 8</strong></span> Veamos cómo calcular el volumen encerrado entre la gráfica integral del paraboloide <span class="math inline">\(f(x,y)=x^2+y^2\)</span> y el plano <span class="math inline">\(xy\)</span> sobre la circunferencia de ecuación <span class="math inline">\(x^2+(y^2-1)=1\)</span>. En coordenadas polares, la circunferencia que delimita la región de integración puede escribirse como <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: 0\leq \theta\leq \pi, 0\leq r\leq 2\operatorname{sen}(\theta)\}\)</span>. Por tanto, podemos calcular la integral de <span class="math inline">\(f\)</span> sobre la región <span class="math inline">\(R\)</span> mediante la integral iterada</p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p><span class="math display">\[\begin{align*}
 \int_R f(x,y)\,dA
 &amp;= \int_0^\pi \int_0^{2\operatorname{sen}(\theta)} f(r\cos(\theta),r\operatorname{sen}{\theta})r\,dr\,d\theta \\
@@ -594,15 +529,12 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 &amp;= \left[\theta - \operatorname{sen}(2\theta) + \frac{\theta}{2} + \frac{\operatorname{sen}(4\theta)}{8}\right]_0^\pi
 = \frac{3}{2}\pi.
 \end{align*}\]</span></p>
-</section></section>
-<section>
-<section id="cálculo-de-volúmenes" class="title-slide slide level2 center">
-<h2>Cálculo de volúmenes</h2>
+</section>
+<section id="cálculo-de-volúmenes" class="level2">
+<h2 class="anchored" data-anchor-id="cálculo-de-volúmenes">Cálculo de volúmenes</h2>
 <p>Cuando <span class="math inline">\(f(x,y)\)</span> es positiva en el intervalo de integración <span class="math inline">\(I=[a,b]\times[c,b]\)</span>, la integral doble <span class="math inline">\(\int_I f(x,y)\,dx\,dy\)</span> da el volumen del sólido encerrado entre la superficie de <span class="math inline">\(f\)</span> y el plano <span class="math inline">\(xy\)</span> en la región delimitada por <span class="math inline">\(I\)</span>. Ahora bien, si <span class="math inline">\(f\)</span> es negativa en <span class="math inline">\(I\)</span>, entonces el valor de la integral doble es negativo, por lo que habrá que cambiarla de signo para poder interpretarla como un volumen.</p>
 <p>La cosa se complica cuando <span class="math inline">\(f\)</span> puede tomar valores positivos y negativos en el intervalo <span class="math inline">\(I\)</span>. En tal caso, para obtener el volumen tendremos que calcular la integral del valor absoluto de la función, o bien descomponer el intervalo de integración <span class="math inline">\(I\)</span> en subintervalos donde la función sea positiva o negativa, integrar la función en cada uno de estos subintervalos y luego sumar el valor absoluto de estas integrales.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-volumen-integral-doble" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9</strong></span> Veamos cómo calcular el volumen de la función <span class="math inline">\(f(x,y)=x^2y\)</span> en el intervalo <span class="math inline">\(I=[-1,1]\times[-1,1]\)</span>. En el intervalo de integración, la función toma valores negativos en el subintervalo <span class="math inline">\(I_1=[-1,1]\times[-1,0]\)</span> y valores positivos en el intervalo <span class="math inline">\([-1,1]\times[0,1]\)</span>, por lo que el volumen encerrado entre la gráfica de la función y el plano <span class="math inline">\(xy\)</span> viene dado por la suma de las integrales</p>
 <p><span class="math display">\[\begin{align*}
@@ -615,9 +547,7 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 = \frac{1}{3}.
 \end{align*}\]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>y</p>
 <p><span class="math display">\[\begin{align*}
 \int_{I_1} f(x,y)\,dA
@@ -635,29 +565,33 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 = \frac{1}{3} + \frac{1}{3}
 = \frac{2}{3}.
 \]</span></p>
-</section></section>
-<section id="section-10" class="title-slide slide level2 center">
-<h2></h2>
-<div class="callout callout-tip callout-style-simple">
-<div class="callout-body">
+</section>
+<section id="section-10" class="level2">
+<h2 class="anchored" data-anchor-id="section-10"></h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Obsérvese que también se puede usar la integral doble para calcular el área de una región plana integrando sobre esta región la función <span class="math inline">\(f(x,y)=1\)</span>, ya que cuanto la altura <span class="math inline">\(1\)</span>, el volumen coincide con el área de la base.</p>
 <p>Del mismo modo se puede usar una integral tripe para calcular el volumen de una región tridimensional.</p>
 </div>
 </div>
-</div>
 </section>
-
-<section>
-<section id="cálculo-del-area-de-una-superficie" class="title-slide slide level2 center">
-<h2>Cálculo del area de una superficie</h2>
-
-<img data-src="img/integrales-funciones-varias-variables/planto-tangente-aproximacion-area-superficie.png" class="r-stretch quarto-figure-center"><p class="caption">Aproximación de la superficie de una función mediante paralelogramos.</p></section>
-<section class="slide level3">
-
+<section id="cálculo-del-area-de-una-superficie" class="level2">
+<h2 class="anchored" data-anchor-id="cálculo-del-area-de-una-superficie">Cálculo del area de una superficie</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/integrales-funciones-varias-variables/planto-tangente-aproximacion-area-superficie.png" class="img-fluid figure-img"></p>
+<figcaption>Aproximación de la superficie de una función mediante paralelogramos.</figcaption>
+</figure>
+</div>
+<hr>
 <p>Para cada paralelogramo <span class="math inline">\(T_{ij}\)</span> consideramos los vectores <span class="math inline">\(\mathbf{u}_{ij}\)</span> y <span class="math inline">\(\mathbf{v}_{ij}\)</span> con origen en <span class="math inline">\((x_i, y_j)\)</span> y con la misma dirección y longitud que los lados del paralelogramo.</p>
 <p>Como <span class="math inline">\(\mathbf{u}_{ij}\)</span> está contenido en la intersección plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((x_i,y_j,f(x_i,y_j))\)</span>, con el plano <span class="math inline">\(y=y_j\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_x(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((\Delta x, 0, f'_x(x_i,y_j)\Delta x)\)</span>.</p>
 <p>Del mismo modo, como <span class="math inline">\(\mathbf{v}_{ij}\)</span> está contenido en la intersección plano tangente, con el plano <span class="math inline">\(x=x_i\)</span>, se tiene que su pendiente es <span class="math inline">\(f'_y(x_i,y_j)\)</span>, por lo que sus coordenadas son <span class="math inline">\((0, \Delta y, f'_y(x_i,y_j)\Delta y)\)</span>.</p>
@@ -673,9 +607,7 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 &amp;= -f'_x(x_i,y_j)\Delta x\Delta y \mathbf{i} -f'_y(x_i,y_j)\Delta x\Delta y \mathbf{j} + \Delta x\Delta y \mathbf{k} \\
 &amp;= (-f'_x(x_i,y_j), -f'_y(x_i,y_j), 1)\Delta x\Delta y,
 \end{align*}\]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>y el área del paralelogramo <span class="math inline">\(T_{ij}\)</span> es</p>
 <p><span class="math display">\[
 \Delta T_{ij}
@@ -691,9 +623,7 @@ x = r\cos(\theta) \qquad y = r\operatorname{sen}(\theta).
 <p><span class="math display">\[
 A_I(f) = \int_I \sqrt{f'_x(x_i,y_j)^2 + f'_y(x_i,y_j)^2 + 1}\,dA.
 \]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-área-superficie-semi-esfera" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 10</strong></span> La gráfica de la función <span class="math inline">\(f(x,y)=\sqrt{a^2-x^2-y^2}\)</span> es la semiesfera de radio <span class="math inline">\(a\)</span> centrada en el origen de coordenadas. El área de la superficie de esta semiesfera puede calcularse mediante la integral</p>
 <p><span class="math display">\[
@@ -710,18 +640,14 @@ f'_y(x,y) &amp;= \frac{-y}{\sqrt{a^2-x^2-y^2}},
 A_R(f) = \int_{-a}^a \int_{-\sqrt{a^2-x^2}}^{\sqrt{a^2-x^2}} \sqrt{\frac{x^2}{a^2-x^2-y^2} + \frac{y^2}{a^2-x^2-y^2} + 1}\,dy\,dx.
 \]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Esta integral, no obstante, es difícil de calcular, por lo que merece la pena hacer el cambio a coordenadas polares, de manera que la región de integración polar es <span class="math inline">\(R=\{(r,\theta)\in \mathbb{R}^+\times \mathbb{R}: 0\leq \theta\leq 2\pi, 0\leq r\leq a\}\)</span> y la integral se convierte en</p>
 <p><span class="math display">\[\begin{align*}
 A_R(f)
 &amp;= \int_0^{2\pi} \int_0^a \sqrt{\frac{r^2\cos(\theta)^2}{a^2-r^2}+\frac{r^2\operatorname{sen}(\theta)^2}{a^2-r^2}+1}r\,dr\,d\theta \\
 &amp;= \int_0^{2\pi} \int_0^a \sqrt{\frac{a^2}{a^2-r^2}}r\,dr\,d\theta.
 \end{align*}\]</span></p>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Esta última integral es impropia ya que <span class="math inline">\(\frac{a^2}{a^2-r^2}\to \infty\)</span> cuando <span class="math inline">\(r\to a\)</span>, pero la integral es finita, ya que</p>
 <p><span class="math display">\[
 \lim_{s\to a^-}\int_0^s \sqrt{\frac{a^2}{a^2-r^2}} r\,dr
@@ -734,18 +660,15 @@ A_R(f)
 = 2\pi a^2,
 \]</span></p>
 <p>por lo que el área de la esfera de radio <span class="math inline">\(a\)</span> centrada en el origen de coordenadas es <span class="math inline">\(4\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
-</section></section>
-<section>
-<section id="centro-de-masas" class="title-slide slide level2 center">
-<h2>Centro de masas</h2>
+</section>
+<section id="centro-de-masas" class="level2">
+<h2 class="anchored" data-anchor-id="centro-de-masas">Centro de masas</h2>
 <p>Una aplicación física inmediata de las integrales dobles o triples es el cálculo de la masa de una sólido plano o del espacio con densidad variable en cada punto. Si <span class="math inline">\(\delta(x,y)\)</span> es la densidad en cada uno de los puntos de un sólido que ocupa una región <span class="math inline">\(R\)</span> del plano <span class="math inline">\(xy\)</span>, la masa total del sólido puede calcularse mediante la integral</p>
 <p><span class="math display">\[
 m = \int_R \delta(x,y)\,dA,
 \]</span></p>
 <p>siempre y cuando la función <span class="math inline">\(\delta\)</span> sea integrable en la región <span class="math inline">\(R\)</span>.</p>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-masa-region-plana" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 11</strong></span> Una placa metálica tiene la forma de región <span class="math inline">\(R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 1-x^2\}\)</span> y la densidad en cada punto viene dada por la función <span class="math inline">\(\delta(x,y)=xy\)</span> en gr/cm<span class="math inline">\(^2\)</span>. Entonces su masa es</p>
 <p><span class="math display">\[\begin{align*}
@@ -760,10 +683,9 @@ m
 = \frac{1}{12} \mbox{ gr}.
 \end{align*}\]</span></p>
 </div>
-</section></section>
-<section>
-<section id="section-11" class="title-slide slide level2 center">
-<h2></h2>
+</section>
+<section id="section-11" class="level2">
+<h2 class="anchored" data-anchor-id="section-11"></h2>
 <p>También podemos utilizar las integrales dobles para calcular el <em>momento</em> de cada punto de un sólido <span class="math inline">\(R\)</span> del plano <span class="math inline">\(xy\)</span> con respecto a cada uno de los ejes. <span class="math display">\[\begin{align*}
 M_x
 &amp;= \int_R y\delta(x,y)\,dA \\
@@ -779,22 +701,21 @@ M_y
 &amp;= \frac{M_x}{m}
 = \frac{\int_R y\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
 \end{align*}\]</span></p>
-</section>
-<section class="slide level3">
-
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Un sólido plano se comporta como si toda su masa se concentrara en el centroide, de manera que se mantendría en equilibrio horizontal al apoyarlo sobre este punto.</p>
 </div>
 </div>
-</div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-centro-masas-solido-plano-densidad-variable" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 12</strong></span> El momento con respecto al eje <span class="math inline">\(x\)</span> de la placa metálica del ejemplo anterior es</p>
 <p><span class="math display">\[\begin{align*}
@@ -821,9 +742,7 @@ M_y
 = \frac{4}{105} \mbox{ gr$\cdot$ cm}.
 \end{align*}\]</span></p>
 </div>
-</section>
-<section class="slide level3">
-
+<hr>
 <p>Por lo tanto, el centroide de la placa metálica tendrá coordenadas</p>
 <p><span class="math display">\[\begin{align*}
 \bar x
@@ -835,31 +754,31 @@ M_y
 = \frac{\int_R x\delta(x,y)\,dA}{\int_R \delta(x,y)\,dA}
 = \frac{4/105}{1/12} = \frac{16}{35} \approx 0.4571  \mbox{ cm}.
 \end{align*}\]</span></p>
-</section></section>
-<section>
-<section id="valor-medio-de-una-función" class="title-slide slide level2 center">
-<h2>Valor medio de una función</h2>
+</section>
+<section id="valor-medio-de-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="valor-medio-de-una-función">Valor medio de una función</h2>
 <div id="def-valor-medio-funcion-varias-variables" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 6 (Valor medio de una función de varias variables)</strong></span> Dada una función <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span> integrable sobre una región <span class="math inline">\(R\subset \mathbb{R}^n\)</span>, el <em>valor medio</em> de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(R\)</span> es</p>
 <p><span class="math display">\[
 \bar{f}_R = \frac{\int_R f(x_1,\ldots,x_n)\,dA}{\int_R\,dA}
 \]</span></p>
 </div>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-content">
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Obsérvese que la integral del denominador <span class="math inline">\(\int_R\,dA\)</span>, para una función de dos variables da el área de la región <span class="math inline">\(R\)</span>, mientras que para una función de tres variables da el volumen de la región <span class="math inline">\(R\)</span>.</p>
 </div>
 </div>
-</div>
-</section>
-<section class="slide level3">
-
+<hr>
 <div id="exm-valor-medio-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13</strong></span> En el <a href="#/exm-integral-region-irregular" class="quarto-xref">Ejemplo&nbsp;5</a> vimos que la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span> era <span class="math inline">\(\int_R xy\,dA = \frac{1}{24}\)</span>. Como el área de la región <span class="math inline">\(R\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 13</strong></span> En el <a href="#exm-integral-region-irregular" class="quarto-xref">Ejemplo&nbsp;5</a> vimos que la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span> era <span class="math inline">\(\int_R xy\,dA = \frac{1}{24}\)</span>. Como el área de la región <span class="math inline">\(R\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int_R \,dA
 &amp;= \int_0^1 \int_{x^2}^x  \,dy\,dx
@@ -877,411 +796,412 @@ M_y
 = \frac{1}{4}.
 \]</span></p>
 </div>
+</section>
 
-</section></section>
-    </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="img/logos/sticker.png" class="slide-logo"></p>
-<div class="footer footer-default">
-<p><a href="https://aprendeconalf.es/analisis-manual" class="uri">https://aprendeconalf.es/analisis-manual</a></p>
-</div>
-</div></div>
-
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
-'smaller': false,
- 
-        // Display controls in the bottom right corner
-        controls: false,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: 'c/t',
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: false,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: false,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'convex',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'fast',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: 1050,
-
-        height: 700,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.1,
-
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
         },
-
-        // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
-
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
-      });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copiado");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copiado");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
       };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
             });
-            return popup.innerHTML;
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
           });
         }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
       }
-    });
-    </script>
-    
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
 
 </body></html>

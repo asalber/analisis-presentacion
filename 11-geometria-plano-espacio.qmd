@@ -290,7 +290,7 @@ $$
 
 :::{#def-vectores-paralelos}
 ## Vectores paralelos
-Dos vectores $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$ son _paralelos_ si existe un escalar $a\in\mathbb{R}$ tal que
+Dos vectores $\mathbf{u}$ y $\mathbf{v}$ en $\mathbb{R}^n$ son _paralelos_ si existe un escalar $a\in\mathbb{R}$ no nulo tal que
 
 $$
 \mathbf{u} = a\mathbf{v}.
@@ -340,7 +340,7 @@ $$
 $$
 :::
 
-### Producto vectorial
+## Producto vectorial
 
 :::{#def-producto-vectorial}
 ## Producto vectorial
@@ -360,7 +360,7 @@ $$
 u_2 & u_3 \\
 v_2 & v_3 
 \end{array}
-\right|\mathbf{i} +
+\right|\mathbf{i} -
 \left|
 \begin{array}{cc}
 u_1 & u_3 \\
@@ -401,7 +401,7 @@ El producto vectorial de los vectores $\mathbf{u}=(1,2,0)$ y $\mathbf{v}=(-1,1,0
 
 $$
 \mathbf{u}\times \mathbf{v} 
-= (2\cdot 0-0\cdot 1, 0\cdot (-2)-1\cdot 0, 1\cdot 1-2\cdot (-1) 
+= (2\cdot 0-0\cdot 1, 1\cdot 0 - 0\cdot (-1), 1\cdot 1-2\cdot (-1) 
 = (0, 0, 3).
 $$
 
