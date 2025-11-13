@@ -6,10 +6,10 @@
 <script src="06-limites_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="06-limites_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="06-limites_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="06-limites_files/libs/quarto-html/quarto-syntax-highlighting-9f30c2c2d2429ed22c1cf9f617479b3b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="06-limites_files/libs/quarto-html/quarto-syntax-highlighting-4c7b890cc350be7067044af900615741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="06-limites_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="06-limites_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Límites de funciones</title>
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="06-limites_files/libs/revealjs/dist/theme/quarto-a4fb939f28b838eabb0057d71688aa29.css">
+  <link rel="stylesheet" href="06-limites_files/libs/revealjs/dist/theme/quarto-cd6432ae8ba00f8176c28a6336b2c166.css">
   <link href="06-limites_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="06-limites_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="06-limites_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -228,7 +228,7 @@ x       &amp; f(x)=x^2   \\
 \hline
 x      &amp; f(x)   \\
 \hline\hline
--0.1   &amp; \textrm{No exite}      \\
+-0.1   &amp; \textrm{No existe}      \\
 \hline
 -0.01   &amp; \textrm{No existe}     \\
 \hline
@@ -480,7 +480,7 @@ x      &amp; f(x)=1/x   \\
 <section class="slide level3">
 
 <div id="exm-límite-funcion" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7</strong></span> Sea <span class="math inline">\(f(x)=x^2\)</span>. Veamos que <span class="math inline">\(\lim_{n\to a}f(x)=a^2\)</span>. Para ello, dado cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> se puede tomar <span class="math inline">\(\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}&gt;0\)</span> de manera <span class="math inline">\(\forall x\neq a\)</span> si <span class="math inline">\(|x-a|&lt;\delta\)</span>, entonces <span class="math inline">\(|x-a|&lt;1\)</span> y, por tanto, <span class="math inline">\(|x+a|=|x-a+2a|\leq |x-a|+2|a|&lt;1+2|a|\)</span>, y además, <span class="math display">\[\begin{align*}
+<p><span class="theorem-title"><strong>Ejemplo 7</strong></span> Sea <span class="math inline">\(f(x)=x^2\)</span>. Veamos que <span class="math inline">\(\lim_{x\to a}f(x)=a^2\)</span>. Para ello, dado cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> se puede tomar <span class="math inline">\(\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}&gt;0\)</span> de manera <span class="math inline">\(\forall x\neq a\)</span> si <span class="math inline">\(|x-a|&lt;\delta\)</span>, entonces <span class="math inline">\(|x-a|&lt;1\)</span> y, por tanto, <span class="math inline">\(|x+a|=|x-a+2a|\leq |x-a|+2|a|&lt;1+2|a|\)</span>, y además, <span class="math display">\[\begin{align*}
 |f(x)-a^2| &amp;= |x^2-a^2| = |(x+a)(x-a)| =|x+a||x-a| \\
 &amp;&lt; (1+2|a|)\delta &lt; (1+2|a|)\frac{\varepsilon}{1+2|a|} = \varepsilon.
 \end{align*}\]</span></p>
@@ -1022,21 +1022,28 @@ e^x-1 \approx x\\
 <h2>Asíntotas verticales</h2>
 <div id="def-asintota-vertical" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 10 (Asíntota vertical)</strong></span> Se dice que una recta <span class="math inline">\(x=a\)</span> es una <em>asíntota vertical</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
-<p><span class="math display">\[\lim_{x\to a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\to a^-}f(x)=\pm \infty\]</span></p>
+<p><span class="math display">\[\lim_{x\to a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\to a^+}f(x)=\pm \infty\]</span></p>
 </div>
-<p>Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.</p>
+<p>Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero sí lo está en las proximidades.</p>
 </section>
 <section class="slide level3">
 
 <div id="exm-asintota-vertical" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 28</strong></span> La recta <span class="math inline">\(x=2\)</span> es una asíntota vertical de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
-<p><span class="math display">\[\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{x-2} =\infty.\]</span></p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to 2^-}\frac{x+1}{x-2} &amp;= -\infty,\\
+\lim_{x\to 2^+}\frac{x+1}{x-2} &amp;= \infty.
+\end{align*}\]</span></p>
+</div><div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./img/limites/asintota-vertical.png" style="width:14cm"></p>
+<p><img data-src="./img/limites/asintota-vertical.svg" width="500"></p>
 <figcaption>Asíntota vertical.</figcaption>
 </figure>
 </div>
+</div></div>
 </div>
 </section></section>
 <section>
@@ -1044,27 +1051,32 @@ e^x-1 \approx x\\
 <h2>Asíntotas horizontales</h2>
 <div id="def-asintota-horizontal" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 11 (Asíntota horizontal)</strong></span> Se dice que una recta <span class="math inline">\(y=a\)</span> es una <em>asíntota horizontal</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
-<p><span class="math display">\[\lim_{x\to +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\to \infty}f(x)=a\]</span></p>
+<p><span class="math display">\[\lim_{x\to -\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\to +\infty}f(x)=a\]</span></p>
 </div>
 </section>
 <section class="slide level3">
 
 <div id="exm-asintota-horizontal" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 29</strong></span> La recta <span class="math inline">\(y=1\)</span> es una asíntota horizontal de <span class="math inline">\(f(x)=\dfrac{x+1}{x-2}\)</span> ya que</p>
+<div class="columns">
+<div class="column" style="width:45%;">
 <p><span class="math display">\[\begin{align*}
-\lim_{x\to -\infty}\frac{x+1}{x-2}&amp;= \lim_{x\to -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\\
+\lim_{x\to -\infty}\frac{x+1}{x-2}&amp;= \lim_{x\to -\infty}1+\frac{3}{x-2} = 1\\
 \lim_{x\to +\infty}\frac{x+1}{x-2}&amp;= \lim_{x\to +\infty}1+\frac{3}{x-2} = 1.
 \end{align*}\]</span></p>
+</div><div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./img/limites/asintota-horizontal.png" style="width:14cm"></p>
+<p><img data-src="./img/limites/asintota-horizontal.svg" width="450"></p>
 <figcaption>Asíntota horizontal.</figcaption>
 </figure>
 </div>
+</div></div>
 </div>
-</section>
-<section id="asíntotas-oblicuas" class="slide level3">
-<h3>Asíntotas oblicuas</h3>
+</section></section>
+<section>
+<section id="asíntotas-oblicuas" class="title-slide slide level2 center">
+<h2>Asíntotas oblicuas</h2>
 <div id="def-asintota-oblicua" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 12 (Asíntota oblicua)</strong></span> Se dice que una recta <span class="math inline">\(y=a+bx\)</span> es una <em>asíntota oblicua</em> de una función <span class="math inline">\(f\)</span> si se cumple</p>
 <p><span class="math display">\[\lim_{x\to \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\to \pm\infty}f(x)-bx=a.\]</span></p>
@@ -1074,18 +1086,22 @@ e^x-1 \approx x\\
 
 <div id="exm-asintota-oblicua" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 30</strong></span> La recta <span class="math inline">\(y=x+1\)</span> es una asíntota oblicua de <span class="math inline">\(f(x)=\dfrac{x^2}{x-1}\)</span> ya que</p>
+<div class="columns">
+<div class="column" style="width:45%;">
 <p><span class="math display">\[\begin{align*}
 \lim_{x\to \pm\infty}\frac{\frac{x^2}{x-1}}{x}&amp;=
-\lim_{x\to \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\\
+\lim_{x\to \pm\infty}\frac{x^2}{x^2-x} = 1,\\
 \lim_{x\to \pm\infty}\frac{x^2}{x-1}-x &amp;=
-\lim_{x\to \pm\infty}1+\frac{x}{x-1} = 1
+\lim_{x\to \pm\infty} \frac{x}{x-1} = 1
 \end{align*}\]</span></p>
+</div><div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./img/limites/asintota-oblicua.png" style="width:14cm"></p>
+<p><img data-src="./img/limites/asintota-oblicua.svg" height="450"></p>
 <figcaption>Asíntota oblicua.</figcaption>
 </figure>
 </div>
+</div></div>
 </div>
 </section></section>
 <section>
@@ -1159,13 +1175,17 @@ e^x-1 \approx x\\
 
 <div id="exm-discontinuiada-evitable" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 34</strong></span> La función <span class="math inline">\(f(x)=\dfrac{x^2-1}{x-1}\)</span> tiene una discontinuidad evitable en <span class="math inline">\(x=1\)</span> ya que la función no está definida en <span class="math inline">\(x=1\)</span> pero</p>
+<div class="columns">
+<div class="column" style="width:45%;">
 <p><span class="math display">\[\lim_{x\to 2}\frac{x^2-1}{x-1} = \lim_{x\to 2}x+1=2.\]</span></p>
+</div><div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./img/limites/discontinuidad-evitable.png"></p>
+<p><img data-src="./img/limites/discontinuidad-evitable.svg" width="450"></p>
 <figcaption>Discontinuidad evitable en <span class="math inline">\(x=1\)</span></figcaption>
 </figure>
 </div>
+</div></div>
 </div>
 </section></section>
 <section>
@@ -1180,17 +1200,22 @@ e^x-1 \approx x\\
 <section class="slide level3">
 
 <div id="exm-discontinuidad-1-especie-salto-finito" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 35</strong></span> La función <span class="math inline">\(f(x)=\dfrac{\lvert x\rvert}{x}\)</span> tiene una discontinuidad de 1ª especie de salto finito en <span class="math inline">\(x=0\)</span> ya que</p>
-<p><span class="math display">\[
-\lim_{x\to 0^-}\frac{|x|}{x}= -1 \quad \lim_{x\to 0^+}\frac{|x|}{x}= 1
-\]</span></p>
-<p>Salto <span class="math inline">\(= 1-(-1)=2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 35</strong></span> La función <span class="math inline">\(f(x)=\dfrac{2}{1+e^{1/x}}\)</span> tiene una discontinuidad de 1ª especie de salto finito en <span class="math inline">\(x=0\)</span> ya que</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><span class="math display">\[\begin{align*}
+&amp;\lim_{x\to 0^-}\frac{2}{1+e^{1/x}} = 2\\
+&amp;\lim_{x\to 0^+}\frac{2}{1+e^{1/x}} = 0
+\end{align*}\]</span></p>
+<p>Salto <span class="math inline">\(= 1 - 0 = 2\)</span>.</p>
+</div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./img/limites/discontinuidad-salto-finito.png"></p>
+<p><img data-src="./img/limites/discontinuidad-salto-finito.svg" width="450"></p>
 <figcaption>Discontinuidad de primera especie de salto finito en <span class="math inline">\(x=0\)</span></figcaption>
 </figure>
 </div>
+</div></div>
 </div>
 </section></section>
 <section>
@@ -1206,15 +1231,20 @@ e^x-1 \approx x\\
 
 <div id="exm-discontinuidad-1-especie-salto-infinito" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 36</strong></span> La función <span class="math inline">\(f(x)=e^{1/x}\)</span> tiene una discontinuidad de 1ª especie de salto infinito en <span class="math inline">\(x=0\)</span> ya que</p>
-<p><span class="math display">\[
-\lim_{x\to 0^-}e^{1/x}= 0 \quad \lim_{x\to 0^+}e^{1/x}= \infty
-\]</span></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><span class="math display">\[\begin{align*}
+&amp;\lim_{x\to 0^-}e^{1/x} = 0\\
+&amp;\lim_{x\to 0^+}e^{1/x} = \infty
+\end{align*}\]</span></p>
+</div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./img/limites/discontinuidad-salto-infinito.png"></p>
+<p><img data-src="./img/limites/discontinuidad-salto-infinito.svg" width="400"></p>
 <figcaption>Discontinuidad de primera especie de salto infinito en <span class="math inline">\(x=0\)</span></figcaption>
 </figure>
 </div>
+</div></div>
 </div>
 </section></section>
 <section>
@@ -1229,15 +1259,20 @@ e^x-1 \approx x\\
 
 <div id="exm-discontinuidad-2-especie" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 37</strong></span> La función <span class="math inline">\(f(x)=\dfrac{1}{\sqrt{x^2-1}}\)</span> tiene una discontinuidad de 2ª especie en <span class="math inline">\(x=1\)</span> ya que</p>
-<p><span class="math display">\[
-\lim_{x\to 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe} \quad \lim_{x\to 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
-\]</span></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><span class="math display">\[\begin{align*}
+&amp;\lim_{x\to 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}\\
+&amp;\lim_{x\to 1^+}\frac{1}{\sqrt{x^2-1}} = \infty
+\end{align*}\]</span></p>
+</div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./img/limites/discontinuidad-segunda-especie.png" style="width:12cm"></p>
+<p><img data-src="./img/limites/discontinuidad-segunda-especie.svg" width="450"></p>
 <figcaption>Discontinuidad de segunda especie en <span class="math inline">\(x=0\)</span></figcaption>
 </figure>
 </div>
+</div></div>
 </div>
 </section></section>
 <section>
@@ -1249,7 +1284,7 @@ e^x-1 \approx x\\
 <li><span class="math inline">\(f\pm g\)</span> es continua en <span class="math inline">\(a\)</span>.</li>
 <li><span class="math inline">\(f\cdot g\)</span> es continua en <span class="math inline">\(a\)</span>.</li>
 <li><span class="math inline">\(cf\)</span> es continua en <span class="math inline">\(a\)</span> <span class="math inline">\(\forall c\in\mathbb{R}\)</span>.</li>
-<li><span class="math inline">\(\frac{f}{g}\)</span> es continua en <span class="math inline">\(a\)</span> si <span class="math inline">\(g(x)\neq 0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>.</li>
+<li><span class="math inline">\(\frac{f}{g}\)</span> es continua en <span class="math inline">\(a\)</span> si <span class="math inline">\(g(a)\neq 0\)</span>.</li>
 </ol>
 </div>
 </section>
@@ -1291,7 +1326,7 @@ f(x)=
 <section id="section-16" class="title-slide slide level2 center">
 <h2></h2>
 <div id="thm-extremos-funcion-continua-intervalo-cerrado" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 10</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\(I\)</span>, es decir, existen <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(c\leq f(x)\leq d\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
+<p><span class="theorem-title"><strong>Teorema 10</strong></span> Dado un intervalo cerrado y acotado <span class="math inline">\(I=[a,b]\)</span>, y una función <span class="math inline">\(f:I\to\mathbb{R}\)</span>, si <span class="math inline">\(f\)</span> es continua en <span class="math inline">\(I\)</span>, entonces <span class="math inline">\(f\)</span> alcanza el máximo y el mínimo en <span class="math inline">\(I\)</span>, es decir, existen <span class="math inline">\(c,d\in I\)</span> tales que <span class="math inline">\(f(c)\leq f(x)\leq f(d)\)</span> <span class="math inline">\(\forall x\in I\)</span>.</p>
 </div>
 </section>
 
@@ -1511,7 +1546,7 @@ f(x)=
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1585,13 +1620,14 @@ f(x)=
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

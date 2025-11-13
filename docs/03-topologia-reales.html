@@ -6,10 +6,10 @@
 <script src="03-topologia-reales_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="03-topologia-reales_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="03-topologia-reales_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="03-topologia-reales_files/libs/quarto-html/quarto-syntax-highlighting-9f30c2c2d2429ed22c1cf9f617479b3b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="03-topologia-reales_files/libs/quarto-html/quarto-syntax-highlighting-4c7b890cc350be7067044af900615741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="03-topologia-reales_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="03-topologia-reales_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Topología de la recta real</title>
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="03-topologia-reales_files/libs/revealjs/dist/theme/quarto-a4fb939f28b838eabb0057d71688aa29.css">
+  <link rel="stylesheet" href="03-topologia-reales_files/libs/revealjs/dist/theme/quarto-cd6432ae8ba00f8176c28a6336b2c166.css">
   <link href="03-topologia-reales_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="03-topologia-reales_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="03-topologia-reales_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -318,7 +318,7 @@
 <p>Es posible que un conjunto tenga puntos de acumulación que pertenezcan al conjunto y otros que no.</p>
 <div id="exm-puntos-adherentes-acumulacion" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 5</strong></span> Dado el conjunto <span class="math inline">\(A=(0,1) \cup \{2\}\)</span>, se tiene que <span class="math inline">\(2\)</span> es un punto de adherencia de <span class="math inline">\(A\)</span>, pues para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el entorno <span class="math inline">\((2-\varepsilon,2+\varepsilon)\)</span> contiene al propio <span class="math inline">\(2\)</span> que es un punto de <span class="math inline">\(A\)</span>. Sin embargo, <span class="math inline">\(2\)</span> no es un punto de acumulación, porque para <span class="math inline">\(\varepsilon=0.5\)</span>, por ejemplo, el entorno reducido <span class="math inline">\((2-\varepsilon,2+\varepsilon)\setminus\{2\}=(1.5,2)\cup(2,2.5)\)</span> no contiene puntos de <span class="math inline">\(A\)</span>.</p>
-<p>En cambio el punto <span class="math inline">\(0.5\)</span> es tanto un punto de adherencia como un punto de acumulación de <span class="math inline">\(A\)</span> porque para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el entorno reducido <span class="math inline">\((0.5-\varepsilon,0.5+\varepsilon)\setminus \{0.5\}\)</span> siempre contiene puntos de <span class="math inline">\(A\)</span>. De hecho, para cualquier <span class="math inline">\(x\in(a,b)\)</span> y para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, el intervalo <span class="math inline">\((x-\varepsilon,x+\varepsilon)\setminus \{x\}\)</span> contiene puntos de <span class="math inline">\(A\)</span>, y lo mismo ocurre para <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> al ser puntos frontera, de manera que <span class="math inline">\(\operatorname{Ac}(A)=[0,1]\)</span>, mientras que <span class="math inline">\(\operatorname{Adh}(A)=[0,1]\cup\{2\}\)</span>.</p>
+<p>En cambio el punto <span class="math inline">\(0.5\)</span> es tanto un punto de adherencia como un punto de acumulación de <span class="math inline">\(A\)</span> porque para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el entorno reducido <span class="math inline">\((0.5-\varepsilon,0.5+\varepsilon)\setminus \{0.5\}\)</span> siempre contiene puntos de <span class="math inline">\(A\)</span>. De hecho, para cualquier <span class="math inline">\(x\in(0,1)\)</span> y para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, el intervalo <span class="math inline">\((x-\varepsilon,x+\varepsilon)\setminus \{x\}\)</span> contiene puntos de <span class="math inline">\(A\)</span>, y lo mismo ocurre para <span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span> al ser puntos frontera, de manera que <span class="math inline">\(\operatorname{Ac}(A)=[0,1]\)</span>, mientras que <span class="math inline">\(\operatorname{Adh}(A)=[0,1]\cup\{2\}\)</span>.</p>
 </div>
 </section></section>
 <section id="section-9" class="title-slide slide level2 center">
@@ -630,7 +630,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -704,13 +704,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

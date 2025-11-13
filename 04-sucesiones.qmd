@@ -132,7 +132,7 @@ Veamos ahora que $\lim_{n\to\infty}n^{1/n}=1$. Aplicando el teorema del binomio,
 
 \begin{align*}
 \left(1+\sqrt{\frac{2}{n}}\right)^n 
-&= 1^n + \binom{n}{1}1^{n-1}\sqrt{\frac{2}{n}} + \binom{n}{n}1^{n-2}\left(\sqrt{\frac{2}{n}}\right)^2 + \cdots \\
+&= 1^n + \binom{n}{1}1^{n-1}\sqrt{\frac{2}{n}} + \binom{n}{2}1^{n-2}\left(\sqrt{\frac{2}{n}}\right)^2 + \cdots \\
 & > 1 + n\sqrt{\frac{2}{n}} + \frac{n(n-1)}{2!}\frac{2}{n}
 = 1 + \sqrt{\frac{2n^2}{n}} + n -1 \\
 &= \sqrt{2n} + n

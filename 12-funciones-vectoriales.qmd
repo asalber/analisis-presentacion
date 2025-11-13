@@ -767,7 +767,7 @@ $$
 |\mathbf{v}(t)|=\sqrt{(-\operatorname{sen}(t))^2+\cos(t)^2}=1,
 $$
 
-y por tanto, la velocidad instantánea con la que se mueve el móvil es constante.
+y por tanto, la rapidez con la que se mueve el móvil es constante.
 
 ## Vector aceleración
 

@@ -675,7 +675,7 @@ El conjunto $A$ es minuspotente al conjunto $B$ si y solo si existe una aplicaci
 La relación de minuspotencia es una relación de orden, es decir, satisface las siguientes propiedades:
 
 - Reflexiva: $A\preceq A$ para todo conjunto $A$.
-- Simétrica: Si $A\preceq B$ y $B\preceq A$, entonces $A\approx B$, para cualesquiera conjuntos $A$ y $B$.
+- Antisimétrica: Si $A\preceq B$ y $B\preceq A$, entonces $A\approx B$, para cualesquiera conjuntos $A$ y $B$.
 - Transitiva: Si $A\preceq B$ y $B\preceq C$, entonces $A\preceq C$ para cualesquiera conjuntos $A$, $B$ y $C$.
 :::
 

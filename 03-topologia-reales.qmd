@@ -199,7 +199,7 @@ Es posible que un conjunto tenga puntos de acumulación que pertenezcan al conju
 :::{#exm-puntos-adherentes-acumulacion}
 Dado el conjunto $A=(0,1) \cup \{2\}$, se tiene que $2$ es un punto de adherencia de $A$, pues para cualquier $\varepsilon>0$ el entorno $(2-\varepsilon,2+\varepsilon)$ contiene al propio $2$ que es un punto de $A$. Sin embargo, $2$ no es un punto de acumulación, porque para $\varepsilon=0.5$, por ejemplo, el entorno reducido $(2-\varepsilon,2+\varepsilon)\setminus\{2\}=(1.5,2)\cup(2,2.5)$ no contiene puntos de $A$.
 
-En cambio el punto $0.5$ es tanto un punto de adherencia como un punto de acumulación de $A$ porque para cualquier $\varepsilon>0$ el entorno reducido $(0.5-\varepsilon,0.5+\varepsilon)\setminus \{0.5\}$ siempre contiene puntos de $A$. De hecho, para cualquier $x\in(a,b)$ y para cualquier $\varepsilon>0$, el intervalo $(x-\varepsilon,x+\varepsilon)\setminus \{x\}$ contiene puntos de $A$, y lo mismo ocurre para $a$ y $b$ al ser puntos frontera, de manera que $\operatorname{Ac}(A)=[0,1]$, mientras que $\operatorname{Adh}(A)=[0,1]\cup\{2\}$.
+En cambio el punto $0.5$ es tanto un punto de adherencia como un punto de acumulación de $A$ porque para cualquier $\varepsilon>0$ el entorno reducido $(0.5-\varepsilon,0.5+\varepsilon)\setminus \{0.5\}$ siempre contiene puntos de $A$. De hecho, para cualquier $x\in(0,1)$ y para cualquier $\varepsilon>0$, el intervalo $(x-\varepsilon,x+\varepsilon)\setminus \{x\}$ contiene puntos de $A$, y lo mismo ocurre para $0$ y $1$ al ser puntos frontera, de manera que $\operatorname{Ac}(A)=[0,1]$, mientras que $\operatorname{Adh}(A)=[0,1]\cup\{2\}$.
 :::
 
 ##

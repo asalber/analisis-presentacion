@@ -6,10 +6,10 @@
 <script src="13-derivadas-funciones-varias-variables_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="13-derivadas-funciones-varias-variables_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="13-derivadas-funciones-varias-variables_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="13-derivadas-funciones-varias-variables_files/libs/quarto-html/quarto-syntax-highlighting-9f30c2c2d2429ed22c1cf9f617479b3b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="13-derivadas-funciones-varias-variables_files/libs/quarto-html/quarto-syntax-highlighting-4c7b890cc350be7067044af900615741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="13-derivadas-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="13-derivadas-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Derivadas de funciones de varias variables</title>
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="13-derivadas-funciones-varias-variables_files/libs/revealjs/dist/theme/quarto-a4fb939f28b838eabb0057d71688aa29.css">
+  <link rel="stylesheet" href="13-derivadas-funciones-varias-variables_files/libs/revealjs/dist/theme/quarto-cd6432ae8ba00f8176c28a6336b2c166.css">
   <link href="13-derivadas-funciones-varias-variables_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="13-derivadas-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="13-derivadas-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -670,7 +670,7 @@ f(x, y) \approx \frac{\partial f}{\partial x}(a,b)(x-a) + \frac{\partial f}{\par
 = (a+\Delta x)^2 + (b+\Delta y)^2 - (a^2 + b^2) \\
 &amp;= a^2 + 2a\Delta x + \Delta x^2 + b^2 + 2b\Delta y + \Delta y^2 - a^2 - b^2\\
 &amp;= 2a\Delta x + 2b\Delta y + \Delta x^2 + \Delta y^2 \\
-&amp;= \frac{\partial f}{\partial x}(a,b) \Delta x + \frac{\partial f}{\partial y}(a,b) + \Delta x \Delta x + \Delta y \Delta y
+&amp;= \frac{\partial f}{\partial x}(a,b) \Delta x + \frac{\partial f}{\partial y}(a,b) \Delta y+ \Delta x \Delta x + \Delta y \Delta y
 \end{align*}\]</span></p>
 <p>De modo que, tomando <span class="math inline">\(\varepsilon_1 = \Delta x\)</span> y <span class="math inline">\(\varepsilon_2 = \Delta y\)</span>, se tiene que</p>
 <p><span class="math display">\[
@@ -689,7 +689,7 @@ f(0.9, 1.2) \approx 2\cdot 0.9 + 2\cdot 1.2 - 2 = 2.2.
 <section id="section-3" class="title-slide slide level2 center">
 <h2></h2>
 <div id="def-funcion-varias-variables-diferenciable" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 14 (Función diferenciable)</strong></span> Dada una función de n variables <span class="math inline">\(z=f(x_1,\ldots,x_n)\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> en el punto <span class="math inline">\((a_1,\ldots,a_n)\)</span> si</p>
+<p><span class="theorem-title"><strong>Definición 14 (Función diferenciable)</strong></span> Dada una función de <span class="math inline">\(n\)</span> variables <span class="math inline">\(z=f(x_1,\ldots,x_n)\)</span>, se dice que <span class="math inline">\(f\)</span> es <em>diferenciable</em> en el punto <span class="math inline">\((a_1,\ldots,a_n)\)</span> si</p>
 <p><span class="math display">\[\begin{align*}
 \Delta z
 &amp;= f(a_1+\Delta x_1, \ldots, a_n+\Delta x_n) - f(a_1,\ldots,a_n) \\
@@ -1565,7 +1565,7 @@ f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\c
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1639,13 +1639,14 @@ f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\c
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

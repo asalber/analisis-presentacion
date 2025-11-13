@@ -6,10 +6,10 @@
 <script src="04-sucesiones_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="04-sucesiones_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="04-sucesiones_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="04-sucesiones_files/libs/quarto-html/quarto-syntax-highlighting-9f30c2c2d2429ed22c1cf9f617479b3b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="04-sucesiones_files/libs/quarto-html/quarto-syntax-highlighting-4c7b890cc350be7067044af900615741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="04-sucesiones_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="04-sucesiones_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Sucesiones de números reales</title>
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="04-sucesiones_files/libs/revealjs/dist/theme/quarto-a4fb939f28b838eabb0057d71688aa29.css">
+  <link rel="stylesheet" href="04-sucesiones_files/libs/revealjs/dist/theme/quarto-cd6432ae8ba00f8176c28a6336b2c166.css">
   <link href="04-sucesiones_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="04-sucesiones_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="04-sucesiones_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -243,7 +243,7 @@
 <p>Veamos ahora que <span class="math inline">\(\lim_{n\to\infty}n^{1/n}=1\)</span>. Aplicando el teorema del binomio, para cualquier <span class="math inline">\(n\in\mathbb{N}\)</span>, con <span class="math inline">\(n&gt;1\)</span>, se tiene que</p>
 <p><span class="math display">\[\begin{align*}
 \left(1+\sqrt{\frac{2}{n}}\right)^n
-&amp;= 1^n + \binom{n}{1}1^{n-1}\sqrt{\frac{2}{n}} + \binom{n}{n}1^{n-2}\left(\sqrt{\frac{2}{n}}\right)^2 + \cdots \\
+&amp;= 1^n + \binom{n}{1}1^{n-1}\sqrt{\frac{2}{n}} + \binom{n}{2}1^{n-2}\left(\sqrt{\frac{2}{n}}\right)^2 + \cdots \\
 &amp; &gt; 1 + n\sqrt{\frac{2}{n}} + \frac{n(n-1)}{2!}\frac{2}{n}
 = 1 + \sqrt{\frac{2n^2}{n}} + n -1 \\
 &amp;= \sqrt{2n} + n
@@ -799,7 +799,7 @@ f(x) = \lim_{n\to\infty}f_n(x)
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -873,13 +873,14 @@ f(x) = \lim_{n\to\infty}f_n(x)
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

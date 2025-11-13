@@ -106,7 +106,7 @@ $$
 \hline
 x      & f(x)   \\
 \hline\hline
- -0.1   & \textrm{No exite}      \\
+ -0.1   & \textrm{No existe}      \\
 \hline
  -0.01   & \textrm{No existe}     \\
 \hline
@@ -406,7 +406,7 @@ si para cualquier número $\varepsilon>0$ existe un número $\delta>0$ tal que $
 ---
 
 :::{#exm-límite-funcion}
-Sea $f(x)=x^2$. Veamos que $\lim_{n\to a}f(x)=a^2$. Para ello, dado cualquier $\varepsilon>0$ se puede tomar $\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}>0$ de manera $\forall x\neq a$ si $|x-a|<\delta$, entonces $|x-a|<1$ y, por tanto, $|x+a|=|x-a+2a|\leq |x-a|+2|a|<1+2|a|$, y además,
+Sea $f(x)=x^2$. Veamos que $\lim_{x\to a}f(x)=a^2$. Para ello, dado cualquier $\varepsilon>0$ se puede tomar $\delta=\min\{1,\frac{\varepsilon}{1+2|a|}\}>0$ de manera $\forall x\neq a$ si $|x-a|<\delta$, entonces $|x-a|<1$ y, por tanto, $|x+a|=|x-a+2a|\leq |x-a|+2|a|<1+2|a|$, y además,
 \begin{align*}
 |f(x)-a^2| &= |x^2-a^2| = |(x+a)(x-a)| =|x+a||x-a| \\ 
 &< (1+2|a|)\delta < (1+2|a|)\frac{\varepsilon}{1+2|a|} = \varepsilon.
@@ -997,24 +997,27 @@ Existen tres tipos de asíntotas:
 ## Asíntota vertical
 Se dice que una recta $x=a$ es una *asíntota vertical* de una función $f$ si se cumple
 
-$$\lim_{x\to a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\to a^-}f(x)=\pm \infty$$
+$$\lim_{x\to a^-}f(x)=\pm \infty \quad \textrm{o} \quad \lim_{x\to a^+}f(x)=\pm \infty$$
 :::
 
-Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero si lo está en las proximidades.
+Las asíntotas verticales deben buscarse en los puntos donde no está definida la función, pero sí lo está en las proximidades.
 
 ---
 
 :::{#exm-asintota-vertical}
 La recta $x=2$ es una asíntota vertical de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
-$$\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{x-2} =\infty.$$
-
-::: {.content-visible when-format="html"}
-![Asíntota vertical.](./img/limites/asintota-vertical.png){width=14cm}
+:::{.columns}
+:::{.column width="45%"}
+\begin{align*}
+\lim_{x\to 2^-}\frac{x+1}{x-2} &= -\infty,\\
+\lim_{x\to 2^+}\frac{x+1}{x-2} &= \infty.
+\end{align*}
 :::
 
-::: {.content-visible unless-format="html"}
-![Asíntota vertical.](./img/limites/asintota-vertical.tex)
+:::{.column width="55%"}
+![Asíntota vertical.](./img/limites/asintota-vertical.svg){width="500px"}
+:::
 :::
 :::
 
@@ -1024,7 +1027,7 @@ $$\lim_{x\to 2^-}\frac{x+1}{x-2} =-\infty, \mbox{ y } \lim_{x\to 2^+}\frac{x+1}{
 ## Asíntota horizontal
 Se dice que una recta $y=a$ es una *asíntota horizontal* de una función $f$ si se cumple
 
-$$\lim_{x\to +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\to \infty}f(x)=a$$
+$$\lim_{x\to -\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\to +\infty}f(x)=a$$
 :::
 
 ---
@@ -1032,21 +1035,21 @@ $$\lim_{x\to +\infty}f(x)=a \quad \textrm{o} \quad \lim_{x\to \infty}f(x)=a$$
 :::{#exm-asintota-horizontal}
 La recta $y=1$ es una asíntota horizontal de $f(x)=\dfrac{x+1}{x-2}$ ya que
 
+:::{.columns}
+:::{.column width="45%"}
 \begin{align*}
-\lim_{x\to -\infty}\frac{x+1}{x-2}&= \lim_{x\to -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\\
+\lim_{x\to -\infty}\frac{x+1}{x-2}&= \lim_{x\to -\infty}1+\frac{3}{x-2} = 1\\
 \lim_{x\to +\infty}\frac{x+1}{x-2}&= \lim_{x\to +\infty}1+\frac{3}{x-2} = 1.
 \end{align*}
-
-::: {.content-visible when-format="html"}
-![Asíntota horizontal.](./img/limites/asintota-horizontal.png){width=14cm}
 :::
 
-::: {.content-visible unless-format="html"}
-![Asíntota horizontal.](./img/limites/asintota-horizontal.tex)
+:::{.column width="55%"}
+![Asíntota horizontal.](./img/limites/asintota-horizontal.svg){width="450px"}
+:::
 :::
 :::
 
-### Asíntotas oblicuas
+## Asíntotas oblicuas
 
 :::{#def-asintota-oblicua}
 ## Asíntota oblicua
@@ -1060,19 +1063,19 @@ $$\lim_{x\to \pm\infty}\frac{f(x)}{x}=b \quad \textrm{y} \quad \lim_{x\to \pm\in
 :::{#exm-asintota-oblicua}
 La recta $y=x+1$ es una asíntota oblicua de $f(x)=\dfrac{x^2}{x-1}$ ya que
 
+:::{.columns}
+:::{.column width="45%"}
 \begin{align*}
 \lim_{x\to \pm\infty}\frac{\frac{x^2}{x-1}}{x}&=
-\lim_{x\to \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\\
+\lim_{x\to \pm\infty}\frac{x^2}{x^2-x} = 1,\\
 \lim_{x\to \pm\infty}\frac{x^2}{x-1}-x &=
-\lim_{x\to \pm\infty}1+\frac{x}{x-1} = 1
+\lim_{x\to \pm\infty} \frac{x}{x-1} = 1
 \end{align*}
-
-::: {.content-visible when-format="html"}
-![Asíntota oblicua.](./img/limites/asintota-oblicua.png){width=14cm}
 :::
 
-::: {.content-visible unless-format="html"}
-![Asíntota oblicua.](./img/limites/asintota-oblicua.tex)
+:::{.column width="55%"}
+![Asíntota oblicua.](./img/limites/asintota-oblicua.svg){height="450px"}
+:::
 :::
 :::
 
@@ -1156,14 +1159,14 @@ Se dice que una función $f$ tiene una *discontinuidad evitable* en el punto $a$
 :::{#exm-discontinuiada-evitable}
 La función $f(x)=\dfrac{x^2-1}{x-1}$ tiene una discontinuidad evitable en $x=1$ ya que la función no está definida en $x=1$ pero
 
+:::{.columns}
+:::{.column width="45%"}
 $$\lim_{x\to 2}\frac{x^2-1}{x-1} = \lim_{x\to 2}x+1=2.$$
-
-::: {.content-visible when-format="html"}
-![Discontinuidad evitable en $x=1$](./img/limites/discontinuidad-evitable.png)
 :::
 
-::: {.content-visible unless-format="html"}
-![Discontinuidad evitable en $x=1$](./img/limites/discontinuidad-evitable.tex)
+:::{.column width="55%"}
+![Discontinuidad evitable en $x=1$](./img/limites/discontinuidad-evitable.svg){width="450px"}
+:::
 :::
 :::
 
@@ -1181,20 +1184,21 @@ A la diferencia entre ambos límite se le lama *salto* de la discontinuidad.
 ---
 
 :::{#exm-discontinuidad-1-especie-salto-finito}
-La función $f(x)=\dfrac{\lvert x\rvert}{x}$ tiene una discontinuidad de 1ª especie de salto finito en $x=0$ ya que
+La función $f(x)=\dfrac{2}{1+e^{1/x}}$ tiene una discontinuidad de 1ª especie de salto finito en $x=0$ ya que
 
-$$
-\lim_{x\to 0^-}\frac{|x|}{x}= -1 \quad \lim_{x\to 0^+}\frac{|x|}{x}= 1
-$$
+:::{.columns}
+:::{.column width="40%"}
+\begin{align*}
+&\lim_{x\to 0^-}\frac{2}{1+e^{1/x}} = 2\\ 
+&\lim_{x\to 0^+}\frac{2}{1+e^{1/x}} = 0
+\end{align*}
 
-Salto $= 1-(-1)=2$.
-
-::: {.content-visible when-format="html"}
-![Discontinuidad de primera especie de salto finito en $x=0$](./img/limites/discontinuidad-salto-finito.png)
+Salto $= 1 - 0 = 2$.
 :::
 
-::: {.content-visible unless-format="html"}
-![Discontinuidad de primera especie de salto finito en $x=0$](./img/limites/discontinuidad-salto-finito.tex)
+:::{.column width="60%"}
+![Discontinuidad de primera especie de salto finito en $x=0$](./img/limites/discontinuidad-salto-finito.svg){width="450px"}
+:::
 :::
 :::
 
@@ -1214,16 +1218,17 @@ Si $f$ tienen una discontinuidad de 1ª especie de salto infinito en un punto $a
 :::{#exm-discontinuidad-1-especie-salto-infinito}
 La función $f(x)=e^{1/x}$ tiene una discontinuidad de 1ª especie de salto infinito en $x=0$ ya que
 
-$$
-\lim_{x\to 0^-}e^{1/x}= 0 \quad \lim_{x\to 0^+}e^{1/x}= \infty
-$$
-
-::: {.content-visible when-format="html"}
-![Discontinuidad de primera especie de salto infinito en $x=0$](./img/limites/discontinuidad-salto-infinito.png)
+:::{.columns}
+:::{.column width="40%"}
+\begin{align*}
+&\lim_{x\to 0^-}e^{1/x} = 0\\ 
+&\lim_{x\to 0^+}e^{1/x} = \infty
+\end{align*}
 :::
 
-::: {.content-visible unless-format="html"}
-![Discontinuidad de primera especie de salto infinito en $x=0$](./img/limites/discontinuidad-salto-infinito.tex)
+:::{.column width="60%"}
+![Discontinuidad de primera especie de salto infinito en $x=0$](./img/limites/discontinuidad-salto-infinito.svg){width="400px"}
+:::
 :::
 :::
 
@@ -1241,16 +1246,17 @@ Normalmente la discontinuidades de 2ª especie se dan en puntos donde la funció
 :::{#exm-discontinuidad-2-especie}
 La función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ tiene una discontinuidad de 2ª especie en $x=1$ ya que
 
-$$
-\lim_{x\to 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe} \quad \lim_{x\to 1^+}\frac{1}{\sqrt{x^2-1}}=\infty
-$$
-
-::: {.content-visible when-format="html"}
-![Discontinuidad de segunda especie en $x=0$](./img/limites/discontinuidad-segunda-especie.png){width=12cm}
+:::{.columns}
+:::{.column width="40%"}
+\begin{align*}
+&\lim_{x\to 1^-}\frac{1}{\sqrt{x^2-1}} \textrm{ no existe}\\
+&\lim_{x\to 1^+}\frac{1}{\sqrt{x^2-1}} = \infty
+\end{align*}
 :::
 
-::: {.content-visible unless-format="html"}
-![Discontinuidad de segunda especie en $x=0$](./img/limites/discontinuidad-segunda-especie.tex)
+:::{.column width="60%"}
+![Discontinuidad de segunda especie en $x=0$](./img/limites/discontinuidad-segunda-especie.svg){width="450px"}
+:::
 :::
 :::
 
@@ -1262,7 +1268,7 @@ Dado un conjunto $A\subseteq \mathbb{R}$, dos funciones $f,g:A\to \mathbb{R}$ y 
 a. $f\pm g$ es continua en $a$.
 b. $f\cdot g$ es continua en $a$.
 c. $cf$ es continua en $a$ $\forall c\in\mathbb{R}$.
-d. $\frac{f}{g}$ es continua en $a$ si $g(x)\neq 0$ $\forall x\in\mathbb{R}$.
+d. $\frac{f}{g}$ es continua en $a$ si $g(a)\neq 0$.
 :::
 
 ---
@@ -1307,7 +1313,7 @@ no está acotada en el intervalo $[0,1]$, luego no es continua en este intervalo
 ##
 
 :::{#thm-extremos-funcion-continua-intervalo-cerrado}
-Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$, entonces $f$ alcanza el máximo y el mínimo en $I$, es decir, existen $c,d\in I$ tales que $c\leq f(x)\leq d$ $\forall x\in I$.
+Dado un intervalo cerrado y acotado $I=[a,b]$, y una función $f:I\to\mathbb{R}$, si $f$ es continua en $I$, entonces $f$ alcanza el máximo y el mínimo en $I$, es decir, existen $c,d\in I$ tales que $f(c)\leq f(x)\leq f(d)$ $\forall x\in I$.
 :::
 
 ##

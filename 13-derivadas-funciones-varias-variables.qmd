@@ -559,7 +559,7 @@ Veamos que la función $f(x,y)=x^2 + y^2$ es diferenciable en cualquier punto $(
 = (a+\Delta x)^2 + (b+\Delta y)^2 - (a^2 + b^2) \\
 &= a^2 + 2a\Delta x + \Delta x^2 + b^2 + 2b\Delta y + \Delta y^2 - a^2 - b^2\\
 &= 2a\Delta x + 2b\Delta y + \Delta x^2 + \Delta y^2 \\
-&= \frac{\partial f}{\partial x}(a,b) \Delta x + \frac{\partial f}{\partial y}(a,b) + \Delta x \Delta x + \Delta y \Delta y
+&= \frac{\partial f}{\partial x}(a,b) \Delta x + \frac{\partial f}{\partial y}(a,b) \Delta y+ \Delta x \Delta x + \Delta y \Delta y
 \end{align*}
 
 De modo que, tomando $\varepsilon_1 = \Delta x$ y $\varepsilon_2 = \Delta y$, se tiene que 
@@ -583,7 +583,7 @@ $$
 
 :::{#def-funcion-varias-variables-diferenciable}
 ## Función diferenciable
-Dada una función de n variables $z=f(x_1,\ldots,x_n)$, se dice que $f$ es _diferenciable_ en el punto $(a_1,\ldots,a_n)$ si 
+Dada una función de $n$ variables $z=f(x_1,\ldots,x_n)$, se dice que $f$ es _diferenciable_ en el punto $(a_1,\ldots,a_n)$ si 
 
 \begin{align*}
 \Delta z 
