@@ -29,7 +29,7 @@ En $\mathbb{R}^2$, el intervalo $[a_x,b_x]\times [a_y,b_y]$ define un _rectángu
 
 :::{#def-particion-n-dimensional}
 ## Partición de un intervalo $n$ dimensional
-Dado un intervalo $n$ dimensional cerrado $I=I_1\times\cdots\times I_n$, con $I_i=[a_i,b_i]$ $i=1,\ldots,n$, y una partición $P_i=\{x_{i,0}=a_i,x_{i,1}\ldots,x_{i,m_i}\}$ de cada intervalo $I_i$, el producto cartesiano $P=P_1\times\cdots\times P_n$ se conoce como _partición $n$ dimensional_ de $I$.
+Dado un intervalo $n$ dimensional cerrado $I=I_1\times\cdots\times I_n$, con $I_i=[a_i,b_i]$ $i=1,\ldots,n$, y una partición $P_i=\{x_{i,0}=a_i,x_{i,1}\ldots,x_{i,m_i}=b_i\}$ de cada intervalo $I_i$, el producto cartesiano $P=P_1\times\cdots\times P_n$ se conoce como _partición $n$ dimensional_ de $I$.
 
 El conjunto de todas las particiones $n$ dimensionales de $I$ se denota $\mathcal{P}(I)$.
 :::
@@ -423,10 +423,10 @@ En este tipo de integrales iteradas, hay que integrar siempre primero con respec
 ---
 
 :::{#exm-integral-region-irregular-2}
-Para calcular la integral de la función $f(x,y)=e^{-y^2}$ en la región $R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 2x\}$, como $y$ está acotada por una función de $x$, habría que hacer la integral iterada
+Para calcular la integral de la función $f(x,y)=e^{-y^2}$ en la región $R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, 2x\leq y\leq 2\}$, como $y$ está acotada por una función de $x$, habría que hacer la integral iterada
 
 $$
-\int_0^1\int_0^{2x} e^{-y^2}\,dy\,dx.
+\int_0^1\int_{2x}^2 e^{-y^2}\,dy\,dx.
 $$
 
 Sin embargo, la función $e^{-y^2}$ no tiene primitiva elemental, por lo que necesariamente hay que realizar la integral iterada en el otro orden, pero para ello previamente hay que expresar la región como $R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq \frac{y}{2}, 0\leq y\leq 2\}$, con lo que la integral doble sobre esta región es
@@ -536,7 +536,7 @@ La cosa se complica cuando $f$ puede tomar valores positivos y negativos en el i
 ---
 
 :::{#exm-volumen-integral-doble}
-Veamos cómo calcular el volumen de la función $f(x,y)=x^2y$ en el intervalo $I=[-1,1]\times[-1,1]$. En el intervalo de integración, la función toma valores negativos en el subintervalo $I_1=[-1,1]\times[-1,0]$ y valores positivos en el intervalo $[-1,1]\times[0,1]$, por lo que el volumen encerrado entre la gráfica de la función y el plano $xy$ viene dado por la suma de las integrales
+Veamos cómo calcular el volumen de la función $f(x,y)=x^2y$ en el intervalo $I=[-1,1]\times[-1,1]$. En el intervalo de integración, la función toma valores negativos en el subintervalo $I_1 = [-1,1]\times[-1,0]$ y valores positivos en el subintervalo $I_2 = [-1,1]\times[0,1]$, por lo que el volumen encerrado entre la gráfica de la función y el plano $xy$ viene dado por la suma de las integrales
 
 \begin{align*}
 \int_{I_1} -f(x,y)\,dA 
@@ -554,7 +554,7 @@ Veamos cómo calcular el volumen de la función $f(x,y)=x^2y$ en el intervalo $I
 y
 
 \begin{align*}
-\int_{I_1} f(x,y)\,dA 
+\int_{I_2} f(x,y)\,dA 
 &= \int_{-1}^1\int_0^1 x^2y\,dy\,x
 = \int_{-1}^1 \left[x^2\frac{y^2}{2}\right]_0^1\,dx \\
 &= \int_{-1}^1 \frac{x^2}{2}\,dx
