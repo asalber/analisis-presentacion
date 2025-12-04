@@ -6,10 +6,10 @@
 <script src="14-integrales-funciones-varias-variables_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/quarto-syntax-highlighting-9f30c2c2d2429ed22c1cf9f617479b3b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="14-integrales-funciones-varias-variables_files/libs/quarto-html/quarto-syntax-highlighting-1b3db88def35042d172274863c1cdcf0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="14-integrales-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="14-integrales-funciones-varias-variables_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+  <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Integrales de funciones de varias variables</title>
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="14-integrales-funciones-varias-variables_files/libs/revealjs/dist/theme/quarto-a4fb939f28b838eabb0057d71688aa29.css">
+  <link rel="stylesheet" href="14-integrales-funciones-varias-variables_files/libs/revealjs/dist/theme/quarto-cd6432ae8ba00f8176c28a6336b2c166.css">
   <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="14-integrales-funciones-varias-variables_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -736,6 +736,89 @@ A_R(f)
 <p>por lo que el área de la esfera de radio <span class="math inline">\(a\)</span> centrada en el origen de coordenadas es <span class="math inline">\(4\pi a^2\)</span>, que coincide con la fórmula habitual.</p>
 </section></section>
 <section>
+<section id="integrales-sobre-curvas" class="title-slide slide level2 center">
+<h2>Integrales sobre curvas</h2>
+<p>En ocasiones, interesa calcular el area comprendida entre una superficie y el plano <span class="math inline">\(XY\)</span> a lo largo de una trayectoria descrita sobre este plano. Las integrales sobre curvas permiten sumar valores de una función sobre una curva, en lugar de hacerlo sobre una región bidimensional completa.</p>
+
+<img data-src="img/integrales-funciones-varias-variables/area-sobre-curva.png" class="r-stretch quarto-figure-center"><p class="caption">Integral sobre una curva</p></section>
+<section class="slide level3">
+
+<p>Si la curva <span class="math inline">\(C\)</span> está dada por una función vectorial suave <span class="math inline">\(\mathbf{r}(t) = (x(t), y(t))\)</span>, <span class="math inline">\(t\in[a,b]\)</span>, podemos tomar una partición del intervalo <span class="math inline">\([a,b]\)</span> en <span class="math inline">\(n\)</span> subintervalos <span class="math inline">\(P_n(a,b) = \{t_0 = a, t_1,\ldots, t_n=b\}\)</span> y aproximar la curva <span class="math inline">\(C\)</span> mediante el polígono que resulta de unir con segmentos los puntos <span class="math inline">\(\{\mathbf{r}(t_0), \ldots, \mathbf{r}(t_n)\}\)</span>. Si para cada uno de estos segmentos <span class="math inline">\(i=1\ldots n\)</span> calculamos el área del rectángulo con base el segmento y altura <span class="math inline">\(f(\mathbf{r}(t_i))\)</span>, la suma</p>
+<p><span class="math display">\[
+\sum_{i=1}^n f(\mathbf{r}(t_i)) \Delta S_i,
+\]</span></p>
+<p>donde <span class="math inline">\(\Delta S_i\)</span> es la longitud del segmento <span class="math inline">\(i\)</span>, nos da una aproximación del area que queda entre la superficie y el plano <span class="math inline">\(XY\)</span> a lo largo de la curva <span class="math inline">\(C\)</span>.</p>
+</section>
+<section class="slide level3">
+
+<p>Esta suma, es una suma de Riemann, y al tomar particiones de mayor tamaño, en el límite cuando <span class="math inline">\(n\to\infty\)</span> obtenemos el área real bajo la superficie de <span class="math inline">\(f\)</span> sobre la curva <span class="math inline">\(C\)</span>.</p>
+<div id="def-integral-de-curva" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 6 (Integral de curva)</strong></span> Dado un campo escalar <span class="math inline">\(f(x_1,\ldots,x_n)\)</span> y una curva suave <span class="math inline">\(C\)</span> de longitud finita en <span class="math inline">\(\mathbb{R}^n\)</span>, con una parametrización dada por una función vectorial <span class="math inline">\(\mathbf{r}(t)\)</span> <span class="math inline">\(t\in [a,b]\)</span>, la <em>integral de curva</em> de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(C\)</span> es</p>
+<p><span class="math display">\[
+\int_C f(\mathbf{r}(t)) \, ds
+= \lim_{n\to\infty}\sum_{i=1}^n f(\mathbf{r}(t_i)) \Delta S_i
+\]</span></p>
+<p>si el límite existe.</p>
+</div>
+</section>
+<section class="slide level3">
+
+<p>Puede demostrarse que si <span class="math inline">\(f\)</span> es continua el límite anterior existe. Además, tal y como vimos en al calcular la longitud de una trayectoria,</p>
+<p><span class="math display">\[
+ds = |\mathbf{r}'(t)| \, dt,
+\]</span></p>
+<p>de manera que la integral de curva puede calcularse mediante la integral definida</p>
+<p><span class="math display">\[
+\int_C f(\mathbf{r}(t)) \, ds = \int_a^b f(\mathbf{r}(t)) |\mathbf{r}'(t)|\, dt.
+\]</span></p>
+</section></section>
+<section>
+<section id="integrales-sobre-curvas-en-el-plano" class="title-slide slide level2 center">
+<h2>Integrales sobre curvas en el plano</h2>
+<p>En el caso de una función de dos variables <span class="math inline">\(f(x,y)\)</span> y una curva <span class="math inline">\(C\)</span> sobre el plano <span class="math inline">\(\mathbb{R}^2\)</span> dada por la función vectorial <span class="math inline">\(\mathbf{r}(t)=(x(t), y(t))\)</span>, la integral anterior es</p>
+<p><span class="math display">\[
+\int_C f(x,y)\,ds
+= \int_a^b f(x(t), y(t))\sqrt{x'(t)^2 + y'(t)^2}\,dt.
+\]</span></p>
+</section>
+<section class="slide level3">
+
+<div id="exm-integral-curva-segmento" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 11</strong></span> Calculemos la integral de línea de <span class="math inline">\(f(x,y)=x^2+y\)</span> sobre el segmento que une los puntos <span class="math inline">\((0,0)\)</span> y <span class="math inline">\((1,2)\)</span>. Una parametrización sencilla del segmento es <span class="math inline">\(\mathbf{r}(t)=(t,2t)\)</span> con <span class="math inline">\(t\in[0,1]\)</span>, para la que <span class="math inline">\(\mathbf{r}'(t)=(1,2)\)</span> y <span class="math inline">\(\|\mathbf{r}'(t)\|=\sqrt{5}\)</span>. Aplicando la definición anterior se obtiene</p>
+<p><span class="math display">\[\begin{align*}
+\int_C f(x,y)\,ds
+&amp;= \int_0^1 f(t,2t)\,\sqrt{5}\,dt
+= \sqrt{5}\int_0^1 (t^2+2t)\,dt \\
+&amp;= \sqrt{5}\left[\frac{t^3}{3}+t^2\right]_0^1
+= \sqrt{5}\left(\frac{1}{3}+1\right)
+= \frac{4\sqrt{5}}{3}.
+\end{align*}\]</span></p>
+</div>
+</section></section>
+<section>
+<section id="integrales-sobre-curvas-en-el-espacio" class="title-slide slide level2 center">
+<h2>Integrales sobre curvas en el espacio</h2>
+<p>Y en el caso de una función de tres variables <span class="math inline">\(f(x,y,z)\)</span> y una curva <span class="math inline">\(C\)</span> sobre el espacio <span class="math inline">\(\mathbb{R}^3\)</span> dada por la función vectorial <span class="math inline">\(\mathbf{r}(t)=(x(t), y(t), z(t))\)</span>, la integral es</p>
+<p><span class="math display">\[
+\int_C f(x,y,z)\,ds
+= \int_a^b f(x(t), y(t), z(t))\sqrt{x'(t)^2 + y'(t)^2 + z'(t)}\,dt.
+\]</span></p>
+</section>
+<section class="slide level3">
+
+<div id="exm-integral-curva-espiral" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 12</strong></span> Veamos ahora cómo calcular la integral de curva de la función <span class="math inline">\(f(x,y,z) = x^2 + y^2 + z^2\)</span> sobre la espiral dada por la función vectorial <span class="math inline">\(\mathbf{r}(t)=(\cos(t), \operatorname{sen}(t), t)\)</span> en el intervalo <span class="math inline">\(t\in [0,2\pi]\)</span>. En este caso, <span class="math inline">\(\mathbf{r}'(t) = (-\operatorname{sen}(t), \cos(t), 1)\)</span>, y la integral de curva es</p>
+<p><span class="math display">\[\begin{align*}
+\int_C f(x,y)\,ds
+&amp;= \int_0^{2\pi} f(\cos(t),\operatorname{sen}(t), t) \sqrt{(-\operatorname{sen}(t))^2 + \cos(t)^2 + 1}\,dt \\
+&amp;= \int_0^{2\pi} (\cos(t)^2 + (-\operatorname{sen}(t))^2 + t^2)\sqrt{2}\, dt \\
+&amp;= \sqrt{2}\int_0^{2\pi} (1 + t^2)\,dt
+= \sqrt{2}\left[t+\frac{t^3}{3}\right]_0^{2\pi}
+= \sqrt{2}\left(2\pi + \frac{8\pi^3}{3}\right).
+\end{align*}\]</span></p>
+</div>
+</section></section>
+<section>
 <section id="centro-de-masas" class="title-slide slide level2 center">
 <h2>Centro de masas</h2>
 <p>Una aplicación física inmediata de las integrales dobles o triples es el cálculo de la masa de una sólido plano o del espacio con densidad variable en cada punto. Si <span class="math inline">\(\delta(x,y)\)</span> es la densidad en cada uno de los puntos de un sólido que ocupa una región <span class="math inline">\(R\)</span> del plano <span class="math inline">\(xy\)</span>, la masa total del sólido puede calcularse mediante la integral</p>
@@ -747,7 +830,7 @@ m = \int_R \delta(x,y)\,dA,
 <section class="slide level3">
 
 <div id="exm-masa-region-plana" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 11</strong></span> Una placa metálica tiene la forma de región <span class="math inline">\(R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 1-x^2\}\)</span> y la densidad en cada punto viene dada por la función <span class="math inline">\(\delta(x,y)=xy\)</span> en gr/cm<span class="math inline">\(^2\)</span>. Entonces su masa es</p>
+<p><span class="theorem-title"><strong>Ejemplo 13</strong></span> Una placa metálica tiene la forma de región <span class="math inline">\(R=\{(x,y)\in\mathbb{R}^2: 0\leq x\leq 1, 0\leq y\leq 1-x^2\}\)</span> y la densidad en cada punto viene dada por la función <span class="math inline">\(\delta(x,y)=xy\)</span> en gr/cm<span class="math inline">\(^2\)</span>. Entonces su masa es</p>
 <p><span class="math display">\[\begin{align*}
 m
 &amp;= \int_R \delta(x,y)\,dA
@@ -796,7 +879,7 @@ M_y
 <section class="slide level3">
 
 <div id="exm-centro-masas-solido-plano-densidad-variable" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 12</strong></span> El momento con respecto al eje <span class="math inline">\(x\)</span> de la placa metálica del ejemplo anterior es</p>
+<p><span class="theorem-title"><strong>Ejemplo 14</strong></span> El momento con respecto al eje <span class="math inline">\(x\)</span> de la placa metálica del ejemplo anterior es</p>
 <p><span class="math display">\[\begin{align*}
 M_x
 &amp;= \int_R y\delta(x,y)\,dA
@@ -840,7 +923,7 @@ M_y
 <section id="valor-medio-de-una-función" class="title-slide slide level2 center">
 <h2>Valor medio de una función</h2>
 <div id="def-valor-medio-funcion-varias-variables" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 6 (Valor medio de una función de varias variables)</strong></span> Dada una función <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span> integrable sobre una región <span class="math inline">\(R\subset \mathbb{R}^n\)</span>, el <em>valor medio</em> de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(R\)</span> es</p>
+<p><span class="theorem-title"><strong>Definición 7 (Valor medio de una función de varias variables)</strong></span> Dada una función <span class="math inline">\(f:\mathbb{R}^n\to \mathbb{R}\)</span> integrable sobre una región <span class="math inline">\(R\subset \mathbb{R}^n\)</span>, el <em>valor medio</em> de <span class="math inline">\(f\)</span> sobre <span class="math inline">\(R\)</span> es</p>
 <p><span class="math display">\[
 \bar{f}_R = \frac{\int_R f(x_1,\ldots,x_n)\,dA}{\int_R\,dA}
 \]</span></p>
@@ -859,7 +942,7 @@ M_y
 <section class="slide level3">
 
 <div id="exm-valor-medio-funcion-varias-variables" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 13</strong></span> En el <a href="#/exm-integral-region-irregular" class="quarto-xref">Ejemplo&nbsp;5</a> vimos que la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span> era <span class="math inline">\(\int_R xy\,dA = \frac{1}{24}\)</span>. Como el área de la región <span class="math inline">\(R\)</span> es</p>
+<p><span class="theorem-title"><strong>Ejemplo 15</strong></span> En el <a href="#/exm-integral-region-irregular" class="quarto-xref">Ejemplo&nbsp;5</a> vimos que la integral doble de la función <span class="math inline">\(f(x,y)=xy\)</span> sobre la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq x\leq 1, x^2\leq y\leq x\}\)</span> era <span class="math inline">\(\int_R xy\,dA = \frac{1}{24}\)</span>. Como el área de la región <span class="math inline">\(R\)</span> es</p>
 <p><span class="math display">\[\begin{align*}
 \int_R \,dA
 &amp;= \int_0^1 \int_{x^2}^x  \,dy\,dx
@@ -1071,7 +1154,7 @@ M_y
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1145,13 +1228,14 @@ M_y
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

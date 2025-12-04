@@ -684,7 +684,99 @@ $$
 
 por lo que el área de la esfera de radio $a$ centrada en el origen de coordenadas es $4\pi a^2$, que coincide con la fórmula habitual.
 
+## Integrales sobre curvas
 
+En ocasiones, interesa calcular el area comprendida entre una superficie y el plano $XY$ a lo largo de una trayectoria descrita sobre este plano. Las integrales sobre curvas permiten sumar valores de una función sobre una curva, en lugar de hacerlo sobre una región bidimensional completa.
+
+![Integral sobre una curva](img/integrales-funciones-varias-variables/area-sobre-curva.png) 
+
+---
+
+Si la curva $C$ está dada por una función vectorial suave $\mathbf{r}(t) = (x(t), y(t))$, $t\in[a,b]$, podemos tomar una partición del intervalo $[a,b]$ en $n$ subintervalos $P_n(a,b) = \{t_0 = a, t_1,\ldots, t_n=b\}$ y aproximar la curva $C$ mediante el polígono que resulta de unir con segmentos los puntos $\{\mathbf{r}(t_0), \ldots, \mathbf{r}(t_n)\}$. Si para cada uno de estos segmentos $i=1\ldots n$ calculamos el área del rectángulo con base el segmento y altura $f(\mathbf{r}(t_i))$, la suma
+
+$$
+\sum_{i=1}^n f(\mathbf{r}(t_i)) \Delta S_i,
+$$
+
+donde $\Delta S_i$ es la longitud del segmento $i$, nos da una aproximación del area que queda entre la superficie y el plano $XY$ a lo largo de la curva $C$.
+
+----
+
+Esta suma, es una suma de Riemann, y al tomar particiones de mayor tamaño, en el límite cuando $n\to\infty$ obtenemos el área real bajo la superficie de $f$ sobre la curva $C$.
+
+:::{#def-integral-de-curva}
+## Integral de curva
+Dado un campo escalar $f(x_1,\ldots,x_n)$ y una curva suave $C$ de longitud finita en $\mathbb{R}^n$, con una parametrización dada por una función vectorial $\mathbf{r}(t)$ $t\in [a,b]$, la _integral de curva_ de $f$ sobre $C$ es 
+
+$$
+\int_C f(\mathbf{r}(t)) \, ds
+= \lim_{n\to\infty}\sum_{i=1}^n f(\mathbf{r}(t_i)) \Delta S_i
+$$
+
+si el límite existe.
+:::
+
+---
+
+Puede demostrarse que si $f$ es continua el límite anterior existe. Además, tal y como vimos en al calcular la longitud de una trayectoria,
+
+$$
+ds = |\mathbf{r}'(t)| \, dt,
+$$
+
+de manera que la integral de curva puede calcularse mediante la integral definida 
+
+$$
+\int_C f(\mathbf{r}(t)) \, ds = \int_a^b f(\mathbf{r}(t)) |\mathbf{r}'(t)|\, dt. 
+$$
+
+## Integrales sobre curvas en el plano
+
+En el caso de una función de dos variables $f(x,y)$ y una curva $C$ sobre el plano $\mathbb{R}^2$ dada por la función vectorial $\mathbf{r}(t)=(x(t), y(t))$, la integral anterior es
+
+$$
+\int_C f(x,y)\,ds 
+= \int_a^b f(x(t), y(t))\sqrt{x'(t)^2 + y'(t)^2}\,dt.
+$$
+
+---
+
+:::{#exm-integral-curva-segmento}
+Calculemos la integral de línea de $f(x,y)=x^2+y$ sobre el segmento que une los puntos $(0,0)$ y $(1,2)$. Una parametrización sencilla del segmento es $\mathbf{r}(t)=(t,2t)$ con $t\in[0,1]$, para la que $\mathbf{r}'(t)=(1,2)$ y $\|\mathbf{r}'(t)\|=\sqrt{5}$. Aplicando la definición anterior se obtiene
+
+\begin{align*}
+\int_C f(x,y)\,ds 
+&= \int_0^1 f(t,2t)\,\sqrt{5}\,dt 
+= \sqrt{5}\int_0^1 (t^2+2t)\,dt \\
+&= \sqrt{5}\left[\frac{t^3}{3}+t^2\right]_0^1 
+= \sqrt{5}\left(\frac{1}{3}+1\right) 
+= \frac{4\sqrt{5}}{3}.
+\end{align*}
+:::
+
+## Integrales sobre curvas en el espacio
+
+Y en el caso de una función de tres variables $f(x,y,z)$ y una curva $C$ sobre el espacio $\mathbb{R}^3$ dada por la función vectorial $\mathbf{r}(t)=(x(t), y(t), z(t))$, la integral es
+
+$$
+\int_C f(x,y,z)\,ds 
+= \int_a^b f(x(t), y(t), z(t))\sqrt{x'(t)^2 + y'(t)^2 + z'(t)}\,dt.
+$$
+
+---
+
+:::{#exm-integral-curva-espiral}
+Veamos ahora cómo calcular la integral de curva de la función $f(x,y,z) = x^2 + y^2 + z^2$ sobre la espiral dada por la función vectorial $\mathbf{r}(t)=(\cos(t), \operatorname{sen}(t), t)$ en el intervalo $t\in [0,2\pi]$. En este caso, $\mathbf{r}'(t) = (-\operatorname{sen}(t), \cos(t), 1)$, y la integral de curva es
+
+\begin{align*}
+\int_C f(x,y)\,ds 
+&= \int_0^{2\pi} f(\cos(t),\operatorname{sen}(t), t) \sqrt{(-\operatorname{sen}(t))^2 + \cos(t)^2 + 1}\,dt \\
+&= \int_0^{2\pi} (\cos(t)^2 + (-\operatorname{sen}(t))^2 + t^2)\sqrt{2}\, dt \\
+&= \sqrt{2}\int_0^{2\pi} (1 + t^2)\,dt 
+= \sqrt{2}\left[t+\frac{t^3}{3}\right]_0^{2\pi}
+= \sqrt{2}\left(2\pi + \frac{8\pi^3}{3}\right). 
+\end{align*}
+:::
 
 ## Centro de masas
 Una aplicación física inmediata de las integrales dobles o triples es el cálculo de la masa de una sólido plano o del espacio con densidad variable en cada punto. Si $\delta(x,y)$ es la densidad en cada uno de los puntos de un sólido que ocupa una región $R$ del plano $xy$, la masa total del sólido puede calcularse mediante la integral
