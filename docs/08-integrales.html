@@ -6,10 +6,10 @@
 <script src="08-integrales_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="08-integrales_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="08-integrales_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="08-integrales_files/libs/quarto-html/quarto-syntax-highlighting-1b3db88def35042d172274863c1cdcf0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="08-integrales_files/libs/quarto-html/quarto-syntax-highlighting-9e15f8fb9e1f2f288bfbe28f6ca11029.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="08-integrales_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="08-integrales_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+  <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Integrales de funciones</title>
@@ -831,9 +831,9 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 \int_0^{2\pi} \frac{r^2}{2}
 &amp;= \frac{1}{2}\int_0^{2\pi} (3\operatorname{sen}(2\theta))^2\,d\theta
 = \frac{9}{2}\int_0^{2\pi} \operatorname{sen}(2\theta)^2\,d\theta \\
-&amp;= \frac{9}{2}\int_0^{2\pi} \frac{1 - \cos(2\theta)}{2}\,d\theta
-= \frac{9}{4}\left[\theta - \frac{\operatorname{sen}(2\theta)}{2}\right]_0^{2\pi} \\
-&amp;= \frac{9}{4}\left(2\pi - \frac{\operatorname{sen}(4\pi)}{2}\right)
+&amp;= \frac{9}{2}\int_0^{2\pi} \frac{1 - \cos(4\theta)}{2}\,d\theta
+= \frac{9}{4}\left[\theta - \frac{\operatorname{sen}(4\theta)}{4}\right]_0^{2\pi} \\
+&amp;= \frac{9}{4}\left(2\pi - \frac{\operatorname{sen}(8\pi)}{4}\right)
 = \frac{9}{4}2\pi
 = \frac{9}{2}\pi.
 \end{align*}\]</span></p>
@@ -855,7 +855,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <section class="slide level3">
 
 
-<img data-src="img/integrales/area-entre-curvas-polares.svg" class="r-stretch quarto-figure-center"><p class="caption">Area encerrada entre dos curvas polares$.</p></section></section>
+<img data-src="img/integrales/area-entre-curvas-polares.svg" class="r-stretch quarto-figure-center"><p class="caption">Area encerrada entre dos curvas polares.</p></section></section>
 <section>
 <section id="section-29" class="title-slide slide level2 center">
 <h2></h2>
@@ -895,7 +895,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <p>siempre que este límite exista, en cuyo caso se dice que la integral impropia converge.</p>
 <p>Del mismo modo, si <span class="math inline">\(f\)</span> es integrable en <span class="math inline">\(I=[t,a]\)</span> para <span class="math inline">\(\forall t&lt;a\)</span>, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\((-\infty, a]\)</span> como el límite</p>
 <p><span class="math display">\[
-\int_{-\infty}^a f(x)\,dx = \lim_{t\to\infty} \int_t^a f(x)\,dx.
+\int_{-\infty}^a f(x)\,dx = \lim_{t\to-\infty} \int_t^a f(x)\,dx.
 \]</span></p>
 <p>Finalmente, si <span class="math inline">\(\int_{-\infty}^a f(x)\,dx\)</span> y <span class="math inline">\(\int_a^\infty f(x)\,dx\)</span> convergen, se define la <em>integral impropia</em> de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\((-\infty, \infty)\)</span> como</p>
 <p><span class="math display">\[
@@ -906,12 +906,12 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <section class="slide level3">
 
 <div id="exm-integrales-impropias-1" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 16</strong></span> La integral impropia de la función <span class="math inline">\(f(x)=\frac{1}{x^2}\)</span> converge en el intervalo <span class="math inline">\([1,\infty]\)</span> ya que</p>
+<p><span class="theorem-title"><strong>Ejemplo 16</strong></span> La integral impropia de la función <span class="math inline">\(f(x)=\frac{1}{x^2}\)</span> converge en el intervalo <span class="math inline">\([1,\infty)\)</span> ya que</p>
 <p><span class="math display">\[
 \int_1^\infty \frac{1}{x^2}\,dx = \lim_{t\to\infty} \int_1^t \frac{1}{x^2}\,dx = \lim_{t\to\infty}\left[\frac{-1}{x}\right]_1^t = \lim_{n\to\infty} 1-\frac{1}{t} = 1.
 \]</span></p>
 <p>Por tanto, el área que queda encerrada por la gráfica de <span class="math inline">\(f\)</span> y el eje <span class="math inline">\(x\)</span> por encima de <span class="math inline">\(1\)</span> es finita y vale <span class="math inline">\(1\)</span>.</p>
-<p>Sin embargo, la integral impropia de la función <span class="math inline">\(g(x)=\frac{1}{x}\)</span> diverge en el intervalo <span class="math inline">\([1,\infty]\)</span> ya que</p>
+<p>Sin embargo, la integral impropia de la función <span class="math inline">\(g(x)=\frac{1}{x}\)</span> diverge en el intervalo <span class="math inline">\([1,\infty)\)</span> ya que</p>
 <p><span class="math display">\[
 \int_1^\infty \frac{1}{x}\,dx = \lim_{t\to\infty} \int_1^t \frac{1}{x}\,dx = \lim_{t\to\infty}\left[\ln(x)\right]_1^t = \lim_{n\to\infty} \ln(t) = \infty.
 \]</span></p>
@@ -937,7 +937,7 @@ S(f,P) = \sum_{i=1}^n \pi M_i^2\frac{(\theta_i-\theta_{i-1})}{2\pi} = \sum_{i=1}
 <section class="slide level3">
 
 <div id="exm-integrales-impropias-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 17</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{\sqrt{x}}\)</span> no está definida en <span class="math inline">\(x=0\)</span>, pero podemos calcular su integral impropia en el intervalo <span class="math inline">\([0,1]\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 17</strong></span> La función <span class="math inline">\(f(x)=\frac{1}{\sqrt{x}}\)</span> no está definida en <span class="math inline">\(x=0\)</span>, pero podemos calcular su integral impropia en el intervalo <span class="math inline">\((0,1]\)</span>.</p>
 <p><span class="math display">\[
 \int_0^1 \frac{1}{\sqrt{x}}\,dx
 = \lim_{t\to 0^+} \int_t^1 \frac{1}{\sqrt{x}}\,dx
