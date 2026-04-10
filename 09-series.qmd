@@ -46,7 +46,7 @@ En este capítulo estudiaremos estas sumas infinitas y veremos técnicas para ca
 
 :::{#def-serie}
 ## Serie
-Dada una sucesión de números reales $(a_n)_{n=1}^\infty$, se llama _serie_ de término general $a_n$ a la sucesión $(A_n)_{n=1}^\infty$, cuyos términos se obtienen sumando consecutivamente los $n$ primeros términos de $(a_n)_{n=1}^\infty$, es decir,
+Dada una sucesión de números reales $(a_n)_{n=1}^\infty$, se llama _serie_ de término general $a_n$ a la sucesión $(A_n)_{n=1}^\infty$, cuyos términos se obtienen sumando los $n$ primeros términos de $(a_n)_{n=1}^\infty$, es decir,
 
 $$
 (A_n)_{n=1}^\infty= \left(\sum_{i=1}^na_i\right)_{n=1}^\infty.
@@ -56,7 +56,7 @@ El número $A_n=\sum_{i=1}^n a_i$ se llama _suma parcial de orden_ $n$ de la ser
 :::
 
 :::{.callout-important}
-Debe quedar claro que una serie no es una suma, sino una sucesión cuyos términos se forman mediante sumas de los términos de otra sucesión. Por tanto, todos lo visto en el [capítulo de sucesiones](https://aprendeconalf.es/analisis-manual/sucesiones.html) es válido también para series.
+Debe quedar claro que una serie no es una suma, sino una sucesión cuyos términos se forman mediante sumas de los términos de otra sucesión. Por tanto, todo lo visto en el [capítulo de sucesiones](https://aprendeconalf.es/analisis-manual/sucesiones.html) es válido también para series.
 :::
 
 ---
@@ -86,7 +86,7 @@ Esta serie se conoce como _serie armónica_.
 En ocasiones es posible expresar el valor de la suma parcial de orden $n$ mediante una fórmula explícita que depende de $n$ y que se conoce como _forma cerrada_ de la serie.
 
 :::{#exm-serie-forma-cerrada}
-Dada la serie $\sum n$, su suma parcial de orden $n$ $A_n=\sum_{i=1}^n n$ puede expresarse mediante la forma cerrada $A_n = \frac{1}{2}n(n+1)$.
+Dada la serie $\sum n$, su suma parcial de orden $n$ $A_n=\sum_{i=1}^n i$ puede expresarse mediante la forma cerrada $A_n = \frac{1}{2}n(n+1)$.
 :::
 
 ## Convergencia de series
@@ -96,13 +96,13 @@ Dada la serie $\sum n$, su suma parcial de orden $n$ $A_n=\sum_{i=1}^n n$ puede 
 Se dice que una serie $\sum a_n$ es _convergente_, o que la sucesión $(a_n)_{n=1}^\infty$ es sumable, si la sucesión de las sumas parciales $\left(\sum_{i=1}^n a_i\right)_{n=1}^\infty$ es convergente, y en tal caso, utilizaremos la notación $\sum_{n=1}^\infty a_n$ para referirnos a su límite.
 
 $$
-\sum_{n=1}^{\infty} a_n=\lim A_n = \lim_{n\to\infty} \sum_{i=1}^n a_i.
+\sum_{n=1}^{\infty} a_n=\lim_{n\to\infty} A_n = \lim_{n\to\infty} \sum_{i=1}^n a_i.
 $$
 :::
 
 Si una serie no es convergente, se dice que es _divergente_.
 
-A veces interesa considerar series que empiezan en un índice distinto de 1. En tal caso, se usará la notación $\sum_{n\geq k}a_n$ para referirse a la serie, y $\sum_{n=k}^\infty a_n$ para referirse a su límite.
+A veces interesa considerar series que empiezan en un índice distinto de 0 o 1. En tal caso, se usará la notación $\sum_{n\geq k}a_n$ para referirse a la serie, y $\sum_{n=k}^\infty a_n$ para referirse a su límite.
 
 ---
 
@@ -110,13 +110,13 @@ A veces interesa considerar series que empiezan en un índice distinto de 1. En 
 Veamos que la serie $\sum \left(\frac{1}{2}\right)^n$ de la paradoja de la dicotomía de Zenon converge. 
 
 $$
-\sum_{i=1}^n \left(\frac{1}{2}\right)^i = 1 + \frac{1}{2} + \cdots +\frac{1}{2^n} = \frac{1-\frac{1}{2^{n+1}}}{1-\frac{1}{2}} = 2-\frac{1}{2^n}.
+\sum_{i=0}^n \left(\frac{1}{2}\right)^i = 1 + \frac{1}{2} + \cdots +\frac{1}{2^n} = \frac{1-\frac{1}{2^{n+1}}}{1-\frac{1}{2}} = 2-\frac{1}{2^n}.
 $$
 
 Y, por tanto, 
 
 $$
-\sum_{n=1}^\infty \left(\frac{1}{2}\right)^n = \lim_{n\to\infty} \sum_{i=1}^n \left(\frac{1}{2}\right)^i = \lim_{n\to\infty} 2-\frac{1}{2^n} = 2.
+\sum_{n=0}^\infty \left(\frac{1}{2}\right)^n = \lim_{n\to\infty} \sum_{i=0}^n \left(\frac{1}{2}\right)^i = \lim_{n\to\infty} 2-\frac{1}{2^n} = 2.
 $$
 :::
 
@@ -249,7 +249,7 @@ La serie $\sum \frac{1}{2^n}$ de la paradoja de la dicotomía de Zenon es una se
 La suma parcial de orden $n$ de una serie geométrica $\sum ar^n$ es 
 
 $$
-A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
+A_n = \sum_{i=0}^n ar^i = a\frac{1-r^{n+1}}{1-r}
 $$
 :::
 
@@ -260,7 +260,7 @@ La suma parcial de orden $10$ de la serie $\sum \frac{1}{2^n}$ es $A_n = \sum_{i
 ###
 
 :::{#cor-convergencia-series-geometricas}
-Una serie geométrica $\sum ar^n$ de razón $r$ converge si y solo si $|r|<1$.
+Una serie geométrica $\sum ar^n$ de razón $r$ converge si y solo si $|r|<1$, y en tal caso, $\sum_{n=0}^\infty ar^n = \frac{a}{1-r}$.
 :::
 
 :::{#exm-convergencia-series-geometricas}

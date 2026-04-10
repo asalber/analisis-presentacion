@@ -6,10 +6,10 @@
 <script src="09-series_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="09-series_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="09-series_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="09-series_files/libs/quarto-html/quarto-syntax-highlighting-1b3db88def35042d172274863c1cdcf0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="09-series_files/libs/quarto-html/quarto-syntax-highlighting-ff73747157bea4a22cb1ab1a769f836e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="09-series_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="09-series_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
   <title>Series de número reales</title>
@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="09-series_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="09-series_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -31,7 +34,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="09-series_files/libs/revealjs/dist/theme/quarto-cd6432ae8ba00f8176c28a6336b2c166.css">
+  <link rel="stylesheet" href="09-series_files/libs/revealjs/dist/theme/quarto-f7c6df09a6dedb3bdb62c1f916e1304f.css">
   <link href="09-series_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="09-series_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="09-series_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -166,7 +169,7 @@
 <section id="concepto-de-serie" class="title-slide slide level2 center">
 <h2>Concepto de serie</h2>
 <div id="def-serie" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 1 (Serie)</strong></span> Dada una sucesión de números reales <span class="math inline">\((a_n)_{n=1}^\infty\)</span>, se llama <em>serie</em> de término general <span class="math inline">\(a_n\)</span> a la sucesión <span class="math inline">\((A_n)_{n=1}^\infty\)</span>, cuyos términos se obtienen sumando consecutivamente los <span class="math inline">\(n\)</span> primeros términos de <span class="math inline">\((a_n)_{n=1}^\infty\)</span>, es decir,</p>
+<p><span class="theorem-title"><strong>Definición 1 (Serie)</strong></span> Dada una sucesión de números reales <span class="math inline">\((a_n)_{n=1}^\infty\)</span>, se llama <em>serie</em> de término general <span class="math inline">\(a_n\)</span> a la sucesión <span class="math inline">\((A_n)_{n=1}^\infty\)</span>, cuyos términos se obtienen sumando los <span class="math inline">\(n\)</span> primeros términos de <span class="math inline">\((a_n)_{n=1}^\infty\)</span>, es decir,</p>
 <p><span class="math display">\[
 (A_n)_{n=1}^\infty= \left(\sum_{i=1}^na_i\right)_{n=1}^\infty.
 \]</span></p>
@@ -178,7 +181,7 @@
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Debe quedar claro que una serie no es una suma, sino una sucesión cuyos términos se forman mediante sumas de los términos de otra sucesión. Por tanto, todos lo visto en el <a href="https://aprendeconalf.es/analisis-manual/sucesiones.html">capítulo de sucesiones</a> es válido también para series.</p>
+<p>Debe quedar claro que una serie no es una suma, sino una sucesión cuyos términos se forman mediante sumas de los términos de otra sucesión. Por tanto, todo lo visto en el <a href="https://aprendeconalf.es/analisis-manual/sucesiones.html">capítulo de sucesiones</a> es válido también para series.</p>
 </div>
 </div>
 </div>
@@ -211,7 +214,7 @@ A_n &amp;= 1+\frac{1}{2}+\frac{1}{3}+\cdots \frac{1}{n} = \sum_{i=1}^n\frac{1}{i
 <h2></h2>
 <p>En ocasiones es posible expresar el valor de la suma parcial de orden <span class="math inline">\(n\)</span> mediante una fórmula explícita que depende de <span class="math inline">\(n\)</span> y que se conoce como <em>forma cerrada</em> de la serie.</p>
 <div id="exm-serie-forma-cerrada" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 2</strong></span> Dada la serie <span class="math inline">\(\sum n\)</span>, su suma parcial de orden <span class="math inline">\(n\)</span> <span class="math inline">\(A_n=\sum_{i=1}^n n\)</span> puede expresarse mediante la forma cerrada <span class="math inline">\(A_n = \frac{1}{2}n(n+1)\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 2</strong></span> Dada la serie <span class="math inline">\(\sum n\)</span>, su suma parcial de orden <span class="math inline">\(n\)</span> <span class="math inline">\(A_n=\sum_{i=1}^n i\)</span> puede expresarse mediante la forma cerrada <span class="math inline">\(A_n = \frac{1}{2}n(n+1)\)</span>.</p>
 </div>
 </section>
 
@@ -221,22 +224,22 @@ A_n &amp;= 1+\frac{1}{2}+\frac{1}{3}+\cdots \frac{1}{n} = \sum_{i=1}^n\frac{1}{i
 <div id="def-serie-convergente" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 2 (Serie convergente)</strong></span> Se dice que una serie <span class="math inline">\(\sum a_n\)</span> es <em>convergente</em>, o que la sucesión <span class="math inline">\((a_n)_{n=1}^\infty\)</span> es sumable, si la sucesión de las sumas parciales <span class="math inline">\(\left(\sum_{i=1}^n a_i\right)_{n=1}^\infty\)</span> es convergente, y en tal caso, utilizaremos la notación <span class="math inline">\(\sum_{n=1}^\infty a_n\)</span> para referirnos a su límite.</p>
 <p><span class="math display">\[
-\sum_{n=1}^{\infty} a_n=\lim A_n = \lim_{n\to\infty} \sum_{i=1}^n a_i.
+\sum_{n=1}^{\infty} a_n=\lim_{n\to\infty} A_n = \lim_{n\to\infty} \sum_{i=1}^n a_i.
 \]</span></p>
 </div>
 <p>Si una serie no es convergente, se dice que es <em>divergente</em>.</p>
-<p>A veces interesa considerar series que empiezan en un índice distinto de 1. En tal caso, se usará la notación <span class="math inline">\(\sum_{n\geq k}a_n\)</span> para referirse a la serie, y <span class="math inline">\(\sum_{n=k}^\infty a_n\)</span> para referirse a su límite.</p>
+<p>A veces interesa considerar series que empiezan en un índice distinto de 0 o 1. En tal caso, se usará la notación <span class="math inline">\(\sum_{n\geq k}a_n\)</span> para referirse a la serie, y <span class="math inline">\(\sum_{n=k}^\infty a_n\)</span> para referirse a su límite.</p>
 </section>
 <section class="slide level3">
 
 <div id="exm-serie-paradoja-zenon" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 3</strong></span> Veamos que la serie <span class="math inline">\(\sum \left(\frac{1}{2}\right)^n\)</span> de la paradoja de la dicotomía de Zenon converge.</p>
 <p><span class="math display">\[
-\sum_{i=1}^n \left(\frac{1}{2}\right)^i = 1 + \frac{1}{2} + \cdots +\frac{1}{2^n} = \frac{1-\frac{1}{2^{n+1}}}{1-\frac{1}{2}} = 2-\frac{1}{2^n}.
+\sum_{i=0}^n \left(\frac{1}{2}\right)^i = 1 + \frac{1}{2} + \cdots +\frac{1}{2^n} = \frac{1-\frac{1}{2^{n+1}}}{1-\frac{1}{2}} = 2-\frac{1}{2^n}.
 \]</span></p>
 <p>Y, por tanto,</p>
 <p><span class="math display">\[
-\sum_{n=1}^\infty \left(\frac{1}{2}\right)^n = \lim_{n\to\infty} \sum_{i=1}^n \left(\frac{1}{2}\right)^i = \lim_{n\to\infty} 2-\frac{1}{2^n} = 2.
+\sum_{n=0}^\infty \left(\frac{1}{2}\right)^n = \lim_{n\to\infty} \sum_{i=0}^n \left(\frac{1}{2}\right)^i = \lim_{n\to\infty} 2-\frac{1}{2^n} = 2.
 \]</span></p>
 </div>
 </section>
@@ -365,7 +368,7 @@ A_4 &amp;= -1+ (-1)^2 + (-1)^3 + (-1)^4= 0\\
 <div id="prp-suma-parcial-serie-geometrica" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposición 3</strong></span> La suma parcial de orden <span class="math inline">\(n\)</span> de una serie geométrica <span class="math inline">\(\sum ar^n\)</span> es</p>
 <p><span class="math display">\[
-A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
+A_n = \sum_{i=0}^n ar^i = a\frac{1-r^{n+1}}{1-r}
 \]</span></p>
 </div>
 <div id="exm-suma-parcial-serie-geometrica" class="theorem example">
@@ -375,7 +378,7 @@ A_n = \sum_{i=0}^n = a\frac{1-r^{n+1}}{1-r}
 <section id="section-8" class="slide level3">
 <h3></h3>
 <div id="cor-convergencia-series-geometricas" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolario 2</strong></span> Una serie geométrica <span class="math inline">\(\sum ar^n\)</span> de razón <span class="math inline">\(r\)</span> converge si y solo si <span class="math inline">\(|r|&lt;1\)</span>.</p>
+<p><span class="theorem-title"><strong>Corolario 2</strong></span> Una serie geométrica <span class="math inline">\(\sum ar^n\)</span> de razón <span class="math inline">\(r\)</span> converge si y solo si <span class="math inline">\(|r|&lt;1\)</span>, y en tal caso, <span class="math inline">\(\sum_{n=0}^\infty ar^n = \frac{a}{1-r}\)</span>.</p>
 </div>
 <div id="exm-convergencia-series-geometricas" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 9</strong></span> La serie geométrica <span class="math inline">\(\sum \frac{1}{2^n}\)</span> converge ya que su razón es <span class="math inline">\(\frac{1}{2}&lt;1\)</span>. Sin embargo, la serie geométrica <span class="math inline">\(\sum \left(\frac{3}{2}\right)^n\)</span> no converge, ya que <span class="math inline">\(\frac{3}{2}\geq 1\)</span>.</p>
