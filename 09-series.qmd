@@ -503,7 +503,7 @@ Los resultados de la sección anterior solo se aplican a series de términos pos
 
 :::{#thm-criterio-serie-alternada}
 ## Criterio de la serie alternada (Leibniz)
-Dada una serie alternada $\sum (-1)^{n-1} a_n$, con $a_n>0$, si $(a_n)_{n=1}^\infty$ es monótona decreciente y $\lim_{n\to\infty} a_n = 0$, entonces la serie converge. 
+Dada una serie alternada $\sum (-1)^{n} a_n$, con $a_n>0$, si $(a_n)_{n=0}^\infty$ es monótona decreciente y $\lim_{n\to\infty} a_n = 0$, entonces la serie converge. 
 :::
 
 ---
@@ -528,6 +528,34 @@ $$
 \lim_{n\to\infty}\frac{n}{n^2+1}= \lim_{n\to\infty}\frac{1}{n+\frac{1}{n}} = 0,
 $$
 de manera que la segunda condición también se cumple, y por tanto, las serie converge.
+:::
+
+## 
+
+La siguiente proposición nos permite aproximar la suma de una serie alternada usando sus sumas parciales y nos da una cota para el error de la aproximación cuando esta converge.
+
+:::{#prp-residuo-acotado}
+Dada una serie alternada $\sum (-1)^{n} a_n$, con $a_n>0$, convergente, entonces el error de la aproximación de la suma de la serie por su suma parcial de orden $n$ $A_n$ está acotado por $a_{n+1}$, es decir, 
+
+$$
+|R_n| = \left|\sum_{n=1}^\infty (-1)^n a_n - \sum_{i=1}^n (-1)^i a_i\right| \leq a_{n+1}.
+$$
+:::
+
+---
+
+:::{#exm-residuo-acotado-serie-alternada}
+Podemos aproximar la suma de la serie armónica alternada $\sum \frac{(-1)^{n-1}}{n}$ por su suma parcial de orden 5 $A_5$, que vale
+
+$$
+A_5 = \sum_{i=1}^5 \frac{(-1)^{i-1}}{i} = 1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\frac{1}{5} \approx 0.7833,
+$$
+
+El error de esta aproximación está acotado por $a_6=\frac{1}{6}\approx 0.1667$.
+
+$$
+\left|\sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} - \sum_{i=1}^5 \frac{(-1)^{i-1}}{i}\right| \leq \frac{1}{6}.
+$$
 :::
 
 ## Convergencia absoluta
