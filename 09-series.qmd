@@ -520,7 +520,7 @@ $$
 \end{gathered}
 $$
 
-lo cual es cierto $\forall n\in\mathbb{N}$, por que, en particular, $n+1\geq n+\frac{1}{n}$.
+lo cual es cierto $\forall n\in\mathbb{N}$, porque, en particular, $n+1\geq n+\frac{1}{n}$.
 
 Por otro lado, 
 
@@ -625,7 +625,7 @@ Del mismo modo que hemos estudiado las series que se obtienen a partir de una su
 :::{#def-serie-funcional}
 ## Serie funcional
 Dada una sucesión de funciones $(f_n)_{n=1}^\infty$, 
-se llama _serie de funciones_  o _serie funcional_ de término general $f_n$ a la sucesión $(F_n)_{n=1}^\infty$, cuyos términos se obtienen sumando consecutivamente las $n$ primeras funciones de $(f_n)_{n=1}^\infty$, es decir,
+se llama _serie de funciones_  o _serie funcional_ de término general $f_n$ a la sucesión $(F_n)_{n=1}^\infty$, cuyos términos se obtienen sumando las $n$ primeras funciones de $(f_n)_{n=1}^\infty$, es decir,
 
 $$
 (F_n)_{n=1}^\infty= \left(\sum_{i=1}^nf_i\right)_{n=1}^\infty.
@@ -890,7 +890,7 @@ f'(x)=\frac{1}{(1-x)^2} & & f'(0)=1,\\
 f''(x)=\frac{2}{(1-x)^3} & & f''(0)=2,\\
 f'''(x)=\frac{3!}{(1-x)^4} & & f'''(0)=3!,\\
 \vdots & & \vdots\\
-f^{(n)}(x) = \frac{n!}{(1-x)^(n+1)} & & f^{(n)}(0) = n!
+f^{(n)}(x) = \frac{n!}{(1-x)^{(n+1)}} & & f^{(n)}(0) = n!
 \end{array}
 $$
 
@@ -998,7 +998,7 @@ La siguiente tabla recoge las series de Maclaurin de algunas funciones elemental
 | $f(x)$ | $\sum_{n=1}^\infty \frac{f^{(n)}(a)}{n!}$ | Dominio convergencia |
 |:-:|:-:|:-:|
 | $\frac{1}{1-x}$ | $1 + x + x^2 + x^3 + \cdots = \sum_{n=0}^\infty x^n$ | $(-1,1)$ |
-| $e^x$ | $1 + x + \frac{x^2}{2} + \frac{x^3}{3} + \cdots = \sum_{n=0}^\infty \frac{x^n}{n}$ | $\mathbb{R}$ |
+| $e^x$ | $1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots = \sum_{n=0}^\infty \frac{x^n}{n!}$ | $\mathbb{R}$ |
 | $\ln(1+x)$ | $x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots = \sum_{n=0}^\infty (-1)^{n-1}\frac{x^n}{n}$ | $(-1,1]$ |
 | $\operatorname{sen}(x)$ | $x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots  = \sum_{n=0}^\infty (-1)^n\frac{x^{2n-1}}{(2n-1)!}$ | $\mathbb{R}$ |
 | $\cos(x)$ |  $1-\frac{x^2}{2!}+\frac{x^4}{4!}- \cdots  = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}$ | $\mathbb{R}$ |
