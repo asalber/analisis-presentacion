@@ -82,7 +82,7 @@ El módulo de un vector coincide con la longitud del segmento que representa el 
 
 ---
 
-![Módulo de un vector en el plano.](img/geometria-plano-espacio/modulo-vector-plano)
+![Módulo de un vector en el plano.](img/geometria-plano-espacio/modulo-vector-plano.svg)
 
 ---
 
@@ -401,11 +401,11 @@ El producto vectorial de los vectores $\mathbf{u}=(1,2,0)$ y $\mathbf{v}=(-1,1,0
 
 $$
 \mathbf{u}\times \mathbf{v} 
-= (2\cdot 0-0\cdot 1, 1\cdot 0 - 0\cdot (-1), 1\cdot 1-2\cdot (-1) 
+= (2\cdot 0-0\cdot 1, (-1)\cdot 0 - 0\cdot 1, 1\cdot 1-2\cdot (-1)) 
 = (0, 0, 3).
 $$
 
-Como se puede observar en el siguiente gráfico, el vector resultante es perpendicular a $\mathbf{u}$ $\mathbf{v}$, algo que se debe al siguiente resultado. 
+Como se puede observar en el siguiente gráfico, el vector resultante es perpendicular a $\mathbf{u}$ y $\mathbf{v}$, algo que se debe al siguiente resultado. 
 :::
 
 ![Producto vectorial de dos vectores en el espacio real.](img/geometria-plano-espacio/producto-vectorial)
